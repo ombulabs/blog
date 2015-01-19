@@ -21,7 +21,7 @@ By appending .diff to any diff URL on Github, you'll be able to see the plain-te
 
 ## ?w=1
 
-A not-so-well-known tip is appending ?w=1 to a diff URL to omit whitespace from a diff.
+A not-so-well-known tip is appending ?w=1 to a diff URL to omit whitespaces from a diff.
 
 [Example diff on ombulabs/setup](https://github.com/ombulabs/setup/commit/7c824aaca37a401bdd6d0f8acd1b11f510648bb4) vs [Example diff on ombulabs/setup with w=1](https://github.com/ombulabs/setup/commit/7c824aaca37a401bdd6d0f8acd1b11f510648bb4?w=1)
 
@@ -29,6 +29,6 @@ Probably not the best example but useful to remember for longer diffs.
 
 ## .keys
 
-You can get anyone's public keys by appending .keys to their Github username. For instance, to get this post's author's public keys: [mauro-oto](https://github.com/mauro-oto.keys)
+You can get anyone's public keys by appending .keys to their Github username. For instance, to get my public keys: [mauro-oto](https://github.com/mauro-oto.keys)
 
 For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-tips/) or [here](http://gitready.com/).
