@@ -82,6 +82,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dotenv
   foreman
   jekyll (= 2.5.3)
   rack-contrib
