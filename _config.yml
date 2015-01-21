@@ -8,7 +8,7 @@ logo: false
 paginate: 15
 baseurl: /
 domain_name: 'http://blog.ombulabs.com'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
 permalink: pretty
 
 # Details for the RSS feed generator
