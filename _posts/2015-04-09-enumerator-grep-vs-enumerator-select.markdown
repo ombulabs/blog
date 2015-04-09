@@ -21,14 +21,14 @@ See the benchmark below for example, which uses the class matcher for `#grep`:
 2.1.2 :042 > b = (1..100000).map { rand(100000).to_s }
 2.1.2 :043 > c = a + b
 2.1.2 :044 > Benchmark.bm(10) do |b|
-2.1.2 :045 >   b.report("select")    { c.select { |x| x.to_i == x } }
+2.1.2 :045 >   b.report("select")    { c.select { |x| x.is_a? Integer } }
 2.1.2 :046?>   b.report("grep")      { c.grep(Integer) }
 2.1.2 :047?> end
                  user     system      total        real
-select       0.070000   0.000000   0.070000 (  0.064458)
-grep         0.020000   0.000000   0.020000 (  0.023958)
+select       0.040000   0.000000   0.040000 (  0.037799)
+grep         0.020000   0.000000   0.020000 (  0.023749)
 
-2.1.2 :048 > c.select { |x| x.to_i == x } == c.grep(Integer)
+2.1.2 :048 > c.select { |x| x.is_a? Integer } == c.grep(Integer)
  => true
 ```
 
