@@ -6,8 +6,8 @@ markdown: redcarpet
 highlighter: pygments
 logo: false
 paginate: 15
-baseurl: /
-domain_name: 'http://blog.ombulabs.com'
+baseurl: /blog
+domain_name: 'http://www.ombulabs.com'
 google_analytics: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
 permalink: pretty
 
