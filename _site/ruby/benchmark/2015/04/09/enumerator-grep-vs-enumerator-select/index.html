@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Ombulabs Blog - The Ombulabs team blog</title>
+    <meta name="description" content="Ombulabs Blog, The Ombulabs team blog" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+
+</head>
+<body class="post-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/blog">Home</a>
+        <a class="subscribe-button icon-feed" href="/blogrss.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Enumerable#grep vs Enumerable#select</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2015-04-09">09 Apr 2015</time>
+                
+                    on ruby and benchmark
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="blog url">
+                
+                    <span class="blog-title">Ombulabs Blog</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2015-04-09">09 Apr 2015</time>
+            
+                on ruby and benchmark
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Enumerable#grep vs Enumerable#select</h1> -->
+
+        <section class="post-content">
+            <p>Often, <code>Enumerable#select</code> is the chosen method to obtain elements from an
+Array for a given block. Without thinking twice, we may be doing more work than
+necessary by not taking advantage of another method from the Enumerable module,
+<code>Enumerable#grep</code>.</p>
+
+<p><code>Enumerable#grep</code> can not always be used instead of <code>Enumerable#select</code>, but
+when it can, <code>#grep</code> provides better readability and a small speed improvement
+over <code>#select</code>.</p>
+
+<p>See the benchmark below for example, which uses the class matcher for <code>#grep</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">041</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">042</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">to_s</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">043</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">044</span> <span class="o">&gt;</span> <span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">045</span> <span class="o">&gt;</span>   <span class="n">b</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;select&quot;</span><span class="p">)</span>    <span class="p">{</span> <span class="n">c</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">is_a?</span> <span class="nb">Integer</span> <span class="p">}</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">046</span><span class="o">?&gt;</span>   <span class="n">b</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;grep&quot;</span><span class="p">)</span>      <span class="p">{</span> <span class="n">c</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">047</span><span class="o">?&gt;</span> <span class="k">end</span>
+                 <span class="n">user</span>     <span class="nb">system</span>      <span class="n">total</span>        <span class="n">real</span>
+<span class="nb">select</span>       <span class="mi">0</span><span class="o">.</span><span class="mo">040000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">040000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">0377</span><span class="mi">99</span><span class="p">)</span>
+<span class="n">grep</span>         <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">02374</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">04</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">is_a?</span> <span class="nb">Integer</span> <span class="p">}</span> <span class="o">==</span> <span class="n">c</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre></div>
+<p>You can also see its power when using Regexp patterns, which is not only faster
+but also less verbose, which is enough of a win to favor it over <code>#select</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">04</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">26</span><span class="p">))</span><span class="o">.</span><span class="n">chr</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">050</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_s</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">051</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">052</span> <span class="o">&gt;</span> <span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">053</span> <span class="o">&gt;</span>   <span class="n">b</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;select&quot;</span><span class="p">)</span>    <span class="p">{</span> <span class="n">c</span><span class="o">.</span><span class="n">select</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="sr">/^\d*$/</span> <span class="o">===</span> <span class="n">x</span><span class="p">}</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">054</span><span class="o">?&gt;</span>   <span class="n">b</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;grep&quot;</span><span class="p">)</span>      <span class="p">{</span> <span class="n">c</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/^\d*$/</span><span class="p">)</span> <span class="p">}</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">055</span><span class="o">?&gt;</span> <span class="k">end</span>
+                 <span class="n">user</span>     <span class="nb">system</span>      <span class="n">total</span>        <span class="n">real</span>
+<span class="nb">select</span>       <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">02105</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">grep</span>         <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">012626</span><span class="p">)</span>
+</code></pre></div>
+<p>There are some pretty good use cases for <code>#grep</code>, and one last thing worth
+keeping in mind: <code>#grep</code> can take a second parameter, which acts
+as <code>#map</code> does and reads very nicely. For example:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">056</span> <span class="o">&gt;</span> <span class="n">hello</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;ello&#39;</span><span class="p">,</span> <span class="s1">&#39;llo&#39;</span><span class="p">,</span> <span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="o">]</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">057</span> <span class="o">&gt;</span> <span class="n">hello</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="sr">/[A-Z]\w+/</span> <span class="o">===</span> <span class="n">x</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]</span>
+<span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">05</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">hello</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/[A-Z]\w+/</span><span class="p">,</span> <span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span>
+ <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]</span>
+</code></pre></div>
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/blog" style="background-image: url(/blog/assets/images/profile.png)">
+                    <span class="hidden">Ombulabs's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> Ombulabs </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Enumerable#grep vs Enumerable#select&amp;url=http://www.ombulabs.com/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/blog">Ombulabs Blog</a> &copy;
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

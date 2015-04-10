@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+  <channel>
+    <title>Ombulabs Blog</title>
+    <link>blog url</link>
+    <description>The Ombulabs team blog</description>
+    <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+    <item>
+      <title>Enumerable#grep vs Enumerable#select</title>
+      <link>blog url/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/</link>
+      <description>&lt;p&gt;Often, &lt;code&gt;Enumerable#select&lt;/code&gt; is the chosen method to obtain elements from an
+Array for a given block. Without thinking twice, we may be doing more work than
+necessary by not taking advantage of another method from the Enumerable module,
+&lt;code&gt;Enumerable#grep&lt;/code&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+      <dc:date>2015-04-09T08:37:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>4 Useful Github tricks which should be more popular.</title>
+      <link>blog url/git/github/2015/01/19/4-useful-github-tricks/</link>
+      <description>&lt;p&gt;If you are using git in 2015, you are probably also using &lt;a href=&quot;http://www.github.com&quot;&gt;Github&lt;/a&gt;, unless you&amp;#39;re self-hosting or still betting on &lt;a href=&quot;http://www.bitbucket.com&quot;&gt;Bitbucket&lt;/a&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
+      <dc:date>2015-01-19T15:35:00-03:00</dc:date>
+    </item>
+    <dc:date>2015-04-09T08:37:00-03:00</dc:date>
+  </channel>
+</rss>
