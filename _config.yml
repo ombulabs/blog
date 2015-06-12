@@ -16,3 +16,17 @@ url:            'blog url'
 author:         'Ombulabs'
 
 exclude: ['vendor']
+
+authors:
+  etagwerker:
+    display_name: Ernesto Tagwerker
+    gravatar: 9299203e7e9b9ae35e39eb66f3155f15
+    email: ernesto@ombulabs.com
+    twitter: etagwerker
+    github: etagwerker
+  mauro-oto:
+    display_name: Mauro Otonelli
+    gravatar: 
+    email: mauro@ombulabs.com
+    twitter: mauro_oto
+    github: mauro-oto
