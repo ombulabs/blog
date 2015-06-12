@@ -88,3 +88,6 @@ DEPENDENCIES
   rack-contrib
   rake
   thin
+
+BUNDLED WITH
+   1.10.3

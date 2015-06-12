@@ -3,6 +3,7 @@ layout: post
 title:  "4 Useful Github tricks which should be more popular."
 date:   2015-01-19 18:35:00
 categories: ["git", "github"]
+author: "mauro-oto"
 ---
 
 If you are using git in 2015, you are probably also using [Github](http://www.github.com), unless you're self-hosting or still betting on [Bitbucket](http://www.bitbucket.com).
