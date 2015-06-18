@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<h1>{{ page.category }}</h1>
+
+<ul>
+{% for post in site.categories[page.category] %}
+  <li>
+    <section class="post-excerpt">
+        {{ post.excerpt }}
+    </section>
+    {{ post.date | date: "%B %d, %Y" }}: <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ul>
