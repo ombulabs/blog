@@ -8,7 +8,15 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Ombulabs team blog</description>
-    <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+    <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+    <item>
+      <title>Our Definition of &quot;Done&quot;</title>
+      <link>blog url/software%20development/software%20quality/2015/06/18/our-definition-of-done/</link>
+      <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
+</description>
+      <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+      <dc:date>2015-06-18T08:37:00-03:00</dc:date>
+    </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
       <link>blog url/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/</link>
@@ -28,6 +36,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-04-09T08:37:00-03:00</dc:date>
+    <dc:date>2015-06-18T08:37:00-03:00</dc:date>
   </channel>
 </rss>
