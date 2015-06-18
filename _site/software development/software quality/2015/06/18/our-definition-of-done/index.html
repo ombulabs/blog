@@ -31,9 +31,9 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Our definition of Done</h1>
+            <h1 class="post-title">Our Definition of "Done"</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2015-05-13">13 May 2015</time>
+                <time class="post-date" datetime="2015-06-18">18 Jun 2015</time>
                 
                     on software development and software quality
                 
@@ -49,18 +49,36 @@
         </header> -->
 
         <!-- <span class="post-meta">
-            <time datetime="2015-05-13">13 May 2015</time>
+            <time datetime="2015-06-18">18 Jun 2015</time>
             
                 on software development and software quality
             
         </span> -->
 
-        <!-- <h1 class="post-title">Our definition of Done</h1> -->
+        <!-- <h1 class="post-title">Our Definition of "Done"</h1> -->
 
         <section class="post-content">
-            <p>What is your definition of &quot;Done&quot;? I recently asked that question on Twitter: https://twitter.com/etagwerker/status/593499280809197568</p>
+            <p>Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a <strong>really long time</strong>? Maybe you have. Is it &quot;done&quot;?</p>
 
-<p>This question is related to quality, which is a very complex concept. Something will have quality if it meets the requirements. </p>
+<p>That is a tough question, so I&#39;ll write down <em>our definition of done</em>.</p>
+
+<h2>When is a feature done?</h2>
+
+<ul>
+<li>The feature does what it is expected</li>
+<li>If it has a user interface, the <a href="http://www.helloerik.com/ux-is-not-ui">UX</a> is simple and good enough: A <em>human</em> can use it!</li>
+<li>If it is code for other programmers, the <a href="http://c2.com/cgi/wiki?InterfaceSegregationPrinciple">public contract</a> is clear: A programmer read the documentation and use it</li>
+<li>It has a <a href="http://c2.com/cgi/wiki?CodeCoverage">decent spec</a>, which covers at least two scenarios (not just the happy path)</li>
+<li>It is fast!</li>
+<li>The build passes (it doesn&#39;t break any of the existing specs)</li>
+<li>The code is easy to maintain (<a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a>&#39;ed)</li>
+</ul>
+
+<p>Have you spent 2 days in a feature that should&#39;ve been done in 2 hours? Have you spent 2 hours on a bug fix that should&#39;ve taken you 8 hours? If so, why?</p>
+
+<p>If the feature is big, break it into smaller features. This will make it easier to move ahead.</p>
+
+<p>Before you submit your <a href="https://help.github.com/articles/using-pull-requests">pull request</a>, make sure that you have considered this list.</p>
 
         </section>
 
@@ -86,21 +104,37 @@
             <!-- Share links section -->
             <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Our definition of Done&amp;url=http://www.ombulabs.com/2015-05-13-our-definition-of-done/"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Our Definition of "Done"&amp;url=http://www.ombulabs.com/software%20development/software%20quality/2015/06/18/our-definition-of-done/"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/2015-05-13-our-definition-of-done/"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/software%20development/software%20quality/2015/06/18/our-definition-of-done/"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/2015-05-13-our-definition-of-done/"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/software%20development/software%20quality/2015/06/18/our-definition-of-done/"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
 </section>
 
             <!-- Disqus comments -->
+            
+                <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = ''; 
+        var disqus_developer = 0; // developer mode is on
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
             
 
         </footer>
