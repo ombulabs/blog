@@ -12,7 +12,7 @@ That is a tough question, so I'll write down _our definition of done_.
 
 ## When is a feature done?
 
-* The feature does what it is expected
+* The feature does what it is expected to do
 * If it has a user interface, the [UX](http://www.helloerik.com/ux-is-not-ui) is simple and good enough: A _human_ can use it!
 * If it is code for other programmers, the [public contract](http://c2.com/cgi/wiki?InterfaceSegregationPrinciple) is clear: A programmer read the documentation and use it
 * It has a [decent spec](http://c2.com/cgi/wiki?CodeCoverage), which covers at least two scenarios (not just the happy path)
