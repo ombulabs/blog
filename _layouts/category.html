@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-
+<main id="content" class="content">
 <h1>{{ page.category }}</h1>
 
-<ul>
 {% for post in site.categories[page.category] %}
-  <li>
+  <article class="post">
+    <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
     <section class="post-excerpt">
         {{ post.excerpt }}
     </section>
-    {{ post.date | date: "%B %d, %Y" }}: <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-  </li>
+    {{ post.date | date: "%B %d, %Y" }}
+  </article>
 {% endfor %}
-</ul>
+</main>
