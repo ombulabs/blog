@@ -23,12 +23,15 @@ layout: default
 <main id="content" class="content category">
 {% for post in site.categories[page.category] %}
   <article class="post">
-    <h2 class="post-title"><a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-
+    <header class="post-header">
+      <h2 class="post-title"><a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+    </header>
     <section class="post-excerpt">
         {{ post.excerpt }}
     </section>
-    {{ post.date | date: "%B %d, %Y" }}
+    <footer class="post-meta">
+      <time>{{ post.date | date: "%B %d, %Y" }}</time>
+    </footer>
   </article>
 {% endfor %}
 </main>
