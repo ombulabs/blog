@@ -9,7 +9,7 @@ paginate: 15
 baseurl: /blog
 domain_name: 'http://www.ombulabs.com'
 google_analytics: <%= ENV['GOOGLE_ANALYTICS_ID'] %>
-permalink: pretty
+permalink: none
 
 # Details for the RSS feed generator
 url:            'blog url'
@@ -26,7 +26,7 @@ authors:
     github: etagwerker
   mauro-oto:
     display_name: Mauro Otonelli
-    gravatar: 
+    gravatar:
     email: mauro@ombulabs.com
     twitter: mauro_oto
     github: mauro-oto
