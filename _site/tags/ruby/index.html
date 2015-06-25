@@ -4,8 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Ombulabs Blog - The Ombulabs team blog</title>
-    <meta name="description" content="Ombulabs Blog, The Ombulabs team blog" />
+    <title>Ombulabs Blog - The Lean Software Boutique</title>
+    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
@@ -18,22 +18,26 @@
     <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
 </head>
 <body class="home-template">
-
-    <header class="main-header no-cover">
+  <header class="main-header no-cover">
       <nav class="main-nav overlay clearfix">
-            
-            <a class="back-button icon-arrow-left" href="/blog">Home</a>
+              
+              <a class="back-button icon-arrow-left" href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo">Ombulabs Blog</h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
 
-        <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">ruby</h1>
-            <h2 class="page-description">Category</h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+    <h1 class="page-description">Articles about Ruby</h1>
+
 <main id="content" class="content category">
 
   <article class="post">
@@ -41,11 +45,10 @@
       <h2 class="post-title"><a class="read-more" href="/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html">Enumerable#grep vs Enumerable#select</a></h2>
     </header>
     <section class="post-excerpt">
-        Often, `Enumerable#select` is the chosen method to obtain elements from an
+        <p>Often, <code>Enumerable#select</code> is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
-`Enumerable#grep`.
-
+<code>Enumerable#grep</code>.</p>
 
     </section>
     <footer class="post-meta">
