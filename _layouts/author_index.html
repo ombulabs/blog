@@ -1,25 +1,14 @@
 ---
 layout: default
 ---
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
-      <nav class="main-nav overlay clearfix">
-            {% if page.logo %}
-                <a class="blog-logo" href="{{ site.baseurl }}">
-                    <img src="{{ page.logo }}" alt="Blog Logo" />
-                </a>
-            {% endif %}
-            <a class="back-button icon-arrow-left" href="{{ site.baseurl }}">Home. </a>
 
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml">Subscribe</a>
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Articles by {{ page.author }}</h1>
-            <h2 class="page-description">Author </h2>
-        </div>
-    </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-</header>
+{% assign author = site.authors[page.author] %}
+<h2 class="page-title">Articles by {{ author.display_name }}</a>
+</h2>
+<h3 class="page-description"><a href="http://twitter.com/{{author.twitter}}"
+                                      title="{{author.display_name}} on Twitter"
+                                      target="_blank">Follow @{{ page.author }} on Twitter</h3>
+
 <main id="content" class="content category">
 {% for post in site.posts %}
   {% if post.author == page.author %}
@@ -28,7 +17,7 @@ layout: default
         <h2 class="post-title"><a class="read-more" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
       </header>
       <section class="post-excerpt">
-          {{ post.excerpt }}
+          {{ post.excerpt | markdownify }}
       </section>
       <footer class="post-meta">
         <time>{{ post.date | date: "%B %d, %Y" }}</time>
