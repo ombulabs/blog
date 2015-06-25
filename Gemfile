@@ -6,3 +6,6 @@ gem 'foreman'
 gem 'thin'
 gem 'rack-contrib'
 gem 'dotenv'
+
+gem 'jekyll-categories'
+gem 'jekyll-authors'

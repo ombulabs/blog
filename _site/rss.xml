@@ -11,7 +11,7 @@
     <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
     <item>
       <title>Our Definition of &quot;Done&quot;</title>
-      <link>blog url/software%20development/software%20quality/2015/06/18/our-definition-of-done/</link>
+      <link>blog url/software%20development/software%20quality/our-definition-of-done.html</link>
       <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
 </description>
       <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
@@ -19,7 +19,7 @@
     </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
-      <link>blog url/ruby/benchmark/2015/04/09/enumerator-grep-vs-enumerator-select/</link>
+      <link>blog url/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</link>
       <description>&lt;p&gt;Often, &lt;code&gt;Enumerable#select&lt;/code&gt; is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
@@ -30,7 +30,7 @@ necessary by not taking advantage of another method from the Enumerable module,
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular.</title>
-      <link>blog url/git/github/2015/01/19/4-useful-github-tricks/</link>
+      <link>blog url/git/github/4-useful-github-tricks.html</link>
       <description>&lt;p&gt;If you are using git in 2015, you are probably also using &lt;a href=&quot;http://www.github.com&quot;&gt;Github&lt;/a&gt;, unless you&amp;#39;re self-hosting or still betting on &lt;a href=&quot;http://www.bitbucket.com&quot;&gt;Bitbucket&lt;/a&gt;.&lt;/p&gt;
 </description>
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>

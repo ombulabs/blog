@@ -12,12 +12,12 @@ about: 'about.html'
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}rss.xml">Subscribe</a>
+        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml">Subscribe</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
+            <h1 class="page-title logo">{{ site.name }}</h1>
+            <h2 class="page-description slogan">
                 {% if site.description %} {{ site.description }}. {% endif %}
                 {% if page.about %} <a href='http://www.ombulabs.com'> About us </a> {% endif %}
             </h2>
@@ -47,7 +47,7 @@ about: 'about.html'
         <footer class="post-meta">
             {% if author %}
               {% if author.gravatar %}
-                <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="{{ author.display_name }}" nopin="nopin" />
+                <img class="author-thumb" src="http://2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
               {% else %}
                 <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
               {% endif %}
