@@ -3,11 +3,11 @@ layout: default
 ---
 
 {% assign author = site.authors[page.author] %}
-<h2 class="page-title">Articles by {{ author.display_name }}</a>
+<h2 class="author-name">Articles by <span class="tag">{{ author.display_name }}</span>
 </h2>
-<h3 class="page-description"><a href="http://twitter.com/{{author.twitter}}"
+<h3 class="author-description"><a href="http://twitter.com/{{author.twitter}}"
                                       title="{{author.display_name}} on Twitter"
-                                      target="_blank">Follow @{{ page.author }} on Twitter</h3>
+                                      target="_blank">Follow @{{ page.author }} on Twitter</a></h3>
 
 <main id="content" class="content category">
 {% for post in site.posts %}
