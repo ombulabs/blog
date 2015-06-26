@@ -1,6 +1,6 @@
 name: Ombulabs Blog
-description: The Ombulabs team blog
-meta_description: "Ombulabs Blog, The Ombulabs team blog"
+description: The Lean Software Boutique
+meta_description: "OmbuLabs Blog, The Lean Software Boutique's blog"
 
 markdown: redcarpet
 highlighter: pygments

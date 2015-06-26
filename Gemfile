@@ -9,3 +9,4 @@ gem 'dotenv'
 
 gem 'jekyll-categories'
 gem 'jekyll-authors'
+gem 'jekyll-titleize'
