@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<h1 class="page-description">Articles about {{ page.category | titleize }}</h1>
+<h2 class="category-name">Articles about <span class="tag">{{ page.category | titleize }}</span></h2>
 
 <main id="content" class="content category">
 {% for post in site.categories[page.category] %}
