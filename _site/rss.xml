@@ -8,7 +8,15 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+    <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+    <item>
+      <title>How to Git push with blocked ports</title>
+      <link>blog url/git/github/how-to-git-push-with-blocked-ports.html</link>
+      <description>&lt;p&gt;Often times I find myself working out of a coffee shop with a &lt;strong&gt;terrible Internet connection&lt;/strong&gt;. We have a nice office at &lt;a href=&quot;https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62&quot;&gt;OmbuLabs&lt;/a&gt; but there is still that &lt;em&gt;Je ne sais quoi&lt;/em&gt; at coffee shops.&lt;/p&gt;
+</description>
+      <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+      <dc:date>2015-06-28T15:29:00-03:00</dc:date>
+    </item>
     <item>
       <title>Our Definition of &quot;Done&quot;</title>
       <link>blog url/software%20development/software%20quality/our-definition-of-done.html</link>
@@ -36,6 +44,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-06-18T08:37:00-03:00</dc:date>
+    <dc:date>2015-06-28T15:29:00-03:00</dc:date>
   </channel>
 </rss>
