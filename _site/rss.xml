@@ -8,7 +8,15 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+    <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+    <item>
+      <title>The Lean Startup Way</title>
+      <link>blog url/lean%20startup/the-lean-startup-way.html</link>
+      <description>&lt;p&gt;At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; we like to split our time working on our own products, client projects, and open source software. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+      <dc:date>2015-06-30T20:29:00-03:00</dc:date>
+    </item>
     <item>
       <title>How to Git push with blocked ports</title>
       <link>blog url/git/github/how-to-git-push-with-blocked-ports.html</link>
@@ -44,6 +52,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-06-28T15:29:00-03:00</dc:date>
+    <dc:date>2015-06-30T20:29:00-03:00</dc:date>
   </channel>
 </rss>
