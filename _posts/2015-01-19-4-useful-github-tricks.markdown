@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "4 Useful Github tricks which should be more popular."
+title:  "4 Useful Github tricks which should be more popular"
 date:   2015-01-19 18:35:00
 categories: ["git", "github"]
 author: "mauro-oto"
