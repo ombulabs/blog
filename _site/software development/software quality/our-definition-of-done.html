@@ -51,23 +51,6 @@
             </section>
         </header>
 
-<!--         <header class="post-header">
-            <a id="blog-logo" href="blog url">
-                
-                    <span class="blog-title">Ombulabs Blog</span>
-                
-            </a>
-        </header> -->
-
-        <!-- <span class="post-meta">
-            <time datetime="2015-06-18">18 Jun 2015</time>
-            
-                on software development and software quality
-            
-        </span> -->
-
-        <!-- <h1 class="post-title">Our Definition of "Done"</h1> -->
-
         <section class="post-content">
             <p>Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a <strong>really long time</strong>? Maybe you have. Is it &quot;done&quot;?</p>
 
@@ -131,21 +114,22 @@
 
             <!-- Disqus comments -->
             
-                <section class="disqus">
+              <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
 
-        var disqus_shortname = ''; 
-        var disqus_developer = 0; // developer mode is on
+        var disqus_shortname = 'ombulabs';
+
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+
             
 
         </footer>
@@ -172,7 +156,7 @@
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
