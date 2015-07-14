@@ -51,23 +51,6 @@
             </section>
         </header>
 
-<!--         <header class="post-header">
-            <a id="blog-logo" href="blog url">
-                
-                    <span class="blog-title">Ombulabs Blog</span>
-                
-            </a>
-        </header> -->
-
-        <!-- <span class="post-meta">
-            <time datetime="2015-01-19">19 Jan 2015</time>
-            
-                on git and github
-            
-        </span> -->
-
-        <!-- <h1 class="post-title">4 Useful Github tricks which should be more popular</h1> -->
-
         <section class="post-content">
             <p>If you are using git in 2015, you are probably also using <a href="http://www.github.com">Github</a>, unless you&#39;re self-hosting or still betting on <a href="http://www.bitbucket.com">Bitbucket</a>.</p>
 
@@ -137,21 +120,22 @@
 
             <!-- Disqus comments -->
             
-                <section class="disqus">
+              <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
 
-        var disqus_shortname = ''; 
-        var disqus_developer = 0; // developer mode is on
+        var disqus_shortname = 'ombulabs';
+
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+
             
 
         </footer>
@@ -178,7 +162,7 @@
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {

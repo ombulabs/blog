@@ -51,23 +51,6 @@
             </section>
         </header>
 
-<!--         <header class="post-header">
-            <a id="blog-logo" href="blog url">
-                
-                    <span class="blog-title">Ombulabs Blog</span>
-                
-            </a>
-        </header> -->
-
-        <!-- <span class="post-meta">
-            <time datetime="2015-04-09">09 Apr 2015</time>
-            
-                on ruby and benchmark
-            
-        </span> -->
-
-        <!-- <h1 class="post-title">Enumerable#grep vs Enumerable#select</h1> -->
-
         <section class="post-content">
             <p>Often, <code>Enumerable#select</code> is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
@@ -155,21 +138,22 @@ as <code>#map</code> does and reads very nicely. For example:</p>
 
             <!-- Disqus comments -->
             
-                <section class="disqus">
+              <section class="disqus">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
 
-        var disqus_shortname = ''; 
-        var disqus_developer = 0; // developer mode is on
+        var disqus_shortname = 'ombulabs';
+
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         })();
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+
             
 
         </footer>
@@ -196,7 +180,7 @@ as <code>#map</code> does and reads very nicely. For example:</p>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>']);
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
