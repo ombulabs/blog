@@ -8,7 +8,15 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+    <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+    <item>
+      <title>Mercado Pago Security Hole</title>
+      <link>blog url/security/mercado-pago-security-vulnerability.html</link>
+      <description>&lt;p&gt;On April 17th we discovered a security vulnerability in the &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/&quot;&gt;Mercado Pago API&lt;/a&gt;. Before disclosing this information, we contacted &lt;a href=&quot;http://www.mercadolibre.com/&quot;&gt;Mercado Libre&lt;/a&gt; and sent them a detailed report of the security hole and how to reproduce it.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+      <dc:date>2015-07-14T20:29:00-03:00</dc:date>
+    </item>
     <item>
       <title>The Lean Startup Way</title>
       <link>blog url/lean%20startup/the-lean-startup-way.html</link>
@@ -52,6 +60,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-06-30T20:29:00-03:00</dc:date>
+    <dc:date>2015-07-14T20:29:00-03:00</dc:date>
   </channel>
 </rss>
