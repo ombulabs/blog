@@ -2,7 +2,8 @@ require 'dotenv'
 
 module Jekyll
   class EnvironmentVariablesGenerator < Generator
-
+    priority :highest
+    
     # Sets the env variables that we need in the site configuration
     def generate(site)
       Dotenv.load
