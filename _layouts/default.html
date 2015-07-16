@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html itemscope itemtype="http://schema.org/Article">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>{{ site.name }} - {{ site.description }}</title>
-    <meta name="description" content="{{ site.meta_description}}" />
+    {% capture page_title %}{{ site.name }} - {{ site.description }}{% endcapture %}
 
+    <title>{{ page_title }}</title>
+
+    {% capture description %}{% if post %}{{ post.excerpt }}{% else %}{{ site.meta_description }}{% endif %}{% endcapture %}
+    <meta name="description" content="{{ description }}" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="{{ page_title }}">
+    <meta itemprop="description" content="{{ description }}">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="{{ page_title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{site.domain_name}}{{ page.url }}" />
+    <meta property="og:image" content="{{site.domain_name}}/assets/isotype.png" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:site_name" content="{{ page_title }}" />
+    <meta property="article:published_time" content="{{ page.date }}" />
+    <meta property="article:modified_time" content="{{ page.date }}" />
+    <meta property="article:section" content="{{ description }}" />
+    <meta property="article:tag" content="{{ page_title }}" />
+    <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/screen.css" />
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
