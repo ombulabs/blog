@@ -35,29 +35,32 @@ post_class: post-template
         {% endif %}
 
         <footer class="post-footer">
-            <!-- If we want to display author's name and bio -->
-            {% if site.author %}
-                <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url({{ site.baseurl }}/assets/images/profile.png)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
-                </figure>
-                <section class="author">
-                    <!-- Author Name -->
-                    <h4> {{ site.author }} </h4>
-                    <!-- Author Bio -->
-                    <p>
-                        We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
-                    </p>
-                </section>
-            {% endif %}
+          {% if page.author %}
+            {% assign author = site.authors[page.author] %}
+            <figure class="author-image">
+              {% if author.gravatar %}
+                <a class="img" href="{{ page.baseurl }}" style="background-image: url(http://2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
+                <span class="hidden">{{author.display_name}}'s Picture</span></a>
+              {% else %}
+                <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
+                <span class="hidden"></span></a>
+              {% endif %}
+            </figure>
+            <section class="author">
+              <h4> {{ author.display_name }} </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          {% endif %}
 
-            <!-- Share links section -->
-            {% include share.html %}
+          <!-- Share links section -->
+          {% include share.html %}
 
-            <!-- Disqus comments -->
-            {% if page.disqus %}
-              {% include disqus.html %}
-            {% endif %}
+          <!-- Disqus comments -->
+          {% if page.disqus %}
+            {% include disqus.html %}
+          {% endif %}
 
         </footer>
 
