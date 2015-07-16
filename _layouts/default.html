@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    {% capture page_title %}{{ site.name }} - {{ site.description }}{% endcapture %}
+    {% capture page_title %}{{ site.name }} - {{ site.description }} - {{ page.title | titleize }}{% endcapture %}
 
     <title>{{ page_title }}</title>
 
