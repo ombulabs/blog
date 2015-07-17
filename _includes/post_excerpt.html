@@ -17,12 +17,7 @@
              {{ author.display_name }}
           </a>
         {% endif %}
-        {% if post.categories.size > 0 %}
-          on
-            {% for category in post.categories %}
-              <a href="{{ site.baseurl }}/tags/{{ category | replace: ' ','-' }}"
-                 title="Articles about {{ category | titleize }}">{{ category | titleize }}</a>{% unless forloop.last %},{% endunless %}{% endfor %}
-        {% endif %}
+        {% assign categories = post.categories %} {% include category_links.html %}
         <time class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}">
             {{ post.date | date_to_string }}
         </time>
