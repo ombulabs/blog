@@ -6,20 +6,6 @@
         {{ post.excerpt | markdownify }} <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">&raquo;</a>
     </section>
     <footer class="post-meta">
-        {% if author %}
-          {% if author.gravatar %}
-            <img class="author-thumb" src="http://2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
-          {% else %}
-            <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-          {% endif %}
-          <a href="{{ site.baseurl }}/authors/{{ post.author }}"
-             title="Articles by {{ author.display_name}}">
-             {{ author.display_name }}
-          </a>
-        {% endif %}
-        {% assign categories = post.categories %} {% include category_links.html %}
-        <time class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}">
-            {{ post.date | date_to_string }}
-        </time>
+      {% include post_meta.html %}
     </footer>
 </article>

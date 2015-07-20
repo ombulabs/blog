@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to Git push with blocked ports"
-date:   2015-06-28 18:29:00
+date: 2015-06-28 18:29:00
 categories: ["git", "github"]
 author: etagwerker
 ---
@@ -26,4 +26,4 @@ You will have to enter your username and password to authenticate with Github.
     Password for 'https://etagwerker@github.com':
     Everything up-to-date
 
-Now you can `git push` even on shitty Internet connections. 
+Now you can `git push` even on shitty Internet connections.
