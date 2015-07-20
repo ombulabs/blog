@@ -14,8 +14,6 @@ about: 'about.html'
 
     {% for post in paginator.posts %}
 
-    {% assign author = site.authors[post.author] %}
-
       {% include post_excerpt.html %}
 
     {% endfor %}
