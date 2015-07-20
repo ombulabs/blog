@@ -51,5 +51,12 @@ This can lead to some headaches when you're not aware of this side-effect, and
 depending on the default scoped attribute/value it can cause some pretty bad
 bugs.
 
-I'd say always avoid default scope if possible, or use with care, and prefer
-explicit scopes instead.
+Also, I'd like to mention the fact that it's very difficult to write queries
+once you have used `default_scope` on a model. For example:
+`Animal.where('deleted_on is not null')` won't work, you'd need to use
+`Animal.unscoped`, which makes everything awkward. You also need to use
+`unscoped` carefully, because it will remove all scopes of the relation, not just
+the default scope.
+
+I recommend always avoiding default scope if possible, or use with care, and
+prefer explicit scopes instead.
