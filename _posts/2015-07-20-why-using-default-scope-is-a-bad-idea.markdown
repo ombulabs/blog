@@ -9,8 +9,8 @@ author: "mauro-oto"
 `default_scope` is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
-`deleted_on` column on your model and default scoping the model to
-`deleted_on: nil`.
+`deleted_on` column on your model and setting the default scope to 
+`deleted_on: nil`
 
 ```ruby
 class Animal
