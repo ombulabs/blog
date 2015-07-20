@@ -58,5 +58,5 @@ once you have used `default_scope` on a model. For example:
 `unscoped` carefully, because it will remove all scopes of the relation, not just
 the default scope.
 
-I recommend always avoiding default scope if possible, and prefer explicit
-scopes instead. If you really need to use it, use it with care. 
+I recommend that you always avoid default scope if possible. Prefer explicit
+scopes instead. If you really need to use it, use it with care.
