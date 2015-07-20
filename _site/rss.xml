@@ -8,7 +8,19 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+    <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+    <item>
+      <title>Why using default_scope is a bad idea</title>
+      <link>blog url/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
+      <description>&lt;p&gt;&lt;code&gt;default_scope&lt;/code&gt; is a method provided by ActiveRecord, which allows you to set
+a default scope (as its name implies) for all operations done on a given model.
+It can be useful for allowing soft-deletion in your models, by having a
+&lt;code&gt;deleted_on&lt;/code&gt; column on your model and default scoping the model to
+&lt;code&gt;deleted_on: nil&lt;/code&gt;.&lt;/p&gt;
+</description>
+      <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+      <dc:date>2015-07-20T06:55:00-03:00</dc:date>
+    </item>
     <item>
       <title>Mercado Pago Security Hole</title>
       <link>blog url/security/mercado-pago-security-vulnerability.html</link>
@@ -60,6 +72,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-07-14T20:29:00-03:00</dc:date>
+    <dc:date>2015-07-20T06:55:00-03:00</dc:date>
   </channel>
 </rss>
