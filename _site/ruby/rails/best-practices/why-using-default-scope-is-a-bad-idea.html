@@ -110,7 +110,7 @@
           <p><code>default_scope</code> is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
-<code>deleted_on</code> column on your model and setting the default scope to 
+<code>deleted_on</code> column on your model and setting the default scope to
 <code>deleted_on: nil</code></p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Animal</span>
   <span class="n">default_scope</span> <span class="n">where</span><span class="p">(</span><span class="ss">deleted_on</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
@@ -147,8 +147,8 @@ once you have used <code>default_scope</code> on a model. For example:
 <code>unscoped</code> carefully, because it will remove all scopes of the relation, not just
 the default scope.</p>
 
-<p>I recommend always avoiding default scope if possible, or use with care, and
-prefer explicit scopes instead.</p>
+<p>I recommend always avoiding default scope if possible, and prefer explicit
+scopes instead. If you really need to use it, use it with care. </p>
 
         </section>
 

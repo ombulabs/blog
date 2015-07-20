@@ -15,7 +15,7 @@
       <description>&lt;p&gt;&lt;code&gt;default_scope&lt;/code&gt; is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
-&lt;code&gt;deleted_on&lt;/code&gt; column on your model and setting the default scope to 
+&lt;code&gt;deleted_on&lt;/code&gt; column on your model and setting the default scope to
 &lt;code&gt;deleted_on: nil&lt;/code&gt;&lt;/p&gt;
 </description>
       <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
