@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Slack Notifications With Slack-Notify Gem"
+title: "Slack notifications with Slack-Notify gem"
 date: 2015-07-29 17:40:00
 categories: ["ruby"]
 author: "mauro-oto"
@@ -32,26 +32,54 @@ the build has finished running:
   task :post_build_hook do
     require 'slack-notify'
 
+    webhook_url = "https://hooks.slack.com/services/your-hook"
+    base_url = "#{ENV['TDDIUM_API_SERVER']}"
+    session_id = "#{ENV['TDDIUM_SESSION_ID']}"
+    build_status = "#{ENV['TDDIUM_BUILD_STATUS']}"
+
     client = SlackNotify::Client.new(channel: "#your-channel",
-                                     webhook_url: 'https://hooks.slack.com/services/your-hook',
+                                     webhook_url: webhook_url,
                                      username: "Solano CI",
                                      icon_emoji: ":shipit:")
-    msg = "_#{current_branch}_ *#{ENV['TDDIUM_BUILD_STATUS']}*!"
-    msg << " Check build details at: "
-    msg << "http://#{ENV['TDDIUM_API_SERVER']}/1/reports/#{ENV['TDDIUM_SESSION_ID']}"
+    msg = "_#{current_branch}_ *#{build_status}*! "
+    msg << "Check build details at: "
+    msg << "http://#{base_url}/1/reports/#{session_id}"
     client.notify(msg)
   end
 ```
 
-This will let #your-channel know the branch for which the build either passed,
-failed or errored, and the link with the build report.
+This will let #your-channel know the branch for which the build ran, whether it passed,
+failed or errored, and a link to the build report.
+
+You also need to explicitly call it after the build is finished in your
+`solano.yml` or `tddium.yml` file:
+
+```yaml
+:tddium:
+  :hooks:
+    :post_build: RAILS_ENV=test bundle exec rake tddium:post_build_hook
+```
 
 We have also set up deployment notifications, so whenever someone deploys to
-production, the Slack channel is notified.
+production, the Slack channel is notified:
 
 ```ruby
+namespace :notify do
+  task :start, roles: [:app] do
+    msg = "#{USERNAME} started deploying #{REPO} (#{GIT_TAG}) to production"
+    notify_slack(msg)
+  end
+
+  task :done, roles: [:app] do
+    msg = "#{USERNAME} just deployed #{REPO} (#{GIT_TAG}) to production"
+    notify_slack(msg)
+  end
+end
+
+before "deploy", "notify:start"
+after "deploy", "notify:done"
 ```
 
 There are many different use cases, just make sure not to spam your team with
-too many notifications, and you will probably want to set up a channel dedicated
-solely to notifications if you are a bigger team.
+too many notifications. At some point, you will probably want to set up a
+channel dedicated solely to notifications if you are a bigger team.

@@ -8,7 +8,19 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+    <pubDate>Wed, 29 Jul 2015 14:40:00 -0300</pubDate>
+    <item>
+      <title>Slack notifications with Slack-Notify gem</title>
+      <link>blog url/ruby/slack-notifications-with-slack-notify.html</link>
+      <description>&lt;p&gt;We have been using Slack at Ombulabs for a while now after switching from
+HipChat, and haven&amp;#39;t looked back. It looks and feels much better than any other
+available platform of its kind. Slack provides
+&lt;a href=&quot;https://api.slack.com/incoming-webhooks&quot;&gt;WebHooks&lt;/a&gt;, which you can use to post
+messages to your team&amp;#39;s channels.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 29 Jul 2015 14:40:00 -0300</pubDate>
+      <dc:date>2015-07-29T14:40:00-03:00</dc:date>
+    </item>
     <item>
       <title>Why using default_scope is a bad idea</title>
       <link>blog url/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
@@ -72,6 +84,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-07-20T06:55:00-03:00</dc:date>
+    <dc:date>2015-07-29T14:40:00-03:00</dc:date>
   </channel>
 </rss>
