@@ -103,17 +103,17 @@
         </header>
 
         <section class="post-content">
-          <p>We have been using Slack at Ombulabs for a while now after switching from
-HipChat, and haven&#39;t looked back. It looks and feels much better than any other
-available platform of its kind. Slack provides
+          <p>We have been using Slack at <a href="http://www.ombulabs.com">OmbuLabs</a> for a while now
+after switching from HipChat, and haven&#39;t looked back. It looks and feels much
+better than any other available platform of its kind. Slack provides
 <a href="https://api.slack.com/incoming-webhooks">WebHooks</a>, which you can use to post
 messages to your team&#39;s channels.</p>
 
 <p>We use <a href="https://www.solanolabs.com">Solano CI</a> (formerly Tddium) for our
-automated builds, and we would get e-mails whenever a build passed or failed,
-but we wanted to be notified in our Slack channels. Enter the
+automated builds. By default, the system sends e-mails whenever a build passes
+or fails, but we wanted to be notified in our Slack channels. Enter the
 <a href="https://github.com/sosedoff/slack-notify">slack-notify</a> gem, which makes
-notifying Slack using Ruby a breeze.</p>
+Slack notifications super simple in Ruby.</p>
 
 <p>To get started, first
 <a href="https://my.slack.com/services/new/incoming-webhook">set up an incoming webhook</a>.</p>
@@ -169,7 +169,7 @@ production, the Slack channel is notified:</p>
 <span class="n">after</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;notify:done&quot;</span>
 </code></pre></div>
 <p>There are many different use cases, just make sure not to spam your team with
-too many notifications. At some point, you will probably want to set up a
+too many notifications. At some point, you may want to set up a
 channel dedicated solely to notifications if you are a bigger team.</p>
 
         </section>
