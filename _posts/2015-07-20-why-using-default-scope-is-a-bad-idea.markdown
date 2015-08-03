@@ -24,7 +24,7 @@ calling `destroy`.
 
 ```ruby
 > Animal.limit(5)
-  Animal Load (4.2ms)  SELECT `animals`.* FROM `animals` WHERE `animals`.`deleted_on` IS NULL LIMIT 10
+  Animal Load (4.2ms)  SELECT `animals`.* FROM `animals` WHERE `animals`.`deleted_on` IS NULL LIMIT 5
 ```
 
 Quite useful! However, `default_scope` has a dangerous behavior:

@@ -18,6 +18,18 @@
       <dc:date>2015-08-04T07:55:00+04:00</dc:date>
     </item>
     <item>
+      <title>Slack notifications with Slack-Notify gem</title>
+      <link>blog url/ruby/slack-notifications-with-slack-notify.html</link>
+      <description>&lt;p&gt;We have been using Slack at &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; for a while now
+after switching from HipChat, and haven&amp;#39;t looked back. It looks and feels much
+better than any other available platform of its kind. Slack provides
+&lt;a href=&quot;https://api.slack.com/incoming-webhooks&quot;&gt;WebHooks&lt;/a&gt;, which you can use to post
+messages to your team&amp;#39;s channels.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 29 Jul 2015 21:40:00 +0400</pubDate>
+      <dc:date>2015-07-29T21:40:00+04:00</dc:date>
+    </item>
+    <item>
       <title>Why using default_scope is a bad idea</title>
       <link>blog url/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
       <description>&lt;p&gt;&lt;code&gt;default_scope&lt;/code&gt; is a method provided by ActiveRecord, which allows you to set

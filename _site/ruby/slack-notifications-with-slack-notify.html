@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem</title>
+
+    
+    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem">
+    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+    <meta name="twitter:title" content="Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem">
+    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/ruby/slack-notifications-with-slack-notify.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="og:site_name" content="Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem" />
+    <meta property="article:published_time" content="2015-07-29 21:40:00 +0400" />
+    <meta property="article:modified_time" content="2015-07-29 21:40:00 +0400" />
+    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="article:tag" content="Ombulabs Blog - The Lean Software Boutique - Slack Notifications With Slack-Notify Gem" />
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="post-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">Ombulabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+
+    <main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Slack notifications with Slack-Notify gem</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>
+
+
+
+<time class="post-date" datetime="2015-07-29">
+  29 Jul 2015
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>We have been using Slack at <a href="http://www.ombulabs.com">OmbuLabs</a> for a while now
+after switching from HipChat, and haven&#39;t looked back. It looks and feels much
+better than any other available platform of its kind. Slack provides
+<a href="https://api.slack.com/incoming-webhooks">WebHooks</a>, which you can use to post
+messages to your team&#39;s channels.</p>
+
+<p>We use <a href="https://www.solanolabs.com">Solano CI</a> (formerly Tddium) for our
+automated builds. By default, the system sends e-mails whenever a build passes
+or fails, but we wanted to be notified in our Slack channels. Enter the
+<a href="https://github.com/sosedoff/slack-notify">slack-notify</a> gem, which makes
+Slack notifications super simple in Ruby.</p>
+
+<p>To get started, first
+<a href="https://my.slack.com/services/new/incoming-webhook">set up an incoming webhook</a>.</p>
+
+<p>Once that&#39;s done, you can create the Rake task which Solano can run when
+the build has finished running:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">def</span> <span class="nf">current_branch</span>
+    <span class="sb">`git symbolic-ref HEAD 2&gt;/dev/null | cut -d&quot;/&quot; -f 3-`</span><span class="o">.</span><span class="n">strip</span>
+  <span class="k">end</span>
+
+  <span class="n">task</span> <span class="ss">:post_build_hook</span> <span class="k">do</span>
+    <span class="nb">require</span> <span class="s1">&#39;slack-notify&#39;</span>
+
+    <span class="n">webhook_url</span> <span class="o">=</span> <span class="s2">&quot;https://hooks.slack.com/services/your-hook&quot;</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TDDIUM_API_SERVER&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">session_id</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TDDIUM_SESSION_ID&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">build_status</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;TDDIUM_BUILD_STATUS&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="n">client</span> <span class="o">=</span> <span class="no">SlackNotify</span><span class="o">::</span><span class="no">Client</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">channel</span><span class="p">:</span> <span class="s2">&quot;#your-channel&quot;</span><span class="p">,</span>
+                                     <span class="ss">webhook_url</span><span class="p">:</span> <span class="n">webhook_url</span><span class="p">,</span>
+                                     <span class="ss">username</span><span class="p">:</span> <span class="s2">&quot;Solano CI&quot;</span><span class="p">,</span>
+                                     <span class="ss">icon_emoji</span><span class="p">:</span> <span class="s2">&quot;:shipit:&quot;</span><span class="p">)</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;_</span><span class="si">#{</span><span class="n">current_branch</span><span class="si">}</span><span class="s2">_ *</span><span class="si">#{</span><span class="n">build_status</span><span class="si">}</span><span class="s2">*! &quot;</span>
+    <span class="n">msg</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Check build details at: &quot;</span>
+    <span class="n">msg</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;http://</span><span class="si">#{</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/1/reports/</span><span class="si">#{</span><span class="n">session_id</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+  <span class="k">end</span>
+</code></pre></div>
+<p>This will let #your-channel know the branch for which the build ran, whether it passed,
+failed or errored, and a link to the build report.</p>
+
+<p>You also need to explicitly call it after the build is finished in your
+<code>solano.yml</code> or <code>tddium.yml</code> file:</p>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">:tddium</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">:hooks</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">:post_build</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">RAILS_ENV=test bundle exec rake tddium:post_build_hook</span>
+</code></pre></div>
+<p>We have also set up deployment notifications, so whenever someone deploys to
+production, the Slack channel is notified:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">namespace</span> <span class="ss">:notify</span> <span class="k">do</span>
+  <span class="n">task</span> <span class="ss">:start</span><span class="p">,</span> <span class="ss">roles</span><span class="p">:</span> <span class="o">[</span><span class="ss">:app</span><span class="o">]</span> <span class="k">do</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">USERNAME</span><span class="si">}</span><span class="s2"> started deploying </span><span class="si">#{</span><span class="no">REPO</span><span class="si">}</span><span class="s2"> (</span><span class="si">#{</span><span class="no">GIT_TAG</span><span class="si">}</span><span class="s2">) to production&quot;</span>
+    <span class="n">notify_slack</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">task</span> <span class="ss">:done</span><span class="p">,</span> <span class="ss">roles</span><span class="p">:</span> <span class="o">[</span><span class="ss">:app</span><span class="o">]</span> <span class="k">do</span>
+    <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">USERNAME</span><span class="si">}</span><span class="s2"> just deployed </span><span class="si">#{</span><span class="no">REPO</span><span class="si">}</span><span class="s2"> (</span><span class="si">#{</span><span class="no">GIT_TAG</span><span class="si">}</span><span class="s2">) to production&quot;</span>
+    <span class="n">notify_slack</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">before</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;notify:start&quot;</span>
+<span class="n">after</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;notify:done&quot;</span>
+</code></pre></div>
+<p>There are many different use cases, just make sure not to spam your team with
+too many notifications. At some point, you may want to set up a
+channel dedicated solely to notifications if you are part of a bigger team.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
+                <span class="hidden">Mauro Otonelli's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Mauro Otonelli </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Slack notifications with Slack-Notify gem&amp;url=http://www.ombulabs.com/ruby/slack-notifications-with-slack-notify.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/ruby/slack-notifications-with-slack-notify.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/ruby/slack-notifications-with-slack-notify.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+          
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <figure>
+          <img src="/blog/assets/images/creative-commons.png"
+               alt="Creative Commons Attribution-NonCommercial">
+          <figcaption>
+            <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+               target="_blank"
+               title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="poweredby">Made with love using Jekyll and
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

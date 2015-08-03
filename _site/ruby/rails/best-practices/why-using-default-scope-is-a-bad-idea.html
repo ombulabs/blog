@@ -120,7 +120,7 @@ It can be useful for allowing soft-deletion in your models, by having a
 ones in your queries after setting <code>deleted_on</code> instead of
 calling <code>destroy</code>.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Animal</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-  <span class="no">Animal</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="sb">`animals`</span> <span class="no">WHERE</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">`deleted_on</span><span class="sb">` IS NULL LIMIT 10</span>
+  <span class="no">Animal</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="sb">`animals`</span> <span class="no">WHERE</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">`deleted_on</span><span class="sb">` IS NULL LIMIT 5</span>
 </code></pre></div>
 <p>Quite useful! However, <code>default_scope</code> has a dangerous behavior:
 <strong>it affects your model&#39;s initialization.</strong></p>
