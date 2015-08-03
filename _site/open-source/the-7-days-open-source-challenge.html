@@ -6,7 +6,7 @@
 
     
 
-    <title>Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea</title>
+    <title>Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge</title>
 
     
     <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
@@ -15,30 +15,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea">
+    <meta itemprop="name" content="Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge">
     <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
-    <meta name="twitter:title" content="Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea">
+    <meta name="twitter:title" content="Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge">
     <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea" />
+    <meta property="og:title" content="Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html" />
+    <meta property="og:url" content="http://www.ombulabs.com/open-source/the-7-days-open-source-challenge.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="og:site_name" content="Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea" />
-    <meta property="article:published_time" content="2015-07-20 13:55:00 +0400" />
-    <meta property="article:modified_time" content="2015-07-20 13:55:00 +0400" />
+    <meta property="og:site_name" content="Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge" />
+    <meta property="article:published_time" content="2015-08-04 07:55:00 +0400" />
+    <meta property="article:modified_time" content="2015-08-04 07:55:00 +0400" />
     <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="article:tag" content="Ombulabs Blog - The Lean Software Boutique - Why Using Default_scope Is a Bad Idea" />
+    <meta property="article:tag" content="Ombulabs Blog - The Lean Software Boutique - The 7 Days Open Source Challenge" />
     <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -72,83 +72,67 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Why using default_scope is a bad idea</h1>
+            <h1 class="post-title">The 7 Days Open Source Challenge</h1>
             <section class="post-meta">
               
               
 
 
   
-    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
   
-  <a href="/blog/authors/mauro-oto"
-     title="Articles by Mauro Otonelli">
-     Mauro Otonelli
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
   </a>
 
 
  
   on
     
-      <a href="/blog/tags/ruby"
-         title="Articles about Ruby">Ruby</a>,
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/best-practices"
-         title="Articles about Best Practices">Best Practices</a>
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>
 
 
 
-<time class="post-date" datetime="2015-07-20">
-  20 Jul 2015
+<time class="post-date" datetime="2015-08-04">
+  04 Aug 2015
 </time>
 
             </section>
         </header>
 
         <section class="post-content">
-          <p><code>default_scope</code> is a method provided by ActiveRecord, which allows you to set
-a default scope (as its name implies) for all operations done on a given model.
-It can be useful for allowing soft-deletion in your models, by having a
-<code>deleted_on</code> column on your model and setting the default scope to
-<code>deleted_on: nil</code></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Animal</span>
-  <span class="n">default_scope</span> <span class="n">where</span><span class="p">(</span><span class="ss">deleted_on</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div>
-<p>This will hide deleted records and only return non-deleted
-ones in your queries after setting <code>deleted_on</code> instead of
-calling <code>destroy</code>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Animal</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-  <span class="no">Animal</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="sb">`animals`</span> <span class="no">WHERE</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">`deleted_on</span><span class="sb">` IS NULL LIMIT 10</span>
-</code></pre></div>
-<p>Quite useful! However, <code>default_scope</code> has a dangerous behavior:
-<strong>it affects your model&#39;s initialization.</strong></p>
+          <p>Last Wednesday I gave a lightning talk about open source at the <a href="http://www.meetup.com/rubyba/events/223814545/">Buenos Aires Ruby Meetup</a>. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.</p>
 
-<p>Say you were using STI on your <code>Animal</code> model, and you had a <code>default_scope</code>
-for always filtering your model by &quot;Cat&quot;:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Animal</span>
-  <span class="n">default_scope</span> <span class="n">where</span><span class="p">(</span><span class="ss">type</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div>
-<p>When you initialize a new Animal, it will always use the value defined in
-your default scope:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Animal</span><span class="o">.</span><span class="n">new</span>
-<span class="o">=&gt;</span> <span class="c1">#&lt;Animal id: nil, created_at: nil, updated_at: nil, type: &quot;Cat&quot;&gt;</span>
-</code></pre></div>
-<p>This can lead to some headaches when you&#39;re not aware of this side-effect, and
-depending on the default scoped attribute/value it can cause some pretty bad
-bugs.</p>
+<p>The rules are simple:</p>
 
-<p>Also, I&#39;d like to mention the fact that it&#39;s very difficult to write queries
-once you have used <code>default_scope</code> on a model. For example:
-<code>Animal.where(&#39;deleted_on is not null&#39;)</code> won&#39;t work, you&#39;d need to use
-<code>Animal.unscoped</code>, which makes everything awkward. You also need to use
-<code>unscoped</code> carefully, because it will remove all scopes of the relation, not just
-the default scope.</p>
+<ul>
+<li>You have to do it for 7 days straight</li>
+<li>If you can&#39;t do it one day, that breaks your streak</li>
+<li>When you break your streak, you have to start over from 1</li>
+</ul>
 
-<p>I recommend that you always avoid default scope if possible. Prefer explicit
-scopes instead. If you really need to use it, use it with care.</p>
+<p>The goal of this challenge is to <strong>make contributing to open source projects a habit</strong>.</p>
+
+<p>You can see the slides over here:</p>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ombulabs/the-7-days-open-source-challenge" title="The 7 Days Open Source Challenge" target="_blank">The 7 Days Open Source Challenge</a> </strong> from <strong><a href="//www.slideshare.net/ombulabs" target="_blank">Ombu Labs, The Lean Software Boutique</a></strong> </div></p>
+
+<p>I did this challenge because I wanted to get back to contributing to a couple of projects that I currently maintain. It was great and I finally made some progress in <a href="https://github.com/DatabaseCleaner/database_cleaner/">DatabaseCleaner</a></p>
+
+<p>I hope that this challenge will encourage other developers to start contributing to their favorite projects.</p>
+
+<p>Here are a couple of ways that you can contribute to open source:</p>
+
+<ul>
+<li>Submit a new issue to a library. Make sure that it hasn&#39;t been reported yet. If it has, add meaningful information to the issue to make it easier to solve it</li>
+<li>Try to solve an existing issue. Find the lines of code that are causing the problem and submit a pull request</li>
+<li>If you can&#39;t solve it, write a failing scenario in the library&#39;s test suite</li>
+<li>Improve documentation where it&#39;s unclear or non-existent</li>
+</ul>
+
+<p>If you don&#39;t know where to begin, check out <a href="http://www.codetriage.com/">http://www.codetriage.com</a> or ping me (I&#39;m one of the maintainers of <a href="https://github.com/DatabaseCleaner/database_cleaner/">DatabaseCleaner</a> and <a href="https://github.com/bmabey/email-spec">EmailSpec</a> and I&#39;d appreciate your help)</p>
 
         </section>
 
@@ -159,12 +143,12 @@ scopes instead. If you really need to use it, use it with care.</p>
             
             <figure class="author-image">
               
-                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
-                <span class="hidden">Mauro Otonelli's Picture</span></a>
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50)">
+                <span class="hidden">Ernesto Tagwerker's Picture</span></a>
               
             </figure>
             <section class="author">
-              <h4> Mauro Otonelli </h4>
+              <h4> Ernesto Tagwerker </h4>
               <p>
                 We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
               </p>
@@ -174,15 +158,15 @@ scopes instead. If you really need to use it, use it with care.</p>
           <!-- Share links section -->
           <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Why using default_scope is a bad idea&amp;url=http://www.ombulabs.com/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=The 7 Days Open Source Challenge&amp;url=http://www.ombulabs.com/open-source/the-7-days-open-source-challenge.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/open-source/the-7-days-open-source-challenge.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/open-source/the-7-days-open-source-challenge.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
