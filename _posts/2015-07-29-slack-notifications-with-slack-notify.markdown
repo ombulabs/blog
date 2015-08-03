@@ -82,4 +82,4 @@ after "deploy", "notify:done"
 
 There are many different use cases, just make sure not to spam your team with
 too many notifications. At some point, you may want to set up a
-channel dedicated solely to notifications if you are a bigger team.
+channel dedicated solely to notifications if you are part of a bigger team.
