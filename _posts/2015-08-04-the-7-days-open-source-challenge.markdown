@@ -12,7 +12,7 @@ The rules are simple:
 
 * You have to do it for 7 days straight
 * If you can't do it one day, that breaks your streak
-* When you break your streak, you have to start over from 1
+* When you break your streak, you have to start over from day 1
 
 The goal of this challenge is to **make contributing to open source projects a habit**.
 
