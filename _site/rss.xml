@@ -8,14 +8,14 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 04 Aug 2015 05:55:00 +0200</pubDate>
+    <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
     <item>
       <title>The 7 Days Open Source Challenge</title>
       <link>blog url/open-source/the-7-days-open-source-challenge.html</link>
       <description>&lt;p&gt;Last Wednesday I gave a lightning talk about open source at the &lt;a href=&quot;http://www.meetup.com/rubyba/events/223814545/&quot;&gt;Buenos Aires Ruby Meetup&lt;/a&gt;. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.&lt;/p&gt;
 </description>
-      <pubDate>Tue, 04 Aug 2015 05:55:00 +0200</pubDate>
-      <dc:date>2015-08-04T05:55:00+02:00</dc:date>
+      <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
+      <dc:date>2015-08-04T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Slack notifications with Slack-Notify gem</title>
@@ -26,8 +26,8 @@ better than any other available platform of its kind. Slack provides
 &lt;a href=&quot;https://api.slack.com/incoming-webhooks&quot;&gt;WebHooks&lt;/a&gt;, which you can use to post
 messages to your team&amp;#39;s channels.&lt;/p&gt;
 </description>
-      <pubDate>Wed, 29 Jul 2015 19:40:00 +0200</pubDate>
-      <dc:date>2015-07-29T19:40:00+02:00</dc:date>
+      <pubDate>Wed, 29 Jul 2015 14:40:00 -0300</pubDate>
+      <dc:date>2015-07-29T14:40:00-03:00</dc:date>
     </item>
     <item>
       <title>Why using default_scope is a bad idea</title>
@@ -38,40 +38,40 @@ It can be useful for allowing soft-deletion in your models, by having a
 &lt;code&gt;deleted_on&lt;/code&gt; column on your model and setting the default scope to
 &lt;code&gt;deleted_on: nil&lt;/code&gt;&lt;/p&gt;
 </description>
-      <pubDate>Mon, 20 Jul 2015 11:55:00 +0200</pubDate>
-      <dc:date>2015-07-20T11:55:00+02:00</dc:date>
+      <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+      <dc:date>2015-07-20T06:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Mercado Pago Security Hole</title>
       <link>blog url/security/mercado-pago-security-vulnerability.html</link>
       <description>&lt;p&gt;On April 17th we discovered a security vulnerability in the &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/&quot;&gt;Mercado Pago API&lt;/a&gt;. Before disclosing this information, we contacted &lt;a href=&quot;http://www.mercadolibre.com/&quot;&gt;Mercado Libre&lt;/a&gt; and sent them a detailed report of the security hole and how to reproduce it.&lt;/p&gt;
 </description>
-      <pubDate>Wed, 15 Jul 2015 01:29:00 +0200</pubDate>
-      <dc:date>2015-07-15T01:29:00+02:00</dc:date>
+      <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+      <dc:date>2015-07-14T20:29:00-03:00</dc:date>
     </item>
     <item>
       <title>The Lean Startup Way</title>
       <link>blog url/lean-startup/the-lean-startup-way.html</link>
       <description>&lt;p&gt;At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.&lt;/p&gt;
 </description>
-      <pubDate>Wed, 01 Jul 2015 01:29:00 +0200</pubDate>
-      <dc:date>2015-07-01T01:29:00+02:00</dc:date>
+      <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+      <dc:date>2015-06-30T20:29:00-03:00</dc:date>
     </item>
     <item>
       <title>How to Git push with blocked ports</title>
       <link>blog url/git/github/how-to-git-push-with-blocked-ports.html</link>
       <description>&lt;p&gt;Often times I find myself working out of a coffee shop with a &lt;strong&gt;terrible Internet connection&lt;/strong&gt;. We have a nice office at &lt;a href=&quot;https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62&quot;&gt;OmbuLabs&lt;/a&gt; but there is still that &lt;em&gt;Je ne sais quoi&lt;/em&gt; at coffee shops.&lt;/p&gt;
 </description>
-      <pubDate>Sun, 28 Jun 2015 20:29:00 +0200</pubDate>
-      <dc:date>2015-06-28T20:29:00+02:00</dc:date>
+      <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+      <dc:date>2015-06-28T15:29:00-03:00</dc:date>
     </item>
     <item>
       <title>Our Definition of &quot;Done&quot;</title>
       <link>blog url/software-development/software-quality/our-definition-of-done.html</link>
       <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
 </description>
-      <pubDate>Thu, 18 Jun 2015 13:37:00 +0200</pubDate>
-      <dc:date>2015-06-18T13:37:00+02:00</dc:date>
+      <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+      <dc:date>2015-06-18T08:37:00-03:00</dc:date>
     </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
@@ -81,17 +81,17 @@ Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
 &lt;code&gt;Enumerable#grep&lt;/code&gt;.&lt;/p&gt;
 </description>
-      <pubDate>Thu, 09 Apr 2015 13:37:00 +0200</pubDate>
-      <dc:date>2015-04-09T13:37:00+02:00</dc:date>
+      <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+      <dc:date>2015-04-09T08:37:00-03:00</dc:date>
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular</title>
       <link>blog url/git/github/4-useful-github-tricks.html</link>
       <description>&lt;p&gt;If you are using git in 2015, you are probably also using &lt;a href=&quot;http://www.github.com&quot;&gt;Github&lt;/a&gt;, unless you&amp;#39;re self-hosting or still betting on &lt;a href=&quot;http://www.bitbucket.com&quot;&gt;Bitbucket&lt;/a&gt;.&lt;/p&gt;
 </description>
-      <pubDate>Mon, 19 Jan 2015 19:35:00 +0100</pubDate>
-      <dc:date>2015-01-19T19:35:00+01:00</dc:date>
+      <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
+      <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-08-04T05:55:00+02:00</dc:date>
+    <dc:date>2015-08-04T00:55:00-03:00</dc:date>
   </channel>
 </rss>
