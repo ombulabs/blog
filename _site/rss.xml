@@ -8,7 +8,15 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
+    <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
+    <item>
+      <title>Almundo's Bill Vulnerability</title>
+      <link>blog url/security/almundo-bill-vulnerability.html</link>
+      <description>&lt;p&gt;The other day a friend of mine reported a vulnerability in the &lt;a href=&quot;http://almundo.com/&quot;&gt;Almundo&lt;/a&gt; billing system. Since then, the vulnerability has been fixed by &lt;a href=&quot;http://superfactura.com.ar/&quot;&gt;Superfactura&lt;/a&gt;, their billing software provider.&lt;/p&gt;
+</description>
+      <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
+      <dc:date>2015-08-25T00:55:00-03:00</dc:date>
+    </item>
     <item>
       <title>The 7 Days Open Source Challenge</title>
       <link>blog url/open-source/the-7-days-open-source-challenge.html</link>
@@ -92,6 +100,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-08-04T00:55:00-03:00</dc:date>
+    <dc:date>2015-08-25T00:55:00-03:00</dc:date>
   </channel>
 </rss>
