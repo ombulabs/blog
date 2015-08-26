@@ -899,6 +899,18 @@ body:not(.post-template) .post-title {
     margin: 0 -13%;
 }
 
+.post-content .half-img {
+    width: 62%;
+    max-width: none;
+    margin: auto;
+}
+
+.post-content .medium-img {
+    width: 90%;
+    max-width: none;
+    margin: auto;
+}
+
 /* The author credit area after the post */
 .post-footer {
     position: relative;
