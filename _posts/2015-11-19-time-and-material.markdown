@@ -4,7 +4,6 @@ title: "Time and Material"
 date: 2015-11-19 03:55:00
 categories: ["software-development"]
 author: "etagwerker"
-excerpt_separator: "<!--more-->"
 ---
 
 As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
@@ -12,6 +11,8 @@ As of 2016, we will no longer work with clients on fixed bid projects. They are 
 All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.
 
 Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don't change while developing the project. That is a big **if**!
+
+<!--more-->
 
 ### Problem
 
