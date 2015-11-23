@@ -12,6 +12,8 @@ It can be useful for allowing soft-deletion in your models, by having a
 `deleted_on` column on your model and setting the default scope to
 `deleted_on: nil`
 
+<!--more-->
+
 ```ruby
 class Animal
   default_scope where(deleted_on: nil)

@@ -10,6 +10,8 @@ If you are using git in 2015, you are probably also using [Github](http://www.gi
 
 Below are some cool, useful tricks you can use on Github which can probably make your life easier:
 
+<!--more-->
+
 ## T
 
 This is probably the most-well known and most used. By hitting the T key while browsing a repository, the file finder comes up, which lets you type in any file and it will search for that filename in the repository.

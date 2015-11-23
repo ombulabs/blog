@@ -11,6 +11,8 @@ Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
 `Enumerable#grep`.
 
+<!--more-->
+
 `Enumerable#grep` can not always be used instead of `Enumerable#select`, but
 when it can, `#grep` provides better readability and a small speed improvement
 over `#select`.
