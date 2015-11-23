@@ -81,43 +81,6 @@ a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
 <code>deleted_on</code> column on your model and setting the default scope to
 <code>deleted_on: nil</code></p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Animal</span>
-  <span class="n">default_scope</span> <span class="n">where</span><span class="p">(</span><span class="ss">deleted_on</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div>
-<p>This will hide deleted records and only return non-deleted
-ones in your queries after setting <code>deleted_on</code> instead of
-calling <code>destroy</code>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Animal</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-  <span class="no">Animal</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="sb">`animals`</span> <span class="no">WHERE</span> <span class="sb">`animals`</span><span class="o">.</span><span class="n">`deleted_on</span><span class="sb">` IS NULL LIMIT 5</span>
-</code></pre></div>
-<p>Quite useful! However, <code>default_scope</code> has a dangerous behavior:
-<strong>it affects your model&#39;s initialization.</strong></p>
-
-<p>Say you were using STI on your <code>Animal</code> model, and you had a <code>default_scope</code>
-for always filtering your model by &quot;Cat&quot;:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Animal</span>
-  <span class="n">default_scope</span> <span class="n">where</span><span class="p">(</span><span class="ss">type</span><span class="p">:</span> <span class="s2">&quot;Cat&quot;</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div>
-<p>When you initialize a new Animal, it will always use the value defined in
-your default scope:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;</span> <span class="no">Animal</span><span class="o">.</span><span class="n">new</span>
-<span class="o">=&gt;</span> <span class="c1">#&lt;Animal id: nil, created_at: nil, updated_at: nil, type: &quot;Cat&quot;&gt;</span>
-</code></pre></div>
-<p>This can lead to some headaches when you&#39;re not aware of this side-effect, and
-depending on the default scoped attribute/value it can cause some pretty bad
-bugs.</p>
-
-<p>Also, I&#39;d like to mention the fact that it&#39;s very difficult to write queries
-once you have used <code>default_scope</code> on a model. For example:
-<code>Animal.where(&#39;deleted_on is not null&#39;)</code> won&#39;t work, you&#39;d need to use
-<code>Animal.unscoped</code>, which makes everything awkward. You also need to use
-<code>unscoped</code> carefully, because it will remove all scopes of the relation, not just
-the default scope.</p>
-
-<p>I recommend that you always avoid default scope if possible. Prefer explicit
-scopes instead. If you really need to use it, use it with care.</p>
  <a class="read-more" href="/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
