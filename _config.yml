@@ -10,6 +10,7 @@ baseurl: /blog
 domain_name: 'http://www.ombulabs.com'
 permalink: none
 category_dir: 'tags'
+excerpt_separator: "<!--more-->"
 
 # Details for the RSS feed generator
 url:            'blog url'
