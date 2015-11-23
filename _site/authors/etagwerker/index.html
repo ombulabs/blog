@@ -130,33 +130,6 @@
 <p>Almundo is one of the <a href="http://www.alexa.com/siteinfo/almundo.com.ar">biggest travel agencies in Argentina</a>. Their site is among the 250 most visited websites in the country.</p>
 
 <p>The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple <code>HTTP GET</code> request. No programming knowledge required.</p>
-
-<p>Basically, if you had bought anything from Almundo, you would have received an email with a link to your bill. Something like this:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">http://asatej.superfactura.com.ar/un_comprobante_pdf.php?s=1&amp;f=73455&amp;tc=F13&amp;tf=B
-</code></pre></div>
-<p>At plain sight, you can see the type of bill (<em>Factura B</em>) and the number of bill (<em>Factura #73455</em>)</p>
-
-<p>By entering this URL, you could see sensitive information about the client and what they had bought:</p>
-
-<ul>
-<li>Client&#39;s full name</li>
-<li>Client&#39;s CUIL (Tax identification number in Argentina)</li>
-<li>Client&#39;s address</li>
-<li>What they bought. For example: <strong>EZEPUJEZE</strong> for a flight ticket from <strong>Ezeiza</strong> (Buenos Aires, Argentina) to <strong>Punta Cana</strong> (México)</li>
-<li>How much they paid</li>
-</ul>
-
-<p>Here is a sample of one of the <strong>public bills</strong> that should have been <strong>private</strong>:</p>
-
-<p><img src="/blog/assets/images/factura-example.jpg" alt="One of the non-private bills" class="medium-img"></p>
-
-<p>Fortunately, you couldn&#39;t see when this trip was happening.</p>
-
-<p>During the many days that this vulnerability was on production, someone with some programming knowledge could have created a script that iterated from 1 to 100,000 (for the bill number) and from A to C (for the bill type) sending GET requests and downloading all the billing information from Almundo.</p>
-
-<p>Considering that <a href="http://superfactura.com.ar/">Superfactura</a> has a few clients, we can only assume that this vulnerability was also in production for all of their clients.</p>
-
-<p>At the time of this publication, the company had not released any information about this vulnerability nor if any sensitive data was downloaded by unauthorized users.</p>
  <a class="read-more" href="/blog/security/almundo-bill-vulnerability.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -204,27 +177,6 @@
 <li>If you can&#39;t do it one day, that breaks your streak</li>
 <li>When you break your streak, you have to start over from day 1</li>
 </ul>
-
-<p>The goal of this challenge is to <strong>make contributing to open source projects a habit</strong>.</p>
-
-<p>You can see the slides over here:</p>
-
-<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ombulabs/the-7-days-open-source-challenge" title="The 7 Days Open Source Challenge" target="_blank">The 7 Days Open Source Challenge</a> </strong> from <strong><a href="//www.slideshare.net/ombulabs" target="_blank">Ombu Labs, The Lean Software Boutique</a></strong> </div></p>
-
-<p>I did this challenge because I wanted to get back to contributing to a couple of projects that I currently maintain. It was great and I finally made some progress in <a href="https://github.com/DatabaseCleaner/database_cleaner/">DatabaseCleaner</a></p>
-
-<p>I hope that this challenge will encourage other developers to start contributing to their favorite projects.</p>
-
-<p>Here are a couple of ways that you can contribute to open source:</p>
-
-<ul>
-<li>Submit a new issue to a library. Make sure that it hasn&#39;t been reported yet. If it has, add meaningful information to the issue to make it easier to solve it</li>
-<li>Try to solve an existing issue. Find the lines of code that are causing the problem and submit a pull request</li>
-<li>If you can&#39;t solve it, write a failing scenario in the library&#39;s test suite</li>
-<li>Improve documentation where it&#39;s unclear or non-existent</li>
-</ul>
-
-<p>If you don&#39;t know where to begin, check out <a href="http://www.codetriage.com/">http://www.codetriage.com</a> or ping me (I&#39;m one of the maintainers of <a href="https://github.com/DatabaseCleaner/database_cleaner/">DatabaseCleaner</a> and <a href="https://github.com/bmabey/email-spec">EmailSpec</a> and I&#39;d appreciate your help)</p>
  <a class="read-more" href="/blog/open-source/the-7-days-open-source-challenge.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -270,153 +222,6 @@
         <p>On April 17th we discovered a security vulnerability in the <a href="https://www.mercadopago.com.ar/developers/en/api-docs/">Mercado Pago API</a>. Before disclosing this information, we contacted <a href="http://www.mercadolibre.com/">Mercado Libre</a> and sent them a detailed report of the security hole and how to reproduce it.</p>
 
 <p>The vulnerability allowed anyone to get an access token without using the right secret for an account.</p>
-
-<p>You can see how the authentication process works on Mercado Pago over here: <a href="https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/">https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/</a></p>
-
-<p>After 7 hours, Mercado Pago fixed the vulnerability in their production environment.</p>
-
-<h2>How we reproduced the bug</h2>
-
-<p>This example uses Ruby 2.1.2 and the <a href="https://rubygems.org/gems/mercadopago">mercadopago</a> gem.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">2.1.2 :001 &gt; token = MercadoPago::Authentication.access_token(&quot;8872&quot;, &quot;lalalala&quot;)
-</code></pre></div>
-<p>The first parameter is the client id (an account in Mercado Pago) and the second parameter is the secret (only the account holder should know this)</p>
-
-<p>For client id we used <code>8872</code> which doesn&#39;t belong to us and for secret we used <code>lalalala</code> to show that it wasn&#39;t really <em>the right secret.</em></p>
-
-<p>With that information, we were able to acquire the token. With it you can access a lot of information associated with the payments in the account.</p>
-
-<p>For example:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">002</span> <span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="no">MercadoPago</span><span class="o">::</span><span class="no">Collection</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">token</span><span class="o">[</span><span class="s2">&quot;access_token&quot;</span><span class="o">]</span><span class="p">,</span> <span class="ss">status</span><span class="p">:</span> <span class="ss">:approved</span><span class="p">)</span>
-</code></pre></div>
-<p>With this query, you could see all the approved transactions for an account <strong>that didn&#39;t belong to you</strong>.</p>
-
-<p>For example:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">=&gt;</span> <span class="p">{</span><span class="s2">&quot;paging&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;total&quot;</span><span class="o">=&gt;</span><span class="mi">98</span><span class="p">,</span> <span class="s2">&quot;limit&quot;</span><span class="o">=&gt;</span><span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;offset&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">},</span>
-    <span class="s2">&quot;results&quot;</span><span class="o">=&gt;[</span>
-      <span class="p">{</span><span class="s2">&quot;collection&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">753859418</span><span class="p">,</span> <span class="s2">&quot;site_id&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;MLA&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;date_created&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-13T16:58:20.000-04:00&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;date_approved&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-13T17:00:38.000-04:00&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;last_modified&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-13T17:00:38.000-04:00&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;money_release_date&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-15T17:00:38.000-04:00&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;operation_type&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;regular_payment&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;collector_id&quot;</span><span class="o">=&gt;</span><span class="mi">16605960</span><span class="p">,</span> <span class="s2">&quot;sponsor_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-       <span class="s2">&quot;payer&quot;</span><span class="o">=&gt;</span><span class="p">{</span>
-         <span class="s2">&quot;nickname&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;XOMBULABSX&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;first_name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;JON&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;last_name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;SNOW&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;phone&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;area_code&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;291&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;123412&quot;</span><span class="p">,</span> <span class="s2">&quot;extension&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">},</span>
-         <span class="s2">&quot;email&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;security@ombulabs.com&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">83110350</span><span class="p">,</span>
-         <span class="s2">&quot;identification&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">}},</span>
-         <span class="s2">&quot;external_reference&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;1448&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;merchant_order_id&quot;</span><span class="o">=&gt;</span><span class="mi">11567450</span><span class="p">,</span>
-         <span class="s2">&quot;reason&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Premium package&quot;</span><span class="p">,</span> <span class="s2">&quot;currency_id&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;ARS&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;transaction_amount&quot;</span><span class="o">=&gt;</span><span class="mi">81</span><span class="p">,</span> <span class="s2">&quot;total_paid_amount&quot;</span><span class="o">=&gt;</span><span class="mi">81</span><span class="p">,</span>
-         <span class="s2">&quot;shipping_cost&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-         <span class="s2">&quot;account_money_amount&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-         <span class="s2">&quot;mercadopago_fee&quot;</span><span class="o">=&gt;</span><span class="mi">4</span><span class="o">.</span><span class="mi">85</span><span class="p">,</span>
-         <span class="s2">&quot;net_received_amount&quot;</span><span class="o">=&gt;</span><span class="mi">76</span><span class="o">.</span><span class="mi">15</span><span class="p">,</span>
-         <span class="s2">&quot;marketplace_fee&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;coupon_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;coupon_amount&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;coupon_fee&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;finance_fee&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-         <span class="s2">&quot;status&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;approved&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;status_detail&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;accredited&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;status_code&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;00&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;released&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;payment_type&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;installments&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span>
-         <span class="s2">&quot;installment_amount&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;deferred_period&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-         <span class="s2">&quot;cardholder&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;JON SNOW&quot;</span><span class="p">,</span> <span class="s2">&quot;identification&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;DNI&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;26000000&quot;</span><span class="p">}},</span>
-         <span class="s2">&quot;statement_descriptor&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;WWW.MERCADOPAGO.COM&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;transaction_order_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;marketplace&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;NONE&quot;</span><span class="p">,</span> <span class="s2">&quot;tags&quot;</span><span class="o">=&gt;[]</span><span class="p">,</span>
-         <span class="s2">&quot;notification_url&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">}},</span>
-      <span class="p">{</span><span class="s2">&quot;collection&quot;</span><span class="o">=&gt;</span>
-        <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">756415807</span><span class="p">,</span>
-        <span class="s2">&quot;site_id&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;MLA&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;date_created&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-20T15:42:35.000-04:00&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;date_approved&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-20T15:42:35.000-04:00&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;last_modified&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-20T15:42:35.000-04:00&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;money_release_date&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;2014-03-22T15:42:35.000-04:00&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;operation_type&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;regular_payment&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;collector_id&quot;</span><span class="o">=&gt;</span><span class="mi">16605960</span><span class="p">,</span>
-        <span class="s2">&quot;sponsor_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;payer&quot;</span><span class="o">=&gt;</span><span class="p">{</span>
-          <span class="s2">&quot;nickname&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;YOURNICKNAME&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;first_name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Matias&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;last_name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;OMBU&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;phone&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;area_code&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;291&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;4000000&quot;</span><span class="p">,</span> <span class="s2">&quot;extension&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">},</span>
-          <span class="s2">&quot;email&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;hola@ombulabs.com&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">18878708</span><span class="p">,</span>
-          <span class="s2">&quot;identification&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">}},</span>
-        <span class="s2">&quot;external_reference&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;1457&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;merchant_order_id&quot;</span><span class="o">=&gt;</span><span class="mi">13031193</span><span class="p">,</span>
-        <span class="s2">&quot;reason&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;Premium package&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;currency_id&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;ARS&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;transaction_amount&quot;</span><span class="o">=&gt;</span><span class="mi">81</span><span class="p">,</span>
-        <span class="s2">&quot;total_paid_amount&quot;</span><span class="o">=&gt;</span><span class="mi">81</span><span class="p">,</span>
-        <span class="s2">&quot;shipping_cost&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;account_money_amount&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;mercadopago_fee&quot;</span><span class="o">=&gt;</span><span class="mi">4</span><span class="o">.</span><span class="mi">85</span><span class="p">,</span>
-        <span class="s2">&quot;net_received_amount&quot;</span><span class="o">=&gt;</span><span class="mi">76</span><span class="o">.</span><span class="mi">15</span><span class="p">,</span>
-        <span class="s2">&quot;marketplace_fee&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;coupon_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;coupon_amount&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;coupon_fee&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;finance_fee&quot;</span><span class="o">=&gt;</span><span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;status&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;approved&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;status_detail&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;accredited&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;status_code&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;00&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;released&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;payment_type&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;credit_card&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;installments&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span>
-        <span class="s2">&quot;installment_amount&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;deferred_period&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;cardholder&quot;</span><span class="o">=&gt;</span>
-          <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-           <span class="s2">&quot;identification&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">}},</span>
-        <span class="s2">&quot;statement_descriptor&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;WWW.MERCADOPAGO.COM&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;transaction_order_id&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">,</span>
-        <span class="s2">&quot;marketplace&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;NONE&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;tags&quot;</span><span class="o">=&gt;[]</span><span class="p">,</span>
-        <span class="s2">&quot;notification_url&quot;</span><span class="o">=&gt;</span><span class="kp">nil</span><span class="p">}},</span>
-        <span class="o">.</span><span class="n">.</span><span class="o">.</span>
-      <span class="p">}</span>
-</code></pre></div>
-<p><em>The sensitive information in this code snippet has been intentionally changed</em></p>
-
-<p>So, during the time that this vulnerability was live (at least 7 hours) an attacker could have used it to:</p>
-
-<ul>
-<li><p>Find information about all the payments that your account had received since you started using the service</p></li>
-<li><p>Find information about your clients, their DNI, name, phone number</p></li>
-</ul>
-
-<p>All the attacker needed to exploit this vulnerability was a Mercado Pago account ID and some basic tech knowledge.</p>
-
-<h2>How we discovered this bug</h2>
-
-<p>At <a href="http://www.ombushop.com">OmbuShop</a>, our integration tests use the Mercado Pago sandbox to check that the amount that a client has to pay is correct. I know that this isn&#39;t ideal (or is it?) but it&#39;s as real as it gets for our integration tests.</p>
-
-<p>One of our tests checked that you couldn&#39;t get collections information with the wrong user credentials. When the test started failing in our continuous tests, we started digging around and found this security hole.</p>
-
-<h2>What worries me</h2>
-
-<p>It&#39;s hard to understand how such a big payment processor never published information about this security hole. I would expect them to know if some information was accessed by people who didn&#39;t have access to it.</p>
-
-<p>They could check their access logs and see who accessed their API using a secret that wasn&#39;t the right one. Then they could inform their customers of this problem and warn them about this situation.</p>
-
-<p>Mercado Pago, a product of Mercado Libre (<a href="http://www.nasdaq.com/symbol/meli">$MELI</a>) which is a publicly traded company, doesn&#39;t even have public versioning information of their API nor a continuous integration suite that would catch such an obvious vulnerability.</p>
-
-<p>Maybe I am just used to the security reports published by Github about <a href="https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation">their vulnerabilities</a>. Maybe Github is way more serious than Mercado Pago about privacy and online security.</p>
-
-<p>I think that Mercado Pago needs to step up their game and be more transparent about their platform and user privacy.</p>
-
-<p>A good place to start would be a better way to receive security vulnerability reports and disclosing information about their security problems.</p>
-
-<p>Until today, they haven&#39;t disclosed any information about this security hole and it&#39;s very hard to find a way to report a security issue to them.</p>
  <a class="read-more" href="/blog/security/mercado-pago-security-vulnerability.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -458,34 +263,6 @@
         <p>At <a href="http://www.ombulabs.com">OmbuLabs</a> we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.</p>
 
 <p>It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.</p>
-
-<p>And we have ran many experiments to create and maintain these products:</p>
-
-<ul>
-<li><a href="http://www.ombushop.com/">OmbuShop</a>: The best way to setup your online shop in Latin America. A SaaS product that enables businesses to easily setup their online shop.</li>
-<li><a href="http://www.vidrieras.in/">Vidrieras.in</a>: A directory of businesses in Argentina.</li>
-<li><a href="http://bolognesa.herokuapp.com/">Bolognesa</a>: A <a href="http://pomodorotechnique.com/">Pomodoro</a> tracker.</li>
-</ul>
-
-<p>With client projects, we first need to explain what the <a href="http://theleanstartup.com/">Lean Startup</a> methodology is. The best clients we have had already had an understanding of the methodology.</p>
-
-<p>Once they understand it, we can work with them and define their minimum viable product scope. This minimal project will usually take between one and two months. This time requirement is very important, because it will help us to narrow the scope.</p>
-
-<p>The idea is to test their core hypotheses with their target market.</p>
-
-<p>Once we have designed, implemented, tested and deployed their <a href="http://leanstack.com/minimum-viable-product/">MVP</a>, it&#39;s time to start gathering data about the target market. This is how the build, measure, learn cycle begins.</p>
-
-<p>Every time we deploy a product, we need to make sure that we are tracking the right numbers. For basic projects we prefer <a href="http://www.google.com/analytics/">Google Analytics</a>, for more complex projects we prefer <a href="https://mixpanel.com/">Mixpanel</a>.</p>
-
-<p>If it is an e-commerce application, we need to make sure to track the conversions from day 1. If it is a SaaS application, we need to track the funnels from day 1.</p>
-
-<p>This data will allow us to continue improving the product.</p>
-
-<p>Every time we finish an iteration, we should measure the key indicators and make sure that we have improved the product. If we see the numbers drop, we should rollback to the previous state of the application.</p>
-
-<p>We won&#39;t suggest that you A/B test everything from day 1, but some changes will be A/B tested to confirm that the change actually improves the key metric we are trying to improve.</p>
-
-<p>We truly believe that the Lean Startup way is the best for both our clients and us. We want to build successful products for them, so that we can continue working with them over a long period of time. It&#39;s a <strong>win/win</strong> situation.</p>
  <a class="read-more" href="/blog/lean-startup/the-lean-startup-way.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -529,20 +306,6 @@
 <p>The cool thing about <a href="https://git-scm.com/">Git</a> is that you can <code>git commit</code> all your changes while enjoying a cup of coffee and <code>git push</code> later (when you&#39;re back at home with a decent connection)</p>
 
 <p>But what if you want to <code>git push</code> from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).</p>
-
-<p>If your Git remote repository supports HTTPS, you can easily push to it by following these steps:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">git remote add origin-https https://github.com/DatabaseCleaner/database_cleaner.git
-git push origin-https master
-</code></pre></div>
-<p>A Git repository can have as many remote repositories as you want, so I like to keep <code>origin</code> and <code>origin-https</code> to <code>git push</code> whenever I want.</p>
-
-<p>You will have to enter your username and password to authenticate with Github.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$ git push origin-https master
-Username for &#39;https://github.com&#39;: etagwerker
-Password for &#39;https://etagwerker@github.com&#39;:
-Everything up-to-date
-</code></pre></div>
-<p>Now you can <code>git push</code> even on shitty Internet connections.</p>
  <a class="read-more" href="/blog/git/github/how-to-git-push-with-blocked-ports.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -586,24 +349,6 @@ Everything up-to-date
         <p>Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a <strong>really long time</strong>? Maybe you have. Is it &quot;done&quot;?</p>
 
 <p>That is a tough question, so I&#39;ll write down <em>our definition of done</em>.</p>
-
-<h2>When is a feature done?</h2>
-
-<ul>
-<li>The feature does what it is expected to do</li>
-<li>If it has a user interface, the <a href="http://www.helloerik.com/ux-is-not-ui">UX</a> is simple and good enough: A <em>human</em> can use it!</li>
-<li>If it is code for other programmers, the <a href="http://c2.com/cgi/wiki?InterfaceSegregationPrinciple">public contract</a> is clear: A programmer read the documentation and use it</li>
-<li>It has a <a href="http://c2.com/cgi/wiki?CodeCoverage">decent spec</a>, which covers at least two scenarios (not just the happy path)</li>
-<li>It is fast!</li>
-<li>The build passes (it doesn&#39;t break any of the existing specs)</li>
-<li>The code is easy to maintain (<a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a>&#39;ed)</li>
-</ul>
-
-<p>Have you spent 2 days in a feature that should&#39;ve been done in 2 hours? Have you spent 2 hours on a bug fix that should&#39;ve taken you 8 hours? If so, why?</p>
-
-<p>If the feature is big, break it into smaller features. This will make it easier to move ahead.</p>
-
-<p>Before you submit your <a href="https://help.github.com/articles/using-pull-requests">pull request</a>, make sure that you have considered this list.</p>
  <a class="read-more" href="/blog/software-development/software-quality/our-definition-of-done.html">Read more &raquo;</a>
     </section>
     <footer class="post-meta">
@@ -669,7 +414,7 @@ Everything up-to-date
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-58792073-1']);
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
