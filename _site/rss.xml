@@ -29,33 +29,6 @@
 &lt;p&gt;Almundo is one of the &lt;a href=&quot;http://www.alexa.com/siteinfo/almundo.com.ar&quot;&gt;biggest travel agencies in Argentina&lt;/a&gt;. Their site is among the 250 most visited websites in the country.&lt;/p&gt;
 
 &lt;p&gt;The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple &lt;code&gt;HTTP GET&lt;/code&gt; request. No programming knowledge required.&lt;/p&gt;
-
-&lt;p&gt;Basically, if you had bought anything from Almundo, you would have received an email with a link to your bill. Something like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;http://asatej.superfactura.com.ar/un_comprobante_pdf.php?s=1&amp;amp;f=73455&amp;amp;tc=F13&amp;amp;tf=B
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;At plain sight, you can see the type of bill (&lt;em&gt;Factura B&lt;/em&gt;) and the number of bill (&lt;em&gt;Factura #73455&lt;/em&gt;)&lt;/p&gt;
-
-&lt;p&gt;By entering this URL, you could see sensitive information about the client and what they had bought:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Client&amp;#39;s full name&lt;/li&gt;
-&lt;li&gt;Client&amp;#39;s CUIL (Tax identification number in Argentina)&lt;/li&gt;
-&lt;li&gt;Client&amp;#39;s address&lt;/li&gt;
-&lt;li&gt;What they bought. For example: &lt;strong&gt;EZEPUJEZE&lt;/strong&gt; for a flight ticket from &lt;strong&gt;Ezeiza&lt;/strong&gt; (Buenos Aires, Argentina) to &lt;strong&gt;Punta Cana&lt;/strong&gt; (México)&lt;/li&gt;
-&lt;li&gt;How much they paid&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Here is a sample of one of the &lt;strong&gt;public bills&lt;/strong&gt; that should have been &lt;strong&gt;private&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/blog/assets/images/factura-example.jpg&quot; alt=&quot;One of the non-private bills&quot; class=&quot;medium-img&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Fortunately, you couldn&amp;#39;t see when this trip was happening.&lt;/p&gt;
-
-&lt;p&gt;During the many days that this vulnerability was on production, someone with some programming knowledge could have created a script that iterated from 1 to 100,000 (for the bill number) and from A to C (for the bill type) sending GET requests and downloading all the billing information from Almundo.&lt;/p&gt;
-
-&lt;p&gt;Considering that &lt;a href=&quot;http://superfactura.com.ar/&quot;&gt;Superfactura&lt;/a&gt; has a few clients, we can only assume that this vulnerability was also in production for all of their clients.&lt;/p&gt;
-
-&lt;p&gt;At the time of this publication, the company had not released any information about this vulnerability nor if any sensitive data was downloaded by unauthorized users.&lt;/p&gt;
 </description>
       <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
       <dc:date>2015-08-25T00:55:00-03:00</dc:date>
@@ -72,27 +45,6 @@
 &lt;li&gt;If you can&amp;#39;t do it one day, that breaks your streak&lt;/li&gt;
 &lt;li&gt;When you break your streak, you have to start over from day 1&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;The goal of this challenge is to &lt;strong&gt;make contributing to open source projects a habit&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can see the slides over here:&lt;/p&gt;
-
-&lt;p&gt;&lt;iframe src=&quot;//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B&quot; width=&quot;510&quot; height=&quot;420&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&quot; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;//www.slideshare.net/ombulabs/the-7-days-open-source-challenge&quot; title=&quot;The 7 Days Open Source Challenge&quot; target=&quot;_blank&quot;&gt;The 7 Days Open Source Challenge&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;//www.slideshare.net/ombulabs&quot; target=&quot;_blank&quot;&gt;Ombu Labs, The Lean Software Boutique&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;I did this challenge because I wanted to get back to contributing to a couple of projects that I currently maintain. It was great and I finally made some progress in &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner/&quot;&gt;DatabaseCleaner&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope that this challenge will encourage other developers to start contributing to their favorite projects.&lt;/p&gt;
-
-&lt;p&gt;Here are a couple of ways that you can contribute to open source:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Submit a new issue to a library. Make sure that it hasn&amp;#39;t been reported yet. If it has, add meaningful information to the issue to make it easier to solve it&lt;/li&gt;
-&lt;li&gt;Try to solve an existing issue. Find the lines of code that are causing the problem and submit a pull request&lt;/li&gt;
-&lt;li&gt;If you can&amp;#39;t solve it, write a failing scenario in the library&amp;#39;s test suite&lt;/li&gt;
-&lt;li&gt;Improve documentation where it&amp;#39;s unclear or non-existent&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;If you don&amp;#39;t know where to begin, check out &lt;a href=&quot;http://www.codetriage.com/&quot;&gt;http://www.codetriage.com&lt;/a&gt; or ping me (I&amp;#39;m one of the maintainers of &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner/&quot;&gt;DatabaseCleaner&lt;/a&gt; and &lt;a href=&quot;https://github.com/bmabey/email-spec&quot;&gt;EmailSpec&lt;/a&gt; and I&amp;#39;d appreciate your help)&lt;/p&gt;
 </description>
       <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
       <dc:date>2015-08-04T00:55:00-03:00</dc:date>
@@ -127,153 +79,6 @@ It can be useful for allowing soft-deletion in your models, by having a
       <description>&lt;p&gt;On April 17th we discovered a security vulnerability in the &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/&quot;&gt;Mercado Pago API&lt;/a&gt;. Before disclosing this information, we contacted &lt;a href=&quot;http://www.mercadolibre.com/&quot;&gt;Mercado Libre&lt;/a&gt; and sent them a detailed report of the security hole and how to reproduce it.&lt;/p&gt;
 
 &lt;p&gt;The vulnerability allowed anyone to get an access token without using the right secret for an account.&lt;/p&gt;
-
-&lt;p&gt;You can see how the authentication process works on Mercado Pago over here: &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/&quot;&gt;https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;After 7 hours, Mercado Pago fixed the vulnerability in their production environment.&lt;/p&gt;
-
-&lt;h2&gt;How we reproduced the bug&lt;/h2&gt;
-
-&lt;p&gt;This example uses Ruby 2.1.2 and the &lt;a href=&quot;https://rubygems.org/gems/mercadopago&quot;&gt;mercadopago&lt;/a&gt; gem.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;2.1.2 :001 &amp;gt; token = MercadoPago::Authentication.access_token(&amp;quot;8872&amp;quot;, &amp;quot;lalalala&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;The first parameter is the client id (an account in Mercado Pago) and the second parameter is the secret (only the account holder should know this)&lt;/p&gt;
-
-&lt;p&gt;For client id we used &lt;code&gt;8872&lt;/code&gt; which doesn&amp;#39;t belong to us and for secret we used &lt;code&gt;lalalala&lt;/code&gt; to show that it wasn&amp;#39;t really &lt;em&gt;the right secret.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;With that information, we were able to acquire the token. With it you can access a lot of information associated with the payments in the account.&lt;/p&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;002&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;MercadoPago&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Collection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:approved&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;With this query, you could see all the approved transactions for an account &lt;strong&gt;that didn&amp;#39;t belong to you&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;paging&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;total&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;98&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;limit&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;offset&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;s2&quot;&gt;&amp;quot;results&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;[&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;collection&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;753859418&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;site_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;MLA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;date_created&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-13T16:58:20.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;date_approved&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-13T17:00:38.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;last_modified&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-13T17:00:38.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;money_release_date&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-15T17:00:38.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;operation_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;regular_payment&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;collector_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16605960&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;sponsor_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-       &lt;span class=&quot;s2&quot;&gt;&amp;quot;payer&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;nickname&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;XOMBULABSX&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;first_name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;JON&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;last_name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;SNOW&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;phone&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;area_code&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;291&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;123412&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;extension&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;security@ombulabs.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;83110350&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;identification&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;external_reference&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;1448&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;merchant_order_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11567450&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;reason&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Premium package&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;currency_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ARS&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;transaction_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;total_paid_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;shipping_cost&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;account_money_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;mercadopago_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;net_received_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;marketplace_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;finance_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;status&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;approved&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;status_detail&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;accredited&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;status_code&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;released&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;payment_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;credit_card&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;installments&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;installment_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;deferred_period&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;cardholder&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;JON SNOW&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;identification&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;DNI&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;26000000&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;statement_descriptor&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;WWW.MERCADOPAGO.COM&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;transaction_order_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;marketplace&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;NONE&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;tags&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;[]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;s2&quot;&gt;&amp;quot;notification_url&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;collection&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;756415807&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;site_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;MLA&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;date_created&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-20T15:42:35.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;date_approved&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-20T15:42:35.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;last_modified&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-20T15:42:35.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;money_release_date&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2014-03-22T15:42:35.000-04:00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;operation_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;regular_payment&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;collector_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16605960&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;sponsor_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;payer&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;nickname&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;YOURNICKNAME&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;first_name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Matias&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;last_name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;OMBU&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;phone&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;area_code&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;291&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;4000000&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;extension&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;hola@ombulabs.com&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;18878708&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-          &lt;span class=&quot;s2&quot;&gt;&amp;quot;identification&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;external_reference&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;1457&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;merchant_order_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13031193&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;reason&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Premium package&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;currency_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;ARS&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;transaction_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;total_paid_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;shipping_cost&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;account_money_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;mercadopago_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;net_received_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;76&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marketplace_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;coupon_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;finance_fee&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;status&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;approved&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;status_detail&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;accredited&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;status_code&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;00&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;released&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;yes&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;payment_type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;credit_card&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;installments&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;installment_amount&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;deferred_period&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;cardholder&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-           &lt;span class=&quot;s2&quot;&gt;&amp;quot;identification&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;statement_descriptor&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;WWW.MERCADOPAGO.COM&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;transaction_order_id&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;marketplace&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;NONE&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;tags&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;[]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s2&quot;&gt;&amp;quot;notification_url&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}},&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;The sensitive information in this code snippet has been intentionally changed&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;So, during the time that this vulnerability was live (at least 7 hours) an attacker could have used it to:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Find information about all the payments that your account had received since you started using the service&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Find information about your clients, their DNI, name, phone number&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;All the attacker needed to exploit this vulnerability was a Mercado Pago account ID and some basic tech knowledge.&lt;/p&gt;
-
-&lt;h2&gt;How we discovered this bug&lt;/h2&gt;
-
-&lt;p&gt;At &lt;a href=&quot;http://www.ombushop.com&quot;&gt;OmbuShop&lt;/a&gt;, our integration tests use the Mercado Pago sandbox to check that the amount that a client has to pay is correct. I know that this isn&amp;#39;t ideal (or is it?) but it&amp;#39;s as real as it gets for our integration tests.&lt;/p&gt;
-
-&lt;p&gt;One of our tests checked that you couldn&amp;#39;t get collections information with the wrong user credentials. When the test started failing in our continuous tests, we started digging around and found this security hole.&lt;/p&gt;
-
-&lt;h2&gt;What worries me&lt;/h2&gt;
-
-&lt;p&gt;It&amp;#39;s hard to understand how such a big payment processor never published information about this security hole. I would expect them to know if some information was accessed by people who didn&amp;#39;t have access to it.&lt;/p&gt;
-
-&lt;p&gt;They could check their access logs and see who accessed their API using a secret that wasn&amp;#39;t the right one. Then they could inform their customers of this problem and warn them about this situation.&lt;/p&gt;
-
-&lt;p&gt;Mercado Pago, a product of Mercado Libre (&lt;a href=&quot;http://www.nasdaq.com/symbol/meli&quot;&gt;$MELI&lt;/a&gt;) which is a publicly traded company, doesn&amp;#39;t even have public versioning information of their API nor a continuous integration suite that would catch such an obvious vulnerability.&lt;/p&gt;
-
-&lt;p&gt;Maybe I am just used to the security reports published by Github about &lt;a href=&quot;https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation&quot;&gt;their vulnerabilities&lt;/a&gt;. Maybe Github is way more serious than Mercado Pago about privacy and online security.&lt;/p&gt;
-
-&lt;p&gt;I think that Mercado Pago needs to step up their game and be more transparent about their platform and user privacy.&lt;/p&gt;
-
-&lt;p&gt;A good place to start would be a better way to receive security vulnerability reports and disclosing information about their security problems.&lt;/p&gt;
-
-&lt;p&gt;Until today, they haven&amp;#39;t disclosed any information about this security hole and it&amp;#39;s very hard to find a way to report a security issue to them.&lt;/p&gt;
 </description>
       <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
       <dc:date>2015-07-14T20:29:00-03:00</dc:date>
@@ -284,34 +89,6 @@ It can be useful for allowing soft-deletion in your models, by having a
       <description>&lt;p&gt;At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.&lt;/p&gt;
 
 &lt;p&gt;It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.&lt;/p&gt;
-
-&lt;p&gt;And we have ran many experiments to create and maintain these products:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.ombushop.com/&quot;&gt;OmbuShop&lt;/a&gt;: The best way to setup your online shop in Latin America. A SaaS product that enables businesses to easily setup their online shop.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.vidrieras.in/&quot;&gt;Vidrieras.in&lt;/a&gt;: A directory of businesses in Argentina.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://bolognesa.herokuapp.com/&quot;&gt;Bolognesa&lt;/a&gt;: A &lt;a href=&quot;http://pomodorotechnique.com/&quot;&gt;Pomodoro&lt;/a&gt; tracker.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;With client projects, we first need to explain what the &lt;a href=&quot;http://theleanstartup.com/&quot;&gt;Lean Startup&lt;/a&gt; methodology is. The best clients we have had already had an understanding of the methodology.&lt;/p&gt;
-
-&lt;p&gt;Once they understand it, we can work with them and define their minimum viable product scope. This minimal project will usually take between one and two months. This time requirement is very important, because it will help us to narrow the scope.&lt;/p&gt;
-
-&lt;p&gt;The idea is to test their core hypotheses with their target market.&lt;/p&gt;
-
-&lt;p&gt;Once we have designed, implemented, tested and deployed their &lt;a href=&quot;http://leanstack.com/minimum-viable-product/&quot;&gt;MVP&lt;/a&gt;, it&amp;#39;s time to start gathering data about the target market. This is how the build, measure, learn cycle begins.&lt;/p&gt;
-
-&lt;p&gt;Every time we deploy a product, we need to make sure that we are tracking the right numbers. For basic projects we prefer &lt;a href=&quot;http://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt;, for more complex projects we prefer &lt;a href=&quot;https://mixpanel.com/&quot;&gt;Mixpanel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;If it is an e-commerce application, we need to make sure to track the conversions from day 1. If it is a SaaS application, we need to track the funnels from day 1.&lt;/p&gt;
-
-&lt;p&gt;This data will allow us to continue improving the product.&lt;/p&gt;
-
-&lt;p&gt;Every time we finish an iteration, we should measure the key indicators and make sure that we have improved the product. If we see the numbers drop, we should rollback to the previous state of the application.&lt;/p&gt;
-
-&lt;p&gt;We won&amp;#39;t suggest that you A/B test everything from day 1, but some changes will be A/B tested to confirm that the change actually improves the key metric we are trying to improve.&lt;/p&gt;
-
-&lt;p&gt;We truly believe that the Lean Startup way is the best for both our clients and us. We want to build successful products for them, so that we can continue working with them over a long period of time. It&amp;#39;s a &lt;strong&gt;win/win&lt;/strong&gt; situation.&lt;/p&gt;
 </description>
       <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
       <dc:date>2015-06-30T20:29:00-03:00</dc:date>
@@ -324,20 +101,6 @@ It can be useful for allowing soft-deletion in your models, by having a
 &lt;p&gt;The cool thing about &lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt; is that you can &lt;code&gt;git commit&lt;/code&gt; all your changes while enjoying a cup of coffee and &lt;code&gt;git push&lt;/code&gt; later (when you&amp;#39;re back at home with a decent connection)&lt;/p&gt;
 
 &lt;p&gt;But what if you want to &lt;code&gt;git push&lt;/code&gt; from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).&lt;/p&gt;
-
-&lt;p&gt;If your Git remote repository supports HTTPS, you can easily push to it by following these steps:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;git remote add origin-https https://github.com/DatabaseCleaner/database_cleaner.git
-git push origin-https master
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;A Git repository can have as many remote repositories as you want, so I like to keep &lt;code&gt;origin&lt;/code&gt; and &lt;code&gt;origin-https&lt;/code&gt; to &lt;code&gt;git push&lt;/code&gt; whenever I want.&lt;/p&gt;
-
-&lt;p&gt;You will have to enter your username and password to authenticate with Github.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;$ git push origin-https master
-Username for &amp;#39;https://github.com&amp;#39;: etagwerker
-Password for &amp;#39;https://etagwerker@github.com&amp;#39;:
-Everything up-to-date
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Now you can &lt;code&gt;git push&lt;/code&gt; even on shitty Internet connections.&lt;/p&gt;
 </description>
       <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
       <dc:date>2015-06-28T15:29:00-03:00</dc:date>
@@ -348,24 +111,6 @@ Everything up-to-date
       <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
 
 &lt;p&gt;That is a tough question, so I&amp;#39;ll write down &lt;em&gt;our definition of done&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2&gt;When is a feature done?&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The feature does what it is expected to do&lt;/li&gt;
-&lt;li&gt;If it has a user interface, the &lt;a href=&quot;http://www.helloerik.com/ux-is-not-ui&quot;&gt;UX&lt;/a&gt; is simple and good enough: A &lt;em&gt;human&lt;/em&gt; can use it!&lt;/li&gt;
-&lt;li&gt;If it is code for other programmers, the &lt;a href=&quot;http://c2.com/cgi/wiki?InterfaceSegregationPrinciple&quot;&gt;public contract&lt;/a&gt; is clear: A programmer read the documentation and use it&lt;/li&gt;
-&lt;li&gt;It has a &lt;a href=&quot;http://c2.com/cgi/wiki?CodeCoverage&quot;&gt;decent spec&lt;/a&gt;, which covers at least two scenarios (not just the happy path)&lt;/li&gt;
-&lt;li&gt;It is fast!&lt;/li&gt;
-&lt;li&gt;The build passes (it doesn&amp;#39;t break any of the existing specs)&lt;/li&gt;
-&lt;li&gt;The code is easy to maintain (&lt;a href=&quot;http://c2.com/cgi/wiki?DontRepeatYourself&quot;&gt;DRY&lt;/a&gt;&amp;#39;ed)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have you spent 2 days in a feature that should&amp;#39;ve been done in 2 hours? Have you spent 2 hours on a bug fix that should&amp;#39;ve taken you 8 hours? If so, why?&lt;/p&gt;
-
-&lt;p&gt;If the feature is big, break it into smaller features. This will make it easier to move ahead.&lt;/p&gt;
-
-&lt;p&gt;Before you submit your &lt;a href=&quot;https://help.github.com/articles/using-pull-requests&quot;&gt;pull request&lt;/a&gt;, make sure that you have considered this list.&lt;/p&gt;
 </description>
       <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
       <dc:date>2015-06-18T08:37:00-03:00</dc:date>

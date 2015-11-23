@@ -12,6 +12,8 @@ The cool thing about [Git](https://git-scm.com/) is that you can `git commit` al
 
 But what if you want to `git push` from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).
 
+<!--more-->
+
 If your Git remote repository supports HTTPS, you can easily push to it by following these steps:
 
     git remote add origin-https https://github.com/DatabaseCleaner/database_cleaner.git
