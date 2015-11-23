@@ -13,6 +13,10 @@
       <title>Time and Material</title>
       <link>blog url/software-development/time-and-material.html</link>
       <description>&lt;p&gt;As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.&lt;/p&gt;
+
+&lt;p&gt;All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.&lt;/p&gt;
+
+&lt;p&gt;Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don&amp;#39;t change while developing the project. That is a big &lt;strong&gt;if&lt;/strong&gt;!&lt;/p&gt;
 </description>
       <pubDate>Thu, 19 Nov 2015 00:55:00 -0300</pubDate>
       <dc:date>2015-11-19T00:55:00-03:00</dc:date>
@@ -21,6 +25,10 @@
       <title>Almundo's Bill Vulnerability</title>
       <link>blog url/security/almundo-bill-vulnerability.html</link>
       <description>&lt;p&gt;The other day my friend &lt;a href=&quot;https://twitter.com/juanchorossi&quot;&gt;Juan Rossi&lt;/a&gt; reported a vulnerability in the &lt;a href=&quot;http://almundo.com/&quot;&gt;Almundo&lt;/a&gt; billing system. Since then, the vulnerability has been fixed by &lt;a href=&quot;http://superfactura.com.ar/&quot;&gt;Superfactura&lt;/a&gt;, their billing software provider.&lt;/p&gt;
+
+&lt;p&gt;Almundo is one of the &lt;a href=&quot;http://www.alexa.com/siteinfo/almundo.com.ar&quot;&gt;biggest travel agencies in Argentina&lt;/a&gt;. Their site is among the 250 most visited websites in the country.&lt;/p&gt;
+
+&lt;p&gt;The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple &lt;code&gt;HTTP GET&lt;/code&gt; request. No programming knowledge required.&lt;/p&gt;
 </description>
       <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
       <dc:date>2015-08-25T00:55:00-03:00</dc:date>
@@ -29,6 +37,14 @@
       <title>The 7 Days Open Source Challenge</title>
       <link>blog url/open-source/the-7-days-open-source-challenge.html</link>
       <description>&lt;p&gt;Last Wednesday I gave a lightning talk about open source at the &lt;a href=&quot;http://www.meetup.com/rubyba/events/223814545/&quot;&gt;Buenos Aires Ruby Meetup&lt;/a&gt;. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.&lt;/p&gt;
+
+&lt;p&gt;The rules are simple:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You have to do it for 7 days straight&lt;/li&gt;
+&lt;li&gt;If you can&amp;#39;t do it one day, that breaks your streak&lt;/li&gt;
+&lt;li&gt;When you break your streak, you have to start over from day 1&lt;/li&gt;
+&lt;/ul&gt;
 </description>
       <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
       <dc:date>2015-08-04T00:55:00-03:00</dc:date>
@@ -61,6 +77,8 @@ It can be useful for allowing soft-deletion in your models, by having a
       <title>Mercado Pago Security Hole</title>
       <link>blog url/security/mercado-pago-security-vulnerability.html</link>
       <description>&lt;p&gt;On April 17th we discovered a security vulnerability in the &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/&quot;&gt;Mercado Pago API&lt;/a&gt;. Before disclosing this information, we contacted &lt;a href=&quot;http://www.mercadolibre.com/&quot;&gt;Mercado Libre&lt;/a&gt; and sent them a detailed report of the security hole and how to reproduce it.&lt;/p&gt;
+
+&lt;p&gt;The vulnerability allowed anyone to get an access token without using the right secret for an account.&lt;/p&gt;
 </description>
       <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
       <dc:date>2015-07-14T20:29:00-03:00</dc:date>
@@ -69,6 +87,8 @@ It can be useful for allowing soft-deletion in your models, by having a
       <title>The Lean Startup Way</title>
       <link>blog url/lean-startup/the-lean-startup-way.html</link>
       <description>&lt;p&gt;At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.&lt;/p&gt;
+
+&lt;p&gt;It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.&lt;/p&gt;
 </description>
       <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
       <dc:date>2015-06-30T20:29:00-03:00</dc:date>
@@ -77,6 +97,10 @@ It can be useful for allowing soft-deletion in your models, by having a
       <title>How to Git push with blocked ports</title>
       <link>blog url/git/github/how-to-git-push-with-blocked-ports.html</link>
       <description>&lt;p&gt;Often times I find myself working out of a coffee shop with a &lt;strong&gt;terrible Internet connection&lt;/strong&gt;. We have a nice office at &lt;a href=&quot;https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62&quot;&gt;OmbuLabs&lt;/a&gt; but there is still that &lt;em&gt;Je ne sais quoi&lt;/em&gt; at coffee shops.&lt;/p&gt;
+
+&lt;p&gt;The cool thing about &lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt; is that you can &lt;code&gt;git commit&lt;/code&gt; all your changes while enjoying a cup of coffee and &lt;code&gt;git push&lt;/code&gt; later (when you&amp;#39;re back at home with a decent connection)&lt;/p&gt;
+
+&lt;p&gt;But what if you want to &lt;code&gt;git push&lt;/code&gt; from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).&lt;/p&gt;
 </description>
       <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
       <dc:date>2015-06-28T15:29:00-03:00</dc:date>
@@ -85,6 +109,8 @@ It can be useful for allowing soft-deletion in your models, by having a
       <title>Our Definition of &quot;Done&quot;</title>
       <link>blog url/software-development/software-quality/our-definition-of-done.html</link>
       <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
+
+&lt;p&gt;That is a tough question, so I&amp;#39;ll write down &lt;em&gt;our definition of done&lt;/em&gt;.&lt;/p&gt;
 </description>
       <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
       <dc:date>2015-06-18T08:37:00-03:00</dc:date>
@@ -104,6 +130,8 @@ necessary by not taking advantage of another method from the Enumerable module,
       <title>4 Useful Github tricks which should be more popular</title>
       <link>blog url/git/github/4-useful-github-tricks.html</link>
       <description>&lt;p&gt;If you are using git in 2015, you are probably also using &lt;a href=&quot;http://www.github.com&quot;&gt;Github&lt;/a&gt;, unless you&amp;#39;re self-hosting or still betting on &lt;a href=&quot;http://www.bitbucket.com&quot;&gt;Bitbucket&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Below are some cool, useful tricks you can use on Github which can probably make your life easier:&lt;/p&gt;
 </description>
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>

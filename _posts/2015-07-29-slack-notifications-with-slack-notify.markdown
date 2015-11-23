@@ -12,6 +12,8 @@ better than any other available platform of its kind. Slack provides
 [WebHooks](https://api.slack.com/incoming-webhooks), which you can use to post
 messages to your team's channels.
 
+<!--more-->
+
 We use [Solano CI](https://www.solanolabs.com) (formerly Tddium) for our
 automated builds. By default, the system sends e-mails whenever a build passes
 or fails, but we wanted to be notified in our Slack channels. Enter the

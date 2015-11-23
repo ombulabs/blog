@@ -1,6 +1,7 @@
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
-  display: inline; }
+  display: block;
+  margin-bottom: 1.5em; }
 
 .highlight {
   background: #ffffff;

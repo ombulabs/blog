@@ -10,6 +10,8 @@ At [OmbuLabs](http://www.ombulabs.com) we like to split our time working on our 
 
 It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
 
+<!--more-->
+
 And we have ran many experiments to create and maintain these products:
 
 * [OmbuShop](http://www.ombushop.com/): The best way to setup your online shop in Latin America. A SaaS product that enables businesses to easily setup their online shop.

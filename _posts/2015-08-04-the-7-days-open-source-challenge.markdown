@@ -14,6 +14,8 @@ The rules are simple:
 * If you can't do it one day, that breaks your streak
 * When you break your streak, you have to start over from day 1
 
+<!--more-->
+
 The goal of this challenge is to **make contributing to open source projects a habit**.
 
 You can see the slides over here:

@@ -10,6 +10,8 @@ Quality should be present in everything you do, but it should be balanced with t
 
 That is a tough question, so I'll write down _our definition of done_.
 
+<!--more-->
+
 ## When is a feature done?
 
 * The feature does what it is expected to do
