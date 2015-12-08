@@ -8,39 +8,29 @@
     <title>Ombulabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 23 Nov 2015 00:55:00 -0300</pubDate>
+    <pubDate>Wed, 09 Dec 2015 00:55:00 -0300</pubDate>
     <item>
       <title>How to interact with hidden elements with Protractor</title>
       <link>blog url/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</link>
       <description>&lt;p&gt;The other day I was trying to interact with a hidden file input field:&lt;/p&gt;
-
-&lt;p&gt;<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="ni">&amp;lt;</span>/p<span class="ni">&amp;gt;</span>
-
-<span class="ni">&amp;lt;</span>div class=<span class="ni">&amp;quot;</span>col-sm-3<span class="ni">&amp;quot;&amp;gt;</span>
-  <span class="ni">&amp;lt;</span>input class=<span class="ni">&amp;quot;</span>btn btn-default<span class="ni">&amp;quot;</span> class=<span class="ni">&amp;quot;</span>hidden<span class="ni">&amp;quot;</span> accept=<span class="ni">&amp;quot;</span>.csv<span class="ni">&amp;quot;</span>  id=<span class="ni">&amp;quot;</span>geofence_file_input<span class="ni">&amp;quot;&amp;gt;</span>
-  <span class="ni">&amp;lt;</span>a class=<span class="ni">&amp;quot;</span>btn btn-default<span class="ni">&amp;quot;</span> id=<span class="ni">&amp;quot;</span>textbox-for-geofencefile<span class="ni">&amp;quot;&amp;gt;</span>Select File<span class="ni">&amp;lt;</span>/a<span class="ni">&amp;gt;</span>
-  <span class="ni">&amp;lt;</span>span ng-if=<span class="ni">&amp;quot;</span>LineItemForm.augmentations.geofence.file<span class="ni">&amp;quot;&amp;gt;&amp;lt;</span>/span<span class="ni">&amp;gt;</span>
-<span class="ni">&amp;lt;</span>/div<span class="ni">&amp;gt;</span>
-
-<span class="ni">&amp;lt;</span>p<span class="ni">&amp;gt;</span></code></pre></div>&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;col-sm-3&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-default&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;accept=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.csv&amp;quot;&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;geofence_file_input&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-default&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;textbox-for-geofencefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Select File&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ng-if=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;LineItemForm.augmentations.geofence.file&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;And the CSS:&lt;/p&gt;
-
-&lt;p&gt;<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;/</span><span class="nt">p</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
-
-<span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">p</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span><span class="nc">.hidden</span> <span class="p">{</span>
-  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span><span class="o">&amp;</span><span class="nt">lt</span><span class="o">;/</span><span class="nt">p</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span>
-
-<span class="o">&amp;</span><span class="nt">lt</span><span class="o">;</span><span class="nt">p</span><span class="o">&amp;</span><span class="nt">gt</span><span class="o">;</span></code></pre></div>&lt;/p&gt;
-
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.hidden&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Which caused this problem:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Failed: Wait timed out after 100015ms
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Workarounds include &lt;em&gt;displaying it&lt;/em&gt;, &lt;em&gt;interacting with it&lt;/em&gt;, &lt;em&gt;hidding it&lt;/em&gt; again, which I didn&amp;#39;t like.&lt;/p&gt;
+&lt;p&gt;Workarounds include &lt;em&gt;displaying it&lt;/em&gt;, &lt;em&gt;interacting with it&lt;/em&gt;, &lt;em&gt;hiding it&lt;/em&gt; again, which I didn&amp;#39;t like.&lt;/p&gt;
 </description>
-      <pubDate>Mon, 23 Nov 2015 00:55:00 -0300</pubDate>
-      <dc:date>2015-11-23T00:55:00-03:00</dc:date>
+      <pubDate>Wed, 09 Dec 2015 00:55:00 -0300</pubDate>
+      <dc:date>2015-12-09T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Time and Material</title>
@@ -169,6 +159,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2015-11-23T00:55:00-03:00</dc:date>
+    <dc:date>2015-12-09T00:55:00-03:00</dc:date>
   </channel>
 </rss>
