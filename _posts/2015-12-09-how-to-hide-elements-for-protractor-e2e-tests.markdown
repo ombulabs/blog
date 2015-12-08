@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "How to interact with hidden elements with Protractor"
-date: 2015-11-23 03:55:00
+date: 2015-12-09 03:55:00
 categories: ["protractor"]
 author: "etagwerker"
 ---
 
 The other day I was trying to interact with a hidden file input field:
 
-{% highlight html %}
+```html
 
 <div class="col-sm-3">
   <input class="btn btn-default" class="hidden" accept=".csv"  id="geofence_file_input">
@@ -16,23 +16,23 @@ The other day I was trying to interact with a hidden file input field:
   <span ng-if="LineItemForm.augmentations.geofence.file">{{selectedFilename()}}</span>
 </div>
 
-{% endhighlight %}
+```
 
 And the CSS:
 
-{% highlight css %}
+```css
 
 .hidden {
   display: none;
 }
 
-{% endhighlight %}
+```
 
 Which caused this problem:
 
     Failed: Wait timed out after 100015ms
 
-Workarounds include _displaying it_, _interacting with it_, _hidding it_ again, which I didn't like.
+Workarounds include _displaying it_, _interacting with it_, _hiding it_ again, which I didn't like.
 
 <!--more-->
 
