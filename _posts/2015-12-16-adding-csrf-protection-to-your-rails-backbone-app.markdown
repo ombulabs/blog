@@ -8,7 +8,7 @@ author: "schmierkov"
 
 When integrating Backbone.js in your Rails App, you might face the problem of the inability to verify the CSRF-Token.
 
-The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, except you know what you are doing. For more informations on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
+The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, unless you know what you are doing. For more information on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
 
 This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.
 
