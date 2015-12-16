@@ -10,7 +10,7 @@ When integrating Backbone.js in your Rails App, you might face the problem of th
 
 The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, except you know what you are doing. For more informations on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
 
-This problem occurs as soon as you are trying to send form data, without the csrf-token provided by Rails.
+This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.
 
 ```ruby
 Started POST "/products" for 127.0.0.1 at 2015-12-16 10:06:05 -0300
@@ -45,7 +45,7 @@ Backbone.sync = function(method, model, options) {
 };
 ```
 
-It grabs the csrf-token provided in the meta tags of your rails application and sets this as request header field `X-CSRF-Token`.
+It grabs the CSRF-Token provided in the meta tags of your rails application and sets this as request header field `X-CSRF-Token`.
 
 After adding this to the Backbone code, it works as expected.
 

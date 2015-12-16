@@ -111,7 +111,7 @@
 
 <p>The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, except you know what you are doing. For more informations on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
 
-<p>This problem occurs as soon as you are trying to send form data, without the csrf-token provided by Rails.</p>
+<p>This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mo">06</span><span class="p">:</span><span class="mo">05</span> <span class="o">-</span><span class="mo">0300</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
@@ -140,7 +140,7 @@
   <span class="k">return</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
-<p>It grabs the csrf-token provided in the meta tags of your rails application and sets this as request header field <code>X-CSRF-Token</code>.</p>
+<p>It grabs the CSRF-Token provided in the meta tags of your rails application and sets this as request header field <code>X-CSRF-Token</code>.</p>
 
 <p>After adding this to the Backbone code, it works as expected.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">29</span> <span class="o">-</span><span class="mo">0300</span>
