@@ -85,9 +85,11 @@
         <h2 class="post-title"><a href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Adding Csrf-Protection to your Rails-Backbone App</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>When integrating Backbone.js in your Rails App, you might face the problem of the inability to verify the CSRF-Token.</p>
+        <p>When integrating <a href="http://backbonejs.org">Backbone.js</a> in your <a href="http://rubyonrails.org">Rails</a> App, you might face the problem of the inability to verify the CSRF-Token.</p>
 
-<p>The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, unless you know what you are doing. For more information on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
+<p>The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.</p>
+
+<p>For more information on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
 
 <p>This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.</p>
 
@@ -99,7 +101,7 @@
 <span class="no">Completed</span> <span class="mi">302</span> <span class="no">Found</span> <span class="k">in</span> <span class="mi">7</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
 
-<p>After this request, rails will terminate your session and you have to login again.</p>
+<p>After this request, Rails will terminate your session and you will have to login again.</p>
 
 <p>This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.</p>
 
@@ -122,7 +124,7 @@
 <span class="p">};</span>
 </code></pre></div>
 
-<p>It grabs the CSRF-Token provided in the meta tags of your rails application and sets this as request header field <code>X-CSRF-Token</code>.</p>
+<p>It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field <code>X-CSRF-Token</code>.</p>
 
 <p>After adding this to the Backbone code, it works as expected.</p>
 
