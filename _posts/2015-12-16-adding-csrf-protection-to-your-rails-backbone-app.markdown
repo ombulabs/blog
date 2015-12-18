@@ -6,9 +6,11 @@ categories: ["rails", "backbone", "security"]
 author: "schmierkov"
 ---
 
-When integrating Backbone.js in your Rails App, you might face the problem of the inability to verify the CSRF-Token.
+When integrating [Backbone.js](http://backbonejs.org) in your [Rails](http://rubyonrails.org) App, you might face the problem of the inability to verify the CSRF-Token.
 
-The CSRF Protection secures your app with a token to make sure, that the person who is interacting with it is you. So you should not turn it off, unless you know what you are doing. For more information on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
+The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.
+
+For more information on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
 
 This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.
 
@@ -21,7 +23,7 @@ WARNING: Can't verify CSRF token authenticity
 Completed 302 Found in 7.6ms (ActiveRecord: 0.8ms)
 ```
 
-After this request, rails will terminate your session and you have to login again.
+After this request, Rails will terminate your session and you will have to login again.
 
 This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.
 
@@ -45,7 +47,7 @@ Backbone.sync = function(method, model, options) {
 };
 ```
 
-It grabs the CSRF-Token provided in the meta tags of your rails application and sets this as request header field `X-CSRF-Token`.
+It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field `X-CSRF-Token`.
 
 After adding this to the Backbone code, it works as expected.
 
