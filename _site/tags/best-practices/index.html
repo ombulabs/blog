@@ -73,16 +73,10 @@
 
   <article class="post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">Why using default_scope is a bad idea</a></h2>
+        <h2 class="post-title">
+          <a href="/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">Why using default_scope is a bad idea</a>
+        </h2>
     </header>
-    <section class="post-excerpt">
-        <p><code>default_scope</code> is a method provided by ActiveRecord, which allows you to set
-a default scope (as its name implies) for all operations done on a given model.
-It can be useful for allowing soft-deletion in your models, by having a
-<code>deleted_on</code> column on your model and setting the default scope to
-<code>deleted_on: nil</code></p>
- <a class="read-more" href="/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">Read more &raquo;</a>
-    </section>
     <footer class="post-meta">
       
 
@@ -113,6 +107,14 @@ It can be useful for allowing soft-deletion in your models, by having a
 </time>
 
     </footer>
+    <section class="post-excerpt">
+        <p><code>default_scope</code> is a method provided by ActiveRecord, which allows you to set
+a default scope (as its name implies) for all operations done on a given model.
+It can be useful for allowing soft-deletion in your models, by having a
+<code>deleted_on</code> column on your model and setting the default scope to
+<code>deleted_on: nil</code></p>
+ <a class="read-more" href="/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">Read more &raquo;</a>
+    </section>
 </article>
 
 
