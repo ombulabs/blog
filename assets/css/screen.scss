@@ -1,3 +1,6 @@
+---
+# DO NOT REMOVE. Needed for SASS support. http://jekyllrb.com/docs/assets/
+---
 /* ==========================================================================
    Table of Contents
    ========================================================================== */
@@ -752,10 +755,14 @@ body:not(.post-template) .post-title {
     text-decoration: none;
 }
 
-.post-excerpt p {
-    margin: 0;
-    font-size: 0.9em;
-    line-height: 1.7em;
+.post-excerpt {
+  margin-top: 1em;
+  p {
+      margin: 0;
+      font-size: 0.9em;
+      line-height: 1.7em;
+      margin-bottom: 1em;
+  }
 }
 
 .read-more {
