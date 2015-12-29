@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem</title>
+
+    
+    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem">
+    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+    <meta name="twitter:title" content="Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem">
+    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="og:site_name" content="Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem" />
+    <meta property="article:published_time" content="2015-12-29 10:55:00 -0300" />
+    <meta property="article:modified_time" content="2015-12-29 10:55:00 -0300" />
+    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="article:tag" content="Ombulabs Blog - The Lean Software Boutique - Adding Docker to a Ruby Gem" />
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="post-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">Ombulabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+
+    <main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Adding Docker to a Ruby gem</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/docker"
+         title="Articles about Docker">Docker</a>,
+      <a href="/blog/tags/rubygems"
+         title="Articles about Rubygems">Rubygems</a>,
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>
+
+
+
+<time class="post-date" datetime="2015-12-29">
+  29 Dec 2015
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
+
+<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
+
+<p>Here are the steps:</p>
+
+<ol>
+<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
+<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
+<li><p>In the terminal: <code>docker-machine start default</code></p></li>
+<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
+<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
+</ol>
+
+<!--more-->
+
+<p>Supposedly these steps should start the required services and run the build. I was expecting to watch it pass, but this is what I saw:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Installing mongo_ext 0.19.3 with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /usr/local/rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20151224-6-fhvc98.rb extconf.rb
+checking <span class="k">for</span> asprintf<span class="o">()</span>... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file <span class="k">for</span> more details.  You may
+need configuration options.
+
+Provided configuration options:
+    --with-opt-dir
+    --without-opt-dir
+    --with-opt-include
+    --without-opt-include<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/include
+    --with-opt-lib
+    --without-opt-lib<span class="o">=</span><span class="k">${</span><span class="nv">opt</span><span class="p">-dir</span><span class="k">}</span>/lib
+    --with-make-prog
+    --without-make-prog
+    --srcdir<span class="o">=</span>.
+    --curdir
+    --ruby<span class="o">=</span>/usr/local/rvm/rubies/ruby-2.2.2/bin/<span class="k">$(</span>RUBY_BASE_NAME<span class="k">)</span>
+</code></pre></div>
+<p>If I were to add this contribution, I&#39;d make sure that the <code>CONTRIBUTE.markdown</code> lists <a href="https://www.docker.com">Docker</a> as an <em>option</em> to run the specs, not as the default.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50)">
+                <span class="hidden">Ernesto Tagwerker's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Ernesto Tagwerker </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Adding Docker to a Ruby gem&amp;url=http://www.ombulabs.com/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+          
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <figure>
+          <img src="/blog/assets/images/creative-commons.png"
+               alt="Creative Commons Attribution-NonCommercial">
+          <figcaption>
+            <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+               target="_blank"
+               title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="poweredby">Made with love using Jekyll and
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
