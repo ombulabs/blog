@@ -73,10 +73,24 @@
 
   <article class="post">
     <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/docker/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a>
-        </h2>
+        <h2 class="post-title"><a href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a></h2>
     </header>
+    <section class="post-excerpt">
+        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
+
+<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
+
+<p>Here are the steps:</p>
+
+<ol>
+<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
+<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
+<li><p>In the terminal: <code>docker-machine start default</code></p></li>
+<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
+<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
+</ol>
+ <a class="read-more" href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
+    </section>
     <footer class="post-meta">
       
 
@@ -94,7 +108,11 @@
   on
     
       <a href="/blog/tags/docker"
-         title="Articles about Docker">Docker</a>
+         title="Articles about Docker">Docker</a>,
+      <a href="/blog/tags/rubygems"
+         title="Articles about Rubygems">Rubygems</a>,
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>
 
 
 
@@ -103,22 +121,6 @@
 </time>
 
     </footer>
-    <section class="post-excerpt">
-        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
-
-<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
-
-<p>Here are the steps:</p>
-
-<ol>
-<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
-<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
-<li><p>In the terminal: <code>docker-machine start default</code></p></li>
-<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
-<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
-</ol>
- <a class="read-more" href="/blog/docker/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
-    </section>
 </article>
 
 

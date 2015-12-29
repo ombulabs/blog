@@ -11,7 +11,7 @@
     <pubDate>Tue, 29 Dec 2015 10:55:00 -0300</pubDate>
     <item>
       <title>Adding Docker to a Ruby gem</title>
-      <link>blog url/docker/adding-docker-to-a-ruby-gem.html</link>
+      <link>blog url/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</link>
       <description>&lt;p&gt;As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner/pull/384&quot;&gt;pull request&lt;/a&gt; to add a Dockerfile to &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner&quot;&gt;DatabaseCleaner&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run &lt;code&gt;rake&lt;/code&gt;.&lt;/p&gt;
