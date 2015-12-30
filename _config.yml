@@ -1,4 +1,4 @@
-name: Ombulabs Blog
+name: OmbuLabs Blog
 description: The Lean Software Boutique
 meta_description: "OmbuLabs Blog, The Lean Software Boutique's blog"
 
@@ -14,7 +14,7 @@ excerpt_separator: "<!--more-->"
 
 # Details for the RSS feed generator
 url:            'blog url'
-author:         'Ombulabs'
+author:         'OmbuLabs'
 
 exclude: ['vendor']
 
