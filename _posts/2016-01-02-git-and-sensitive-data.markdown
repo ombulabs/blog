@@ -1,18 +1,16 @@
 ---
 layout: post
 title: "Protect your sensitive Data"
-date: 2016-01-01 13:55:00
+date: 2016-01-02 13:55:00
 categories: ["open source", "security"]
 author: "schmierkov"
 ---
 
 If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials etc.) can be accessed by anyone.
 
-One thing that a lot of people do not realize is that those informations stay forever in your repo history, if you do not delete them.
+**One thing that a lot of people forget, is that those informations stay forever in your repository history, if you do not delete them.**
 
-For instance, what basically happens is that you commit a file with sensitive information.
-
-In this Example I added accidentally my `ssh-key` to the repo:
+For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my `ssh-key` to the repo:
 
 ```bash
 $ git commit -am 'init git repo'
@@ -22,17 +20,14 @@ $ git commit -am 'init git repo'
  create mode 100644 id_rsa.pub
 ```
 
-After doing a couple of additions, working and editing, I realise that I should never have commited my `ssh-key`. *facepalm*
+After doing a couple of additions, working and editing, I realise that I should never have commited the `ssh-key`. \*facepalm\*
 
 Alright, then I just do a simple `git rm --cached id_rsa` and everything is back to normal. I also add this file to a .gitignore, so that this can not happen in the future anymore.
 
 ```bash
 (master) $ git rm --cached id_rsa
 rm 'id_rsa'
-$ git st
-D  id_rsa
-?? id_rsa
-(master) $ git st
+(master) $ git status
 A  .gitignore
 D  id_rsa
 (master) $ git commit -am 'remove id_rsa'
@@ -66,7 +61,7 @@ Ref 'refs/heads/master' was rewritten
 
 So far so good, but what about my other branches that have been created?
 ```bash
-(master) $ git co new-feature
+(master) $ git checkout new-feature
 (new-feature) $ ls
 drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:20 ./
 drwx------ 56 sirko sirko 12288 Dec 31 12:37 ../
@@ -86,7 +81,7 @@ WARNING: Ref 'refs/heads/master' is unchanged
 Ref 'refs/remotes/origin/master' was rewritten
 WARNING: Ref 'refs/remotes/origin/master' is unchanged
 Ref 'refs/remotes/origin/new-feature' was rewritten
-(master) $ git co new-feature
+(master) $ git checkout new-feature
 (new-feature) $ ll
 total 44
 drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:41 ./

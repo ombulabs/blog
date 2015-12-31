@@ -35,8 +35,8 @@
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
     <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Protect Your Sensitive Data" />
-    <meta property="article:published_time" content="2016-01-01 10:55:00 -0300" />
-    <meta property="article:modified_time" content="2016-01-01 10:55:00 -0300" />
+    <meta property="article:published_time" content="2016-01-02 10:55:00 -0300" />
+    <meta property="article:modified_time" content="2016-01-02 10:55:00 -0300" />
     <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
     <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Protect Your Sensitive Data" />
     <meta property="fb:admins" content="10153304864537860" />
@@ -97,8 +97,8 @@
 
 
 
-<time class="post-date" datetime="2016-01-01">
-  01 Jan 2016
+<time class="post-date" datetime="2016-01-02">
+  02 Jan 2016
 </time>
 
             </section>
@@ -107,26 +107,21 @@
         <section class="post-content">
           <p>If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials etc.) can be accessed by anyone.</p>
 
-<p>One thing that a lot of people do not realize is that those informations stay forever in your repo history, if you do not delete them.</p>
+<p><strong>One thing that a lot of people forget, is that those informations stay forever in your repository history, if you do not delete them.</strong></p>
 
-<p>For instance, what basically happens is that you commit a file with sensitive information.</p>
-
-<p>In this Example I added accidentally my <code>ssh-key</code> to the repo:</p>
+<p>For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my <code>ssh-key</code> to the repo:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit -am <span class="s1">&#39;init git repo&#39;</span>
 <span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 917a1e1<span class="o">]</span> init git repo
  <span class="m">2</span> files changed, <span class="m">52</span> insertions<span class="o">(</span>+<span class="o">)</span>
  create mode <span class="m">100644</span> id_rsa
  create mode <span class="m">100644</span> id_rsa.pub
 </code></pre></div>
-<p>After doing a couple of additions, working and editing, I realise that I should never have commited my <code>ssh-key</code>. <em>facepalm</em></p>
+<p>After doing a couple of additions, working and editing, I realise that I should never have commited the <code>ssh-key</code>. *facepalm*</p>
 
 <p>Alright, then I just do a simple <code>git rm --cached id_rsa</code> and everything is back to normal. I also add this file to a .gitignore, so that this can not happen in the future anymore.</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git rm --cached id_rsa
 rm <span class="s1">&#39;id_rsa&#39;</span>
-<span class="nv">$ </span>git st
-D  id_rsa
-?? id_rsa
-<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git st
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git status
 A  .gitignore
 D  id_rsa
 <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git commit -am <span class="s1">&#39;remove id_rsa&#39;</span>
@@ -153,7 +148,7 @@ Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
 </code></pre></div>
 <p>So far so good, but what about my other branches that have been created?
 <code>bash
-(master) $ git co new-feature
+(master) $ git checkout new-feature
 (new-feature) $ ls
 drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:20 ./
 drwx------ 56 sirko sirko 12288 Dec 31 12:37 ../
@@ -171,7 +166,7 @@ WARNING: Ref <span class="s1">&#39;refs/heads/master&#39;</span> is unchanged
 Ref <span class="s1">&#39;refs/remotes/origin/master&#39;</span> was rewritten
 WARNING: Ref <span class="s1">&#39;refs/remotes/origin/master&#39;</span> is unchanged
 Ref <span class="s1">&#39;refs/remotes/origin/new-feature&#39;</span> was rewritten
-<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git co new-feature
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git checkout new-feature
 <span class="o">(</span>new-feature<span class="o">)</span> <span class="nv">$ </span>ll
 total 44
 drwxrwxr-x  <span class="m">3</span> sirko sirko  <span class="m">4096</span> Dec <span class="m">31</span> 13:41 ./
