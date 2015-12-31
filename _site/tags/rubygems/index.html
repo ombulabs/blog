@@ -6,7 +6,7 @@
 
     
 
-    <title>Ombulabs Blog - The Lean Software Boutique - Category: Rubygems</title>
+    <title>OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems</title>
 
     
     <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
@@ -15,30 +15,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Ombulabs Blog - The Lean Software Boutique - Category: Rubygems">
+    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems">
     <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
-    <meta name="twitter:title" content="Ombulabs Blog - The Lean Software Boutique - Category: Rubygems">
+    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems">
     <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Ombulabs Blog - The Lean Software Boutique - Category: Rubygems" />
+    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.ombulabs.com/tags/rubygems/index.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="og:site_name" content="Ombulabs Blog - The Lean Software Boutique - Category: Rubygems" />
+    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems" />
     <meta property="article:published_time" content="" />
     <meta property="article:modified_time" content="" />
     <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="article:tag" content="Ombulabs Blog - The Lean Software Boutique - Category: Rubygems" />
+    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Category: Rubygems" />
     <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -57,7 +57,7 @@
       </nav>
       <div class="vertical">
           <div class="main-header-content inner">
-              <h1 class="page-title logo"><a href="/blog">Ombulabs Blog</a></h1>
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
               <h2 class="page-description slogan">
                    The Lean Software Boutique 
                   
@@ -73,24 +73,10 @@
 
   <article class="post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a></h2>
+        <h2 class="post-title">
+          <a href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a>
+        </h2>
     </header>
-    <section class="post-excerpt">
-        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
-
-<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
-
-<p>Here are the steps:</p>
-
-<ol>
-<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
-<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
-<li><p>In the terminal: <code>docker-machine start default</code></p></li>
-<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
-<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
-</ol>
- <a class="read-more" href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
-    </section>
     <footer class="post-meta">
       
 
@@ -121,6 +107,22 @@
 </time>
 
     </footer>
+    <section class="post-excerpt">
+        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
+
+<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
+
+<p>Here are the steps:</p>
+
+<ol>
+<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
+<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
+<li><p>In the terminal: <code>docker-machine start default</code></p></li>
+<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
+<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
+</ol>
+ <a class="read-more" href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
+    </section>
 </article>
 
 

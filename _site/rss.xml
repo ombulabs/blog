@@ -5,7 +5,7 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
-    <title>Ombulabs Blog</title>
+    <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
     <pubDate>Fri, 01 Jan 2016 10:55:00 -0300</pubDate>
