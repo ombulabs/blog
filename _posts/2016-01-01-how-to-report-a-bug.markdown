@@ -12,19 +12,21 @@ The simplest way to contribute to an open source project is to file an issue. He
 
 A quick Google search should return one or more results about the issue. If it's user error, just change the way you are using the code and move on.
 
-If that doesn't work, find the project (it's probably on Github) and search through open and closed issues. If it's filed and open, try to add more information to make it easier to solve. [Please please please don't just add another +1 to a series of +1s]
+If that doesn't work, find the project (it's probably on [Github](https://github.com)) and search through open and closed issues. If it's filed and open, try to add more information to make it easier to solve. (_Please please please_ don't just add another **+1** to a series of **+1s**)
 
-If you couldn't find it, submit an issue [beware: some projects will encourage you to post to their mailing list before filing an issue]
+If you couldn't find any issues, submit an issue (_Beware_: some projects will encourage you to post to their mailing list _before_ filing an issue)
 
 ### 2. Submit a useful issue report
 
-Don't just post the title of the error and what you were doing when it happened. Be as specific as possible!
+Don't just post the title of the error and what you were doing when it happened.
+
+**Please be as specific as possible!**
 
 Post information about:
 
 * The environment (a snapshot of Gemfile.lock could help)
-* The error message is a good candidate for the issue's title
-* The backtrace should always be included in the description
+* The error message (a good candidate for the issue's title)
+* The backtrace should **always** be included in the description
 * If there is some configuration involved, add it to the description
 
 ### 3. Bonus points
@@ -39,14 +41,14 @@ Post information about:
 
 Most of us will [monkeypatch](http://devblog.avdi.org/2008/02/23/why-monkeypatching-is-destroying-ruby) our application and move on. **This sucks!**
 
-You should file the issue, so that other programmers will benefit from your wasted effort.
+You should file the issue, so that other programmers will benefit from your "wasted" effort.
 
-If you monkeypatched it in a horrible way, add it to the issue as well. The project maintainer or other programmers might find it that it isn't such a horrible patch after all.
+If you monkeypatched it in a horrible way, add it to the issue as well. The project maintainer or other programmers might find that it isn't such a horrible patch after all.
 
 ### To sum things up
 
-I've explained a couple of ways that you can make a contribution to an open source project. I started with the simplest steps and then I moved on to the most advanced contributions.
+I've explained a couple of ways that you can make a contribution to an open source project. I started with the simpler steps and then I moved on to the more advanced contributions.
 
-Ideally, detailed issue reports will become pull requests in the future. You might send them, or someone else might, but it all begins with a detailed description of the problem you are seeing.
+Ideally, detailed issue reports will become pull requests in the future. You (or someone else) might send the pull request, but it all begins with a detailed description of the problem you are seeing.
 
-Don't just say "It doesn't work!", don't be that person! Next time file an issue so that we can all benefit from your pain.
+Don't just say _"It doesn't work!"_, don't be that person! Next time file an issue so that we can all benefit from your pain.
