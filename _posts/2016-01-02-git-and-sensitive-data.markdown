@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Protect your sensitive Data"
+title: "Protect your sensitive data"
 date: 2016-01-02 13:55:00
 categories: ["open source", "security"]
 author: "schmierkov"
 ---
 
-If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials etc.) can be accessed by anyone.
+If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
 
-**One thing that a lot of people forget, is that those informations stay forever in your repository history, if you do not delete them.**
+**One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.**
 
 For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my `ssh-key` to the repo:
 
@@ -22,7 +22,7 @@ $ git commit -am 'init git repo'
 
 After doing a couple of additions, working and editing, I realise that I should never have commited the `ssh-key`. \*facepalm\*
 
-Alright, then I just do a simple `git rm --cached id_rsa` and everything is back to normal. I also add this file to a .gitignore, so that this can not happen in the future anymore.
+Alright, then I just do a simple `git rm --cached id_rsa` and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.
 
 ```bash
 (master) $ git rm --cached id_rsa
@@ -51,7 +51,7 @@ YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
 ...
 ```
 
-To ensure that ALL of this data get's properly removed, I need to remove this file from all the commits in the repository with [git filter-branch](https://git-scm.com/docs/git-filter-branch). The command `git rm --cached` [git rm docs](https://git-scm.com/docs/git-rm) is not sufficient in this case.
+To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with [git filter-branch](https://git-scm.com/docs/git-filter-branch). The command `git rm --cached` [git rm docs](https://git-scm.com/docs/git-rm) is not sufficient in this case.
 
 ```bash
 (master) $ git filter-branch --tree-filter 'rm -f id_rsa' HEAD
@@ -91,8 +91,8 @@ drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:41 .git/
 -rw-rw-r--  1 sirko sirko    64 Dec 31 13:41 my_document.txt
 ```
 
-That seems to be exactly what I want and at the end I just need to `git push --all --force` my changes. **After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.**
+That seems to be exactly what I want and in the end I just need to `git push --all --force` my changes. **After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.**
 
 Another alternative to working with `git filter-branch` is [BFG](https://rtyley.github.io/bfg-repo-cleaner/) which has some more nifty features.
 
-The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive informations removed. The downside is obviously the loss of the projects git history.
+The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project's Git history.
