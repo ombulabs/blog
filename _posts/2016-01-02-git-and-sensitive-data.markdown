@@ -95,4 +95,6 @@ That seems to be exactly what I want and in the end I just need to `git push --a
 
 Another alternative to working with `git filter-branch` is [BFG](https://rtyley.github.io/bfg-repo-cleaner/) which has some more nifty features.
 
+This tool provides some commands to completely remove big files as well as passwords from your Git history. Sadly I could not get it properly working, big files are still persistent as a git object and passwords can not be deleted because they are `protected by 'HEAD'`. I could not really find a solution for these problems. Maybe you are more lucky!
+
 The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project's Git history.
