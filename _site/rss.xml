@@ -10,11 +10,11 @@
     <description>The Lean Software Boutique</description>
     <pubDate>Sat, 02 Jan 2016 10:55:00 -0300</pubDate>
     <item>
-      <title>Protect your sensitive Data</title>
+      <title>Protect your sensitive data</title>
       <link>blog url/open-source/security/git-and-sensitive-data.html</link>
-      <description>&lt;p&gt;If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials etc.) can be accessed by anyone.&lt;/p&gt;
+      <description>&lt;p&gt;If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;One thing that a lot of people forget, is that those informations stay forever in your repository history, if you do not delete them.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my &lt;code&gt;ssh-key&lt;/code&gt; to the repo:&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git commit -am &lt;span class=&quot;s1&quot;&gt;&amp;#39;init git repo&amp;#39;&lt;/span&gt;
@@ -25,7 +25,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;After doing a couple of additions, working and editing, I realise that I should never have commited the &lt;code&gt;ssh-key&lt;/code&gt;. *facepalm*&lt;/p&gt;
 
-&lt;p&gt;Alright, then I just do a simple &lt;code&gt;git rm --cached id_rsa&lt;/code&gt; and everything is back to normal. I also add this file to a .gitignore, so that this can not happen in the future anymore.&lt;/p&gt;
+&lt;p&gt;Alright, then I just do a simple &lt;code&gt;git rm --cached id_rsa&lt;/code&gt; and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git rm --cached id_rsa
 rm &lt;span class=&quot;s1&quot;&gt;&amp;#39;id_rsa&amp;#39;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git status
@@ -48,7 +48,7 @@ d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
 YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
 ...
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;To ensure that ALL of this data get&amp;#39;s properly removed, I need to remove this file from all the commits in the repository with &lt;a href=&quot;https://git-scm.com/docs/git-filter-branch&quot;&gt;git filter-branch&lt;/a&gt;. The command &lt;code&gt;git rm --cached&lt;/code&gt; &lt;a href=&quot;https://git-scm.com/docs/git-rm&quot;&gt;git rm docs&lt;/a&gt; is not sufficient in this case.&lt;/p&gt;
+&lt;p&gt;To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with &lt;a href=&quot;https://git-scm.com/docs/git-filter-branch&quot;&gt;git filter-branch&lt;/a&gt;. The command &lt;code&gt;git rm --cached&lt;/code&gt; &lt;a href=&quot;https://git-scm.com/docs/git-rm&quot;&gt;git rm docs&lt;/a&gt; is not sufficient in this case.&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git filter-branch --tree-filter &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -f id_rsa&amp;#39;&lt;/span&gt; HEAD
 Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;6/6&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 Ref &lt;span class=&quot;s1&quot;&gt;&amp;#39;refs/heads/master&amp;#39;&lt;/span&gt; was rewritten
@@ -82,11 +82,13 @@ drwxrwxr-x  &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; sirko sirko  &lt;span
 -rw-rw-r--  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; sirko sirko   &lt;span class=&quot;m&quot;&gt;748&lt;/span&gt; Dec &lt;span class=&quot;m&quot;&gt;31&lt;/span&gt; 13:41 id_rsa.pub
 -rw-rw-r--  &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt; sirko sirko    &lt;span class=&quot;m&quot;&gt;64&lt;/span&gt; Dec &lt;span class=&quot;m&quot;&gt;31&lt;/span&gt; 13:41 my_document.txt
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;That seems to be exactly what I want and at the end I just need to &lt;code&gt;git push --all --force&lt;/code&gt; my changes. &lt;strong&gt;After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That seems to be exactly what I want and in the end I just need to &lt;code&gt;git push --all --force&lt;/code&gt; my changes. &lt;strong&gt;After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Another alternative to working with &lt;code&gt;git filter-branch&lt;/code&gt; is &lt;a href=&quot;https://rtyley.github.io/bfg-repo-cleaner/&quot;&gt;BFG&lt;/a&gt; which has some more nifty features.&lt;/p&gt;
 
-&lt;p&gt;The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive informations removed. The downside is obviously the loss of the projects git history.&lt;/p&gt;
+&lt;p&gt;This tool provides some commands to completely remove big files as well as passwords from your Git history. Sadly I could not get it properly working, big files are still persistent as a git object and passwords can not be deleted because they are &lt;code&gt;protected by &amp;#39;HEAD&amp;#39;&lt;/code&gt;. I could not really find a solution for these problems. Maybe you are more lucky!&lt;/p&gt;
+
+&lt;p&gt;The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&amp;#39;s Git history.&lt;/p&gt;
 </description>
       <pubDate>Sat, 02 Jan 2016 10:55:00 -0300</pubDate>
       <dc:date>2016-01-02T10:55:00-03:00</dc:date>
