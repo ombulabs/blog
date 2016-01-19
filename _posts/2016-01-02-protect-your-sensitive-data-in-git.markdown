@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Protect your sensitive data"
+title: "Protect your sensitive data in Git"
 date: 2016-01-02 13:55:00
 categories: ["open source", "security"]
 author: "schmierkov"
