@@ -10,8 +10,8 @@
     <description>The Lean Software Boutique</description>
     <pubDate>Sat, 02 Jan 2016 10:55:00 -0300</pubDate>
     <item>
-      <title>Protect your sensitive data</title>
-      <link>blog url/open-source/security/git-and-sensitive-data.html</link>
+      <title>Protect your sensitive data in Git</title>
+      <link>blog url/open-source/security/protect-your-sensitive-data-in-git.html</link>
       <description>&lt;p&gt;If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.&lt;/strong&gt;&lt;/p&gt;
