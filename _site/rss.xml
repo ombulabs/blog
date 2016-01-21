@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Sat, 02 Jan 2016 10:55:00 -0300</pubDate>
+    <pubDate>Thu, 21 Jan 2016 07:36:00 -0300</pubDate>
     <item>
       <title>Protect your sensitive data in Git</title>
       <link>blog url/open-source/security/protect-your-sensitive-data-in-git.html</link>
@@ -90,8 +90,8 @@ drwxrwxr-x  &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; sirko sirko  &lt;span
 
 &lt;p&gt;The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&amp;#39;s Git history.&lt;/p&gt;
 </description>
-      <pubDate>Sat, 02 Jan 2016 10:55:00 -0300</pubDate>
-      <dc:date>2016-01-02T10:55:00-03:00</dc:date>
+      <pubDate>Thu, 21 Jan 2016 07:36:00 -0300</pubDate>
+      <dc:date>2016-01-21T07:36:00-03:00</dc:date>
     </item>
     <item>
       <title>How to report a bug</title>
@@ -368,6 +368,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-01-02T10:55:00-03:00</dc:date>
+    <dc:date>2016-01-21T07:36:00-03:00</dc:date>
   </channel>
 </rss>
