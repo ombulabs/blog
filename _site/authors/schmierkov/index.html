@@ -77,6 +77,125 @@
 <main id="content" class="content category">
 
   
+    <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
+          <a href="/blog/open-source/security/protect-your-sensitive-data-in-git.html">Protect your sensitive data in Git</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/ff0ffbb39659d36ad6aabcd0b4715c1b?s=50" alt="Sirko Sittig" nopin="nopin" />
+  
+  <a href="/blog/authors/schmierkov"
+     title="Articles by Sirko Sittig">
+     Sirko Sittig
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>,
+      <a href="/blog/tags/security"
+         title="Articles about Security">Security</a>
+
+
+
+<time class="post-date" datetime="2016-01-21">
+  21 Jan 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.</p>
+
+<p><strong>One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.</strong></p>
+
+<p>For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my <code>ssh-key</code> to the repo:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit -am <span class="s1">&#39;init git repo&#39;</span>
+<span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 917a1e1<span class="o">]</span> init git repo
+ <span class="m">2</span> files changed, <span class="m">52</span> insertions<span class="o">(</span>+<span class="o">)</span>
+ create mode <span class="m">100644</span> id_rsa
+ create mode <span class="m">100644</span> id_rsa.pub
+</code></pre></div>
+<p>After doing a couple of additions, working and editing, I realise that I should never have commited the <code>ssh-key</code>. *facepalm*</p>
+
+<p>Alright, then I just do a simple <code>git rm --cached id_rsa</code> and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git rm --cached id_rsa
+rm <span class="s1">&#39;id_rsa&#39;</span>
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git status
+A  .gitignore
+D  id_rsa
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git commit -am <span class="s1">&#39;remove id_rsa&#39;</span>
+<span class="o">[</span>master c69deb9<span class="o">]</span> remove id_rsa
+ <span class="m">2</span> files changed, <span class="m">1</span> insertion<span class="o">(</span>+<span class="o">)</span>, <span class="m">51</span> deletions<span class="o">(</span>-<span class="o">)</span>
+ create mode <span class="m">100644</span> .gitignore
+ delete mode <span class="m">100644</span> id_rsa
+</code></pre></div>
+<p>So if we now have a look in our commit list, we can still see our first commit where I added my ssh-key. If I checkout this commit, I still have the contents of my <code>ssh-key</code> available.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git log
+917a1e1 - init git repo <span class="o">(</span><span class="m">24</span> minutes ago<span class="o">)</span> &lt;Sirko Sittig&gt;
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git checkout 917a1e1
+<span class="o">((</span>detached from 917a1e1<span class="o">))</span> <span class="nv">$ </span>cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIJKQIBAAKCAgEAoequrqsM42na3OpvBFYOpqvzJumr3/kxJTuluXbPyJzVjMXf
+d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
+YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
+...
+</code></pre></div>
+<p>To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with <a href="https://git-scm.com/docs/git-filter-branch">git filter-branch</a>. The command <code>git rm --cached</code> <a href="https://git-scm.com/docs/git-rm">git rm docs</a> is not sufficient in this case.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>6/6<span class="o">)</span>
+Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
+</code></pre></div>
+<p>So far so good, but what about my other branches that have been created?
+<code>bash
+(master) $ git checkout new-feature
+(new-feature) $ ls
+drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:20 ./
+drwx------ 56 sirko sirko 12288 Dec 31 12:37 ../
+drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:20 .git/
+-rw-rw-r--  1 sirko sirko  3243 Dec 31 13:20 id_rsa
+-rw-r--r--  1 sirko sirko   748 Dec 31 12:41 id_rsa.pub
+-rw-rw-r--  1 sirko sirko    64 Dec 31 13:20 my_document.txt
+</code></p>
+
+<p>Apparently <code>git filter-branch</code> is applying this changes only to the current branch, which is actually not what I want. To make this work, it seems that I have to run <code>git filter-branch</code> in every existing branch, which makes it pretty annoying. After reading more in the (git docs)[https://git-scm.com/docs/git-filter-branch], I found that I need to apply the <code>--all</code> option.</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD --all
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>7/7<span class="o">)</span>
+Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
+WARNING: Ref <span class="s1">&#39;refs/heads/master&#39;</span> is unchanged
+Ref <span class="s1">&#39;refs/remotes/origin/master&#39;</span> was rewritten
+WARNING: Ref <span class="s1">&#39;refs/remotes/origin/master&#39;</span> is unchanged
+Ref <span class="s1">&#39;refs/remotes/origin/new-feature&#39;</span> was rewritten
+<span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git checkout new-feature
+<span class="o">(</span>new-feature<span class="o">)</span> <span class="nv">$ </span>ll
+total 44
+drwxrwxr-x  <span class="m">3</span> sirko sirko  <span class="m">4096</span> Dec <span class="m">31</span> 13:41 ./
+drwx------ <span class="m">57</span> sirko sirko <span class="m">12288</span> Dec <span class="m">31</span> 13:41 ../
+drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> Dec <span class="m">31</span> 13:41 .git/
+-rw-rw-r--  <span class="m">1</span> sirko sirko   <span class="m">748</span> Dec <span class="m">31</span> 13:41 id_rsa.pub
+-rw-rw-r--  <span class="m">1</span> sirko sirko    <span class="m">64</span> Dec <span class="m">31</span> 13:41 my_document.txt
+</code></pre></div>
+<p>That seems to be exactly what I want and in the end I just need to <code>git push --all --force</code> my changes. <strong>After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.</strong></p>
+
+<p>Another alternative to working with <code>git filter-branch</code> is <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG</a> which has some more nifty features.</p>
+
+<p>This tool provides some commands to completely remove big files as well as passwords from your Git history. Sadly I could not get it properly working, big files are still persistent as a git object and passwords can not be deleted because they are <code>protected by &#39;HEAD&#39;</code>. I could not really find a solution for these problems. Maybe you are more lucky!</p>
+
+<p>The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&#39;s Git history.</p>
+ <a class="read-more" href="/blog/open-source/security/protect-your-sensitive-data-in-git.html">Read more &raquo;</a>
+    </section>
+</article>
+
+  
+
+  
 
   
 
