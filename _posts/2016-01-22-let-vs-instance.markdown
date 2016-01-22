@@ -110,7 +110,7 @@ What we already can see is that the `let`-tests are faster.
 
 If we have a look at the test logs, we can see why that is.
 
-Logoutput of `user_instance_spec.rb`:
+Log output of `user_instance_spec.rb`:
 
 ```bash
 SQL (2.6ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
