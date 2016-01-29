@@ -8,6 +8,8 @@ author: "schmierkov"
 
 Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a `before` block.
 
+<!--more-->
+
 ```ruby
   before do
     @user = User.create username: 'foo'
