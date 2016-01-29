@@ -1,14 +1,14 @@
 ---
 layout: post
-title: "Setting up and running Hubot in a non-Heroku server"
+title: "Set up and run Hubot without using Heroku"
 date: 2016-01-20 11:16:00
-categories: ["hubot", "unix"]
+categories: ["hubot", "linux"]
 author: "mauro-oto"
 ---
 
-Hubot makes it incredibly easy to setup on a Heroku server, by taking advantage
-of its Procfile. Simply running `git push heroku master` deploys the app and
-starts it.
+[Hubot](https://hubot.github.com) makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile. Simply running
+`git push heroku master` deploys the app and starts it.
 
 When it comes to deploying to your own Linux server, given that
 `foreman` doesn't really like background processes (see:
@@ -54,15 +54,16 @@ $ foreman start
 <Ctrl-b>-d
 ```
 
-This is _not_ the best way to do it, as the process could end unexpectedly and
+This is **not the best way to do it**, as the process could end unexpectedly and
 it won't come up again, making you re-attach to the session or kill it and
 restart Hubot manually.
 
-The best way is by using either a `systemd` service or `monit`. In our case,
-we used `systemd`. For a `monit` example, check out
+The best way is to use either a `systemd` service or `monit`. For a `monit`
+example, check out
 [this gist](https://gist.github.com/philcryer/d391b72511f4b69cece3).
 
-To start Hubot as a service, create the following file:
+In our case, we use `systemd`, allowing you to start it by running
+`sudo service hubot start`. To do this, create the following service file:
 
 ```bash
 ; Hubot systemd service unit file
@@ -88,7 +89,14 @@ ExecStart=/bin/bash -a -c 'cd /path/to/hubot && source .env && /bin/hubot --adap
 WantedBy=multi-user.target
 ```
 
-Finally, you can run `systemctl daemon-reload` and then `service hubot start`.
-Any changes you make to the bot can be obtained using `git pull origin master`
-and restarting the Hubot service (`service hubot restart`), or by using
-Capistrano if you wrote the deploy recipe for it.
+Finally, you can run `systemctl daemon-reload` and then
+`sudo service hubot start`. Any changes you make to the bot can be obtained
+using `git pull origin master` and then restarting the Hubot service
+(`service hubot restart`), or by using Capistrano if you wrote the deploy recipe
+for it.
+
+Hubot makes for a nice addition to your team, and if you use the Slack
+integration, you can use it for cool stuff like deploying via your CI server,
+or more mundane things like getting pictures of pugs delivered to your channel!
+
+![pug me](https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png)
