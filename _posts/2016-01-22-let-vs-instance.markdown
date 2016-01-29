@@ -22,9 +22,9 @@ The other option is `let`.
 
 If you have seen this and you are still not sure, when to use instance variables and when `let`, then you will in the following examples.
 
-For this example I have choosen a simple setup in which I want to create 2 users and check their attributes.
+For this example I have chosen a simple setup in which I want to create 2 users and check their attributes.
 
-To properly reset the database with [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) after test, you can use this snippet below:
+To properly reset the database with [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) after each test, you can use this snippet below:
 
 ```ruby
 RSpec.configure do |config|
@@ -133,9 +133,9 @@ SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at
 SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:47:45', '2016-01-22 16:47:45')
 ```
 
-As we can see in the log output, we count 6 SQL Inserts for the instance example and just 4 SQL Inserts for the `let` example. This is because the variables configured with `let` will be loaded if we directly call them. This behaviour is called lazy loading and forgives small mistakes when writing tests.
+As we can see in the log output, we count 6 SQL Inserts for the instance example and just 4 SQL Inserts for the `let` example. This is because the variables configured with `let` will be loaded if we directly call them. This behavior is called lazy loading and forgives small mistakes when writing tests.
 
-If we now have a closer look at the instance variable example, you see there the use of `before`. This is the default RSpec behaviour and actually translates to `before(:each)`. This means the `before` block gets executed before **every** single test. If you have a really complex test setup in which you use a `before(:each)`, you are most likely wasting a lot of time setting up your tests.
+If we now have a closer look at the instance variable example, you see there the use of `before`. This is the default RSpec behavior and actually translates to `before(:each)`. This means the `before` block gets executed before **every** single test. If you have a really complex test setup in which you use a `before(:each)`, you are most likely wasting a lot of time setting up your tests.
 
 For the next example I'm going to use `before(:all)` to see what changes. So my before block looks now like this:
 
