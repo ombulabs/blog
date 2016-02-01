@@ -7,7 +7,7 @@ author: "mauro-oto"
 ---
 
 [Hubot](https://hubot.github.com) makes it incredibly easy to setup on a Heroku
-server, by taking advantage of its Procfile. Simply running
+server, by taking advantage of its Procfile support. Simply running
 `git push heroku master` deploys the app and starts it.
 
 When it comes to deploying to your own Linux server, given that
@@ -55,14 +55,14 @@ $ foreman start
 ```
 
 This is **not the best way to do it**, as the process could end unexpectedly and
-it won't come up again, making you re-attach to the session or kill it and
-restart Hubot manually.
+it won't come up again. This forces you to re-attach to the session or kill it
+and restart Hubot manually.
 
 The best way is to use either a `systemd` service or `monit`. For a `monit`
 example, check out
 [this gist](https://gist.github.com/philcryer/d391b72511f4b69cece3).
 
-In our case, we use `systemd`, allowing you to start it by running
+In our case, we use `systemd`, which allows us to start it by running
 `sudo service hubot start`. To do this, create the following service file:
 
 ```bash
@@ -95,8 +95,8 @@ using `git pull origin master` and then restarting the Hubot service
 (`service hubot restart`), or by using Capistrano if you wrote the deploy recipe
 for it.
 
-Hubot makes for a nice addition to your team, and if you use the Slack
+Hubot is a nice addition to your team, and if you use the Slack
 integration, you can use it for cool stuff like deploying via your CI server,
-or more mundane things like getting pictures of pugs delivered to your channel!
+or simple things like getting pictures of pugs delivered to your channel!
 
 ![pug me](https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png)

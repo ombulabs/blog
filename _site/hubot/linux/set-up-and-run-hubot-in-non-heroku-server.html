@@ -6,7 +6,7 @@
 
     
 
-    <title>OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server</title>
+    <title>OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku</title>
 
     
     <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
@@ -15,30 +15,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server">
+    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku">
     <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
-    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server">
+    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku">
     <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server" />
+    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/hubot/unix/set-up-and-run-hubot-in-non-heroku-server.html" />
+    <meta property="og:url" content="http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server" />
+    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
     <meta property="article:published_time" content="2016-01-20 08:16:00 -0300" />
     <meta property="article:modified_time" content="2016-01-20 08:16:00 -0300" />
     <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Setting Up and Running Hubot in a Non-Heroku Server" />
+    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
     <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -72,7 +72,7 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Setting up and running Hubot in a non-Heroku server</h1>
+            <h1 class="post-title">Set up and run Hubot without using Heroku</h1>
             <section class="post-meta">
               
               
@@ -92,8 +92,8 @@
     
       <a href="/blog/tags/hubot"
          title="Articles about Hubot">Hubot</a>,
-      <a href="/blog/tags/unix"
-         title="Articles about Unix">Unix</a>
+      <a href="/blog/tags/linux"
+         title="Articles about Linux">Linux</a>
 
 
 
@@ -105,9 +105,9 @@
         </header>
 
         <section class="post-content">
-          <p>Hubot makes it incredibly easy to setup on a Heroku server, by taking advantage
-of its Procfile. Simply running <code>git push heroku master</code> deploys the app and
-starts it.</p>
+          <p><a href="https://hubot.github.com">Hubot</a> makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile support. Simply running
+<code>git push heroku master</code> deploys the app and starts it.</p>
 
 <p>When it comes to deploying to your own Linux server, given that
 <code>foreman</code> doesn&#39;t really like background processes (see:
@@ -144,15 +144,16 @@ session:</p>
 <span class="nv">$ </span>foreman start
 &lt;Ctrl-b&gt;-d
 </code></pre></div>
-<p>This is <em>not</em> the best way to do it, as the process could end unexpectedly and
-it won&#39;t come up again, making you re-attach to the session or kill it and
-restart Hubot manually.</p>
+<p>This is <strong>not the best way to do it</strong>, as the process could end unexpectedly and
+it won&#39;t come up again. This forces you to re-attach to the session or kill it
+and restart Hubot manually.</p>
 
-<p>The best way is by using either a <code>systemd</code> service or <code>monit</code>. In our case,
-we used <code>systemd</code>. For a <code>monit</code> example, check out
+<p>The best way is to use either a <code>systemd</code> service or <code>monit</code>. For a <code>monit</code>
+example, check out
 <a href="https://gist.github.com/philcryer/d391b72511f4b69cece3">this gist</a>.</p>
 
-<p>To start Hubot as a service, create the following file:</p>
+<p>In our case, we use <code>systemd</code>, which allows us to start it by running
+<code>sudo service hubot start</code>. To do this, create the following service file:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="p">;</span> Hubot systemd service unit file
 <span class="p">;</span> Place in e.g. <span class="sb">`</span>/etc/systemd/system/hubot.service<span class="sb">`</span>, <span class="k">then</span>
 <span class="p">;</span> <span class="sb">`</span>systemctl daemon-reload<span class="sb">`</span> and <span class="sb">`</span>service hubot start<span class="sb">`</span>.
@@ -175,10 +176,17 @@ we used <code>systemd</code>. For a <code>monit</code> example, check out
 <span class="o">[</span>Install<span class="o">]</span>
 <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
 </code></pre></div>
-<p>Finally, you can run <code>systemctl daemon-reload</code> and then <code>service hubot start</code>.
-Any changes you make to the bot can be obtained using <code>git pull origin master</code>
-and restarting the Hubot service (<code>service hubot restart</code>), or by using
-Capistrano if you wrote the deploy recipe for it.</p>
+<p>Finally, you can run <code>systemctl daemon-reload</code> and then
+<code>sudo service hubot start</code>. Any changes you make to the bot can be obtained
+using <code>git pull origin master</code> and then restarting the Hubot service
+(<code>service hubot restart</code>), or by using Capistrano if you wrote the deploy recipe
+for it.</p>
+
+<p>Hubot is a nice addition to your team, and if you use the Slack
+integration, you can use it for cool stuff like deploying via your CI server,
+or simple things like getting pictures of pugs delivered to your channel!</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png" alt="pug me"></p>
 
         </section>
 
@@ -204,15 +212,15 @@ Capistrano if you wrote the deploy recipe for it.</p>
           <!-- Share links section -->
           <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Setting up and running Hubot in a non-Heroku server&amp;url=http://www.ombulabs.com/hubot/unix/set-up-and-run-hubot-in-non-heroku-server.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Set up and run Hubot without using Heroku&amp;url=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
-    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/hubot/unix/set-up-and-run-hubot-in-non-heroku-server.html"
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
         <span class="hidden">Facebook</span>
     </a>
-    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/hubot/unix/set-up-and-run-hubot-in-non-heroku-server.html"
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
         <span class="hidden">Google+</span>
     </a>
