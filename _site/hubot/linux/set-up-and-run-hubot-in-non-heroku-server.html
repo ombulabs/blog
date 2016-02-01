@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku</title>
+
+    
+    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku">
+    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku">
+    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
+    <meta property="article:published_time" content="2016-01-20 08:16:00 -0300" />
+    <meta property="article:modified_time" content="2016-01-20 08:16:00 -0300" />
+    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Set Up and Run Hubot Without Using Heroku" />
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="post-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+
+    <main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Set up and run Hubot without using Heroku</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/hubot"
+         title="Articles about Hubot">Hubot</a>,
+      <a href="/blog/tags/linux"
+         title="Articles about Linux">Linux</a>
+
+
+
+<time class="post-date" datetime="2016-01-20">
+  20 Jan 2016
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p><a href="https://hubot.github.com">Hubot</a> makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile support. Simply running
+<code>git push heroku master</code> deploys the app and starts it.</p>
+
+<p>When it comes to deploying to your own Linux server, given that
+<code>foreman</code> doesn&#39;t really like background processes (see:
+<a href="https://github.com/ddollar/foreman/issues/65">ddollar/foreman#65</a>), you need to
+use something like <code>monit</code>, <code>systemd</code> or <code>tmux</code> to better manage your Hubot
+process.</p>
+
+<!--more-->
+
+<p>If you don&#39;t already have your own Hubot repository, you can easily create one.
+The easiest way is using the hubot generator:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g yo generator-hubot
+</code></pre></div>
+<p>Run the generator in a folder of your choosing:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir myhubot
+<span class="nv">$ </span><span class="nb">cd </span>myhubot
+<span class="nv">$ </span>yo hubot
+</code></pre></div>
+<p>Go through the steps the generator takes you, and when you&#39;re done, initialize a
+Git repository and push it to Github or your preferred Git server.</p>
+
+<p>Go ahead and choose where you want to run your Hubot from and SSH into your
+instance (we used an AWS EC2 instance). Once in it, you can clone your Hubot
+repository, or if you prefer, create a Capistrano recipe and deploy it.  </p>
+
+<p>As I mentioned before, you could run <code>foreman start</code> now to check that your bot
+is working, but you can&#39;t leave it running in the background out-of-the-box, as
+<code>foreman</code> is not friendly to background processes.</p>
+
+<p>You can work around this by leaving <code>foreman</code> itself running in a dettached tmux
+session:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tmux new -s hubot
+<span class="nv">$ </span><span class="nb">cd</span> /path/to/hubot
+<span class="nv">$ </span>foreman start
+&lt;Ctrl-b&gt;-d
+</code></pre></div>
+<p>This is <strong>not the best way to do it</strong>, as the process could end unexpectedly and
+it won&#39;t come up again. This forces you to re-attach to the session or kill it
+and restart Hubot manually.</p>
+
+<p>The best way is to use either a <code>systemd</code> service or <code>monit</code>. For a <code>monit</code>
+example, check out
+<a href="https://gist.github.com/philcryer/d391b72511f4b69cece3">this gist</a>.</p>
+
+<p>In our case, we use <code>systemd</code>, which allows us to start it by running
+<code>sudo service hubot start</code>. To do this, create the following service file:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="p">;</span> Hubot systemd service unit file
+<span class="p">;</span> Place in e.g. <span class="sb">`</span>/etc/systemd/system/hubot.service<span class="sb">`</span>, <span class="k">then</span>
+<span class="p">;</span> <span class="sb">`</span>systemctl daemon-reload<span class="sb">`</span> and <span class="sb">`</span>service hubot start<span class="sb">`</span>.
+
+<span class="o">[</span>Unit<span class="o">]</span>
+<span class="nv">Description</span><span class="o">=</span>Hubot
+<span class="nv">Requires</span><span class="o">=</span>network.target
+<span class="nv">After</span><span class="o">=</span>network.target
+
+<span class="o">[</span>Service<span class="o">]</span>
+<span class="nv">Type</span><span class="o">=</span>simple
+<span class="nv">WorkingDirectory</span><span class="o">=</span>/path/to/hubot
+<span class="nv">User</span><span class="o">=</span>deployer
+
+<span class="nv">Restart</span><span class="o">=</span>always
+<span class="nv">RestartSec</span><span class="o">=</span>10
+
+<span class="nv">ExecStart</span><span class="o">=</span>/bin/bash -a -c <span class="s1">&#39;cd /path/to/hubot &amp;&amp; source .env &amp;&amp; /bin/hubot --adapter slack&#39;</span>
+
+<span class="o">[</span>Install<span class="o">]</span>
+<span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</code></pre></div>
+<p>Finally, you can run <code>systemctl daemon-reload</code> and then
+<code>sudo service hubot start</code>. Any changes you make to the bot can be obtained
+using <code>git pull origin master</code> and then restarting the Hubot service
+(<code>service hubot restart</code>), or by using Capistrano if you wrote the deploy recipe
+for it.</p>
+
+<p>Hubot is a nice addition to your team, and if you use the Slack
+integration, you can use it for cool stuff like deploying via your CI server,
+or simple things like getting pictures of pugs delivered to your channel!</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png" alt="pug me"></p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
+                <span class="hidden">Mauro Otonelli's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Mauro Otonelli </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Set up and run Hubot without using Heroku&amp;url=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+          
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <figure>
+          <img src="/blog/assets/images/creative-commons.png"
+               alt="Creative Commons Attribution-NonCommercial">
+          <figcaption>
+            <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+               target="_blank"
+               title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="poweredby">Made with love using Jekyll and
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

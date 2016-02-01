@@ -102,6 +102,22 @@ drwxrwxr-x  &lt;span class=&quot;m&quot;&gt;8&lt;/span&gt; sirko sirko  &lt;span
       <dc:date>2016-01-21T07:36:00-03:00</dc:date>
     </item>
     <item>
+      <title>Set up and run Hubot without using Heroku</title>
+      <link>blog url/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</link>
+      <description>&lt;p&gt;&lt;a href=&quot;https://hubot.github.com&quot;&gt;Hubot&lt;/a&gt; makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile support. Simply running
+&lt;code&gt;git push heroku master&lt;/code&gt; deploys the app and starts it.&lt;/p&gt;
+
+&lt;p&gt;When it comes to deploying to your own Linux server, given that
+&lt;code&gt;foreman&lt;/code&gt; doesn&amp;#39;t really like background processes (see:
+&lt;a href=&quot;https://github.com/ddollar/foreman/issues/65&quot;&gt;ddollar/foreman#65&lt;/a&gt;), you need to
+use something like &lt;code&gt;monit&lt;/code&gt;, &lt;code&gt;systemd&lt;/code&gt; or &lt;code&gt;tmux&lt;/code&gt; to better manage your Hubot
+process.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 20 Jan 2016 08:16:00 -0300</pubDate>
+      <dc:date>2016-01-20T08:16:00-03:00</dc:date>
+    </item>
+    <item>
       <title>How to report a bug</title>
       <link>blog url/open-source/bugs/how-to-report-a-bug.html</link>
       <description>&lt;p&gt;The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.&lt;/p&gt;
