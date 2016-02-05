@@ -2,7 +2,7 @@
 layout: post
 title: "The 7 Days Open Source Challenge"
 date: 2015-08-04 03:55:00
-categories: ["open source"]
+categories: ["open-source"]
 author: "etagwerker"
 ---
 

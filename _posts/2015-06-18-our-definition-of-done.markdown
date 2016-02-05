@@ -2,7 +2,7 @@
 layout: post
 title:  "Our Definition of \"Done\""
 date: 2015-06-18 11:37:00
-categories: ["software development", "software quality"]
+categories: ["software-development", "software-quality"]
 author: etagwerker
 ---
 
