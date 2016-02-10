@@ -39,7 +39,7 @@ And last, but not least, our tote bag, which design was inspired by our day-to-d
 
 ### Ombu Labs Shop
 
-We are very proud and happy to share this with you. We believe this process can be applied to any kind of project. Now, these products are available for sale in our [online store](http://tiendaombulabs.ombushop.com/)!
+We are very proud and happy to share this with you. We believe this process can be applied to any kind of project. Now, these products are available for sale in our [online store](http://shop.ombulabs.com/)!
 
 <img src="/blog/assets/images/ombu-labs-shop/shop.jpg" alt="Ombu Labs Shop" class="full-img">
 
