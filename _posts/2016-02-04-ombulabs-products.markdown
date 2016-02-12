@@ -14,7 +14,7 @@ We recently worked on a series of Christmas presents for the team. We are happy 
 
 As it happens with every product, it starts with an idea. We wanted to make a t-shirt, a notebook and a tote bag that could reflect our passion for work and design.
 
-For the notebook, we chose a quote by Otl Aicher’s: “Good Art Inspires, Good Design Motivates”. Here you can see part of the design process, with some tweaks and final adjustments.
+For the notebook, we chose a quote by Otl Aicher: “Good Art Inspires, Good Design Motivates”. Here you can see part of the design process, with some tweaks and final adjustments.
 
 <img src="/blog/assets/images/ombu-labs-shop/notebook-design-process.png" alt="Notebook Design Process" class="full-img">
 
@@ -31,7 +31,7 @@ After all this creative process, these are the results:
 
 <img src="/blog/assets/images/ombu-labs-shop/t-shirt.png" alt="Ombu Labs t-shirt" class="full-img">
 
-And last, but not least, our tote bag, which design was inspired by our day-to-day work and methodology. We made some illustrations and then created a final composition.
+And last, but not least, our tote bag, its design was inspired by our day-to-day work and methodology. We made some illustrations and then created a final composition.
 
 <img src="/blog/assets/images/ombu-labs-shop/working-at-ombulabs.gif" alt="Working at OmbuLabs" class="full-img">
 
