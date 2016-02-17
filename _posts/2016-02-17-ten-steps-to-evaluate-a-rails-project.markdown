@@ -129,7 +129,7 @@ Most projects won't have information from these (**paid**) services. So you will
 
 ## Conclusion
 
-These are the steps that we currently follow before we take over a Rails' project. They've been quite helpful for us. I recommend that you use them to judge the quality of the project as objectively as possible.
+These are the steps that we currently follow before we take over a Rails project. They've been quite helpful for us. I recommend that you use them to judge the quality of the project as objectively as possible.
 
 Project maintainers, product owners and founders won't know the state of the code. You can't trust their opinion.
 
