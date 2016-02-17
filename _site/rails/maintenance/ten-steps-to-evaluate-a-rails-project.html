@@ -35,8 +35,8 @@
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
     <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - 10 Steps to Evaluate a Rails Project" />
-    <meta property="article:published_time" content="2016-02-16 10:55:00 -0300" />
-    <meta property="article:modified_time" content="2016-02-16 10:55:00 -0300" />
+    <meta property="article:published_time" content="2016-02-17 10:55:00 -0300" />
+    <meta property="article:modified_time" content="2016-02-17 10:55:00 -0300" />
     <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
     <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - 10 Steps to Evaluate a Rails Project" />
     <meta property="fb:admins" content="10153304864537860" />
@@ -97,19 +97,19 @@
 
 
 
-<time class="post-date" datetime="2016-02-16">
-  16 Feb 2016
+<time class="post-date" datetime="2016-02-17">
+  17 Feb 2016
 </time>
 
             </section>
         </header>
 
         <section class="post-content">
-          <p>It will come a time when you will have to decide whether to maintain a <a href="http://rubyonrails.org">Rails</a> project or not.</p>
+          <p>It will come a time when you will have to decide whether to maintain a <a href="http://rubyonrails.org">Rails</a> project <strong>or not</strong>.</p>
 
-<p>If you want to seriously consider it, you should evaluate all these steps.</p>
+<p>If you want to seriously consider it, you should follow these 10 steps:</p>
 
-<h2>1. Setup the development environment</h2>
+<h3>1. Setup the development environment</h3>
 
 <p>Git clone the repository and try to start the server. Is the <code>README</code> clear enough? Can you follow the steps in the file and easily get started?</p>
 
@@ -126,45 +126,47 @@
 
 <p>The best projects will have a one-liner that will setup the entire environment for you.</p>
 
+<!--more-->
+
 <p>For example:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>path/to/project
 ./bin/setup
 rails server
 </code></pre></div>
-<h2>2. Run the tests</h2>
+<h3>2. Run the tests</h3>
 
 <p>Once you have setup your development environment, try to run the tests. For example:</p>
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">rake
 </code></pre></div>
 <p>Any decent <a href="http://rubyonrails.org">Rails</a> project will have a passing build, even if it&#39;s not very thorough.</p>
 
-<p>Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. <a href="http://www.seleniumhq.org">Selenium</a>)</p>
+<p>Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. Integration tests that use the <a href="http://www.seleniumhq.org">Selenium</a> driver)</p>
 
 <p>Did the build pass? Did it fail? How many failures did you get?</p>
 
 <p>In the best case scenario, the tests will pass.</p>
 
-<h2>3. Review schema.rb</h2>
+<h3>3. Review schema.rb</h3>
 
-<p>A good way to see the complexity of an application is to see the amount of tables in the database. Does it have more than 20 tables? More than 100? Can you easily draw an <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">ERD</a> of the core models?</p>
+<p>A good way to see the complexity of an application is to see the amount of tables in the database. Does it have more than 20 tables? More than 100? Can you easily draw an <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">ERD</a> of the core models? Are the tables normalized?</p>
 
-<p>I like doing the exercise to draw the core business tables and the relationships between them. This usually helps me understand the business behind the project.</p>
+<p>I like doing the exercise of drawing the core business tables and the relationships between them. This usually helps me understand the business behind the project.</p>
 
-<h2>4. Review .env</h2>
+<h3>4. Review .env</h3>
 
-<p>Does the project have an <code>.env</code> file or similar? If the project doesn’t have one, it’s a clear sign that there will be trouble moving the project across environments (development, test, staging, production)</p>
+<p>Does the project have a <code>.env</code> file or similar? If the project doesn’t have one, it’s a clear sign that there will be trouble moving the project across environments (development, test, staging, production)</p>
 
 <p>By now we should all know that <a href="http://12factor.net/config">we should all be using environment variables</a>. If someone developed this project without <em>env</em> variables, you will probably find condition statements for this problem all over the codebase.</p>
 
-<h2>5. Check the Gemfile</h2>
+<h3>5. Check the Gemfile</h3>
 
 <p>Find out the project&#39;s <a href="http://rubyonrails.org">Rails</a> version. Is it the latest version? Is it older than 3.0?</p>
 
-<p>One thing that we’ve learned is that upgrading Rails for a project is <strong>not a walk in the park</strong>.</p>
+<p>One thing that we’ve learned is that upgrading Rails in a project is <strong>not a walk in the park</strong>.</p>
 
-<p>Does it use gems that are not currently maintained? This could be a sign that you will have to migrate to new gems, which will affect your estimates.</p>
+<p>Does it use gems that are not currently maintained? This could be a sign that you will have to migrate to new gems, which will produce extra work and affect your estimates.</p>
 
-<h2>6. Run bundle-audit</h2>
+<h3>6. Run bundle-audit</h3>
 
 <p><a href="https://rubygems.org/gems/bundler-audit">Bundler Audit</a> is a useful gem that will check for known vulnerabilities for the gems specified in <code>Gemfile.lock</code></p>
 
@@ -174,15 +176,15 @@ rails server
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">etagwerker:ombushop/ <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>bundle-audit
 No vulnerabilities found
 </code></pre></div>
-<h2>7. Setup Code Climate</h2>
+<h3>7. Setup Code Climate</h3>
 
-<p>This is the quick and (<strong>paid</strong>) step to check code quality. At <a href="http://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client’s projects.</p>
+<p>This is a quick (and <strong>paid</strong>) step to check code quality. At <a href="http://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client&#39;s projects.</p>
 
 <p><a href="https://codeclimate.com">Code Climate</a> is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.</p>
 
 <p>You can quickly find <strong>code hotspots</strong>, potential issues, potential bug risks, and even coverage stats.</p>
 
-<p>What is the GPA of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
+<p>What is the <a href="https://docs.codeclimate.com/docs/gpa">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
 
 <p>A free alternative would be to run some (or all) of these tools on the project:</p>
 
@@ -193,7 +195,7 @@ No vulnerabilities found
 <li><a href="https://rubygems.org/gems/simplecov">simplecov</a></li>
 </ul>
 
-<h2>8. Check code coverage</h2>
+<h3>8. Check code coverage</h3>
 
 <p>As much as I like <a href="https://codeclimate.com">Code Climate</a>, <a href="https://rubygems.org/gems/simplecov">simplecov</a> is an even faster way to generate a quick report about code coverage.</p>
 
@@ -205,27 +207,27 @@ No vulnerabilities found
 
 <p>If you are going to be changing the code, you need to make sure that this code is covered. If not, it will be a nightmare!</p>
 
-<p>You should complement this report with a code review of the tests, to make sure that the coverage is actually thorough.</p>
+<p>You should complement this report with a qualitative code review of the tests, to make sure that the coverage is actually thorough.</p>
 
-<h2>9. Research the development process</h2>
+<h3>9. Research the development process</h3>
 
-<p>Do the developers have a process to introduce changes to the project? Do they use code reviews before they merge anything to <code>master</code>? Do they have a <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> service that runs with every pull request?</p>
+<p>Do the developers have a process to introduce changes to the project? Do they use code reviews before they merge anything to <code>master</code>? Do they have a <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> service that runs with every pull request? Do they even use pull requests?</p>
 
-<p>What&#39;s in the roadmap for the next 3 months? Is this project on fire? Do they need a firefighter? Why is it on fire?</p>
+<p>What&#39;s in the roadmap for the next 3 months? Is this project <strong>on fire</strong>? Do they need a firefighter? Why is it on fire?</p>
 
-<h2>10. Review performance stats</h2>
+<h3>10. Review performance stats</h3>
 
 <p>Do they use <a href="https://www.skylight.io">Skylight</a>? <a href="http://newrelic.com">NewRelic</a>? What are the slowest and busiest requests? What are the main performance problems?</p>
 
-<p>Most projects won&#39;t have information from these (paid) services. So you will have to find out on your own. If they use <a href="https://www.google.com/analytics/">Google Analytics</a>, you might find some information about poor page performance.</p>
+<p>Most projects won&#39;t have information from these (<strong>paid</strong>) services. So you will have to find out on your own. If they use <a href="https://www.google.com/analytics/">Google Analytics</a>, you might find some information about poor page performance.</p>
 
 <h2>Conclusion</h2>
 
-<p>These are the steps that we currently follow before we take over a project. They are quite helpful and I recommend that you use them to objectively judge the quality of the project.</p>
+<p>These are the steps that we currently follow before we take over a Rails&#39; project. They&#39;ve been quite helpful for us. I recommend that you use them to judge the quality of the project as objectively as possible.</p>
 
-<p>Project maintainers, product owners and founders won’t know the state of the code. So you can&#39;t trust their opinion.</p>
+<p>Project maintainers, product owners and founders won&#39;t know the state of the code. You can&#39;t trust their opinion.</p>
 
-<p>If all these steps <strong>pass</strong> we will be happy to take over the project. If most of them <strong>fail</strong> we will usually send you a <strong>free</strong> code quality report and respectfully decline.</p>
+<p>At <a href="http://www.ombulabs.com">Ombu Labs</a>, if all these steps <strong>pass</strong> we will be happy to take over the project. If most of them <strong>fail</strong> we will usually send the company a <strong>free</strong> code quality report and respectfully decline.</p>
 
 <p>I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!</p>
 

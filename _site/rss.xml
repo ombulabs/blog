@@ -8,15 +8,15 @@
     <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 16 Feb 2016 10:55:00 -0300</pubDate>
+    <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
     <item>
       <title>10 Steps to Evaluate a Rails Project</title>
       <link>blog url/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
-      <description>&lt;p&gt;It will come a time when you will have to decide whether to maintain a &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; project or not.&lt;/p&gt;
+      <description>&lt;p&gt;It will come a time when you will have to decide whether to maintain a &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; project &lt;strong&gt;or not&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;If you want to seriously consider it, you should evaluate all these steps.&lt;/p&gt;
+&lt;p&gt;If you want to seriously consider it, you should follow these 10 steps:&lt;/p&gt;
 
-&lt;h2&gt;1. Setup the development environment&lt;/h2&gt;
+&lt;h3&gt;1. Setup the development environment&lt;/h3&gt;
 
 &lt;p&gt;Git clone the repository and try to start the server. Is the &lt;code&gt;README&lt;/code&gt; clear enough? Can you follow the steps in the file and easily get started?&lt;/p&gt;
 
@@ -32,112 +32,9 @@
 &lt;/ul&gt;
 
 &lt;p&gt;The best projects will have a one-liner that will setup the entire environment for you.&lt;/p&gt;
-
-&lt;p&gt;For example:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;path/to/project
-./bin/setup
-rails server
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;2. Run the tests&lt;/h2&gt;
-
-&lt;p&gt;Once you have setup your development environment, try to run the tests. For example:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;rake
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Any decent &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; project will have a passing build, even if it&amp;#39;s not very thorough.&lt;/p&gt;
-
-&lt;p&gt;Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. &lt;a href=&quot;http://www.seleniumhq.org&quot;&gt;Selenium&lt;/a&gt;)&lt;/p&gt;
-
-&lt;p&gt;Did the build pass? Did it fail? How many failures did you get?&lt;/p&gt;
-
-&lt;p&gt;In the best case scenario, the tests will pass.&lt;/p&gt;
-
-&lt;h2&gt;3. Review schema.rb&lt;/h2&gt;
-
-&lt;p&gt;A good way to see the complexity of an application is to see the amount of tables in the database. Does it have more than 20 tables? More than 100? Can you easily draw an &lt;a href=&quot;https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model&quot;&gt;ERD&lt;/a&gt; of the core models?&lt;/p&gt;
-
-&lt;p&gt;I like doing the exercise to draw the core business tables and the relationships between them. This usually helps me understand the business behind the project.&lt;/p&gt;
-
-&lt;h2&gt;4. Review .env&lt;/h2&gt;
-
-&lt;p&gt;Does the project have an &lt;code&gt;.env&lt;/code&gt; file or similar? If the project doesn’t have one, it’s a clear sign that there will be trouble moving the project across environments (development, test, staging, production)&lt;/p&gt;
-
-&lt;p&gt;By now we should all know that &lt;a href=&quot;http://12factor.net/config&quot;&gt;we should all be using environment variables&lt;/a&gt;. If someone developed this project without &lt;em&gt;env&lt;/em&gt; variables, you will probably find condition statements for this problem all over the codebase.&lt;/p&gt;
-
-&lt;h2&gt;5. Check the Gemfile&lt;/h2&gt;
-
-&lt;p&gt;Find out the project&amp;#39;s &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; version. Is it the latest version? Is it older than 3.0?&lt;/p&gt;
-
-&lt;p&gt;One thing that we’ve learned is that upgrading Rails for a project is &lt;strong&gt;not a walk in the park&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Does it use gems that are not currently maintained? This could be a sign that you will have to migrate to new gems, which will affect your estimates.&lt;/p&gt;
-
-&lt;h2&gt;6. Run bundle-audit&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://rubygems.org/gems/bundler-audit&quot;&gt;Bundler Audit&lt;/a&gt; is a useful gem that will check for known vulnerabilities for the gems specified in &lt;code&gt;Gemfile.lock&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If there are any vulnerable dependencies, this tool will suggest that you upgrade to a patched version of the gem.&lt;/p&gt;
-
-&lt;p&gt;In the best case scenario, you will see something like this:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;etagwerker:ombushop/ &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;master&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bundle-audit
-No vulnerabilities found
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;7. Setup Code Climate&lt;/h2&gt;
-
-&lt;p&gt;This is the quick and (&lt;strong&gt;paid&lt;/strong&gt;) step to check code quality. At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;Ombu Labs&lt;/a&gt; we have a business account that we use for our products and our client’s projects.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://codeclimate.com&quot;&gt;Code Climate&lt;/a&gt; is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.&lt;/p&gt;
-
-&lt;p&gt;You can quickly find &lt;strong&gt;code hotspots&lt;/strong&gt;, potential issues, potential bug risks, and even coverage stats.&lt;/p&gt;
-
-&lt;p&gt;What is the GPA of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!&lt;/p&gt;
-
-&lt;p&gt;A free alternative would be to run some (or all) of these tools on the project:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://rubygems.org/gems/flog&quot;&gt;flog&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://rubygems.org/gems/flay&quot;&gt;flay&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://rubygems.org/gems/metric_fu&quot;&gt;metric_fu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://rubygems.org/gems/simplecov&quot;&gt;simplecov&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;8. Check code coverage&lt;/h2&gt;
-
-&lt;p&gt;As much as I like &lt;a href=&quot;https://codeclimate.com&quot;&gt;Code Climate&lt;/a&gt;, &lt;a href=&quot;https://rubygems.org/gems/simplecov&quot;&gt;simplecov&lt;/a&gt; is an even faster way to generate a quick report about code coverage.&lt;/p&gt;
-
-&lt;p&gt;This tool will tell you the coverage percentage for each application layer. How much percentage is covered in the models&amp;#39; tests? How much for the controllers&amp;#39; tests?&lt;/p&gt;
-
-&lt;p&gt;Which are the least covered files? How many relevant lines are in each file? How many of them are covered by a test?&lt;/p&gt;
-
-&lt;p&gt;The overall test coverage percentage will give you an idea about how much past developers cared about tests.&lt;/p&gt;
-
-&lt;p&gt;If you are going to be changing the code, you need to make sure that this code is covered. If not, it will be a nightmare!&lt;/p&gt;
-
-&lt;p&gt;You should complement this report with a code review of the tests, to make sure that the coverage is actually thorough.&lt;/p&gt;
-
-&lt;h2&gt;9. Research the development process&lt;/h2&gt;
-
-&lt;p&gt;Do the developers have a process to introduce changes to the project? Do they use code reviews before they merge anything to &lt;code&gt;master&lt;/code&gt;? Do they have a &lt;a href=&quot;https://en.wikipedia.org/wiki/Continuous_integration&quot;&gt;CI&lt;/a&gt; service that runs with every pull request?&lt;/p&gt;
-
-&lt;p&gt;What&amp;#39;s in the roadmap for the next 3 months? Is this project on fire? Do they need a firefighter? Why is it on fire?&lt;/p&gt;
-
-&lt;h2&gt;10. Review performance stats&lt;/h2&gt;
-
-&lt;p&gt;Do they use &lt;a href=&quot;https://www.skylight.io&quot;&gt;Skylight&lt;/a&gt;? &lt;a href=&quot;http://newrelic.com&quot;&gt;NewRelic&lt;/a&gt;? What are the slowest and busiest requests? What are the main performance problems?&lt;/p&gt;
-
-&lt;p&gt;Most projects won&amp;#39;t have information from these (paid) services. So you will have to find out on your own. If they use &lt;a href=&quot;https://www.google.com/analytics/&quot;&gt;Google Analytics&lt;/a&gt;, you might find some information about poor page performance.&lt;/p&gt;
-
-&lt;h2&gt;Conclusion&lt;/h2&gt;
-
-&lt;p&gt;These are the steps that we currently follow before we take over a project. They are quite helpful and I recommend that you use them to objectively judge the quality of the project.&lt;/p&gt;
-
-&lt;p&gt;Project maintainers, product owners and founders won’t know the state of the code. So you can&amp;#39;t trust their opinion.&lt;/p&gt;
-
-&lt;p&gt;If all these steps &lt;strong&gt;pass&lt;/strong&gt; we will be happy to take over the project. If most of them &lt;strong&gt;fail&lt;/strong&gt; we will usually send you a &lt;strong&gt;free&lt;/strong&gt; code quality report and respectfully decline.&lt;/p&gt;
-
-&lt;p&gt;I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!&lt;/p&gt;
 </description>
-      <pubDate>Tue, 16 Feb 2016 10:55:00 -0300</pubDate>
-      <dc:date>2016-02-16T10:55:00-03:00</dc:date>
+      <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+      <dc:date>2016-02-17T10:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Set up and run Hubot without using Heroku</title>
@@ -522,6 +419,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-02-16T10:55:00-03:00</dc:date>
+    <dc:date>2016-02-17T10:55:00-03:00</dc:date>
   </channel>
 </rss>
