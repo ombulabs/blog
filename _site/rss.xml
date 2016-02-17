@@ -8,7 +8,34 @@
     <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 29 Jan 2016 08:16:00 -0300</pubDate>
+    <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+    <item>
+      <title>10 Steps to Evaluate a Rails Project</title>
+      <link>blog url/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
+      <description>&lt;p&gt;It will come a time when you will have to decide whether to maintain a &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; project &lt;strong&gt;or not&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you want to seriously consider it, you should follow these 10 steps:&lt;/p&gt;
+
+&lt;h3&gt;1. Setup the development environment&lt;/h3&gt;
+
+&lt;p&gt;Git clone the repository and try to start the server. Is the &lt;code&gt;README&lt;/code&gt; clear enough? Can you follow the steps in the file and easily get started?&lt;/p&gt;
+
+&lt;p&gt;A lot of projects will have a &lt;code&gt;README&lt;/code&gt; that is out of date and/or instructions that don&amp;#39;t work right off the bat.&lt;/p&gt;
+
+&lt;p&gt;Most of the projects will define guidelines like these:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Configure your &lt;code&gt;config/database.yml&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Configure your &lt;code&gt;.env&lt;/code&gt; file&lt;/li&gt;
+&lt;li&gt;Setup the database &lt;code&gt;rake db:create db:migrate db:seed&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start the server &lt;code&gt;rails server&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The best projects will have a one-liner that will setup the entire environment for you.&lt;/p&gt;
+</description>
+      <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+      <dc:date>2016-02-17T10:55:00-03:00</dc:date>
+    </item>
     <item>
       <title>Set up and run Hubot without using Heroku</title>
       <link>blog url/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</link>
@@ -392,6 +419,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-01-29T08:16:00-03:00</dc:date>
+    <dc:date>2016-02-17T10:55:00-03:00</dc:date>
   </channel>
 </rss>
