@@ -123,7 +123,7 @@ What's in the roadmap for the next 3 months? Is this project **on fire**? Do the
 
 ### 10. Review performance stats
 
-Do they use [Skylight](https://www.skylight.io)? [NewRelic](http://newrelic.com)? What are the slowest and busiest requests? What are the main performance problems?
+Do they use [Skylight](https://www.skylight.io/r/qGCIS90vk2nD)? [NewRelic](http://newrelic.com)? What are the slowest and busiest requests? What are the main performance problems?
 
 Most projects won't have information from these (**paid**) services. So you will have to find out on your own. If they use [Google Analytics](https://www.google.com/analytics/), you might find some information about poor page performance.
 
