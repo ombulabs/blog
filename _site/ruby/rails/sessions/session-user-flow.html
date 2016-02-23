@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow</title>
+
+    
+    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow">
+    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow">
+    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/ruby/rails/sessions/session-user-flow.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow" />
+    <meta property="article:published_time" content="2016-02-24 10:37:00 -0300" />
+    <meta property="article:modified_time" content="2016-02-24 10:37:00 -0300" />
+    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Use Session Variables to Optimize Your User Flow" />
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="post-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+
+    <main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Use session variables to optimize your user flow</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/ff0ffbb39659d36ad6aabcd0b4715c1b?s=50" alt="Sirko Sittig" nopin="nopin" />
+  
+  <a href="/blog/authors/schmierkov"
+     title="Articles by Sirko Sittig">
+     Sirko Sittig
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>,
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/sessions"
+         title="Articles about Sessions">Sessions</a>
+
+
+
+<time class="post-date" datetime="2016-02-24">
+  24 Feb 2016
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>Sessions provide you a nice little data storage feature where the application does not need to get the informations directly from the database. So you do not have to persist data in your database and can easily store infos to a user on the fly. This is a nice way to enhance the user experience on your page. Let&#39;s say you want to show all users, from a specific area, a new fancy sign up form and the rest only sees the old form. With storing these location informations in a session variable, you do not need to persist this infos in your database.</p>
+
+<!--more-->
+
+<p>That can be pretty handy in many ways, if you think about changing the content of a website based on infos in that session. Handling a lot of session informations can be pretty overwhelming, because you have tons of crazy methods flying around. So my idea was once to stuff all these infos into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.</p>
+
+<p>Basically this is what you should <strong>NOT</strong> do:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Location</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+    <span class="vi">@location</span> <span class="o">=</span> <span class="n">location_request</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>  
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">city</span>
+    <span class="vi">@location</span><span class="o">.</span><span class="n">city</span>
+  <span class="k">end</span>
+  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<span class="k">end</span>
+<span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">before_action</span> <span class="ss">:set_location</span>
+
+  <span class="k">def</span> <span class="nf">set_location</span>
+    <span class="n">session</span><span class="o">[</span><span class="ss">:user_location</span><span class="o">]</span> <span class="o">=</span> <span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">user_ip</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>The problem is obvious, if you think about that the app has no knowledge of the previously stored object anymore and sends you exceptions. A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. With storing some user activities, you can guide or force the user to a specific area of your website.</p>
+
+<p>One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. The following could be a first draft for a controller concern to figure out what pages the user has already visited:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">before_action</span> <span class="ss">:store_path</span>
+
+<span class="k">def</span> <span class="nf">store_path</span>
+  <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">]</span> <span class="o">||=</span> <span class="o">[]</span>
+  <span class="k">if</span> <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">].</span><span class="n">exclude?</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+    <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">].</span><span class="n">push</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">visited?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+  <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>You don&#39;t need much implementation at this point and you can also test it in an <a href="https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller">Anonymous Controller</a>. With some basic helpers like this, you make a lot of things much easier and keep the overview.</p>
+
+<p>Regarding your business ideas and user flow, session variables are a nice way to guide your users, without storing all that informations to the backend or making use of third party data aggregators.</p>
+
+<p>If you know a better way to work with sessions, let me know!</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/ff0ffbb39659d36ad6aabcd0b4715c1b?s=50)">
+                <span class="hidden">Sirko Sittig's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Sirko Sittig </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Use session variables to optimize your user flow&amp;url=http://www.ombulabs.com/ruby/rails/sessions/session-user-flow.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/ruby/rails/sessions/session-user-flow.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/ruby/rails/sessions/session-user-flow.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+          
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <figure>
+          <img src="/blog/assets/images/creative-commons.png"
+               alt="Creative Commons Attribution-NonCommercial">
+          <figcaption>
+            <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+               target="_blank"
+               title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="poweredby">Made with love using Jekyll and
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
