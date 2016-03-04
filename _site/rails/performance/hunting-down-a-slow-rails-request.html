@@ -137,7 +137,7 @@ see how it behaved:</p>
 <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">strings</span><span class="o">[</span><span class="n">str</span><span class="o">.</span><span class="n">class</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">}</span>
 <span class="n">pp</span> <span class="n">strings</span>
 </code></pre></div>
-<p>As you can see, there are 700k+ allocated strings, and this increase in object
+<p>As you can see, there are 700k+ Strings allocated, and this increase in object
 allocation is the likely culprit for the slow request.</p>
 
 <p>I dug a bit into the <code>EmailAccount</code> model and its associations, and noticed that
