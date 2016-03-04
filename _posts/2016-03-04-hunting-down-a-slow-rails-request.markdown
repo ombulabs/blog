@@ -1,0 +1,89 @@
+---
+layout: post
+title: "Hunting Down a Slow Rails Request"
+date: 2016-03-04 11:03:00
+categories: ["rails", "performance"]
+author: "mauro-oto"
+---
+
+We have recently began using [Skylight](https://www.skylight.io) in production
+for one of our client's Rails applications, as an attempt to try to improve the
+performance of some of the more critical API endpoints.
+
+Skylight reports on both time taken, with a breakdown of time taken per SQL
+query, and also on object allocations per request. I noticed an unusually large
+amount of allocated objects for one request:
+
+![Skylight report](/blog/assets/images/high-object-allocation.png)
+
+This request would take anywhere from 400ms to 3000ms to respond, which is WAY,
+way too long.
+
+<!--more-->
+
+To debug this, I first captured the `String` object allocation count locally to
+see how it behaved:
+
+```ruby
+Started GET "/email_accounts.json?results_per_page=30" for 127.0.0.1 at 2016-03-02 13:04:22 +0000
+Processing by EmailAccountsController#index as JSON
+  Parameters: {"results_per_page"=>"30"}
+
+[[String, 150299], [Arel::Nodes::SqlLiteral, 5], [Arel::Nodes::BindParam, 4], [ActiveSupport::StringInquirer, 1]]
+### JSON rendering happens here ###
+[[String, 707982], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 2922], [Arel::Nodes::SqlLiteral, 6], [ActiveSupport::StringInquirer, 1]]
+
+Completed 200 OK in 5860ms (Views: 11.8ms | ActiveRecord: 564.9ms)
+```
+
+As you can see, there's 700k+ Strings allocated, and this increase in object
+allocation is the likely culprit for the slow request.
+
+I dug a bit into the `EmailAccount` model and its associations, and noticed that
+this model has a one-to-many association with the `EmailAccountSync` model.
+However, we were only returning one of model `EmailAccountSync`, supposedly, by
+using:
+
+```ruby
+scope.includes(:latest_sync)
+```
+
+and
+
+```ruby
+has_one :latest_sync, -> { order "email_account_syncs.last_attempt_at desc" },
+                      class_name: "EmailAccountSync"
+```
+
+As it turns out, the `has_one :latest_sync` relationship was not being
+respected by the query performed in the `index` action, and thus:
+
+```ruby
+EmailAccountSync Load (21.9ms)  SELECT "email_account_syncs".* FROM "email_account_syncs"  WHERE "email_account_syncs"."email_account_id" IN (24, 23, 22, 21, 20, 19, 18, 17, 16, 15)  ORDER BY email_account_syncs.last_attempt_at desc
+```
+
+All `EmailAccountSync` instances for the loaded `EmailAccount` instances get
+loaded in memory, and the `limit` that should be in the SQL statement because of
+the relationship's `has_one` is not there.
+
+I googled for a bit and found [this issue](https://github.com/rails/rails/issues/10621#issuecomment-77389988),
+which suggests using `eager_load` instead of `includes`, which fixes the issue.
+
+The downside is that it introduces an N+1 query problem, but it's a dramatical
+performance gain:
+
+```ruby
+Started GET "/email_accounts.json?results_per_page=30" for 186.158.142.200 at 2016-03-02 13:41:44 +0000
+Processing by EmailAccountsController#index as JSON
+  Parameters: {"results_per_page"=>"30"}
+
+[[String, 150295], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 2110], [Arel::Nodes::SqlLiteral, 20], [Arel::Nodes::BindParam, 10], [ActiveSupport::StringInquirer, 1]]
+### JSON rendering happens ###
+[[String, 157847], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 4220], [Arel::Nodes::SqlLiteral, 30], [Arel::Nodes::BindParam, 12], [ActiveSupport::StringInquirer, 1]]
+
+Completed 200 OK in 178ms (Views: 5.6ms | ActiveRecord: 2.3ms)
+```
+
+The object allocation is down by a huge amount, and the request now takes around
+50ms to 200ms to respond, which is not yet completely efficient, but is a much
+more acceptable value.
