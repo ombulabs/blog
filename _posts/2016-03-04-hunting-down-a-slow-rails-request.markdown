@@ -36,7 +36,15 @@ Processing by EmailAccountsController#index as JSON
 Completed 200 OK in 5860ms (Views: 11.8ms | ActiveRecord: 564.9ms)
 ```
 
-As you can see, there's 700k+ Strings allocated, and this increase in object
+To get the amount of allocated strings, I used the following snippet:
+
+```ruby
+strings = {}
+ObjectSpace.each_object(String) { |str| strings[str.class] += 1 }
+pp strings
+```
+
+As you can see, there are 700k+ Strings allocated, and this increase in object
 allocation is the likely culprit for the slow request.
 
 I dug a bit into the `EmailAccount` model and its associations, and noticed that

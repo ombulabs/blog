@@ -132,7 +132,12 @@ see how it behaved:</p>
 
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">5860</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">11</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">564</span><span class="o">.</span><span class="mi">9</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
-<p>As you can see, there&#39;s 700k+ Strings allocated, and this increase in object
+<p>To get the amount of allocated strings, I used the following snippet:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">strings</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">strings</span><span class="o">[</span><span class="n">str</span><span class="o">.</span><span class="n">class</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">}</span>
+<span class="n">pp</span> <span class="n">strings</span>
+</code></pre></div>
+<p>As you can see, there are 700k+ Strings allocated, and this increase in object
 allocation is the likely culprit for the slow request.</p>
 
 <p>I dug a bit into the <code>EmailAccount</code> model and its associations, and noticed that
