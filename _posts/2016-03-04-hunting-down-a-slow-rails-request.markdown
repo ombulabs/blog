@@ -44,7 +44,7 @@ ObjectSpace.each_object(String) { |str| strings[str.class] += 1 }
 pp strings
 ```
 
-As you can see, there are 700k+ Strings allocated, and this increase in object
+As you can see, there are 700k+ allocated strings, and this increase in object
 allocation is the likely culprit for the slow request.
 
 I dug a bit into the `EmailAccount` model and its associations, and noticed that
