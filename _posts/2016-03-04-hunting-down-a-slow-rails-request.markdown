@@ -6,18 +6,22 @@ categories: ["rails", "performance"]
 author: "mauro-oto"
 ---
 
-We have recently began using [Skylight](https://www.skylight.io) in production
-for one of our client's Rails applications, as an attempt to try to improve the
+Recently, we started using [Skylight](https://www.skylight.io) in production
+for one of our clients' Rails applications, in an attempt to try to improve the
 performance of some of the more critical API endpoints.
 
-Skylight reports on both time taken, with a breakdown of time taken per SQL
-query, and also on object allocations per request. I noticed an unusually large
-amount of allocated objects for one request:
+Skylight reports on:
+
+- Time taken per request
+- Breakdown of time taken per SQL query
+- Object allocations per request
+
+I noticed an unusually large amount of allocated objects for one request:
 
 ![Skylight report](/blog/assets/images/high-object-allocation.png)
 
-This request would take anywhere from 400ms to 3000ms to respond, which is WAY,
-way too long.
+This request would take anywhere from 400ms to 3000ms to respond, which is
+__WAY__ too long.
 
 <!--more-->
 
@@ -44,13 +48,12 @@ ObjectSpace.each_object(String) { |str| strings[str.class] += 1 }
 pp strings
 ```
 
-As you can see, there are 700k+ allocated strings, and this increase in object
-allocation is the likely culprit for the slow request.
+As you can see, there are 700k+ allocated strings. It is very likely that this
+increase in object allocation is the culprit for the slow performance.
 
 I dug a bit into the `EmailAccount` model and its associations, and noticed that
-this model has a one-to-many association with the `EmailAccountSync` model.
-However, we were only returning one of model `EmailAccountSync`, supposedly, by
-using:
+this model had a one-to-many association. Supposedly, we were only returning one
+record for this association by using:
 
 ```ruby
 scope.includes(:latest_sync)
@@ -70,9 +73,9 @@ respected by the query performed in the `index` action, and thus:
 EmailAccountSync Load (21.9ms)  SELECT "email_account_syncs".* FROM "email_account_syncs"  WHERE "email_account_syncs"."email_account_id" IN (24, 23, 22, 21, 20, 19, 18, 17, 16, 15)  ORDER BY email_account_syncs.last_attempt_at desc
 ```
 
-All `EmailAccountSync` instances for the loaded `EmailAccount` instances get
-loaded in memory, and the `limit` that should be in the SQL statement because of
-the relationship's `has_one` is not there.
+This meant that all `EmailAccountSync` instances were getting loaded for each
+`EmailAccount` record. The `limit` that should have been in the SQL statement
+was not there.
 
 I googled for a bit and found [this issue](https://github.com/rails/rails/issues/10621#issuecomment-77389988),
 which suggests using `eager_load` instead of `includes`, which fixes the issue.
