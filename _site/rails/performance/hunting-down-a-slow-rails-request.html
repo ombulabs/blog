@@ -105,18 +105,24 @@
         </header>
 
         <section class="post-content">
-          <p>We have recently began using <a href="https://www.skylight.io">Skylight</a> in production
-for one of our client&#39;s Rails applications, as an attempt to try to improve the
+          <p>Recently, we started using <a href="https://www.skylight.io">Skylight</a> in production
+for one of our clients&#39; Rails applications, in an attempt to try to improve the
 performance of some of the more critical API endpoints.</p>
 
-<p>Skylight reports on both time taken, with a breakdown of time taken per SQL
-query, and also on object allocations per request. I noticed an unusually large
-amount of allocated objects for one request:</p>
+<p>Skylight reports on:</p>
+
+<ul>
+<li>Time taken per request</li>
+<li>Breakdown of time taken per SQL query</li>
+<li>Object allocations per request</li>
+</ul>
+
+<p>I noticed an unusually large amount of allocated objects for one request:</p>
 
 <p><img src="/blog/assets/images/high-object-allocation.png" alt="Skylight report"></p>
 
-<p>This request would take anywhere from 400ms to 3000ms to respond, which is WAY,
-way too long.</p>
+<p>This request would take anywhere from 400ms to 3000ms to respond, which is
+<strong>WAY</strong> too long.</p>
 
 <!--more-->
 
@@ -137,13 +143,12 @@ see how it behaved:</p>
 <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">strings</span><span class="o">[</span><span class="n">str</span><span class="o">.</span><span class="n">class</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">}</span>
 <span class="n">pp</span> <span class="n">strings</span>
 </code></pre></div>
-<p>As you can see, there are 700k+ allocated strings, and this increase in object
-allocation is the likely culprit for the slow request.</p>
+<p>As you can see, there are 700k+ allocated strings. It is very likely that this
+increase in object allocation is the culprit for the slow performance.</p>
 
 <p>I dug a bit into the <code>EmailAccount</code> model and its associations, and noticed that
-this model has a one-to-many association with the <code>EmailAccountSync</code> model.
-However, we were only returning one of model <code>EmailAccountSync</code>, supposedly, by
-using:</p>
+this model had a one-to-many association. Supposedly, we were only returning one
+record for this association by using:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">scope</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:latest_sync</span><span class="p">)</span>
 </code></pre></div>
 <p>and</p>
@@ -154,9 +159,9 @@ using:</p>
 respected by the query performed in the <code>index</code> action, and thus:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">EmailAccountSync</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">21</span><span class="o">.</span><span class="mi">9</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="s2">&quot;email_account_syncs&quot;</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="s2">&quot;email_account_syncs&quot;</span>  <span class="no">WHERE</span> <span class="s2">&quot;email_account_syncs&quot;</span><span class="o">.</span><span class="s2">&quot;email_account_id&quot;</span> <span class="no">IN</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="no">ORDER</span> <span class="no">BY</span> <span class="n">email_account_syncs</span><span class="o">.</span><span class="n">last_attempt_at</span> <span class="n">desc</span>
 </code></pre></div>
-<p>All <code>EmailAccountSync</code> instances for the loaded <code>EmailAccount</code> instances get
-loaded in memory, and the <code>limit</code> that should be in the SQL statement because of
-the relationship&#39;s <code>has_one</code> is not there.</p>
+<p>This meant that all <code>EmailAccountSync</code> instances were getting loaded for each
+<code>EmailAccount</code> record. The <code>limit</code> that should have been in the SQL statement
+was not there.</p>
 
 <p>I googled for a bit and found <a href="https://github.com/rails/rails/issues/10621#issuecomment-77389988">this issue</a>,
 which suggests using <code>eager_load</code> instead of <code>includes</code>, which fixes the issue.</p>

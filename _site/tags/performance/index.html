@@ -106,18 +106,24 @@
 
     </footer>
     <section class="post-excerpt">
-        <p>We have recently began using <a href="https://www.skylight.io">Skylight</a> in production
-for one of our client&#39;s Rails applications, as an attempt to try to improve the
+        <p>Recently, we started using <a href="https://www.skylight.io">Skylight</a> in production
+for one of our clients&#39; Rails applications, in an attempt to try to improve the
 performance of some of the more critical API endpoints.</p>
 
-<p>Skylight reports on both time taken, with a breakdown of time taken per SQL
-query, and also on object allocations per request. I noticed an unusually large
-amount of allocated objects for one request:</p>
+<p>Skylight reports on:</p>
+
+<ul>
+<li>Time taken per request</li>
+<li>Breakdown of time taken per SQL query</li>
+<li>Object allocations per request</li>
+</ul>
+
+<p>I noticed an unusually large amount of allocated objects for one request:</p>
 
 <p><img src="/blog/assets/images/high-object-allocation.png" alt="Skylight report"></p>
 
-<p>This request would take anywhere from 400ms to 3000ms to respond, which is WAY,
-way too long.</p>
+<p>This request would take anywhere from 400ms to 3000ms to respond, which is
+<strong>WAY</strong> too long.</p>
  <a class="read-more" href="/blog/rails/performance/hunting-down-a-slow-rails-request.html">Read more &raquo;</a>
     </section>
 </article>
