@@ -8,7 +8,32 @@
     <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+    <pubDate>Fri, 04 Mar 2016 08:03:00 -0300</pubDate>
+    <item>
+      <title>Hunting Down a Slow Rails Request</title>
+      <link>blog url/rails/performance/hunting-down-a-slow-rails-request.html</link>
+      <description>&lt;p&gt;Recently, we started using &lt;a href=&quot;https://www.skylight.io&quot;&gt;Skylight&lt;/a&gt; in production
+for one of our clients&amp;#39; Rails applications, in an attempt to try to improve the
+performance of some of the more critical API endpoints.&lt;/p&gt;
+
+&lt;p&gt;Skylight reports on:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Time taken per request&lt;/li&gt;
+&lt;li&gt;Breakdown of time taken per SQL query&lt;/li&gt;
+&lt;li&gt;Object allocations per request&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I noticed an unusually large amount of allocated objects for one request:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/assets/images/high-object-allocation.png&quot; alt=&quot;Skylight report&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;This request would take anywhere from 400ms to 3000ms to respond, which is
+&lt;strong&gt;WAY&lt;/strong&gt; too long.&lt;/p&gt;
+</description>
+      <pubDate>Fri, 04 Mar 2016 08:03:00 -0300</pubDate>
+      <dc:date>2016-03-04T08:03:00-03:00</dc:date>
+    </item>
     <item>
       <title>10 Steps to Evaluate a Rails Project</title>
       <link>blog url/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
@@ -419,6 +444,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-02-17T10:55:00-03:00</dc:date>
+    <dc:date>2016-03-04T08:03:00-03:00</dc:date>
   </channel>
 </rss>
