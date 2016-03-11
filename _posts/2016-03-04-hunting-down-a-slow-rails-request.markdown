@@ -95,6 +95,6 @@ Processing by EmailAccountsController#index as JSON
 Completed 200 OK in 178ms (Views: 5.6ms | ActiveRecord: 2.3ms)
 ```
 
-The object allocation is down by a huge amount, and the request now takes around
-50ms to 200ms to respond, which is not yet completely efficient, but is a much
+The object allocation is down by a huge amount, and the request now takes from
+50ms to 200ms to respond. This is not yet completely efficient, but it is a much
 more acceptable value.
