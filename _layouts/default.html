@@ -11,22 +11,22 @@
 {% capture description %}{%if page.meta.description %}{{page.meta.description}}{% elsif page.category %}Articles about {{page.category | titleize}} in the {{site.description}} blog.{% elsif page %}{{ page.excerpt | strip_html }}{% else %}{{ site.meta_description }}{% endif %}{% endcapture %}
     {% capture social_description %}{{ description | truncatewords: 50 }}{% endcapture %}
     {% capture social_title %}{% if page %}{{ page.title }}{% if page.author %} by @{{ site.authors[page.author].twitter }}{% endif %}{% else %}{{ page_title }}{% endif %}{% endcapture %}
-    <meta name="description" content="{{ description | strip_newlines }}" />
+    <meta name="description" content="{{ description | strip_newlines | truncate: 150 | strip_html }}" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="{{ social_title | strip_newlines}}">
-    <meta itemprop="description" content="{{ social_description | strip_newlines}}">
+    <meta itemprop="name" content="{{ page_title | strip_newlines}}">
+    <meta itemprop="description" content="{{ social_description | strip_newlines | truncate: 150 | strip_html }}">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
 
-    <meta name="twitter:title" content="{{ social_title | strip_newlines }}">
-    <meta name="twitter:description" content="{{ social_description | strip_newlines }}">
+    <meta name="twitter:title" content="{{ page_title | strip_newlines }}">
+    <meta name="twitter:description" content="{{ social_description | strip_newlines | truncate: 150 | strip_html }}">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
