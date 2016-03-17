@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     blankslate (2.1.2.4)
+    byebug (8.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     classifier-reborn (2.0.3)
@@ -89,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   dotenv
   foreman
   jekyll (= 2.5.3)

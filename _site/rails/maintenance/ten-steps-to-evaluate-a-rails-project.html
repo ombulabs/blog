@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+
+    <title>10 Steps to Evaluate a Rails Project - The Lean Software Boutique</title>
+
+
+    
+    
+    <meta name="description" content="It will come a time when you will have to decide whether to maintain a Rails project or not.If you want to seriously consider it, you should follow..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="10 Steps to Evaluate a Rails Project - The Lean Software Boutique">
+    <meta itemprop="description" content="It will come a time when you will have to decide whether to maintain a Rails project or not. If you want to seriously consider it, you should follo...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="10 Steps to Evaluate a Rails Project - The Lean Software Boutique">
+    <meta name="twitter:description" content="It will come a time when you will have to decide whether to maintain a Rails project or not. If you want to seriously consider it, you should follo...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="10 Steps to Evaluate a Rails Project - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="It will come a time when you will have to decide whether to maintain a Rails project or not. If you want to seriously consider it, you should follow these 10 steps: 1. Setup the development environment Git clone the repository and try to start the server. Is the README..." />
+    <meta property="og:site_name" content="10 Steps to Evaluate a Rails Project by @etagwerker" />
+    
+      <meta property="article:published_time" content="2016-02-17 10:55:00 -0300" />
+      <meta property="article:modified_time" content="2016-02-17 10:55:00 -0300" />
+      <meta property="article:section" content="It will come a time when you will have to decide whether to maintain a Rails project or not. If you want to seriously consider it, you should follow these 10 steps: 1. Setup the development environment Git clone the repository and try to start the server. Is the README..." />
+      <meta property="article:tag" content="10 Steps to Evaluate a Rails Project - The Lean Software Boutique" />
+    
+
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="post-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+
+    <main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">10 Steps to Evaluate a Rails Project</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/maintenance"
+         title="Articles about Maintenance">Maintenance</a>
+
+
+
+<time class="post-date" datetime="2016-02-17">
+  17 Feb 2016
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>It will come a time when you will have to decide whether to maintain a <a href="http://rubyonrails.org">Rails</a> project <strong>or not</strong>.</p>
+
+<p>If you want to seriously consider it, you should follow these 10 steps:</p>
+
+<h3>1. Setup the development environment</h3>
+
+<p>Git clone the repository and try to start the server. Is the <code>README</code> clear enough? Can you follow the steps in the file and easily get started?</p>
+
+<p>A lot of projects will have a <code>README</code> that is out of date and/or instructions that don&#39;t work right off the bat.</p>
+
+<p>Most of the projects will define guidelines like these:</p>
+
+<ul>
+<li>Configure your <code>config/database.yml</code></li>
+<li>Configure your <code>.env</code> file</li>
+<li>Setup the database <code>rake db:create db:migrate db:seed</code></li>
+<li>Start the server <code>rails server</code></li>
+</ul>
+
+<p>The best projects will have a one-liner that will setup the entire environment for you.</p>
+
+<!--more-->
+
+<p>For example:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>path/to/project
+./bin/setup
+rails server
+</code></pre></div>
+<h3>2. Run the tests</h3>
+
+<p>Once you have setup your development environment, try to run the tests. For example:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">rake
+</code></pre></div>
+<p>Any decent <a href="http://rubyonrails.org">Rails</a> project will have a passing build, even if it&#39;s not very thorough.</p>
+
+<p>Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. Integration tests that use the <a href="http://www.seleniumhq.org">Selenium</a> driver)</p>
+
+<p>Did the build pass? Did it fail? How many failures did you get?</p>
+
+<p>In the best case scenario, the tests will pass.</p>
+
+<h3>3. Review schema.rb</h3>
+
+<p>A good way to see the complexity of an application is to see the amount of tables in the database. Does it have more than 20 tables? More than 100? Can you easily draw an <a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">ERD</a> of the core models? Are the tables normalized?</p>
+
+<p>I like doing the exercise of drawing the core business tables and the relationships between them. This usually helps me understand the business behind the project.</p>
+
+<h3>4. Review .env</h3>
+
+<p>Does the project have a <code>.env</code> file or similar? If the project doesn’t have one, it’s a clear sign that there will be trouble moving the project across environments (development, test, staging, production)</p>
+
+<p>By now we should all know that <a href="http://12factor.net/config">we should all be using environment variables</a>. If someone developed this project without <em>env</em> variables, you will probably find condition statements for this problem all over the codebase.</p>
+
+<h3>5. Check the Gemfile</h3>
+
+<p>Find out the project&#39;s <a href="http://rubyonrails.org">Rails</a> version. Is it the latest version? Is it older than 3.0?</p>
+
+<p>One thing that we’ve learned is that upgrading Rails in a project is <strong>not a walk in the park</strong>.</p>
+
+<p>Does it use gems that are not currently maintained? This could be a sign that you will have to migrate to new gems, which will produce extra work and affect your estimates.</p>
+
+<h3>6. Run bundle-audit</h3>
+
+<p><a href="https://rubygems.org/gems/bundler-audit">Bundler Audit</a> is a useful gem that will check for known vulnerabilities for the gems specified in <code>Gemfile.lock</code></p>
+
+<p>If there are any vulnerable dependencies, this tool will suggest that you upgrade to a patched version of the gem.</p>
+
+<p>In the best case scenario, you will see something like this:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">etagwerker:ombushop/ <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>bundle-audit
+No vulnerabilities found
+</code></pre></div>
+<h3>7. Setup Code Climate</h3>
+
+<p>This is a quick (and <strong>paid</strong>) step to check code quality. At <a href="http://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client&#39;s projects.</p>
+
+<p><a href="https://codeclimate.com">Code Climate</a> is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.</p>
+
+<p>You can quickly find <strong>code hotspots</strong>, potential issues, potential bug risks, and even coverage stats.</p>
+
+<p>What is the <a href="https://docs.codeclimate.com/docs/gpa">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
+
+<p>A free alternative would be to run some (or all) of these tools on the project:</p>
+
+<ul>
+<li><a href="https://rubygems.org/gems/flog">flog</a></li>
+<li><a href="https://rubygems.org/gems/flay">flay</a></li>
+<li><a href="https://rubygems.org/gems/metric_fu">metric_fu</a></li>
+<li><a href="https://rubygems.org/gems/simplecov">simplecov</a></li>
+</ul>
+
+<h3>8. Check code coverage</h3>
+
+<p>As much as I like <a href="https://codeclimate.com">Code Climate</a>, <a href="https://rubygems.org/gems/simplecov">simplecov</a> is an even faster way to generate a quick report about code coverage.</p>
+
+<p>This tool will tell you the coverage percentage for each application layer. How much percentage is covered in the models&#39; tests? How much for the controllers&#39; tests?</p>
+
+<p>Which are the least covered files? How many relevant lines are in each file? How many of them are covered by a test?</p>
+
+<p>The overall test coverage percentage will give you an idea about how much past developers cared about tests.</p>
+
+<p>If you are going to be changing the code, you need to make sure that this code is covered. If not, it will be a nightmare!</p>
+
+<p>You should complement this report with a qualitative code review of the tests, to make sure that the coverage is actually thorough.</p>
+
+<h3>9. Research the development process</h3>
+
+<p>Do the developers have a process to introduce changes to the project? Do they use code reviews before they merge anything to <code>master</code>? Do they have a <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> service that runs with every pull request? Do they even use pull requests?</p>
+
+<p>What&#39;s in the roadmap for the next 3 months? Is this project <strong>on fire</strong>? Do they need a firefighter? Why is it on fire?</p>
+
+<h3>10. Review performance stats</h3>
+
+<p>Do they use <a href="https://www.skylight.io/r/qGCIS90vk2nD">Skylight</a>? <a href="http://newrelic.com">NewRelic</a>? What are the slowest and busiest requests? What are the main performance problems?</p>
+
+<p>Most projects won&#39;t have information from these (<strong>paid</strong>) services. So you will have to find out on your own. If they use <a href="https://www.google.com/analytics/">Google Analytics</a>, you might find some information about poor page performance.</p>
+
+<h2>Conclusion</h2>
+
+<p>These are the steps that we currently follow before we take over a Rails project. They&#39;ve been quite helpful for us. I recommend that you use them to judge the quality of the project as objectively as possible.</p>
+
+<p>Project maintainers, product owners and founders won&#39;t know the state of the code. You can&#39;t trust their opinion.</p>
+
+<p>At <a href="http://www.ombulabs.com">Ombu Labs</a>, if all these steps <strong>pass</strong> we will be happy to take over the project. If most of them <strong>fail</strong> we will usually send the company a <strong>free</strong> code quality report and respectfully decline.</p>
+
+<p>I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50)">
+                <span class="hidden">Ernesto Tagwerker's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Ernesto Tagwerker </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=10 Steps to Evaluate a Rails Project&amp;url=http://www.ombulabs.com/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          
+            <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+          
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <figure>
+          <img src="/blog/assets/images/creative-commons.png"
+               alt="Creative Commons Attribution-NonCommercial">
+          <figcaption>
+            <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+               target="_blank"
+               title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+          </figcaption>
+        </figure>
+      </section>
+      <section class="poweredby">Made with love using Jekyll and
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>

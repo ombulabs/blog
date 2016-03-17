@@ -11,6 +11,7 @@ domain_name: 'http://www.ombulabs.com'
 permalink: none
 category_dir: 'tags'
 excerpt_separator: "<!--more-->"
+author_title_prefix: "Articles by "
 
 # Details for the RSS feed generator
 url:            'blog url'
