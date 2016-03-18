@@ -57,8 +57,8 @@ end
 
 You can keep it simple at this point and you can also test it in an [Anonymous Controller](https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller). With some basic helpers like this, you could make a lot of things much easier and keep the code maintainable.
 
-Regarding your business ideas and user flow, session variables are a nice way to guide your users, without storing all the information in the backend, or using third party services.
+Session variables are a great way to test your business ideas and user flow. They are a good way to guide your users without storing a lot of information in the database or using third party services.
 
-Keep in mind that the session size is limited to 4kb, in case you want to store a lot of data. Check also this [Stackoverflow question](http://stackoverflow.com/questions/9473808/cookie-overflow-in-rails-application) for a workaround to this issue.
+Keep in mind that the cookie session size is limited to 4kb, in case you want to store a lot of data. Check also this [StackOverflow question](http://stackoverflow.com/questions/9473808/cookie-overflow-in-rails-application) for a workaround to this issue.
 
 If you know a better way to work with sessions, let me know!
