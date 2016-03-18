@@ -107,11 +107,13 @@
         </header>
 
         <section class="post-content">
-          <p>Sessions provide you a nice little data storage feature where the application does not need to get the informations directly from the database. So you do not have to persist data in your database and can easily store infos to a user on the fly. This is a nice way to enhance the user experience on your page. Let&#39;s say you want to show all users, from a specific area, a new fancy sign up form and the rest only sees the old form. With storing these location informations in a session variable, you do not need to persist this infos in your database.</p>
+          <p>Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.</p>
+
+<p>Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.</p>
 
 <!--more-->
 
-<p>That can be pretty handy in many ways, if you think about changing the content of a website based on infos in that session. Handling a lot of session informations can be pretty overwhelming, because you have tons of crazy methods flying around. So my idea was once to stuff all these infos into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.</p>
+<p>That can be pretty handy in many ways, if you think about changing the content of a website based on the session&#39;s information. Handling a lot of session data can be pretty confusing, since the session is just a simple storage. That basically means that you have to organize your way of working with sessions. I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.</p>
 
 <p>Basically this is what you should <strong>NOT</strong> do:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Location</span>
@@ -127,14 +129,14 @@
 <span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">before_action</span> <span class="ss">:set_location</span>
 
-  <span class="k">def</span> <span class="nf">set_location</span>
+  <span class="k">def</span> <span class="nf">set_location</span><span class="p">(</span><span class="n">user_ip</span><span class="p">)</span>
     <span class="n">session</span><span class="o">[</span><span class="ss">:user_location</span><span class="o">]</span> <span class="o">=</span> <span class="no">Location</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">user_ip</span><span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>The problem is obvious, if you think about that the app has no knowledge of the previously stored object anymore and sends you exceptions. A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. With storing some user activities, you can guide or force the user to a specific area of your website.</p>
+<p>The problem is obvious: The app has no knowledge of the previously stored object and will raise an exception. A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.</p>
 
-<p>One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. The following could be a first draft for a controller concern to figure out what pages the user has already visited:</p>
+<p>One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">before_action</span> <span class="ss">:store_path</span>
 
 <span class="k">def</span> <span class="nf">store_path</span>
@@ -148,9 +150,11 @@
   <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>You don&#39;t need much implementation at this point and you can also test it in an <a href="https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller">Anonymous Controller</a>. With some basic helpers like this, you make a lot of things much easier and keep the overview.</p>
+<p>You can keep it simple at this point and you can also test it in an <a href="https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller">Anonymous Controller</a>. With some basic helpers like this, you could make a lot of things much easier and keep the code maintainable.</p>
 
-<p>Regarding your business ideas and user flow, session variables are a nice way to guide your users, without storing all that informations to the backend or making use of third party data aggregators.</p>
+<p>Session variables are a great way to test your business ideas and user flow. They are a good way to guide your users without storing a lot of information in the database or using third party services.</p>
+
+<p>Keep in mind that the cookie session size is limited to 4kb, in case you want to store a lot of data. Check also this <a href="http://stackoverflow.com/questions/9473808/cookie-overflow-in-rails-application">StackOverflow question</a> for a workaround to this issue.</p>
 
 <p>If you know a better way to work with sessions, let me know!</p>
 

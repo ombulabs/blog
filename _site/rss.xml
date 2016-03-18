@@ -12,7 +12,9 @@
     <item>
       <title>Use session variables to optimize your user flow</title>
       <link>blog url/ruby/rails/sessions/session-user-flow.html</link>
-      <description>&lt;p&gt;Sessions provide you a nice little data storage feature where the application does not need to get the informations directly from the database. So you do not have to persist data in your database and can easily store infos to a user on the fly. This is a nice way to enhance the user experience on your page. Let&amp;#39;s say you want to show all users, from a specific area, a new fancy sign up form and the rest only sees the old form. With storing these location informations in a session variable, you do not need to persist this infos in your database.&lt;/p&gt;
+      <description>&lt;p&gt;Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&amp;#39;t need to persist this info in your database.&lt;/p&gt;
 </description>
       <pubDate>Wed, 24 Feb 2016 10:37:00 -0300</pubDate>
       <dc:date>2016-02-24T10:37:00-03:00</dc:date>
