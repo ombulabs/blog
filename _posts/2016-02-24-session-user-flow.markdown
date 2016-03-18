@@ -6,7 +6,7 @@ categories: ["ruby", "rails", "sessions"]
 author: "schmierkov"
 ---
 
-Sessions provide you a nice little data storage feature where the application does not need to get the informations directly from the database. So you do not have to persist data in your database and can easily store info to a user on the fly. This is a nice way to enhance the user experience on your page.
+Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
 
 Let's say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don't need to persist this info in your database.
 
