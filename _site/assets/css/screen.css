@@ -749,7 +749,7 @@ body:not(.post-template) .post-title {
 
 .post-excerpt {
   margin-top: 1em; }
-  .post-excerpt p {
+  .post-excerpt p, .post-excerpt ul {
     margin: 0;
     font-size: 0.9em;
     line-height: 1.7em;
