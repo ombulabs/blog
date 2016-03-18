@@ -12,7 +12,9 @@ Let's say that you want to show some users a new fancy sign up form and the rest
 
 <!--more-->
 
-That can be pretty handy in many ways, if you think about changing the content of a website based on the session's information. Handling a lot of session data can be pretty confusing, since the session is just a simple storage. That basically means that you have to organize your way of working with sessions. I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.
+That can be pretty handy in many ways, if you think about changing the content of a website based on the session's information. Handling a lot of session data can be pretty confusing, since the session is just a simple storage. That basically means that you have to organize your way of working with sessions.
+
+I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.
 
 Basically this is what you should **NOT** do:
 
