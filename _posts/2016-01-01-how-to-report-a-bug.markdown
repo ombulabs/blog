@@ -2,7 +2,7 @@
 layout: post
 title: "How to report a bug"
 date: 2016-01-01 13:55:00
-categories: ["open source", "bugs"]
+categories: ["open-source", "bugs"]
 author: "etagwerker"
 ---
 

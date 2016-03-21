@@ -14,10 +14,11 @@ excerpt_separator: "<!--more-->"
 author_title_prefix: "Articles by "
 
 # Details for the RSS feed generator
-url:            'blog url'
+url:            'http://www.ombulabs.com/blog'
 author:         'OmbuLabs'
 
-exclude: ['vendor']
+exclude: [vendor]
+gems: [jekyll-paginate]
 
 authors:
   etagwerker:

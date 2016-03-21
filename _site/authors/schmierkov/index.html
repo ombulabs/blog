@@ -34,7 +34,7 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="Articles by Sirko Sittig - The Lean Software Boutique" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/authors/schmierkov/index.html" />
+    <meta property="og:url" content="http://www.ombulabs.com/authors/schmierkov/" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Articles by Sirko Sittig by @schmierkov" />
@@ -174,15 +174,18 @@
 <p><strong>One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.</strong></p>
 
 <p>For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my <code>ssh-key</code> to the repo:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit -am <span class="s1">&#39;init git repo&#39;</span>
 <span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 917a1e1<span class="o">]</span> init git repo
  <span class="m">2</span> files changed, <span class="m">52</span> insertions<span class="o">(</span>+<span class="o">)</span>
  create mode <span class="m">100644</span> id_rsa
  create mode <span class="m">100644</span> id_rsa.pub
 </code></pre></div>
+
 <p>After doing a couple of additions, working and editing, I realise that I should never have commited the <code>ssh-key</code>. *facepalm*</p>
 
 <p>Alright, then I just do a simple <code>git rm --cached id_rsa</code> and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git rm --cached id_rsa
 rm <span class="s1">&#39;id_rsa&#39;</span>
 <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git status
@@ -194,7 +197,9 @@ D  id_rsa
  create mode <span class="m">100644</span> .gitignore
  delete mode <span class="m">100644</span> id_rsa
 </code></pre></div>
+
 <p>So if we now have a look in our commit list, we can still see our first commit where I added my ssh-key. If I checkout this commit, I still have the contents of my <code>ssh-key</code> available.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git log
 917a1e1 - init git repo <span class="o">(</span><span class="m">24</span> minutes ago<span class="o">)</span> &lt;Sirko Sittig&gt;
 <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git checkout 917a1e1
@@ -205,11 +210,14 @@ d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
 YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
 ...
 </code></pre></div>
+
 <p>To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with <a href="https://git-scm.com/docs/git-filter-branch">git filter-branch</a>. The command <code>git rm --cached</code> <a href="https://git-scm.com/docs/git-rm">git rm docs</a> is not sufficient in this case.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD
 Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>6/6<span class="o">)</span>
 Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
 </code></pre></div>
+
 <p>So far so good, but what about my other branches that have been created?
 <code>bash
 (master) $ git checkout new-feature
@@ -223,6 +231,7 @@ drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:20 .git/
 </code></p>
 
 <p>Apparently <code>git filter-branch</code> is applying this changes only to the current branch, which is actually not what I want. To make this work, it seems that I have to run <code>git filter-branch</code> in every existing branch, which makes it pretty annoying. After reading more in the (git docs)[https://git-scm.com/docs/git-filter-branch], I found that I need to apply the <code>--all</code> option.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD --all
 Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>7/7<span class="o">)</span>
 Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
@@ -239,6 +248,7 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 -rw-rw-r--  <span class="m">1</span> sirko sirko   <span class="m">748</span> Dec <span class="m">31</span> 13:41 id_rsa.pub
 -rw-rw-r--  <span class="m">1</span> sirko sirko    <span class="m">64</span> Dec <span class="m">31</span> 13:41 my_document.txt
 </code></pre></div>
+
 <p>That seems to be exactly what I want and in the end I just need to <code>git push --all --force</code> my changes. <strong>After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.</strong></p>
 
 <p>Another alternative to working with <code>git filter-branch</code> is <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG</a> which has some more nifty features.</p>
@@ -301,6 +311,7 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 <p>For more information on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
 
 <p>This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mo">06</span><span class="p">:</span><span class="mo">05</span> <span class="o">-</span><span class="mo">0300</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
@@ -308,11 +319,13 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 <span class="no">Completed</span> <span class="mi">302</span> <span class="no">Found</span> <span class="k">in</span> <span class="mi">7</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
+
 <p>After this request, Rails will terminate your session and you will have to login again.</p>
 
 <p>This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.</p>
 
 <p>To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by <a href="https://github.com/shuvalov-anton/backbone-rails-sync">Anton Shuvalov</a>.</p>
+
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// https://github.com/shuvalov-anton/backbone-rails-sync</span>
 <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span>
 <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
@@ -329,15 +342,18 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
   <span class="k">return</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
+
 <p>It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field <code>X-CSRF-Token</code>.</p>
 
 <p>After adding this to the Backbone code, it works as expected.</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">29</span> <span class="o">-</span><span class="mo">0300</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
 <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">40</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">10</span><span class="o">.</span><span class="mi">3</span><span class="n">ms</span><span class="p">)</span>
-</code></pre></div> <a class="read-more" href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Read more &raquo;</a>
+</code></pre></div>
+ <a class="read-more" href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Read more &raquo;</a>
     </section>
 </article>
 
