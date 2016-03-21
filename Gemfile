@@ -15,5 +15,8 @@ gem 'jekyll-paginate'
 gem 'pygments.rb'
 gem 'redcarpet'
 
-gem 'pry'
-gem 'pry-byebug'
+group :development do
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'byebug'
+end

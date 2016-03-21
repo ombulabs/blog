@@ -74,6 +74,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   dotenv
   foreman
   jekyll (~> 3.0)
@@ -88,3 +89,6 @@ DEPENDENCIES
   rake
   redcarpet
   thin
+
+BUNDLED WITH
+   1.10.3

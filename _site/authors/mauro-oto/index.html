@@ -4,41 +4,47 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    
 
-    <title>OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto</title>
+
+    <title>Articles by Mauro Otonelli - The Lean Software Boutique</title>
+
 
     
-    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    
+    <meta name="description" content="" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto">
-    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta itemprop="name" content="Articles by Mauro Otonelli - The Lean Software Boutique">
+    <meta itemprop="description" content="">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
-    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto">
-    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+
+    <meta name="twitter:title" content="Articles by Mauro Otonelli - The Lean Software Boutique">
+    <meta name="twitter:description" content="">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto" />
+    <meta property="og:title" content="Articles by Mauro Otonelli - The Lean Software Boutique" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.ombulabs.com/authors/mauro-oto/" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto" />
-    <meta property="article:published_time" content="" />
-    <meta property="article:modified_time" content="" />
-    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Author: Mauro-Oto" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Articles by Mauro Otonelli by @mauro_oto" />
+    
+      <meta property="article:published_time" content="" />
+      <meta property="article:modified_time" content="" />
+      <meta property="article:section" content="" />
+      <meta property="article:tag" content="Articles by Mauro Otonelli - The Lean Software Boutique" />
+    
+
     <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -75,6 +81,68 @@
                                       target="_blank">Follow @mauro-oto on Twitter</a></h3>
 
 <main id="content" class="content category">
+
+  
+    <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
+          <a href="/blog/rails/performance/hunting-down-a-slow-rails-request.html">Hunting Down a Slow Rails Request</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/performance"
+         title="Articles about Performance">Performance</a>
+
+
+
+<time class="post-date" datetime="2016-03-04">
+  04 Mar 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>Recently, we started using <a href="https://www.skylight.io">Skylight</a> in production
+for one of our clients&#39; Rails applications, in an attempt to try to improve the
+performance of some of the more critical API endpoints.</p>
+
+<p>Skylight reports on:</p>
+
+<ul>
+<li>Time taken per request</li>
+<li>Breakdown of time taken per SQL query</li>
+<li>Object allocations per request</li>
+</ul>
+
+<p>I noticed an unusually large amount of allocated objects for one request:</p>
+
+<p><img src="/blog/assets/images/high-object-allocation.png" alt="Skylight report"></p>
+
+<p>This request would take anywhere from 400ms to 3000ms to respond, which is
+<strong>WAY</strong> too long.</p>
+ <a class="read-more" href="/blog/rails/performance/hunting-down-a-slow-rails-request.html">Read more &raquo;</a>
+    </section>
+</article>
+
+  
+
+  
 
   
     <article class="post">
