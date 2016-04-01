@@ -8,14 +8,14 @@
     <title>OmbuLabs Blog</title>
     <link>blog url</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 17 Mar 2016 15:35:00 -0300</pubDate>
+    <pubDate>Fri, 01 Apr 2016 09:35:00 -0300</pubDate>
     <item>
       <title>Announcing The Ombu Labs Shop!</title>
       <link>blog url/design/ombulabs-products.html</link>
       <description>&lt;p&gt;We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!&lt;/p&gt;
 </description>
-      <pubDate>Thu, 17 Mar 2016 15:35:00 -0300</pubDate>
-      <dc:date>2016-03-17T15:35:00-03:00</dc:date>
+      <pubDate>Fri, 01 Apr 2016 09:35:00 -0300</pubDate>
+      <dc:date>2016-04-01T09:35:00-03:00</dc:date>
     </item>
     <item>
       <title>Hunting Down a Slow Rails Request</title>
@@ -452,6 +452,6 @@ necessary by not taking advantage of another method from the Enumerable module,
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-03-17T15:35:00-03:00</dc:date>
+    <dc:date>2016-04-01T09:35:00-03:00</dc:date>
   </channel>
 </rss>
