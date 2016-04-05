@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 29 Mar 2016 08:03:00 -0300</pubDate>
+    <pubDate>Tue, 05 Apr 2016 08:03:00 -0300</pubDate>
     <item>
       <title>The Landing Page MVP</title>
       <link>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</link>
@@ -16,7 +16,7 @@
 
 You want to build the smallest feature set in order to start learning from your target market. It doesn&#39;t have to be feature complete. It doesn&#39;t even have to offer a feature. It doesn&#39;t even need to be a web-based MVP.
 ]]></description>
-      <pubDate>Tue, 29 Mar 2016 08:03:00 -0300</pubDate>
+      <pubDate>Tue, 05 Apr 2016 08:03:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</guid>
       <content:encoded><![CDATA[There is no good reason why an **MVP** should take more than one month. If that happens, it means that the scope of the [minimum viable product](https://leanstack.com/minimum-viable-product/) wasn't small enough.
 
@@ -43,7 +43,6 @@ I like to use this form to define your target market:
 * As a loyal customer to my local coffee shop, I'd like to get rewards for being loyal to my shop.
 * As a local small business owner, I want to offer my repeat customers rewards so that they continue to shop at my store.
 
-
 ### Problem
 
 Now that you've defined the customer segments hypotheses, you can think about the problem. What problem do they have? What's their pain?
@@ -63,7 +62,7 @@ You don't need a programmer or software boutique for this. You can build a landi
 
 The most important part of the landing page is the problem description. You want the people in your target market to read the problem description and relate to it.
 
-You will find these type of people in your target market:
+You will find these types of people in your target market:
 
 * They don't know they have a problem. They are fine doing things as they're currently doing them.
 * They do know they have a problem. They read your problem description and they can relate to it.
@@ -137,7 +136,7 @@ After you ran your landing page for a few weeks, you can measure the results. Ho
 
 With that information you will be able to continue with the same problem description, or you will be forced to [pivot](http://steveblank.com/2014/01/14/whats-a-pivot/) into another problem or solution.
 ]]></content:encoded>
-      <dc:date>2016-03-29T08:03:00-03:00</dc:date>
+      <dc:date>2016-04-05T08:03:00-03:00</dc:date>
     </item>
     <item>
       <title>Hunting Down a Slow Rails Request</title>
@@ -1975,6 +1974,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-03-29T08:03:00-03:00</dc:date>
+    <dc:date>2016-04-05T08:03:00-03:00</dc:date>
   </channel>
 </rss>
