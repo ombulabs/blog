@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Landing Page MVP"
-date: 2016-03-29 11:03:00
+date: 2016-04-05 11:03:00
 categories: ["lean-startup", "mvp"]
 author: "etagwerker"
 ---
@@ -31,7 +31,6 @@ I like to use this form to define your target market:
 * As a loyal customer to my local coffee shop, I'd like to get rewards for being loyal to my shop.
 * As a local small business owner, I want to offer my repeat customers rewards so that they continue to shop at my store.
 
-
 ### Problem
 
 Now that you've defined the customer segments hypotheses, you can think about the problem. What problem do they have? What's their pain?
@@ -51,7 +50,7 @@ You don't need a programmer or software boutique for this. You can build a landi
 
 The most important part of the landing page is the problem description. You want the people in your target market to read the problem description and relate to it.
 
-You will find these type of people in your target market:
+You will find these types of people in your target market:
 
 * They don't know they have a problem. They are fine doing things as they're currently doing them.
 * They do know they have a problem. They read your problem description and they can relate to it.
