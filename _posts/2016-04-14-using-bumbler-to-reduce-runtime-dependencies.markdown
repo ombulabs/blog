@@ -7,17 +7,17 @@ author: "mauro-oto"
 ---
 
 A few weeks ago, I ran into an interesting project called
-[Bumber](https://github.com/nevir/Bumbler). What Bumbler does is, it lets you
-know which are your Bundler-based project's largest dependencies.
+ [Bumbler](https://github.com/nevir/Bumbler). Bumbler lets you
+ know which are your Bundler-based project's largest dependencies.
 When you find yourself staring at the screen after running
-`bundle exec rails c`, you may want to give this tool a try.
+ `bundle exec rails c`, you may want to give this tool a try.
 
 <!--more-->
 
-Using it is very simple. Add `gem 'bumbler'` to your Gemfile, run `bundle`, and
-you're good to go by running `bundle exec bumbler`. Running this will show you a
-progress bar and detail the dependencies which took the longest to load. Here's
-an example of a project's development dependencies:
+Using it is simple. Add `gem 'bumbler'` to your Gemfile, run `bundle`, and
+ you're good to go by running `bundle exec bumbler`. Running this will show you
+ a progress bar and detail the dependencies which took the longest to load.
+Here's an example of a project's development dependencies:
 
 ```
 ➜  git:(master) ✗ bundle exec bumbler
@@ -38,12 +38,12 @@ Slow requires:
 ```
 
 As you can see, one of the gems takes almost 1 second to load on my system,
-and removing it increases the time it takes to run `bundle exec rails c` by
-1 second. It's not a lot, but consider every Rake task you run which depends
-on the environment will take 1 less second to get started.
+ and removing it increases the time it takes to run `bundle exec rails c` by
+ 1 second. It's not a lot, but consider every Rake task you run which depends
+ on the environment will take 1 less second to get started.
 
 After we get rid of `salesforce_bulk_api` and `render_anywhere` and manually
-call `require` on them when needed, the load time looks like this:
+ call `require` on them when needed, the load time looks like this:
 
 ```
 ➜  git:(master) ✗ bundle exec bumbler
@@ -62,12 +62,12 @@ Slow requires:
 ```
 
 Your tests can also benefit from this, as you may find gems that you do not need
-to have in the test environment. Capistrano is one example, you will usually
-want to have that loaded *only* in development, not in test or production.
+ to have in the test environment. Capistrano is one example, usually you want
+ to have it load **only** in development, not in test or production.
 
 One caveat worth mentioning: you need to take a close look at your loaded gem's
-dependencies when removing them. For example, `capistrano` depends on
-`net-ssh` and `net-scp`. If you remove `capistrano` from `test` or
-`production`, you won't be able to use `Net::SSH` or `Net::SCP` unless you
-manually add the `net-ssh` and `net-scp` dependencies back in your Gemfile, as
-you were relying on them implicitly via Capistrano. 
+ dependencies when removing them. For example, `capistrano` depends on
+ `net-ssh` and `net-scp`. If you remove `capistrano` from `test` or
+ `production`, you won't be able to use `Net::SSH` or `Net::SCP` unless you
+ manually add the `net-ssh` and `net-scp` dependencies back in your Gemfile, as
+ you were relying on them implicitly via Capistrano.

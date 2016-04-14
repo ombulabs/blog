@@ -11,14 +11,14 @@
 
     
     
-    <meta name="description" content="A few weeks ago, I ran into an interesting project calledBumber. What Bumbler does is, it lets youknow which are your Bundler-based project&#39;s l..." />
+    <meta name="description" content="A few weeks ago, I ran into an interesting project called Bumbler. Bumbler lets you know which are your Bundler-based project&#39;s largest depende..." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Using Bumbler to Reduce Runtime Dependencies - The Lean Software Boutique">
-    <meta itemprop="description" content="A few weeks ago, I ran into an interesting project called Bumber. What Bumbler does is, it lets you know which are your Bundler-based project&#39;s...">
+    <meta itemprop="description" content="A few weeks ago, I ran into an interesting project called Bumbler. Bumbler lets you know which are your Bundler-based project&#39;s largest depende...">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="@OmbuLabs">
 
     <meta name="twitter:title" content="Using Bumbler to Reduce Runtime Dependencies - The Lean Software Boutique">
-    <meta name="twitter:description" content="A few weeks ago, I ran into an interesting project called Bumber. What Bumbler does is, it lets you know which are your Bundler-based project&#39;s...">
+    <meta name="twitter:description" content="A few weeks ago, I ran into an interesting project called Bumbler. Bumbler lets you know which are your Bundler-based project&#39;s largest depende...">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
@@ -36,12 +36,12 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.ombulabs.com/ruby/rails/performance/using-bumbler-to-reduce-runtime-dependencies.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="A few weeks ago, I ran into an interesting project called Bumber. What Bumbler does is, it lets you know which are your Bundler-based project&#39;s largest dependencies. When you find yourself staring at the screen after running bundle exec rails c, you may want to give this tool a try...." />
+    <meta property="og:description" content="A few weeks ago, I ran into an interesting project called Bumbler. Bumbler lets you know which are your Bundler-based project&#39;s largest dependencies.When you find yourself staring at the screen after running bundle exec rails c, you may want to give this tool a try." />
     <meta property="og:site_name" content="Using Bumbler to reduce runtime dependencies by @mauro_oto" />
     
       <meta property="article:published_time" content="2016-04-14 08:53:00 -0300" />
       <meta property="article:modified_time" content="2016-04-14 08:53:00 -0300" />
-      <meta property="article:section" content="A few weeks ago, I ran into an interesting project called Bumber. What Bumbler does is, it lets you know which are your Bundler-based project&#39;s largest dependencies. When you find yourself staring at the screen after running bundle exec rails c, you may want to give this tool a try...." />
+      <meta property="article:section" content="A few weeks ago, I ran into an interesting project called Bumbler. Bumbler lets you know which are your Bundler-based project&#39;s largest dependencies.When you find yourself staring at the screen after running bundle exec rails c, you may want to give this tool a try." />
       <meta property="article:tag" content="Using Bumbler to Reduce Runtime Dependencies - The Lean Software Boutique" />
     
 
@@ -114,17 +114,17 @@
 
         <section class="post-content">
           <p>A few weeks ago, I ran into an interesting project called
-<a href="https://github.com/nevir/Bumbler">Bumber</a>. What Bumbler does is, it lets you
-know which are your Bundler-based project&#39;s largest dependencies.
+ <a href="https://github.com/nevir/Bumbler">Bumbler</a>. Bumbler lets you
+ know which are your Bundler-based project&#39;s largest dependencies.
 When you find yourself staring at the screen after running
-<code>bundle exec rails c</code>, you may want to give this tool a try.</p>
+ <code>bundle exec rails c</code>, you may want to give this tool a try.</p>
 
 <!--more-->
 
-<p>Using it is very simple. Add <code>gem &#39;bumbler&#39;</code> to your Gemfile, run <code>bundle</code>, and
-you&#39;re good to go by running <code>bundle exec bumbler</code>. Running this will show you a
-progress bar and detail the dependencies which took the longest to load. Here&#39;s
-an example of a project&#39;s development dependencies:</p>
+<p>Using it is simple. Add <code>gem &#39;bumbler&#39;</code> to your Gemfile, run <code>bundle</code>, and
+ you&#39;re good to go by running <code>bundle exec bumbler</code>. Running this will show you
+ a progress bar and detail the dependencies which took the longest to load.
+Here&#39;s an example of a project&#39;s development dependencies:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  git:(master) ✗ bundle exec bumbler
 [#################################################                             ]
 (49/65) travis-lint...
@@ -142,12 +142,12 @@ Slow requires:
     852.13  salesforce_bulk_api
 </code></pre></div>
 <p>As you can see, one of the gems takes almost 1 second to load on my system,
-and removing it increases the time it takes to run <code>bundle exec rails c</code> by
-1 second. It&#39;s not a lot, but consider every Rake task you run which depends
-on the environment will take 1 less second to get started.</p>
+ and removing it increases the time it takes to run <code>bundle exec rails c</code> by
+ 1 second. It&#39;s not a lot, but consider every Rake task you run which depends
+ on the environment will take 1 less second to get started.</p>
 
 <p>After we get rid of <code>salesforce_bulk_api</code> and <code>render_anywhere</code> and manually
-call <code>require</code> on them when needed, the load time looks like this:</p>
+ call <code>require</code> on them when needed, the load time looks like this:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  git:(master) ✗ bundle exec bumbler
 [#################################################                             ]
 (47/65) fog-aws...
@@ -163,15 +163,15 @@ Slow requires:
     464.09  rails
 </code></pre></div>
 <p>Your tests can also benefit from this, as you may find gems that you do not need
-to have in the test environment. Capistrano is one example, you will usually
-want to have that loaded <em>only</em> in development, not in test or production.</p>
+ to have in the test environment. Capistrano is one example, usually you want
+ to have it load <strong>only</strong> in development, not in test or production.</p>
 
 <p>One caveat worth mentioning: you need to take a close look at your loaded gem&#39;s
-dependencies when removing them. For example, <code>capistrano</code> depends on
-<code>net-ssh</code> and <code>net-scp</code>. If you remove <code>capistrano</code> from <code>test</code> or
-<code>production</code>, you won&#39;t be able to use <code>Net::SSH</code> or <code>Net::SCP</code> unless you
-manually add the <code>net-ssh</code> and <code>net-scp</code> dependencies back in your Gemfile, as
-you were relying on them implicitly via Capistrano. </p>
+ dependencies when removing them. For example, <code>capistrano</code> depends on
+ <code>net-ssh</code> and <code>net-scp</code>. If you remove <code>capistrano</code> from <code>test</code> or
+ <code>production</code>, you won&#39;t be able to use <code>Net::SSH</code> or <code>Net::SCP</code> unless you
+ manually add the <code>net-ssh</code> and <code>net-scp</code> dependencies back in your Gemfile, as
+ you were relying on them implicitly via Capistrano.</p>
 
         </section>
 
