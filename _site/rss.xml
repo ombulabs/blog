@@ -8,7 +8,86 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 05 Apr 2016 08:03:00 -0300</pubDate>
+    <pubDate>Thu, 14 Apr 2016 08:53:00 -0300</pubDate>
+    <item>
+      <title>Using Bumbler to reduce runtime dependencies</title>
+      <link>http://www.ombulabs.com/blog/ruby/rails/performance/using-bumbler-to-reduce-runtime-dependencies.html</link>
+      <description><![CDATA[A few weeks ago, I ran into an interesting project called
+Bumber. What Bumbler does is, it lets you
+know which are your Bundler-based project&#39;s largest dependencies.
+When you find yourself staring at the screen after running
+bundle exec rails c, you may want to give this tool a try.
+]]></description>
+      <pubDate>Thu, 14 Apr 2016 08:53:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/rails/performance/using-bumbler-to-reduce-runtime-dependencies.html</guid>
+      <content:encoded><![CDATA[A few weeks ago, I ran into an interesting project called
+[Bumber](https://github.com/nevir/Bumbler). What Bumbler does is, it lets you
+know which are your Bundler-based project's largest dependencies.
+When you find yourself staring at the screen after running
+`bundle exec rails c`, you may want to give this tool a try.
+
+<!--more-->
+
+Using it is very simple. Add `gem 'bumbler'` to your Gemfile, run `bundle`, and
+you're good to go by running `bundle exec bumbler`. Running this will show you a
+progress bar and detail the dependencies which took the longest to load. Here's
+an example of a project's development dependencies:
+
+```
+➜  git:(master) ✗ bundle exec bumbler
+[#################################################                             ]
+(49/65) travis-lint...
+Slow requires:
+    110.21  render_anywhere
+    147.33  nokogiri
+    173.83  haml
+    179.62  sass-rails
+    205.04  delayed_job_active_record
+    286.76  rails
+    289.36  mail
+    291.98  capistrano
+    326.05  delayed_job
+    414.27  pry
+    852.13  salesforce_bulk_api
+```
+
+As you can see, one of the gems takes almost 1 second to load on my system,
+and removing it increases the time it takes to run `bundle exec rails c` by
+1 second. It's not a lot, but consider every Rake task you run which depends
+on the environment will take 1 less second to get started.
+
+After we get rid of `salesforce_bulk_api` and `render_anywhere` and manually
+call `require` on them when needed, the load time looks like this:
+
+```
+➜  git:(master) ✗ bundle exec bumbler
+[#################################################                             ]
+(47/65) fog-aws...
+Slow requires:
+    167.50  sass-rails
+    188.87  nokogiri
+    218.49  haml
+    230.10  capistrano
+    253.77  delayed_job_active_record
+    284.26  mail
+    320.19  delayed_job
+    365.67  pry
+    464.09  rails
+```
+
+Your tests can also benefit from this, as you may find gems that you do not need
+to have in the test environment. Capistrano is one example, you will usually
+want to have that loaded *only* in development, not in test or production.
+
+One caveat worth mentioning: you need to take a close look at your loaded gem's
+dependencies when removing them. For example, `capistrano` depends on
+`net-ssh` and `net-scp`. If you remove `capistrano` from `test` or
+`production`, you won't be able to use `Net::SSH` or `Net::SCP` unless you
+manually add the `net-ssh` and `net-scp` dependencies back in your Gemfile, as
+you were relying on them implicitly via Capistrano. 
+]]></content:encoded>
+      <dc:date>2016-04-14T08:53:00-03:00</dc:date>
+    </item>
     <item>
       <title>The Landing Page MVP</title>
       <link>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</link>
@@ -2022,6 +2101,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-04-05T08:03:00-03:00</dc:date>
+    <dc:date>2016-04-14T08:53:00-03:00</dc:date>
   </channel>
 </rss>
