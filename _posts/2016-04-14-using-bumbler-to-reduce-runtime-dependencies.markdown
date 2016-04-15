@@ -2,21 +2,22 @@
 layout: post
 title: "Using Bumbler to reduce runtime dependencies"
 date: 2016-04-14 11:53:00
-categories: ["ruby", "rails", "performance"]
+categories: ["ruby", "performance"]
 author: "mauro-oto"
 ---
 
-A few weeks ago, I ran into an interesting project called
- [Bumbler](https://github.com/nevir/Bumbler). Bumbler lets you
- know which are your Bundler-based project's largest dependencies.
+A few weeks ago, I found an interesting project called
+ [Bumbler](https://github.com/nevir/Bumbler). If your project uses Bundler,
+ Bumbler shows you your project's largest dependencies.
 When you find yourself staring at the screen after running
  `bundle exec rails c`, you may want to give this tool a try.
 
 <!--more-->
 
-Using it is simple. Add `gem 'bumbler'` to your Gemfile, run `bundle`, and
- you're good to go by running `bundle exec bumbler`. Running this will show you
- a progress bar and detail the dependencies which took the longest to load.
+Using it is simple. Add `gem 'bumbler'` to your Gemfile under the development
+ group, run `bundle`, and you're good to go.
+ When you run `bundle exec bumbler` you will see a progress bar and a detail of
+ the dependencies which took the longest to load.
 Here's an example of a project's development dependencies:
 
 ```
@@ -38,8 +39,8 @@ Slow requires:
 ```
 
 As you can see, one of the gems takes almost 1 second to load on my system,
- and removing it increases the time it takes to run `bundle exec rails c` by
- 1 second. It's not a lot, but consider every Rake task you run which depends
+ and removing it decreases the time it takes for `bundle exec rails c` to load
+ by 1 second. It's not a lot, but consider every Rake task you run which depends
  on the environment will take 1 less second to get started.
 
 After we get rid of `salesforce_bulk_api` and `render_anywhere` and manually
@@ -63,7 +64,7 @@ Slow requires:
 
 Your tests can also benefit from this, as you may find gems that you do not need
  to have in the test environment. Capistrano is one example, usually you want
- to have it load **only** in development, not in test or production.
+ to have it load **only** in development, not in test nor production.
 
 One caveat worth mentioning: you need to take a close look at your loaded gem's
  dependencies when removing them. For example, `capistrano` depends on
