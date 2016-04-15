@@ -14,10 +14,11 @@ excerpt_separator: "<!--more-->"
 author_title_prefix: "Articles by "
 
 # Details for the RSS feed generator
-url:            'blog url'
+url:            'http://www.ombulabs.com/blog'
 author:         'OmbuLabs'
 
-exclude: ['vendor']
+exclude: [vendor]
+gems: [jekyll-paginate]
 
 authors:
   etagwerker:
@@ -38,3 +39,9 @@ authors:
     email: sirko@ombulabs.com
     twitter: schmierkov
     github: schmierkov
+  cecilia:
+    display_name: Cecilia Farías
+    gravatar: a114aaf647736b09d7f09466fcaed51c
+    email: cecilia@ombulabs.com
+    twitter: xicadomar
+    github: cecilia-ombulabs
