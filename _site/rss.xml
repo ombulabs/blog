@@ -50,7 +50,18 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-The problem is obvious: The app has no knowledge of the previously stored object and will raise an exception. A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
+As soon as you later remove the location class and then try to access the `session[:user_location]`, your App will raise the following exception:
+```
+ActionDispatch::Session::SessionRestoreError
+
+Session contains objects whose class definition isn't available.
+Remember to require the classes for all objects kept in the session.
+(Original exception: uninitialized constant MyController::Location [NameError])
+```
+
+The problem is at first not very obvious. The app has no knowledge of the previously stored object....
+
+A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
 
 One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:
 
