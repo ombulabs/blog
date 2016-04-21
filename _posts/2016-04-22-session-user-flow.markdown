@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use session variables to optimize your user flow"
-date: 2016-04-15 13:37:00
+date: 2016-04-22 13:37:00
 categories: ["ruby", "rails", "sessions"]
 author: "schmierkov"
 ---
@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-As soon as you later remove the location class and then try to access the `session[:user_location]`, your App will raise the following exception:
+As soon as you later remove the location class and you are still trying to access `session[:user_location]`, your App will raise the following exception:
 ```
 ActionDispatch::Session::SessionRestoreError
 
@@ -47,9 +47,9 @@ Remember to require the classes for all objects kept in the session.
 (Original exception: uninitialized constant MyController::Location [NameError])
 ```
 
-The problem is at first not very obvious. The app has no knowledge of the previously stored object....
+The problem is at first not very obvious. The app has no knowledge of the previously stored class anymore.
 
-A better way is to think about how and what you want to store in the session. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
+A better way is to not store complex objects or classes in the session. Think about how and what you want to store in the session and keep the data structure simple. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
 
 One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:
 
