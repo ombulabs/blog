@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use session variables to optimize your user flow"
-date: 2016-04-22 13:37:00
+date: 2016-04-22 8:37:00
 categories: ["ruby", "rails", "sessions"]
 author: "schmierkov"
 ---
