@@ -39,6 +39,7 @@ end
 ```
 
 As soon as you later remove the location class and you are still trying to access `session[:user_location]`, your App will raise the following exception:
+
 ```
 ActionDispatch::Session::SessionRestoreError
 
