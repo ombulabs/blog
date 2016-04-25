@@ -8,7 +8,162 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 14 Apr 2016 08:53:00 -0300</pubDate>
+    <pubDate>Fri, 22 Apr 2016 05:37:00 -0300</pubDate>
+    <item>
+      <title>Use session variables to optimize your user flow</title>
+      <link>http://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</link>
+      <description><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
+
+Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.
+]]></description>
+      <pubDate>Fri, 22 Apr 2016 05:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</guid>
+      <content:encoded><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
+
+Let's say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don't need to persist this info in your database.
+
+<!--more-->
+
+That can be pretty handy in many ways, if you think about changing the content of a website based on the session's information. Handling a lot of session data can be pretty confusing, since the session is just a simple storage. That basically means that you have to organize your way of working with sessions.
+
+I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.
+
+Basically this is what you should **NOT** do:
+
+```ruby
+class Location
+  def initialize(ip)
+    @location = location_request(ip)  
+  end
+
+  def city
+    @location.city
+  end
+  ...
+end
+class ApplicationController < ActionController::Base
+  before_action :set_location
+
+  def set_location(user_ip)
+    session[:user_location] = Location.new(user_ip)
+  end
+end
+```
+
+As soon as you later remove the location class and you are still trying to access `session[:user_location]`, your App will raise the following exception:
+
+```
+ActionDispatch::Session::SessionRestoreError
+
+Session contains objects whose class definition isn't available.
+Remember to require the classes for all objects kept in the session.
+(Original exception: uninitialized constant MyController::Location [NameError])
+```
+
+The problem is at first not very obvious. The app has no knowledge of the previously stored class anymore.
+
+A better way is to not store complex objects or classes in the session. Think about how and what you want to store in the session and keep the data structure simple. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
+
+One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:
+
+```ruby
+before_action :store_path
+
+def store_path
+  session[:visited_paths] ||= []
+  if session[:visited_paths].exclude?(request.path)
+    session[:visited_paths].push(request.path)
+  end
+end
+
+def visited?(path)
+  session[:visited_paths].include?(path)
+end
+```
+
+You can keep it simple at this point and you can also test it in an [Anonymous Controller](https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller). With some basic helpers like this, you could make a lot of things much easier and keep the code maintainable.
+
+Session variables are a great way to test your business ideas and user flow. They are a good way to guide your users without storing a lot of information in the database or using third party services.
+
+Keep in mind that the cookie session size is limited to 4kb, in case you want to store a lot of data. Check also this [StackOverflow question](http://stackoverflow.com/questions/9473808/cookie-overflow-in-rails-application) for a workaround to this issue.
+
+If you know a better way to work with sessions, let me know!
+]]></content:encoded>
+      <dc:date>2016-04-22T05:37:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Our Hiring Process</title>
+      <link>http://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</link>
+      <description><![CDATA[This is our process to hire new team members at Ombu Labs. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s very important for us to hire A players.
+
+In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
+]]></description>
+      <pubDate>Thu, 14 Apr 2016 14:03:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</guid>
+      <content:encoded><![CDATA[This is our process to hire new team members at [Ombu Labs](http://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
+
+In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
+
+<!--more-->
+
+We usually hire Junior and Senior developers. You can find our open positions [over here](http://www.ombulabs.com/jobs).
+
+## How to Apply
+
+You can just follow the _Apply_ link for the position that you are interested in.
+
+We don't want to receive an old school resume. We prefer to receive a link to your [Github](http://github.com) or [LinkedIn](http://linkedin.com), in that particular order.
+
+I realize that there are great developers that have never made any open source contributions. If that's your case, we will ask for a couple of code samples.
+
+We want to see some recent code samples and evaluate you based on your work, not on your work history. **Experience** is important but **passion** is more important.
+
+## First Interview
+
+If we like what we see, we will send you an email to coordinate an initial interview.
+
+In this interview we will talk about your experience, what you know, what you are passionate about, what you are looking for, what we are looking for, and some concepts that are really important to us.
+
+In this stage we want to get a sense of what you are looking for and if we are a **good fit for you**.
+
+You can expect some technical questions and some random questions.
+
+## Paid Pair Programming Time
+
+If we like what you said in the interview, we are going to schedule some time to **pair program** with you.
+
+We don't expect you to work on a test project for free. That's why we will pay for the time that you spend pair programming with us.
+
+We will start a project from scratch and pair program with you from 8 to 16 hours. You will be driving most of the time, but one of us will be your copilot.
+
+In this test, we want you to work as you usually work. You can use [Google](http://www.google.com), [Stack Overflow](http://stackoverflow.com), [Rubydoc](https://www.ruby-lang.org/), or whatever you need to get things done.
+
+You will spend some time working with each developer in our team. We want to see **how we work together** and if there is **chemistry** between us.
+
+## Culture Fit Interview
+
+If we like what you did pair programming with us, we will call you in for a **culture fit** interview.
+
+This interview will be an interview with everyone in the team, not just developers. Everyone in the company will be able to ask you one or more questions. They are usually pretty random.
+
+Also, you will be able to ask anyone in the team any questions. This is a good way for you to find out what it's really like to work at Ombu Labs.
+
+## Job Offer
+
+If you pass the culture fit interview, you will receive a job offer.
+
+In the best scenario, you will accept our job offer and join us as soon as possible!
+
+## Join us!
+
+We are very careful when adding people to our team. We want to work with the best talent out there.
+
+We don't want to waste anyone's time. That's why our hiring process is **so long**. In order to keep our team's quality high, we prefer to spend more time than usual making a decision.
+
+If you are looking for a **new challenge**, check out our open positions: [http://www.ombulabs.com/jobs](http://www.ombulabs.com/jobs)
+]]></content:encoded>
+      <dc:date>2016-04-14T14:03:00-03:00</dc:date>
+    </item>
     <item>
       <title>Using Bumbler to reduce runtime dependencies</title>
       <link>http://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</link>
@@ -2102,6 +2257,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-04-14T08:53:00-03:00</dc:date>
+    <dc:date>2016-04-22T05:37:00-03:00</dc:date>
   </channel>
 </rss>
