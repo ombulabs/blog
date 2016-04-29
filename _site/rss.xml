@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 28 Apr 2016 12:37:00 -0300</pubDate>
+    <pubDate>Fri, 29 Apr 2016 12:37:00 -0300</pubDate>
     <item>
       <title>Introducing Infractores</title>
       <link>http://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</link>
@@ -32,7 +32,7 @@ This page shows all the parking violations reported by users to
 #InfractoresBA hashtag.
 It&#39;s as simple as that.
 ]]></description>
-      <pubDate>Thu, 28 Apr 2016 12:37:00 -0300</pubDate>
+      <pubDate>Fri, 29 Apr 2016 12:37:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</guid>
       <content:encoded><![CDATA[I've always been a big fan of [scratching your own itch](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software). My latest itch was the **insane amount of parking
 violations** that I see everyday in **Buenos Aires**, near [our office](https://foursquare.com/v/ombulabs-hq/52f0e47311d25da04d101b62).
@@ -106,7 +106,7 @@ want people to use it to **improve their communities**.
 
 All feedback is welcome, whether you like it, hate it or spot an [issue](https://github.com/ombulabs/infractores/issues)!
 ]]></content:encoded>
-      <dc:date>2016-04-28T12:37:00-03:00</dc:date>
+      <dc:date>2016-04-29T12:37:00-03:00</dc:date>
     </item>
     <item>
       <title>Using Bumbler to reduce runtime dependencies</title>
@@ -2356,6 +2356,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-04-28T12:37:00-03:00</dc:date>
+    <dc:date>2016-04-29T12:37:00-03:00</dc:date>
   </channel>
 </rss>
