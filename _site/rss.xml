@@ -27,7 +27,7 @@ Ah, ¿no se puede estacionar en paradas de colectivo? Ya fueee... #InfractoresBA
 
 You can check out this tool over here: http://www.infractoresba.com.ar
 
-This page shows all the valid parking violations reported by users to
+This page shows all the parking violations reported by users to
 @InfractoresBA or with the
 #InfractoresBA hashtag.
 It&#39;s as simple as that.
@@ -48,7 +48,7 @@ Here is an example:
 
 You can check out this tool over here: [http://www.infractoresba.com.ar](http://www.infractoresba.com.ar)
 
-This page shows all the valid parking violations reported by users to
+This page shows all the parking violations reported by users to
 [@InfractoresBA](https://twitter.com/infractoresBA) or with the
 [#InfractoresBA](https://twitter.com/search?src=typd&q=%23InfractoresBA) hashtag.
 It's **as simple as that**.
@@ -62,7 +62,7 @@ possible**:
 * No need to register to a new site
 * No need to fill out 20 different fields
 
-I know that there are *other alternatives* to report an infraction in Buenos
+I know that there are *other alternatives* to report a violation in Buenos
 Aires:
 
 * An official [Android and iOS application](http://www.buenosaires.gob.ar/aplicacionesmoviles/ba-denuncia-vial)
@@ -71,7 +71,7 @@ Aires:
 But I wanted to make it even easier for someone to report a parking violation.
 I am also a big fan of (good) **user experience**.
 
-I didn't see the need to register an account to report an infraction. In fact,
+I didn't see the need to register an account to report a violation. In fact,
 I think it's something that will discourage people from reporting a violation.
 Why not use an existing account in [Twitter](https://twitter.com)?
 
@@ -91,7 +91,7 @@ later be extended and refined. We hope to learn from how the community uses
 this tool.
 
 Our vision is for someone to pick up this tool, configure a city and a vertical,
-and start using it to track any kind of infractions.
+and start using it to track any kind of violation.
 
 In our case, we wanted to improve the situation with parking violations in
 **Buenos Aires**. We hope this tool will lead to those who **park illegally**
