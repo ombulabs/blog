@@ -70,8 +70,10 @@
       </div>
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
   </header>
-
-    {{ content }}
+    <div id="wrapper">
+      {{ content }}
+      {% include tag_list.html %}
+    </div>
     <footer class="site-footer clearfix">
       <section class="copyright">
         <figure>

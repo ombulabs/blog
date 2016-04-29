@@ -2,7 +2,7 @@
 layout: post
 title: "Time and Material"
 date: 2015-11-19 03:55:00
-categories: ["software-development"]
+categories: ["software development"]
 author: "etagwerker"
 ---
 

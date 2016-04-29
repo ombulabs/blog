@@ -6,18 +6,15 @@ about: 'about.html'
 ---
 
 <main id="content" class="content" role="main">
+      <div class="extra-pagination inner">
+          {% include pagination.html %}
+      </div>
 
+      {% for post in paginator.posts %}
 
-    <div class="extra-pagination inner">
-        {% include pagination.html %}
-    </div>
+        {% include post_excerpt.html %}
 
-    {% for post in paginator.posts %}
+      {% endfor %}
 
-      {% include post_excerpt.html %}
-
-    {% endfor %}
-
-    {% include pagination.html %}
-
+      {% include pagination.html %}
 </main>
