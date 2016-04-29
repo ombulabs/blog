@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing Infractores"
-date: 2016-04-28 15:37:00
+date: 2016-04-29 15:37:00
 categories: ["open-source", "crowdsourcing"]
 author: "etagwerker"
 ---
