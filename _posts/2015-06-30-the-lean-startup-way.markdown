@@ -2,7 +2,7 @@
 layout: post
 title: "The Lean Startup Way"
 date: 2015-06-30 23:29:00
-categories: ["lean startup"]
+categories: ["lean-startup"]
 author: etagwerker
 ---
 

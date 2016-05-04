@@ -2,7 +2,7 @@
 layout: post
 title: "Adding Docker to a Ruby gem"
 date: 2015-12-29 13:55:00
-categories: ["docker", "rubygems", "open source"]
+categories: ["docker", "rubygems", "open-source"]
 author: "etagwerker"
 ---
 

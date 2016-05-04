@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '2.5.3'
+gem 'jekyll', '~> 3.0'
 gem 'rake'
 gem 'foreman'
 gem 'thin'
@@ -10,3 +10,13 @@ gem 'dotenv'
 gem 'jekyll-categories'
 gem 'jekyll-authors'
 gem 'jekyll-titleize'
+gem 'jekyll-paginate'
+
+gem 'pygments.rb'
+gem 'redcarpet'
+
+group :development do
+  gem 'pry'
+  gem 'pry-byebug'
+  gem 'byebug'
+end

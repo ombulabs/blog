@@ -6,284 +6,2356 @@
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
     <title>OmbuLabs Blog</title>
-    <link>blog url</link>
+    <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 01 Jan 2016 10:55:00 -0300</pubDate>
+    <pubDate>Fri, 29 Apr 2016 12:37:00 -0300</pubDate>
+    <item>
+      <title>Introducing Infractores</title>
+      <link>http://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</link>
+      <description><![CDATA[I&#39;ve always been a big fan of scratching your own itch. My latest itch was the insane amount of parking
+violations that I see everyday in Buenos Aires, near our office.
+
+We decided to build a simple tool that would allow anyone with a Twitter account to report a parking violation. All
+you need to do is submit a geolocated tweet and a couple of photos
+(as evidence!)
+
+Here is an example:
+
+Ah, ¿no se puede estacionar en paradas de colectivo? Ya fueee... #InfractoresBA pic.twitter.com/XXmu1pdAib&mdash; E r n e s t o (@_nesto) April 18, 2016
+
+
+
+You can check out this tool over here: http://www.infractoresba.com.ar
+
+This page shows all the parking violations reported by users to
+@InfractoresBA or with the
+#InfractoresBA hashtag.
+It&#39;s as simple as that.
+]]></description>
+      <pubDate>Fri, 29 Apr 2016 12:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</guid>
+      <content:encoded><![CDATA[I've always been a big fan of [scratching your own itch](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software). My latest itch was the **insane amount of parking
+violations** that I see everyday in **Buenos Aires**, near [our office](https://foursquare.com/v/ombulabs-hq/52f0e47311d25da04d101b62).
+
+We decided to build a **simple tool** that would allow anyone with a [Twitter](https://twitter.com) account to *report a parking violation*. All
+you need to do is submit a **geolocated tweet** and a couple of photos
+(**as evidence!**)
+
+Here is an example:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">Ah, ¿no se puede estacionar en paradas de colectivo? Ya fueee... <a href="https://twitter.com/hashtag/InfractoresBA?src=hash">#InfractoresBA</a> <a href="https://t.co/XXmu1pdAib">pic.twitter.com/XXmu1pdAib</a></p>&mdash; E r n e s t o (@_nesto) <a href="https://twitter.com/_nesto/status/722065061309726720">April 18, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+You can check out this tool over here: [http://www.infractoresba.com.ar](http://www.infractoresba.com.ar)
+
+This page shows all the parking violations reported by users to
+[@InfractoresBA](https://twitter.com/infractoresBA) or with the
+[#InfractoresBA](https://twitter.com/search?src=typd&q=%23InfractoresBA) hashtag.
+It's **as simple as that**.
+
+<!--more-->
+
+We focused on making the feature of reporting a parking violation **as simple as
+possible**:
+
+* There's no application to download
+* No need to register to a new site
+* No need to fill out 20 different fields
+
+I know that there are *other alternatives* to report a violation in Buenos
+Aires:
+
+* An official [Android and iOS application](http://www.buenosaires.gob.ar/aplicacionesmoviles/ba-denuncia-vial)
+* An official [web page with a long form](http://www.buenosaires.gob.ar/areas/seguridad_justicia/seguridad_urbana/dgcactyt/formulario_denuncia/denunciavial.php?menu_id=34064)
+
+But I wanted to make it even easier for someone to report a parking violation.
+I am also a big fan of (good) **user experience**.
+
+I didn't see the need to register an account to report a violation. In fact,
+I think it's something that will discourage people from reporting a violation.
+Why not use an existing account in [Twitter](https://twitter.com)?
+
+As a user of our tool, and as someone who usually rides his bicycle to work, I
+wanted to **stop, take a photo, tweet it, and move on**.
+
+Just like this:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">La gente que estaciona así es un peligro <a href="https://twitter.com/InfractoresBA">@InfractoresBA</a> <a href="https://t.co/DGNfrQvopZ">pic.twitter.com/DGNfrQvopZ</a></p>&mdash; E r n e s t o (@_nesto) <a href="https://twitter.com/_nesto/status/717023979454771201">April 4, 2016</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+There is still some work to be done. That's why we have made this tool
+[open source](/blog/tags/open-source/). We are open to suggestions, bug reports, code contributions and general feedback: [https://github.com/ombulabs/infractores](https://github.com/ombulabs/infractores)
+
+As always, we developed an [MVP](http://www.ombulabs.com/blog/tags/mvp) that can
+later be extended and refined. We hope to learn from how the community uses
+this tool.
+
+Our vision is for someone to pick up this tool, configure a city and a vertical,
+and start using it to track any kind of violation.
+
+In our case, we wanted to improve the situation with parking violations in
+**Buenos Aires**. We hope this tool will lead to those who **park illegally**
+being fined and encourage more people to **park better**.
+
+However you could easily configure this tool to track *loud noise infractions* in
+**Chicago**, or *crime* in **Berlin** (in terms of crime it might be tricky to
+capture the image/video to use as evidence, but it's a possibility)
+
+This is **not a commercial project**. We **don't** expect to make money, we just
+want people to use it to **improve their communities**.
+
+All feedback is welcome, whether you like it, hate it or spot an [issue](https://github.com/ombulabs/infractores/issues)!
+]]></content:encoded>
+      <dc:date>2016-04-29T12:37:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Using Bumbler to reduce runtime dependencies</title>
+      <link>http://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</link>
+      <description><![CDATA[A few weeks ago, I found an interesting project called
+ Bumbler. If your project uses Bundler,
+ Bumbler shows you your project&#39;s largest dependencies.
+When you find yourself staring at the screen after running
+ bundle exec rails c, you may want to give this tool a try.
+]]></description>
+      <pubDate>Mon, 25 Apr 2016 08:39:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</guid>
+      <content:encoded><![CDATA[A few weeks ago, I found an interesting project called
+ [Bumbler](https://github.com/nevir/Bumbler). If your project uses Bundler,
+ Bumbler shows you your project's largest dependencies.
+When you find yourself staring at the screen after running
+ `bundle exec rails c`, you may want to give this tool a try.
+
+<!--more-->
+
+Using it is simple. Add `gem 'bumbler'` to your Gemfile under the development
+ group, run `bundle`, and you're good to go.
+ When you run `bundle exec bumbler` you will see a progress bar and a detail of
+ the dependencies which took the longest to load.
+Here's an example of a project's development dependencies:
+
+```
+➜  git:(master) ✗ bundle exec bumbler
+[#################################################                             ]
+(49/65) travis-lint...
+Slow requires:
+    110.21  render_anywhere
+    147.33  nokogiri
+    173.83  haml
+    179.62  sass-rails
+    205.04  delayed_job_active_record
+    286.76  rails
+    289.36  mail
+    291.98  capistrano
+    326.05  delayed_job
+    414.27  pry
+    852.13  salesforce_bulk_api
+```
+
+As you can see, one of the gems takes almost 1 second to load on my system,
+ and removing it decreases the time it takes for `bundle exec rails c` to load
+ by 1 second. It's not a lot, but consider every Rake task you run which depends
+ on the environment will take 1 less second to get started.
+
+After we get rid of `salesforce_bulk_api` and `render_anywhere` and manually
+ call `require` on them when needed, the load time looks like this:
+
+```
+➜  git:(master) ✗ bundle exec bumbler
+[#################################################                             ]
+(47/65) fog-aws...
+Slow requires:
+    167.50  sass-rails
+    188.87  nokogiri
+    218.49  haml
+    230.10  capistrano
+    253.77  delayed_job_active_record
+    284.26  mail
+    320.19  delayed_job
+    365.67  pry
+    464.09  rails
+```
+
+Your tests can also benefit from this, as you may find gems that you do not need
+ to have in the test environment. Capistrano is one example, usually you want
+ to have it load **only** in development, not in test nor production.
+
+One caveat worth mentioning: you need to take a close look at your loaded gem's
+ dependencies when removing them. For example, `capistrano` depends on
+ `net-ssh` and `net-scp`. If you remove `capistrano` from `test` or
+ `production`, you won't be able to use `Net::SSH` or `Net::SCP` unless you
+ manually add the `net-ssh` and `net-scp` dependencies back in your Gemfile, as
+ you were relying on them implicitly via Capistrano.
+]]></content:encoded>
+      <dc:date>2016-04-25T08:39:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Use session variables to optimize your user flow</title>
+      <link>http://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</link>
+      <description><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
+
+Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.
+]]></description>
+      <pubDate>Fri, 22 Apr 2016 05:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</guid>
+      <content:encoded><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
+
+Let's say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don't need to persist this info in your database.
+
+<!--more-->
+
+That can be pretty handy in many ways, if you think about changing the content of a website based on the session's information. Handling a lot of session data can be pretty confusing, since the session is just a simple storage. That basically means that you have to organize your way of working with sessions.
+
+I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.
+
+Basically this is what you should **NOT** do:
+
+```ruby
+class Location
+  def initialize(ip)
+    @location = location_request(ip)  
+  end
+
+  def city
+    @location.city
+  end
+  ...
+end
+class ApplicationController < ActionController::Base
+  before_action :set_location
+
+  def set_location(user_ip)
+    session[:user_location] = Location.new(user_ip)
+  end
+end
+```
+
+As soon as you later remove the location class and you are still trying to access `session[:user_location]`, your App will raise the following exception:
+
+```
+ActionDispatch::Session::SessionRestoreError
+
+Session contains objects whose class definition isn't available.
+Remember to require the classes for all objects kept in the session.
+(Original exception: uninitialized constant MyController::Location [NameError])
+```
+
+The problem is at first not very obvious. The app has no knowledge of the previously stored class anymore.
+
+A better way is to not store complex objects or classes in the session. Think about how and what you want to store in the session and keep the data structure simple. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.
+
+One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:
+
+```ruby
+before_action :store_path
+
+def store_path
+  session[:visited_paths] ||= []
+  if session[:visited_paths].exclude?(request.path)
+    session[:visited_paths].push(request.path)
+  end
+end
+
+def visited?(path)
+  session[:visited_paths].include?(path)
+end
+```
+
+You can keep it simple at this point and you can also test it in an [Anonymous Controller](https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller). With some basic helpers like this, you could make a lot of things much easier and keep the code maintainable.
+
+Session variables are a great way to test your business ideas and user flow. They are a good way to guide your users without storing a lot of information in the database or using third party services.
+
+Keep in mind that the cookie session size is limited to 4kb, in case you want to store a lot of data. Check also this [StackOverflow question](http://stackoverflow.com/questions/9473808/cookie-overflow-in-rails-application) for a workaround to this issue.
+
+If you know a better way to work with sessions, let me know!
+]]></content:encoded>
+      <dc:date>2016-04-22T05:37:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Our Hiring Process</title>
+      <link>http://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</link>
+      <description><![CDATA[This is our process to hire new team members at Ombu Labs. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s very important for us to hire A players.
+
+In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
+]]></description>
+      <pubDate>Thu, 14 Apr 2016 14:03:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</guid>
+      <content:encoded><![CDATA[This is our process to hire new team members at [Ombu Labs](http://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
+
+In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
+
+<!--more-->
+
+We usually hire Junior and Senior developers. You can find our open positions [over here](http://www.ombulabs.com/jobs).
+
+## How to Apply
+
+You can just follow the _Apply_ link for the position that you are interested in.
+
+We don't want to receive an old school resume. We prefer to receive a link to your [Github](http://github.com) or [LinkedIn](http://linkedin.com), in that particular order.
+
+I realize that there are great developers that have never made any open source contributions. If that's your case, we will ask for a couple of code samples.
+
+We want to see some recent code samples and evaluate you based on your work, not on your work history. **Experience** is important but **passion** is more important.
+
+## First Interview
+
+If we like what we see, we will send you an email to coordinate an initial interview.
+
+In this interview we will talk about your experience, what you know, what you are passionate about, what you are looking for, what we are looking for, and some concepts that are really important to us.
+
+In this stage we want to get a sense of what you are looking for and if we are a **good fit for you**.
+
+You can expect some technical questions and some random questions.
+
+## Paid Pair Programming Time
+
+If we like what you said in the interview, we are going to schedule some time to **pair program** with you.
+
+We don't expect you to work on a test project for free. That's why we will pay for the time that you spend pair programming with us.
+
+We will start a project from scratch and pair program with you from 8 to 16 hours. You will be driving most of the time, but one of us will be your copilot.
+
+In this test, we want you to work as you usually work. You can use [Google](http://www.google.com), [Stack Overflow](http://stackoverflow.com), [Rubydoc](https://www.ruby-lang.org/), or whatever you need to get things done.
+
+You will spend some time working with each developer in our team. We want to see **how we work together** and if there is **chemistry** between us.
+
+## Culture Fit Interview
+
+If we like what you did pair programming with us, we will call you in for a **culture fit** interview.
+
+This interview will be an interview with everyone in the team, not just developers. Everyone in the company will be able to ask you one or more questions. They are usually pretty random.
+
+Also, you will be able to ask anyone in the team any questions. This is a good way for you to find out what it's really like to work at Ombu Labs.
+
+## Job Offer
+
+If you pass the culture fit interview, you will receive a job offer.
+
+In the best scenario, you will accept our job offer and join us as soon as possible!
+
+## Join us!
+
+We are very careful when adding people to our team. We want to work with the best talent out there.
+
+We don't want to waste anyone's time. That's why our hiring process is **so long**. In order to keep our team's quality high, we prefer to spend more time than usual making a decision.
+
+If you are looking for a **new challenge**, check out our open positions: [http://www.ombulabs.com/jobs](http://www.ombulabs.com/jobs)
+]]></content:encoded>
+      <dc:date>2016-04-14T14:03:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>The Landing Page MVP</title>
+      <link>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</link>
+      <description><![CDATA[There is no good reason why an MVP should take more than one month. If that happens, it means that the scope of the minimum viable product wasn&#39;t small enough.
+
+You want to build the smallest feature set in order to start learning from your target market. It doesn&#39;t have to be feature complete. It doesn&#39;t even have to offer a feature. It doesn&#39;t even need to be a web-based MVP.
+]]></description>
+      <pubDate>Tue, 05 Apr 2016 08:03:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</guid>
+      <content:encoded><![CDATA[There is no good reason why an **MVP** should take more than one month. If that happens, it means that the scope of the [minimum viable product](https://leanstack.com/minimum-viable-product/) wasn't small enough.
+
+You want to build the smallest feature set in order to start learning from your target market. It doesn't have to be feature complete. It doesn't even have to offer a feature. It doesn't even need to be a web-based MVP.
+
+<!--more-->
+
+## Lean Canvas
+
+If you haven't already, write the first draft of your [Lean Canvas](https://leanstack.com/lean-canvas/). It's a good exercise to define the **problem**, **solution**, **customer segments**, **unique value proposition**, cost structure and revenue streams.
+
+Keep in mind that each post-it in your Lean Canvas is a hypothesis. **It's what you consider as the problem, not necessarily what the market considers as the problem**.
+
+The goal here is to identify your riskiest hypothesis.
+
+### Customer Segments
+
+Ask yourself: Who is your ideal client?
+
+If the answer is vague, try again. Do they have a particular profession? What do they like to do? How old are they? Are they married/single? How many customers does your business model have?
+
+I like to use this form to define your target market:
+
+* As a loyal customer to my local coffee shop, I'd like to get rewards for being loyal to my shop.
+* As a local small business owner, I want to offer my repeat customers rewards so that they continue to shop at my store.
+
+### Problem
+
+Now that you've defined the customer segments hypotheses, you can think about the problem. What problem do they have? What's their pain?
+
+Once you have defined problem and customer segments, you can create your landing page MVP.
+
+## The Landing Page MVP
+
+Sometimes an MVP can be as simple as a landing page. If that's the case, you can use one of these services:
+
+* [Unbounce](http://unbounce.com)
+* [Lead Pages](http://www.leadpages.net)
+
+You don't need a programmer or software boutique for this. You can build a landing page yourself and drive people to it.
+
+### Problem Description
+
+The most important part of the landing page is the problem description. You want the people in your target market to read the problem description and relate to it.
+
+You will find these types of people in your target market:
+
+* They don't know they have a problem. They are fine doing things as they're currently doing them.
+* They do know they have a problem. They read your problem description and they can relate to it.
+* They do know they have a problem and they have already attempted to solve it. They may have hacked a solution that is not ideal.
+* They do know they have a problem and they have a budget for a solution. This is your sweet spot.
+* They do know they have a problem and they are already paying someone to provide a solution.
+
+### Solution
+
+After you clearly define the problem, you want to show a teaser for a solution. Usually this will show one (or many) screenshots and a title for the solution.
+
+At this point, you don't really need to have the solution up and running. It can be a prototype, a Photoshop file, a teaser video or even just some notes in a notepad.
+
+You want to entice people to take a leap of faith.
+
+### Call to Action
+
+At this point, the leap of faith is that the users will give you their email address to receive updates on your solution and ideally a product launch.
+
+You can use this information to follow up on them, to put them in a drip email marketing sequence, or to get more information from them.
+
+If they decided to give you their email address, it's more likely that they will be willing to participate in a short call or survey.
+
+### Magnet *
+
+\* This part is optional. You will probably get more email addresses if you offer a *freebie*. For example: If you are working on a book, you can offer a sample chapter in exchange for their email address.
+
+Sometimes people will be more willing to share their email details if you offer them something *tangible* in return.
+
+### Traffic
+
+This type of MVP is useless if you don't drive people to it. How do you drive people to a landing page? The same way that you drive people to any web page.
+
+These are only a few ways to drive people to your landing page:
+
+#### Networking
+
+You can go to events and network with people. When you meet new people, you can give them your card or just mention the name of your project, the problem and the unique value proposition.
+
+If the people you meet are within your target market, it's very likely that they will go to your site and sign up.
+
+This approach takes time and is quite *old school*.
+
+#### Facebook
+
+You can post your website to Facebook so that all your friends can see. If you already have a Facebook page, you can post a link to all your followers.
+
+This way you will get traffic from friends, family and followers. Depending on the amount of likes (and [Facebook's algorithm](http://www.businessinsider.com/facebook-changed-how-the-news-feed-works--and-huge-website-upworthy-suddenly-shrank-in-half-2014-2)) you will get a lot of traffic or not so much.
+
+If there are groups that are related to this problem, you can join these groups and see what people are saying. You can build a relationship with members and later invite them to your landing page.
+
+This way you will get traffic from people who are not friends nor family.
+
+If you have some budget, you can [use Facebook Ads](http://clairepells.com/free-guide-facebook-ads/) to target people in your demographic. You can go back to the demographic definition and setup a Facebook Ads campaign to target these people.
+
+#### Google Ad Words
+
+What is your target market searching for in Google? Are they looking for a way to "listen to WNYC online"? Or "offer rewards to my customers"? Or "record a business podcast"?
+
+[Google Ad Words](https://www.google.com/adwords/) is a great way to find people who are already looking for a solution to the problem you described. You can show them an ad and take them to your own landing page.
+
+#### Online Forums
+
+Some problems already have forums of people talking about them. People usually search for solutions. If they can't find it, they ask other people for advice.
+
+You could participate in forums and learn from the people that are asking questions that are related to your problem. Then you can drive these people to your landing page.
+
+## Pivot or Persevere
+
+After you ran your landing page for a few weeks, you can measure the results. How many emails did you collect? What was the conversion rate? Out of all the visitors, how many of them gave you their email address? That ratio is your conversion rate.
+
+With that information you will be able to continue with the same problem description, or you will be forced to [pivot](http://steveblank.com/2014/01/14/whats-a-pivot/) into another problem or solution.
+]]></content:encoded>
+      <dc:date>2016-04-05T08:03:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Announcing The Ombu Labs Shop!</title>
+      <link>http://www.ombulabs.com/blog/design/ombulabs-products.html</link>
+      <description><![CDATA[We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
+]]></description>
+      <pubDate>Fri, 01 Apr 2016 09:35:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/design/ombulabs-products.html</guid>
+      <content:encoded><![CDATA[We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
+
+<!--more-->
+
+### Our process: it all started with an idea
+
+As it happens with every product, it starts with an idea. We wanted to make a t-shirt, a notebook and a tote bag that could reflect our passion for work and design.
+
+For the notebook, we chose a quote by Otl Aicher: “Good Art Inspires, Good Design Motivates”. Here you can see part of the design process, with some tweaks and final adjustments.
+
+<img src="/blog/assets/images/ombu-labs-shop/notebook-design-process.png" alt="Notebook Design Process" class="full-img">
+
+For our t-shirt we chose a very well known quote that inspires us day by day at work: Done is Better than Perfect. In this case, we started with some paper sketches and then its design:
+
+<img src="/blog/assets/images/ombu-labs-shop/lettering-1.jpg" alt="T-Shirt Design Process" class="full-img">
+<img src="/blog/assets/images/ombu-labs-shop/lettering-2.png" alt="Done is Better than Perfect" class="full-img">
+
+
+### Our Products
+After all this creative process, these are the results:
+
+<img src="/blog/assets/images/ombu-labs-shop/notebook.png" alt="Ombu Labs Notebook" class="full-img">
+
+<img src="/blog/assets/images/ombu-labs-shop/t-shirt.png" alt="Ombu Labs t-shirt" class="full-img">
+
+And last, but not least, our tote bag, its design was inspired by our day-to-day work and methodology. We made some illustrations and then created a final composition.
+
+<img src="/blog/assets/images/ombu-labs-shop/working-at-ombulabs.gif" alt="Working at OmbuLabs" class="full-img">
+
+<img src="/blog/assets/images/ombu-labs-shop/totebag.png" alt="Ombu Labs Tote Bag" class="full-img">
+
+### Ombu Labs Shop
+
+We are very proud and happy to share this with you. We believe this process can be applied to any kind of project. Now, these products are available for sale in our [online store](http://shop.ombulabs.com/)!
+
+<img src="/blog/assets/images/ombu-labs-shop/shop.jpg" alt="Ombu Labs Shop" class="full-img">
+
+We also invite you to visit and follow our [Dribbble](https://dribbble.com/OmbuLabs) account where we’ll be sharing new shots!
+]]></content:encoded>
+      <dc:date>2016-04-01T09:35:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Hunting Down a Slow Rails Request</title>
+      <link>http://www.ombulabs.com/blog/rails/performance/hunting-down-a-slow-rails-request.html</link>
+      <description><![CDATA[Recently, we started using Skylight in production
+for one of our clients&#39; Rails applications, in an attempt to try to improve the
+performance of some of the more critical API endpoints.
+
+Skylight reports on:
+
+
+Time taken per request
+Breakdown of time taken per SQL query
+Object allocations per request
+
+
+I noticed an unusually large amount of allocated objects for one request:
+
+
+
+This request would take anywhere from 400ms to 3000ms to respond, which is
+WAY too long.
+]]></description>
+      <pubDate>Fri, 04 Mar 2016 08:03:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/performance/hunting-down-a-slow-rails-request.html</guid>
+      <content:encoded><![CDATA[Recently, we started using [Skylight](https://www.skylight.io) in production
+for one of our clients' Rails applications, in an attempt to try to improve the
+performance of some of the more critical API endpoints.
+
+Skylight reports on:
+
+- Time taken per request
+- Breakdown of time taken per SQL query
+- Object allocations per request
+
+I noticed an unusually large amount of allocated objects for one request:
+
+![Skylight report](/blog/assets/images/high-object-allocation.png)
+
+This request would take anywhere from 400ms to 3000ms to respond, which is
+__WAY__ too long.
+
+<!--more-->
+
+To debug this, I first captured the `String` object allocation count locally to
+see how it behaved:
+
+```ruby
+Started GET "/email_accounts.json?results_per_page=30" for 127.0.0.1 at 2016-03-02 13:04:22 +0000
+Processing by EmailAccountsController#index as JSON
+  Parameters: {"results_per_page"=>"30"}
+
+[[String, 150299], [Arel::Nodes::SqlLiteral, 5], [Arel::Nodes::BindParam, 4], [ActiveSupport::StringInquirer, 1]]
+### JSON rendering happens here ###
+[[String, 707982], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 2922], [Arel::Nodes::SqlLiteral, 6], [ActiveSupport::StringInquirer, 1]]
+
+Completed 200 OK in 5860ms (Views: 11.8ms | ActiveRecord: 564.9ms)
+```
+
+To get the amount of allocated strings, I used the following snippet:
+
+```ruby
+strings = {}
+ObjectSpace.each_object(String) { |str| strings[str.class] += 1 }
+pp strings
+```
+
+As you can see, there are 700k+ allocated strings. It is very likely that this
+increase in object allocation is the culprit for the slow performance.
+
+I dug a bit into the `EmailAccount` model and its associations, and noticed that
+this model had a one-to-many association. Supposedly, we were only returning one
+record for this association by using:
+
+```ruby
+scope.includes(:latest_sync)
+```
+
+and
+
+```ruby
+has_one :latest_sync, -> { order "email_account_syncs.last_attempt_at desc" },
+                      class_name: "EmailAccountSync"
+```
+
+As it turns out, the `has_one :latest_sync` relationship was not being
+respected by the query performed in the `index` action, and thus:
+
+```ruby
+EmailAccountSync Load (21.9ms)  SELECT "email_account_syncs".* FROM "email_account_syncs"  WHERE "email_account_syncs"."email_account_id" IN (24, 23, 22, 21, 20, 19, 18, 17, 16, 15)  ORDER BY email_account_syncs.last_attempt_at desc
+```
+
+This meant that all `EmailAccountSync` instances were getting loaded for each
+`EmailAccount` record. The `limit` that should have been in the SQL statement
+was not there.
+
+I googled for a bit and found [this issue](https://github.com/rails/rails/issues/10621#issuecomment-77389988),
+which suggests using `eager_load` instead of `includes`, which fixes the issue.
+
+The downside is that it introduces an N+1 query problem, but it's a dramatical
+performance gain:
+
+```ruby
+Started GET "/email_accounts.json?results_per_page=30" for 186.158.142.200 at 2016-03-02 13:41:44 +0000
+Processing by EmailAccountsController#index as JSON
+  Parameters: {"results_per_page"=>"30"}
+
+[[String, 150295], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 2110], [Arel::Nodes::SqlLiteral, 20], [Arel::Nodes::BindParam, 10], [ActiveSupport::StringInquirer, 1]]
+### JSON rendering happens ###
+[[String, 157847], [ActiveSupport::JSON::Encoding::JSONGemEncoder::EscapedString, 4220], [Arel::Nodes::SqlLiteral, 30], [Arel::Nodes::BindParam, 12], [ActiveSupport::StringInquirer, 1]]
+
+Completed 200 OK in 178ms (Views: 5.6ms | ActiveRecord: 2.3ms)
+```
+
+The object allocation is down by a huge amount, and the request now takes from
+50ms to 200ms to respond. This is not yet completely efficient, but it is a much
+more acceptable value.
+]]></content:encoded>
+      <dc:date>2016-03-04T08:03:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>10 Steps to Evaluate a Rails Project</title>
+      <link>http://www.ombulabs.com/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
+      <description><![CDATA[It will come a time when you will have to decide whether to maintain a Rails project or not.
+
+If you want to seriously consider it, you should follow these 10 steps:
+
+1. Setup the development environment
+
+Git clone the repository and try to start the server. Is the README clear enough? Can you follow the steps in the file and easily get started?
+
+A lot of projects will have a README that is out of date and/or instructions that don&#39;t work right off the bat.
+
+Most of the projects will define guidelines like these:
+
+
+Configure your config/database.yml
+Configure your .env file
+Setup the database rake db:create db:migrate db:seed
+Start the server rails server
+
+
+The best projects will have a one-liner that will setup the entire environment for you.
+]]></description>
+      <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</guid>
+      <content:encoded><![CDATA[It will come a time when you will have to decide whether to maintain a [Rails](http://rubyonrails.org) project **or not**.
+
+If you want to seriously consider it, you should follow these 10 steps:
+
+### 1. Setup the development environment
+
+Git clone the repository and try to start the server. Is the `README` clear enough? Can you follow the steps in the file and easily get started?
+
+A lot of projects will have a `README` that is out of date and/or instructions that don't work right off the bat.
+
+Most of the projects will define guidelines like these:
+
+* Configure your `config/database.yml`
+* Configure your `.env` file
+* Setup the database `rake db:create db:migrate db:seed`
+* Start the server `rails server`
+
+The best projects will have a one-liner that will setup the entire environment for you.
+
+<!--more-->
+
+For example:
+
+```bash
+cd path/to/project
+./bin/setup
+rails server
+```
+
+### 2. Run the tests
+
+Once you have setup your development environment, try to run the tests. For example:
+
+```bash
+rake
+```
+
+Any decent [Rails](http://rubyonrails.org) project will have a passing build, even if it's not very thorough.
+
+Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. Integration tests that use the [Selenium](http://www.seleniumhq.org) driver)
+
+Did the build pass? Did it fail? How many failures did you get?
+
+In the best case scenario, the tests will pass.
+
+### 3. Review schema.rb
+
+A good way to see the complexity of an application is to see the amount of tables in the database. Does it have more than 20 tables? More than 100? Can you easily draw an [ERD](https://en.wikipedia.org/wiki/Entity–relationship_model) of the core models? Are the tables normalized?
+
+I like doing the exercise of drawing the core business tables and the relationships between them. This usually helps me understand the business behind the project.
+
+### 4. Review .env
+
+Does the project have a `.env` file or similar? If the project doesn’t have one, it’s a clear sign that there will be trouble moving the project across environments (development, test, staging, production)
+
+By now we should all know that [we should all be using environment variables](http://12factor.net/config). If someone developed this project without *env* variables, you will probably find condition statements for this problem all over the codebase.
+
+### 5. Check the Gemfile
+
+Find out the project's [Rails](http://rubyonrails.org) version. Is it the latest version? Is it older than 3.0?
+
+One thing that we’ve learned is that upgrading Rails in a project is **not a walk in the park**.
+
+Does it use gems that are not currently maintained? This could be a sign that you will have to migrate to new gems, which will produce extra work and affect your estimates.
+
+### 6. Run bundle-audit
+
+[Bundler Audit](https://rubygems.org/gems/bundler-audit) is a useful gem that will check for known vulnerabilities for the gems specified in `Gemfile.lock`
+
+If there are any vulnerable dependencies, this tool will suggest that you upgrade to a patched version of the gem.
+
+In the best case scenario, you will see something like this:
+
+```bash
+etagwerker:ombushop/ (master) $ bundle-audit
+No vulnerabilities found
+```
+
+### 7. Setup Code Climate
+
+This is a quick (and **paid**) step to check code quality. At [Ombu Labs](http://www.ombulabs.com) we have a business account that we use for our products and our client's projects.
+
+[Code Climate](https://codeclimate.com) is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.
+
+You can quickly find **code hotspots**, potential issues, potential bug risks, and even coverage stats.
+
+What is the [GPA](https://docs.codeclimate.com/docs/gpa) of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!
+
+A free alternative would be to run some (or all) of these tools on the project:
+
+* [flog](https://rubygems.org/gems/flog)
+* [flay](https://rubygems.org/gems/flay)
+* [metric_fu](https://rubygems.org/gems/metric_fu)
+* [simplecov](https://rubygems.org/gems/simplecov)
+
+### 8. Check code coverage
+
+As much as I like [Code Climate](https://codeclimate.com), [simplecov](https://rubygems.org/gems/simplecov) is an even faster way to generate a quick report about code coverage.
+
+This tool will tell you the coverage percentage for each application layer. How much percentage is covered in the models' tests? How much for the controllers' tests?
+
+Which are the least covered files? How many relevant lines are in each file? How many of them are covered by a test?
+
+The overall test coverage percentage will give you an idea about how much past developers cared about tests.
+
+If you are going to be changing the code, you need to make sure that this code is covered. If not, it will be a nightmare!
+
+You should complement this report with a qualitative code review of the tests, to make sure that the coverage is actually thorough.
+
+### 9. Research the development process
+
+Do the developers have a process to introduce changes to the project? Do they use code reviews before they merge anything to `master`? Do they have a [CI](https://en.wikipedia.org/wiki/Continuous_integration) service that runs with every pull request? Do they even use pull requests?
+
+What's in the roadmap for the next 3 months? Is this project **on fire**? Do they need a firefighter? Why is it on fire?
+
+### 10. Review performance stats
+
+Do they use [Skylight](https://www.skylight.io/r/qGCIS90vk2nD)? [NewRelic](http://newrelic.com)? What are the slowest and busiest requests? What are the main performance problems?
+
+Most projects won't have information from these (**paid**) services. So you will have to find out on your own. If they use [Google Analytics](https://www.google.com/analytics/), you might find some information about poor page performance.
+
+## Conclusion
+
+These are the steps that we currently follow before we take over a Rails project. They've been quite helpful for us. I recommend that you use them to judge the quality of the project as objectively as possible.
+
+Project maintainers, product owners and founders won't know the state of the code. You can't trust their opinion.
+
+At [Ombu Labs](http://www.ombulabs.com), if all these steps **pass** we will be happy to take over the project. If most of them **fail** we will usually send the company a **free** code quality report and respectfully decline.
+
+I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!
+]]></content:encoded>
+      <dc:date>2016-02-17T10:55:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Set up and run Hubot without using Heroku</title>
+      <link>http://www.ombulabs.com/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</link>
+      <description><![CDATA[Hubot makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile support. Simply running
+git push heroku master deploys the app and starts it.
+
+When it comes to deploying to your own Linux server, given that
+foreman doesn&#39;t really like background processes (see:
+ddollar/foreman#65), you need to
+use something like monit, systemd or tmux to better manage your Hubot
+process.
+]]></description>
+      <pubDate>Fri, 29 Jan 2016 08:16:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</guid>
+      <content:encoded><![CDATA[[Hubot](https://hubot.github.com) makes it incredibly easy to setup on a Heroku
+server, by taking advantage of its Procfile support. Simply running
+`git push heroku master` deploys the app and starts it.
+
+When it comes to deploying to your own Linux server, given that
+`foreman` doesn't really like background processes (see:
+[ddollar/foreman#65](https://github.com/ddollar/foreman/issues/65)), you need to
+use something like `monit`, `systemd` or `tmux` to better manage your Hubot
+process.
+
+<!--more-->
+
+If you don't already have your own Hubot repository, you can easily create one.
+The easiest way is using the hubot generator:
+
+```bash
+npm install -g yo generator-hubot
+```
+
+Run the generator in a folder of your choosing:
+
+```bash
+$ mkdir myhubot
+$ cd myhubot
+$ yo hubot
+```
+
+Go through the steps the generator takes you, and when you're done, initialize a
+Git repository and push it to Github or your preferred Git server.
+
+Go ahead and choose where you want to run your Hubot from and SSH into your
+instance (we used an AWS EC2 instance). Once in it, you can clone your Hubot
+repository, or if you prefer, create a Capistrano recipe and deploy it.  
+
+As I mentioned before, you could run `foreman start` now to check that your bot
+is working, but you can't leave it running in the background out-of-the-box, as
+`foreman` is not friendly to background processes.
+
+You can work around this by leaving `foreman` itself running in a dettached tmux
+session:
+
+```bash
+$ tmux new -s hubot
+$ cd /path/to/hubot
+$ foreman start
+<Ctrl-b>-d
+```
+
+This is **not the best way to do it**, as the process could end unexpectedly and
+it won't come up again. This forces you to re-attach to the session or kill it
+and restart Hubot manually.
+
+The best way is to use either a `systemd` service or `monit`. For a `monit`
+example, check out
+[this gist](https://gist.github.com/philcryer/d391b72511f4b69cece3).
+
+In our case, we use `systemd`, which allows us to start it by running
+`sudo service hubot start`. To do this, create the following service file:
+
+```bash
+; Hubot systemd service unit file
+; Place in e.g. `/etc/systemd/system/hubot.service`, then
+; `systemctl daemon-reload` and `service hubot start`.
+
+[Unit]
+Description=Hubot
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/path/to/hubot
+User=deployer
+
+Restart=always
+RestartSec=10
+
+ExecStart=/bin/bash -a -c 'cd /path/to/hubot && source .env && /bin/hubot --adapter slack'
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Finally, you can run `systemctl daemon-reload` and then
+`sudo service hubot start`. Any changes you make to the bot can be obtained
+using `git pull origin master` and then restarting the Hubot service
+(`service hubot restart`), or by using Capistrano if you wrote the deploy recipe
+for it.
+
+Hubot is a nice addition to your team, and if you use the Slack
+integration, you can use it for cool stuff like deploying via your CI server,
+or simple things like getting pictures of pugs delivered to your channel!
+
+![pug me](https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png)
+]]></content:encoded>
+      <dc:date>2016-01-29T08:16:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Let vs Instance Variables</title>
+      <link>http://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</link>
+      <description><![CDATA[Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a before block.
+]]></description>
+      <pubDate>Fri, 22 Jan 2016 07:36:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</guid>
+      <content:encoded><![CDATA[Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a `before` block.
+
+<!--more-->
+
+```ruby
+  before do
+    @user = User.create username: 'foo'
+  end
+```
+
+The other option is `let`.
+
+```ruby
+  let(:user) { User.create username: 'foo' }
+```
+
+If you have seen this and you are still not sure, when to use instance variables and when `let`, then you will in the following examples.
+
+For this example I have chosen a simple setup in which I want to create 2 users and check their attributes.
+
+To properly reset the database with [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) after each test, you can use this snippet below:
+
+```ruby
+RSpec.configure do |config|
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+
+  config.infer_spec_type_from_file_location!
+end
+```
+
+My setup with instance variables looks like this:
+
+```ruby
+RSpec.describe User, type: :model do
+  before do
+    @user = User.create email: 'foo@ombulabs.com', username: 'foofoo'
+    @user_2 = User.create email: 'bar@ombulabs.com', username: 'barbar'
+  end
+
+  it 'check user username' do
+    expect(@user.username).to eq('foofoo')
+  end
+
+  it 'check user_2 email' do
+    expect(@user_2.email).to eq('bar@ombulabs.com')
+  end
+
+  it 'combined test that checks all users' do
+    expect(@user.email).to eq('foo@ombulabs.com')
+    expect(@user_2.username).to eq('barbar')
+  end
+end
+```
+
+And the setup with `let` would look like this:
+
+```ruby
+RSpec.describe User, type: :model do
+  let(:user) { User.create email: 'foo@ombulabs.com', username: 'foofoo' }
+  let(:user_2) { User.create email: 'bar@ombulabs.com', username: 'barbar' }
+
+  it 'check user username' do
+    expect(user.username).to eq('foofoo')
+  end
+
+  it 'check user_2 email' do
+    expect(user_2.email).to eq('bar@ombulabs.com')
+  end
+
+  it 'combined test that checks all users' do
+    expect(user.email).to eq('foo@ombulabs.com')
+    expect(user_2.username).to eq('barbar')
+  end
+end
+```
+
+So let's run both specs separately and have a look on the output.
+
+```bash
+$ bin/rspec spec/models/user_instance_spec.rb
+...
+
+Finished in 0.087 seconds (files took 2.87 seconds to load)
+3 examples, 0 failures
+```
+
+```bash
+$ bin/rspec spec/models/user_let_spec.rb
+...
+
+Finished in 0.06692 seconds (files took 3.06 seconds to load)
+3 examples, 0 failures
+```
+
+What we already can see is that the `let`-tests are faster.
+
+If we have a look at the test logs, we can see why that is.
+
+Log output of `user_instance_spec.rb`:
+
+```bash
+SQL (2.6ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+SQL (0.5ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+SQL (0.4ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:44:42', '2016-01-22 16:44:42')
+```
+
+As we can see here, that apparently for each of my tests all records are being created.
+This is not the case for `let` examples, if we have a look at the log output.
+
+Log output of `user_let_spec.rb`:
+
+```bash
+SQL (0.7ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:47:45', '2016-01-22 16:47:45')
+SQL (0.4ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:47:45', '2016-01-22 16:47:45')
+SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:47:45', '2016-01-22 16:47:45')
+SQL (0.3ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:47:45', '2016-01-22 16:47:45')
+```
+
+As we can see in the log output, we count 6 SQL Inserts for the instance example and just 4 SQL Inserts for the `let` example. This is because the variables configured with `let` will be loaded if we directly call them. This behavior is called lazy loading and forgives small mistakes when writing tests.
+
+If we now have a closer look at the instance variable example, you see there the use of `before`. This is the default RSpec behavior and actually translates to `before(:each)`. This means the `before` block gets executed before **every** single test. If you have a really complex test setup in which you use a `before(:each)`, you are most likely wasting a lot of time setting up your tests.
+
+For the next example I'm going to use `before(:all)` to see what changes. So my before block looks now like this:
+
+```ruby
+  before(:all) do
+    @user = User.create email: 'foo@ombulabs.com', username: 'foofoo'
+    @user_2 = User.create email: 'bar@ombulabs.com', username: 'barbar'
+  end
+```
+
+And the log output of my spec is the following:
+
+```bash
+$ bin/rspec spec/models/user_instance_before_all_spec.rb
+...
+
+Finished in 0.06128 seconds (files took 3.68 seconds to load)
+3 examples, 0 failures
+```
+
+My `test.log` gives me the following output:
+
+```bash
+SQL (13.2ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('foo@ombulabs.com', 'foofoo', '2016-01-22 16:48:31', '2016-01-22 16:48:31')
+SQL (5.2ms)  INSERT INTO `users` (`email`, `username`, `created_at`, `updated_at`) VALUES ('bar@ombulabs.com', 'barbar', '2016-01-22 16:48:31', '2016-01-22 16:48:31')
+```
+
+So basically the `before(:all)` block ensures that we are only creating everything inside this **once**. The `before(:all)` can save you some time, when executing tests that need the exact same setup, otherwise I prefer to use the `let` syntax because it's easier to read.
+
+Another great benefit of `let` is the flexible redefinition of variables to change a most likely complex setup.
+You just need to change a `let` variable within a context block and you are able to use the exact setup with different variables just by changing one line.
+
+```ruby
+RSpec.describe User, type: :model do
+  let(:name)    { 'OmbuLabs' }
+  let!(:user)   { User.create email: 'foo@ombulabs.com', username: name }
+  let!(:user_2) { User.create email: 'bar@ombulabs.com', username: 'barbar' }
+
+  it 'check user username' do
+    expect(user.username).to eq('OmbuLabs')
+  end
+
+  context 'ombushop username' do
+    let(:name) { 'OmbuShop' }
+
+    it 'check user username' do
+      expect(user.username).to eq('OmbuShop')
+    end
+  end
+end
+```
+
+Benefits with `let`:
+
+  * Lazy loaded variables
+  * Faster than `before(:each)`, slower than `before(:all)`
+  * Better readability
+  * Flexible usage
+
+Benefits with instance variables:
+
+  * Useful for tests that need just one simple setup with a `before(:all)`
+
+Let's sum it up, if your test setup allows it, use instance variables in a `before(:all)` block, otherwise I recommend using `let`.
+]]></content:encoded>
+      <dc:date>2016-01-22T07:36:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Protect your sensitive data in Git</title>
+      <link>http://www.ombulabs.com/blog/open-source/security/protect-your-sensitive-data-in-git.html</link>
+      <description><![CDATA[If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
+
+One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.
+
+For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my ssh-key to the repo:
+$ git commit -am &#39;init git repo&#39;
+[master (root-commit) 917a1e1] init git repo
+ 2 files changed, 52 insertions(+)
+ create mode 100644 id_rsa
+ create mode 100644 id_rsa.pub
+
+After doing a couple of additions, working and editing, I realise that I should never have commited the ssh-key. *facepalm*
+
+Alright, then I just do a simple git rm --cached id_rsa and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.
+(master) $ git rm --cached id_rsa
+rm &#39;id_rsa&#39;
+(master) $ git status
+A  .gitignore
+D  id_rsa
+(master) $ git commit -am &#39;remove id_rsa&#39;
+[master c69deb9] remove id_rsa
+ 2 files changed, 1 insertion(+), 51 deletions(-)
+ create mode 100644 .gitignore
+ delete mode 100644 id_rsa
+
+So if we now have a look in our commit list, we can still see our first commit where I added my ssh-key. If I checkout this commit, I still have the contents of my ssh-key available.
+(master) $ git log
+917a1e1 - init git repo (24 minutes ago) &lt;Sirko Sittig&gt;
+(master) $ git checkout 917a1e1
+((detached from 917a1e1)) $ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIJKQIBAAKCAgEAoequrqsM42na3OpvBFYOpqvzJumr3/kxJTuluXbPyJzVjMXf
+d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
+YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
+...
+
+To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with git filter-branch. The command git rm --cached git rm docs is not sufficient in this case.
+(master) $ git filter-branch --tree-filter &#39;rm -f id_rsa&#39; HEAD
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 (6/6)
+Ref &#39;refs/heads/master&#39; was rewritten
+
+So far so good, but what about my other branches that have been created?
+bash
+(master) $ git checkout new-feature
+(new-feature) $ ls
+drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:20 ./
+drwx------ 56 sirko sirko 12288 Dec 31 12:37 ../
+drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:20 .git/
+-rw-rw-r--  1 sirko sirko  3243 Dec 31 13:20 id_rsa
+-rw-r--r--  1 sirko sirko   748 Dec 31 12:41 id_rsa.pub
+-rw-rw-r--  1 sirko sirko    64 Dec 31 13:20 my_document.txt
+
+
+Apparently git filter-branch is applying this changes only to the current branch, which is actually not what I want. To make this work, it seems that I have to run git filter-branch in every existing branch, which makes it pretty annoying. After reading more in the (git docs)[https://git-scm.com/docs/git-filter-branch], I found that I need to apply the --all option.
+(master) $ git filter-branch --tree-filter &#39;rm -f id_rsa&#39; HEAD --all
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 (7/7)
+Ref &#39;refs/heads/master&#39; was rewritten
+WARNING: Ref &#39;refs/heads/master&#39; is unchanged
+Ref &#39;refs/remotes/origin/master&#39; was rewritten
+WARNING: Ref &#39;refs/remotes/origin/master&#39; is unchanged
+Ref &#39;refs/remotes/origin/new-feature&#39; was rewritten
+(master) $ git checkout new-feature
+(new-feature) $ ll
+total 44
+drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:41 ./
+drwx------ 57 sirko sirko 12288 Dec 31 13:41 ../
+drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:41 .git/
+-rw-rw-r--  1 sirko sirko   748 Dec 31 13:41 id_rsa.pub
+-rw-rw-r--  1 sirko sirko    64 Dec 31 13:41 my_document.txt
+
+That seems to be exactly what I want and in the end I just need to git push --all --force my changes. After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.
+
+Another alternative to working with git filter-branch is BFG which has some more nifty features.
+
+This tool provides some commands to completely remove big files as well as passwords from your Git history. Sadly I could not get it properly working, big files are still persistent as a git object and passwords can not be deleted because they are protected by &#39;HEAD&#39;. I could not really find a solution for these problems. Maybe you are more lucky!
+
+The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&#39;s Git history.
+]]></description>
+      <pubDate>Thu, 21 Jan 2016 07:36:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/open-source/security/protect-your-sensitive-data-in-git.html</guid>
+      <content:encoded><![CDATA[If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
+
+**One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.**
+
+For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my `ssh-key` to the repo:
+
+```bash
+$ git commit -am 'init git repo'
+[master (root-commit) 917a1e1] init git repo
+ 2 files changed, 52 insertions(+)
+ create mode 100644 id_rsa
+ create mode 100644 id_rsa.pub
+```
+
+After doing a couple of additions, working and editing, I realise that I should never have commited the `ssh-key`. \*facepalm\*
+
+Alright, then I just do a simple `git rm --cached id_rsa` and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.
+
+```bash
+(master) $ git rm --cached id_rsa
+rm 'id_rsa'
+(master) $ git status
+A  .gitignore
+D  id_rsa
+(master) $ git commit -am 'remove id_rsa'
+[master c69deb9] remove id_rsa
+ 2 files changed, 1 insertion(+), 51 deletions(-)
+ create mode 100644 .gitignore
+ delete mode 100644 id_rsa
+```
+
+So if we now have a look in our commit list, we can still see our first commit where I added my ssh-key. If I checkout this commit, I still have the contents of my `ssh-key` available.
+
+```bash
+(master) $ git log
+917a1e1 - init git repo (24 minutes ago) <Sirko Sittig>
+(master) $ git checkout 917a1e1
+((detached from 917a1e1)) $ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIJKQIBAAKCAgEAoequrqsM42na3OpvBFYOpqvzJumr3/kxJTuluXbPyJzVjMXf
+d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
+YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
+...
+```
+
+To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with [git filter-branch](https://git-scm.com/docs/git-filter-branch). The command `git rm --cached` [git rm docs](https://git-scm.com/docs/git-rm) is not sufficient in this case.
+
+```bash
+(master) $ git filter-branch --tree-filter 'rm -f id_rsa' HEAD
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 (6/6)
+Ref 'refs/heads/master' was rewritten
+```
+
+So far so good, but what about my other branches that have been created?
+```bash
+(master) $ git checkout new-feature
+(new-feature) $ ls
+drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:20 ./
+drwx------ 56 sirko sirko 12288 Dec 31 12:37 ../
+drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:20 .git/
+-rw-rw-r--  1 sirko sirko  3243 Dec 31 13:20 id_rsa
+-rw-r--r--  1 sirko sirko   748 Dec 31 12:41 id_rsa.pub
+-rw-rw-r--  1 sirko sirko    64 Dec 31 13:20 my_document.txt
+```
+
+Apparently `git filter-branch` is applying this changes only to the current branch, which is actually not what I want. To make this work, it seems that I have to run `git filter-branch` in every existing branch, which makes it pretty annoying. After reading more in the (git docs)[https://git-scm.com/docs/git-filter-branch], I found that I need to apply the `--all` option.
+
+```bash
+(master) $ git filter-branch --tree-filter 'rm -f id_rsa' HEAD --all
+Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 (7/7)
+Ref 'refs/heads/master' was rewritten
+WARNING: Ref 'refs/heads/master' is unchanged
+Ref 'refs/remotes/origin/master' was rewritten
+WARNING: Ref 'refs/remotes/origin/master' is unchanged
+Ref 'refs/remotes/origin/new-feature' was rewritten
+(master) $ git checkout new-feature
+(new-feature) $ ll
+total 44
+drwxrwxr-x  3 sirko sirko  4096 Dec 31 13:41 ./
+drwx------ 57 sirko sirko 12288 Dec 31 13:41 ../
+drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:41 .git/
+-rw-rw-r--  1 sirko sirko   748 Dec 31 13:41 id_rsa.pub
+-rw-rw-r--  1 sirko sirko    64 Dec 31 13:41 my_document.txt
+```
+
+That seems to be exactly what I want and in the end I just need to `git push --all --force` my changes. **After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.**
+
+Another alternative to working with `git filter-branch` is [BFG](https://rtyley.github.io/bfg-repo-cleaner/) which has some more nifty features.
+
+This tool provides some commands to completely remove big files as well as passwords from your Git history. Sadly I could not get it properly working, big files are still persistent as a git object and passwords can not be deleted because they are `protected by 'HEAD'`. I could not really find a solution for these problems. Maybe you are more lucky!
+
+The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project's Git history.
+]]></content:encoded>
+      <dc:date>2016-01-21T07:36:00-03:00</dc:date>
+    </item>
     <item>
       <title>How to report a bug</title>
-      <link>blog url/open-source/bugs/how-to-report-a-bug.html</link>
-      <description>&lt;p&gt;The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/open-source/bugs/how-to-report-a-bug.html</link>
+      <description><![CDATA[The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.
 
-&lt;h3&gt;1. Make sure it hasn&amp;#39;t been reported yet&lt;/h3&gt;
+1. Make sure it hasn&#39;t been reported yet
 
-&lt;p&gt;A quick Google search should return one or more results about the issue. If it&amp;#39;s user error, just change the way you are using the code and move on.&lt;/p&gt;
+A quick Google search should return one or more results about the issue. If it&#39;s user error, just change the way you are using the code and move on.
 
-&lt;p&gt;If that doesn&amp;#39;t work, find the project (it&amp;#39;s probably on &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;) and search through open and closed issues. If it&amp;#39;s filed and open, try to add more information to make it easier to solve. (&lt;em&gt;Please please please&lt;/em&gt; don&amp;#39;t just add another &lt;strong&gt;+1&lt;/strong&gt; to a series of &lt;strong&gt;+1s&lt;/strong&gt;)&lt;/p&gt;
+If that doesn&#39;t work, find the project (it&#39;s probably on Github) and search through open and closed issues. If it&#39;s filed and open, try to add more information to make it easier to solve. (Please please please don&#39;t just add another +1 to a series of +1s)
 
-&lt;p&gt;If you couldn&amp;#39;t find any issues, submit an issue (&lt;em&gt;Beware&lt;/em&gt;: some projects will encourage you to post to their mailing list &lt;em&gt;before&lt;/em&gt; filing an issue)&lt;/p&gt;
+If you couldn&#39;t find any issues, submit an issue (Beware: some projects will encourage you to post to their mailing list before filing an issue)
 
-&lt;h3&gt;2. Submit a useful issue report&lt;/h3&gt;
+2. Submit a useful issue report
 
-&lt;p&gt;Don&amp;#39;t just post the title of the error and what you were doing when it happened.&lt;/p&gt;
+Don&#39;t just post the title of the error and what you were doing when it happened.
 
-&lt;p&gt;&lt;strong&gt;Please be as specific as possible!&lt;/strong&gt;&lt;/p&gt;
+Please be as specific as possible!
 
-&lt;p&gt;Post information about:&lt;/p&gt;
+Post information about:
 
-&lt;ul&gt;
-&lt;li&gt;The environment (a snapshot of Gemfile.lock could help)&lt;/li&gt;
-&lt;li&gt;The error message (a good candidate for the issue&amp;#39;s title)&lt;/li&gt;
-&lt;li&gt;The backtrace should &lt;strong&gt;always&lt;/strong&gt; be included in the description&lt;/li&gt;
-&lt;li&gt;If there is some configuration involved, add it to the description&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h3&gt;3. Bonus points&lt;/h3&gt;
+The environment (a snapshot of Gemfile.lock could help)
+The error message (a good candidate for the issue&#39;s title)
+The backtrace should always be included in the description
+If there is some configuration involved, add it to the description
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Try a couple of alternatives and see what results you get. Save all the output, which might be useful for the issue&amp;#39;s resolution. I know that most of us try different solutions before filing an issue.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If you want to show the maintainer an example of the problem, you could create a sample application that generates the problem, using the same configuration and the same dependencies you have in your application.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;If you found the problematic line in the library, you could enhance the tests to cover the scenario that you are seeing. The best libraries have near 100% code coverage, so adding another scenario could be easier than you think. You don&amp;#39;t need to find the solution, but seeing a failing spec will definitely make it easier to find a solution.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
-&lt;h3&gt;4. Share your monkeypatch&lt;/h3&gt;
+3. Bonus points
 
-&lt;p&gt;Most of us will &lt;a href=&quot;http://devblog.avdi.org/2008/02/23/why-monkeypatching-is-destroying-ruby&quot;&gt;monkeypatch&lt;/a&gt; our application and move on. &lt;strong&gt;This sucks!&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;You should file the issue, so that other programmers will benefit from your &amp;quot;wasted&amp;quot; effort.&lt;/p&gt;
+Try a couple of alternatives and see what results you get. Save all the output, which might be useful for the issue&#39;s resolution. I know that most of us try different solutions before filing an issue.
+If you want to show the maintainer an example of the problem, you could create a sample application that generates the problem, using the same configuration and the same dependencies you have in your application.
+If you found the problematic line in the library, you could enhance the tests to cover the scenario that you are seeing. The best libraries have near 100% code coverage, so adding another scenario could be easier than you think. You don&#39;t need to find the solution, but seeing a failing spec will definitely make it easier to find a solution.
 
-&lt;p&gt;If you monkeypatched it in a horrible way, add it to the issue as well. The project maintainer or other programmers might find that it isn&amp;#39;t such a horrible patch after all.&lt;/p&gt;
 
-&lt;h3&gt;To sum things up&lt;/h3&gt;
+4. Share your monkeypatch
 
-&lt;p&gt;I&amp;#39;ve explained a couple of ways that you can make a contribution to an open source project. I started with the simpler steps and then I moved on to the more advanced contributions.&lt;/p&gt;
+Most of us will monkeypatch our application and move on. This sucks!
 
-&lt;p&gt;Ideally, detailed issue reports will become pull requests in the future. You (or someone else) might send the pull request, but it all begins with a detailed description of the problem you are seeing.&lt;/p&gt;
+You should file the issue, so that other programmers will benefit from your &quot;wasted&quot; effort.
 
-&lt;p&gt;Don&amp;#39;t just say &lt;em&gt;&amp;quot;It doesn&amp;#39;t work!&amp;quot;&lt;/em&gt;, don&amp;#39;t be that person! Next time file an issue so that we can all benefit from your pain.&lt;/p&gt;
-</description>
+If you monkeypatched it in a horrible way, add it to the issue as well. The project maintainer or other programmers might find that it isn&#39;t such a horrible patch after all.
+
+To sum things up
+
+I&#39;ve explained a couple of ways that you can make a contribution to an open source project. I started with the simpler steps and then I moved on to the more advanced contributions.
+
+Ideally, detailed issue reports will become pull requests in the future. You (or someone else) might send the pull request, but it all begins with a detailed description of the problem you are seeing.
+
+Don&#39;t just say &quot;It doesn&#39;t work!&quot;, don&#39;t be that person! Next time file an issue so that we can all benefit from your pain.
+]]></description>
       <pubDate>Fri, 01 Jan 2016 10:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/open-source/bugs/how-to-report-a-bug.html</guid>
+      <content:encoded><![CDATA[The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.
+
+### 1. Make sure it hasn't been reported yet
+
+A quick Google search should return one or more results about the issue. If it's user error, just change the way you are using the code and move on.
+
+If that doesn't work, find the project (it's probably on [Github](https://github.com)) and search through open and closed issues. If it's filed and open, try to add more information to make it easier to solve. (_Please please please_ don't just add another **+1** to a series of **+1s**)
+
+If you couldn't find any issues, submit an issue (_Beware_: some projects will encourage you to post to their mailing list _before_ filing an issue)
+
+### 2. Submit a useful issue report
+
+Don't just post the title of the error and what you were doing when it happened.
+
+**Please be as specific as possible!**
+
+Post information about:
+
+* The environment (a snapshot of Gemfile.lock could help)
+* The error message (a good candidate for the issue's title)
+* The backtrace should **always** be included in the description
+* If there is some configuration involved, add it to the description
+
+### 3. Bonus points
+
+* Try a couple of alternatives and see what results you get. Save all the output, which might be useful for the issue's resolution. I know that most of us try different solutions before filing an issue.
+
+* If you want to show the maintainer an example of the problem, you could create a sample application that generates the problem, using the same configuration and the same dependencies you have in your application.
+
+* If you found the problematic line in the library, you could enhance the tests to cover the scenario that you are seeing. The best libraries have near 100% code coverage, so adding another scenario could be easier than you think. You don't need to find the solution, but seeing a failing spec will definitely make it easier to find a solution.
+
+### 4. Share your monkeypatch
+
+Most of us will [monkeypatch](http://devblog.avdi.org/2008/02/23/why-monkeypatching-is-destroying-ruby) our application and move on. **This sucks!**
+
+You should file the issue, so that other programmers will benefit from your "wasted" effort.
+
+If you monkeypatched it in a horrible way, add it to the issue as well. The project maintainer or other programmers might find that it isn't such a horrible patch after all.
+
+### To sum things up
+
+I've explained a couple of ways that you can make a contribution to an open source project. I started with the simpler steps and then I moved on to the more advanced contributions.
+
+Ideally, detailed issue reports will become pull requests in the future. You (or someone else) might send the pull request, but it all begins with a detailed description of the problem you are seeing.
+
+Don't just say _"It doesn't work!"_, don't be that person! Next time file an issue so that we can all benefit from your pain.
+]]></content:encoded>
       <dc:date>2016-01-01T10:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Adding Docker to a Ruby gem</title>
-      <link>blog url/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</link>
-      <description>&lt;p&gt;As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner/pull/384&quot;&gt;pull request&lt;/a&gt; to add a Dockerfile to &lt;a href=&quot;https://github.com/DatabaseCleaner/database_cleaner&quot;&gt;DatabaseCleaner&lt;/a&gt;&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</link>
+      <description><![CDATA[As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a pull request to add a Dockerfile to DatabaseCleaner
 
-&lt;p&gt;I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run &lt;code&gt;rake&lt;/code&gt;.&lt;/p&gt;
+I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run rake.
 
-&lt;p&gt;Here are the steps:&lt;/p&gt;
+Here are the steps:
 
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Download the &lt;a href=&quot;https://www.docker.com/docker-toolbox&quot;&gt;Docker Toolbox&lt;/a&gt;, a 176+ MB package.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Install the package, which will expand to 400+ MB in your filesystem.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the terminal: &lt;code&gt;docker-machine start default&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Then within your project: &lt;code&gt;docker-compose up&lt;/code&gt; (before this I had to run &lt;code&gt;eval &amp;quot;$(docker-machine env default)&amp;quot;&lt;/code&gt; because of &lt;a href=&quot;https://github.com/docker/compose/issues/2180#issuecomment-147766435&quot;&gt;this issue&lt;/a&gt;). Get ready to wait for a few minutes while it sets up your virtual machine.&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Finally: &lt;code&gt;docker-compose run --rm gem&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+
+Download the Docker Toolbox, a 176+ MB package.
+Install the package, which will expand to 400+ MB in your filesystem.
+In the terminal: docker-machine start default
+Then within your project: docker-compose up (before this I had to run eval &quot;$(docker-machine env default)&quot; because of this issue). Get ready to wait for a few minutes while it sets up your virtual machine.
+Finally: docker-compose run --rm gem
+
+]]></description>
       <pubDate>Tue, 29 Dec 2015 10:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</guid>
+      <content:encoded><![CDATA[As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a [pull request](https://github.com/DatabaseCleaner/database_cleaner/pull/384) to add a Dockerfile to [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner)
+
+I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run `rake`.
+
+Here are the steps:
+
+1. Download the [Docker Toolbox](https://www.docker.com/docker-toolbox), a 176+ MB package.
+
+2. Install the package, which will expand to 400+ MB in your filesystem.
+
+3. In the terminal: `docker-machine start default`
+
+4. Then within your project: `docker-compose up` (before this I had to run `eval "$(docker-machine env default)"` because of [this issue](https://github.com/docker/compose/issues/2180#issuecomment-147766435)). Get ready to wait for a few minutes while it sets up your virtual machine.
+
+5. Finally: `docker-compose run --rm gem`
+
+<!--more-->
+
+Supposedly these steps should start the required services and run the build. I was expecting to watch it pass, but this is what I saw:
+
+```bash
+Installing mongo_ext 0.19.3 with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    /usr/local/rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20151224-6-fhvc98.rb extconf.rb
+checking for asprintf()... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/usr/local/rvm/rubies/ruby-2.2.2/bin/$(RUBY_BASE_NAME)
+```
+
+If I were to add this contribution, I'd make sure that the `CONTRIBUTE.markdown` lists [Docker](https://www.docker.com) as an _option_ to run the specs, not as the default.
+]]></content:encoded>
       <dc:date>2015-12-29T10:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Adding Csrf-Protection to your Rails-Backbone App</title>
-      <link>blog url/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</link>
-      <description>&lt;p&gt;When integrating &lt;a href=&quot;http://backbonejs.org&quot;&gt;Backbone.js&lt;/a&gt; in your &lt;a href=&quot;http://rubyonrails.org&quot;&gt;Rails&lt;/a&gt; App, you might face the problem of the inability to verify the CSRF-Token.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</link>
+      <description><![CDATA[When integrating Backbone.js in your Rails App, you might face the problem of the inability to verify the CSRF-Token.
 
-&lt;p&gt;The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.&lt;/p&gt;
+The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.
 
-&lt;p&gt;For more information on this Topic, check out the &lt;a href=&quot;http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf&quot;&gt;Rails Security Guide&lt;/a&gt;.&lt;/p&gt;
+For more information on this Topic, check out the Rails Security Guide.
 
-&lt;p&gt;This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Started&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/products&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;06&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;05&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0300&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Processing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ProductsController&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#create as JSON&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;Parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;product&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-&lt;span class=&quot;ss&quot;&gt;WARNING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Can&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;verify&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;CSRF&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authenticity&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Completed&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;302&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Found&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;After this request, Rails will terminate your session and you will have to login again.&lt;/p&gt;
+This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.
+Started POST &quot;/products&quot; for 127.0.0.1 at 2015-12-16 10:06:05 -0300
+Processing by ProductsController#create as JSON
+  Parameters: {&quot;product&quot;=&gt;{&quot;name&quot;=&gt;&quot;foo&quot;}}
+WARNING: Can&#39;t verify CSRF token authenticity
+...
+Completed 302 Found in 7.6ms (ActiveRecord: 0.8ms)
 
-&lt;p&gt;This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.&lt;/p&gt;
+After this request, Rails will terminate your session and you will have to login again.
 
-&lt;p&gt;To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by &lt;a href=&quot;https://github.com/shuvalov-anton/backbone-rails-sync&quot;&gt;Anton Shuvalov&lt;/a&gt;.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// https://github.com/shuvalov-anton/backbone-rails-sync&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Backbone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_sync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Backbone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;Backbone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;noCSRF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;beforeSend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beforeSend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.
 
-    &lt;span class=&quot;c1&quot;&gt;// Set X-CSRF-Token HTTP header&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beforeSend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;meta[name=&amp;quot;csrf-token&amp;quot;]&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;content&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setRequestHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;X-CSRF-Token&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;token&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beforeSend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;beforeSend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Backbone&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_sync&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field &lt;code&gt;X-CSRF-Token&lt;/code&gt;.&lt;/p&gt;
+To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by Anton Shuvalov.
+// https://github.com/shuvalov-anton/backbone-rails-sync
+Backbone._sync = Backbone.sync;
+Backbone.sync = function(method, model, options) {
+  if (!options.noCSRF) {
+    var beforeSend = options.beforeSend;
 
-&lt;p&gt;After adding this to the Backbone code, it works as expected.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;Started&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;POST&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/products&amp;quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;127&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;at&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2015&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;08&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mo&quot;&gt;0300&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Processing&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;by&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ProductsController&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;#create as JSON&lt;/span&gt;
-  &lt;span class=&quot;ss&quot;&gt;Parameters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;product&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;Completed&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;OK&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;Views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    // Set X-CSRF-Token HTTP header
+    options.beforeSend = function(xhr) {
+      var token = $(&#39;meta[name=&quot;csrf-token&quot;]&#39;).attr(&#39;content&#39;);
+      if (token) { xhr.setRequestHeader(&#39;X-CSRF-Token&#39;, token); }
+      if (beforeSend) { return beforeSend.apply(this, arguments); }
+    };
+  }
+  return Backbone._sync(method, model, options);
+};
+
+It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field X-CSRF-Token.
+
+After adding this to the Backbone code, it works as expected.
+Started POST &quot;/products&quot; for 127.0.0.1 at 2015-12-16 10:08:29 -0300
+Processing by ProductsController#create as JSON
+  Parameters: {&quot;product&quot;=&gt;{&quot;name&quot;=&gt;&quot;foo&quot;}}
+...
+Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
+]]></description>
       <pubDate>Wed, 16 Dec 2015 00:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</guid>
+      <content:encoded><![CDATA[When integrating [Backbone.js](http://backbonejs.org) in your [Rails](http://rubyonrails.org) App, you might face the problem of the inability to verify the CSRF-Token.
+
+The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.
+
+For more information on this Topic, check out the [Rails Security Guide](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf).
+
+This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.
+
+```ruby
+Started POST "/products" for 127.0.0.1 at 2015-12-16 10:06:05 -0300
+Processing by ProductsController#create as JSON
+  Parameters: {"product"=>{"name"=>"foo"}}
+WARNING: Can't verify CSRF token authenticity
+...
+Completed 302 Found in 7.6ms (ActiveRecord: 0.8ms)
+```
+
+After this request, Rails will terminate your session and you will have to login again.
+
+This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.
+
+To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by [Anton Shuvalov](https://github.com/shuvalov-anton/backbone-rails-sync).
+
+```javascript
+// https://github.com/shuvalov-anton/backbone-rails-sync
+Backbone._sync = Backbone.sync;
+Backbone.sync = function(method, model, options) {
+  if (!options.noCSRF) {
+    var beforeSend = options.beforeSend;
+
+    // Set X-CSRF-Token HTTP header
+    options.beforeSend = function(xhr) {
+      var token = $('meta[name="csrf-token"]').attr('content');
+      if (token) { xhr.setRequestHeader('X-CSRF-Token', token); }
+      if (beforeSend) { return beforeSend.apply(this, arguments); }
+    };
+  }
+  return Backbone._sync(method, model, options);
+};
+```
+
+It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field `X-CSRF-Token`.
+
+After adding this to the Backbone code, it works as expected.
+
+```ruby
+Started POST "/products" for 127.0.0.1 at 2015-12-16 10:08:29 -0300
+Processing by ProductsController#create as JSON
+  Parameters: {"product"=>{"name"=>"foo"}}
+...
+Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
+```
+]]></content:encoded>
       <dc:date>2015-12-16T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>How to interact with hidden elements with Protractor</title>
-      <link>blog url/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</link>
-      <description>&lt;p&gt;The other day I was trying to interact with a hidden file input field:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;col-sm-3&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-default&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;accept=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;.csv&amp;quot;&lt;/span&gt;  &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;geofence_file_input&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;btn btn-default&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;textbox-for-geofencefile&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Select File&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ng-if=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;LineItemForm.augmentations.geofence.file&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;And the CSS:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.hidden&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Which caused this problem:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Failed: Wait timed out after 100015ms
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Workarounds include &lt;em&gt;displaying it&lt;/em&gt;, &lt;em&gt;interacting with it&lt;/em&gt;, &lt;em&gt;hiding it&lt;/em&gt; again, which I didn&amp;#39;t like.&lt;/p&gt;
-</description>
+      <link>http://www.ombulabs.com/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</link>
+      <description><![CDATA[The other day I was trying to interact with a hidden file input field:
+&lt;div class=&quot;col-sm-3&quot;&gt;
+  &lt;input class=&quot;btn btn-default&quot; class=&quot;hidden&quot; accept=&quot;.csv&quot;  id=&quot;geofence_file_input&quot;&gt;
+  &lt;a class=&quot;btn btn-default&quot; id=&quot;textbox-for-geofencefile&quot;&gt;Select File&lt;/a&gt;
+  &lt;span ng-if=&quot;LineItemForm.augmentations.geofence.file&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+And the CSS:
+.hidden {
+  display: none;
+}
+
+Which caused this problem:
+Failed: Wait timed out after 100015ms
+
+Workarounds include displaying it, interacting with it, hiding it again, which I didn&#39;t like.
+]]></description>
       <pubDate>Wed, 09 Dec 2015 00:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</guid>
+      <content:encoded><![CDATA[The other day I was trying to interact with a hidden file input field:
+
+```html
+
+<div class="col-sm-3">
+  <input class="btn btn-default" class="hidden" accept=".csv"  id="geofence_file_input">
+  <a class="btn btn-default" id="textbox-for-geofencefile">Select File</a>
+  <span ng-if="LineItemForm.augmentations.geofence.file"></span>
+</div>
+
+```
+
+And the CSS:
+
+```css
+
+.hidden {
+  display: none;
+}
+
+```
+
+Which caused this problem:
+
+    Failed: Wait timed out after 100015ms
+
+Workarounds include _displaying it_, _interacting with it_, _hiding it_ again, which I didn't like.
+
+<!--more-->
+
+I changed it to be like this, more **protractor-friendly**:
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">style=</span><span class="s">&quot;opacity:0;height:0px;&quot;</span> <span class="na">accept=</span><span class="s">&quot;.csv&quot;</span>  <span class="na">id=</span><span class="s">&quot;geofence_file_input&quot;</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">id=</span><span class="s">&quot;textbox-for-geofencefile&quot;</span> <span class="na">ng-click=</span><span class="s">&quot;selectFile(this)&quot;</span><span class="nt">&gt;</span>Select File<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">ng-if=</span><span class="s">&quot;LineItemForm.augmentations.geofence.file&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+Or with CSS:
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#geofence_file_input</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span><span class="m">0px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+Now it works and the tests do too.
+]]></content:encoded>
       <dc:date>2015-12-09T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Time and Material</title>
-      <link>blog url/software-development/time-and-material.html</link>
-      <description>&lt;p&gt;As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/software%20development/time-and-material.html</link>
+      <description><![CDATA[As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
 
-&lt;p&gt;All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.&lt;/p&gt;
+All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.
 
-&lt;p&gt;Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don&amp;#39;t change while developing the project. That is a big &lt;strong&gt;if&lt;/strong&gt;!&lt;/p&gt;
-</description>
+Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don&#39;t change while developing the project. That is a big if!
+]]></description>
       <pubDate>Thu, 19 Nov 2015 00:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/software%20development/time-and-material.html</guid>
+      <content:encoded><![CDATA[As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
+
+All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.
+
+Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don't change while developing the project. That is a big **if**!
+
+<!--more-->
+
+### Problem
+
+The problem is that requirements change constantly, especially when you are working with startups. Startups usually are trying to create something new, something that has never been done before.
+
+In this situation, it is **normal** that requirements change. As a software development team, you should welcome **change**. It means that you are building something that is up to date with the real world.
+
+However, when you have submitted a fixed bid and started working on a project, the last thing you want is a change in the specification.
+
+Because of this, you are forced to define the requirements down to the detail.
+
+You need to define what web pages you will build, what interactions they will have, what background jobs the system will run, what business expectations it will fulfill, performance requirements, browser requirements and many other requirements.
+
+In a startup, this will be based on a lot of wrong assumptions. When you face reality (your users or the market) the assumptions will change. Therefore, the requirements will change.
+
+### Changes
+
+A change means that:
+
+* You will need to throw away all the code that you wrote that was related to the changed feature
+* You will need to estimate the new effort for the changed feature
+* You will need to re-schedule the delivery date
+* You will need to get this new estimate approved by the client
+* There will be back and forth with the client
+
+For a 3 months project, this might be OK. But consider what would happen for a 12 months project. If you don't have the right process, it will be hell.
+
+What's most important, the relationship with the client will suffer. That is something that you must avoid.
+
+We have experienced all of these problems with fixed bid projects.
+
+### Time and Material
+
+We decided to work with clients that agree to a simple _Time and Material_ contract.
+
+Basically, we work on projects for _X hours per week_ (with a minimum of _20 hours per week_) until our clients reach their business goals. If they have new goals and we are both happy with our work, we continue working with them.
+
+We will work with one or two week sprints and we can show results by the end of the first sprint. If you don't like what we are doing, you only lost a sprint.
+
+I have been working with clients since 2008 and I found that the best relationships I've had have been with this model. It's the best way to maintain a healthy relationship with our client and it's less risky for both our clients and us.
+
+This model works very well for clients that want to work with an agile team in a lean project. And we love to [apply Lean Startup](http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html) not only to our own products but also to our clients' projects.
+
+We rigorously track all the time that we spend on projects. Every invoice we send includes a list of tasks and the total amount for the work we completed.
+
+We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, [get in touch!](http://www.ombulabs.com/#contact)
+]]></content:encoded>
       <dc:date>2015-11-19T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Almundo's Bill Vulnerability</title>
-      <link>blog url/security/almundo-bill-vulnerability.html</link>
-      <description>&lt;p&gt;The other day my friend &lt;a href=&quot;https://twitter.com/juanchorossi&quot;&gt;Juan Rossi&lt;/a&gt; reported a vulnerability in the &lt;a href=&quot;http://almundo.com/&quot;&gt;Almundo&lt;/a&gt; billing system. Since then, the vulnerability has been fixed by &lt;a href=&quot;http://superfactura.com.ar/&quot;&gt;Superfactura&lt;/a&gt;, their billing software provider.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/security/almundo-bill-vulnerability.html</link>
+      <description><![CDATA[The other day my friend Juan Rossi reported a vulnerability in the Almundo billing system. Since then, the vulnerability has been fixed by Superfactura, their billing software provider.
 
-&lt;p&gt;Almundo is one of the &lt;a href=&quot;http://www.alexa.com/siteinfo/almundo.com.ar&quot;&gt;biggest travel agencies in Argentina&lt;/a&gt;. Their site is among the 250 most visited websites in the country.&lt;/p&gt;
+Almundo is one of the biggest travel agencies in Argentina. Their site is among the 250 most visited websites in the country.
 
-&lt;p&gt;The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple &lt;code&gt;HTTP GET&lt;/code&gt; request. No programming knowledge required.&lt;/p&gt;
-</description>
+The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple HTTP GET request. No programming knowledge required.
+]]></description>
       <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/security/almundo-bill-vulnerability.html</guid>
+      <content:encoded><![CDATA[The other day my friend [Juan Rossi](https://twitter.com/juanchorossi) reported a vulnerability in the [Almundo](http://almundo.com/) billing system. Since then, the vulnerability has been fixed by [Superfactura](http://superfactura.com.ar/), their billing software provider.
+
+Almundo is one of the [biggest travel agencies in Argentina](http://www.alexa.com/siteinfo/almundo.com.ar). Their site is among the 250 most visited websites in the country.
+
+The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple `HTTP GET` request. No programming knowledge required.
+
+<!--more-->
+
+Basically, if you had bought anything from Almundo, you would have received an email with a link to your bill. Something like this:
+
+    http://asatej.superfactura.com.ar/un_comprobante_pdf.php?s=1&f=73455&tc=F13&tf=B
+
+At plain sight, you can see the type of bill (*Factura B*) and the number of bill (*Factura #73455*)
+
+By entering this URL, you could see sensitive information about the client and what they had bought:
+
+* Client's full name
+* Client's CUIL (Tax identification number in Argentina)
+* Client's address
+* What they bought. For example: **EZEPUJEZE** for a flight ticket from **Ezeiza** (Buenos Aires, Argentina) to **Punta Cana** (México)
+* How much they paid
+
+Here is a sample of one of the **public bills** that should have been **private**:
+
+<img src="/blog/assets/images/factura-example.jpg" alt="One of the non-private bills" class="medium-img">
+
+Fortunately, you couldn't see when this trip was happening.
+
+During the many days that this vulnerability was on production, someone with some programming knowledge could have created a script that iterated from 1 to 100,000 (for the bill number) and from A to C (for the bill type) sending GET requests and downloading all the billing information from Almundo.
+
+Considering that [Superfactura](http://superfactura.com.ar/) has a few clients, we can only assume that this vulnerability was also in production for all of their clients.
+
+At the time of this publication, the company had not released any information about this vulnerability nor if any sensitive data was downloaded by unauthorized users.
+]]></content:encoded>
       <dc:date>2015-08-25T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>The 7 Days Open Source Challenge</title>
-      <link>blog url/open-source/the-7-days-open-source-challenge.html</link>
-      <description>&lt;p&gt;Last Wednesday I gave a lightning talk about open source at the &lt;a href=&quot;http://www.meetup.com/rubyba/events/223814545/&quot;&gt;Buenos Aires Ruby Meetup&lt;/a&gt;. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/open-source/the-7-days-open-source-challenge.html</link>
+      <description><![CDATA[Last Wednesday I gave a lightning talk about open source at the Buenos Aires Ruby Meetup. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.
 
-&lt;p&gt;The rules are simple:&lt;/p&gt;
+The rules are simple:
 
-&lt;ul&gt;
-&lt;li&gt;You have to do it for 7 days straight&lt;/li&gt;
-&lt;li&gt;If you can&amp;#39;t do it one day, that breaks your streak&lt;/li&gt;
-&lt;li&gt;When you break your streak, you have to start over from day 1&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+
+You have to do it for 7 days straight
+If you can&#39;t do it one day, that breaks your streak
+When you break your streak, you have to start over from day 1
+
+]]></description>
       <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/open-source/the-7-days-open-source-challenge.html</guid>
+      <content:encoded><![CDATA[Last Wednesday I gave a lightning talk about open source at the [Buenos Aires Ruby Meetup](http://www.meetup.com/rubyba/events/223814545/). I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.
+
+The rules are simple:
+
+* You have to do it for 7 days straight
+* If you can't do it one day, that breaks your streak
+* When you break your streak, you have to start over from day 1
+
+<!--more-->
+
+The goal of this challenge is to **make contributing to open source projects a habit**.
+
+You can see the slides over here:
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ombulabs/the-7-days-open-source-challenge" title="The 7 Days Open Source Challenge" target="_blank">The 7 Days Open Source Challenge</a> </strong> from <strong><a href="//www.slideshare.net/ombulabs" target="_blank">Ombu Labs, The Lean Software Boutique</a></strong> </div>
+
+I did this challenge because I wanted to get back to contributing to a couple of projects that I currently maintain. It was great and I finally made some progress in [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner/)
+
+I hope that this challenge will encourage other developers to start contributing to their favorite projects.
+
+Here are a couple of ways that you can contribute to open source:
+
+* Submit a new issue to a library. Make sure that it hasn't been reported yet. If it has, add meaningful information to the issue to make it easier to solve it
+* Try to solve an existing issue. Find the lines of code that are causing the problem and submit a pull request
+* If you can't solve it, write a failing scenario in the library's test suite
+* Improve documentation where it's unclear or non-existent
+
+If you don't know where to begin, check out [http://www.codetriage.com](http://www.codetriage.com/) or ping me (I'm one of the maintainers of [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner/) and [EmailSpec](https://github.com/bmabey/email-spec) and I'd appreciate your help)
+]]></content:encoded>
       <dc:date>2015-08-04T00:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Slack notifications with Slack-Notify gem</title>
-      <link>blog url/ruby/slack-notifications-with-slack-notify.html</link>
-      <description>&lt;p&gt;We have been using Slack at &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; for a while now
-after switching from HipChat, and haven&amp;#39;t looked back. It looks and feels much
+      <link>http://www.ombulabs.com/blog/ruby/slack-notifications-with-slack-notify.html</link>
+      <description><![CDATA[We have been using Slack at OmbuLabs for a while now
+after switching from HipChat, and haven&#39;t looked back. It looks and feels much
 better than any other available platform of its kind. Slack provides
-&lt;a href=&quot;https://api.slack.com/incoming-webhooks&quot;&gt;WebHooks&lt;/a&gt;, which you can use to post
-messages to your team&amp;#39;s channels.&lt;/p&gt;
-</description>
+WebHooks, which you can use to post
+messages to your team&#39;s channels.
+]]></description>
       <pubDate>Wed, 29 Jul 2015 14:40:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/slack-notifications-with-slack-notify.html</guid>
+      <content:encoded><![CDATA[We have been using Slack at [OmbuLabs](http://www.ombulabs.com) for a while now
+after switching from HipChat, and haven't looked back. It looks and feels much
+better than any other available platform of its kind. Slack provides
+[WebHooks](https://api.slack.com/incoming-webhooks), which you can use to post
+messages to your team's channels.
+
+<!--more-->
+
+We use [Solano CI](https://www.solanolabs.com) (formerly Tddium) for our
+automated builds. By default, the system sends e-mails whenever a build passes
+or fails, but we wanted to be notified in our Slack channels. Enter the
+[slack-notify](https://github.com/sosedoff/slack-notify) gem, which makes
+Slack notifications super simple in Ruby.
+
+To get started, first
+[set up an incoming webhook](https://my.slack.com/services/new/incoming-webhook).
+
+Once that's done, you can create the Rake task which Solano can run when
+the build has finished running:
+
+```ruby
+  def current_branch
+    `git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3-`.strip
+  end
+
+  task :post_build_hook do
+    require 'slack-notify'
+
+    webhook_url = "https://hooks.slack.com/services/your-hook"
+    base_url = "#{ENV['TDDIUM_API_SERVER']}"
+    session_id = "#{ENV['TDDIUM_SESSION_ID']}"
+    build_status = "#{ENV['TDDIUM_BUILD_STATUS']}"
+
+    client = SlackNotify::Client.new(channel: "#your-channel",
+                                     webhook_url: webhook_url,
+                                     username: "Solano CI",
+                                     icon_emoji: ":shipit:")
+    msg = "_#{current_branch}_ *#{build_status}*! "
+    msg << "Check build details at: "
+    msg << "http://#{base_url}/1/reports/#{session_id}"
+    client.notify(msg)
+  end
+```
+
+This will let #your-channel know the branch for which the build ran, whether it passed,
+failed or errored, and a link to the build report.
+
+You also need to explicitly call it after the build is finished in your
+`solano.yml` or `tddium.yml` file:
+
+```yaml
+:tddium:
+  :hooks:
+    :post_build: RAILS_ENV=test bundle exec rake tddium:post_build_hook
+```
+
+We have also set up deployment notifications, so whenever someone deploys to
+production, the Slack channel is notified:
+
+```ruby
+namespace :notify do
+  task :start, roles: [:app] do
+    msg = "#{USERNAME} started deploying #{REPO} (#{GIT_TAG}) to production"
+    notify_slack(msg)
+  end
+
+  task :done, roles: [:app] do
+    msg = "#{USERNAME} just deployed #{REPO} (#{GIT_TAG}) to production"
+    notify_slack(msg)
+  end
+end
+
+before "deploy", "notify:start"
+after "deploy", "notify:done"
+```
+
+There are many different use cases, just make sure not to spam your team with
+too many notifications. At some point, you may want to set up a
+channel dedicated solely to notifications if you are part of a bigger team.
+]]></content:encoded>
       <dc:date>2015-07-29T14:40:00-03:00</dc:date>
     </item>
     <item>
       <title>Why using default_scope is a bad idea</title>
-      <link>blog url/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
-      <description>&lt;p&gt;&lt;code&gt;default_scope&lt;/code&gt; is a method provided by ActiveRecord, which allows you to set
+      <link>http://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
+      <description><![CDATA[default_scope is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
-&lt;code&gt;deleted_on&lt;/code&gt; column on your model and setting the default scope to
-&lt;code&gt;deleted_on: nil&lt;/code&gt;&lt;/p&gt;
-</description>
+deleted_on column on your model and setting the default scope to
+deleted_on: nil
+]]></description>
       <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</guid>
+      <content:encoded><![CDATA[`default_scope` is a method provided by ActiveRecord, which allows you to set
+a default scope (as its name implies) for all operations done on a given model.
+It can be useful for allowing soft-deletion in your models, by having a
+`deleted_on` column on your model and setting the default scope to
+`deleted_on: nil`
+
+<!--more-->
+
+```ruby
+class Animal
+  default_scope where(deleted_on: nil)
+end
+```
+
+This will hide deleted records and only return non-deleted
+ones in your queries after setting `deleted_on` instead of
+calling `destroy`.
+
+```ruby
+> Animal.limit(5)
+  Animal Load (4.2ms)  SELECT `animals`.* FROM `animals` WHERE `animals`.`deleted_on` IS NULL LIMIT 5
+```
+
+Quite useful! However, `default_scope` has a dangerous behavior:
+**it affects your model's initialization.**
+
+Say you were using STI on your `Animal` model, and you had a `default_scope`
+for always filtering your model by "Cat":
+
+```ruby
+class Animal
+  default_scope where(type: "Cat")
+end
+```
+
+When you initialize a new Animal, it will always use the value defined in
+your default scope:
+
+```ruby
+> Animal.new
+=> #<Animal id: nil, created_at: nil, updated_at: nil, type: "Cat">
+```
+
+This can lead to some headaches when you're not aware of this side-effect, and
+depending on the default scoped attribute/value it can cause some pretty bad
+bugs.
+
+Also, I'd like to mention the fact that it's very difficult to write queries
+once you have used `default_scope` on a model. For example:
+`Animal.where('deleted_on is not null')` won't work, you'd need to use
+`Animal.unscoped`, which makes everything awkward. You also need to use
+`unscoped` carefully, because it will remove all scopes of the relation, not just
+the default scope.
+
+I recommend that you always avoid default scope if possible. Prefer explicit
+scopes instead. If you really need to use it, use it with care.
+]]></content:encoded>
       <dc:date>2015-07-20T06:55:00-03:00</dc:date>
     </item>
     <item>
       <title>Mercado Pago Security Hole</title>
-      <link>blog url/security/mercado-pago-security-vulnerability.html</link>
-      <description>&lt;p&gt;On April 17th we discovered a security vulnerability in the &lt;a href=&quot;https://www.mercadopago.com.ar/developers/en/api-docs/&quot;&gt;Mercado Pago API&lt;/a&gt;. Before disclosing this information, we contacted &lt;a href=&quot;http://www.mercadolibre.com/&quot;&gt;Mercado Libre&lt;/a&gt; and sent them a detailed report of the security hole and how to reproduce it.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/security/mercado-pago-security-vulnerability.html</link>
+      <description><![CDATA[On April 17th we discovered a security vulnerability in the Mercado Pago API. Before disclosing this information, we contacted Mercado Libre and sent them a detailed report of the security hole and how to reproduce it.
 
-&lt;p&gt;The vulnerability allowed anyone to get an access token without using the right secret for an account.&lt;/p&gt;
-</description>
+The vulnerability allowed anyone to get an access token without using the right secret for an account.
+]]></description>
       <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/security/mercado-pago-security-vulnerability.html</guid>
+      <content:encoded><![CDATA[On April 17th we discovered a security vulnerability in the [Mercado Pago API](https://www.mercadopago.com.ar/developers/en/api-docs/). Before disclosing this information, we contacted [Mercado Libre](http://www.mercadolibre.com/) and sent them a detailed report of the security hole and how to reproduce it.
+
+The vulnerability allowed anyone to get an access token without using the right secret for an account.
+
+<!--more-->
+
+You can see how the authentication process works on Mercado Pago over here: [https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/](https://www.mercadopago.com.ar/developers/en/api-docs/basics/authentication/)
+
+After 7 hours, Mercado Pago fixed the vulnerability in their production environment.
+
+## How we reproduced the bug
+
+This example uses Ruby 2.1.2 and the [mercadopago](https://rubygems.org/gems/mercadopago) gem.
+
+    2.1.2 :001 > token = MercadoPago::Authentication.access_token("8872", "lalalala")
+
+The first parameter is the client id (an account in Mercado Pago) and the second parameter is the secret (only the account holder should know this)
+
+For client id we used `8872` which doesn't belong to us and for secret we used `lalalala` to show that it wasn't really *the right secret.*
+
+With that information, we were able to acquire the token. With it you can access a lot of information associated with the payments in the account.
+
+For example:
+
+```ruby
+2.1.2 :002 > response = MercadoPago::Collection.search(token["access_token"], status: :approved)
+```
+
+With this query, you could see all the approved transactions for an account **that didn't belong to you**.
+
+For example:
+
+```ruby
+=> {"paging"=>{"total"=>98, "limit"=>30, "offset"=>0},
+    "results"=>[
+      {"collection"=>{"id"=>753859418, "site_id"=>"MLA",
+       "date_created"=>"2014-03-13T16:58:20.000-04:00",
+       "date_approved"=>"2014-03-13T17:00:38.000-04:00",
+       "last_modified"=>"2014-03-13T17:00:38.000-04:00",
+       "money_release_date"=>"2014-03-15T17:00:38.000-04:00",
+       "operation_type"=>"regular_payment",
+       "collector_id"=>16605960, "sponsor_id"=>nil,
+       "payer"=>{
+         "nickname"=>"XOMBULABSX",
+         "first_name"=>"JON",
+         "last_name"=>"SNOW",
+         "phone"=>{"area_code"=>"291", "number"=>"123412", "extension"=>nil},
+         "email"=>"security@ombulabs.com",
+         "id"=>83110350,
+         "identification"=>{"type"=>nil, "number"=>nil}},
+         "external_reference"=>"1448",
+         "merchant_order_id"=>11567450,
+         "reason"=>"Premium package", "currency_id"=>"ARS",
+         "transaction_amount"=>81, "total_paid_amount"=>81,
+         "shipping_cost"=>0,
+         "account_money_amount"=>0,
+         "mercadopago_fee"=>4.85,
+         "net_received_amount"=>76.15,
+         "marketplace_fee"=>nil,
+         "coupon_id"=>nil,
+         "coupon_amount"=>nil,
+         "coupon_fee"=>nil,
+         "finance_fee"=>0,
+         "status"=>"approved",
+         "status_detail"=>"accredited",
+         "status_code"=>"00",
+         "released"=>"yes",
+         "payment_type"=>"credit_card",
+         "installments"=>1,
+         "installment_amount"=>nil,
+         "deferred_period"=>nil,
+         "cardholder"=>{"name"=>"JON SNOW", "identification"=>{"type"=>"DNI", "number"=>"26000000"}},
+         "statement_descriptor"=>"WWW.MERCADOPAGO.COM",
+         "transaction_order_id"=>nil, "marketplace"=>"NONE", "tags"=>[],
+         "notification_url"=>nil}},
+      {"collection"=>
+        {"id"=>756415807,
+        "site_id"=>"MLA",
+        "date_created"=>"2014-03-20T15:42:35.000-04:00",
+        "date_approved"=>"2014-03-20T15:42:35.000-04:00",
+        "last_modified"=>"2014-03-20T15:42:35.000-04:00",
+        "money_release_date"=>"2014-03-22T15:42:35.000-04:00",
+        "operation_type"=>"regular_payment",
+        "collector_id"=>16605960,
+        "sponsor_id"=>nil,
+        "payer"=>{
+          "nickname"=>"YOURNICKNAME",
+          "first_name"=>"Matias",
+          "last_name"=>"OMBU",
+          "phone"=>{"area_code"=>"291", "number"=>"4000000", "extension"=>nil},
+          "email"=>"hola@ombulabs.com",
+          "id"=>18878708,
+          "identification"=>{"type"=>nil, "number"=>nil}},
+        "external_reference"=>"1457",
+        "merchant_order_id"=>13031193,
+        "reason"=>"Premium package",
+        "currency_id"=>"ARS",
+        "transaction_amount"=>81,
+        "total_paid_amount"=>81,
+        "shipping_cost"=>0,
+        "account_money_amount"=>0,
+        "mercadopago_fee"=>4.85,
+        "net_received_amount"=>76.15,
+        "marketplace_fee"=>nil,
+        "coupon_id"=>nil,
+        "coupon_amount"=>nil,
+        "coupon_fee"=>nil, "finance_fee"=>0,
+        "status"=>"approved",
+        "status_detail"=>"accredited",
+        "status_code"=>"00",
+        "released"=>"yes",
+        "payment_type"=>"credit_card",
+        "installments"=>1,
+        "installment_amount"=>nil,
+        "deferred_period"=>nil,
+        "cardholder"=>
+          {"name"=>nil,
+           "identification"=>{"type"=>nil, "number"=>nil}},
+        "statement_descriptor"=>"WWW.MERCADOPAGO.COM",
+        "transaction_order_id"=>nil,
+        "marketplace"=>"NONE",
+        "tags"=>[],
+        "notification_url"=>nil}},
+        ...
+      }
+```
+
+*The sensitive information in this code snippet has been intentionally changed*
+
+So, during the time that this vulnerability was live (at least 7 hours) an attacker could have used it to:
+
+* Find information about all the payments that your account had received since you started using the service
+
+* Find information about your clients, their DNI, name, phone number
+
+All the attacker needed to exploit this vulnerability was a Mercado Pago account ID and some basic tech knowledge.
+
+## How we discovered this bug
+
+At [OmbuShop](http://www.ombushop.com), our integration tests use the Mercado Pago sandbox to check that the amount that a client has to pay is correct. I know that this isn't ideal (or is it?) but it's as real as it gets for our integration tests.
+
+One of our tests checked that you couldn't get collections information with the wrong user credentials. When the test started failing in our continuous tests, we started digging around and found this security hole.
+
+## What worries me
+
+It's hard to understand how such a big payment processor never published information about this security hole. I would expect them to know if some information was accessed by people who didn't have access to it.
+
+They could check their access logs and see who accessed their API using a secret that wasn't the right one. Then they could inform their customers of this problem and warn them about this situation.
+
+Mercado Pago, a product of Mercado Libre ([$MELI](http://www.nasdaq.com/symbol/meli)) which is a publicly traded company, doesn't even have public versioning information of their API nor a continuous integration suite that would catch such an obvious vulnerability.
+
+Maybe I am just used to the security reports published by Github about [their vulnerabilities](https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation). Maybe Github is way more serious than Mercado Pago about privacy and online security.
+
+I think that Mercado Pago needs to step up their game and be more transparent about their platform and user privacy.
+
+A good place to start would be a better way to receive security vulnerability reports and disclosing information about their security problems.
+
+Until today, they haven't disclosed any information about this security hole and it's very hard to find a way to report a security issue to them.
+]]></content:encoded>
       <dc:date>2015-07-14T20:29:00-03:00</dc:date>
     </item>
     <item>
       <title>The Lean Startup Way</title>
-      <link>blog url/lean-startup/the-lean-startup-way.html</link>
-      <description>&lt;p&gt;At &lt;a href=&quot;http://www.ombulabs.com&quot;&gt;OmbuLabs&lt;/a&gt; we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html</link>
+      <description><![CDATA[At OmbuLabs we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
 
-&lt;p&gt;It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.&lt;/p&gt;
-</description>
+It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
+]]></description>
       <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html</guid>
+      <content:encoded><![CDATA[At [OmbuLabs](http://www.ombulabs.com) we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
+
+It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
+
+<!--more-->
+
+And we have ran many experiments to create and maintain these products:
+
+* [OmbuShop](http://www.ombushop.com/): The best way to setup your online shop in Latin America. A SaaS product that enables businesses to easily setup their online shop.
+* [Vidrieras.in](http://www.vidrieras.in/): A directory of businesses in Argentina.
+* [Bolognesa](http://bolognesa.herokuapp.com/): A [Pomodoro](http://pomodorotechnique.com/) tracker.
+
+With client projects, we first need to explain what the [Lean Startup](http://theleanstartup.com/) methodology is. The best clients we have had already had an understanding of the methodology.
+
+Once they understand it, we can work with them and define their minimum viable product scope. This minimal project will usually take between one and two months. This time requirement is very important, because it will help us to narrow the scope.
+
+The idea is to test their core hypotheses with their target market.
+
+Once we have designed, implemented, tested and deployed their [MVP](http://leanstack.com/minimum-viable-product/), it's time to start gathering data about the target market. This is how the build, measure, learn cycle begins.
+
+Every time we deploy a product, we need to make sure that we are tracking the right numbers. For basic projects we prefer [Google Analytics](http://www.google.com/analytics/), for more complex projects we prefer [Mixpanel](https://mixpanel.com/).
+
+If it is an e-commerce application, we need to make sure to track the conversions from day 1. If it is a SaaS application, we need to track the funnels from day 1.
+
+This data will allow us to continue improving the product.
+
+Every time we finish an iteration, we should measure the key indicators and make sure that we have improved the product. If we see the numbers drop, we should rollback to the previous state of the application.
+
+We won't suggest that you A/B test everything from day 1, but some changes will be A/B tested to confirm that the change actually improves the key metric we are trying to improve.
+
+We truly believe that the Lean Startup way is the best for both our clients and us. We want to build successful products for them, so that we can continue working with them over a long period of time. It's a **win/win** situation.
+]]></content:encoded>
       <dc:date>2015-06-30T20:29:00-03:00</dc:date>
     </item>
     <item>
       <title>How to Git push with blocked ports</title>
-      <link>blog url/git/github/how-to-git-push-with-blocked-ports.html</link>
-      <description>&lt;p&gt;Often times I find myself working out of a coffee shop with a &lt;strong&gt;terrible Internet connection&lt;/strong&gt;. We have a nice office at &lt;a href=&quot;https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62&quot;&gt;OmbuLabs&lt;/a&gt; but there is still that &lt;em&gt;Je ne sais quoi&lt;/em&gt; at coffee shops.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/git/github/how-to-git-push-with-blocked-ports.html</link>
+      <description><![CDATA[Often times I find myself working out of a coffee shop with a terrible Internet connection. We have a nice office at OmbuLabs but there is still that Je ne sais quoi at coffee shops.
 
-&lt;p&gt;The cool thing about &lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt; is that you can &lt;code&gt;git commit&lt;/code&gt; all your changes while enjoying a cup of coffee and &lt;code&gt;git push&lt;/code&gt; later (when you&amp;#39;re back at home with a decent connection)&lt;/p&gt;
+The cool thing about Git is that you can git commit all your changes while enjoying a cup of coffee and git push later (when you&#39;re back at home with a decent connection)
 
-&lt;p&gt;But what if you want to &lt;code&gt;git push&lt;/code&gt; from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).&lt;/p&gt;
-</description>
+But what if you want to git push from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).
+]]></description>
       <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/git/github/how-to-git-push-with-blocked-ports.html</guid>
+      <content:encoded><![CDATA[Often times I find myself working out of a coffee shop with a **terrible Internet connection**. We have a nice office at [OmbuLabs](https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62) but there is still that *Je ne sais quoi* at coffee shops.
+
+The cool thing about [Git](https://git-scm.com/) is that you can `git commit` all your changes while enjoying a cup of coffee and `git push` later (when you're back at home with a decent connection)
+
+But what if you want to `git push` from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).
+
+<!--more-->
+
+If your Git remote repository supports HTTPS, you can easily push to it by following these steps:
+
+    git remote add origin-https https://github.com/DatabaseCleaner/database_cleaner.git
+    git push origin-https master
+
+A Git repository can have as many remote repositories as you want, so I like to keep `origin` and `origin-https` to `git push` whenever I want.
+
+You will have to enter your username and password to authenticate with Github.
+
+    $ git push origin-https master
+    Username for 'https://github.com': etagwerker
+    Password for 'https://etagwerker@github.com':
+    Everything up-to-date
+
+Now you can `git push` even on shitty Internet connections.
+]]></content:encoded>
       <dc:date>2015-06-28T15:29:00-03:00</dc:date>
     </item>
     <item>
-      <title>Our Definition of &quot;Done&quot;</title>
-      <link>blog url/software-development/software-quality/our-definition-of-done.html</link>
-      <description>&lt;p&gt;Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&amp;#39;ve been working on this feature for a &lt;strong&gt;really long time&lt;/strong&gt;? Maybe you have. Is it &amp;quot;done&amp;quot;?&lt;/p&gt;
+      <title>Our Definition of "Done"</title>
+      <link>http://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html</link>
+      <description><![CDATA[Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a really long time? Maybe you have. Is it &quot;done&quot;?
 
-&lt;p&gt;That is a tough question, so I&amp;#39;ll write down &lt;em&gt;our definition of done&lt;/em&gt;.&lt;/p&gt;
-</description>
+That is a tough question, so I&#39;ll write down our definition of done.
+]]></description>
       <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html</guid>
+      <content:encoded><![CDATA[Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you've been working on this feature for a **really long time**? Maybe you have. Is it "done"?
+
+That is a tough question, so I'll write down _our definition of done_.
+
+<!--more-->
+
+## When is a feature done?
+
+* The feature does what it is expected to do
+* If it has a user interface, the [UX](http://www.helloerik.com/ux-is-not-ui) is simple and good enough: A _human_ can use it!
+* If it is code for other programmers, the [public contract](http://c2.com/cgi/wiki?InterfaceSegregationPrinciple) is clear: A programmer read the documentation and use it
+* It has a [decent spec](http://c2.com/cgi/wiki?CodeCoverage), which covers at least two scenarios (not just the happy path)
+* It is fast!
+* The build passes (it doesn't break any of the existing specs)
+* The code is easy to maintain ([DRY](http://c2.com/cgi/wiki?DontRepeatYourself)'ed)
+
+Have you spent 2 days in a feature that should've been done in 2 hours? Have you spent 2 hours on a bug fix that should've taken you 8 hours? If so, why?
+
+If the feature is big, break it into smaller features. This will make it easier to move ahead.
+
+Before you submit your [pull request](https://help.github.com/articles/using-pull-requests), make sure that you have considered this list.
+]]></content:encoded>
       <dc:date>2015-06-18T08:37:00-03:00</dc:date>
     </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
-      <link>blog url/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</link>
-      <description>&lt;p&gt;Often, &lt;code&gt;Enumerable#select&lt;/code&gt; is the chosen method to obtain elements from an
+      <link>http://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</link>
+      <description><![CDATA[Often, Enumerable#select is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
-&lt;code&gt;Enumerable#grep&lt;/code&gt;.&lt;/p&gt;
-</description>
+Enumerable#grep.
+]]></description>
       <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</guid>
+      <content:encoded><![CDATA[Often, `Enumerable#select` is the chosen method to obtain elements from an
+Array for a given block. Without thinking twice, we may be doing more work than
+necessary by not taking advantage of another method from the Enumerable module,
+`Enumerable#grep`.
+
+<!--more-->
+
+`Enumerable#grep` can not always be used instead of `Enumerable#select`, but
+when it can, `#grep` provides better readability and a small speed improvement
+over `#select`.
+
+See the benchmark below for example, which uses the class matcher for `#grep`:
+
+```ruby
+2.1.2 :041 > a = (1..100000).map { rand(100000) }
+2.1.2 :042 > b = (1..100000).map { rand(100000).to_s }
+2.1.2 :043 > c = a + b
+2.1.2 :044 > Benchmark.bm(10) do |b|
+2.1.2 :045 >   b.report("select")    { c.select { |x| x.is_a? Integer } }
+2.1.2 :046?>   b.report("grep")      { c.grep(Integer) }
+2.1.2 :047?> end
+                 user     system      total        real
+select       0.040000   0.000000   0.040000 (  0.037799)
+grep         0.020000   0.000000   0.020000 (  0.023749)
+
+2.1.2 :048 > c.select { |x| x.is_a? Integer } == c.grep(Integer)
+ => true
+```
+
+You can also see its power when using Regexp patterns, which is not only faster
+but also less verbose, which is enough of a win to favor it over `#select`:
+
+```ruby
+2.1.2 :049 > a = (1..100000).map { (65 + rand(26)).chr }
+2.1.2 :050 > b = (1..100000).map { rand(10).to_s }
+2.1.2 :051 > c = a + b
+2.1.2 :052 > Benchmark.bm(10) do |b|
+2.1.2 :053 >   b.report("select")    { c.select{|x| /^\d*$/ === x} }
+2.1.2 :054?>   b.report("grep")      { c.grep(/^\d*$/) }
+2.1.2 :055?> end
+                 user     system      total        real
+select       0.020000   0.000000   0.020000 (  0.021058)
+grep         0.020000   0.000000   0.020000 (  0.012626)
+```
+
+There are some pretty good use cases for `#grep`, and one last thing worth
+keeping in mind: `#grep` can take a second parameter, which acts
+as `#map` does and reads very nicely. For example:
+
+```ruby
+2.1.2 :056 > hello = ['Hello', 'ello', 'llo', 'lo', 'o']
+2.1.2 :057 > hello.select { |x| /[A-Z]\w+/ === x }.map(&:downcase)
+ => ["hello"]
+2.1.2 :058 > hello.grep(/[A-Z]\w+/, &:downcase)
+ => ["hello"]
+```
+]]></content:encoded>
       <dc:date>2015-04-09T08:37:00-03:00</dc:date>
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular</title>
-      <link>blog url/git/github/4-useful-github-tricks.html</link>
-      <description>&lt;p&gt;If you are using git in 2015, you are probably also using &lt;a href=&quot;http://www.github.com&quot;&gt;Github&lt;/a&gt;, unless you&amp;#39;re self-hosting or still betting on &lt;a href=&quot;http://www.bitbucket.com&quot;&gt;Bitbucket&lt;/a&gt;.&lt;/p&gt;
+      <link>http://www.ombulabs.com/blog/git/github/4-useful-github-tricks.html</link>
+      <description><![CDATA[If you are using git in 2015, you are probably also using Github, unless you&#39;re self-hosting or still betting on Bitbucket.
 
-&lt;p&gt;Below are some cool, useful tricks you can use on Github which can probably make your life easier:&lt;/p&gt;
-</description>
+Below are some cool, useful tricks you can use on Github which can probably make your life easier:
+]]></description>
       <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/git/github/4-useful-github-tricks.html</guid>
+      <content:encoded><![CDATA[If you are using git in 2015, you are probably also using [Github](http://www.github.com), unless you're self-hosting or still betting on [Bitbucket](http://www.bitbucket.com).
+
+Below are some cool, useful tricks you can use on Github which can probably make your life easier:
+
+<!--more-->
+
+## T
+
+This is probably the most-well known and most used. By hitting the T key while browsing a repository, the file finder comes up, which lets you type in any file and it will search for that filename in the repository.
+
+You can also navigate using the arrow keys, and access the file by hitting Enter.
+
+## .diff / .patch
+
+By appending .diff to any diff URL on Github, you'll be able to see the plain-text version of it, as if looking at output from git.
+
+## ?w=1
+
+A not-so-well-known tip is appending ?w=1 to a diff URL to omit whitespaces from a diff.
+
+[Example diff on ombulabs/setup](https://github.com/ombulabs/setup/commit/7c824aaca37a401bdd6d0f8acd1b11f510648bb4) vs [Example diff on ombulabs/setup with w=1](https://github.com/ombulabs/setup/commit/7c824aaca37a401bdd6d0f8acd1b11f510648bb4?w=1)
+
+Probably not the best example but useful to remember for longer diffs.
+
+## .keys
+
+You can get anyone's public keys by appending .keys to their Github username. For instance, to get my public keys: [mauro-oto](https://github.com/mauro-oto.keys)
+
+For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-tips/) or [here](http://gitready.com/).
+]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-01-01T10:55:00-03:00</dc:date>
+    <dc:date>2016-04-29T12:37:00-03:00</dc:date>
   </channel>
 </rss>

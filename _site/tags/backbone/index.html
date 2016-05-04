@@ -6,39 +6,45 @@
 
     
 
-    <title>OmbuLabs Blog - The Lean Software Boutique - Category: Backbone</title>
+    <title>Backbone at The Lean Software Boutique</title>
+
 
     
-    <meta name="description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
+    
+    <meta name="description" content="Articles about Backbone in the The Lean Software Boutique blog." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="OmbuLabs Blog - The Lean Software Boutique - Category: Backbone">
-    <meta itemprop="description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+    <meta itemprop="name" content="Backbone at The Lean Software Boutique">
+    <meta itemprop="description" content="Articles about Backbone in the The Lean Software Boutique blog.">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
-    <meta name="twitter:title" content="OmbuLabs Blog - The Lean Software Boutique - Category: Backbone">
-    <meta name="twitter:description" content="OmbuLabs Blog, The Lean Software Boutique's blog">
+
+    <meta name="twitter:title" content="Backbone at The Lean Software Boutique">
+    <meta name="twitter:description" content="Articles about Backbone in the The Lean Software Boutique blog.">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="OmbuLabs Blog - The Lean Software Boutique - Category: Backbone" />
+    <meta property="og:title" content="Backbone at The Lean Software Boutique" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/tags/backbone/index.html" />
+    <meta property="og:url" content="http://www.ombulabs.com/tags/backbone/" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="og:site_name" content="OmbuLabs Blog - The Lean Software Boutique - Category: Backbone" />
-    <meta property="article:published_time" content="" />
-    <meta property="article:modified_time" content="" />
-    <meta property="article:section" content="OmbuLabs Blog, The Lean Software Boutique's blog" />
-    <meta property="article:tag" content="OmbuLabs Blog - The Lean Software Boutique - Category: Backbone" />
+    <meta property="og:description" content="Articles about Backbone in the The Lean Software Boutique blog." />
+    <meta property="og:site_name" content="Category: backbone" />
+    
+      <meta property="article:published_time" content="" />
+      <meta property="article:modified_time" content="" />
+      <meta property="article:section" content="Articles about Backbone in the The Lean Software Boutique blog." />
+      <meta property="article:tag" content="Backbone at The Lean Software Boutique" />
+    
+
     <meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -115,6 +121,7 @@
 <p>For more information on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
 
 <p>This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mo">06</span><span class="p">:</span><span class="mo">05</span> <span class="o">-</span><span class="mo">0300</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
@@ -122,11 +129,13 @@
 <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 <span class="no">Completed</span> <span class="mi">302</span> <span class="no">Found</span> <span class="k">in</span> <span class="mi">7</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
+
 <p>After this request, Rails will terminate your session and you will have to login again.</p>
 
 <p>This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.</p>
 
 <p>To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by <a href="https://github.com/shuvalov-anton/backbone-rails-sync">Anton Shuvalov</a>.</p>
+
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// https://github.com/shuvalov-anton/backbone-rails-sync</span>
 <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span>
 <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
@@ -143,15 +152,18 @@
   <span class="k">return</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="p">};</span>
 </code></pre></div>
+
 <p>It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field <code>X-CSRF-Token</code>.</p>
 
 <p>After adding this to the Backbone code, it works as expected.</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">29</span> <span class="o">-</span><span class="mo">0300</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
 <span class="o">.</span><span class="n">.</span><span class="o">.</span>
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">40</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">10</span><span class="o">.</span><span class="mi">3</span><span class="n">ms</span><span class="p">)</span>
-</code></pre></div> <a class="read-more" href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Read more &raquo;</a>
+</code></pre></div>
+ <a class="read-more" href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Read more &raquo;</a>
     </section>
 </article>
 
@@ -161,176 +173,17 @@
       <div id="sidebar">
   <h2 class="category-name">Listing all tags</h2>
     
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-      
-    
-      
-        
-
-        
-      
-    
-      
-        
-
-        
-      
-    
-      
-        
-
-        
-      
-        
-
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-          
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-      
-        
-
-        
-          
-        
-      
-    
-      
-        
-
-        
-      
-        
-
-        
-      
-    
 
     
     
         <h3 class="tag-name">
           <a href="/blog/tags/"
              title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/Design"
+             title="Articles about Design">Design</a>
         </h3>
     
         <h3 class="tag-name">
@@ -345,12 +198,17 @@
     
         <h3 class="tag-name">
           <a href="/blog/tags/best-practices"
-             title="Articles about Best Practices">Best Practices</a>
+             title="Articles about Best-Practices">Best-Practices</a>
         </h3>
     
         <h3 class="tag-name">
           <a href="/blog/tags/bugs"
              title="Articles about Bugs">Bugs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
         </h3>
     
         <h3 class="tag-name">
@@ -369,13 +227,43 @@
         </h3>
     
         <h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3>
+    
+        <h3 class="tag-name">
           <a href="/blog/tags/lean-startup"
-             title="Articles about Lean Startup">Lean Startup</a>
+             title="Articles about Lean-Startup">Lean-Startup</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
         </h3>
     
         <h3 class="tag-name">
           <a href="/blog/tags/open-source"
-             title="Articles about Open Source">Open Source</a>
+             title="Articles about Open-Source">Open-Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
         </h3>
     
         <h3 class="tag-name">
@@ -389,6 +277,16 @@
         </h3>
     
         <h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3>
+    
+        <h3 class="tag-name">
           <a href="/blog/tags/rubygems"
              title="Articles about Rubygems">Rubygems</a>
         </h3>
@@ -399,13 +297,28 @@
         </h3>
     
         <h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3>
+    
+        <h3 class="tag-name">
           <a href="/blog/tags/software-development"
              title="Articles about Software Development">Software Development</a>
         </h3>
     
         <h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software-Development">Software-Development</a>
+        </h3>
+    
+        <h3 class="tag-name">
           <a href="/blog/tags/software-quality"
-             title="Articles about Software Quality">Software Quality</a>
+             title="Articles about Software-Quality">Software-Quality</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
         </h3>
     
 </div>
