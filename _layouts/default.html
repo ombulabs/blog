@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-{% capture page_title %}{% if page.category %}{{page.category | titleize}} at {{site.description}}{% elsif page %}{{ page.title | titleize}} - {{ site.description }}{% else %}{{ site.description }} - {{ page.title | titleize }}{% endif %}{% endcapture %}
+    {% capture page_title %}{% if page.category %}{{page.category | titleize}} at {{site.description}}{% elsif page %}{{ page.title | titleize}} - {{ site.description }}{% else %}{{ site.description }} - {{ page.title | titleize }}{% endif %}{% endcapture %}
 
     <title>{{ page_title }}</title>
 
@@ -76,8 +76,10 @@
       </div>
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
   </header>
-
-    {{ content }}
+    <div id="wrapper">
+      {{ content }}
+      {% include tag_list.html %}
+    </div>
     <footer class="site-footer clearfix">
       <section class="copyright">
         <figure>
