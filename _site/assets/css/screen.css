@@ -713,7 +713,7 @@ margin on the iframe, cause it breaks stuff. */
   animation-delay: 0.1s; }
 
 /* Every post, on every page, gets this style on its <article> tag */
-.post {
+.post, footer {
   position: relative;
   width: 80%;
   max-width: 710px;
@@ -1149,9 +1149,8 @@ body:not(.post-template) .post-title {
 /* The main wrapper for our pagination links */
 .pagination {
   position: relative;
-  width: 80%;
+  width: 100%;
   max-width: 710px;
-  margin: 4rem auto;
   font-family: "Open Sans", sans-serif;
   font-size: 1.3rem;
   color: #9EABB3;
@@ -1223,14 +1222,16 @@ body:not(.post-template) .post-title {
    9. Footer - The bottom of every page
    ========================================================================== */
 .site-footer {
+  width: 100%;
   position: relative;
-  margin: 8rem 0 0 0;
-  padding: 0.5rem 15px;
-  border-top: #EBF2F6 1px solid;
+  border-top: #d7d7d7 1px solid;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.75em;
-  color: #BBC7CC; }
+  color: #BBC7CC;
+  padding-top: 1em; }
+  .site-footer img {
+    margin: 0em; }
 
 .site-footer a {
   color: #BBC7CC;

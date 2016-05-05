@@ -7,15 +7,16 @@ meta:
 ---
 
 <main id="content" class="content" role="main">
-      <div class="extra-pagination inner">
-          {% include pagination.html %}
-      </div>
+    <div class="extra-pagination inner">
+        {% include pagination.html %}
+    </div>
 
-      {% for post in paginator.posts %}
+    {% for post in paginator.posts %}
 
-        {% include post_excerpt.html %}
+      {% include post_excerpt.html %}
 
-      {% endfor %}
+    {% endfor %}
 
-      {% include pagination.html %}
+    {% include pagination.html %}
+    {% include site_footer.html %}
 </main>
