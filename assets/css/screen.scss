@@ -1224,9 +1224,9 @@ body:not(.post-template) .post-title {
 /* The main wrapper for our pagination links */
 .pagination {
     position: relative;
-    width: 80%;
+    width: 100%;
     max-width: 710px;
-    margin: 4rem auto;
+
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
@@ -1310,13 +1310,18 @@ body:not(.post-template) .post-title {
    ========================================================================== */
 
 .site-footer {
-    position: relative;
-    padding: 0.5rem 15px;
-    border-top: #EBF2F6 1px solid;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.75em;
-    color: #BBC7CC;
+  width: 100%;
+  position: relative;
+  border-top: #d7d7d7 1px solid;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75em;
+  color: #BBC7CC;
+  padding-top: 1em;
+
+  img {
+    margin: 0em;
+  }
 }
 
 .site-footer a {
