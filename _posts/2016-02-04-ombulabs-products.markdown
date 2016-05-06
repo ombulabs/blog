@@ -2,7 +2,7 @@
 layout: post
 title: "Announcing The Ombu Labs Shop!"
 date: 2016-04-01 12:35:00
-categories: ["Design"]
+categories: ["design"]
 author: "cecilia"
 ---
 
