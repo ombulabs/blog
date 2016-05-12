@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 10 May 2016 06:37:00 -0300</pubDate>
+    <pubDate>Thu, 12 May 2016 11:37:00 -0300</pubDate>
     <item>
       <title>The Joys and Woes of Pair Programming</title>
       <link>http://www.ombulabs.com/blog/agile/pair%20programming/joys-and-woes-of-pair-programming.html</link>
@@ -38,7 +38,7 @@ great opportunity to learn from someone who &quot;has been there before&quot;.
 When you program with someone with more experience, you will often learn about
 design patterns, elegant object-oriented solutions, tips and tricks.
 ]]></description>
-      <pubDate>Tue, 10 May 2016 06:37:00 -0300</pubDate>
+      <pubDate>Thu, 12 May 2016 11:37:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/agile/pair%20programming/joys-and-woes-of-pair-programming.html</guid>
       <content:encoded><![CDATA[There are a few [agile practices](https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices) that **I really love**. [Pair programming](http://c2.com/cgi/wiki?PairProgramming)
 is one of them.
@@ -142,9 +142,9 @@ improved but not during the session.
 **better alternative** to the code that the driver is writing.
 * Put your phone on do not disturb mode.
 
-_[The title of this article was inspired in one of [my favorite chapters](http://home.adelphi.edu/sbloch/class/adages/joy.html) of [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) by Fred Brooks]_
+_[The title of this article was inspired by one of [my favorite chapters](http://home.adelphi.edu/sbloch/class/adages/joy.html) in [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) by Fred Brooks]_
 ]]></content:encoded>
-      <dc:date>2016-05-10T06:37:00-03:00</dc:date>
+      <dc:date>2016-05-12T11:37:00-03:00</dc:date>
     </item>
     <item>
       <title>Introducing Infractores</title>
@@ -2493,6 +2493,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-05-10T06:37:00-03:00</dc:date>
+    <dc:date>2016-05-12T11:37:00-03:00</dc:date>
   </channel>
 </rss>
