@@ -90,6 +90,73 @@
       <article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/agile/pair%20programming/joys-and-woes-of-pair-programming.html">The Joys and Woes of Pair Programming</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/agile"
+         title="Articles about Agile">Agile</a>,
+      <a href="/blog/tags/pair-programming"
+         title="Articles about Pair Programming">Pair Programming</a>
+
+
+
+<time class="post-date" datetime="2016-05-12">
+  12 May 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>There are a few <a href="https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices">agile practices</a> that <strong>I really love</strong>. <a href="http://c2.com/cgi/wiki?PairProgramming">Pair programming</a>
+is one of them.</p>
+
+<p>We try to do it as much as possible at <a href="http://www.ombulabs.com">Ombu Labs</a>. We
+usually keep the sessions under <strong>two hours</strong> and try to follow a regular
+schedule.</p>
+
+<p>When we find ourselves <strong>blocked</strong> by a code problem, we use our daily scrum to
+coordinate a <strong>pairing session</strong>. It&#39;s quite a step up from <em><a href="http://c2.com/cgi/wiki?RubberDucking">rubberducking</a></em> or using a <em><a href="http://c2.com/cgi/wiki?CardboardProgrammer">cardboard programmer</a></em> to find a <strong>solution</strong>
+to a problem.</p>
+
+<p><img src="/blog/assets/images/pair-programming.jpg" alt="@mauro_oto and I pair programming" class="full-img"></p>
+
+<h2>The Joys</h2>
+
+<p>As a <em>Senior</em> developer, I find that pairing sessions are great for coaching
+<em>Junior</em> developers. I enjoy teaching them about best practices, design
+patterns, frameworks, languages, code style,
+<a href="http://c2.com/cgi/wiki?ExtremeProgramming">XP</a>, and
+<a href="http://c2.com/cgi/wiki?TestDrivenDevelopment">TDD</a>.</p>
+
+<p>From the point of view of a <em>Junior</em> developer, I believe it&#39;s a
+<strong>great opportunity</strong> to <strong>learn</strong> from someone who &quot;has been there before&quot;.
+When you program with someone with more experience, you will often learn about
+design patterns, elegant object-oriented solutions, tips and tricks.</p>
+ <a class="read-more" href="/blog/agile/pair%20programming/joys-and-woes-of-pair-programming.html">Read more &raquo;</a>
+    </section>
+</article>
+
+
+    
+
+      <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/open-source/crowdsourcing/introducing-infractores.html">Introducing Infractores</a>
         </h2>
     </header>
@@ -960,68 +1027,6 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 
     
 
-      <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html">How to interact with hidden elements with Protractor</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
-  
-  <a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/protractor"
-         title="Articles about Protractor">Protractor</a>
-
-
-
-<time class="post-date" datetime="2015-12-09">
-  09 Dec 2015
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>The other day I was trying to interact with a hidden file input field:</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col-sm-3&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">class=</span><span class="s">&quot;hidden&quot;</span> <span class="na">accept=</span><span class="s">&quot;.csv&quot;</span>  <span class="na">id=</span><span class="s">&quot;geofence_file_input&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">id=</span><span class="s">&quot;textbox-for-geofencefile&quot;</span><span class="nt">&gt;</span>Select File<span class="nt">&lt;/a&gt;</span>
-  <span class="nt">&lt;span</span> <span class="na">ng-if=</span><span class="s">&quot;LineItemForm.augmentations.geofence.file&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div>
-
-<p>And the CSS:</p>
-
-<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.hidden</span> <span class="p">{</span>
-  <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Which caused this problem:</p>
-
-<div class="highlight"><pre><code class="language-text" data-lang="text">Failed: Wait timed out after 100015ms
-</code></pre></div>
-
-<p>Workarounds include <em>displaying it</em>, <em>interacting with it</em>, <em>hiding it</em> again, which I didn&#39;t like.</p>
- <a class="read-more" href="/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-    
-
     <nav class="pagination" role="pagination">
     
     <span class="page-number"> Page 1 of 2 </span>
@@ -1058,6 +1063,11 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
         <h3 class="tag-name">
           <a href="/blog/tags/"
              title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
         </h3>
     
         <h3 class="tag-name">
@@ -1138,6 +1148,11 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
         <h3 class="tag-name">
           <a href="/blog/tags/open-source"
              title="Articles about Open Source">Open Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
         </h3>
     
         <h3 class="tag-name">
