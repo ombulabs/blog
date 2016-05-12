@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Joys and Woes of Pair Programming"
-date: 2016-05-10 09:37:00
+date: 2016-05-12 14:37:00
 categories: ["agile", "pair programming"]
 author: "etagwerker"
 ---
@@ -108,4 +108,4 @@ improved but not during the session.
 **better alternative** to the code that the driver is writing.
 * Put your phone on do not disturb mode.
 
-_[The title of this article was inspired in one of [my favorite chapters](http://home.adelphi.edu/sbloch/class/adages/joy.html) of [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) by Fred Brooks]_
+_[The title of this article was inspired by one of [my favorite chapters](http://home.adelphi.edu/sbloch/class/adages/joy.html) in [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) by Fred Brooks]_
