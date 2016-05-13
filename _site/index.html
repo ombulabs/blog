@@ -90,6 +90,185 @@
       <article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/rails/dry/dry-your-test-unit.html">DRY your tests</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/dry"
+         title="Articles about Dry">Dry</a>
+
+
+
+<time class="post-date" datetime="2016-05-13">
+  13 May 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for
+a small class/object. Every time I see an opportunity to
+<a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a> my specs, I take it.</p>
+
+<p>Today I wrote a spec to make sure that we gracefully ignore SPAMmy
+contact requests in the Ombu Labs
+<a href="http://www.ombulabs.com/contact">contact page</a>. It initially looked like this:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
+  <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+  <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+  <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+  <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;js&#39;</span>
+  <span class="k">end</span>
+
+  <span class="n">assert_response</span> <span class="ss">:success</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>The new behavior adds a simple SPAM trap field that bots will usually fall for.
+If a bot is submitting the <code>email_confirmation</code> field, then it is SPAM and it
+gracefully ignores the request.</p>
+
+<p>The test only tests the scenario where the bot is performing an AJAX request.
+Then I thought that SPAM bots might try to submit a non-AJAX <code>html</code> request.
+So I wrote some more:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot;</span> <span class="k">do</span>
+  <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+  <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+  <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+  <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;js&#39;</span>
+  <span class="k">end</span>
+
+  <span class="n">assert_response</span> <span class="ss">:success</span>
+<span class="k">end</span>
+
+<span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (HTML)&quot;</span> <span class="k">do</span>
+  <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+  <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+  <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+  <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;html&#39;</span>
+  <span class="k">end</span>
+
+  <span class="n">assert_response</span> <span class="ss">:success</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>Now that is <strong>ridiculous</strong>, why should I <strong>copy/paste</strong> this? There is only one
+parameter (<code>format</code>) that varies between them.</p>
+
+<p>So, I <a href="http://c2.com/cgi/wiki?RefactorMercilessly">refactored</a> the code to
+look like this:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+  <span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
+    <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">format</span>
+    <span class="k">end</span>
+
+    <span class="n">assert_response</span> <span class="ss">:success</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>The code above doesn&#39;t <em>really</em> work. It raises this exception:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/activesupport-3.2.17/lib/active_support/testing/declarative.rb:28:in `test&#39;: test_should_gracefully_ignore_spammy_requests_with_valid_attributes is already defined in ContactsControllerTest (RuntimeError)
+    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:29:in `block in &lt;class:ContactsControllerTest&gt;&#39;
+    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `each&#39;
+    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `&lt;class:ContactsControllerTest&gt;&#39;
+    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:3:in `&lt;top (required)&gt;&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:10:in `require&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in &lt;main&gt;&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:9:in `each&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:9:in `block in &lt;main&gt;&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:4:in `select&#39;
+    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:4:in `&lt;main&gt;&#39;
+Errors running test:functionals! #&lt;RuntimeError: Command failed with status (1): [ruby -I&quot;lib:test&quot; -I&quot;/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib&quot; &quot;/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb&quot; &quot;test/functional/**/*_test.rb&quot; ]&gt;
+</code></pre></div>
+
+<p>Basically <a href="https://rubygems.org/gems/test-unit">test-unit</a> doesn&#39;t want
+me to define a test with the same description more than once.</p>
+
+<p>So, I decided to interpolate the format variable in the test description:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+  <span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests in </span><span class="si">#{</span><span class="nb">format</span><span class="si">}</span><span class="s2"> format&quot;</span> <span class="k">do</span>
+    <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
+      <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">format</span>
+    <span class="k">end</span>
+
+    <span class="n">assert_response</span> <span class="ss">:success</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>Test Unit is happy with this, the tests pass and my spec code is as concise as
+possible.</p>
+
+<p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, you can do something
+like this:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+  <span class="n">it</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
+    <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
+    <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
+    <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+
+    <span class="n">expect</span> <span class="k">do</span>
+      <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="nb">format</span>
+    <span class="k">end</span><span class="o">.</span><span class="n">not_to</span> <span class="n">change</span><span class="p">(</span><span class="no">Contact</span><span class="p">,</span> <span class="ss">:count</span><span class="p">)</span>
+
+    <span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">be_success</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>RSpec is a little smarter than Test Unit and it doesn&#39;t require you to
+interpolate a variable (<code>format</code>) in the description.</p>
+
+<p>Either way, <strong>always</strong> look for ways to keep your tests as <em>DRY</em> as your
+classes. It will <strong>improve maintenance</strong> in the long run.</p>
+ <a class="read-more" href="/blog/rails/dry/dry-your-test-unit.html">Read more &raquo;</a>
+    </section>
+</article>
+
+
+    
+
+      <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html">The Joys and Woes of Pair Programming</a>
         </h2>
     </header>
@@ -934,99 +1113,6 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 
     
 
-      <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Adding Csrf-Protection to your Rails-Backbone App</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="http://2.gravatar.com/avatar/ff0ffbb39659d36ad6aabcd0b4715c1b?s=50" alt="Sirko Sittig" nopin="nopin" />
-  
-  <a href="/blog/authors/schmierkov"
-     title="Articles by Sirko Sittig">
-     Sirko Sittig
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/backbone"
-         title="Articles about Backbone">Backbone</a>,
-      <a href="/blog/tags/security"
-         title="Articles about Security">Security</a>
-
-
-
-<time class="post-date" datetime="2015-12-16">
-  16 Dec 2015
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>When integrating <a href="http://backbonejs.org">Backbone.js</a> in your <a href="http://rubyonrails.org">Rails</a> App, you might face the problem of the inability to verify the CSRF-Token.</p>
-
-<p>The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.</p>
-
-<p>For more information on this Topic, check out the <a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Rails Security Guide</a>.</p>
-
-<p>This problem occurs as soon as you are trying to send form data, without the CSRF-Token provided by Rails.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mo">06</span><span class="p">:</span><span class="mo">05</span> <span class="o">-</span><span class="mo">0300</span>
-<span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
-  <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
-<span class="ss">WARNING</span><span class="p">:</span> <span class="no">Can</span><span class="err">&#39;</span><span class="n">t</span> <span class="n">verify</span> <span class="no">CSRF</span> <span class="n">token</span> <span class="n">authenticity</span>
-<span class="o">.</span><span class="n">.</span><span class="o">.</span>
-<span class="no">Completed</span> <span class="mi">302</span> <span class="no">Found</span> <span class="k">in</span> <span class="mi">7</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span><span class="p">)</span>
-</code></pre></div>
-
-<p>After this request, Rails will terminate your session and you will have to login again.</p>
-
-<p>This problem is caused by your Backbone.js application, which is sending the data directly to the backend without providing the CSRF-Token.</p>
-
-<p>To solve this problem you need to add the token to your Backbone request. One of the simplest solutions I came across is the following by <a href="https://github.com/shuvalov-anton/backbone-rails-sync">Anton Shuvalov</a>.</p>
-
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// https://github.com/shuvalov-anton/backbone-rails-sync</span>
-<span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span> <span class="o">=</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span><span class="p">;</span>
-<span class="nx">Backbone</span><span class="p">.</span><span class="nx">sync</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">options</span><span class="p">.</span><span class="nx">noCSRF</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">beforeSend</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">beforeSend</span><span class="p">;</span>
-
-    <span class="c1">// Set X-CSRF-Token HTTP header</span>
-    <span class="nx">options</span><span class="p">.</span><span class="nx">beforeSend</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;meta[name=&quot;csrf-token&quot;]&#39;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">);</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">token</span><span class="p">)</span> <span class="p">{</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s1">&#39;X-CSRF-Token&#39;</span><span class="p">,</span> <span class="nx">token</span><span class="p">);</span> <span class="p">}</span>
-      <span class="k">if</span> <span class="p">(</span><span class="nx">beforeSend</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">beforeSend</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span> <span class="p">}</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">_sync</span><span class="p">(</span><span class="nx">method</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-<span class="p">};</span>
-</code></pre></div>
-
-<p>It grabs the CSRF-Token provided in the meta tags of your Rails application and sets it for the request header field <code>X-CSRF-Token</code>.</p>
-
-<p>After adding this to the Backbone code, it works as expected.</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">POST</span> <span class="s2">&quot;/products&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2015</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">16</span> <span class="mi">10</span><span class="p">:</span><span class="mi">08</span><span class="p">:</span><span class="mi">29</span> <span class="o">-</span><span class="mo">0300</span>
-<span class="no">Processing</span> <span class="n">by</span> <span class="no">ProductsController</span><span class="c1">#create as JSON</span>
-  <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">=&gt;</span><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;foo&quot;</span><span class="p">}}</span>
-<span class="o">.</span><span class="n">.</span><span class="o">.</span>
-<span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">40</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">0</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">10</span><span class="o">.</span><span class="mi">3</span><span class="n">ms</span><span class="p">)</span>
-</code></pre></div>
- <a class="read-more" href="/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-    
-
     <nav class="pagination" role="pagination">
     
     <span class="page-number"> Page 1 of 2 </span>
@@ -1103,6 +1189,11 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
         <h3 class="tag-name">
           <a href="/blog/tags/docker"
              title="Articles about Docker">Docker</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
         </h3>
     
         <h3 class="tag-name">
