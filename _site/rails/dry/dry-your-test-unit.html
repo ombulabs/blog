@@ -11,14 +11,14 @@
 
     
     
-    <meta name="description" content="I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs fora small class/object. Every time I see an opportunity toDRY ..." />
+    <meta name="description" content="I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs fora small class/object. Every time I see an opportunity toDR..." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="DRY Your Tests - The Lean Software Boutique">
-    <meta itemprop="description" content="I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DR...">
+    <meta itemprop="description" content="I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to ...">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
@@ -26,7 +26,7 @@
     <meta name="twitter:site" content="@OmbuLabs">
 
     <meta name="twitter:title" content="DRY Your Tests - The Lean Software Boutique">
-    <meta name="twitter:description" content="I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DR...">
+    <meta name="twitter:description" content="I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to ...">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
@@ -36,12 +36,12 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.ombulabs.com/rails/dry/dry-your-test-unit.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DRY my specs, I take it. Today I wrote a spec to make sure that we gracefully ignore SPAMmy contact requests in the..." />
+    <meta property="og:description" content="I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DRY my specs, I take it. Today I wrote a spec to make sure that we gracefully ignore SPAMmy contact requests in..." />
     <meta property="og:site_name" content="DRY your tests by @etagwerker" />
     
-      <meta property="article:published_time" content="2016-05-13 06:01:00 -0300" />
-      <meta property="article:modified_time" content="2016-05-13 06:01:00 -0300" />
-      <meta property="article:section" content="I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DRY my specs, I take it. Today I wrote a spec to make sure that we gracefully ignore SPAMmy contact requests in the..." />
+      <meta property="article:published_time" content="2016-05-16 09:31:00 -0300" />
+      <meta property="article:modified_time" content="2016-05-16 09:31:00 -0300" />
+      <meta property="article:section" content="I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for a small class/object. Every time I see an opportunity to DRY my specs, I take it. Today I wrote a spec to make sure that we gracefully ignore SPAMmy contact requests in..." />
       <meta property="article:tag" content="DRY Your Tests - The Lean Software Boutique" />
     
 
@@ -103,15 +103,15 @@
 
 
 
-<time class="post-date" datetime="2016-05-13">
-  13 May 2016
+<time class="post-date" datetime="2016-05-16">
+  16 May 2016
 </time>
 
             </section>
         </header>
 
         <section class="post-content">
-          <p>I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for
+          <p>I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 <a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a> my specs, I take it.</p>
 
@@ -121,7 +121,7 @@ contact requests in the Ombu Labs
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
-  <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+                             <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
 
   <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
     <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;js&#39;</span>
@@ -130,13 +130,16 @@ contact requests in the Ombu Labs
   <span class="n">assert_response</span> <span class="ss">:success</span>
 <span class="k">end</span>
 </code></pre></div>
-<p>The new behavior adds a simple SPAM trap field that bots will usually fall for.
-If a bot is submitting the <code>email_confirmation</code> field, then it is SPAM and it
-gracefully ignores the request.</p>
+<p>The new behavior adds a simple <a href="http://www.sitepoint.com/easy-spam-prevention-using-hidden-form-fields/">SPAM trap field</a>
+that bots will usually fall for.
+If a bot is submitting the <code>email_confirmation</code> field (which is hidden by a CSS
+class), then it is <strong>SPAM</strong> and it gracefully ignores the request.</p>
 
-<p>The test only tests the scenario where the bot is performing an AJAX request.
-Then I thought that SPAM bots might try to submit a non-AJAX <code>html</code> request.
-So I wrote some more:</p>
+<p>The test only tests the scenario where the bot is performing an <strong>AJAX</strong>
+request. Then I thought that SPAM bots might try to submit a non-AJAX <code>html</code>
+request.</p>
+
+<p>So I wrote some more:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
@@ -215,8 +218,8 @@ me to define a test with the same description more than once.</p>
 <p>Test Unit is happy with this, the tests pass and my spec code is as concise as
 possible.</p>
 
-<p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, you can do something
-like this:</p>
+<p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, it would look like
+this:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
   <span class="n">it</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
     <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>

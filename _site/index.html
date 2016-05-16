@@ -116,13 +116,13 @@
 
 
 
-<time class="post-date" datetime="2016-05-13">
-  13 May 2016
+<time class="post-date" datetime="2016-05-16">
+  16 May 2016
 </time>
 
     </footer>
     <section class="post-excerpt">
-        <p>I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for
+        <p>I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 <a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a> my specs, I take it.</p>
 
@@ -133,7 +133,7 @@ contact requests in the Ombu Labs
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
-  <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+                             <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
 
   <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
     <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;js&#39;</span>
@@ -143,13 +143,16 @@ contact requests in the Ombu Labs
 <span class="k">end</span>
 </code></pre></div>
 
-<p>The new behavior adds a simple SPAM trap field that bots will usually fall for.
-If a bot is submitting the <code>email_confirmation</code> field, then it is SPAM and it
-gracefully ignores the request.</p>
+<p>The new behavior adds a simple <a href="http://www.sitepoint.com/easy-spam-prevention-using-hidden-form-fields/">SPAM trap field</a>
+that bots will usually fall for.
+If a bot is submitting the <code>email_confirmation</code> field (which is hidden by a CSS
+class), then it is <strong>SPAM</strong> and it gracefully ignores the request.</p>
 
-<p>The test only tests the scenario where the bot is performing an AJAX request.
-Then I thought that SPAM bots might try to submit a non-AJAX <code>html</code> request.
-So I wrote some more:</p>
+<p>The test only tests the scenario where the bot is performing an <strong>AJAX</strong>
+request. Then I thought that SPAM bots might try to submit a non-AJAX <code>html</code>
+request.</p>
+
+<p>So I wrote some more:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
@@ -236,8 +239,8 @@ me to define a test with the same description more than once.</p>
 <p>Test Unit is happy with this, the tests pass and my spec code is as concise as
 possible.</p>
 
-<p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, you can do something
-like this:</p>
+<p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, it would look like
+this:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
   <span class="n">it</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>

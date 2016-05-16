@@ -8,11 +8,11 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 13 May 2016 06:01:00 -0300</pubDate>
+    <pubDate>Mon, 16 May 2016 09:31:00 -0300</pubDate>
     <item>
       <title>DRY your tests</title>
       <link>http://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</link>
-      <description><![CDATA[I&#39;m big fan of having small classes. I&#39;m not a big fan of having huge specs for
+      <description><![CDATA[I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 DRY my specs, I take it.
 
@@ -22,7 +22,7 @@ contact page. It initially looked like this:
 test &quot;gracefully ignores spammy requests with valid attributes&quot; do
   @valid_contact = contacts(:two)
   attributes = @valid_contact.attributes
-  attributes.merge!(email_confirmation: @valid_contact.email)
+                             .merge(email_confirmation: @valid_contact.email)
 
   assert_no_difference(&quot;Contact.count&quot;) do
     post :create, contact: attributes, format: &#39;js&#39;
@@ -31,12 +31,15 @@ test &quot;gracefully ignores spammy requests with valid attributes&quot; do
   assert_response :success
 end
 
-The new behavior adds a simple SPAM trap field that bots will usually fall for.
-If a bot is submitting the email_confirmation field, then it is SPAM and it
-gracefully ignores the request.
+The new behavior adds a simple SPAM trap field
+that bots will usually fall for.
+If a bot is submitting the email_confirmation field (which is hidden by a CSS
+class), then it is SPAM and it gracefully ignores the request.
 
-The test only tests the scenario where the bot is performing an AJAX request.
-Then I thought that SPAM bots might try to submit a non-AJAX html request.
+The test only tests the scenario where the bot is performing an AJAX
+request. Then I thought that SPAM bots might try to submit a non-AJAX html
+request.
+
 So I wrote some more:
 test &quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot; do
   @valid_contact = contacts(:two)
@@ -116,8 +119,8 @@ end
 Test Unit is happy with this, the tests pass and my spec code is as concise as
 possible.
 
-If you prefer RSpec, you can do something
-like this:
+If you prefer RSpec, it would look like
+this:
 [&quot;js&quot;, &quot;html&quot;].each do |format|
   it &quot;gracefully ignores spammy requests with valid attributes&quot; do
     @valid_contact = contacts(:two)
@@ -138,9 +141,9 @@ interpolate a variable (format) in the description.
 Either way, always look for ways to keep your tests as DRY as your
 classes. It will improve maintenance in the long run.
 ]]></description>
-      <pubDate>Fri, 13 May 2016 06:01:00 -0300</pubDate>
+      <pubDate>Mon, 16 May 2016 09:31:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</guid>
-      <content:encoded><![CDATA[I'm big fan of having small classes. I'm not a big fan of having huge specs for
+      <content:encoded><![CDATA[I'm a big fan of having small classes. I'm not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 [DRY](http://c2.com/cgi/wiki?DontRepeatYourself) my specs, I take it.
 
@@ -152,7 +155,7 @@ contact requests in the Ombu Labs
 test "gracefully ignores spammy requests with valid attributes" do
   @valid_contact = contacts(:two)
   attributes = @valid_contact.attributes
-  attributes.merge!(email_confirmation: @valid_contact.email)
+                             .merge(email_confirmation: @valid_contact.email)
 
   assert_no_difference("Contact.count") do
     post :create, contact: attributes, format: 'js'
@@ -162,12 +165,15 @@ test "gracefully ignores spammy requests with valid attributes" do
 end
 ```
 
-The new behavior adds a simple SPAM trap field that bots will usually fall for.
-If a bot is submitting the `email_confirmation` field, then it is SPAM and it
-gracefully ignores the request.
+The new behavior adds a simple [SPAM trap field](http://www.sitepoint.com/easy-spam-prevention-using-hidden-form-fields/)
+that bots will usually fall for.
+If a bot is submitting the `email_confirmation` field (which is hidden by a CSS
+class), then it is **SPAM** and it gracefully ignores the request.
 
-The test only tests the scenario where the bot is performing an AJAX request.
-Then I thought that SPAM bots might try to submit a non-AJAX `html` request.
+The test only tests the scenario where the bot is performing an **AJAX**
+request. Then I thought that SPAM bots might try to submit a non-AJAX `html`
+request.
+
 So I wrote some more:
 
 ```ruby
@@ -257,8 +263,8 @@ end
 Test Unit is happy with this, the tests pass and my spec code is as concise as
 possible.
 
-If you prefer [RSpec](https://rubygems.org/gems/rspec), you can do something
-like this:
+If you prefer [RSpec](https://rubygems.org/gems/rspec), it would look like
+this:
 
 ```ruby
 ["js", "html"].each do |format|
@@ -282,7 +288,7 @@ interpolate a variable (`format`) in the description.
 Either way, **always** look for ways to keep your tests as *DRY* as your
 classes. It will **improve maintenance** in the long run.
 ]]></content:encoded>
-      <dc:date>2016-05-13T06:01:00-03:00</dc:date>
+      <dc:date>2016-05-16T09:31:00-03:00</dc:date>
     </item>
     <item>
       <title>The Joys and Woes of Pair Programming</title>
@@ -2768,6 +2774,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-05-13T06:01:00-03:00</dc:date>
+    <dc:date>2016-05-16T09:31:00-03:00</dc:date>
   </channel>
 </rss>
