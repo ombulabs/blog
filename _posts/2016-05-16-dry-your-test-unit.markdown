@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "DRY your tests"
-date: 2016-05-13 09:01:00
+date: 2016-05-16 12:31:00
 categories: ["rails", "dry"]
 author: "etagwerker"
 ---
 
-I'm big fan of having small classes. I'm not a big fan of having huge specs for
+I'm a big fan of having small classes. I'm not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 [DRY](http://c2.com/cgi/wiki?DontRepeatYourself) my specs, I take it.
 
@@ -18,7 +18,7 @@ contact requests in the Ombu Labs
 test "gracefully ignores spammy requests with valid attributes" do
   @valid_contact = contacts(:two)
   attributes = @valid_contact.attributes
-  attributes.merge!(email_confirmation: @valid_contact.email)
+                             .merge(email_confirmation: @valid_contact.email)
 
   assert_no_difference("Contact.count") do
     post :create, contact: attributes, format: 'js'
@@ -28,12 +28,15 @@ test "gracefully ignores spammy requests with valid attributes" do
 end
 ```
 
-The new behavior adds a simple SPAM trap field that bots will usually fall for.
-If a bot is submitting the `email_confirmation` field, then it is SPAM and it
-gracefully ignores the request.
+The new behavior adds a simple [SPAM trap field](http://www.sitepoint.com/easy-spam-prevention-using-hidden-form-fields/)
+that bots will usually fall for.
+If a bot is submitting the `email_confirmation` field (which is hidden by a CSS
+class), then it is **SPAM** and it gracefully ignores the request.
 
-The test only tests the scenario where the bot is performing an AJAX request.
-Then I thought that SPAM bots might try to submit a non-AJAX `html` request.
+The test only tests the scenario where the bot is performing an **AJAX**
+request. Then I thought that SPAM bots might try to submit a non-AJAX `html`
+request.
+
 So I wrote some more:
 
 ```ruby
@@ -123,8 +126,8 @@ end
 Test Unit is happy with this, the tests pass and my spec code is as concise as
 possible.
 
-If you prefer [RSpec](https://rubygems.org/gems/rspec), you can do something
-like this:
+If you prefer [RSpec](https://rubygems.org/gems/rspec), it would look like
+this:
 
 ```ruby
 ["js", "html"].each do |format|
