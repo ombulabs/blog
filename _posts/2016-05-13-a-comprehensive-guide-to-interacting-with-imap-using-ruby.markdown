@@ -7,8 +7,8 @@ author: "mauro-oto"
 ---
 
 A few times in the past I've had to interact with IMAP via Ruby, and wrapping
-your head around its API is not so easy. Not only is IMAP a bit obscure and
-cryptic, but Ruby's IMAP [documentation](http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html)
+your head around its API is not so easy. Not only is the IMAP API a bit obscure
+and cryptic, but Ruby's IMAP [documentation](http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html)
 is not so great either.
 
 Searching the internet for examples doesn't yield too many results, so I'll try
