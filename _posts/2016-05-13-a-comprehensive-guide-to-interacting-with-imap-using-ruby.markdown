@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A comprehensive guide to interacting with IMAP using Ruby"
-date: 2016-05-16 10:50:00
+date: 2016-05-20 16:56:00
 categories: ["ruby", "imap"]
 author: "mauro-oto"
 ---
