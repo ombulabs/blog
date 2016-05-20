@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 16 May 2016 07:50:00 -0300</pubDate>
+    <pubDate>Fri, 20 May 2016 13:56:00 -0300</pubDate>
     <item>
       <title>A comprehensive guide to interacting with IMAP using Ruby</title>
       <link>http://www.ombulabs.com/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</link>
@@ -21,7 +21,7 @@ Searching the internet for examples doesn&#39;t yield too many results, so I&#39
 to write down some of the things I&#39;ve learned. The examples I&#39;ll show use
 Gmail as the target IMAP server.
 ]]></description>
-      <pubDate>Mon, 16 May 2016 07:50:00 -0300</pubDate>
+      <pubDate>Fri, 20 May 2016 13:56:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</guid>
       <content:encoded><![CDATA[A few times in the past I've had to interact with IMAP via Ruby, and wrapping
 your head around its API is not so easy. Not only is the IMAP API a bit obscure
@@ -276,7 +276,7 @@ but there's obviously more, such as deleting emails, marking emails as read,
 adding emails to a mailbox, etc. If you've struggled with IMAP like I have, or
 if you found this useful, let me know in the comments section!
 ]]></content:encoded>
-      <dc:date>2016-05-16T07:50:00-03:00</dc:date>
+      <dc:date>2016-05-20T13:56:00-03:00</dc:date>
     </item>
     <item>
       <title>The Joys and Woes of Pair Programming</title>
@@ -2762,6 +2762,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-05-16T07:50:00-03:00</dc:date>
+    <dc:date>2016-05-20T13:56:00-03:00</dc:date>
   </channel>
 </rss>
