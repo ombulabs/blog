@@ -7,8 +7,8 @@ author: "mauro-oto"
 ---
 
 A few times in the past I've had to interact with IMAP via Ruby, and wrapping
-your head around its API is not so easy. Not only is the IMAP API a bit obscure
-and cryptic, but Ruby's IMAP [documentation](http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html)
+your head around its API is not so easy. Not only is the [IMAP API](https://tools.ietf.org/html/rfc3501)
+a bit obscure and cryptic, but Ruby's IMAP [documentation](http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html)
 is not so great either.
 
 Searching the internet for examples doesn't yield too many results, so I'll try
@@ -42,7 +42,7 @@ idea, even the most popular Gmail Ruby gem,
 does this.
 
 After the connection is established, you can login using a couple of different
-ways. First, the most common way, using the email and the password:
+ways. First, the most common way, using email and password:
 
 ```ruby
 [3] pry(main)> imap.login(email, password)
@@ -108,8 +108,8 @@ Read and write:
 
 ## Searching email messages
 
-After selecting an email box, you can search email messages and return either
-the sequence number (`seqno`) for the email, or the unique id (`uid`).
+After selecting an email box, you can search email messages and find either
+the sequence number (`seqno`) or unique id (`uid`) for the email.
 
 The sequence number indicates the *current position* of the email message in the
 mailbox. So this number will be different after email messages before this email
@@ -143,7 +143,8 @@ email's position moves, the `uid` remains the same:
 ## Fetching email messages
 
 After we selected a mailbox and we know a message's `seqno` or `uid`, we can
-fetch the contents of the email. If you know the `seqno`:
+fetch the email headers, content, flags, [among others](https://tools.ietf.org/html/rfc3501#page-57).
+If you know the `seqno`:
 
 ```ruby
 [12] pry(main)> imap.fetch(11, "ENVELOPE")
