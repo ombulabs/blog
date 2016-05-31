@@ -305,111 +305,6 @@ The new behavior adds a simple SPAM trap field
 that bots will usually fall for.
 If a bot is submitting the email_confirmation field (which is hidden by a CSS
 class), then it is SPAM and it gracefully ignores the request.
-
-The test only tests the scenario where the bot is performing an AJAX
-request. Then I thought that SPAM bots might try to submit a non-AJAX html
-request.
-
-So I wrote some more:
-test &quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot; do
-  @valid_contact = contacts(:two)
-  attributes = @valid_contact.attributes
-  attributes.merge!(email_confirmation: @valid_contact.email)
-
-  assert_no_difference(&quot;Contact.count&quot;) do
-    post :create, contact: attributes, format: &#39;js&#39;
-  end
-
-  assert_response :success
-end
-
-test &quot;gracefully ignores spammy requests with valid attributes (HTML)&quot; do
-  @valid_contact = contacts(:two)
-  attributes = @valid_contact.attributes
-  attributes.merge!(email_confirmation: @valid_contact.email)
-
-  assert_no_difference(&quot;Contact.count&quot;) do
-    post :create, contact: attributes, format: &#39;html&#39;
-  end
-
-  assert_response :success
-end
-
-Now that is ridiculous, why should I copy/paste this? There is only one
-parameter (format) that varies between them.
-
-So, I refactored the code to
-look like this:
-[&quot;js&quot;, &quot;html&quot;].each do |format|
-  test &quot;gracefully ignores spammy requests with valid attributes&quot; do
-    @valid_contact = contacts(:two)
-    attributes = @valid_contact.attributes
-    attributes.merge!(email_confirmation: @valid_contact.email)
-
-    assert_no_difference(&quot;Contact.count&quot;) do
-      post :create, contact: attributes, format: format
-    end
-
-    assert_response :success
-  end
-end
-
-The code above doesn&#39;t really work. It raises this exception:
-/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/activesupport-3.2.17/lib/active_support/testing/declarative.rb:28:in `test&#39;: test_should_gracefully_ignore_spammy_requests_with_valid_attributes is already defined in ContactsControllerTest (RuntimeError)
-    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:29:in `block in &lt;class:ContactsControllerTest&gt;&#39;
-    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `each&#39;
-    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `&lt;class:ContactsControllerTest&gt;&#39;
-    from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:3:in `&lt;top (required)&gt;&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:10:in `require&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:10:in `block (2 levels) in &lt;main&gt;&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:9:in `each&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:9:in `block in &lt;main&gt;&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:4:in `select&#39;
-    from /Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb:4:in `&lt;main&gt;&#39;
-Errors running test:functionals! #&lt;RuntimeError: Command failed with status (1): [ruby -I&quot;lib:test&quot; -I&quot;/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib&quot; &quot;/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/rake-10.5.0/lib/rake/rake_test_loader.rb&quot; &quot;test/functional/**/*_test.rb&quot; ]&gt;
-
-Basically test-unit doesn&#39;t want
-me to define a test with the same description more than once.
-
-So, I decided to interpolate the format variable in the test description:
-[&quot;js&quot;, &quot;html&quot;].each do |format|
-  test &quot;gracefully ignores spammy requests in #{format} format&quot; do
-    @valid_contact = contacts(:two)
-    attributes = @valid_contact.attributes
-    attributes.merge!(email_confirmation: @valid_contact.email)
-
-    assert_no_difference(&quot;Contact.count&quot;) do
-      post :create, contact: attributes, format: format
-    end
-
-    assert_response :success
-  end
-end
-
-Test Unit is happy with this, the tests pass and my spec code is as concise as
-possible.
-
-If you prefer RSpec, it would look like
-this:
-[&quot;js&quot;, &quot;html&quot;].each do |format|
-  it &quot;gracefully ignores spammy requests with valid attributes&quot; do
-    @valid_contact = contacts(:two)
-    attributes = @valid_contact.attributes
-    attributes.merge!(email_confirmation: @valid_contact.email)
-
-    expect do
-      post :create, contact: attributes, format: format
-    end.not_to change(Contact, :count)
-
-    expect(response).to be_success
-  end
-end
-
-RSpec is a little smarter than Test Unit and it doesn&#39;t require you to
-interpolate a variable (format) in the description.
-
-Either way, always look for ways to keep your tests as DRY as your
-classes. It will improve maintenance in the long run.
 ]]></description>
       <pubDate>Mon, 16 May 2016 09:31:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</guid>
@@ -439,6 +334,8 @@ The new behavior adds a simple [SPAM trap field](http://www.sitepoint.com/easy-s
 that bots will usually fall for.
 If a bot is submitting the `email_confirmation` field (which is hidden by a CSS
 class), then it is **SPAM** and it gracefully ignores the request.
+
+<!--more-->
 
 The test only tests the scenario where the bot is performing an **AJAX**
 request. Then I thought that SPAM bots might try to submit a non-AJAX `html`
