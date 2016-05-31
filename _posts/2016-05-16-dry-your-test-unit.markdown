@@ -33,6 +33,8 @@ that bots will usually fall for.
 If a bot is submitting the `email_confirmation` field (which is hidden by a CSS
 class), then it is **SPAM** and it gracefully ignores the request.
 
+<!--more-->
+
 The test only tests the scenario where the bot is performing an **AJAX**
 request. Then I thought that SPAM bots might try to submit a non-AJAX `html`
 request.
