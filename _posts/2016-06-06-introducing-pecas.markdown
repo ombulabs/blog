@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing Pecas: Dashboards for Freckle"
-date: 2016-05-16 12:31:00
+date: 2016-06-06 9:31:00
 categories: ["open-source"]
 author: "etagwerker"
 ---

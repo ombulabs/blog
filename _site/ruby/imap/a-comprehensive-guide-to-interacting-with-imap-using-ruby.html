@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>A Comprehensive Guide to Interacting With IMAP Using Ruby - The Lean Software Boutique</title>
+
+
+    
+    
+    <meta name="description" content="A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrappingyour head around its API is not so easy. Not only is the IMAP APIa..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="A Comprehensive Guide to Interacting With IMAP Using Ruby - The Lean Software Boutique">
+    <meta itemprop="description" content="A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping your head around its API is not so easy. Not only is the IMAP API...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="A Comprehensive Guide to Interacting With IMAP Using Ruby - The Lean Software Boutique">
+    <meta name="twitter:description" content="A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping your head around its API is not so easy. Not only is the IMAP API...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="A Comprehensive Guide to Interacting With IMAP Using Ruby - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping your head around its API is not so easy. Not only is the IMAP API a bit obscure and cryptic, but Ruby&#39;s IMAP documentation is not so great either. Searching the internet for examples..." />
+    <meta property="og:site_name" content="A comprehensive guide to interacting with IMAP using Ruby by @mauro_oto" />
+    
+      <meta property="article:published_time" content="2016-05-30 09:09:00 -0300" />
+      <meta property="article:modified_time" content="2016-05-30 09:09:00 -0300" />
+      <meta property="article:section" content="A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping your head around its API is not so easy. Not only is the IMAP API a bit obscure and cryptic, but Ruby&#39;s IMAP documentation is not so great either. Searching the internet for examples..." />
+      <meta property="article:tag" content="A Comprehensive Guide to Interacting With IMAP Using Ruby - The Lean Software Boutique" />
+    
+
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="home-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+    <div id="wrapper">
+      <main class="content post-layout" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">A comprehensive guide to interacting with IMAP using Ruby</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>,
+      <a href="/blog/tags/imap"
+         title="Articles about Imap">Imap</a>
+
+
+
+<time class="post-date" datetime="2016-05-30">
+  30 May 2016
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping
+your head around its API is not so easy. Not only is the <a href="https://tools.ietf.org/html/rfc3501">IMAP API</a>
+a bit obscure and cryptic, but Ruby&#39;s IMAP <a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html">documentation</a>
+is not so great either.</p>
+
+<p>Searching the internet for examples doesn&#39;t yield too many results, so I&#39;ll try
+to write down some of the things I&#39;ve learned. The examples I&#39;ll show use
+Gmail as the target IMAP server.</p>
+
+<!--more-->
+
+<h2>Connecting and logging in</h2>
+
+<p>To establish an IMAP connection:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Net::IMAP:0x007fde6b1a8ff0 ...</span>
+</code></pre></div>
+<p>The third parameter here is <code>usessl</code>, it&#39;s set to <code>false</code> by
+<a href="https://github.com/ruby/ruby/blob/trunk/lib/net/imap.rb#L1065">default</a>.</p>
+
+<p><em>If</em> you run into any SSL issues and want to ignore them, you can use:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="kp">false</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Net::IMAP:0x007fa1c77064b0 ...</span>
+</code></pre></div>
+<p>which skips SSL verification. Note that while this is probably not such a good
+idea, even the most popular Gmail Ruby gem,
+<a href="https://github.com/gmailgem/gmail/blob/353ddcc8cc0c5b57ad1d3a412f11365ccc12b7d6/lib/gmail/client/base.rb#L26">Gmail</a>,
+does this.</p>
+
+<p>After the connection is established, you can login using a couple of different
+ways. First, the most common way, using email and password:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
+ <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+ <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0001 OK c3p0@ombulabs.com authenticated (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Second, you can include the <a href="https://github.com/nfo/gmail_xoauth">gmail_xoauth</a>
+gem, which adds the XOAUTH2 authenticator to <code>Net::IMAP</code>, allowing you to use an
+OAuth 2.0 token to login:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s2">&quot;LOGIN&quot;</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">your_oauth2_token</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse ...</span>
+</code></pre></div>
+<h2>Listing available mailboxes</h2>
+
+<p>To list all of your mailboxes:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:All, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/All Mail&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Drafts, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/Drafts&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Important], delim=&quot;/&quot;, name=&quot;[Gmail]/Important&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Sent], delim=&quot;/&quot;, name=&quot;[Gmail]/Sent Mail&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Junk], delim=&quot;/&quot;, name=&quot;[Gmail]/Spam&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Flagged, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/Starred&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Trash], delim=&quot;/&quot;, name=&quot;[Gmail]/Trash&quot;&gt;]</span>
+</code></pre></div>
+<p>To search your mailboxes by name, using <code>*</code> as a wildcard character:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*Mail&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:All, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/All Mail&quot;&gt;,</span>
+ <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Sent], delim=&quot;/&quot;, name=&quot;[Gmail]/Sent Mail&quot;&gt;]</span>
+</code></pre></div>
+<h2>Selecting a mailbox</h2>
+
+<p>Most IMAP interactions require having selected a mailbox before doing them.
+There are two ways to do so:</p>
+
+<p>Read-only:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">6</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">examine</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
+ <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+ <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0014 OK [READ-ONLY] [Gmail]/All Mail selected. (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+<p>Read and write:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">7</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
+ <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+ <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0015 OK [READ-WRITE] [Gmail]/All Mail selected. (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+</code></pre></div>
+<h2>Searching email messages</h2>
+
+<p>After selecting an email box, you can search email messages and find either
+the sequence number (<code>seqno</code>) or unique id (<code>uid</code>) for the email.</p>
+
+<p>The sequence number indicates the <em>current position</em> of the email message in the
+mailbox. So this number will be different after email messages before this email
+get moved to a different mailbox, or if they get deleted:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Search emails which have a subject that includes the word Jedi and return the sequence number.</span>
+<span class="o">[</span><span class="mi">8</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="mi">12</span><span class="o">]</span>
+
+<span class="c1"># From within Gmail, we delete one of our very first emails in the All Mail box and then make the same search we did before.</span>
+
+<span class="o">[</span><span class="mi">9</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="mi">11</span><span class="o">]</span>
+</code></pre></div>
+<p>The unique id is a unique identifier for the email in a mailbox. So even if the
+email&#39;s position moves, the <code>uid</code> remains the same:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Search emails which have a subject that includes the word Jedi and return the unique id.</span>
+<span class="o">[</span><span class="mi">10</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="mi">23</span><span class="o">]</span>
+
+<span class="c1"># From within Gmail, we delete one of our very first emails in the All Mail box and then make the same search we did before.</span>
+
+<span class="o">[</span><span class="mi">11</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="mi">23</span><span class="o">]</span>
+</code></pre></div>
+<h2>Fetching email messages</h2>
+
+<p>After we selected a mailbox and we know a message&#39;s <code>seqno</code> or <code>uid</code>, we can
+fetch the email headers, content, flags, <a href="https://tools.ietf.org/html/rfc3501#page-57">among others</a>.
+If you know the <code>seqno</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">12</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
+  <span class="n">seqno</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+  <span class="kp">attr</span><span class="o">=</span>
+   <span class="p">{</span><span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
+     <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
+      <span class="n">date</span><span class="o">=</span><span class="s2">&quot;Thu, 12 Feb 2015 14:55:38 -0300&quot;</span><span class="p">,</span>
+      <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;Wanna be a Jedi?&quot;</span><span class="p">,</span>
+      <span class="n">from</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">sender</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">reply_to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;C3P0 Tripio&quot;, route=nil, mailbox=&quot;c3p0&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">cc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">bcc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">in_reply_to</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">message_id</span><span class="o">=</span><span class="s2">&quot;&lt;CBM2vBoqhzb_t4P8BFdGLZFnOHsUJDo1P-TkGbU_EGqxGVfZCyQ@mail.gmail.com&gt;&quot;</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&gt;]</span>
+</code></pre></div>
+<p>If you know the <code>uid</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">13</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
+  <span class="n">seqno</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+  <span class="kp">attr</span><span class="o">=</span>
+   <span class="p">{</span><span class="s2">&quot;UID&quot;</span><span class="o">=&gt;</span><span class="mi">23</span><span class="p">,</span>
+    <span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
+     <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
+      <span class="n">date</span><span class="o">=</span><span class="s2">&quot;Thu, 12 Feb 2015 14:55:38 -0300&quot;</span><span class="p">,</span>
+      <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;Wanna be a Jedi?&quot;</span><span class="p">,</span>
+      <span class="n">from</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">sender</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">reply_to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Mauro Otonelli&quot;, route=nil, mailbox=&quot;mauro&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;C3P0 Tripio&quot;, route=nil, mailbox=&quot;c3p0&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">cc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">bcc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">in_reply_to</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">message_id</span><span class="o">=</span><span class="s2">&quot;&lt;CBM2vBoqhzb_t4P8BFdGLZFnOHsUJDo1P-TkGbU_EGqxGVfZCyQ@mail.gmail.com&gt;&quot;</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&gt;]</span>
+</code></pre></div>
+<p>If you wanted to fetch a range of <code>uid</code>s, you can use a range:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">14</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
+  <span class="n">seqno</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+  <span class="kp">attr</span><span class="o">=</span>
+   <span class="p">{</span><span class="s2">&quot;UID&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
+     <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
+      <span class="n">date</span><span class="o">=</span><span class="s2">&quot;Wed, 19 Nov 2014 12:01:13 -0800&quot;</span><span class="p">,</span>
+      <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;How to use Gmail with Google Apps&quot;</span><span class="p">,</span>
+      <span class="n">from</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">sender</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">reply_to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;C3P0 Tripio&quot;, route=nil, mailbox=&quot;c3p0&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">cc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">bcc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">in_reply_to</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">message_id</span><span class="o">=</span><span class="s2">&quot;&lt;CALqaawdvBhnXcFZ3ztSro8OcdLoRGt-Q0rSWTe7YXjR37dxrzQ@mail.gmail.com&gt;&quot;</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="c1">#&lt;struct Net::IMAP::FetchData</span>
+  <span class="n">seqno</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+  <span class="kp">attr</span><span class="o">=</span>
+   <span class="p">{</span><span class="s2">&quot;UID&quot;</span><span class="o">=&gt;</span><span class="mi">2</span><span class="p">,</span>
+    <span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
+     <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
+      <span class="n">date</span><span class="o">=</span><span class="s2">&quot;Wed, 19 Nov 2014 12:01:14 -0800&quot;</span><span class="p">,</span>
+      <span class="n">subject</span><span class="o">=</span><span class="s2">&quot;The best of Gmail, wherever you are&quot;</span><span class="p">,</span>
+      <span class="n">from</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">sender</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">reply_to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;Gmail Team&quot;, route=nil, mailbox=&quot;mail-noreply&quot;, host=&quot;google.com&quot;&gt;],</span>
+      <span class="n">to</span><span class="o">=[</span><span class="c1">#&lt;struct Net::IMAP::Address name=&quot;C3P0 Tripio&quot;, route=nil, mailbox=&quot;c3p0&quot;, host=&quot;ombulabs.com&quot;&gt;],</span>
+      <span class="n">cc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">bcc</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">in_reply_to</span><span class="o">=</span><span class="kp">nil</span><span class="p">,</span>
+      <span class="n">message_id</span><span class="o">=</span><span class="s2">&quot;&lt;CALqaaweWj3TZUS_0=Rg45G+XgHwORk2JG_BpB2DHB3UPMR8WDg@mail.gmail.com&gt;&quot;</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="c1">#&lt;struct Net::IMAP::FetchData</span>
+ <span class="n">seqno</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+ <span class="kp">attr</span><span class="o">=</span>
+  <span class="p">{</span><span class="s2">&quot;UID&quot;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span>
+   <span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
+    <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
+    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</code></pre></div>
+<h2>Logging out and disconnecting from the server</h2>
+
+<p>There is a usually a limit to the maximum amount of connections you can have
+open to an IMAP server. Gmail for example, limits this to 15.
+To correctly close an IMAP connection, you first need to log out, and then
+disconnect from the server. You can use the <code>disconnected?</code> method to check
+if you&#39;ve actually closed the connection:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">15</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">logout</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
+ <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;RUBY0002&quot;</span><span class="p">,</span>
+ <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+ <span class="n">data</span><span class="o">=</span><span class="c1">#&lt;struct Net::IMAP::ResponseText code=nil, text=&quot;73 good day (Success)&quot;&gt;,</span>
+ <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0002 OK 73 good day (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+<span class="n">imap</span><span class="o">.</span><span class="n">disconnected?</span>
+<span class="o">=&gt;</span> <span class="kp">false</span>
+<span class="n">imap</span><span class="o">.</span><span class="n">disconnect</span>
+<span class="o">=&gt;</span> <span class="kp">nil</span>
+<span class="n">imap</span><span class="o">.</span><span class="n">disconnected?</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+</code></pre></div>
+<p>I hope this guide was useful, I tried to cover the most important operations,
+but there&#39;s obviously more, such as deleting emails, marking emails as read,
+adding emails to a mailbox, etc. If you&#39;ve struggled with IMAP like I have, or
+if you found this useful, let me know in the comments section!</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
+                <span class="hidden">Mauro Otonelli's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Mauro Otonelli </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=A comprehensive guide to interacting with IMAP using Ruby&amp;url=http://www.ombulabs.com/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+        </footer>
+
+    </article>
+    <footer class="site-footer clearfix">
+  <section class="copyright">
+    <figure>
+      <img src="/blog/assets/images/creative-commons.png"
+           alt="Creative Commons Attribution-NonCommercial">
+      <figcaption>
+        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+           target="_blank"
+           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
+    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
+  </section>
+</footer>
+
+</main>
+
+      <div id="sidebar">
+  <h2 class="category-name">Listing all tags</h2>
+    
+
+    
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/"
+             title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/backbone"
+             title="Articles about Backbone">Backbone</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/benchmark"
+             title="Articles about Benchmark">Benchmark</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/best-practices"
+             title="Articles about Best Practices">Best Practices</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/bugs"
+             title="Articles about Bugs">Bugs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/design"
+             title="Articles about Design">Design</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/docker"
+             title="Articles about Docker">Docker</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/git"
+             title="Articles about Git">Git</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/github"
+             title="Articles about Github">Github</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/imap"
+             title="Articles about Imap">Imap</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/lean-startup"
+             title="Articles about Lean Startup">Lean Startup</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/open-source"
+             title="Articles about Open Source">Open Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/protractor"
+             title="Articles about Protractor">Protractor</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails"
+             title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rubygems"
+             title="Articles about Rubygems">Rubygems</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/security"
+             title="Articles about Security">Security</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software Development">Software Development</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-quality"
+             title="Articles about Software Quality">Software Quality</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
+        </h3>
+    
+</div>
+
+    </div>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
