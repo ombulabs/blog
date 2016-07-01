@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>Tips for Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique</title>
+
+
+    
+    
+    <meta name="description" content="There are already quite a few guides in the wild to help with the upgrade ofRails 3.2 to Rails 4.0.The official Rails guidefor upgrading from Rails..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Tips for Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique">
+    <meta itemprop="description" content="There are already quite a few guides in the wild to help with the upgrade of Rails 3.2 to Rails 4.0. The official Rails guide for upgrading from Ra...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="Tips for Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique">
+    <meta name="twitter:description" content="There are already quite a few guides in the wild to help with the upgrade of Rails 3.2 to Rails 4.0. The official Rails guide for upgrading from Ra...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Tips for Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/rails/tips-for-upgrading-rails-3-2-to-4.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="There are already quite a few guides in the wild to help with the upgrade of Rails 3.2 to Rails 4.0. The official Rails guide for upgrading from Rails 3.2 to 4.0 is very thorough. With the recent release of Rails 5.0, apps currently in production running Rails 3.2 should..." />
+    <meta property="og:site_name" content="Tips for upgrading from Rails 3.2 to 4.0 by @mauro_oto" />
+    
+      <meta property="article:published_time" content="2016-07-01 15:37:00 -0300" />
+      <meta property="article:modified_time" content="2016-07-01 15:37:00 -0300" />
+      <meta property="article:section" content="There are already quite a few guides in the wild to help with the upgrade of Rails 3.2 to Rails 4.0. The official Rails guide for upgrading from Rails 3.2 to 4.0 is very thorough. With the recent release of Rails 5.0, apps currently in production running Rails 3.2 should..." />
+      <meta property="article:tag" content="Tips for Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique" />
+    
+
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombulabs_blog.css" />
+</head>
+<body class="home-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+    <div id="wrapper">
+      <main class="content post-layout" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Tips for upgrading from Rails 3.2 to 4.0</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>
+
+
+
+<time class="post-date" datetime="2016-07-01">
+  01 Jul 2016
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>There are already quite a few guides in the wild to help with the upgrade of
+Rails 3.2 to Rails 4.0.
+The <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-3-2-to-rails-4-0">official Rails guide</a>
+for upgrading from Rails 3.2 to 4.0 is very thorough.
+With the recent release of Rails 5.0, apps currently in production running
+Rails 3.2 should probably be updated to any stable Rails 4 release as soon as
+possible.</p>
+
+<p>There is even an e-book about
+<a href="https://github.com/alindeman/upgradingtorails4">upgrading from Rails 3 to 4</a>,
+which serves as a useful guide to make this upgrade easier, and also helps
+understand the advantages &amp; disadvantages of this new (soon to be old) version.</p>
+
+<p>However, if you&#39;re using any non-standard gems, you&#39;re mostly on your own. Some
+gems stopped being maintained before Rails 4 was released, as was the case
+with <a href="https://github.com/ryanb/cancan">CanCan</a>, a well known authorization
+library. After many open pull requests were left <a href="https://github.com/ryanb/cancan/pulls">unmerged</a>,
+<a href="https://github.com/CanCanCommunity/cancancan">CanCanCan</a> was released.
+It is a community driven effort to have a semi-official fork of CanCan.
+It serves as a drop-in replacement for people who want to use CanCan after
+upgrading to Rails 4.</p>
+
+<!--more-->
+
+<p>Along with the e-book I mentioned, the author released
+<a href="https://github.com/alindeman/rails4_upgrade">a gem</a> which you can add to your
+Rails 3 project. It includes a Rake task that will help you with the upgrade:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle exec rake rails4:check
+
+** GEM COMPATIBILITY CHECK **
++------------------------------------------+----------------------------+
+| Dependency Path                          | Rails Requirement          |
++------------------------------------------+----------------------------+
+| devise 2.1.4                             | railties ~&gt; 3.1            |
+| devise-encryptable 0.2.0 -&gt; devise 2.1.4 | railties ~&gt; 3.1            |
+| friendly_id 4.0.10.1                     | activerecord &lt; 4.0, &gt;= 3.0 |
+| strong_parameters 0.2.3                  | actionpack ~&gt; 3.0          |
+| strong_parameters 0.2.3                  | activemodel ~&gt; 3.0         |
+| strong_parameters 0.2.3                  | activesupport ~&gt; 3.0       |
+| strong_parameters 0.2.3                  | railties ~&gt; 3.0            |
++------------------------------------------+----------------------------+
+</code></pre></div>
+<p>Now instead of going through your currently bundled gems or Gemfile.lock
+manually, you get a report of what gems you need to upgrade.</p>
+
+<p>For an overview of your outdated gems, there&#39;s also <code>bundle outdated</code>, which you
+can run on any project:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle outdated
+Fetching gem metadata from http://rubygems.org/........
+Fetching version metadata from http://rubygems.org/...
+Fetching dependency metadata from http://rubygems.org/..
+Resolving dependencies..........................................
+
+Outdated gems included in the bundle:
+  * aasm (newest 4.11.0, installed 3.0.26, requested ~&gt; 3.0.22)
+  * activemerchant (newest 1.59.0, installed 1.47.0, requested ~&gt; 1.47.0)
+  * acts_as_list (newest 0.7.4, installed 0.7.2, requested ~&gt; 0.7.2)
+  * airbrake (newest 5.4.1, installed 4.1.0, requested ~&gt; 4.1.0)
+  * awesome_nested_set (newest 3.1.1, installed 2.1.6, requested ~&gt; 2.1.6)
+  * aws-sdk (newest 2.3.17, installed 1.64.0, requested ~&gt; 1.64.0)
+  * byebug (newest 9.0.5, installed 5.0.0, requested ~&gt; 5.0.0)
+  * cancancan (newest 1.15.0, installed 1.13.1, requested ~&gt; 1.10)
+  * capistrano (newest 3.5.0, installed 3.4.0, requested ~&gt; 3.0)
+  * capistrano-rails (newest 1.1.7, installed 1.1.5, requested ~&gt; 1.1)
+  * capybara (newest 2.8.0.dev 59d21b5, installed 2.6.0.dev 3723805)
+  * capybara-webkit (newest 1.11.1, installed 1.7.1)
+  * codeclimate-test-reporter (newest 0.6.0, installed 0.4.8)
+  * compass (newest 1.0.3, installed 0.12.7)
+  * compass-rails (newest 3.0.2, installed 2.0.0)
+  * cucumber (newest 2.4.0, installed 1.3.20, requested ~&gt; 1.3.10)
+  * cucumber-rails (newest 1.4.3, installed 1.4.2, requested ~&gt; 1.4.0)
+  * database_cleaner (newest 1.5.3, installed 1.5.1, requested ~&gt; 1.5.1)
+  * devise (newest 4.1.1, installed 2.1.4, requested ~&gt; 2.1.0)
+  * ...
+</code></pre></div>
+<p>Last but not least, there&#39;s the <code>rails:update</code>
+<a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>,
+which you can use as a guideline as explained very clearly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>
+to get rid of unnecessary code or monkey-patches, especially if your Rails 3
+app was previously running on Rails 2.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
+                <span class="hidden">Mauro Otonelli's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Mauro Otonelli </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Tips for upgrading from Rails 3.2 to 4.0&amp;url=http://www.ombulabs.com/rails/tips-for-upgrading-rails-3-2-to-4.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/rails/tips-for-upgrading-rails-3-2-to-4.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/rails/tips-for-upgrading-rails-3-2-to-4.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+        </footer>
+
+    </article>
+    <footer class="site-footer clearfix">
+  <section class="copyright">
+    <figure>
+      <img src="/blog/assets/images/creative-commons.png"
+           alt="Creative Commons Attribution-NonCommercial">
+      <figcaption>
+        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+           target="_blank"
+           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
+    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
+  </section>
+</footer>
+
+</main>
+
+      <div id="sidebar">
+  <h2 class="category-name">Listing all tags</h2>
+    
+
+    
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/"
+             title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/backbone"
+             title="Articles about Backbone">Backbone</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/benchmark"
+             title="Articles about Benchmark">Benchmark</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/best-practices"
+             title="Articles about Best Practices">Best Practices</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/bugs"
+             title="Articles about Bugs">Bugs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/design"
+             title="Articles about Design">Design</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/docker"
+             title="Articles about Docker">Docker</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/git"
+             title="Articles about Git">Git</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/github"
+             title="Articles about Github">Github</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/imap"
+             title="Articles about Imap">Imap</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/lean-startup"
+             title="Articles about Lean Startup">Lean Startup</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/open-source"
+             title="Articles about Open Source">Open Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/protractor"
+             title="Articles about Protractor">Protractor</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails"
+             title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rubygems"
+             title="Articles about Rubygems">Rubygems</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/security"
+             title="Articles about Security">Security</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software Development">Software Development</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-quality"
+             title="Articles about Software Quality">Software Quality</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
+        </h3>
+    
+</div>
+
+    </div>
+
+    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
