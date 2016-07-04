@@ -15,6 +15,8 @@ After you clone a project, you should follow two steps:
 1. Setup
 2. Start
 
+<!--more-->
+
 In this example, the project is a web application, but it works for other
 projects too.
 
