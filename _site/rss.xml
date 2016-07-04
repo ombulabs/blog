@@ -8,13 +8,13 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 29 Jun 2016 06:31:00 -0300</pubDate>
+    <pubDate>Mon, 04 Jul 2016 09:31:00 -0300</pubDate>
     <item>
       <title>The Need for bin/start</title>
       <link>http://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</link>
       <description><![CDATA[Getting started with a new project should be as simple as possible, even for
-someone who is not super technical. As a maintainer, you must make sure that
-anyone can clone your project and start it in a few minutes.
+someone who is not technical. As a maintainer, you must make sure that
+anyone can clone your project and get it up and running in a few minutes.
 
 After you clone a project, you should follow two steps:
 
@@ -32,15 +32,13 @@ You should have a small bash script called bin/setup in every project. You
 could use Ruby for the script if that&#39;s
 what you prefer.
 
-Rails has had a bin/setup since 2014 and so should
-your project!
-./bin/setup
+Rails has had a bin/setup since 2014 and so should your project! This is the default ./bin/setup in a Rails application.
 
 Thoughtbot wrote a great article about
 their bin/setup convention:
 ./bin/setup
 
-At Ombu Labs, one our latest bin/setup scripts
+At Ombu Labs, one of our latest bin/setup scripts
 looks like this:
 
 
@@ -51,8 +49,8 @@ has some default values for your .env file. Every project you start must
 have a .env file with environment configuration. Why?
 Read here
 
-We use Ruby for our setup script because all of our development environments
-have been setup with this script:
+We use Ruby for our setup script because all of
+our development environments have been setup with this script:
 Ombu Labs Setup
 
 Start
@@ -81,8 +79,8 @@ One of our latest bin/start scripts looks like this:
 
 
 
-From now on, all the web applications that we build at Ombu Labs will be able
-to get started like this:
+From now on, all the web applications that we build at Ombu Labs
+will be able to get started like this:
 ./bin/start
 
 It won&#39;t matter if we use Foreman, Sinatra,
@@ -105,11 +103,11 @@ I&#39;m a big fan of Convention over Configuration. Also, I hate
 it when it takes me half a day to setup a new application in my environment. It
 should never take more than a few minutes.
 ]]></description>
-      <pubDate>Wed, 29 Jun 2016 06:31:00 -0300</pubDate>
+      <pubDate>Mon, 04 Jul 2016 09:31:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</guid>
-      <content:encoded><![CDATA[Getting started with a new project should be as simple as possible, even for
-someone who is not super technical. As a maintainer, you **must** make sure that
-anyone can clone your project and start it in a few minutes.
+      <content:encoded><![CDATA[Getting started with a new project should be **as simple as possible**, even for
+someone who is not technical. As a maintainer, you **must** make sure that
+anyone can clone your project and get it up and running in a few minutes.
 
 After you clone a project, you should follow two steps:
 
@@ -125,15 +123,13 @@ You should have a small bash script called `bin/setup` in every project. You
 could use [Ruby](https://www.ruby-lang.org/en/) for the script if that's
 what you prefer.
 
-[Rails](http://rubyonrails.org/) has had a `bin/setup` since 2014 and so should
-your project!
-[./bin/setup](https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup)
+[Rails](http://rubyonrails.org/) has had a `bin/setup` [since 2014](https://github.com/rails/rails/pull/15189) and so should your project! This is the default [./bin/setup](https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup) in a Rails application.
 
 [Thoughtbot](https://robots.thoughtbot.com/) wrote a great article about
 their `bin/setup` convention:
 [./bin/setup](https://robots.thoughtbot.com/bin-setup)
 
-At [Ombu Labs](http://www.ombulabs.com/), one our latest `bin/setup` scripts
+At [Ombu Labs](http://www.ombulabs.com/), one of our latest `bin/setup` scripts
 looks like this:
 
 <script src="https://gist.github.com/etagwerker/956448c7a4b058b45e23f562deca8d79.js">
@@ -144,8 +140,8 @@ has some default values for your `.env` file. Every project you start **must**
 have a `.env` file with environment configuration. Why?
 [Read here](http://12factor.net/config)
 
-We use Ruby for our setup script because all of our development environments
-have been setup with this script:
+We use [Ruby](https://www.ruby-lang.org/en/) for our setup script because all of
+our development environments have been setup with this script:
 [Ombu Labs Setup](https://github.com/ombulabs/setup)
 
 ## Start
@@ -171,15 +167,15 @@ What if you want to use [Foreman](https://github.com/ddollar/foreman)?
      foreman start
 
 You get the point. There are way too many ways to start a web application. We
-need to standardize this into something flexible like `./bin/start`.
+need to **standardize** this into something flexible like `./bin/start`.
 
 One of our latest `bin/start` scripts looks like this:
 
 <script src="https://gist.github.com/etagwerker/e38b8021c0028f20d1f19932716d2c67.js">
 </script>
 
-From now on, all the web applications that we build at Ombu Labs will be able
-to get started like this:
+From now on, all the web applications that we build at [Ombu Labs](http://www.ombulabs.com)
+will be able to get started like this:
 
     ./bin/start
 
@@ -204,7 +200,126 @@ I'm a big fan of [Convention over Configuration](http://c2.com/cgi/wiki?Conventi
 it when it takes me half a day to setup a new application in my environment. It
 should **never** take more than a few minutes.
 ]]></content:encoded>
-      <dc:date>2016-06-29T06:31:00-03:00</dc:date>
+      <dc:date>2016-07-04T09:31:00-03:00</dc:date>
+    </item>
+    <item>
+      <title>Tips for upgrading from Rails 3.2 to 4.0</title>
+      <link>http://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html</link>
+      <description><![CDATA[There are already quite a few guides in the wild to help with the upgrade of
+Rails 3.2 to Rails 4.0.
+The official Rails guide
+for upgrading from Rails 3.2 to 4.0 is very thorough.
+With the recent release of Rails 5.0, apps currently in production running
+Rails 3.2 should probably be updated to any stable Rails 4 release as soon as
+possible.
+
+There is even an e-book about
+upgrading from Rails 3 to 4,
+which serves as a useful guide to make this upgrade easier, and also helps
+understand the advantages &amp; disadvantages of this new (soon to be old) version.
+
+However, if you&#39;re using any non-standard gems, you&#39;re mostly on your own. Some
+gems stopped being maintained before Rails 4 was released, as was the case
+with CanCan, a well known authorization
+library. After many open pull requests were left unmerged,
+CanCanCan was released.
+It is a community driven effort to have a semi-official fork of CanCan.
+It serves as a drop-in replacement for people who want to use CanCan after
+upgrading to Rails 4.
+]]></description>
+      <pubDate>Fri, 01 Jul 2016 15:37:00 -0300</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html</guid>
+      <content:encoded><![CDATA[There are already quite a few guides in the wild to help with the upgrade of
+Rails 3.2 to Rails 4.0.
+The [official Rails guide](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-3-2-to-rails-4-0)
+for upgrading from Rails 3.2 to 4.0 is very thorough.
+With the recent release of Rails 5.0, apps currently in production running
+Rails 3.2 should probably be updated to any stable Rails 4 release as soon as
+possible.
+
+
+There is even an e-book about
+[upgrading from Rails 3 to 4](https://github.com/alindeman/upgradingtorails4),
+which serves as a useful guide to make this upgrade easier, and also helps
+understand the advantages & disadvantages of this new (soon to be old) version.
+
+
+However, if you're using any non-standard gems, you're mostly on your own. Some
+gems stopped being maintained before Rails 4 was released, as was the case
+with [CanCan](https://github.com/ryanb/cancan), a well known authorization
+library. After many open pull requests were left [unmerged](https://github.com/ryanb/cancan/pulls),
+[CanCanCan](https://github.com/CanCanCommunity/cancancan) was released.
+It is a community driven effort to have a semi-official fork of CanCan.
+It serves as a drop-in replacement for people who want to use CanCan after
+upgrading to Rails 4.
+
+<!--more-->
+
+Along with the e-book I mentioned, the author released
+[a gem](https://github.com/alindeman/rails4_upgrade) which you can add to your
+Rails 3 project. It includes a Rake task that will help you with the upgrade:
+
+```
+➜  myproject git:(develop) ✗ bundle exec rake rails4:check
+
+** GEM COMPATIBILITY CHECK **
++------------------------------------------+----------------------------+
+| Dependency Path                          | Rails Requirement          |
++------------------------------------------+----------------------------+
+| devise 2.1.4                             | railties ~> 3.1            |
+| devise-encryptable 0.2.0 -> devise 2.1.4 | railties ~> 3.1            |
+| friendly_id 4.0.10.1                     | activerecord < 4.0, >= 3.0 |
+| strong_parameters 0.2.3                  | actionpack ~> 3.0          |
+| strong_parameters 0.2.3                  | activemodel ~> 3.0         |
+| strong_parameters 0.2.3                  | activesupport ~> 3.0       |
+| strong_parameters 0.2.3                  | railties ~> 3.0            |
++------------------------------------------+----------------------------+
+```
+
+Now instead of going through your currently bundled gems or Gemfile.lock
+manually, you get a report of what gems you need to upgrade.
+
+For an overview of your outdated gems, there's also `bundle outdated`, which you
+can run on any project:
+
+```
+➜  myproject git:(develop) ✗ bundle outdated
+Fetching gem metadata from http://rubygems.org/........
+Fetching version metadata from http://rubygems.org/...
+Fetching dependency metadata from http://rubygems.org/..
+Resolving dependencies..........................................
+
+Outdated gems included in the bundle:
+  * aasm (newest 4.11.0, installed 3.0.26, requested ~> 3.0.22)
+  * activemerchant (newest 1.59.0, installed 1.47.0, requested ~> 1.47.0)
+  * acts_as_list (newest 0.7.4, installed 0.7.2, requested ~> 0.7.2)
+  * airbrake (newest 5.4.1, installed 4.1.0, requested ~> 4.1.0)
+  * awesome_nested_set (newest 3.1.1, installed 2.1.6, requested ~> 2.1.6)
+  * aws-sdk (newest 2.3.17, installed 1.64.0, requested ~> 1.64.0)
+  * byebug (newest 9.0.5, installed 5.0.0, requested ~> 5.0.0)
+  * cancancan (newest 1.15.0, installed 1.13.1, requested ~> 1.10)
+  * capistrano (newest 3.5.0, installed 3.4.0, requested ~> 3.0)
+  * capistrano-rails (newest 1.1.7, installed 1.1.5, requested ~> 1.1)
+  * capybara (newest 2.8.0.dev 59d21b5, installed 2.6.0.dev 3723805)
+  * capybara-webkit (newest 1.11.1, installed 1.7.1)
+  * codeclimate-test-reporter (newest 0.6.0, installed 0.4.8)
+  * compass (newest 1.0.3, installed 0.12.7)
+  * compass-rails (newest 3.0.2, installed 2.0.0)
+  * cucumber (newest 2.4.0, installed 1.3.20, requested ~> 1.3.10)
+  * cucumber-rails (newest 1.4.3, installed 1.4.2, requested ~> 1.4.0)
+  * database_cleaner (newest 1.5.3, installed 1.5.1, requested ~> 1.5.1)
+  * devise (newest 4.1.1, installed 2.1.4, requested ~> 2.1.0)
+  * ...
+```
+
+Last but not least, there's the `rails:update`
+[task](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task),
+which you can use as a guideline as explained very clearly in
+[this post](http://thomasleecopeland.com/2015/08/06/running-rails-update.html)
+to get rid of unnecessary code or monkey-patches, especially if your Rails 3
+app was previously running on Rails 2.
+]]></content:encoded>
+      <dc:date>2016-07-01T15:37:00-03:00</dc:date>
     </item>
     <item>
       <title>Introducing Pecas: Dashboards for Freckle</title>
@@ -3193,6 +3308,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T15:35:00-03:00</dc:date>
     </item>
-    <dc:date>2016-06-29T06:31:00-03:00</dc:date>
+    <dc:date>2016-07-04T09:31:00-03:00</dc:date>
   </channel>
 </rss>

@@ -112,15 +112,15 @@
 
 
 
-<time class="post-date" datetime="2016-06-29">
-  29 Jun 2016
+<time class="post-date" datetime="2016-07-04">
+  04 Jul 2016
 </time>
 
     </footer>
     <section class="post-excerpt">
-        <p>Getting started with a new project should be as simple as possible, even for
-someone who is not super technical. As a maintainer, you <strong>must</strong> make sure that
-anyone can clone your project and start it in a few minutes.</p>
+        <p>Getting started with a new project should be <strong>as simple as possible</strong>, even for
+someone who is not technical. As a maintainer, you <strong>must</strong> make sure that
+anyone can clone your project and get it up and running in a few minutes.</p>
 
 <p>After you clone a project, you should follow two steps:</p>
 
@@ -138,15 +138,13 @@ projects too.</p>
 could use <a href="https://www.ruby-lang.org/en/">Ruby</a> for the script if that&#39;s
 what you prefer.</p>
 
-<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> since 2014 and so should
-your project!
-<a href="https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a></p>
+<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
 
 <p><a href="https://robots.thoughtbot.com/">Thoughtbot</a> wrote a great article about
 their <code>bin/setup</code> convention:
 <a href="https://robots.thoughtbot.com/bin-setup">./bin/setup</a></p>
 
-<p>At <a href="http://www.ombulabs.com/">Ombu Labs</a>, one our latest <code>bin/setup</code> scripts
+<p>At <a href="http://www.ombulabs.com/">Ombu Labs</a>, one of our latest <code>bin/setup</code> scripts
 looks like this:</p>
 
 <script src="https://gist.github.com/etagwerker/956448c7a4b058b45e23f562deca8d79.js">
@@ -157,8 +155,8 @@ has some default values for your <code>.env</code> file. Every project you start
 have a <code>.env</code> file with environment configuration. Why?
 <a href="http://12factor.net/config">Read here</a></p>
 
-<p>We use Ruby for our setup script because all of our development environments
-have been setup with this script:
+<p>We use <a href="https://www.ruby-lang.org/en/">Ruby</a> for our setup script because all of
+our development environments have been setup with this script:
 <a href="https://github.com/ombulabs/setup">Ombu Labs Setup</a></p>
 
 <h2>Start</h2>
@@ -188,15 +186,15 @@ need to run it like this:</p>
 </code></pre></div>
 
 <p>You get the point. There are way too many ways to start a web application. We
-need to standardize this into something flexible like <code>./bin/start</code>.</p>
+need to <strong>standardize</strong> this into something flexible like <code>./bin/start</code>.</p>
 
 <p>One of our latest <code>bin/start</code> scripts looks like this:</p>
 
 <script src="https://gist.github.com/etagwerker/e38b8021c0028f20d1f19932716d2c67.js">
 </script>
 
-<p>From now on, all the web applications that we build at Ombu Labs will be able
-to get started like this:</p>
+<p>From now on, all the web applications that we build at <a href="http://www.ombulabs.com">Ombu Labs</a>
+will be able to get started like this:</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text">./bin/start
 </code></pre></div>
@@ -225,6 +223,8 @@ should <strong>never</strong> take more than a few minutes.</p>
  <a class="read-more" href="/blog/maintenance/conventions/standard-getting-started.html">Read more &raquo;</a>
     </section>
 </article>
+
+  
 
   
 
