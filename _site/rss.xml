@@ -22,86 +22,6 @@ After you clone a project, you should follow two steps:
 Setup
 Start
 
-
-In this example, the project is a web application, but it works for other
-projects too.
-
-Setup
-
-You should have a small bash script called bin/setup in every project. You
-could use Ruby for the script if that&#39;s
-what you prefer.
-
-Rails has had a bin/setup since 2014 and so should your project! This is the default ./bin/setup in a Rails application.
-
-Thoughtbot wrote a great article about
-their bin/setup convention:
-./bin/setup
-
-At Ombu Labs, one of our latest bin/setup scripts
-looks like this:
-
-
-
-
-In order for our script to work, you must have a .env.sample file that
-has some default values for your .env file. Every project you start must
-have a .env file with environment configuration. Why?
-Read here
-
-We use Ruby for our setup script because all of
-our development environments have been setup with this script:
-Ombu Labs Setup
-
-Start
-
-If you are using Rails, starting an application is simple:
-./bin/rails server
-
-But, what if you want to use something else? Let&#39;s say you want to use
-Sinatra with
-Shotgun. Then you would need to start
-the server like this:
-shotgun config.ru
-
-If you are using Bundler, then you would
-need to run it like this:
-bundle exec shotgun config.ru
-
-What if you want to use Foreman?
- foreman start
-
-You get the point. There are way too many ways to start a web application. We
-need to standardize this into something flexible like ./bin/start.
-
-One of our latest bin/start scripts looks like this:
-
-
-
-
-From now on, all the web applications that we build at Ombu Labs
-will be able to get started like this:
-./bin/start
-
-It won&#39;t matter if we use Foreman, Sinatra,
-Cuba, Rails, Shotgun, or whatever.
-bin/start will know how to get the application started in a development
-environment.
-
-Why
-
-I love how simple it can be to tell anyone to clone the project and run these
-steps:
-cd path/to/project
-./bin/setup
-./bin/start
-
-A web designer that has no experience with Ruby/Rails can setup and start a
-web application in a few minutes.
-
-I&#39;m a big fan of Convention over Configuration. Also, I hate
-it when it takes me half a day to setup a new application in my environment. It
-should never take more than a few minutes.
 ]]></description>
       <pubDate>Mon, 04 Jul 2016 09:31:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</guid>
@@ -113,6 +33,8 @@ After you clone a project, you should follow two steps:
 
 1. Setup
 2. Start
+
+<!--more-->
 
 In this example, the project is a web application, but it works for other
 projects too.
