@@ -11,6 +11,7 @@ gem 'jekyll-categories'
 gem 'jekyll-authors'
 gem 'jekyll-titleize'
 gem 'jekyll-paginate'
+gem 'sitemap_generator'
 
 gem 'pygments.rb'
 gem 'redcarpet'
