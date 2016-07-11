@@ -2,3 +2,4 @@
 .ruby-version
 .sass-cache
 .env
+.bundle

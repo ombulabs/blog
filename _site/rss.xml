@@ -3128,7 +3128,7 @@ Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
 Enumerable#grep.
 ]]></description>
-      <pubDate>Thu, 09 Apr 2015 08:37:00 -0300</pubDate>
+      <pubDate>Thu, 09 Apr 2015 08:36:00 -0300</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</guid>
       <content:encoded><![CDATA[Often, `Enumerable#select` is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
@@ -3187,7 +3187,7 @@ as `#map` does and reads very nicely. For example:
  => ["hello"]
 ```
 ]]></content:encoded>
-      <dc:date>2015-04-09T08:37:00-03:00</dc:date>
+      <dc:date>2015-04-09T08:36:00-03:00</dc:date>
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular</title>
