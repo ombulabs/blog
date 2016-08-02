@@ -83,6 +83,65 @@
 <main id="content" class="content category">
 
   
+    <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
+          <a href="/blog/rspec/ruby/should-i-use-a-spy-a-double-or-an-instance-double.html">Should I use a spy, a double, or an instance_double?</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="http://2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rspec"
+         title="Articles about Rspec">Rspec</a>,
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>
+
+
+
+<time class="post-date" datetime="2016-08-02">
+  02 Aug 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>When writing tests for services, you may sometimes want to use mock objects
+instead of actual objects, which if you&#39;re using ActiveRecord,
+may result in hitting the database and slowing the suite down. The
+latest release of the <a href="https://github.com/rspec/rspec-mocks">rspec-mocks</a>
+library bundled with RSpec 3 includes at least three different ways to implement
+a mock object.</p>
+
+<p>We&#39;ll look at some of the differences in each by looking at some examples. First
+off, the <code>spy</code>:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s1">&#39;rspec/mocks/standalone&#39;</span>
+<span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_spy</span> <span class="o">=</span> <span class="n">spy</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Double User&gt;</span>
+<span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">spy</span><span class="o">.</span><span class="n">whatever_method</span>
+<span class="o">=&gt;</span> <span class="c1">#&lt;Double (anonymous)&gt;</span>
+</code></pre></div>
+ <a class="read-more" href="/blog/rspec/ruby/should-i-use-a-spy-a-double-or-an-instance-double.html">Read more &raquo;</a>
+    </section>
+</article>
+
+  
+
+  
 
   
     <article class="post">
