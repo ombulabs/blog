@@ -119,14 +119,14 @@
     </footer>
     <section class="post-excerpt">
         <p>When writing tests for services, you may sometimes want to use mock objects
-instead of actual objects, which if you&#39;re using ActiveRecord,
-may result in hitting the database and slowing the suite down. The
+instead of real objects. In case you&#39;re using ActiveRecord and real
+objects, your tests may hit the database and slow down your suite. The
 latest release of the <a href="https://github.com/rspec/rspec-mocks">rspec-mocks</a>
-library bundled with RSpec 3 includes at least three different ways to implement
-a mock object.</p>
+library bundled with <a href="http://rspec.info">RSpec 3</a> includes at least three
+different ways to implement a mock object.</p>
 
-<p>We&#39;ll look at some of the differences in each by looking at some examples. First
-off, the <code>spy</code>:</p>
+<p>Let&#39;s discuss some of the differences between a <code>spy</code>, a <code>double</code> and an
+<code>instance_double</code>. First, the <code>spy</code>:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s1">&#39;rspec/mocks/standalone&#39;</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>

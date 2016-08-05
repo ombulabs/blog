@@ -7,14 +7,14 @@ author: "mauro-oto"
 ---
 
 When writing tests for services, you may sometimes want to use mock objects
-instead of actual objects, which if you're using ActiveRecord,
-may result in hitting the database and slowing the suite down. The
+instead of real objects. In case you're using ActiveRecord and real
+objects, your tests may hit the database and slow down your suite. The
 latest release of the [rspec-mocks](https://github.com/rspec/rspec-mocks)
-library bundled with RSpec 3 includes at least three different ways to implement
-a mock object.
+library bundled with [RSpec 3](http://rspec.info) includes at least three
+different ways to implement a mock object.
 
-We'll look at some of the differences in each by looking at some examples. First
-off, the `spy`:
+Let's discuss some of the differences between a `spy`, a `double` and an
+`instance_double`. First, the `spy`:
 
 ```ruby
 [1] pry(main)> require 'rspec/mocks/standalone'
@@ -27,9 +27,9 @@ off, the `spy`:
 
 <!--more-->
 
-The `spy` accepts any method calls and always returns itself unless specified.
-If you need the mock object to raise if it receives an unexpected method call,
-you can use a `double` instead:
+The `spy` [accepts any method calls](https://relishapp.com/rspec/rspec-mocks/docs/basics/spies)
+and always returns itself unless specified. If you need the mock object to raise
+if it receives an unexpected method call, you can use a `double` instead:
 
 ```ruby
 [4] pry(main)> user_double = double(User)
@@ -54,12 +54,12 @@ from /Users/mauro-oto/.rvm/gems/ruby-2.2.1@carbide/gems/rspec-support-3.5.0/lib/
 ```
 
 This way, `whatever_method` can be called and `nil` will be returned, which is
-the return value we specified, and any other method calls will fail if we
-haven't specified them, like `some_method`.
+the return value we specified. Any other method calls will fail if we
+haven't specified them (e.g. `some_method`).
 
 If we want to have even more control over what happens with our mock object, and
 disallow arbitrary method creation like `whatever_method` or `some_method`, we
-can use a verifying double, which exist since RSpec 3 as `instance_double`:
+can use a verifying double, which exists since RSpec 3 as `instance_double`:
 
 ```ruby
 [9] pry(main)> user_verifiable = instance_double(User, whatever_method: nil)
@@ -72,9 +72,9 @@ mocked instance, it will raise an exception. If we decide to use mock objects in
 our tests, instance_doubles provides us with a bit more confidence in our tests
 than if we were using spies or regular doubles.
 
-instance_doubles have a slightly worse performance than doubles or spies, as is
-expected, but if you don't need to write to the database, it's not a very
-significant difference when compared to using the actual object:
+The performance of `instance_double` is slightly worse than `double` or `spy`
+because verifying doubles are more complex. The difference between using a
+verifying double and a real object is quite significant:
 
 ```
 Benchmark.ips do |bm|
@@ -106,3 +106,9 @@ Comparison:
        actual object:     1226.1 i/s - 23.79x slower
      via factorygirl:     1036.7 i/s - 28.14x slower
 ```
+
+If you are testing a service and don't care about testing ActiveRecord callbacks
+or database interactions, you will likely be better off using a double. If
+you are already using spies or doubles, you may want to use a verifying double
+instead. I think the slight performance hit of verifying the object's
+implementation is worth it.
