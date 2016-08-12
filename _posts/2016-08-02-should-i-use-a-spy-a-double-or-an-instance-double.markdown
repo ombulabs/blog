@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Should I use a spy, a double, or an instance_double?"
-date: 2016-08-02 15:03:00
+title: "Spy vs Double vs Instance Double"
+date: 2016-08-12 18:04:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
 ---
