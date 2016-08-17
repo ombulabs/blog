@@ -8,7 +8,137 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 04 Jul 2016 09:31:00 -0300</pubDate>
+    <pubDate>Wed, 17 Aug 2016 02:04:00 -0400</pubDate>
+    <item>
+      <title>Spy vs Double vs Instance Double</title>
+      <link>http://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</link>
+      <description><![CDATA[When writing tests for services, you may sometimes want to use mock objects
+instead of real objects. In case you&#39;re using ActiveRecord and real
+objects, your tests may hit the database and slow down your suite. The
+latest release of the rspec-mocks
+library bundled with RSpec 3 includes at least three
+different ways to implement a mock object.
+
+Let&#39;s discuss some of the differences between a spy, a double and an
+instance_double. First, the spy:
+[1] pry(main)&gt; require &#39;rspec/mocks/standalone&#39;
+=&gt; true
+[2] pry(main)&gt; user_spy = spy(User)
+=&gt; #&lt;Double User&gt;
+[3] pry(main)&gt; spy.whatever_method
+=&gt; #&lt;Double (anonymous)&gt;
+]]></description>
+      <pubDate>Wed, 17 Aug 2016 02:04:00 -0400</pubDate>
+      <guid>http://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</guid>
+      <content:encoded><![CDATA[When writing tests for services, you may sometimes want to use mock objects
+instead of real objects. In case you're using ActiveRecord and real
+objects, your tests may hit the database and slow down your suite. The
+latest release of the [rspec-mocks](https://github.com/rspec/rspec-mocks)
+library bundled with [RSpec 3](http://rspec.info) includes at least three
+different ways to implement a mock object.
+
+Let's discuss some of the differences between a `spy`, a `double` and an
+`instance_double`. First, the `spy`:
+
+```ruby
+[1] pry(main)> require 'rspec/mocks/standalone'
+=> true
+[2] pry(main)> user_spy = spy(User)
+=> #<Double User>
+[3] pry(main)> spy.whatever_method
+=> #<Double (anonymous)>
+```
+
+<!--more-->
+
+The `spy` [accepts any method calls](https://relishapp.com/rspec/rspec-mocks/docs/basics/spies)
+and always returns itself unless specified. If you need the mock object to raise
+if it receives an unexpected method call, you can use a `double` instead:
+
+```ruby
+[4] pry(main)> user_double = double(User)
+=> #<Double User>
+[5] pry(main)> user_double.whatever_method
+RSpec::Mocks::MockExpectationError: #<Double User> received unexpected message :whatever_method with (no args)
+from /Users/mauro-oto/.rvm/gems/ruby-2.2.1@carbide/gems/rspec-support-3.5.0/lib/rspec/support.rb:87:in block in <module:Support>
+```
+
+If you haven't specified that the double can receive a given method, in the case
+above `whatever_method`, it'll raise an exception. You can explicitly tell the
+double that it can receive such a method and its return value like this:
+
+```ruby
+[6] pry(main)> user_double = double(User, whatever_method: nil)
+=> #<Double User>
+[7] pry(main)> user_double.whatever_method
+=> nil
+[8] pry(main)> user_double.some_method
+RSpec::Mocks::MockExpectationError: #<Double User> received unexpected message :some_method with (no args)
+from /Users/mauro-oto/.rvm/gems/ruby-2.2.1@carbide/gems/rspec-support-3.5.0/lib/rspec/support.rb:87:in block in <module:Support>
+```
+
+This way, `whatever_method` can be called and `nil` will be returned, which is
+the return value we specified. Any other method calls will fail if we
+haven't specified them (e.g. `some_method`).
+
+If we want to have even more control over what happens with our mock object, and
+disallow arbitrary method creation like `whatever_method` or `some_method`, we
+can use a verifying double, which exists since RSpec 3 as `instance_double`:
+
+```ruby
+[9] pry(main)> user_verifiable = instance_double(User, whatever_method: nil)
+RSpec::Mocks::MockExpectationError: the User class does not implement the instance method: whatever_method
+from /Users/mauro-oto/.rvm/gems/ruby-2.2.1@carbide/gems/rspec-support-3.5.0/lib/rspec/support.rb:87:in block in <module:Support>
+```
+
+If we try to declare a method which is not implemented by the class of the
+mocked instance, it will raise an exception. If we decide to use mock objects in
+our tests, instance_doubles provides us with a bit more confidence in our tests
+than if we were using spies or regular doubles.
+
+The performance of `instance_double` is slightly worse than `double` or `spy`
+because verifying doubles are more complex. The difference between using a
+verifying double and a real object is quite significant:
+
+```
+Benchmark.ips do |bm|
+  bm.report("spy") { spy(User, id: 1) }
+  bm.report("double") { double(User, id: 1) }
+  bm.report("verifying double") { instance_double(User, id: 1) }
+  bm.report("actual object") { User.new(id: 1) }
+  bm.report("via factorygirl") { FactoryGirl.build(:user, id: 1) }
+  bm.compare!
+end
+
+Warming up --------------------------------------
+                 spy   402.000  i/100ms
+              double   572.000  i/100ms
+    verifying double   424.000  i/100ms
+       actual object   153.000  i/100ms
+     via factorygirl    92.000  i/100ms
+Calculating -------------------------------------
+                 spy     29.174k (±31.6%) i/s -     55.878k in   5.575866s
+              double     21.567k (±37.5%) i/s -     35.464k in   5.599092s
+    verifying double      9.418k (±36.4%) i/s -     10.600k in   5.031771s
+       actual object      1.226k (±37.3%) i/s -      3.366k in   6.897566s
+     via factorygirl      1.037k (±27.4%) i/s -      2.300k in   7.289933s
+
+Comparison:
+                 spy:    29174.4 i/s
+              double:    21567.0 i/s - same-ish: difference falls within error
+    verifying double:     9417.5 i/s - 3.10x slower
+       actual object:     1226.1 i/s - 23.79x slower
+     via factorygirl:     1036.7 i/s - 28.14x slower
+```
+
+If you are testing a service and don't care about testing ActiveRecord callbacks
+or database interactions, you will likely be better off using a double. If
+you are already using spies or doubles, you may want to use a verifying double
+instead. I think the slight performance hit of verifying the object's
+implementation is worth it.
+]]></content:encoded>
+      <dc:date>2016-08-17T02:04:00-04:00</dc:date>
+    </item>
     <item>
       <title>The Need for bin/start</title>
       <link>http://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</link>
@@ -23,7 +153,7 @@ Setup
 Start
 
 ]]></description>
-      <pubDate>Mon, 04 Jul 2016 09:31:00 -0300</pubDate>
+      <pubDate>Mon, 04 Jul 2016 08:31:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</guid>
       <content:encoded><![CDATA[Getting started with a new project should be **as simple as possible**, even for
 someone who is not technical. As a maintainer, you **must** make sure that
@@ -122,7 +252,7 @@ I'm a big fan of [Convention over Configuration](http://c2.com/cgi/wiki?Conventi
 it when it takes me half a day to setup a new application in my environment. It
 should **never** take more than a few minutes.
 ]]></content:encoded>
-      <dc:date>2016-07-04T09:31:00-03:00</dc:date>
+      <dc:date>2016-07-04T08:31:00-04:00</dc:date>
     </item>
     <item>
       <title>Tips for upgrading from Rails 3.2 to 4.0</title>
@@ -149,7 +279,7 @@ It is a community driven effort to have a semi-official fork of CanCan.
 It serves as a drop-in replacement for people who want to use CanCan after
 upgrading to Rails 4.
 ]]></description>
-      <pubDate>Fri, 01 Jul 2016 15:37:00 -0300</pubDate>
+      <pubDate>Fri, 01 Jul 2016 14:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html</guid>
       <content:encoded><![CDATA[There are already quite a few guides in the wild to help with the upgrade of
 Rails 3.2 to Rails 4.0.
@@ -241,7 +371,7 @@ which you can use as a guideline as explained very clearly in
 to get rid of unnecessary code or monkey-patches, especially if your Rails 3
 app was previously running on Rails 2.
 ]]></content:encoded>
-      <dc:date>2016-07-01T15:37:00-03:00</dc:date>
+      <dc:date>2016-07-01T14:37:00-04:00</dc:date>
     </item>
     <item>
       <title>Introducing Pecas: Dashboards for Freckle</title>
@@ -263,7 +393,7 @@ Here is a sample dashboard for all your projects:
 On top of that, it will send you an email alert if you haven&#39;t tracked any hours
 during a work day. If it&#39;s a holiday, it won&#39;t bother you. :)
 ]]></description>
-      <pubDate>Mon, 06 Jun 2016 06:31:00 -0300</pubDate>
+      <pubDate>Mon, 06 Jun 2016 05:31:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/introducing-pecas.html</guid>
       <content:encoded><![CDATA[At [Ombu Labs](http://www.ombulabs.com) we are big fans and happy customers
 of [Freckle](https://letsfreckle.com/). We use their widget to track all the
@@ -296,7 +426,7 @@ set it up using [Heroku](http://heroku.com) and your Freckle API key: [https://g
 If you like [Freckle](https://letsfreckle.com) as much as we do, feel free to
 **fork Pecas** in [Github](https://github.com/ombulabs): [https://github.com/ombulabs/pecas](https://github.com/ombulabs/pecas)
 ]]></content:encoded>
-      <dc:date>2016-06-06T06:31:00-03:00</dc:date>
+      <dc:date>2016-06-06T05:31:00-04:00</dc:date>
     </item>
     <item>
       <title>A comprehensive guide to interacting with IMAP using Ruby</title>
@@ -310,7 +440,7 @@ Searching the internet for examples doesn&#39;t yield too many results, so I&#39
 to write down some of the things I&#39;ve learned. The examples I&#39;ll show use
 Gmail as the target IMAP server.
 ]]></description>
-      <pubDate>Mon, 30 May 2016 09:09:00 -0300</pubDate>
+      <pubDate>Mon, 30 May 2016 08:09:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</guid>
       <content:encoded><![CDATA[A few times in the past I've had to interact with IMAP via Ruby, and wrapping
 your head around its API is not so easy. Not only is the [IMAP API](https://tools.ietf.org/html/rfc3501)
@@ -566,7 +696,7 @@ but there's obviously more, such as deleting emails, marking emails as read,
 adding emails to a mailbox, etc. If you've struggled with IMAP like I have, or
 if you found this useful, let me know in the comments section!
 ]]></content:encoded>
-      <dc:date>2016-05-30T09:09:00-03:00</dc:date>
+      <dc:date>2016-05-30T08:09:00-04:00</dc:date>
     </item>
     <item>
       <title>DRY your tests</title>
@@ -595,7 +725,7 @@ that bots will usually fall for.
 If a bot is submitting the email_confirmation field (which is hidden by a CSS
 class), then it is SPAM and it gracefully ignores the request.
 ]]></description>
-      <pubDate>Mon, 16 May 2016 09:31:00 -0300</pubDate>
+      <pubDate>Mon, 16 May 2016 08:31:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</guid>
       <content:encoded><![CDATA[I'm a big fan of having small classes. I'm not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
@@ -744,7 +874,7 @@ interpolate a variable (`format`) in the description.
 Either way, **always** look for ways to keep your tests as *DRY* as your
 classes. It will **improve maintenance** in the long run.
 ]]></content:encoded>
-      <dc:date>2016-05-16T09:31:00-03:00</dc:date>
+      <dc:date>2016-05-16T08:31:00-04:00</dc:date>
     </item>
     <item>
       <title>The Joys and Woes of Pair Programming</title>
@@ -775,7 +905,7 @@ great opportunity to learn from someone who &quot;has been there before&quot;.
 When you program with someone with more experience, you will often learn about
 design patterns, elegant object-oriented solutions, tips and tricks.
 ]]></description>
-      <pubDate>Thu, 12 May 2016 11:37:00 -0300</pubDate>
+      <pubDate>Thu, 12 May 2016 10:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html</guid>
       <content:encoded><![CDATA[There are a few [agile practices](https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices) that **I really love**. [Pair programming](http://c2.com/cgi/wiki?PairProgramming)
 is one of them.
@@ -881,7 +1011,7 @@ improved but not during the session.
 
 _[The title of this article was inspired by one of [my favorite chapters](http://home.adelphi.edu/sbloch/class/adages/joy.html) in [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) by Fred Brooks]_
 ]]></content:encoded>
-      <dc:date>2016-05-12T11:37:00-03:00</dc:date>
+      <dc:date>2016-05-12T10:37:00-04:00</dc:date>
     </item>
     <item>
       <title>Introducing Infractores</title>
@@ -906,7 +1036,7 @@ This page shows all the parking violations reported by users to
 #InfractoresBA hashtag.
 It&#39;s as simple as that.
 ]]></description>
-      <pubDate>Fri, 29 Apr 2016 12:37:00 -0300</pubDate>
+      <pubDate>Fri, 29 Apr 2016 11:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</guid>
       <content:encoded><![CDATA[I've always been a big fan of [scratching your own itch](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software). My latest itch was the **insane amount of parking
 violations** that I see everyday in **Buenos Aires**, near [our office](https://foursquare.com/v/ombulabs-hq/52f0e47311d25da04d101b62).
@@ -980,7 +1110,7 @@ want people to use it to **improve their communities**.
 
 All feedback is welcome, whether you like it, hate it or spot an [issue](https://github.com/ombulabs/infractores/issues)!
 ]]></content:encoded>
-      <dc:date>2016-04-29T12:37:00-03:00</dc:date>
+      <dc:date>2016-04-29T11:37:00-04:00</dc:date>
     </item>
     <item>
       <title>Using Bumbler to reduce runtime dependencies</title>
@@ -991,7 +1121,7 @@ All feedback is welcome, whether you like it, hate it or spot an [issue](https:/
 When you find yourself staring at the screen after running
  bundle exec rails c, you may want to give this tool a try.
 ]]></description>
-      <pubDate>Mon, 25 Apr 2016 08:39:00 -0300</pubDate>
+      <pubDate>Mon, 25 Apr 2016 07:39:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</guid>
       <content:encoded><![CDATA[A few weeks ago, I found an interesting project called
  [Bumbler](https://github.com/nevir/Bumbler). If your project uses Bundler,
@@ -1060,7 +1190,7 @@ One caveat worth mentioning: you need to take a close look at your loaded gem's
  manually add the `net-ssh` and `net-scp` dependencies back in your Gemfile, as
  you were relying on them implicitly via Capistrano.
 ]]></content:encoded>
-      <dc:date>2016-04-25T08:39:00-03:00</dc:date>
+      <dc:date>2016-04-25T07:39:00-04:00</dc:date>
     </item>
     <item>
       <title>Use session variables to optimize your user flow</title>
@@ -1069,7 +1199,7 @@ One caveat worth mentioning: you need to take a close look at your loaded gem's
 
 Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.
 ]]></description>
-      <pubDate>Fri, 22 Apr 2016 05:37:00 -0300</pubDate>
+      <pubDate>Fri, 22 Apr 2016 04:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</guid>
       <content:encoded><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
 
@@ -1142,7 +1272,7 @@ Keep in mind that the cookie session size is limited to 4kb, in case you want to
 
 If you know a better way to work with sessions, let me know!
 ]]></content:encoded>
-      <dc:date>2016-04-22T05:37:00-03:00</dc:date>
+      <dc:date>2016-04-22T04:37:00-04:00</dc:date>
     </item>
     <item>
       <title>Our Hiring Process</title>
@@ -1151,7 +1281,7 @@ If you know a better way to work with sessions, let me know!
 
 In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
 ]]></description>
-      <pubDate>Thu, 14 Apr 2016 14:03:00 -0300</pubDate>
+      <pubDate>Thu, 14 Apr 2016 13:03:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</guid>
       <content:encoded><![CDATA[This is our process to hire new team members at [Ombu Labs](http://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
 
@@ -1215,7 +1345,7 @@ We don't want to waste anyone's time. That's why our hiring process is **so long
 
 If you are looking for a **new challenge**, check out our open positions: [http://www.ombulabs.com/jobs](http://www.ombulabs.com/jobs)
 ]]></content:encoded>
-      <dc:date>2016-04-14T14:03:00-03:00</dc:date>
+      <dc:date>2016-04-14T13:03:00-04:00</dc:date>
     </item>
     <item>
       <title>The Landing Page MVP</title>
@@ -1224,7 +1354,7 @@ If you are looking for a **new challenge**, check out our open positions: [http:
 
 You want to build the smallest feature set in order to start learning from your target market. It doesn&#39;t have to be feature complete. It doesn&#39;t even have to offer a feature. It doesn&#39;t even need to be a web-based MVP.
 ]]></description>
-      <pubDate>Tue, 05 Apr 2016 08:03:00 -0300</pubDate>
+      <pubDate>Tue, 05 Apr 2016 07:03:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</guid>
       <content:encoded><![CDATA[There is no good reason why an **MVP** should take more than one month. If that happens, it means that the scope of the [minimum viable product](https://leanstack.com/minimum-viable-product/) wasn't small enough.
 
@@ -1344,14 +1474,14 @@ After you ran your landing page for a few weeks, you can measure the results. Ho
 
 With that information you will be able to continue with the same problem description, or you will be forced to [pivot](http://steveblank.com/2014/01/14/whats-a-pivot/) into another problem or solution.
 ]]></content:encoded>
-      <dc:date>2016-04-05T08:03:00-03:00</dc:date>
+      <dc:date>2016-04-05T07:03:00-04:00</dc:date>
     </item>
     <item>
       <title>Announcing The Ombu Labs Shop!</title>
       <link>http://www.ombulabs.com/blog/design/ombulabs-products.html</link>
       <description><![CDATA[We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
 ]]></description>
-      <pubDate>Fri, 01 Apr 2016 09:35:00 -0300</pubDate>
+      <pubDate>Fri, 01 Apr 2016 08:35:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/design/ombulabs-products.html</guid>
       <content:encoded><![CDATA[We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
 
@@ -1392,7 +1522,7 @@ We are very proud and happy to share this with you. We believe this process can 
 
 We also invite you to visit and follow our [Dribbble](https://dribbble.com/OmbuLabs) account where we’ll be sharing new shots!
 ]]></content:encoded>
-      <dc:date>2016-04-01T09:35:00-03:00</dc:date>
+      <dc:date>2016-04-01T08:35:00-04:00</dc:date>
     </item>
     <item>
       <title>Hunting Down a Slow Rails Request</title>
@@ -1416,7 +1546,7 @@ I noticed an unusually large amount of allocated objects for one request:
 This request would take anywhere from 400ms to 3000ms to respond, which is
 WAY too long.
 ]]></description>
-      <pubDate>Fri, 04 Mar 2016 08:03:00 -0300</pubDate>
+      <pubDate>Fri, 04 Mar 2016 06:03:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/performance/hunting-down-a-slow-rails-request.html</guid>
       <content:encoded><![CDATA[Recently, we started using [Skylight](https://www.skylight.io) in production
 for one of our clients' Rails applications, in an attempt to try to improve the
@@ -1511,7 +1641,7 @@ The object allocation is down by a huge amount, and the request now takes from
 50ms to 200ms to respond. This is not yet completely efficient, but it is a much
 more acceptable value.
 ]]></content:encoded>
-      <dc:date>2016-03-04T08:03:00-03:00</dc:date>
+      <dc:date>2016-03-04T06:03:00-05:00</dc:date>
     </item>
     <item>
       <title>10 Steps to Evaluate a Rails Project</title>
@@ -1537,7 +1667,7 @@ Start the server rails server
 
 The best projects will have a one-liner that will setup the entire environment for you.
 ]]></description>
-      <pubDate>Wed, 17 Feb 2016 10:55:00 -0300</pubDate>
+      <pubDate>Wed, 17 Feb 2016 08:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</guid>
       <content:encoded><![CDATA[It will come a time when you will have to decide whether to maintain a [Rails](http://rubyonrails.org) project **or not**.
 
@@ -1670,7 +1800,7 @@ At [Ombu Labs](http://www.ombulabs.com), if all these steps **pass** we will be 
 
 I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!
 ]]></content:encoded>
-      <dc:date>2016-02-17T10:55:00-03:00</dc:date>
+      <dc:date>2016-02-17T08:55:00-05:00</dc:date>
     </item>
     <item>
       <title>Set up and run Hubot without using Heroku</title>
@@ -1685,7 +1815,7 @@ ddollar/foreman#65), you need to
 use something like monit, systemd or tmux to better manage your Hubot
 process.
 ]]></description>
-      <pubDate>Fri, 29 Jan 2016 08:16:00 -0300</pubDate>
+      <pubDate>Fri, 29 Jan 2016 06:16:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</guid>
       <content:encoded><![CDATA[[Hubot](https://hubot.github.com) makes it incredibly easy to setup on a Heroku
 server, by taking advantage of its Procfile support. Simply running
@@ -1782,14 +1912,14 @@ or simple things like getting pictures of pugs delivered to your channel!
 
 ![pug me](https://cloud.githubusercontent.com/assets/17584/12687311/c6f97cc6-c6ad-11e5-91b6-4e0c861aa196.png)
 ]]></content:encoded>
-      <dc:date>2016-01-29T08:16:00-03:00</dc:date>
+      <dc:date>2016-01-29T06:16:00-05:00</dc:date>
     </item>
     <item>
       <title>Let vs Instance Variables</title>
       <link>http://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</link>
       <description><![CDATA[Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a before block.
 ]]></description>
-      <pubDate>Fri, 22 Jan 2016 07:36:00 -0300</pubDate>
+      <pubDate>Fri, 22 Jan 2016 05:36:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</guid>
       <content:encoded><![CDATA[Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a `before` block.
 
@@ -1988,7 +2118,7 @@ Benefits with instance variables:
 
 Let's sum it up, if your test setup allows it, use instance variables in a `before(:all)` block, otherwise I recommend using `let`.
 ]]></content:encoded>
-      <dc:date>2016-01-22T07:36:00-03:00</dc:date>
+      <dc:date>2016-01-22T05:36:00-05:00</dc:date>
     </item>
     <item>
       <title>Protect your sensitive data in Git</title>
@@ -2071,7 +2201,7 @@ This tool provides some commands to completely remove big files as well as passw
 
 The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&#39;s Git history.
 ]]></description>
-      <pubDate>Thu, 21 Jan 2016 07:36:00 -0300</pubDate>
+      <pubDate>Thu, 21 Jan 2016 05:36:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/security/protect-your-sensitive-data-in-git.html</guid>
       <content:encoded><![CDATA[If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
 
@@ -2166,7 +2296,7 @@ This tool provides some commands to completely remove big files as well as passw
 
 The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project's Git history.
 ]]></content:encoded>
-      <dc:date>2016-01-21T07:36:00-03:00</dc:date>
+      <dc:date>2016-01-21T05:36:00-05:00</dc:date>
     </item>
     <item>
       <title>How to report a bug</title>
@@ -2220,7 +2350,7 @@ Ideally, detailed issue reports will become pull requests in the future. You (or
 
 Don&#39;t just say &quot;It doesn&#39;t work!&quot;, don&#39;t be that person! Next time file an issue so that we can all benefit from your pain.
 ]]></description>
-      <pubDate>Fri, 01 Jan 2016 10:55:00 -0300</pubDate>
+      <pubDate>Fri, 01 Jan 2016 08:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/bugs/how-to-report-a-bug.html</guid>
       <content:encoded><![CDATA[The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.
 
@@ -2269,7 +2399,7 @@ Ideally, detailed issue reports will become pull requests in the future. You (or
 
 Don't just say _"It doesn't work!"_, don't be that person! Next time file an issue so that we can all benefit from your pain.
 ]]></content:encoded>
-      <dc:date>2016-01-01T10:55:00-03:00</dc:date>
+      <dc:date>2016-01-01T08:55:00-05:00</dc:date>
     </item>
     <item>
       <title>Adding Docker to a Ruby gem</title>
@@ -2288,7 +2418,7 @@ Then within your project: docker-compose up (before this I had to run eval &quot
 Finally: docker-compose run --rm gem
 
 ]]></description>
-      <pubDate>Tue, 29 Dec 2015 10:55:00 -0300</pubDate>
+      <pubDate>Tue, 29 Dec 2015 08:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</guid>
       <content:encoded><![CDATA[As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a [pull request](https://github.com/DatabaseCleaner/database_cleaner/pull/384) to add a Dockerfile to [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner)
 
@@ -2337,7 +2467,7 @@ Provided configuration options:
 
 If I were to add this contribution, I'd make sure that the `CONTRIBUTE.markdown` lists [Docker](https://www.docker.com) as an _option_ to run the specs, not as the default.
 ]]></content:encoded>
-      <dc:date>2015-12-29T10:55:00-03:00</dc:date>
+      <dc:date>2015-12-29T08:55:00-05:00</dc:date>
     </item>
     <item>
       <title>Adding Csrf-Protection to your Rails-Backbone App</title>
@@ -2386,7 +2516,7 @@ Processing by ProductsController#create as JSON
 ...
 Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
 ]]></description>
-      <pubDate>Wed, 16 Dec 2015 00:55:00 -0300</pubDate>
+      <pubDate>Tue, 15 Dec 2015 22:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</guid>
       <content:encoded><![CDATA[When integrating [Backbone.js](http://backbonejs.org) in your [Rails](http://rubyonrails.org) App, you might face the problem of the inability to verify the CSRF-Token.
 
@@ -2441,7 +2571,7 @@ Processing by ProductsController#create as JSON
 Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
 ```
 ]]></content:encoded>
-      <dc:date>2015-12-16T00:55:00-03:00</dc:date>
+      <dc:date>2015-12-15T22:55:00-05:00</dc:date>
     </item>
     <item>
       <title>How to interact with hidden elements with Protractor</title>
@@ -2463,7 +2593,7 @@ Failed: Wait timed out after 100015ms
 
 Workarounds include displaying it, interacting with it, hiding it again, which I didn&#39;t like.
 ]]></description>
-      <pubDate>Wed, 09 Dec 2015 00:55:00 -0300</pubDate>
+      <pubDate>Tue, 08 Dec 2015 22:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</guid>
       <content:encoded><![CDATA[The other day I was trying to interact with a hidden file input field:
 
@@ -2512,7 +2642,7 @@ Or with CSS:
 
 Now it works and the tests do too.
 ]]></content:encoded>
-      <dc:date>2015-12-09T00:55:00-03:00</dc:date>
+      <dc:date>2015-12-08T22:55:00-05:00</dc:date>
     </item>
     <item>
       <title>Time and Material</title>
@@ -2523,7 +2653,7 @@ All of our clients are startups. Fixed bids are counterproductive for startups. 
 
 Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don&#39;t change while developing the project. That is a big if!
 ]]></description>
-      <pubDate>Thu, 19 Nov 2015 00:55:00 -0300</pubDate>
+      <pubDate>Wed, 18 Nov 2015 22:55:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/software-development/time-and-material.html</guid>
       <content:encoded><![CDATA[As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
 
@@ -2579,7 +2709,7 @@ We rigorously track all the time that we spend on projects. Every invoice we sen
 
 We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, [get in touch!](http://www.ombulabs.com/#contact)
 ]]></content:encoded>
-      <dc:date>2015-11-19T00:55:00-03:00</dc:date>
+      <dc:date>2015-11-18T22:55:00-05:00</dc:date>
     </item>
     <item>
       <title>Almundo's Bill Vulnerability</title>
@@ -2590,7 +2720,7 @@ Almundo is one of the biggest travel agencies in Argentina. Their site is among 
 
 The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple HTTP GET request. No programming knowledge required.
 ]]></description>
-      <pubDate>Tue, 25 Aug 2015 00:55:00 -0300</pubDate>
+      <pubDate>Mon, 24 Aug 2015 23:55:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/security/almundo-bill-vulnerability.html</guid>
       <content:encoded><![CDATA[The other day my friend [Juan Rossi](https://twitter.com/juanchorossi) reported a vulnerability in the [Almundo](http://almundo.com/) billing system. Since then, the vulnerability has been fixed by [Superfactura](http://superfactura.com.ar/), their billing software provider.
 
@@ -2626,7 +2756,7 @@ Considering that [Superfactura](http://superfactura.com.ar/) has a few clients, 
 
 At the time of this publication, the company had not released any information about this vulnerability nor if any sensitive data was downloaded by unauthorized users.
 ]]></content:encoded>
-      <dc:date>2015-08-25T00:55:00-03:00</dc:date>
+      <dc:date>2015-08-24T23:55:00-04:00</dc:date>
     </item>
     <item>
       <title>The 7 Days Open Source Challenge</title>
@@ -2641,7 +2771,7 @@ If you can&#39;t do it one day, that breaks your streak
 When you break your streak, you have to start over from day 1
 
 ]]></description>
-      <pubDate>Tue, 04 Aug 2015 00:55:00 -0300</pubDate>
+      <pubDate>Mon, 03 Aug 2015 23:55:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/open-source/the-7-days-open-source-challenge.html</guid>
       <content:encoded><![CDATA[Last Wednesday I gave a lightning talk about open source at the [Buenos Aires Ruby Meetup](http://www.meetup.com/rubyba/events/223814545/). I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.
 
@@ -2672,7 +2802,7 @@ Here are a couple of ways that you can contribute to open source:
 
 If you don't know where to begin, check out [http://www.codetriage.com](http://www.codetriage.com/) or ping me (I'm one of the maintainers of [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner/) and [EmailSpec](https://github.com/bmabey/email-spec) and I'd appreciate your help)
 ]]></content:encoded>
-      <dc:date>2015-08-04T00:55:00-03:00</dc:date>
+      <dc:date>2015-08-03T23:55:00-04:00</dc:date>
     </item>
     <item>
       <title>Slack notifications with Slack-Notify gem</title>
@@ -2683,7 +2813,7 @@ better than any other available platform of its kind. Slack provides
 WebHooks, which you can use to post
 messages to your team&#39;s channels.
 ]]></description>
-      <pubDate>Wed, 29 Jul 2015 14:40:00 -0300</pubDate>
+      <pubDate>Wed, 29 Jul 2015 13:40:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/slack-notifications-with-slack-notify.html</guid>
       <content:encoded><![CDATA[We have been using Slack at [OmbuLabs](http://www.ombulabs.com) for a while now
 after switching from HipChat, and haven't looked back. It looks and feels much
@@ -2765,7 +2895,7 @@ There are many different use cases, just make sure not to spam your team with
 too many notifications. At some point, you may want to set up a
 channel dedicated solely to notifications if you are part of a bigger team.
 ]]></content:encoded>
-      <dc:date>2015-07-29T14:40:00-03:00</dc:date>
+      <dc:date>2015-07-29T13:40:00-04:00</dc:date>
     </item>
     <item>
       <title>Why using default_scope is a bad idea</title>
@@ -2776,7 +2906,7 @@ It can be useful for allowing soft-deletion in your models, by having a
 deleted_on column on your model and setting the default scope to
 deleted_on: nil
 ]]></description>
-      <pubDate>Mon, 20 Jul 2015 06:55:00 -0300</pubDate>
+      <pubDate>Mon, 20 Jul 2015 05:55:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</guid>
       <content:encoded><![CDATA[`default_scope` is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
@@ -2835,7 +2965,7 @@ the default scope.
 I recommend that you always avoid default scope if possible. Prefer explicit
 scopes instead. If you really need to use it, use it with care.
 ]]></content:encoded>
-      <dc:date>2015-07-20T06:55:00-03:00</dc:date>
+      <dc:date>2015-07-20T05:55:00-04:00</dc:date>
     </item>
     <item>
       <title>Mercado Pago Security Hole</title>
@@ -2844,7 +2974,7 @@ scopes instead. If you really need to use it, use it with care.
 
 The vulnerability allowed anyone to get an access token without using the right secret for an account.
 ]]></description>
-      <pubDate>Tue, 14 Jul 2015 20:29:00 -0300</pubDate>
+      <pubDate>Tue, 14 Jul 2015 19:29:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/security/mercado-pago-security-vulnerability.html</guid>
       <content:encoded><![CDATA[On April 17th we discovered a security vulnerability in the [Mercado Pago API](https://www.mercadopago.com.ar/developers/en/api-docs/). Before disclosing this information, we contacted [Mercado Libre](http://www.mercadolibre.com/) and sent them a detailed report of the security hole and how to reproduce it.
 
@@ -3005,7 +3135,7 @@ A good place to start would be a better way to receive security vulnerability re
 
 Until today, they haven't disclosed any information about this security hole and it's very hard to find a way to report a security issue to them.
 ]]></content:encoded>
-      <dc:date>2015-07-14T20:29:00-03:00</dc:date>
+      <dc:date>2015-07-14T19:29:00-04:00</dc:date>
     </item>
     <item>
       <title>The Lean Startup Way</title>
@@ -3014,7 +3144,7 @@ Until today, they haven't disclosed any information about this security hole and
 
 It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
 ]]></description>
-      <pubDate>Tue, 30 Jun 2015 20:29:00 -0300</pubDate>
+      <pubDate>Tue, 30 Jun 2015 19:29:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html</guid>
       <content:encoded><![CDATA[At [OmbuLabs](http://www.ombulabs.com) we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
 
@@ -3048,7 +3178,7 @@ We won't suggest that you A/B test everything from day 1, but some changes will 
 
 We truly believe that the Lean Startup way is the best for both our clients and us. We want to build successful products for them, so that we can continue working with them over a long period of time. It's a **win/win** situation.
 ]]></content:encoded>
-      <dc:date>2015-06-30T20:29:00-03:00</dc:date>
+      <dc:date>2015-06-30T19:29:00-04:00</dc:date>
     </item>
     <item>
       <title>How to Git push with blocked ports</title>
@@ -3059,7 +3189,7 @@ The cool thing about Git is that you can git commit all your changes while enjoy
 
 But what if you want to git push from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).
 ]]></description>
-      <pubDate>Sun, 28 Jun 2015 15:29:00 -0300</pubDate>
+      <pubDate>Sun, 28 Jun 2015 14:29:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/git/github/how-to-git-push-with-blocked-ports.html</guid>
       <content:encoded><![CDATA[Often times I find myself working out of a coffee shop with a **terrible Internet connection**. We have a nice office at [OmbuLabs](https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62) but there is still that *Je ne sais quoi* at coffee shops.
 
@@ -3085,7 +3215,7 @@ You will have to enter your username and password to authenticate with Github.
 
 Now you can `git push` even on shitty Internet connections.
 ]]></content:encoded>
-      <dc:date>2015-06-28T15:29:00-03:00</dc:date>
+      <dc:date>2015-06-28T14:29:00-04:00</dc:date>
     </item>
     <item>
       <title>Our Definition of "Done"</title>
@@ -3094,7 +3224,7 @@ Now you can `git push` even on shitty Internet connections.
 
 That is a tough question, so I&#39;ll write down our definition of done.
 ]]></description>
-      <pubDate>Thu, 18 Jun 2015 08:37:00 -0300</pubDate>
+      <pubDate>Thu, 18 Jun 2015 07:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html</guid>
       <content:encoded><![CDATA[Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you've been working on this feature for a **really long time**? Maybe you have. Is it "done"?
 
@@ -3118,7 +3248,7 @@ If the feature is big, break it into smaller features. This will make it easier 
 
 Before you submit your [pull request](https://help.github.com/articles/using-pull-requests), make sure that you have considered this list.
 ]]></content:encoded>
-      <dc:date>2015-06-18T08:37:00-03:00</dc:date>
+      <dc:date>2015-06-18T07:37:00-04:00</dc:date>
     </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
@@ -3128,7 +3258,7 @@ Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
 Enumerable#grep.
 ]]></description>
-      <pubDate>Thu, 09 Apr 2015 08:36:00 -0300</pubDate>
+      <pubDate>Thu, 09 Apr 2015 07:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</guid>
       <content:encoded><![CDATA[Often, `Enumerable#select` is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
@@ -3187,7 +3317,7 @@ as `#map` does and reads very nicely. For example:
  => ["hello"]
 ```
 ]]></content:encoded>
-      <dc:date>2015-04-09T08:36:00-03:00</dc:date>
+      <dc:date>2015-04-09T07:37:00-04:00</dc:date>
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular</title>
@@ -3196,7 +3326,7 @@ as `#map` does and reads very nicely. For example:
 
 Below are some cool, useful tricks you can use on Github which can probably make your life easier:
 ]]></description>
-      <pubDate>Mon, 19 Jan 2015 15:35:00 -0300</pubDate>
+      <pubDate>Mon, 19 Jan 2015 13:35:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/git/github/4-useful-github-tricks.html</guid>
       <content:encoded><![CDATA[If you are using git in 2015, you are probably also using [Github](http://www.github.com), unless you're self-hosting or still betting on [Bitbucket](http://www.bitbucket.com).
 
@@ -3228,8 +3358,8 @@ You can get anyone's public keys by appending .keys to their Github username. Fo
 
 For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-tips/) or [here](http://gitready.com/).
 ]]></content:encoded>
-      <dc:date>2015-01-19T15:35:00-03:00</dc:date>
+      <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2016-07-04T09:31:00-03:00</dc:date>
+    <dc:date>2016-08-17T02:04:00-04:00</dc:date>
   </channel>
 </rss>
