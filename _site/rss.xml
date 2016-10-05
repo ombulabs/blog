@@ -160,7 +160,7 @@ new projects and opportunities to improve your Rails performance.
     </item>
     <item>
       <title>Spy vs Double vs Instance Double</title>
-      <link>http://www.ombulabs.com/blog/rspec/ruby/should-i-use-a-spy-a-double-or-an-instance-double.html</link>
+      <link>http://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</link>
       <description><![CDATA[When writing tests for services, you may sometimes want to use mock objects
 instead of real objects. In case you&#39;re using ActiveRecord and real
 objects, your tests may hit the database and slow down your suite. The
@@ -177,8 +177,8 @@ instance_double. First, the spy:
 [3] pry(main)&gt; spy.whatever_method
 =&gt; #&lt;Double (anonymous)&gt;
 ]]></description>
-      <pubDate>Fri, 12 Aug 2016 14:04:00 -0400</pubDate>
-      <guid>http://www.ombulabs.com/blog/rspec/ruby/should-i-use-a-spy-a-double-or-an-instance-double.html</guid>
+      <pubDate>Wed, 17 Aug 2016 02:04:00 -0400</pubDate>
+      <guid>http://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</guid>
       <content:encoded><![CDATA[When writing tests for services, you may sometimes want to use mock objects
 instead of real objects. In case you're using ActiveRecord and real
 objects, your tests may hit the database and slow down your suite. The
@@ -286,7 +286,7 @@ you are already using spies or doubles, you may want to use a verifying double
 instead. I think the slight performance hit of verifying the object's
 implementation is worth it.
 ]]></content:encoded>
-      <dc:date>2016-08-12T14:04:00-04:00</dc:date>
+      <dc:date>2016-08-17T02:04:00-04:00</dc:date>
     </item>
     <item>
       <title>The Need for bin/start</title>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spy vs Double vs Instance Double"
-date: 2016-08-12 18:04:00
+date: 2016-08-17 06:04:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
 ---
