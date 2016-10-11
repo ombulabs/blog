@@ -12,9 +12,7 @@
     <item>
       <title>Tips for Writing Fast Rails: Part 1</title>
       <link>http://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html</link>
-      <description><![CDATA[Rails is a powerful framework. You can write a lot
-of features in a short period of time. In the process you can easily
-write code that performs poorly.
+      <description><![CDATA[Rails is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that performs poorly.
 
 At Ombu Labs we like to maintain Ruby on Rails
 applications. In the process
@@ -30,9 +28,7 @@ possible into memory. Always prefer a SQL query vs. an object&#39;s method call.
 ]]></description>
       <pubDate>Tue, 11 Oct 2016 04:37:00 -0400</pubDate>
       <guid>http://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html</guid>
-      <content:encoded><![CDATA[[Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot  
-of features in a short period of time. In the process you can easily
-write code that **performs poorly**.
+      <content:encoded><![CDATA[[Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that **performs poorly**.
 
 At [Ombu Labs](http://www.ombulabs.com) we like to [maintain Ruby on Rails
 applications](http://www.ombulabs.com/blog/tags/maintenance). In the process
