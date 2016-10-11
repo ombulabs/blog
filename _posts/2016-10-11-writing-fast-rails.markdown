@@ -6,9 +6,7 @@ categories: ["performance", "rails"]
 author: "etagwerker"
 ---
 
-[Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot  
-of features in a short period of time. In the process you can easily
-write code that **performs poorly**.
+[Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that **performs poorly**.
 
 At [Ombu Labs](http://www.ombulabs.com) we like to [maintain Ruby on Rails
 applications](http://www.ombulabs.com/blog/tags/maintenance). In the process
