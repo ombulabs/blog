@@ -6,8 +6,8 @@ categories: ["rspec", "ruby"]
 author: "mauro-oto"
 ---
 
-A few weeks ago, I noticed weird output in the RSpec test suite (~4000 tests)
-for a Rails application:
+A few weeks ago, I noticed weird output in the [RSpec](https://relishapp.com/rspec)
+test suite (~4000 tests) for a [Rails](http://rubyonrails.org) application:
 
 ```
 ................................................................................
@@ -18,9 +18,10 @@ be treated as String............................................................
 ................................................................................
 ```
 
-This Rails app uses a PostgreSQL database. After some Googling, it turns out
-that this is a warning from PostgreSQL. When the database doesn't recognize the
-type to use for a column, it casts to string by default.
+This Rails app uses a [PostgreSQL](https://www.postgresql.org) database. After
+some Googling, it turns out that this is a warning from PostgreSQL. When the
+database doesn't recognize the type to use for a column, it casts to string by
+default.
 
 <!--more-->
 
@@ -55,9 +56,13 @@ A good alternative to the documentation format is the [Fuubar gem](https://githu
 Using `rspec --format Fuubar`, you get a nice looking progress bar, as well as
 its coolest feature, insta-failing tests. With Fuubar, you don't have to wait
 until the build ends or until you ctrl+c out of RSpec, you get the failure
-result right away.
+result right away. If you don't care about the build finishing after the first
+failure, you can use RSpec's [fail fast](https://relishapp.com/rspec/rspec-core/docs/command-line/fail-fast-option)
+option instead.
 
 Since `--format Fuubar` doesn't show test descriptions by default, you can
 combine Fuubar with the documentation format, using
 `rspec --format Fuubar --format documentation`. This way, you get both the
-documentation format and insta-failing tests.
+documentation format and insta-failing tests. If you prefer this formatting to
+RSpec's default formatting, remember you can always add the flag to your
+`.rspec` file.

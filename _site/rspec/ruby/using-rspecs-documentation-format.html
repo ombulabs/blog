@@ -11,7 +11,7 @@
 
     
     
-    <meta name="description" content="A few weeks ago, I noticed weird output in the RSpec test suite (~4000 tests)for a Rails application:................................................." />
+    <meta name="description" content="A few weeks ago, I noticed weird output in the RSpectest suite (~4000 tests) for a Rails application:................................................." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -111,8 +111,8 @@
         </header>
 
         <section class="post-content">
-          <p>A few weeks ago, I noticed weird output in the RSpec test suite (~4000 tests)
-for a Rails application:</p>
+          <p>A few weeks ago, I noticed weird output in the <a href="https://relishapp.com/rspec">RSpec</a>
+test suite (~4000 tests) for a <a href="http://rubyonrails.org">Rails</a> application:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">................................................................................
 ................................................................................
 ................................................................................
@@ -120,9 +120,10 @@ for a Rails application:</p>
 be treated as String............................................................
 ................................................................................
 </code></pre></div>
-<p>This Rails app uses a PostgreSQL database. After some Googling, it turns out
-that this is a warning from PostgreSQL. When the database doesn&#39;t recognize the
-type to use for a column, it casts to string by default.</p>
+<p>This Rails app uses a <a href="https://www.postgresql.org">PostgreSQL</a> database. After
+some Googling, it turns out that this is a warning from PostgreSQL. When the
+database doesn&#39;t recognize the type to use for a column, it casts to string by
+default.</p>
 
 <!--more-->
 
@@ -153,12 +154,16 @@ triggered from.</p>
 Using <code>rspec --format Fuubar</code>, you get a nice looking progress bar, as well as
 its coolest feature, insta-failing tests. With Fuubar, you don&#39;t have to wait
 until the build ends or until you ctrl+c out of RSpec, you get the failure
-result right away.</p>
+result right away. If you don&#39;t care about the build finishing after the first
+failure, you can use RSpec&#39;s <a href="https://relishapp.com/rspec/rspec-core/docs/command-line/fail-fast-option">fail fast</a>
+option instead.</p>
 
 <p>Since <code>--format Fuubar</code> doesn&#39;t show test descriptions by default, you can
 combine Fuubar with the documentation format, using
 <code>rspec --format Fuubar --format documentation</code>. This way, you get both the
-documentation format and insta-failing tests.</p>
+documentation format and insta-failing tests. If you prefer this formatting to
+RSpec&#39;s default formatting, remember you can always add the flag to your
+<code>.rspec</code> file.</p>
 
         </section>
 
