@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Brief look at RSpec's formatting options"
-date: 2016-10-18 14:29:00
+date: 2016-11-08 12:53:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
 ---
