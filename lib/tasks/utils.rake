@@ -1,4 +1,9 @@
+require 'html-proofer'
+
 task :find_dead_links do
-  cmd = 'htmlproofer ./_site --only-4xx --url-ignore "/blog/,/#content/"'
-  system("bundle exec #{cmd}")
+  opts = { only_4xx: true, url_ignore: [/blog/, /#content/] }
+  begin
+    HTMLProofer.check_directory("./_site", opts).run
+  rescue => e
+  end
 end
