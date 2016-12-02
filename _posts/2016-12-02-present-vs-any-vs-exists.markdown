@@ -19,36 +19,36 @@ scope returns any results from the database, there are better ways than using
 
 ```ruby
 irb(main):003:0> Project.find(57).tasks.where.not(deleted_at: nil).present?
-D, [2016-11-14T19:44:50.524261 #27028] DEBUG -- :   Project Load (0.5ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
-D, [2016-11-14T19:44:51.467498 #27028] DEBUG -- :   Task Load (918.7ms)  SELECT "tasks".* FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL)  [["project_id", 57]]
+Project Load (0.5ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
+Task Load (918.7ms)  SELECT "tasks".* FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL)  [["project_id", 57]]
 => true
 ```
 
 As you can see in the snippet above, we're loading one project, and then loading
 all of its tasks to check for presence using `present?`. This ends up taking
-quite a bit of time, hurting the performance of the app both memory and
+quite a bit of time (~900ms), hurting the performance of the app both memory and
 time-wise.
 
 A slightly better approach would be using `any?`:
 
 ```ruby
 irb(main):004:0> Project.find(57).tasks.where.not(deleted_at: nil).any?
-D, [2016-11-14T19:44:57.288763 #27028] DEBUG -- :   Project Load (0.9ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
-D, [2016-11-14T19:44:57.410973 #27028] DEBUG -- :    (119.0ms)  SELECT COUNT(*) FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL)  [["project_id", 57]]
+Project Load (0.9ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
+(119.0ms)  SELECT COUNT(*) FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL)  [["project_id", 57]]
 => true
 ```
 
 `any?` uses [SQL count](http://www.w3schools.com/sql/sql_func_count.asp) instead
-of loading each task, resulting in a faster, more performant result. However,
-what we actually want to know in this case is if there is at least one record in
-our scope. We don't really need to count all of the tasks, it should stop after
-finding the first one. So applying `LIMIT` would solve that for us, and that's
-how `exists?` saves the day:
+of loading each task, resulting in a faster, more performant result (from ~900ms
+down to ~100ms). However, what we actually want to know in this case is if there
+is at least one record in our scope. We don't really need to count all of the
+tasks, it should stop after finding the first one. So applying `LIMIT` would
+solve that for us, and that's how `exists?` saves the day:
 
 ```ruby
 irb(main):005:0> Project.find(57).tasks.where.not(deleted_at: nil).exists?
-D, [2016-11-14T19:45:01.413654 #27028] DEBUG -- :   Project Load (0.5ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
-D, [2016-11-14T19:45:01.421724 #27028] DEBUG -- :   Task Exists (0.9ms)  SELECT  1 AS one FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL) LIMIT 1  [["project_id", 57]]
+Project Load (0.5ms)  SELECT  "projects".* FROM "projects"  WHERE "projects"."enabled" = 't' AND "projects"."id" = $1 LIMIT 1  [["id", 57]]
+Task Exists (0.9ms)  SELECT  1 AS one FROM "tasks" INNER JOIN "boards" ON "tasks"."board_id" = "boards"."id" WHERE "tasks"."enabled" = 't' AND "boards"."project_id" = $1 AND "boards"."enabled" = 't' AND ("tasks"."deleted_at" IS NOT NULL) LIMIT 1  [["project_id", 57]]
 => true
 ```
 
