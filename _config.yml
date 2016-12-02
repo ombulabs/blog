@@ -21,6 +21,14 @@ author:         'OmbuLabs'
 exclude: [vendor]
 gems: [jekyll-paginate]
 
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      is_post: true
+
 authors:
   etagwerker:
     display_name: Ernesto Tagwerker
