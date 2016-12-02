@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Present? vs Any? vs Exists?"
-date: 2016-11-18 13:31:00
+date: 2016-12-02 13:31:00
 categories: ["benchmark", "performance", "rails"]
 author: "mauro-oto"
 ---

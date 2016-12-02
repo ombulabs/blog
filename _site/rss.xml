@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 18 Nov 2016 08:31:00 -0500</pubDate>
+    <pubDate>Fri, 02 Dec 2016 08:31:00 -0500</pubDate>
     <item>
       <title>Present? vs Any? vs Exists?</title>
       <link>http://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html</link>
@@ -19,7 +19,7 @@ but it&#39;s actually not a very good idea. If all we want to do is check if the
 scope returns any results from the database, there are better ways than using
 present?.
 ]]></description>
-      <pubDate>Fri, 18 Nov 2016 08:31:00 -0500</pubDate>
+      <pubDate>Fri, 02 Dec 2016 08:31:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html</guid>
       <content:encoded><![CDATA[When working on a Rails project, you may have seen `present?` calls on
 ActiveRecord relationships. This might feel natural, mostly because `present?`
@@ -99,7 +99,7 @@ of Rails.
 If you're currently using `present?` in your projects, it should be a
 quick performance win to replace these calls to use either `any?` or `exists?`.
 ]]></content:encoded>
-      <dc:date>2016-11-18T08:31:00-05:00</dc:date>
+      <dc:date>2016-12-02T08:31:00-05:00</dc:date>
     </item>
     <item>
       <title>Brief look at RSpec's formatting options</title>
@@ -3694,6 +3694,6 @@ For great git-specific tips, try [here](http://mislav.uniqpath.com/2010/07/git-t
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2016-11-18T08:31:00-05:00</dc:date>
+    <dc:date>2016-12-02T08:31:00-05:00</dc:date>
   </channel>
 </rss>
