@@ -28,7 +28,7 @@ but it's actually not a very good idea. If all we want to do is check if the
 scope returns any results from the database, there are better ways than using
 `present?`.
 
-<!--more--> 
+<!--more-->
 
 `present?` is slow because:
 
@@ -92,7 +92,7 @@ end
 present?:        2.3 i/s - 68.39x  slower
 ```
 
-NOTE: The examples shown in this post are taken from a Rails 4.1 app, using
+NOTE: The examples shown in this post are taken from a Rails 4.2 app, using
 PostgreSQL. I am not sure if this behavior remains the same in newer versions
 of Rails.
 

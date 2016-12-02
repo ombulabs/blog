@@ -120,7 +120,7 @@ but it&#39;s actually not a very good idea. If all we want to do is check if the
 scope returns any results from the database, there are better ways than using
 <code>present?</code>.</p>
 
-<!--more--> 
+<!--more-->
 
 <p><code>present?</code> is slow because:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">003</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">57</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">present?</span>
@@ -172,7 +172,7 @@ Notice the time in the debug lines in parenthesis, we went from ~900ms using
     <span class="n">any?</span><span class="p">:</span>       <span class="mi">10</span><span class="o">.</span><span class="mi">1</span> <span class="n">i</span><span class="o">/</span><span class="n">s</span> <span class="o">-</span> <span class="mi">15</span><span class="o">.</span><span class="mi">65</span><span class="n">x</span>  <span class="n">slower</span>
 <span class="n">present?</span><span class="p">:</span>        <span class="mi">2</span><span class="o">.</span><span class="mi">3</span> <span class="n">i</span><span class="o">/</span><span class="n">s</span> <span class="o">-</span> <span class="mi">68</span><span class="o">.</span><span class="mi">39</span><span class="n">x</span>  <span class="n">slower</span>
 </code></pre></div>
-<p>NOTE: The examples shown in this post are taken from a Rails 4.1 app, using
+<p>NOTE: The examples shown in this post are taken from a Rails 4.2 app, using
 PostgreSQL. I am not sure if this behavior remains the same in newer versions
 of Rails.</p>
 
