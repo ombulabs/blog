@@ -124,70 +124,7 @@ ActiveRecord relationships. This might feel natural, mostly because <code>presen
 exists on all objects <a href="http://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark">via ActiveSupport</a>, so you expect the relationship to respond to it,
 but it&#39;s actually not a very good idea. If all we want to do is check if the
 scope returns any results from the database, there are better ways than using
-<code>present?</code>. This method is slow because:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">003</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">57</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">present?</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">50</span><span class="o">.</span><span class="mi">524261</span> <span class="c1">#27028] DEBUG -- :   Project Load (0.5ms)  SELECT  &quot;projects&quot;.* FROM &quot;projects&quot;  WHERE &quot;projects&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;projects&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 57]]</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">51</span><span class="o">.</span><span class="mi">467498</span> <span class="c1">#27028] DEBUG -- :   Task Load (918.7ms)  SELECT &quot;tasks&quot;.* FROM &quot;tasks&quot; INNER JOIN &quot;boards&quot; ON &quot;tasks&quot;.&quot;board_id&quot; = &quot;boards&quot;.&quot;id&quot; WHERE &quot;tasks&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;boards&quot;.&quot;project_id&quot; = $1 AND &quot;boards&quot;.&quot;enabled&quot; = &#39;t&#39; AND (&quot;tasks&quot;.&quot;deleted_at&quot; IS NOT NULL)  [[&quot;project_id&quot;, 57]]</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-</code></pre></div>
-
-<p>As you can see in the snippet above, we&#39;re loading one project, and then loading
-all of its tasks to check for presence using <code>present?</code>. This ends up taking
-quite a bit of time, hurting the performance of the app both memory and
-time-wise.</p>
-
-<p>A slightly better approach would be using <code>any?</code>:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">004</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">57</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">any?</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">57</span><span class="o">.</span><span class="mi">288763</span> <span class="c1">#27028] DEBUG -- :   Project Load (0.9ms)  SELECT  &quot;projects&quot;.* FROM &quot;projects&quot;  WHERE &quot;projects&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;projects&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 57]]</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">44</span><span class="p">:</span><span class="mi">57</span><span class="o">.</span><span class="mi">410973</span> <span class="c1">#27028] DEBUG -- :    (119.0ms)  SELECT COUNT(*) FROM &quot;tasks&quot; INNER JOIN &quot;boards&quot; ON &quot;tasks&quot;.&quot;board_id&quot; = &quot;boards&quot;.&quot;id&quot; WHERE &quot;tasks&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;boards&quot;.&quot;project_id&quot; = $1 AND &quot;boards&quot;.&quot;enabled&quot; = &#39;t&#39; AND (&quot;tasks&quot;.&quot;deleted_at&quot; IS NOT NULL)  [[&quot;project_id&quot;, 57]]</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-</code></pre></div>
-
-<p><code>any?</code> uses <a href="http://www.w3schools.com/sql/sql_func_count.asp">SQL count</a> instead
-of loading each task, resulting in a faster, more performant result. However,
-what we actually want to know in this case is if there is at least one record in
-our scope. We don&#39;t really need to count all of the tasks, it should stop after
-finding the first one. So applying <code>LIMIT</code> would solve that for us, and that&#39;s
-how <code>exists?</code> saves the day:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">005</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">57</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">exists?</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mo">01</span><span class="o">.</span><span class="mi">413654</span> <span class="c1">#27028] DEBUG -- :   Project Load (0.5ms)  SELECT  &quot;projects&quot;.* FROM &quot;projects&quot;  WHERE &quot;projects&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;projects&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 57]]</span>
-<span class="n">D</span><span class="p">,</span> <span class="o">[</span><span class="mi">2016</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">14</span><span class="ss">T19</span><span class="p">:</span><span class="mi">45</span><span class="p">:</span><span class="mo">01</span><span class="o">.</span><span class="mi">421724</span> <span class="c1">#27028] DEBUG -- :   Task Exists (0.9ms)  SELECT  1 AS one FROM &quot;tasks&quot; INNER JOIN &quot;boards&quot; ON &quot;tasks&quot;.&quot;board_id&quot; = &quot;boards&quot;.&quot;id&quot; WHERE &quot;tasks&quot;.&quot;enabled&quot; = &#39;t&#39; AND &quot;boards&quot;.&quot;project_id&quot; = $1 AND &quot;boards&quot;.&quot;enabled&quot; = &#39;t&#39; AND (&quot;tasks&quot;.&quot;deleted_at&quot; IS NOT NULL) LIMIT 1  [[&quot;project_id&quot;, 57]]</span>
-<span class="o">=&gt;</span> <span class="kp">true</span>
-</code></pre></div>
-
-<p>By limiting the count to 1, after finding the first record, it returns true.
-Notice the time in the debug lines in parenthesis, we went from ~900ms using
-<code>present?</code>, to ~100ms using <code>any?</code>, to ~1ms using <code>exists?</code>.</p>
-
-<p>Finally, here&#39;s a benchmark (using <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a>) which shows the difference in execution time between the three methods:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Benchmark</span><span class="o">.</span><span class="n">ips</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
-  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;present?&quot;</span><span class="p">)</span> <span class="k">do</span>
-    <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">present?</span>
-  <span class="k">end</span>
-  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;any?&quot;</span><span class="p">)</span> <span class="k">do</span>
-    <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">any?</span>
-  <span class="k">end</span>
-  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;exists?&quot;</span><span class="p">)</span> <span class="k">do</span>
-    <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">exists?</span>
-  <span class="k">end</span>
-  <span class="n">x</span><span class="o">.</span><span class="n">compare!</span>
-<span class="k">end</span>
-
- <span class="n">exists?</span><span class="p">:</span>      <span class="mi">158</span><span class="o">.</span><span class="mi">4</span> <span class="n">i</span><span class="o">/</span><span class="n">s</span>
-    <span class="n">any?</span><span class="p">:</span>       <span class="mi">10</span><span class="o">.</span><span class="mi">1</span> <span class="n">i</span><span class="o">/</span><span class="n">s</span> <span class="o">-</span> <span class="mi">15</span><span class="o">.</span><span class="mi">65</span><span class="n">x</span>  <span class="n">slower</span>
-<span class="n">present?</span><span class="p">:</span>        <span class="mi">2</span><span class="o">.</span><span class="mi">3</span> <span class="n">i</span><span class="o">/</span><span class="n">s</span> <span class="o">-</span> <span class="mi">68</span><span class="o">.</span><span class="mi">39</span><span class="n">x</span>  <span class="n">slower</span>
-</code></pre></div>
-
-<p>NOTE: The examples shown in this post are taken from a Rails 4.1 app, using
-PostgreSQL. I am not sure if this behavior remains the same in newer versions
-of Rails.</p>
-
-<p>If you&#39;re currently using <code>present?</code> in your projects, it should be a
-quick performance win to replace these calls to use either <code>any?</code> or <code>exists?</code>.</p>
+<code>present?</code>.</p>
  <a class="read-more" href="/blog/benchmark/performance/rails/present-vs-any-vs-exists.html">Read more &raquo;</a>
     </section>
 </article>

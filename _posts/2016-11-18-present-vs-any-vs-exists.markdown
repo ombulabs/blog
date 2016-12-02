@@ -11,7 +11,11 @@ ActiveRecord relationships. This might feel natural, mostly because `present?`
 exists on all objects [via ActiveSupport](http://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark), so you expect the relationship to respond to it,
 but it's actually not a very good idea. If all we want to do is check if the
 scope returns any results from the database, there are better ways than using
-`present?`. This method is slow because:
+`present?`.
+
+<!--more--> 
+
+`present?` is slow because:
 
 ```ruby
 irb(main):003:0> Project.find(57).tasks.where.not(deleted_at: nil).present?
