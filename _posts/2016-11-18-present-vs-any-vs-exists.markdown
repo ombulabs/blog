@@ -9,9 +9,9 @@ author: "mauro-oto"
 When working on a Rails project, you may have seen `present?` calls on
 ActiveRecord relationships. This might feel natural, mostly because `present?`
 exists on all objects [via ActiveSupport](http://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark), so you expect the relationship to respond to it,
-but it's actually not a very good thing to do. If all we want to do is check if
-a scope exists in our database, there are better ways than using `present?`.
-The reason for this is the following:
+but it's actually not a very good idea. If all we want to do is check if the
+scope returns any results from the database, there are better ways than using
+`present?`. This method is slow because:
 
 ```ruby
 irb(main):003:0> Project.find(57).tasks.where.not(deleted_at: nil).present?
@@ -34,11 +34,12 @@ D, [2016-11-14T19:44:57.410973 #27028] DEBUG -- :    (119.0ms)  SELECT COUNT(*) 
 => true
 ```
 
-`any?` uses SQL count instead of loading each task, resulting in a faster, more
-performant result. However, what we actually want to know in this case is if
-there is at least one record in our scope. We don't really need to count all of
-the tasks, it should stop after finding the first one. So applying `LIMIT` would
-solve that for us, and that's how `exists?` saves the day:
+`any?` uses [SQL count](http://www.w3schools.com/sql/sql_func_count.asp) instead
+of loading each task, resulting in a faster, more performant result. However,
+what we actually want to know in this case is if there is at least one record in
+our scope. We don't really need to count all of the tasks, it should stop after
+finding the first one. So applying `LIMIT` would solve that for us, and that's
+how `exists?` saves the day:
 
 ```ruby
 irb(main):005:0> Project.find(57).tasks.where.not(deleted_at: nil).exists?
