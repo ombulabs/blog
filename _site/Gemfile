@@ -20,4 +20,5 @@ group :development do
   gem 'pry'
   gem 'pry-byebug'
   gem 'byebug'
+  gem 'html-proofer'
 end
