@@ -73,6 +73,8 @@ GEM
     pry-byebug (3.3.0)
       byebug (~> 8.0)
       pry (~> 0.10)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     public_suffix (2.0.4)
     pygments.rb (0.6.0)
       posix-spawn (~> 0.3.6)
@@ -121,6 +123,7 @@ DEPENDENCIES
   jekyll-titleize
   pry
   pry-byebug
+  pry-nav
   pygments.rb
   rack-contrib
   rake
