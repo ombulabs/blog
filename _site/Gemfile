@@ -19,6 +19,7 @@ gem 'redcarpet'
 group :development do
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-nav'
   gem 'byebug'
   gem 'html-proofer'
 end
