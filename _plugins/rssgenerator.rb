@@ -56,8 +56,8 @@ module Jekyll
             item.link = link
             item.description = "<![CDATA[" + doc.data['excerpt'].to_s.gsub(%r{</?[^>]+?>}, '') + "]]>"
 
-            # the whole doc content, wrapped in CDATA tags
-            item.content_encoded = "<![CDATA[" + doc.content + "]]>"
+            # the whole doc content converted to HTML, wrapped in CDATA tags
+            item.content_encoded = "<![CDATA[" + rendered_content(doc) + "]]>"
 
             item.updated = doc.date
           end
@@ -116,6 +116,17 @@ module Jekyll
     # Returns nothing
     def ensure_dir(path)
       FileUtils.mkdir_p(path)
+    end
+
+    # Converts a Jekyll::Document to HTML
+    #
+    # document - a Jekyll document
+    #
+    # Returns an HTML string
+    def rendered_content(document)
+      renderer = Jekyll::Renderer.new(document.site, document)
+      renderer.run
+      document.to_liquid.content
     end
   end
 end
