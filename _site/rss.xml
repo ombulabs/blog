@@ -8,44 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 06 Dec 2016 06:06:00 -0500</pubDate>
-    <item>
-      <title>How to use any gem in the Rails production console</title>
-      <link>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
-      <description><![CDATA[How many times did you come across a great gem you wanted to try out in
-a production console, like benchmark-ips or
-awesome-print? Be it for
-performance reasons or for readability, sometimes it&#39;s nice to be able to try
-out something quickly without going through a pull request and deployment
-process. This is possible by modifying the $LOAD_PATH
-Ruby global variable and requiring the gem manually.
-
-$LOAD_PATH is an alias for $:, which essentially contains an array of paths
-that your app will search through when using the Kernel method require.
-$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-require &#39;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&#39;
-]]></description>
-      <pubDate>Tue, 06 Dec 2016 06:06:00 -0500</pubDate>
-      <guid>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</guid>
-      <content:encoded><![CDATA[<p>How many times did you come across a great gem you wanted to try out in
-a production console, like <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a> or
-<a href="https://github.com/awesome-print/awesome_print">awesome-print</a>? Be it for
-performance reasons or for readability, sometimes it&#39;s nice to be able to try
-out something quickly without going through a pull request and deployment
-process. This is possible by modifying the <a href="http://ruby-doc.org/core-2.3.0/doc/globals_rdoc.html">$LOAD_PATH</a>
-Ruby global variable and requiring the gem manually.</p>
-
-<p><code>$LOAD_PATH</code> is an alias for <code>$:</code>, which essentially contains an array of paths
-that your app will search through when using the Kernel method <code>require</code>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-require &#39;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&#39;
-</code></pre></div>
-<!--more-->
-
-<p>sdfsdgdsgsgsdgssdgsdgsdgsdgsgsdgsdgdsgdsgds</p>
-]]></content:encoded>
-      <dc:date>2016-12-06T06:06:00-05:00</dc:date>
-    </item>
+    <pubDate>Fri, 02 Dec 2016 08:31:00 -0500</pubDate>
     <item>
       <title>Present? vs Any? vs Exists?</title>
       <link>http://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html</link>
@@ -496,7 +459,7 @@ projects too.</p>
 could use <a href="https://www.ruby-lang.org/en/">Ruby</a> for the script if that&#39;s
 what you prefer.</p>
 
-<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
+<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/v4.2.7.1/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
 
 <p><a href="https://robots.thoughtbot.com/">Thoughtbot</a> wrote a great article about
 their <code>bin/setup</code> convention:
@@ -1982,7 +1945,7 @@ No vulnerabilities found
 
 <p>You can quickly find <strong>code hotspots</strong>, potential issues, potential bug risks, and even coverage stats.</p>
 
-<p>What is the <a href="https://docs.codeclimate.com/docs/gpa">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
+<p>What is the <a href="https://docs.codeclimate.com/docs/ratings">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
 
 <p>A free alternative would be to run some (or all) of these tools on the project:</p>
 
@@ -3477,6 +3440,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2016-12-06T06:06:00-05:00</dc:date>
+    <dc:date>2016-12-02T08:31:00-05:00</dc:date>
   </channel>
 </rss>
