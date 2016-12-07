@@ -13,36 +13,57 @@
       <title>How to use any gem in the Rails production console</title>
       <link>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
       <description><![CDATA[How many times did you come across a great gem you wanted to try out in
-a production console, like benchmark-ips or
-awesome-print? Be it for
-performance reasons or for readability, sometimes it&#39;s nice to be able to try
-out something quickly without going through a pull request and deployment
+a production console, like benchmark-ips
+or awesome-print?
+
+Be it for performance or for readability, sometimes it&#39;s nice to be able to try
+out something new quickly without going through a pull request + deployment
 process. This is possible by modifying the $LOAD_PATH
 Ruby global variable and requiring the gem manually.
-
-$LOAD_PATH is an alias for $:, which essentially contains an array of paths
-that your app will search through when using the Kernel method require.
-$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-require &#39;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&#39;
 ]]></description>
       <pubDate>Tue, 06 Dec 2016 06:06:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</guid>
       <content:encoded><![CDATA[<p>How many times did you come across a great gem you wanted to try out in
-a production console, like <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a> or
-<a href="https://github.com/awesome-print/awesome_print">awesome-print</a>? Be it for
-performance reasons or for readability, sometimes it&#39;s nice to be able to try
-out something quickly without going through a pull request and deployment
+a production console, like <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a>
+or <a href="https://github.com/awesome-print/awesome_print">awesome-print</a>?</p>
+
+<p>Be it for performance or for readability, sometimes it&#39;s nice to be able to try
+out something new quickly without going through a pull request + deployment
 process. This is possible by modifying the <a href="http://ruby-doc.org/core-2.3.0/doc/globals_rdoc.html">$LOAD_PATH</a>
 Ruby global variable and requiring the gem manually.</p>
 
-<p><code>$LOAD_PATH</code> is an alias for <code>$:</code>, which essentially contains an array of paths
-that your app will search through when using the Kernel method <code>require</code>.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-require &#39;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&#39;
-</code></pre></div>
 <!--more-->
 
-<p>sdfsdgdsgsgsdgssdgsdgsdgsdgsgsdgsdgdsgdsgds</p>
+<p>The Ruby global variable <code>$LOAD_PATH</code> is an alias for <code>$:</code>, which essentially
+contains an array of paths that your app will search through when using the
+Kernel method <code>require</code>.</p>
+
+<p>Obviously the real solution here would be to just put the gem in your Gemfile,
+and bundle. However, if you wish to use <code>benchmark-ips</code> to test the performance
+of methods in a Rails console with production data and you don&#39;t have the gem
+already bundled, then follow these steps:</p>
+
+<ul>
+<li>SSH into your target server</li>
+<li>Run <code>gem install benchmark-ips</code></li>
+<li>Run <code>gem env gemdir</code> to figure out the path where gems are installed. For example:
+<code>
+/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
+</code></li>
+<li>Open the Rails console</li>
+<li>Add the gem&#39;s path to the LOAD<em>PATH global variable, like so:
+```
+$LOAD</em>PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
+```</li>
+<li>Finally, require the gem&#39;s entry point file. You may need to look into the
+gem&#39;s structure to figure out what file you need to require. For example, for
+<code>benchmark-ips</code>:
+<code>
+require &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&quot;
+</code></li>
+</ul>
+
+<p>This should let you use almost any gem you need in a Rails production console.</p>
 ]]></content:encoded>
       <dc:date>2016-12-06T06:06:00-05:00</dc:date>
     </item>
