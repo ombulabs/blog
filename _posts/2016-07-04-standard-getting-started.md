@@ -26,7 +26,7 @@ You should have a small bash script called `bin/setup` in every project. You
 could use [Ruby](https://www.ruby-lang.org/en/) for the script if that's
 what you prefer.
 
-[Rails](http://rubyonrails.org/) has had a `bin/setup` [since 2014](https://github.com/rails/rails/pull/15189) and so should your project! This is the default [./bin/setup](https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup) in a Rails application.
+[Rails](http://rubyonrails.org/) has had a `bin/setup` [since 2014](https://github.com/rails/rails/pull/15189) and so should your project! This is the default [./bin/setup](https://github.com/rails/rails/blob/v4.2.7.1/railties/lib/rails/generators/rails/app/templates/bin/setup) in a Rails application.
 
 [Thoughtbot](https://robots.thoughtbot.com/) wrote a great article about
 their `bin/setup` convention:

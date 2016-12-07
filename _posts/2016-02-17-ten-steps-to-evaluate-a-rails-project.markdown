@@ -92,7 +92,7 @@ This is a quick (and **paid**) step to check code quality. At [Ombu Labs](http:/
 
 You can quickly find **code hotspots**, potential issues, potential bug risks, and even coverage stats.
 
-What is the [GPA](https://docs.codeclimate.com/docs/gpa) of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!
+What is the [GPA](https://docs.codeclimate.com/docs/ratings) of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!
 
 A free alternative would be to run some (or all) of these tools on the project:
 
