@@ -517,7 +517,7 @@ projects too.</p>
 could use <a href="https://www.ruby-lang.org/en/">Ruby</a> for the script if that&#39;s
 what you prefer.</p>
 
-<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
+<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/v4.2.7.1/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
 
 <p><a href="https://robots.thoughtbot.com/">Thoughtbot</a> wrote a great article about
 their <code>bin/setup</code> convention:
@@ -2003,7 +2003,7 @@ No vulnerabilities found
 
 <p>You can quickly find <strong>code hotspots</strong>, potential issues, potential bug risks, and even coverage stats.</p>
 
-<p>What is the <a href="https://docs.codeclimate.com/docs/gpa">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
+<p>What is the <a href="https://docs.codeclimate.com/docs/ratings">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
 
 <p>A free alternative would be to run some (or all) of these tools on the project:</p>
 
