@@ -135,15 +135,19 @@
 <!--more-->
 
 <p>For example:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>path/to/project
 ./bin/setup
 rails server
 </code></pre></div>
+
 <h3>2. Run the tests</h3>
 
 <p>Once you have setup your development environment, try to run the tests. For example:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">rake
 </code></pre></div>
+
 <p>Any decent <a href="http://rubyonrails.org">Rails</a> project will have a passing build, even if it&#39;s not very thorough.</p>
 
 <p>Hopefully, the build won’t take more than 10 minutes to finish. Some builds will take a long time, especially if they include integration tests (e.g. Integration tests that use the <a href="http://www.seleniumhq.org">Selenium</a> driver)</p>
@@ -179,9 +183,11 @@ rails server
 <p>If there are any vulnerable dependencies, this tool will suggest that you upgrade to a patched version of the gem.</p>
 
 <p>In the best case scenario, you will see something like this:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">etagwerker:ombushop/ <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>bundle-audit
 No vulnerabilities found
 </code></pre></div>
+
 <h3>7. Setup Code Climate</h3>
 
 <p>This is a quick (and <strong>paid</strong>) step to check code quality. At <a href="http://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client&#39;s projects.</p>
@@ -190,7 +196,7 @@ No vulnerabilities found
 
 <p>You can quickly find <strong>code hotspots</strong>, potential issues, potential bug risks, and even coverage stats.</p>
 
-<p>What is the <a href="https://docs.codeclimate.com/docs/gpa">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
+<p>What is the <a href="https://docs.codeclimate.com/docs/ratings">GPA</a> of the project? 4.0? 1.5? This will give you an overall idea of the complexity within the project. 4.0 is the best you can get!</p>
 
 <p>A free alternative would be to run some (or all) of these tools on the project:</p>
 

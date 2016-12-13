@@ -133,7 +133,7 @@ projects too.</p>
 could use <a href="https://www.ruby-lang.org/en/">Ruby</a> for the script if that&#39;s
 what you prefer.</p>
 
-<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/master/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
+<p><a href="http://rubyonrails.org/">Rails</a> has had a <code>bin/setup</code> <a href="https://github.com/rails/rails/pull/15189">since 2014</a> and so should your project! This is the default <a href="https://github.com/rails/rails/blob/v4.2.7.1/railties/lib/rails/generators/rails/app/templates/bin/setup">./bin/setup</a> in a Rails application.</p>
 
 <p><a href="https://robots.thoughtbot.com/">Thoughtbot</a> wrote a great article about
 their <code>bin/setup</code> convention:
@@ -157,21 +157,29 @@ our development environments have been setup with this script:
 <h2>Start</h2>
 
 <p>If you are using Rails, starting an application is simple:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">./bin/rails server
 </code></pre></div>
+
 <p>But, what if you want to use something else? Let&#39;s say you want to use
 <a href="https://github.com/sinatra/sinatra">Sinatra</a> with
 <a href="https://github.com/rtomayko/shotgun">Shotgun</a>. Then you would need to start
 the server like this:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">shotgun config.ru
 </code></pre></div>
+
 <p>If you are using <a href="https://rubygems.org/gems/bundler">Bundler</a>, then you would
 need to run it like this:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">bundle exec shotgun config.ru
 </code></pre></div>
+
 <p>What if you want to use <a href="https://github.com/ddollar/foreman">Foreman</a>?</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text"> foreman start
 </code></pre></div>
+
 <p>You get the point. There are way too many ways to start a web application. We
 need to <strong>standardize</strong> this into something flexible like <code>./bin/start</code>.</p>
 
@@ -182,8 +190,10 @@ need to <strong>standardize</strong> this into something flexible like <code>./b
 
 <p>From now on, all the web applications that we build at <a href="http://www.ombulabs.com">Ombu Labs</a>
 will be able to get started like this:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">./bin/start
 </code></pre></div>
+
 <p>It won&#39;t matter if we use Foreman, Sinatra,
 <a href="https://rubygems.org/gems/cuba">Cuba</a>, Rails, Shotgun, or whatever.
 <code>bin/start</code> will know how to get the application started in a development
@@ -193,10 +203,12 @@ environment.</p>
 
 <p>I love how simple it can be to tell anyone to clone the project and run these
 steps:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">cd path/to/project
 ./bin/setup
 ./bin/start
 </code></pre></div>
+
 <p>A web designer that has no experience with Ruby/Rails can setup and start a
 web application in a few minutes.</p>
 
