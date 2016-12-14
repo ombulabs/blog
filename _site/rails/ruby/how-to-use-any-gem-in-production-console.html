@@ -39,8 +39,8 @@
     <meta property="og:description" content="How many times did you come across a great gem you wanted to try out in a production console, like benchmark-ips or awesome-print? Be it for performance or for readability, sometimes it&#39;s nice to be able to try out something new quickly without going through a pull request + deployment..." />
     <meta property="og:site_name" content="How to use any gem in the Rails production console by @mauro_oto" />
     
-      <meta property="article:published_time" content="2016-12-06 06:06:00 -0500" />
-      <meta property="article:modified_time" content="2016-12-06 06:06:00 -0500" />
+      <meta property="article:published_time" content="2016-12-14 13:06:00 -0500" />
+      <meta property="article:modified_time" content="2016-12-14 13:06:00 -0500" />
       <meta property="article:section" content="How many times did you come across a great gem you wanted to try out in a production console, like benchmark-ips or awesome-print? Be it for performance or for readability, sometimes it&#39;s nice to be able to try out something new quickly without going through a pull request + deployment..." />
       <meta property="article:tag" content="How to Use Any Gem in the Rails Production Console - The Lean Software Boutique" />
     
@@ -103,8 +103,8 @@
 
 
 
-<time class="post-date" datetime="2016-12-06">
-  06 Dec 2016
+<time class="post-date" datetime="2016-12-14">
+  14 Dec 2016
 </time>
 
             </section>
@@ -134,22 +134,28 @@ already bundled, then follow these steps:</p>
 <ul>
 <li>SSH into your target server</li>
 <li>Run <code>gem install benchmark-ips</code></li>
-<li>Run <code>gem env gemdir</code> to figure out the path where gems are installed. For example:
-<code>
-/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
-</code></li>
+<li>Run <code>gem env gemdir</code> to figure out the path where gems are installed. For example:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
+</code></pre></div>
+
+<ul>
 <li>Open the Rails console</li>
-<li>Add the gem&#39;s path to the LOAD<em>PATH global variable, like so:
-```
-$LOAD</em>PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-```</li>
+<li>Add the gem&#39;s path to the <code>$LOAD_PATH</code> global variable, like so:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
+</code></pre></div>
+
+<ul>
 <li>Finally, require the gem&#39;s entry point file. You may need to look into the
 gem&#39;s structure to figure out what file you need to require. For example, for
-<code>benchmark-ips</code>:
-<code>
-require &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&quot;
-</code></li>
+<code>benchmark-ips</code>:</li>
 </ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">require &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&quot;
+</code></pre></div>
 
 <p>This should let you use almost any gem you need in a Rails production console.</p>
 

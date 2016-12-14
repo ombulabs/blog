@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 06 Dec 2016 06:06:00 -0500</pubDate>
+    <pubDate>Wed, 14 Dec 2016 13:06:00 -0500</pubDate>
     <item>
       <title>How to use any gem in the Rails production console</title>
       <link>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
@@ -21,7 +21,7 @@ out something new quickly without going through a pull request + deployment
 process. This is possible by modifying the $LOAD_PATH
 Ruby global variable and requiring the gem manually.
 ]]></description>
-      <pubDate>Tue, 06 Dec 2016 06:06:00 -0500</pubDate>
+      <pubDate>Wed, 14 Dec 2016 13:06:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</guid>
       <content:encoded><![CDATA[<p>How many times did you come across a great gem you wanted to try out in
 a production console, like <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a>
@@ -46,26 +46,26 @@ already bundled, then follow these steps:</p>
 <ul>
 <li>SSH into your target server</li>
 <li>Run <code>gem install benchmark-ips</code></li>
-<li>Run <code>gem env gemdir</code> to figure out the path where gems are installed. For example:
-<code>
-/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
-</code></li>
+<li>Run <code>gem env gemdir</code> to figure out the path where gems are installed. For example:</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
+</code></pre></div>
+<ul>
 <li>Open the Rails console</li>
-<li>Add the gem&#39;s path to the LOAD<em>PATH global variable, like so:
-```
-$LOAD</em>PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
-```</li>
+<li>Add the gem&#39;s path to the <code>$LOAD_PATH</code> global variable, like so:</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$LOAD_PATH &lt;&lt; &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib&quot;
+</code></pre></div>
+<ul>
 <li>Finally, require the gem&#39;s entry point file. You may need to look into the
 gem&#39;s structure to figure out what file you need to require. For example, for
-<code>benchmark-ips</code>:
-<code>
-require &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&quot;
-</code></li>
+<code>benchmark-ips</code>:</li>
 </ul>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">require &quot;/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb&quot;
+</code></pre></div>
 <p>This should let you use almost any gem you need in a Rails production console.</p>
 ]]></content:encoded>
-      <dc:date>2016-12-06T06:06:00-05:00</dc:date>
+      <dc:date>2016-12-14T13:06:00-05:00</dc:date>
     </item>
     <item>
       <title>Present? vs Any? vs Exists?</title>
@@ -3498,6 +3498,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2016-12-06T06:06:00-05:00</dc:date>
+    <dc:date>2016-12-14T13:06:00-05:00</dc:date>
   </channel>
 </rss>
