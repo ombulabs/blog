@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to use any gem in the Rails production console"
-date: 2016-12-06 11:06:00
+date: 2016-12-14 18:06:00
 categories: ["rails", "ruby"]
 author: "mauro-oto"
 ---
@@ -29,19 +29,24 @@ already bundled, then follow these steps:
 - SSH into your target server
 - Run `gem install benchmark-ips`
 - Run `gem env gemdir` to figure out the path where gems are installed. For example:
+
 ```
 /usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0
 ```
+
 - Open the Rails console
-- Add the gem's path to the LOAD_PATH global variable, like so:
+- Add the gem's path to the `$LOAD_PATH` global variable, like so:
+
 ```
 $LOAD_PATH << "/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib"
 ```
+
 - Finally, require the gem's entry point file. You may need to look into the
 gem's structure to figure out what file you need to require. For example, for
 `benchmark-ips`:
+
 ```
-require "/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb"
+require "/usr/local/rbenv/versions/2.1.2/lib/ruby/gems/benchmark-ips-2.7.2/lib/benchmark/ips.rb"
 ```
 
 This should let you use almost any gem you need in a Rails production console.
