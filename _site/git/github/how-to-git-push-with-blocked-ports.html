@@ -120,17 +120,21 @@
 <!--more-->
 
 <p>If your Git remote repository supports HTTPS, you can easily push to it by following these steps:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">git remote add origin-https https://github.com/DatabaseCleaner/database_cleaner.git
 git push origin-https master
 </code></pre></div>
+
 <p>A Git repository can have as many remote repositories as you want, so I like to keep <code>origin</code> and <code>origin-https</code> to <code>git push</code> whenever I want.</p>
 
 <p>You will have to enter your username and password to authenticate with Github.</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">$ git push origin-https master
 Username for &#39;https://github.com&#39;: etagwerker
 Password for &#39;https://etagwerker@github.com&#39;:
 Everything up-to-date
 </code></pre></div>
+
 <p>Now you can <code>git push</code> even on shitty Internet connections.</p>
 
         </section>
@@ -386,8 +390,8 @@ Everything up-to-date
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

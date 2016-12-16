@@ -125,13 +125,17 @@ process.</p>
 
 <p>If you don&#39;t already have your own Hubot repository, you can easily create one.
 The easiest way is using the hubot generator:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g yo generator-hubot
 </code></pre></div>
+
 <p>Run the generator in a folder of your choosing:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir myhubot
 <span class="nv">$ </span><span class="nb">cd </span>myhubot
 <span class="nv">$ </span>yo hubot
 </code></pre></div>
+
 <p>Go through the steps the generator takes you, and when you&#39;re done, initialize a
 Git repository and push it to Github or your preferred Git server.</p>
 
@@ -145,11 +149,13 @@ is working, but you can&#39;t leave it running in the background out-of-the-box,
 
 <p>You can work around this by leaving <code>foreman</code> itself running in a dettached tmux
 session:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tmux new -s hubot
 <span class="nv">$ </span><span class="nb">cd</span> /path/to/hubot
 <span class="nv">$ </span>foreman start
 &lt;Ctrl-b&gt;-d
 </code></pre></div>
+
 <p>This is <strong>not the best way to do it</strong>, as the process could end unexpectedly and
 it won&#39;t come up again. This forces you to re-attach to the session or kill it
 and restart Hubot manually.</p>
@@ -160,6 +166,7 @@ example, check out
 
 <p>In our case, we use <code>systemd</code>, which allows us to start it by running
 <code>sudo service hubot start</code>. To do this, create the following service file:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="p">;</span> Hubot systemd service unit file
 <span class="p">;</span> Place in e.g. <span class="sb">`</span>/etc/systemd/system/hubot.service<span class="sb">`</span>, <span class="k">then</span>
 <span class="p">;</span> <span class="sb">`</span>systemctl daemon-reload<span class="sb">`</span> and <span class="sb">`</span>service hubot start<span class="sb">`</span>.
@@ -182,6 +189,7 @@ example, check out
 <span class="o">[</span>Install<span class="o">]</span>
 <span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
 </code></pre></div>
+
 <p>Finally, you can run <code>systemctl daemon-reload</code> and then
 <code>sudo service hubot start</code>. Any changes you make to the bot can be obtained
 using <code>git pull origin master</code> and then restarting the Hubot service
@@ -447,8 +455,8 @@ or simple things like getting pictures of pugs delivered to your channel!</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

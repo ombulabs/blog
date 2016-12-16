@@ -128,6 +128,7 @@ Slack notifications super simple in Ruby.</p>
 
 <p>Once that&#39;s done, you can create the Rake task which Solano can run when
 the build has finished running:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">def</span> <span class="nf">current_branch</span>
     <span class="sb">`git symbolic-ref HEAD 2&gt;/dev/null | cut -d&quot;/&quot; -f 3-`</span><span class="o">.</span><span class="n">strip</span>
   <span class="k">end</span>
@@ -150,17 +151,21 @@ the build has finished running:</p>
     <span class="n">client</span><span class="o">.</span><span class="n">notify</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
   <span class="k">end</span>
 </code></pre></div>
+
 <p>This will let #your-channel know the branch for which the build ran, whether it passed,
 failed or errored, and a link to the build report.</p>
 
 <p>You also need to explicitly call it after the build is finished in your
 <code>solano.yml</code> or <code>tddium.yml</code> file:</p>
+
 <div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">:tddium</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">:hooks</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">:post_build</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">RAILS_ENV=test bundle exec rake tddium:post_build_hook</span>
 </code></pre></div>
+
 <p>We have also set up deployment notifications, so whenever someone deploys to
 production, the Slack channel is notified:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">namespace</span> <span class="ss">:notify</span> <span class="k">do</span>
   <span class="n">task</span> <span class="ss">:start</span><span class="p">,</span> <span class="ss">roles</span><span class="p">:</span> <span class="o">[</span><span class="ss">:app</span><span class="o">]</span> <span class="k">do</span>
     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">USERNAME</span><span class="si">}</span><span class="s2"> started deploying </span><span class="si">#{</span><span class="no">REPO</span><span class="si">}</span><span class="s2"> (</span><span class="si">#{</span><span class="no">GIT_TAG</span><span class="si">}</span><span class="s2">) to production&quot;</span>
@@ -176,6 +181,7 @@ production, the Slack channel is notified:</p>
 <span class="n">before</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;notify:start&quot;</span>
 <span class="n">after</span> <span class="s2">&quot;deploy&quot;</span><span class="p">,</span> <span class="s2">&quot;notify:done&quot;</span>
 </code></pre></div>
+
 <p>There are many different use cases, just make sure not to spam your team with
 too many notifications. At some point, you may want to set up a
 channel dedicated solely to notifications if you are part of a bigger team.</p>
@@ -433,8 +439,8 @@ channel dedicated solely to notifications if you are part of a bigger team.</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

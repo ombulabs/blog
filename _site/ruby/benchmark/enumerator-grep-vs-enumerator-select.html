@@ -123,6 +123,7 @@ when it can, <code>#grep</code> provides better readability and a small speed im
 over <code>#select</code>.</p>
 
 <p>See the benchmark below for example, which uses the class matcher for <code>#grep</code>:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">041</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span> <span class="p">}</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">042</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">to_s</span> <span class="p">}</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">043</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -137,8 +138,10 @@ over <code>#select</code>.</p>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">04</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">c</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="o">.</span><span class="n">is_a?</span> <span class="nb">Integer</span> <span class="p">}</span> <span class="o">==</span> <span class="n">c</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="kp">true</span>
 </code></pre></div>
+
 <p>You can also see its power when using Regexp patterns, which is not only faster
 but also less verbose, which is enough of a win to favor it over <code>#select</code>:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">04</span><span class="mi">9</span> <span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="p">(</span><span class="mi">65</span> <span class="o">+</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">26</span><span class="p">))</span><span class="o">.</span><span class="n">chr</span> <span class="p">}</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">050</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">100000</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">to_s</span> <span class="p">}</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">051</span> <span class="o">&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -150,15 +153,18 @@ but also less verbose, which is enough of a win to favor it over <code>#select</
 <span class="nb">select</span>       <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">02105</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">grep</span>         <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">020000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">012626</span><span class="p">)</span>
 </code></pre></div>
+
 <p>There are some pretty good use cases for <code>#grep</code>, and one last thing worth
 keeping in mind: <code>#grep</code> can take a second parameter, which acts
 as <code>#map</code> does and reads very nicely. For example:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">056</span> <span class="o">&gt;</span> <span class="n">hello</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;ello&#39;</span><span class="p">,</span> <span class="s1">&#39;llo&#39;</span><span class="p">,</span> <span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="o">]</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">057</span> <span class="o">&gt;</span> <span class="n">hello</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="sr">/[A-Z]\w+/</span> <span class="o">===</span> <span class="n">x</span> <span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]</span>
 <span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">05</span><span class="mi">8</span> <span class="o">&gt;</span> <span class="n">hello</span><span class="o">.</span><span class="n">grep</span><span class="p">(</span><span class="sr">/[A-Z]\w+/</span><span class="p">,</span> <span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span>
  <span class="o">=&gt;</span> <span class="o">[</span><span class="s2">&quot;hello&quot;</span><span class="o">]</span>
 </code></pre></div>
+
         </section>
 
         
@@ -412,8 +418,8 @@ as <code>#map</code> does and reads very nicely. For example:</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

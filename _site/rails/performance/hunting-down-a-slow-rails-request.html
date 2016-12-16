@@ -134,6 +134,7 @@ performance of some of the more critical API endpoints.</p>
 
 <p>To debug this, I first captured the <code>String</code> object allocation count locally to
 see how it behaved:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">GET</span> <span class="s2">&quot;/email_accounts.json?results_per_page=30&quot;</span> <span class="k">for</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span> <span class="n">at</span> <span class="mi">2016</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mo">02</span> <span class="mi">13</span><span class="p">:</span><span class="mo">04</span><span class="p">:</span><span class="mi">22</span> <span class="o">+</span><span class="mo">0000</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">EmailAccountsController</span><span class="c1">#index as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;results_per_page&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;30&quot;</span><span class="p">}</span>
@@ -144,27 +145,36 @@ see how it behaved:</p>
 
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">5860</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">11</span><span class="o">.</span><span class="mi">8</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">564</span><span class="o">.</span><span class="mi">9</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
+
 <p>To get the amount of allocated strings, I used the following snippet:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">strings</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="no">ObjectSpace</span><span class="o">.</span><span class="n">each_object</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">str</span><span class="o">|</span> <span class="n">strings</span><span class="o">[</span><span class="n">str</span><span class="o">.</span><span class="n">class</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="p">}</span>
 <span class="n">pp</span> <span class="n">strings</span>
 </code></pre></div>
+
 <p>As you can see, there are 700k+ allocated strings. It is very likely that this
 increase in object allocation is the culprit for the slow performance.</p>
 
 <p>I dug a bit into the <code>EmailAccount</code> model and its associations, and noticed that
 this model had a one-to-many association. Supposedly, we were only returning one
 record for this association by using:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">scope</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:latest_sync</span><span class="p">)</span>
 </code></pre></div>
+
 <p>and</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">has_one</span> <span class="ss">:latest_sync</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">order</span> <span class="s2">&quot;email_account_syncs.last_attempt_at desc&quot;</span> <span class="p">},</span>
                       <span class="ss">class_name</span><span class="p">:</span> <span class="s2">&quot;EmailAccountSync&quot;</span>
 </code></pre></div>
+
 <p>As it turns out, the <code>has_one :latest_sync</code> relationship was not being
 respected by the query performed in the <code>index</code> action, and thus:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">EmailAccountSync</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">21</span><span class="o">.</span><span class="mi">9</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="s2">&quot;email_account_syncs&quot;</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="s2">&quot;email_account_syncs&quot;</span>  <span class="no">WHERE</span> <span class="s2">&quot;email_account_syncs&quot;</span><span class="o">.</span><span class="s2">&quot;email_account_id&quot;</span> <span class="no">IN</span> <span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>  <span class="no">ORDER</span> <span class="no">BY</span> <span class="n">email_account_syncs</span><span class="o">.</span><span class="n">last_attempt_at</span> <span class="n">desc</span>
 </code></pre></div>
+
 <p>This meant that all <code>EmailAccountSync</code> instances were getting loaded for each
 <code>EmailAccount</code> record. The <code>limit</code> that should have been in the SQL statement
 was not there.</p>
@@ -174,6 +184,7 @@ which suggests using <code>eager_load</code> instead of <code>includes</code>, w
 
 <p>The downside is that it introduces an N+1 query problem, but it&#39;s a dramatical
 performance gain:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Started</span> <span class="no">GET</span> <span class="s2">&quot;/email_accounts.json?results_per_page=30&quot;</span> <span class="k">for</span> <span class="mi">186</span><span class="o">.</span><span class="mi">158</span><span class="o">.</span><span class="mi">142</span><span class="o">.</span><span class="mi">200</span> <span class="n">at</span> <span class="mi">2016</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mo">02</span> <span class="mi">13</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">44</span> <span class="o">+</span><span class="mo">0000</span>
 <span class="no">Processing</span> <span class="n">by</span> <span class="no">EmailAccountsController</span><span class="c1">#index as JSON</span>
   <span class="ss">Parameters</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;results_per_page&quot;</span><span class="o">=&gt;</span><span class="s2">&quot;30&quot;</span><span class="p">}</span>
@@ -184,6 +195,7 @@ performance gain:</p>
 
 <span class="no">Completed</span> <span class="mi">200</span> <span class="no">OK</span> <span class="k">in</span> <span class="mi">178</span><span class="n">ms</span> <span class="p">(</span><span class="ss">Views</span><span class="p">:</span> <span class="mi">5</span><span class="o">.</span><span class="mi">6</span><span class="n">ms</span> <span class="o">|</span> <span class="ss">ActiveRecord</span><span class="p">:</span> <span class="mi">2</span><span class="o">.</span><span class="mi">3</span><span class="n">ms</span><span class="p">)</span>
 </code></pre></div>
+
 <p>The object allocation is down by a huge amount, and the request now takes from
 50ms to 200ms to respond. This is not yet completely efficient, but it is a much
 more acceptable value.</p>
@@ -441,8 +453,8 @@ more acceptable value.</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->
