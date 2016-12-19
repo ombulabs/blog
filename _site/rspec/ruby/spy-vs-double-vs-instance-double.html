@@ -120,6 +120,7 @@ different ways to implement a mock object.</p>
 
 <p>Let&#39;s discuss some of the differences between a <code>spy</code>, a <code>double</code> and an
 <code>instance_double</code>. First, the <code>spy</code>:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s1">&#39;rspec/mocks/standalone&#39;</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_spy</span> <span class="o">=</span> <span class="n">spy</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
@@ -127,20 +128,24 @@ different ways to implement a mock object.</p>
 <span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">spy</span><span class="o">.</span><span class="n">whatever_method</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Double (anonymous)&gt;</span>
 </code></pre></div>
+
 <!--more-->
 
 <p>The <code>spy</code> <a href="https://relishapp.com/rspec/rspec-mocks/docs/basics/spies">accepts any method calls</a>
 and always returns itself unless specified. If you need the mock object to raise
 if it receives an unexpected method call, you can use a <code>double</code> instead:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_double</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Double User&gt;</span>
 <span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_double</span><span class="o">.</span><span class="n">whatever_method</span>
 <span class="no">RSpec</span><span class="o">::</span><span class="no">Mocks</span><span class="o">::</span><span class="ss">MockExpectationError</span><span class="p">:</span> <span class="c1">#&lt;Double User&gt; received unexpected message :whatever_method with (no args)</span>
 <span class="n">from</span> <span class="sr">/Users/m</span><span class="n">auro</span><span class="o">-</span><span class="n">oto</span><span class="o">/.</span><span class="n">rvm</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="vi">@carbide</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">rspec</span><span class="o">-</span><span class="n">support</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">rspec</span><span class="o">/</span><span class="n">support</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">87</span><span class="ss">:in</span> <span class="n">block</span> <span class="k">in</span> <span class="o">&lt;</span><span class="ss">module</span><span class="p">:</span><span class="no">Support</span><span class="o">&gt;</span>
 </code></pre></div>
+
 <p>If you haven&#39;t specified that the double can receive a given method, in the case
 above <code>whatever_method</code>, it&#39;ll raise an exception. You can explicitly tell the
 double that it can receive such a method and its return value like this:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">6</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_double</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="no">User</span><span class="p">,</span> <span class="ss">whatever_method</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Double User&gt;</span>
 <span class="o">[</span><span class="mi">7</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_double</span><span class="o">.</span><span class="n">whatever_method</span>
@@ -149,6 +154,7 @@ double that it can receive such a method and its return value like this:</p>
 <span class="no">RSpec</span><span class="o">::</span><span class="no">Mocks</span><span class="o">::</span><span class="ss">MockExpectationError</span><span class="p">:</span> <span class="c1">#&lt;Double User&gt; received unexpected message :some_method with (no args)</span>
 <span class="n">from</span> <span class="sr">/Users/m</span><span class="n">auro</span><span class="o">-</span><span class="n">oto</span><span class="o">/.</span><span class="n">rvm</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="vi">@carbide</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">rspec</span><span class="o">-</span><span class="n">support</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">rspec</span><span class="o">/</span><span class="n">support</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">87</span><span class="ss">:in</span> <span class="n">block</span> <span class="k">in</span> <span class="o">&lt;</span><span class="ss">module</span><span class="p">:</span><span class="no">Support</span><span class="o">&gt;</span>
 </code></pre></div>
+
 <p>This way, <code>whatever_method</code> can be called and <code>nil</code> will be returned, which is
 the return value we specified. Any other method calls will fail if we
 haven&#39;t specified them (e.g. <code>some_method</code>).</p>
@@ -156,10 +162,12 @@ haven&#39;t specified them (e.g. <code>some_method</code>).</p>
 <p>If we want to have even more control over what happens with our mock object, and
 disallow arbitrary method creation like <code>whatever_method</code> or <code>some_method</code>, we
 can use a verifying double, which exists since RSpec 3 as <code>instance_double</code>:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">9</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_verifiable</span> <span class="o">=</span> <span class="n">instance_double</span><span class="p">(</span><span class="no">User</span><span class="p">,</span> <span class="ss">whatever_method</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span>
 <span class="no">RSpec</span><span class="o">::</span><span class="no">Mocks</span><span class="o">::</span><span class="ss">MockExpectationError</span><span class="p">:</span> <span class="n">the</span> <span class="no">User</span> <span class="k">class</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">implement</span> <span class="n">the</span> <span class="n">instance</span> <span class="nb">method</span><span class="p">:</span> <span class="n">whatever_method</span>
 <span class="n">from</span> <span class="sr">/Users/m</span><span class="n">auro</span><span class="o">-</span><span class="n">oto</span><span class="o">/.</span><span class="n">rvm</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">ruby</span><span class="o">-</span><span class="mi">2</span><span class="o">.</span><span class="mi">2</span><span class="o">.</span><span class="mi">1</span><span class="vi">@carbide</span><span class="o">/</span><span class="n">gems</span><span class="o">/</span><span class="n">rspec</span><span class="o">-</span><span class="n">support</span><span class="o">-</span><span class="mi">3</span><span class="o">.</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">rspec</span><span class="o">/</span><span class="n">support</span><span class="o">.</span><span class="n">rb</span><span class="p">:</span><span class="mi">87</span><span class="ss">:in</span> <span class="n">block</span> <span class="k">in</span> <span class="o">&lt;</span><span class="ss">module</span><span class="p">:</span><span class="no">Support</span><span class="o">&gt;</span>
 </code></pre></div>
+
 <p>If we try to declare a method which is not implemented by the class of the
 mocked instance, it will raise an exception. If we decide to use mock objects in
 our tests, instance_doubles provides us with a bit more confidence in our tests
@@ -168,6 +176,7 @@ than if we were using spies or regular doubles.</p>
 <p>The performance of <code>instance_double</code> is slightly worse than <code>double</code> or <code>spy</code>
 because verifying doubles are more complex. The difference between using a
 verifying double and a real object is quite significant:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">Benchmark.ips do |bm|
   bm.report(&quot;spy&quot;) { spy(User, id: 1) }
   bm.report(&quot;double&quot;) { double(User, id: 1) }
@@ -197,6 +206,7 @@ Comparison:
        actual object:     1226.1 i/s - 23.79x slower
      via factorygirl:     1036.7 i/s - 28.14x slower
 </code></pre></div>
+
 <p>If you are testing a service and don&#39;t care about testing ActiveRecord callbacks
 or database interactions, you will likely be better off using a double. If
 you are already using spies or doubles, you may want to use a verifying double
@@ -456,8 +466,8 @@ implementation is worth it.</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

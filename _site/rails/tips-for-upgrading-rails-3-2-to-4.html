@@ -136,6 +136,7 @@ upgrading to Rails 4.</p>
 <p>Along with the e-book I mentioned, the author released
 <a href="https://github.com/alindeman/rails4_upgrade">a gem</a> which you can add to your
 Rails 3 project. It includes a Rake task that will help you with the upgrade:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle exec rake rails4:check
 
 ** GEM COMPATIBILITY CHECK **
@@ -151,11 +152,13 @@ Rails 3 project. It includes a Rake task that will help you with the upgrade:</p
 | strong_parameters 0.2.3                  | railties ~&gt; 3.0            |
 +------------------------------------------+----------------------------+
 </code></pre></div>
+
 <p>Now instead of going through your currently bundled gems or Gemfile.lock
 manually, you get a report of what gems you need to upgrade.</p>
 
 <p>For an overview of your outdated gems, there&#39;s also <code>bundle outdated</code>, which you
 can run on any project:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle outdated
 Fetching gem metadata from http://rubygems.org/........
 Fetching version metadata from http://rubygems.org/...
@@ -184,6 +187,7 @@ Outdated gems included in the bundle:
   * devise (newest 4.1.1, installed 2.1.4, requested ~&gt; 2.1.0)
   * ...
 </code></pre></div>
+
 <p>Last but not least, there&#39;s the <code>rails:update</code>
 <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>,
 which you can use as a guideline as explained very clearly in
@@ -444,8 +448,8 @@ app was previously running on Rails 2.</p>
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

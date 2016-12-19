@@ -124,6 +124,7 @@ When you find yourself staring at the screen after running
  When you run <code>bundle exec bumbler</code> you will see a progress bar and a detail of
  the dependencies which took the longest to load.
 Here&#39;s an example of a project&#39;s development dependencies:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  git:(master) ✗ bundle exec bumbler
 [#################################################                             ]
 (49/65) travis-lint...
@@ -140,6 +141,7 @@ Slow requires:
     414.27  pry
     852.13  salesforce_bulk_api
 </code></pre></div>
+
 <p>As you can see, one of the gems takes almost 1 second to load on my system,
  and removing it decreases the time it takes for <code>bundle exec rails c</code> to load
  by 1 second. It&#39;s not a lot, but consider every Rake task you run which depends
@@ -147,6 +149,7 @@ Slow requires:
 
 <p>After we get rid of <code>salesforce_bulk_api</code> and <code>render_anywhere</code> and manually
  call <code>require</code> on them when needed, the load time looks like this:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  git:(master) ✗ bundle exec bumbler
 [#################################################                             ]
 (47/65) fog-aws...
@@ -161,6 +164,7 @@ Slow requires:
     365.67  pry
     464.09  rails
 </code></pre></div>
+
 <p>Your tests can also benefit from this, as you may find gems that you do not need
  to have in the test environment. Capistrano is one example, usually you want
  to have it load <strong>only</strong> in development, not in test nor production.</p>
@@ -425,8 +429,8 @@ Slow requires:
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

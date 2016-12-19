@@ -116,15 +116,18 @@
 <p><strong>One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.</strong></p>
 
 <p>For instance, what usually happens is that you commit a file with sensitive information. In this Example I added accidentally my <code>ssh-key</code> to the repo:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit -am <span class="s1">&#39;init git repo&#39;</span>
 <span class="o">[</span>master <span class="o">(</span>root-commit<span class="o">)</span> 917a1e1<span class="o">]</span> init git repo
  <span class="m">2</span> files changed, <span class="m">52</span> insertions<span class="o">(</span>+<span class="o">)</span>
  create mode <span class="m">100644</span> id_rsa
  create mode <span class="m">100644</span> id_rsa.pub
 </code></pre></div>
+
 <p>After doing a couple of additions, working and editing, I realise that I should never have commited the <code>ssh-key</code>. *facepalm*</p>
 
 <p>Alright, then I just do a simple <code>git rm --cached id_rsa</code> and everything is back to normal. I also add this file to a .gitignore, so that this cannot happen in the future anymore.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git rm --cached id_rsa
 rm <span class="s1">&#39;id_rsa&#39;</span>
 <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git status
@@ -136,7 +139,9 @@ D  id_rsa
  create mode <span class="m">100644</span> .gitignore
  delete mode <span class="m">100644</span> id_rsa
 </code></pre></div>
+
 <p>So if we now have a look in our commit list, we can still see our first commit where I added my ssh-key. If I checkout this commit, I still have the contents of my <code>ssh-key</code> available.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git log
 917a1e1 - init git repo <span class="o">(</span><span class="m">24</span> minutes ago<span class="o">)</span> &lt;Sirko Sittig&gt;
 <span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git checkout 917a1e1
@@ -147,11 +152,14 @@ d/uhFUJgSqq4AJGOFLLPpQ+9jwfA+WraIxZ9R7p8LgpNdUwKsmGnUvofeD/9Rs1y
 YZO8EAjl1URLJ379nN+L5KKPS/48Q4iGp57iwuGzrXLHccLyW5+Z0iMuHlKBQzPx
 ...
 </code></pre></div>
+
 <p>To ensure that ALL of this data gets properly removed, I need to remove this file from all the commits in the repository with <a href="https://git-scm.com/docs/git-filter-branch">git filter-branch</a>. The command <code>git rm --cached</code> <a href="https://git-scm.com/docs/git-rm">git rm docs</a> is not sufficient in this case.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD
 Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>6/6<span class="o">)</span>
 Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
 </code></pre></div>
+
 <p>So far so good, but what about my other branches that have been created?
 <code>bash
 (master) $ git checkout new-feature
@@ -165,6 +173,7 @@ drwxrwxr-x  8 sirko sirko  4096 Dec 31 13:20 .git/
 </code></p>
 
 <p>Apparently <code>git filter-branch</code> is applying this changes only to the current branch, which is actually not what I want. To make this work, it seems that I have to run <code>git filter-branch</code> in every existing branch, which makes it pretty annoying. After reading more in the (git docs)[https://git-scm.com/docs/git-filter-branch], I found that I need to apply the <code>--all</code> option.</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">(</span>master<span class="o">)</span> <span class="nv">$ </span>git filter-branch --tree-filter <span class="s1">&#39;rm -f id_rsa&#39;</span> HEAD --all
 Rewrite c69deb9779a30e6335ab1a8ac1a0825cfc9302e4 <span class="o">(</span>7/7<span class="o">)</span>
 Ref <span class="s1">&#39;refs/heads/master&#39;</span> was rewritten
@@ -181,6 +190,7 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 -rw-rw-r--  <span class="m">1</span> sirko sirko   <span class="m">748</span> Dec <span class="m">31</span> 13:41 id_rsa.pub
 -rw-rw-r--  <span class="m">1</span> sirko sirko    <span class="m">64</span> Dec <span class="m">31</span> 13:41 my_document.txt
 </code></pre></div>
+
 <p>That seems to be exactly what I want and in the end I just need to <code>git push --all --force</code> my changes. <strong>After doing this, all collaborators should dump their local versions and clone a fresh version from the origin.</strong></p>
 
 <p>Another alternative to working with <code>git filter-branch</code> is <a href="https://rtyley.github.io/bfg-repo-cleaner/">BFG</a> which has some more nifty features.</p>
@@ -442,8 +452,8 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

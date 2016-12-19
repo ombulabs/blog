@@ -113,8 +113,10 @@
         <section class="post-content">
           <p>A few weeks ago, I noticed weird output in the <a href="https://relishapp.com/rspec">RSpec</a>
 test suite (~4000 tests) for a <a href="http://rubyonrails.org">Rails</a> application:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
 </code></pre></div>
+
 <p>This Rails app uses a <a href="https://www.postgresql.org">PostgreSQL</a> database. After
 some Googling, it turns out that this is a warning from PostgreSQL. When the
 database doesn&#39;t recognize the type to use for a column, it casts to string by
@@ -126,6 +128,7 @@ default.</p>
 warning first started showing up. Then I decided to use RSpec&#39;s documentation
 format instead. I ran the build locally, and the test that triggers the warning
 for the first time was exposed:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle exec rspec spec --format documentation
 
 ...
@@ -140,6 +143,7 @@ unknown OID 353414: failed to recognize type of &#39;client_campaigns&#39;. It w
 
 ...
 </code></pre></div>
+
 <p>The RSpec documentation format shows us the test description and the example
 names. Because of this, we can tell what test we can run to reproduce the
 warning. It also allows us to figure out where in the codebase the warning is
@@ -413,8 +417,8 @@ RSpec&#39;s default formatting, remember you can always add the flag to your
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

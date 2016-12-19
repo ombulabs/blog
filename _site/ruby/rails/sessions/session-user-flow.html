@@ -124,6 +124,7 @@
 <p>I once had the idea to put all this information into an object. This way I could test it and do wild things with the data, but the frustration comes as soon as you change your Object stored in your session.</p>
 
 <p>Basically this is what you should <strong>NOT</strong> do:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Location</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
     <span class="vi">@location</span> <span class="o">=</span> <span class="n">location_request</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>  
@@ -142,18 +143,22 @@
   <span class="k">end</span>
 <span class="k">end</span>
 </code></pre></div>
+
 <p>As soon as you later remove the location class and you are still trying to access <code>session[:user_location]</code>, your App will raise the following exception:</p>
+
 <div class="highlight"><pre><code class="language-text" data-lang="text">ActionDispatch::Session::SessionRestoreError
 
 Session contains objects whose class definition isn&#39;t available.
 Remember to require the classes for all objects kept in the session.
 (Original exception: uninitialized constant MyController::Location [NameError])
 </code></pre></div>
+
 <p>The problem is at first not very obvious. The app has no knowledge of the previously stored class anymore.</p>
 
 <p>A better way is to not store complex objects or classes in the session. Think about how and what you want to store in the session and keep the data structure simple. Maybe a specific set of helper or controller methods just for handling the user navigation is enough. You can guide or force the user to a specific area of your website using the stored session information.</p>
 
 <p>One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">before_action</span> <span class="ss">:store_path</span>
 
 <span class="k">def</span> <span class="nf">store_path</span>
@@ -167,6 +172,7 @@ Remember to require the classes for all objects kept in the session.
   <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">].</span><span class="n">include?</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
+
 <p>You can keep it simple at this point and you can also test it in an <a href="https://relishapp.com/rspec/rspec-rails/docs/controller-specs/anonymous-controller">Anonymous Controller</a>. With some basic helpers like this, you could make a lot of things much easier and keep the code maintainable.</p>
 
 <p>Session variables are a great way to test your business ideas and user flow. They are a good way to guide your users without storing a lot of information in the database or using third party services.</p>
@@ -428,8 +434,8 @@ Remember to require the classes for all objects kept in the session.
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

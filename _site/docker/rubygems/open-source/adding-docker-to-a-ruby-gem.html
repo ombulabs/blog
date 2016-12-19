@@ -130,6 +130,7 @@
 <!--more-->
 
 <p>Supposedly these steps should start the required services and run the build. I was expecting to watch it pass, but this is what I saw:</p>
+
 <div class="highlight"><pre><code class="language-bash" data-lang="bash">Installing mongo_ext 0.19.3 with native extensions
 
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
@@ -153,6 +154,7 @@ Provided configuration options:
     --curdir
     --ruby<span class="o">=</span>/usr/local/rvm/rubies/ruby-2.2.2/bin/<span class="k">$(</span>RUBY_BASE_NAME<span class="k">)</span>
 </code></pre></div>
+
 <p>If I were to add this contribution, I&#39;d make sure that the <code>CONTRIBUTE.markdown</code> lists <a href="https://www.docker.com">Docker</a> as an <em>option</em> to run the specs, not as the default.</p>
 
         </section>
@@ -408,8 +410,8 @@ Provided configuration options:
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->

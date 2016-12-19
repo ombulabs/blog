@@ -138,18 +138,22 @@ with 3 columns. So, you must  avoid object loads as much as possible. Only load
 objects into memory when you <strong>really need them</strong>.</p>
 
 <p>For example:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
   <span class="n">products</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="nb">p</span><span class="o">.</span><span class="n">shop_id</span> <span class="o">==</span> <span class="n">shop_id</span> <span class="p">}</span><span class="o">.</span><span class="n">first</span>
 <span class="k">end</span>
 </code></pre></div>
+
 <p><code>select</code> will load all the <code>products</code> into memory and then compare the ids.
 This will be slower than just using <code>where</code>.</p>
 
 <p>This will be much faster:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
   <span class="n">products</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">shop_id</span><span class="p">:</span> <span class="n">shop_id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
 <span class="k">end</span>
 </code></pre></div>
+
 <p>Because it will perform the query and <strong>only after the query returns</strong> it will
 load the objects into memory.</p>
 
@@ -159,10 +163,12 @@ load the objects into memory.</p>
 instead of <code>map</code>.</p>
 
 <p>For example:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:id</span>
 <span class="c1"># Order Load (5.0ms)  SELECT `orders`.* FROM `orders` WHERE `orders`.`number` = &#39;R545612547&#39; ORDER BY orders.created_at DESC</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span>
 </code></pre></div>
+
 <p>As with <code>select</code>, <code>map</code> will load the <code>order</code> into memory and it will get the
 <code>id</code> attribute.</p>
 
@@ -170,10 +176,12 @@ instead of <code>map</code>.</p>
 into memory.</p>
 
 <p>So this will be much faster:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pluck</span> <span class="ss">:id</span>
 <span class="c1"># SQL (0.8ms)  SELECT `orders`.`id` FROM `orders` WHERE `orders`.`number` = &#39;R545612547&#39; ORDER BY orders.created_at DESC</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span>
 </code></pre></div>
+
 <p>For this particular case, <code>pluck</code> is six times faster than <code>map</code>.</p>
 
 <h2>Avoid N+1 Queries</h2>
@@ -189,6 +197,7 @@ strategy, it&#39;s a good idea. (full explanation in this interview with <a href
 by including the tables that you need before running the query.</p>
 
 <p>For example:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;created_at &gt; ?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
      <span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">order</span><span class="o">.</span><span class="n">ship_address</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:firstname</span><span class="p">)</span>
@@ -201,16 +210,19 @@ by including the tables that you need before running the query.</p>
 <span class="sb">  Address::ShipAddress Load (0.5ms)  SELECT `</span><span class="n">addresses</span><span class="sb">`.* FROM `</span><span class="n">addresses</span><span class="sb">` WHERE `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">type</span><span class="sb">` IN (&#39;Address::ShipAddress&#39;) AND `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">order_id</span><span class="sb">` = 2619182 LIMIT 1</span>
 <span class="sb">  # ... to N</span>
 </code></pre></div>
+
 <p>This code will perform <strong>one</strong> query on the <code>orders</code> table and <strong>N</strong> queries on
 the <code>addresses</code> table.</p>
 
 <p>This will be faster:</p>
+
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">eager_load</span><span class="p">(</span><span class="ss">:ship_address</span><span class="p">)</span>
      <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;orders.created_at &gt; ?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
      <span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">order</span><span class="o">.</span><span class="n">ship_address</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:firstname</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre></div>
+
 <p>This code will perform <strong>only one query</strong>. <code>eager_load</code> will <a href="http://apidock.com/rails/ActiveRecord/QueryMethods/eager_load">perform a query
 with a LEFT OUTER JOIN</a>
 with the associated table (<code>addresses</code>).</p>
@@ -495,8 +507,8 @@ looking for new projects and opportunities to improve your
 
     </div>
 
-    <script type="text/javascript" src="/blog/assets/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="/blog/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
     <script type="text/javascript" src="/blog/assets/js/index.js"></script>
 
     <!-- Google Analytics Tracking code -->
