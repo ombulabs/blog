@@ -8,7 +8,89 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 14 Dec 2016 13:06:00 -0500</pubDate>
+    <pubDate>Tue, 07 Feb 2017 08:52:00 -0500</pubDate>
+    <item>
+      <title>How to test a React app using capybara-webkit</title>
+      <link>http://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</link>
+      <description><![CDATA[How to test a React app using capybara-webkit
+
+I have been using the capybara-webkit
+gem for a while now since I first tried it out after making the switch from
+Capybara + Selenium.
+
+Using capybara-webkit speeds up my Selenium tests due to its headless nature,
+and it&#39;s very straight-forward to use. However, I had some trouble testing a
+Rails based React app.
+
+In this post, I will explain how I worked around the issues that came up when
+trying to use capybara-webkit with React.
+]]></description>
+      <pubDate>Tue, 07 Feb 2017 08:52:00 -0500</pubDate>
+      <guid>http://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</guid>
+      <content:encoded><![CDATA[<p>How to test a React app using capybara-webkit</p>
+
+<p>I have been using the <a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a>
+gem for a while now since I first tried it out after making the switch from
+Capybara + Selenium.</p>
+
+<p>Using capybara-webkit speeds up my Selenium tests due to its headless nature,
+and it&#39;s very straight-forward to use. However, I had some trouble testing a
+Rails based React app.</p>
+
+<p>In this post, I will explain how I worked around the issues that came up when
+trying to use capybara-webkit with React.</p>
+
+<!--more-->
+
+<p>capybara-webkit depends on Qt, which you can install on OSX using <a href="http://brewformulas.org/Qt">Homebrew</a>.
+When running the tests using capybara-webkit with Qt 4.8, I noticed nothing
+rendered. To debug this problem, I used capybara-webkit&#39;s debug mode, which
+spits out problems you would usually see in the Chrome console. To enable it:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Capybara</span><span class="o">::</span><span class="no">Webkit</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="c1"># Enable debug mode. Prints a log of everything the driver is doing.</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>When the test runs, you&#39;ll get a log of every request/response and JS errors
+that happen during the test. One of the errors I got was:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ReferenceError: Can&#39;t find variable: React
+</code></pre></div>
+<p>After some googling, I found <a href="https://github.com/reactjs/react-rails/issues/10#issuecomment-57300387">this issue</a>.
+Because I was using Qt 4.8, I needed <a href="https://github.com/es-shims/es5-shim/blob/master/es5-shim.js">es5-shim</a>
+on my vendor Javascript directory, and include it on the manifest before
+including React, like so:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">//= require jquery
+//= require jquery_ujs
+//= require es5-shim
+//= require react
+//= require react_ujs
+</code></pre></div>
+<p>This happens because Qt 4.8&#39;s QtWebKit doesn&#39;t support most of the ES5 standard.
+As an alternative to es5-shim, you can upgrade to a newer Qt release which does
+support some of the newer Javascript features, like Qt 5.5.</p>
+
+<p>After upgrading to Qt 5.5 and re-installing capybara-webkit, you can try getting
+rid of <code>es5-shim</code> from your pipeline, and your tests should pass.</p>
+
+<p>If you are using any of the <a href="http://es6-features.org,">ES6 features</a>, you&#39;ll
+notice that your tests will fail even using Qt 5.5, because ES6 is not yet
+supported by Qt 5.5.</p>
+
+<p>When using <code>Object.assign</code> for merging objects to pass to my React state, I was
+getting this error:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">TypeError: undefined is not a constructor (evaluating &#39;Object.assign(...)&#39;) ...
+</code></pre></div>
+<p>To fix it, I used the polyfill provided by Mozilla in their MDN documentation
+for <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>.
+But if you prefer, you can include the whole <a href="https://github.com/paulmillr/es6-shim">es6-shim</a>
+library and not worry about including each individual polyfill. After including
+this, my tests were all green!</p>
+
+<p>Have you had any problems getting your React integration tests running? Let me
+know in the comments section below.</p>
+]]></content:encoded>
+      <dc:date>2017-02-07T08:52:00-05:00</dc:date>
+    </item>
     <item>
       <title>How to use any gem in the Rails production console</title>
       <link>http://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
@@ -3498,6 +3580,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2016-12-14T13:06:00-05:00</dc:date>
+    <dc:date>2017-02-07T08:52:00-05:00</dc:date>
   </channel>
 </rss>
