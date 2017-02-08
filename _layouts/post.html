@@ -37,7 +37,7 @@ post_class: post-template
             {% assign author = site.authors[page.author] %}
             <figure class="author-image">
               {% if author.gravatar %}
-                <a class="img" href="{{ page.baseurl }}" style="background-image: url(http://2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
+                <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
                 <span class="hidden">{{author.display_name}}'s Picture</span></a>
               {% else %}
                 <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
