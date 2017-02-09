@@ -50,13 +50,13 @@ To enable it:</p>
 <span class="k">end</span>
 </code></pre></div>
 <p>When the test runs, you&#39;ll get a log of every request/response and JS errors
-that happen during the test. One of the errors I got was:</p>
+that occurred during the test. One of the errors I got was:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">ReferenceError: Can&#39;t find variable: React
 </code></pre></div>
 <p>After some googling, I found <a href="https://github.com/reactjs/react-rails/issues/10#issuecomment-57300387">this issue</a>.
 Because I was using Qt 4.8, I needed <a href="https://github.com/es-shims/es5-shim/blob/master/es5-shim.js">es5-shim</a>
-on my vendor Javascript directory, and include it on the manifest before
-including React, like so:</p>
+on my <code>vendor/assets/javascripts</code> directory, and include it on the manifest
+before including React, like so:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">//= require jquery
 //= require jquery_ujs
 //= require es5-shim
