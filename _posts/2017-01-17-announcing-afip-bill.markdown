@@ -2,7 +2,7 @@
 layout: post
 title:  "Announcing AfipBill"
 date: 2017-02-09 15:06:00
-categories: ["open-source", "rubygems"]
+categories: ["open-source", "ruby", "rubygems"]
 author: "luciano"
 ---
 
