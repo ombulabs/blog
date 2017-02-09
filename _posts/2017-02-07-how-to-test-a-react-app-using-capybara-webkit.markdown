@@ -6,25 +6,25 @@ categories: ["rails", "react"]
 author: "mauro-oto"
 ---
 
-How to test a React app using capybara-webkit
-
 I have been using the [capybara-webkit](https://github.com/thoughtbot/capybara-webkit)
 gem for a while now since I first tried it out after making the switch from
 Capybara + Selenium.
 
 Using capybara-webkit speeds up my Selenium tests due to its headless nature,
-and it's very straight-forward to use. However, I had some trouble testing a
-Rails based React app.
+and it's very straightforward. However, I had some trouble testing a
+[Rails](http://rubyonrails.org) based React app.
 
 In this post, I will explain how I worked around the issues that came up when
-trying to use capybara-webkit with React.
+trying to use capybara-webkit with [React](https://facebook.github.io/react).
 
 <!--more-->
 
-capybara-webkit depends on Qt, which you can install on OSX using [Homebrew](http://brewformulas.org/Qt).
-When running the tests using capybara-webkit with Qt 4.8, I noticed nothing
-rendered. To debug this problem, I used capybara-webkit's debug mode, which
-spits out problems you would usually see in the Chrome console. To enable it:
+capybara-webkit depends on [Qt](https://www.qt.io), which you can install on
+OSX using [Homebrew](http://brewformulas.org/Qt).
+When running the tests using capybara-webkit with Qt 4.8, I noticed nothing was
+getting rendered. To debug this problem, I used capybara-webkit's [debug mode]( https://github.com/thoughtbot/capybara-webkit#configuration),
+which spits out problems you would usually see in the Chrome console.
+To enable it:
 
 ```ruby
 Capybara::Webkit.configure do |config|
@@ -54,8 +54,8 @@ including React, like so:
 ```
 
 This happens because Qt 4.8's QtWebKit doesn't support most of the ES5 standard.
-As an alternative to es5-shim, you can upgrade to a newer Qt release which does
-support some of the newer Javascript features, like Qt 5.5.
+As an alternative to es5-shim, you can upgrade to a newer version of Qt, like
+5.5, which does support some of the newer Javascript features.
 
 After upgrading to Qt 5.5 and re-installing capybara-webkit, you can try getting
 rid of `es5-shim` from your pipeline, and your tests should pass.
@@ -74,8 +74,15 @@ TypeError: undefined is not a constructor (evaluating 'Object.assign(...)') ...
 To fix it, I used the polyfill provided by Mozilla in their MDN documentation
 for [Object.assign](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign).
 But if you prefer, you can include the whole [es6-shim](https://github.com/paulmillr/es6-shim)
-library and not worry about including each individual polyfill. After including
-this, my tests were all green!
+library and not worry about including each individual polyfill.
+
+After all this, my tests finally passed!
+
+Disclaimer: I used the [react-rails](https://github.com/reactjs/react-rails)
+gem. If you are already using [Webpack](https://webpack.js.org) in your
+Rails app, using [babel-loader](https://github.com/babel/babel-loader) or
+similar plugins to allow [transpiling](https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them)
+of ES6 would make these problems go away.
 
 Have you had any problems getting your React integration tests running? Let me
 know in the comments section below.
