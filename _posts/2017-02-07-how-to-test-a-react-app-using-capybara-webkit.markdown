@@ -34,7 +34,7 @@ end
 ```
 
 When the test runs, you'll get a log of every request/response and JS errors
-that happen during the test. One of the errors I got was:
+that occurred during the test. One of the errors I got was:
 
 ```
 ReferenceError: Can't find variable: React
@@ -42,8 +42,8 @@ ReferenceError: Can't find variable: React
 
 After some googling, I found [this issue](https://github.com/reactjs/react-rails/issues/10#issuecomment-57300387).
 Because I was using Qt 4.8, I needed [es5-shim](https://github.com/es-shims/es5-shim/blob/master/es5-shim.js)
-on my vendor Javascript directory, and include it on the manifest before
-including React, like so:
+on my `vendor/assets/javascripts` directory, and include it on the manifest
+before including React, like so:
 
 ```
 //= require jquery
