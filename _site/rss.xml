@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 07 Feb 2017 08:52:00 -0500</pubDate>
+    <pubDate>Thu, 09 Feb 2017 06:52:00 -0500</pubDate>
     <item>
       <title>How to test a React app using capybara-webkit</title>
       <link>http://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</link>
@@ -23,7 +23,7 @@ Rails based React app.
 In this post, I will explain how I worked around the issues that came up when
 trying to use capybara-webkit with React.
 ]]></description>
-      <pubDate>Tue, 07 Feb 2017 08:52:00 -0500</pubDate>
+      <pubDate>Thu, 09 Feb 2017 06:52:00 -0500</pubDate>
       <guid>http://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</guid>
       <content:encoded><![CDATA[<p>I have been using the <a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a>
 gem for a while now since I first tried it out after making the switch from
@@ -94,7 +94,7 @@ of ES6 would make these problems go away.</p>
 <p>Have you had any problems getting your React integration tests running? Let me
 know in the comments section below.</p>
 ]]></content:encoded>
-      <dc:date>2017-02-07T08:52:00-05:00</dc:date>
+      <dc:date>2017-02-09T06:52:00-05:00</dc:date>
     </item>
     <item>
       <title>How to use any gem in the Rails production console</title>
@@ -3585,6 +3585,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-02-07T08:52:00-05:00</dc:date>
+    <dc:date>2017-02-09T06:52:00-05:00</dc:date>
   </channel>
 </rss>
