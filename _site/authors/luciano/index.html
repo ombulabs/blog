@@ -6,38 +6,38 @@
 
     
 
-    <title>Rubygems at The Lean Software Boutique</title>
+    <title>Articles by Luciano Becerra - The Lean Software Boutique</title>
 
 
     
     
-    <meta name="description" content="Articles about Rubygems in the The Lean Software Boutique blog." />
+    <meta name="description" content="" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Rubygems at The Lean Software Boutique">
-    <meta itemprop="description" content="Articles about Rubygems in the The Lean Software Boutique blog.">
+    <meta itemprop="name" content="Articles by Luciano Becerra - The Lean Software Boutique">
+    <meta itemprop="description" content="">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
 
-    <meta name="twitter:title" content="Rubygems at The Lean Software Boutique">
-    <meta name="twitter:description" content="Articles about Rubygems in the The Lean Software Boutique blog.">
+    <meta name="twitter:title" content="Articles by Luciano Becerra - The Lean Software Boutique">
+    <meta name="twitter:description" content="">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Rubygems at The Lean Software Boutique" />
+    <meta property="og:title" content="Articles by Luciano Becerra - The Lean Software Boutique" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/tags/rubygems/" />
+    <meta property="og:url" content="http://www.ombulabs.com/authors/luciano/" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="Articles about Rubygems in the The Lean Software Boutique blog." />
-    <meta property="og:site_name" content="Category: rubygems" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Articles by Luciano Becerra by @lubc32" />
     
 
     <meta property="fb:admins" content="10153304864537860" />
@@ -68,11 +68,17 @@
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
   </header>
     <div id="wrapper">
-      <h2 class="category-name">Articles about <span class="tag">Rubygems</span></h2>
+      
+<h2 class="author-name">Articles by <span class="tag">Luciano Becerra</span>
+</h2>
+<h3 class="author-description"><a href="http://twitter.com/lubc32"
+                                      title="Luciano Becerra on Twitter"
+                                      target="_blank">Follow @luciano on Twitter</a></h3>
 
 <main id="content" class="content category">
 
-  <article class="post">
+  
+    <article class="post">
     <header class="post-header">
         <h2 class="post-title">
           <a href="/blog/open-source/ruby/rubygems/announcing-afip-bill.html">Announcing AfipBill</a>
@@ -115,78 +121,83 @@ We wanted to integrate <a href="https://www.ombushop.com">OmbuShop</a> with AFIP
     </section>
 </article>
 
-
-  <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
+  
 
   
-    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+
   
-  <a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>
 
+  
 
- 
-  on
-    
-      <a href="/blog/tags/docker"
-         title="Articles about Docker">Docker</a>,
-      <a href="/blog/tags/rubygems"
-         title="Articles about Rubygems">Rubygems</a>,
-      <a href="/blog/tags/open-source"
-         title="Articles about Open Source">Open Source</a>
+  
 
+  
 
+  
 
-<time class="post-date" datetime="2015-12-29">
-  29 Dec 2015
-</time>
+  
 
-    </footer>
-    <section class="post-excerpt">
-        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
+  
 
-<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
+  
 
-<p>Here are the steps:</p>
+  
 
-<ol>
-<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
-<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
-<li><p>In the terminal: <code>docker-machine start default</code></p></li>
-<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
-<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
-</ol>
- <a class="read-more" href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
-    </section>
-</article>
+  
 
+  
 
-<footer class="site-footer clearfix">
-  <section class="copyright">
-    <figure>
-      <img src="/blog/assets/images/creative-commons.png"
-           alt="Creative Commons Attribution-NonCommercial">
-      <figcaption>
-        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
-           target="_blank"
-           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
-      </figcaption>
-    </figure>
-  </section>
-  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
-    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
-  </section>
-</footer>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
 
 </main>
 

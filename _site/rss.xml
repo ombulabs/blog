@@ -8,7 +8,29 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 09 Feb 2017 06:52:00 -0500</pubDate>
+    <pubDate>Thu, 09 Feb 2017 10:06:00 -0500</pubDate>
+    <item>
+      <title>Announcing AfipBill</title>
+      <link>http://www.ombulabs.com/blog/open-source/ruby/rubygems/announcing-afip-bill.html</link>
+      <description><![CDATA[If you live in Argentina and you ever use AFIP, you should already know that their platform is not the best in terms of user friendliness.
+We wanted to integrate OmbuShop with AFIP (using their API) in order to generate and print the bills for each seller. Unfortunately, there is no way to do this because the API doesn&#39;t generate a printable version (PDF) of the bill.
+]]></description>
+      <pubDate>Thu, 09 Feb 2017 10:06:00 -0500</pubDate>
+      <guid>http://www.ombulabs.com/blog/open-source/ruby/rubygems/announcing-afip-bill.html</guid>
+      <content:encoded><![CDATA[<p>If you live in Argentina and you ever use AFIP, you should already know that their platform is not the best in terms of user friendliness.
+We wanted to integrate <a href="https://www.ombushop.com">OmbuShop</a> with AFIP (using their <a href="http://www.afip.gob.ar/ws">API</a>) in order to generate and print the bills for each seller. Unfortunately, there is no way to do this because the API doesn&#39;t generate a printable version (PDF) of the bill.</p>
+
+<!--more-->
+
+<p>The old way to print the bills was to access the AFIP website, create the bill and download it. This is a very tedious task, specially because we needed to send a monthly bill to each of our sellers.</p>
+
+<p>That&#39;s why we decided to create this new <a href="https://rubygems.org/gems/afip_bill">Ruby gem</a>. With <a href="https://github.com/ombulabs/afip_bill">afip_bill</a> you will be able to easily generate a PDF bill for your users. You only need to provide some basic information about your business and your users, and it will automatically complete the whole bill for you, ready to be printed.</p>
+
+<p>You can check the whole code on <a href="https://github.com/ombulabs/afip_bill">Github</a>, as well as the documentation on how to use it.
+If you detect a way to improve the codebase, feel free to send us a PR.</p>
+]]></content:encoded>
+      <dc:date>2017-02-09T10:06:00-05:00</dc:date>
+    </item>
     <item>
       <title>How to test a React app using capybara-webkit</title>
       <link>http://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</link>
@@ -3585,6 +3607,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-02-09T06:52:00-05:00</dc:date>
+    <dc:date>2017-02-09T10:06:00-05:00</dc:date>
   </channel>
 </rss>
