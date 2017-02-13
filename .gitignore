@@ -3,3 +3,4 @@
 .sass-cache
 .env
 .bundle
+_site/**/*
