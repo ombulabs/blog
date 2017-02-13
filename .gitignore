@@ -1,6 +1,5 @@
 .byebug_history
 .ruby-version
 .sass-cache
-.env
 .bundle
 _site/**/*
