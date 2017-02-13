@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to test a React app using capybara-webkit"
-date: 2017-02-10 11:55:00
+date: 2017-02-13 10:27:00
 categories: ["rails", "react"]
 author: "mauro-oto"
 ---
