@@ -6,7 +6,7 @@ categories: ["continuous-integration"]
 author: "luciano"
 ---
 
-We all know the important of having in your projects a [CI](https://en.wikipedia.org/wiki/Continuous_integration) tool that allows you to run your test suite. A project shouldn't be running in production without something like that.
+We all know the importance of having in your projects a [CI](https://en.wikipedia.org/wiki/Continuous_integration) tool that allows you to run your test suite. A project shouldn't be running in production without something like that.
 If you are in the situation that you have a core project and many projects that depend on it, and you want to run the tests of those in a single build, I recommend you to keep reading.
 
 <!--more-->
