@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "How to run multiple dependency builds on your CI server"
-date: 2017-02-13 15:06:00
-categories: ["continuous-integration"]
+title:  "How to run multiple dependent builds on Circle CI"
+date: 2017-02-20 15:21:00
+categories: ["continuous-integration, circle-ci"]
 author: "luciano"
 ---
 
-We all know the importance of having in your projects a [CI](https://en.wikipedia.org/wiki/Continuous_integration) tool that allows you to run your test suite. A project shouldn't be running in production without something like that.
-If you are in the situation that you have a core project and many projects that depend on it, and you want to run the tests of those in a single build, I recommend you to keep reading.
+We all know the importance of having in your projects a [CI](https://en.wikipedia.org/wiki/Continuous_integration) tool integrated in your project. It allows you to run your entire test suite every time you want to merge a set of changes.
+If you have a core project and many projects that depend on it, you want to run the tests for the core project and the dependent projects at the same time. This article explains how you can do it with [Circle CI](https://circleci.com).
 
 <!--more-->
 
-In this particular article, we will be explaining how to do that with [CircleCI](https://circleci.com) and two Ruby projects (a common application and an engine).
+I will explain how to do that with two Rails projects (an application and an [engine](http://guides.rubyonrails.org/engines.html))
 
-Starting with the example, we have an app called `my-app` and an engine called `my-gem`.
+In this example we have an app called `my-app` and an engine called `my-gem`.
 In `my-app/Gemfile` we should have something like this:
 
 ```
@@ -57,4 +57,4 @@ test:
     - (cd ../my-app && bundle exec rake)
 ```
 
-Obviously, the build will be slower than before because now it's running two projects inside the same build. But this ensures you that your dependent projects never crash after doing changes on the engine.
+Obviously, the build will be slower than before because now it's running two projects inside the same build. But this ensures that your dependent projects won't crash after updating the references to the gem (engine).
