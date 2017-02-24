@@ -2,7 +2,7 @@
 layout: post
 title:  "How to run multiple dependent builds on Circle CI"
 date: 2017-02-23 15:21:00
-categories: ["continuous-integration, circle-ci"]
+categories: ["continuous-integration", "circle-ci"]
 author: "luciano"
 ---
 
