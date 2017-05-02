@@ -66,7 +66,7 @@ By adding `--order defined` I was able to track down the flaky test and fix it.
 On one hand, it's good the CI caught it because the build is always randomized in
 my environment, and one day the test suite would "randomly" be in order and fail.
 On the other, this made me realize that I needed to update my `yml` config for
-the CI server to _randomize the tests_.
+the CI server to _randomize the tests_ by explicitly using `--order random`.
 
 The `--seed 1234` option also exists in RSpec, so if your tests in the CI already use
 random ordering and you get a flaky test, you can run:
@@ -84,3 +84,15 @@ Re-running failing tests has been brought up in the [RSpec repo](https://github.
 Some alternatives like [respec](https://github.com/oggy/respec) exist, but it
 might not be worth it to add to a project as it's not something that happens too
 often.
+
+Depending on your CI server, you may also be able to configure re-runs
+using your `yml` config file, in case your flaky tests are persistent. We have
+been using [Solano CI](https://ci.solanolabs.com) for a while and by using:
+
+```yaml
+rerun_list:
+  - spec/benchmarks/controllers/v7/users_controller_spec.rb: 2
+```
+
+the test runs at least two more times if it fails on the first run, to ensure
+that the entire build doesn't fail because of _that one pesky_ test.
