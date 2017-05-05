@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>How to Test a React App Using Capybara-Webkit - The Lean Software Boutique</title>
+
+
+    
+    
+    <meta name="description" content="I have been using the capybara-webkitgem for a while now since I first tried it out after making the switch fromCapybara + Selenium.Using capybara-..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="How to Test a React App Using Capybara-Webkit - The Lean Software Boutique">
+    <meta itemprop="description" content="I have been using the capybara-webkit gem for a while now since I first tried it out after making the switch from Capybara + Selenium. Using capyba...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="How to Test a React App Using Capybara-Webkit - The Lean Software Boutique">
+    <meta name="twitter:description" content="I have been using the capybara-webkit gem for a while now since I first tried it out after making the switch from Capybara + Selenium. Using capyba...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="How to Test a React App Using Capybara-Webkit - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/rails/react/how-to-test-a-react-app-using-capybara-webkit.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="I have been using the capybara-webkit gem for a while now since I first tried it out after making the switch from Capybara + Selenium. Using capybara-webkit speeds up my Selenium tests due to its headless nature, and it&#39;s very straightforward. However, I had some trouble testing a Rails based..." />
+    <meta property="og:site_name" content="How to test a React app using capybara-webkit by @mauro_oto" />
+    
+      <meta property="article:published_time" content="2017-02-13 05:27:00 -0500" />
+      <meta property="article:modified_time" content="2017-02-13 05:27:00 -0500" />
+      <meta property="article:section" content="I have been using the capybara-webkit gem for a while now since I first tried it out after making the switch from Capybara + Selenium. Using capybara-webkit speeds up my Selenium tests due to its headless nature, and it&#39;s very straightforward. However, I had some trouble testing a Rails based..." />
+      <meta property="article:tag" content="How to Test a React App Using Capybara-Webkit - The Lean Software Boutique" />
+    
+
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombu_blog/application.css" />
+</head>
+<body class="home-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+    <div id="wrapper">
+      <main class="content post-layout" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">How to test a React app using capybara-webkit</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+  
+  <a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/react"
+         title="Articles about React">React</a>
+
+
+
+<time class="post-date" datetime="2017-02-13">
+  13 Feb 2017
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>I have been using the <a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a>
+gem for a while now since I first tried it out after making the switch from
+Capybara + Selenium.</p>
+
+<p>Using capybara-webkit speeds up my Selenium tests due to its headless nature,
+and it&#39;s very straightforward. However, I had some trouble testing a
+<a href="http://rubyonrails.org">Rails</a> based React app.</p>
+
+<p>In this post, I will explain how I worked around the issues that came up when
+trying to use capybara-webkit with <a href="https://facebook.github.io/react">React</a>.</p>
+
+<!--more-->
+
+<p>capybara-webkit depends on <a href="https://www.qt.io">Qt</a>, which you can install on
+OSX using <a href="http://brewformulas.org/Qt">Homebrew</a>.
+When running the tests using capybara-webkit with Qt 4.8, I noticed nothing was
+getting rendered. To debug this problem, I used capybara-webkit&#39;s <a href="https://github.com/thoughtbot/capybara-webkit#configuration">debug mode</a>,
+which spits out problems you would usually see in the Chrome console.
+To enable it:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Capybara</span><span class="o">::</span><span class="no">Webkit</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="c1"># Enable debug mode. Prints a log of everything the driver is doing.</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>When the test runs, you&#39;ll get a log of every request/response and JS errors
+that occurred during the test. One of the errors I got was:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">ReferenceError: Can&#39;t find variable: React
+</code></pre></div>
+
+<p>After some googling, I found <a href="https://github.com/reactjs/react-rails/issues/10#issuecomment-57300387">this issue</a>.
+Because I was using Qt 4.8, I needed <a href="https://github.com/es-shims/es5-shim/blob/master/es5-shim.js">es5-shim</a>
+on my <code>vendor/assets/javascripts</code> directory, and include it on the manifest
+before including React, like so:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">//= require jquery
+//= require jquery_ujs
+//= require es5-shim
+//= require react
+//= require react_ujs
+</code></pre></div>
+
+<p>This happens because Qt 4.8&#39;s QtWebKit doesn&#39;t support most of the ES5 standard.
+As an alternative to es5-shim, you can upgrade to a newer version of Qt, like
+5.5, which does support some of the newer Javascript features.</p>
+
+<p>After upgrading to Qt 5.5 and re-installing capybara-webkit, you can try getting
+rid of <code>es5-shim</code> from your pipeline, and your tests should pass.</p>
+
+<p>If you are using any of the <a href="http://es6-features.org,">ES6 features</a>, you&#39;ll
+notice that your tests will fail even using Qt 5.5, because ES6 is not yet
+supported by Qt 5.5.</p>
+
+<p>When using <code>Object.assign</code> for merging objects to pass to my React state, I was
+getting this error:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text">TypeError: undefined is not a constructor (evaluating &#39;Object.assign(...)&#39;) ...
+</code></pre></div>
+
+<p>To fix it, I used the polyfill provided by Mozilla in their MDN documentation
+for <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>.
+But if you prefer, you can include the whole <a href="https://github.com/paulmillr/es6-shim">es6-shim</a>
+library and not worry about including each individual polyfill.</p>
+
+<p>After all this, my tests finally passed!</p>
+
+<p>Disclaimer: I used the <a href="https://github.com/reactjs/react-rails">react-rails</a>
+gem. If you are already using <a href="https://webpack.js.org">Webpack</a> in your
+Rails app, using <a href="https://github.com/babel/babel-loader">babel-loader</a> or
+similar plugins to allow <a href="https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them">transpiling</a>
+of ES6 would make these problems go away.</p>
+
+<p>Have you had any problems getting your React integration tests running? Let me
+know in the comments section below.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50)">
+                <span class="hidden">Mauro Otonelli's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Mauro Otonelli </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=How to test a React app using capybara-webkit&amp;url=http://www.ombulabs.com/rails/react/how-to-test-a-react-app-using-capybara-webkit.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/rails/react/how-to-test-a-react-app-using-capybara-webkit.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/rails/react/how-to-test-a-react-app-using-capybara-webkit.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+        </footer>
+
+    </article>
+    <footer class="site-footer clearfix">
+  <section class="copyright">
+    <figure>
+      <img src="/blog/assets/images/creative-commons.png"
+           alt="Creative Commons Attribution-NonCommercial">
+      <figcaption>
+        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+           target="_blank"
+           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
+    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
+  </section>
+</footer>
+
+</main>
+
+      <div id="sidebar">
+  <h2 class="category-name">Listing all tags</h2>
+    
+
+    
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/"
+             title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/backbone"
+             title="Articles about Backbone">Backbone</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/benchmark"
+             title="Articles about Benchmark">Benchmark</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/best-practices"
+             title="Articles about Best Practices">Best Practices</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/bugs"
+             title="Articles about Bugs">Bugs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/circle-ci"
+             title="Articles about Circle Ci">Circle Ci</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/continuous-integration"
+             title="Articles about Continuous Integration">Continuous Integration</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/conventions"
+             title="Articles about Conventions">Conventions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/design"
+             title="Articles about Design">Design</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/docker"
+             title="Articles about Docker">Docker</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/git"
+             title="Articles about Git">Git</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/github"
+             title="Articles about Github">Github</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/imap"
+             title="Articles about Imap">Imap</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/lean-startup"
+             title="Articles about Lean Startup">Lean Startup</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/open-source"
+             title="Articles about Open Source">Open Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/protractor"
+             title="Articles about Protractor">Protractor</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails"
+             title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/react"
+             title="Articles about React">React</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rubygems"
+             title="Articles about Rubygems">Rubygems</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/security"
+             title="Articles about Security">Security</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software Development">Software Development</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-quality"
+             title="Articles about Software Quality">Software Quality</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
+        </h3>
+    
+</div>
+
+    </div>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
