@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 3.0'
-gem 'rake'
+gem 'rake', '~> 12.0'
 gem 'foreman'
 gem 'thin'
 gem 'rack-contrib'
