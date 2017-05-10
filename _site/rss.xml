@@ -8,7 +8,119 @@
     <title>OmbuLabs Blog</title>
     <link>http://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 04 May 2017 07:02:00 -0400</pubDate>
+    <pubDate>Wed, 10 May 2017 05:02:00 -0400</pubDate>
+    <item>
+      <title>AWS S3 Policies for Carrierwave</title>
+      <link>http://www.ombulabs.com/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</link>
+      <description><![CDATA[When you create IAM credentials and policies for
+your app, you should make sure that they have access to the resources that they
+need and not more than that!.
+
+This way, if anyone gets access to those credentials, the impact of this leak
+is reduced to the resources associated with them (and not all the buckets in
+your S3 account)
+]]></description>
+      <pubDate>Wed, 10 May 2017 05:02:00 -0400</pubDate>
+      <guid>http://www.ombulabs.com/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</guid>
+      <content:encoded><![CDATA[<p>When you create <a href="https://aws.amazon.com/iam/">IAM</a> credentials and policies for
+your app, you should make sure that they have access to the resources that they
+need <strong>and not more than that!</strong>.</p>
+
+<p>This way, if anyone gets access to those credentials, the impact of this leak
+is reduced to the resources associated with them (<strong>and not all the buckets in
+your S3 account</strong>)</p>
+
+<!--more-->
+
+<p>If you&#39;re using <a href="https://github.com/carrierwaveuploader/carrierwave">Carrierwave</a>,
+you will <em>probably</em> need credentials that have <strong>access</strong> to these buckets:</p>
+
+<ul>
+<li>gif-dir-development</li>
+<li>gif-dir-test</li>
+<li>gif-dir-production</li>
+</ul>
+
+<p><a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html">Creating a policy for this is <strong>not trivial</strong></a>
+using the AWS Administration Panel. If you follow the <a href="https://aws.amazon.com/blogs/security/writing-iam-policies-how-to-grant-access-to-an-amazon-s3-bucket/">instructions in the official AWS documentation</a>, you might run into this issue:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">Excon::Error::Socket <span class="o">(</span>Broken pipe <span class="o">(</span>Errno::EPIPE<span class="o">))</span>:
+  app/controllers/gifs_controller.rb:64:in <span class="sb">`</span>block in create<span class="s1">&#39;</span>
+<span class="s1">  app/controllers/gifs_controller.rb:63:in `create&#39;</span>
+
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb <span class="o">(</span>11.7ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb <span class="o">(</span>5.1ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb <span class="o">(</span>1.4ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout <span class="o">(</span>60.9ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb <span class="o">(</span>0.5ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string <span class="o">(</span>0.3ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string <span class="o">(</span>0.3ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string <span class="o">(</span>0.6ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript <span class="o">(</span>45.4ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript <span class="o">(</span>0.7ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript <span class="o">(</span>0.4ms<span class="o">)</span>
+  Rendered /Users/etagwerker/.rvm/gems/ruby-2.3.3@gifDir/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb <span class="o">(</span>102.7ms<span class="o">)</span>
+</code></pre></div>
+<p>The issue is documented in Fog&#39;s <a href="https://github.com/fog/fog/issues/1659">issue #1659</a>.
+The problem with the official documentation is that it lists only 4 actions:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;s3:ListBucket&quot;</span><span class="p">],</span>
+      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;arn:aws:s3:::gif-dir-development&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;s3:DeleteObject&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;arn:aws:s3:::gif-dir-development/*&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>These actions are not enough for <a href="https://github.com/carrierwaveuploader/carrierwave">Carrierwave</a>. You will need
+to add the <code>&quot;s3:PutObjectAcl&quot;</code> action to the list. While you are at it, you
+should add more buckets to the list of resources:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;s3:ListBucket&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-development&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-test&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-production&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;s3:PutObject&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:PutObjectAcl&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;s3:DeleteObject&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-development/*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-test/*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;arn:aws:s3:::gif-dir-production/*&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>After you&#39;ve modified the policy&#39;s JSON, you can update it and associate it to
+the IAM user using the AWS administration panel.</p>
+]]></content:encoded>
+      <dc:date>2017-05-10T05:02:00-04:00</dc:date>
+    </item>
     <item>
       <title>'Flaky' tests: a short story</title>
       <link>http://www.ombulabs.com/blog/rspec/continuous-integration/how-to-track-down-a-flaky-test.html</link>
@@ -3757,6 +3869,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-05-04T07:02:00-04:00</dc:date>
+    <dc:date>2017-05-10T05:02:00-04:00</dc:date>
   </channel>
 </rss>

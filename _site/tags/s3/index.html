@@ -6,38 +6,38 @@
 
     
 
-    <title>Linux at The Lean Software Boutique</title>
+    <title>S3 at The Lean Software Boutique</title>
 
 
     
     
-    <meta name="description" content="Articles about Linux in the The Lean Software Boutique blog." />
+    <meta name="description" content="Articles about S3 in the The Lean Software Boutique blog." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Linux at The Lean Software Boutique">
-    <meta itemprop="description" content="Articles about Linux in the The Lean Software Boutique blog.">
+    <meta itemprop="name" content="S3 at The Lean Software Boutique">
+    <meta itemprop="description" content="Articles about S3 in the The Lean Software Boutique blog.">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
 
-    <meta name="twitter:title" content="Linux at The Lean Software Boutique">
-    <meta name="twitter:description" content="Articles about Linux in the The Lean Software Boutique blog.">
+    <meta name="twitter:title" content="S3 at The Lean Software Boutique">
+    <meta name="twitter:description" content="Articles about S3 in the The Lean Software Boutique blog.">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Linux at The Lean Software Boutique" />
+    <meta property="og:title" content="S3 at The Lean Software Boutique" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/tags/linux/" />
+    <meta property="og:url" content="http://www.ombulabs.com/tags/s3/" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="Articles about Linux in the The Lean Software Boutique blog." />
-    <meta property="og:site_name" content="Category: linux" />
+    <meta property="og:description" content="Articles about S3 in the The Lean Software Boutique blog." />
+    <meta property="og:site_name" content="Category: s3" />
     
 
     <meta property="fb:admins" content="10153304864537860" />
@@ -68,14 +68,14 @@
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
   </header>
     <div id="wrapper">
-      <h2 class="category-name">Articles about <span class="tag">Linux</span></h2>
+      <h2 class="category-name">Articles about <span class="tag">S3</span></h2>
 
 <main id="content" class="content category">
 
   <article class="post">
     <header class="post-header">
         <h2 class="post-title">
-          <a href="/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html">Set up and run Hubot without using Heroku</a>
+          <a href="/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html">AWS S3 Policies for Carrierwave</a>
         </h2>
     </header>
     <footer class="post-meta">
@@ -83,40 +83,40 @@
 
 
   
-    <img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
+    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
   
-  <a href="/blog/authors/mauro-oto"
-     title="Articles by Mauro Otonelli">
-     Mauro Otonelli
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
   </a>
 
 
  
   on
     
-      <a href="/blog/tags/hubot"
-         title="Articles about Hubot">Hubot</a>,
-      <a href="/blog/tags/linux"
-         title="Articles about Linux">Linux</a>
+      <a href="/blog/tags/aws"
+         title="Articles about Aws">Aws</a>,
+      <a href="/blog/tags/carrierwave"
+         title="Articles about Carrierwave">Carrierwave</a>,
+      <a href="/blog/tags/s3"
+         title="Articles about S3">S3</a>
 
 
 
-<time class="post-date" datetime="2016-01-29">
-  29 Jan 2016
+<time class="post-date" datetime="2017-05-10">
+  10 May 2017
 </time>
 
     </footer>
     <section class="post-excerpt">
-        <p><a href="https://hubot.github.com">Hubot</a> makes it incredibly easy to setup on a Heroku
-server, by taking advantage of its Procfile support. Simply running
-<code>git push heroku master</code> deploys the app and starts it.</p>
+        <p>When you create <a href="https://aws.amazon.com/iam/">IAM</a> credentials and policies for
+your app, you should make sure that they have access to the resources that they
+need <strong>and not more than that!</strong>.</p>
 
-<p>When it comes to deploying to your own Linux server, given that
-<code>foreman</code> doesn&#39;t really like background processes (see:
-<a href="https://github.com/ddollar/foreman/issues/65">ddollar/foreman#65</a>), you need to
-use something like <code>monit</code>, <code>systemd</code> or <code>tmux</code> to better manage your Hubot
-process.</p>
- <a class="read-more" href="/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html">Read more &raquo;</a>
+<p>This way, if anyone gets access to those credentials, the impact of this leak
+is reduced to the resources associated with them (<strong>and not all the buckets in
+your S3 account</strong>)</p>
+ <a class="read-more" href="/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html">Read more &raquo;</a>
     </section>
 </article>
 
