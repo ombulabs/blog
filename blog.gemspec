@@ -7,7 +7,6 @@ Gem::Specification.new do |s|
   s.files       = Dir["_site/**/*"]
   s.homepage    = "https://github.com/ombulabs/blog.ombulabs.com"
   s.license     = "MIT"
-  s.required_ruby_version = '> 2.3'
 
   s.add_dependency('rake', '~> 12.0')
   s.add_dependency('jekyll', '~> 3.0')
