@@ -126,14 +126,14 @@ process.</p>
 <p>If you don&#39;t already have your own Hubot repository, you can easily create one.
 The easiest way is using the hubot generator:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install -g yo generator-hubot
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>npm install -g yo generator-hubot
 </code></pre></div>
 
 <p>Run the generator in a folder of your choosing:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>mkdir myhubot
-<span class="nv">$ </span><span class="nb">cd </span>myhubot
-<span class="nv">$ </span>yo hubot
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ mkdir myhubot
+$ <span class="nb">cd</span> myhubot
+$ yo hubot
 </code></pre></div>
 
 <p>Go through the steps the generator takes you, and when you&#39;re done, initialize a
@@ -150,9 +150,9 @@ is working, but you can&#39;t leave it running in the background out-of-the-box,
 <p>You can work around this by leaving <code>foreman</code> itself running in a dettached tmux
 session:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>tmux new -s hubot
-<span class="nv">$ </span><span class="nb">cd</span> /path/to/hubot
-<span class="nv">$ </span>foreman start
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>$ tmux new -s hubot
+$ <span class="nb">cd</span> /path/to/hubot
+$ foreman start
 &lt;Ctrl-b&gt;-d
 </code></pre></div>
 
@@ -167,7 +167,7 @@ example, check out
 <p>In our case, we use <code>systemd</code>, which allows us to start it by running
 <code>sudo service hubot start</code>. To do this, create the following service file:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="p">;</span> Hubot systemd service unit file
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="p">;</span> Hubot systemd service unit file
 <span class="p">;</span> Place in e.g. <span class="sb">`</span>/etc/systemd/system/hubot.service<span class="sb">`</span>, <span class="k">then</span>
 <span class="p">;</span> <span class="sb">`</span>systemctl daemon-reload<span class="sb">`</span> and <span class="sb">`</span>service hubot start<span class="sb">`</span>.
 
@@ -182,7 +182,7 @@ example, check out
 <span class="nv">User</span><span class="o">=</span>deployer
 
 <span class="nv">Restart</span><span class="o">=</span>always
-<span class="nv">RestartSec</span><span class="o">=</span>10
+<span class="nv">RestartSec</span><span class="o">=</span><span class="m">10</span>
 
 <span class="nv">ExecStart</span><span class="o">=</span>/bin/bash -a -c <span class="s1">&#39;cd /path/to/hubot &amp;&amp; source .env &amp;&amp; /bin/hubot --adapter slack&#39;</span>
 
@@ -429,6 +429,11 @@ or simple things like getting pictures of pugs delivered to your channel!</p>
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

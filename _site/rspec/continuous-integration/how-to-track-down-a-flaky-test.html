@@ -129,7 +129,7 @@ multiple times.</p>
 
 <!--more-->
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="o">{</span>1..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> rspec spec/controllers/v7/users_controller_spec.rb:205<span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> rspec spec/controllers/v7/users_controller_spec.rb:205<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
 
 <p>It will run your test 10 times in a row, and <em>hopefully</em> you might see the
@@ -139,12 +139,12 @@ add <code>puts</code> statements before the expectations.</p>
 
 <p>If your expectation is:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">expect</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">json</span><span class="p">)</span>
 </code></pre></div>
 
 <p>a good thing to do would be to change that to:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">puts</span> <span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">80</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">puts</span> <span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">80</span>
 <span class="nb">puts</span> <span class="s2">&quot;actual response: </span><span class="si">#{</span><span class="n">response</span><span class="o">.</span><span class="n">body</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="nb">puts</span> <span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">80</span>
 <span class="nb">puts</span> <span class="s2">&quot;expected response: </span><span class="si">#{</span><span class="n">json</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -160,7 +160,7 @@ compared variables were.</p>
 the test did not fail locally, <em>even after 20 runs</em>. I went back into the CI server,
 and noticed the tests&#39; order <em>was not randomized</em>.</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">for</span> i in <span class="o">{</span>1..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> rspec spec/controllers/v7/users_controller_spec.rb:205 --order defined<span class="p">;</span> <span class="k">done</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span><span class="k">for</span> i in <span class="o">{</span><span class="m">1</span>..10<span class="o">}</span><span class="p">;</span> <span class="k">do</span> rspec spec/controllers/v7/users_controller_spec.rb:205 --order defined<span class="p">;</span> <span class="k">done</span>
 </code></pre></div>
 
 <p>By adding <code>--order defined</code> I was able to track down the flaky test and fix it.
@@ -172,7 +172,7 @@ the CI server to <em>randomize the tests</em> by explicitly using <code>--order 
 <p>The <code>--seed 1234</code> option also exists in RSpec, so if your tests in the CI already use
 random ordering and you get a flaky test, you can run:</p>
 
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">rspec spec/controllers/v7/users_controller_spec.rb:205 --seed 1234
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span></span>rspec spec/controllers/v7/users_controller_spec.rb:205 --seed <span class="m">1234</span>
 </code></pre></div>
 
 <p>and it will use the seed provided by you, obtained from the failing
@@ -189,8 +189,8 @@ often.</p>
 using your <code>yml</code> config file, in case your flaky tests are persistent. We have
 been using <a href="https://ci.solanolabs.com">Solano CI</a> for a while and by using:</p>
 
-<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">rerun_list</span><span class="p-Indicator">:</span>
-  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">spec/benchmarks/controllers/v7/users_controller_spec.rb</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2</span>
+<div class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span></span><span class="l l-Scalar l-Scalar-Plain">rerun_list</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">spec/benchmarks/controllers/v7/users_controller_spec.rb</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
 
 <p>the test runs at least two more times if it fails on the first run, to ensure
@@ -423,6 +423,11 @@ that the entire build doesn&#39;t fail because of <em>that one pesky</em> test.<
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

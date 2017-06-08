@@ -139,7 +139,7 @@ objects into memory when you <strong>really need them</strong>.</p>
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
   <span class="n">products</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span> <span class="nb">p</span><span class="o">.</span><span class="n">shop_id</span> <span class="o">==</span> <span class="n">shop_id</span> <span class="p">}</span><span class="o">.</span><span class="n">first</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -149,7 +149,7 @@ This will be slower than just using <code>where</code>.</p>
 
 <p>This will be much faster:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">shop_ids</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">shop_id</span><span class="o">|</span>
   <span class="n">products</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">shop_id</span><span class="p">:</span> <span class="n">shop_id</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
 <span class="k">end</span>
 </code></pre></div>
@@ -164,7 +164,7 @@ instead of <code>map</code>.</p>
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:id</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:id</span>
 <span class="c1"># Order Load (5.0ms)  SELECT `orders`.* FROM `orders` WHERE `orders`.`number` = &#39;R545612547&#39; ORDER BY orders.created_at DESC</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span>
 </code></pre></div>
@@ -177,7 +177,7 @@ into memory.</p>
 
 <p>So this will be much faster:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pluck</span> <span class="ss">:id</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="ss">number</span><span class="p">:</span> <span class="s1">&#39;R545612547&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pluck</span> <span class="ss">:id</span>
 <span class="c1"># SQL (0.8ms)  SELECT `orders`.`id` FROM `orders` WHERE `orders`.`number` = &#39;R545612547&#39; ORDER BY orders.created_at DESC</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="o">]</span>
 </code></pre></div>
@@ -198,11 +198,11 @@ by including the tables that you need before running the query.</p>
 
 <p>For example:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;created_at &gt; ?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Order</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;created_at &gt; ?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
      <span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">order</span><span class="o">.</span><span class="n">ship_address</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:firstname</span><span class="p">)</span>
 <span class="k">end</span>
-  <span class="no">Order</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">7866</span><span class="o">.</span><span class="mi">0</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`orders`</span><span class="o">.</span><span class="n">*</span> <span class="no">FROM</span> <span class="sb">`orders`</span> <span class="no">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2016-10-05 18:05:48&#39;</span><span class="p">)</span> <span class="no">ORDER</span> <span class="no">BY</span> <span class="sb">`orders`</span><span class="o">.</span><span class="n">`</span><span class="nb">id</span><span class="sb">` ASC LIMIT 1000</span>
+  <span class="no">Order</span> <span class="no">Load</span> <span class="p">(</span><span class="mi">7866</span><span class="o">.</span><span class="mi">0</span><span class="n">ms</span><span class="p">)</span>  <span class="no">SELECT</span> <span class="sb">`orders`</span><span class="o">.</span><span class="n n-Operator">*</span> <span class="no">FROM</span> <span class="sb">`orders`</span> <span class="no">WHERE</span> <span class="p">(</span><span class="n">created_at</span> <span class="o">&gt;</span> <span class="s1">&#39;2016-10-05 18:05:48&#39;</span><span class="p">)</span> <span class="no">ORDER</span> <span class="no">BY</span> <span class="sb">`orders`</span><span class="o">.</span><span class="n n-Operator">`</span><span class="nb">id</span><span class="sb">` ASC LIMIT 1000</span>
 <span class="sb">  Address::ShipAddress Load (0.5ms)  SELECT `</span><span class="n">addresses</span><span class="sb">`.* FROM `</span><span class="n">addresses</span><span class="sb">` WHERE `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">type</span><span class="sb">` IN (&#39;Address::ShipAddress&#39;) AND `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">order_id</span><span class="sb">` = 2619178 LIMIT 1</span>
 <span class="sb">  Address::ShipAddress Load (0.5ms)  SELECT `</span><span class="n">addresses</span><span class="sb">`.* FROM `</span><span class="n">addresses</span><span class="sb">` WHERE `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">type</span><span class="sb">` IN (&#39;Address::ShipAddress&#39;) AND `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">order_id</span><span class="sb">` = 2619179 LIMIT 1</span>
 <span class="sb">  Address::ShipAddress Load (0.5ms)  SELECT `</span><span class="n">addresses</span><span class="sb">`.* FROM `</span><span class="n">addresses</span><span class="sb">` WHERE `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">type</span><span class="sb">` IN (&#39;Address::ShipAddress&#39;) AND `</span><span class="n">addresses</span><span class="sb">`.`</span><span class="n">order_id</span><span class="sb">` = 2619180 LIMIT 1</span>
@@ -216,7 +216,7 @@ the <code>addresses</code> table.</p>
 
 <p>This will be faster:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Order</span><span class="o">.</span><span class="n">eager_load</span><span class="p">(</span><span class="ss">:ship_address</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Order</span><span class="o">.</span><span class="n">eager_load</span><span class="p">(</span><span class="ss">:ship_address</span><span class="p">)</span>
      <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;orders.created_at &gt; ?&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">.</span><span class="n">hour</span><span class="o">.</span><span class="n">ago</span><span class="p">)</span>
      <span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">order</span><span class="o">|</span>
   <span class="nb">puts</span> <span class="n">order</span><span class="o">.</span><span class="n">ship_address</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:firstname</span><span class="p">)</span>
@@ -481,6 +481,11 @@ looking for new projects and opportunities to improve your
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

@@ -80,6 +80,8 @@
   
 
   
+
+  
     <article class="post">
     <header class="post-header">
         <h2 class="post-title">
@@ -331,7 +333,7 @@ scope returns any results from the database, there are better ways than using
         <p>A few weeks ago, I noticed weird output in the <a href="https://relishapp.com/rspec">RSpec</a>
 test suite (~4000 tests) for a <a href="http://rubyonrails.org">Rails</a> application:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
 </code></pre></div>
 
 <p>This Rails app uses a <a href="https://www.postgresql.org">PostgreSQL</a> database. After
@@ -392,7 +394,7 @@ different ways to implement a mock object.</p>
 <p>Let&#39;s discuss some of the differences between a <code>spy</code>, a <code>double</code> and an
 <code>instance_double</code>. First, the <code>spy</code>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s1">&#39;rspec/mocks/standalone&#39;</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="nb">require</span> <span class="s1">&#39;rspec/mocks/standalone&#39;</span>
 <span class="o">=&gt;</span> <span class="kp">true</span>
 <span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">user_spy</span> <span class="o">=</span> <span class="n">spy</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Double User&gt;</span>
@@ -1056,6 +1058,11 @@ necessary by not taking advantage of another method from the Enumerable module,
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">
