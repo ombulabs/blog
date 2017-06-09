@@ -131,7 +131,7 @@ getting rendered. To debug this problem, I used capybara-webkit&#39;s <a href="h
 which spits out problems you would usually see in the Chrome console.
 To enable it:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Capybara</span><span class="o">::</span><span class="no">Webkit</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Capybara</span><span class="o">::</span><span class="no">Webkit</span><span class="o">.</span><span class="n">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="c1"># Enable debug mode. Prints a log of everything the driver is doing.</span>
   <span class="n">config</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kp">true</span>
 <span class="k">end</span>
@@ -140,7 +140,7 @@ To enable it:</p>
 <p>When the test runs, you&#39;ll get a log of every request/response and JS errors
 that occurred during the test. One of the errors I got was:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">ReferenceError: Can&#39;t find variable: React
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>ReferenceError: Can&#39;t find variable: React
 </code></pre></div>
 
 <p>After some googling, I found <a href="https://github.com/reactjs/react-rails/issues/10#issuecomment-57300387">this issue</a>.
@@ -148,7 +148,7 @@ Because I was using Qt 4.8, I needed <a href="https://github.com/es-shims/es5-sh
 on my <code>vendor/assets/javascripts</code> directory, and include it on the manifest
 before including React, like so:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">//= require jquery
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>//= require jquery
 //= require jquery_ujs
 //= require es5-shim
 //= require react
@@ -169,7 +169,7 @@ supported by Qt 5.5.</p>
 <p>When using <code>Object.assign</code> for merging objects to pass to my React state, I was
 getting this error:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">TypeError: undefined is not a constructor (evaluating &#39;Object.assign(...)&#39;) ...
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>TypeError: undefined is not a constructor (evaluating &#39;Object.assign(...)&#39;) ...
 </code></pre></div>
 
 <p>To fix it, I used the polyfill provided by Mozilla in their MDN documentation
@@ -415,6 +415,11 @@ know in the comments section below.</p>
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

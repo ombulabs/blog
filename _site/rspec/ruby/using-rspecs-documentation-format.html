@@ -114,7 +114,7 @@
           <p>A few weeks ago, I noticed weird output in the <a href="https://relishapp.com/rspec">RSpec</a>
 test suite (~4000 tests) for a <a href="http://rubyonrails.org">Rails</a> application:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
 </code></pre></div>
 
 <p>This Rails app uses a <a href="https://www.postgresql.org">PostgreSQL</a> database. After
@@ -129,7 +129,7 @@ warning first started showing up. Then I decided to use RSpec&#39;s documentatio
 format instead. I ran the build locally, and the test that triggers the warning
 for the first time was exposed:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">➜  myproject git:(develop) ✗ bundle exec rspec spec --format documentation
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>➜  myproject git:(develop) ✗ bundle exec rspec spec --format documentation
 
 ...
 
@@ -391,6 +391,11 @@ RSpec&#39;s default formatting, remember you can always add the flag to your
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

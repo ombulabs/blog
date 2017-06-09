@@ -119,7 +119,7 @@ a small class/object. Every time I see an opportunity to
 contact requests in the Ombu Labs
 <a href="http://www.ombulabs.com/contact">contact page</a>. It initially looked like this:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
                              <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
@@ -145,7 +145,7 @@ request.</p>
 
 <p>So I wrote some more:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot;</span> <span class="k">do</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes (AJAX)&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
   <span class="n">attributes</span><span class="o">.</span><span class="n">merge!</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
@@ -176,7 +176,7 @@ parameter (<code>format</code>) that varies between them.</p>
 <p>So, I <a href="http://c2.com/cgi/wiki?RefactorMercilessly">refactored</a> the code to
 look like this:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
   <span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
     <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
     <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
@@ -193,7 +193,7 @@ look like this:</p>
 
 <p>The code above doesn&#39;t <em>really</em> work. It raises this exception:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/activesupport-3.2.17/lib/active_support/testing/declarative.rb:28:in `test&#39;: test_should_gracefully_ignore_spammy_requests_with_valid_attributes is already defined in ContactsControllerTest (RuntimeError)
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>/Users/etagwerker/.rvm/gems/ruby-2.2.1@ombulabs-com/gems/activesupport-3.2.17/lib/active_support/testing/declarative.rb:28:in `test&#39;: test_should_gracefully_ignore_spammy_requests_with_valid_attributes is already defined in ContactsControllerTest (RuntimeError)
     from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:29:in `block in &lt;class:ContactsControllerTest&gt;&#39;
     from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `each&#39;
     from /Users/etagwerker/Projects/ombulabs.com/test/functional/contacts_controller_test.rb:28:in `&lt;class:ContactsControllerTest&gt;&#39;
@@ -212,7 +212,7 @@ me to define a test with the same description more than once.</p>
 
 <p>So, I decided to interpolate the format variable in the test description:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
   <span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests in </span><span class="si">#{</span><span class="nb">format</span><span class="si">}</span><span class="s2"> format&quot;</span> <span class="k">do</span>
     <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
     <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
@@ -233,7 +233,7 @@ possible.</p>
 <p>If you prefer <a href="https://rubygems.org/gems/rspec">RSpec</a>, it would look like
 this:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="s2">&quot;js&quot;</span><span class="p">,</span> <span class="s2">&quot;html&quot;</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
   <span class="n">it</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
     <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
     <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
@@ -481,6 +481,11 @@ classes. It will <strong>improve maintenance</strong> in the long run.</p>
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

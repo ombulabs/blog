@@ -125,7 +125,7 @@
 
 <p>Basically this is what you should <strong>NOT</strong> do:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Location</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">Location</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
     <span class="vi">@location</span> <span class="o">=</span> <span class="n">location_request</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>  
   <span class="k">end</span>
@@ -133,7 +133,7 @@
   <span class="k">def</span> <span class="nf">city</span>
     <span class="vi">@location</span><span class="o">.</span><span class="n">city</span>
   <span class="k">end</span>
-  <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+  <span class="o">...</span>
 <span class="k">end</span>
 <span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">before_action</span> <span class="ss">:set_location</span>
@@ -146,7 +146,7 @@
 
 <p>As soon as you later remove the location class and you are still trying to access <code>session[:user_location]</code>, your App will raise the following exception:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">ActionDispatch::Session::SessionRestoreError
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>ActionDispatch::Session::SessionRestoreError
 
 Session contains objects whose class definition isn&#39;t available.
 Remember to require the classes for all objects kept in the session.
@@ -159,7 +159,7 @@ Remember to require the classes for all objects kept in the session.
 
 <p>One example could be a user that has seen all of your pages, but is not willing to sign up or click a specific button. You could write a concern like this one to figure out what pages the user has already visited:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">before_action</span> <span class="ss">:store_path</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">before_action</span> <span class="ss">:store_path</span>
 
 <span class="k">def</span> <span class="nf">store_path</span>
   <span class="n">session</span><span class="o">[</span><span class="ss">:visited_paths</span><span class="o">]</span> <span class="o">||=</span> <span class="o">[]</span>
@@ -408,6 +408,11 @@ Remember to require the classes for all objects kept in the session.
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

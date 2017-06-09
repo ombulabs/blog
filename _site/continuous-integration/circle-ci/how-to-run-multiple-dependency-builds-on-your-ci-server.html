@@ -121,7 +121,7 @@ If you have a core project and many projects that depend on it, you want to run 
 <p>In this example we have an app called <code>my-app</code> and an engine called <code>my-gem</code>.
 In <code>my-app/Gemfile</code> we should have something like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">gem &#39;my-gem&#39;, git: &#39;git@github.com:ombulabs/my-gem.git&#39;, tag: &#39;1.0.0&#39;
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>gem &#39;my-gem&#39;, git: &#39;git@github.com:ombulabs/my-gem.git&#39;, tag: &#39;1.0.0&#39;
 </code></pre></div>
 
 <p>In order to edit the default settings of CircleCI, you need to have a <code>circle.yml</code> file in your project directory. You can check the <a href="https://circleci.com/docs/configuration/">documentation</a> to help you complete each section.</p>
@@ -138,7 +138,7 @@ In <code>my-app/Gemfile</code> we should have something like this:</p>
 
 <h3>Setup the project</h3>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">(cd ../my-app &amp;&amp; gem install bundler --no-ri --no-rdoc)
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>(cd ../my-app &amp;&amp; gem install bundler --no-ri --no-rdoc)
 (cd ../my-app &amp;&amp; bundle)
 (cd ../my-app &amp;&amp; bundle exec rake db:create db:schema:load)
 </code></pre></div>
@@ -149,7 +149,7 @@ In <code>my-app/Gemfile</code> we should have something like this:</p>
 
 <p>The best place to put all of that is after running the main test. So, your <code>circle.yml</code> should look like this:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text">test:
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>test:
   post:
     - git clone -b develop git@github.com:ombulabs/my-app.git ../my-app
     - &quot;sed -i \&quot;s@tag.*@branch: &#39;${CIRCLE_BRANCH}&#39;@\&quot; ../my-app/Gemfile&quot;
@@ -388,6 +388,11 @@ In <code>my-app/Gemfile</code> we should have something like this:</p>
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">

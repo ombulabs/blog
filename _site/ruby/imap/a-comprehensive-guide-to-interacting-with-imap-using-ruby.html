@@ -126,7 +126,7 @@ Gmail as the target IMAP server.</p>
 
 <p>To establish an IMAP connection:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Net::IMAP:0x007fde6b1a8ff0 ...</span>
 </code></pre></div>
 
@@ -135,7 +135,7 @@ Gmail as the target IMAP server.</p>
 
 <p><em>If</em> you run into any SSL issues and want to ignore them, you can use:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="kp">false</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">IMAP</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;imap.googlemail.com&quot;</span><span class="p">,</span> <span class="mi">993</span><span class="p">,</span> <span class="kp">true</span><span class="p">,</span> <span class="kp">nil</span><span class="p">,</span> <span class="kp">false</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;Net::IMAP:0x007fa1c77064b0 ...</span>
 </code></pre></div>
 
@@ -147,7 +147,7 @@ does this.</p>
 <p>After the connection is established, you can login using a couple of different
 ways. First, the most common way, using email and password:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">login</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
  <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
  <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0001 OK c3p0@ombulabs.com authenticated (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
@@ -157,7 +157,7 @@ ways. First, the most common way, using email and password:</p>
 gem, which adds the XOAUTH2 authenticator to <code>Net::IMAP</code>, allowing you to use an
 OAuth 2.0 token to login:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s2">&quot;LOGIN&quot;</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">your_oauth2_token</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="s2">&quot;LOGIN&quot;</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">your_oauth2_token</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse ...</span>
 </code></pre></div>
 
@@ -165,7 +165,7 @@ OAuth 2.0 token to login:</p>
 
 <p>To list all of your mailboxes:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">4</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:All, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/All Mail&quot;&gt;,</span>
  <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Drafts, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/Drafts&quot;&gt;,</span>
  <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Important], delim=&quot;/&quot;, name=&quot;[Gmail]/Important&quot;&gt;,</span>
@@ -177,7 +177,7 @@ OAuth 2.0 token to login:</p>
 
 <p>To search your mailboxes by name, using <code>*</code> as a wildcard character:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*Mail&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">5</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">list</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;*Mail&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:All, :Hasnochildren], delim=&quot;/&quot;, name=&quot;[Gmail]/All Mail&quot;&gt;,</span>
  <span class="c1">#&lt;struct Net::IMAP::MailboxList attr=[:Hasnochildren, :Sent], delim=&quot;/&quot;, name=&quot;[Gmail]/Sent Mail&quot;&gt;]</span>
 </code></pre></div>
@@ -189,7 +189,7 @@ There are two ways to do so:</p>
 
 <p>Read-only:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">6</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">examine</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">6</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">examine</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
  <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
  <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0014 OK [READ-ONLY] [Gmail]/All Mail selected. (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
@@ -197,7 +197,7 @@ There are two ways to do so:</p>
 
 <p>Read and write:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">7</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">7</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;[Gmail]/All Mail&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
  <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
  <span class="n">raw_data</span><span class="o">=</span><span class="s2">&quot;RUBY0015 OK [READ-WRITE] [Gmail]/All Mail selected. (Success)</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="o">&gt;</span>
@@ -212,7 +212,7 @@ the sequence number (<code>seqno</code>) or unique id (<code>uid</code>) for the
 mailbox. So this number will be different after email messages before this email
 get moved to a different mailbox, or if they get deleted:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Search emails which have a subject that includes the word Jedi and return the sequence number.</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># Search emails which have a subject that includes the word Jedi and return the sequence number.</span>
 <span class="o">[</span><span class="mi">8</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">12</span><span class="o">]</span>
 
@@ -225,7 +225,7 @@ get moved to a different mailbox, or if they get deleted:</p>
 <p>The unique id is a unique identifier for the email in a mailbox. So even if the
 email&#39;s position moves, the <code>uid</code> remains the same:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Search emails which have a subject that includes the word Jedi and return the unique id.</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># Search emails which have a subject that includes the word Jedi and return the unique id.</span>
 <span class="o">[</span><span class="mi">10</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_search</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;SUBJECT&quot;</span><span class="p">,</span> <span class="s2">&quot;Jedi&quot;</span><span class="o">]</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">23</span><span class="o">]</span>
 
@@ -241,7 +241,7 @@ email&#39;s position moves, the <code>uid</code> remains the same:</p>
 fetch the email headers, content, flags, <a href="https://tools.ietf.org/html/rfc3501#page-57">among others</a>.
 If you know the <code>seqno</code>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">12</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">12</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
   <span class="n">seqno</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
   <span class="kp">attr</span><span class="o">=</span>
@@ -261,7 +261,7 @@ If you know the <code>seqno</code>:</p>
 
 <p>If you know the <code>uid</code>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">13</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">13</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
   <span class="n">seqno</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
   <span class="kp">attr</span><span class="o">=</span>
@@ -282,7 +282,7 @@ If you know the <code>seqno</code>:</p>
 
 <p>If you wanted to fetch a range of <code>uid</code>s, you can use a range:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">14</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">14</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">uid_fetch</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">23</span><span class="p">,</span> <span class="s2">&quot;ENVELOPE&quot;</span><span class="p">)</span>
 <span class="o">=&gt;</span> <span class="o">[</span><span class="c1">#&lt;struct Net::IMAP::FetchData</span>
   <span class="n">seqno</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
   <span class="kp">attr</span><span class="o">=</span>
@@ -321,7 +321,7 @@ If you know the <code>seqno</code>:</p>
   <span class="p">{</span><span class="s2">&quot;UID&quot;</span><span class="o">=&gt;</span><span class="mi">3</span><span class="p">,</span>
    <span class="s2">&quot;ENVELOPE&quot;</span><span class="o">=&gt;</span>
     <span class="c1">#&lt;struct Net::IMAP::Envelope</span>
-    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+    <span class="o">...</span>
 </code></pre></div>
 
 <h2>Logging out and disconnecting from the server</h2>
@@ -332,7 +332,7 @@ To correctly close an IMAP connection, you first need to log out, and then
 disconnect from the server. You can use the <code>disconnected?</code> method to check
 if you&#39;ve actually closed the connection:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">[</span><span class="mi">15</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">logout</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="o">[</span><span class="mi">15</span><span class="o">]</span> <span class="n">pry</span><span class="p">(</span><span class="n">main</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">imap</span><span class="o">.</span><span class="n">logout</span>
 <span class="o">=&gt;</span> <span class="c1">#&lt;struct Net::IMAP::TaggedResponse</span>
  <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;RUBY0002&quot;</span><span class="p">,</span>
  <span class="nb">name</span><span class="o">=</span><span class="s2">&quot;OK&quot;</span><span class="p">,</span>
@@ -578,6 +578,11 @@ if you found this useful, let me know in the comments section!</p>
         <h3 class="tag-name">
           <a href="/blog/tags/rails"
              title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails-upgrades"
+             title="Articles about Rails Upgrades">Rails Upgrades</a>
         </h3>
     
         <h3 class="tag-name">
