@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    
+
+    <title>Upgrade Rails From 2.3 to 3.0 - The Lean Software Boutique</title>
+
+
+    
+    
+    <meta name="description" content="This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Upgrade Rails From 2.3 to 3.0 - The Lean Software Boutique">
+    <meta itemprop="description" content="This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="Upgrade Rails From 2.3 to 3.0 - The Lean Software Boutique">
+    <meta name="twitter:description" content="This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Upgrade Rails From 2.3 to 3.0 - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3.html" />
+    <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 2.3 to 3.0." />
+    <meta property="og:site_name" content="Upgrade Rails from 2.3 to 3.0 by @lubc32" />
+    
+      <meta property="article:published_time" content="2017-07-06 12:06:00 -0400" />
+      <meta property="article:modified_time" content="2017-07-06 12:06:00 -0400" />
+      <meta property="article:section" content="This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 2.3 to 3.0." />
+      <meta property="article:tag" content="Upgrade Rails From 2.3 to 3.0 - The Lean Software Boutique" />
+    
+
+    <meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombu_blog/application.css" />
+</head>
+<body class="home-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix">
+              
+              <a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">
+                   The Lean Software Boutique 
+                  
+              </h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+    <div id="wrapper">
+      <main class="content post-layout" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Upgrade Rails from 2.3 to 3.0</h1>
+            <section class="post-meta">
+              
+              
+
+
+  
+    <img class="author-thumb" src="//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50" alt="Luciano Becerra" nopin="nopin" />
+  
+  <a href="/blog/authors/luciano"
+     title="Articles by Luciano Becerra">
+     Luciano Becerra
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/upgrades"
+         title="Articles about Upgrades">Upgrades</a>
+
+
+
+<time class="post-date" datetime="2017-07-06">
+  06 Jul 2017
+</time>
+
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>This article is the first of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 2.3 to 3.0.</p>
+
+<!--more-->
+
+<ol>
+<li>Considerations</li>
+<li>Ruby version</li>
+<li>Tools</li>
+<li>XSS protection</li>
+<li>Config files</li>
+<li>Gems</li>
+<li>Deprecations
+
+<ul>
+<li>Active Record</li>
+<li>Action Mailer</li>
+<li>Metal</li>
+<li>Railties</li>
+</ul></li>
+<li>Next steps</li>
+</ol>
+
+<h2>1. Considerations</h2>
+
+<p>Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest <a href="http://semver.org">patch version</a> before moving to the next major/minor version. For example, in order to follow this article, your <a href="https://rubygems.org/gems/rails/versions">Rails version</a> should be at 2.3.18 before updating to Rails 3.0.20</p>
+
+<h2>2. Ruby version</h2>
+
+<p>Rails 3.0 requires Ruby 1.8.7 or higher, but no more than 1.9.3. If you want to use Ruby 1.9.x, we recommend you skip directly to 1.9.3. Also Ruby 1.9.1 is not usable because it has segmentation faults on Rails 3.0. That means that the compatible Ruby versions for Rails 3.0 are 1.8.7, 1.9.2, or 1.9.3.</p>
+
+<h2>3. Tools</h2>
+
+<p>There is an <a href="https://github.com/rails/rails_upgrade">official plugin</a> that helps the upgrade process. You just need to install the script by doing <code>script/plugin install git://github.com/rails/rails_upgrade.git</code> and then run <code>rake rails:upgrade:check</code> to see most of the files you need to upgrade in your application. It also provides some other generators to upgrade specific areas in you app like routes or gems.</p>
+
+<p>Sometimes it&#39;s also useful to check which files changed between two specifics versions of Rails. Fortunately <a href="http://railsdiff.org/2.3.18/3.0.0">this website</a> makes that easy.</p>
+
+<h2>4. XSS protection</h2>
+
+<p>In this version, Rails automatically adds <a href="http://yehudakatz.com/2010/02/01/safebuffers-and-rails-3-0/">XSS protection</a> in order to scape any content, so you will probably need to update your templates according to this. Luckely, there is an <a href="https://github.com/rails/rails_xss">official plugin</a> exactly for this purpose. We recommend you to take a look of this.</p>
+
+<h2>5. Config files</h2>
+
+<p>Rails 3 introduces the concept of an Application object. An application object holds all the specific application configurations and it&#39;s similar to the current config/environment.rb from Rails 2.3. The application object is defined in config/application.rb. You should move there most of the configuration that you had in config/environment.rb.</p>
+
+<p>In terms of routes, there are a couple of changes that you need to apply to your routes.rb file. For example:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Rails 2.3 way:
+ActionController::Routing::Routes.draw do |map|
+  map.resources :products
+end
+
+# Rails 3.0 way:
+AppName::Application.routes do
+  resources :products
+end
+</code></pre></div>
+
+<p>You can go to <a href="https://blog.engineyard.com/2010/the-lowdown-on-routes-in-rails-3">this article</a> to see in depth about this topic.</p>
+
+<h2>6. Gems</h2>
+
+<p><a href="https://bundler.io/">Bundler</a> is the default way to manage Gem dependencies in Rails 3 applications. You will need to add a <a href="https://bundler.io/v1.15/gemfile_man.html">Gemfile</a> in the root of your app, define all you gems there, and then get rid of the config.gem.</p>
+
+<p>Remember that if you installed the plugin mentioned in step 3, you can run <code>rake rails:upgrade:gems</code>. This task will extract your config.gem calls and generate code that you can put into your Gemfile.</p>
+
+<h2>7. Deprecations</h2>
+
+<p>There are a bunch of deprecations that happen during this version:</p>
+
+<h4>Active Record</h4>
+
+<ul>
+<li><p>The method to define a named scope is now called <code>scope</code> instead of <code>named_scope</code>.</p></li>
+<li><p>In scope methods, you no longer pass the conditions as a hash:</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Before:
+named_scope :active, :conditions =&gt; [&quot;active = ?&quot;, true]
+
+# Now:
+scope :active, where(&quot;active = ?&quot;, true)
+</code></pre></div>
+
+<ul>
+<li><p><code>save(false)</code> is deprecated, so you should use <code>save(:validate =&gt; false)</code>.</p></li>
+<li><p>I18n error messages for Active Record should be changed from <code>:en.activerecord.errors.template</code> to <code>:en.errors.template</code>.</p></li>
+<li><p><code>model.errors.on</code> is deprecated in favor of <code>model.errors[]</code></p></li>
+<li><p>There is a new syntax for presence validations:</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Before:
+validates_presence_of :email
+
+# Now:
+validates :email, presence: true
+</code></pre></div>
+
+<ul>
+<li><code>ActiveRecord::Base.colorize_logging</code> and <code>config.active_record.colorize_logging</code> are deprecated in favor of <code>Rails::LogSubscriber.colorize_logging</code> or <code>config.colorize_logging</code>.</li>
+</ul>
+
+<h3>Action Mailer</h3>
+
+<ul>
+<li><code>:charset</code>, <code>:content_type</code>, <code>:mime_version</code>, <code>:implicit_parts_order</code> are all deprecated in favor of <code>ActionMailer.default :key =&gt; value</code> style declarations.</li>
+<li>Mailer dynamic <code>create_method_name</code> and <code>deliver_method_name</code> are deprecated, just call <code>method_name</code> which now returns a <code>Mail::Message</code> object.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Before:
+message = UserMailer.create_welcome_email(user)
+UserMailer.deliver(message)
+
+# Now:
+message = UserMailer.welcome_email(user)
+message.deliver
+
+####
+
+# Before:
+UserMailer.deliver_welcome_email(user)
+
+# Now:
+UserMailer.welcome_email(user).deliver
+</code></pre></div>
+
+<ul>
+<li><code>template_root</code> is deprecated, pass options to a render call inside a proc from the <code>format.mime_type</code> method inside the mail generation block.</li>
+<li>The body method to define instance variables is deprecated (<code>body {:ivar =&gt; value}</code>), just declare instance variables in the method directly and they will be available in the view.</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Before:
+def welcome_email(user)
+  ...
+  body {:user =&gt; user, :url =&gt; &quot;https://fastruby.io&quot;}
+end
+
+# Now:
+def welcome_email(user)
+  ...
+  @user = user
+  @url = &quot;https://fastruby.io&quot;
+end
+</code></pre></div>
+
+<ul>
+<li>Mailers should now be in app/mailers instead of app/models.</li>
+</ul>
+
+<h3>Metal</h3>
+
+<p>Since Rails 3 is closer to <a href="http://guides.rubyonrails.org/rails_on_rack.html">Rack</a>, the <a href="http://weblog.rubyonrails.org/2008/12/17/introducing-rails-metal/">Metal</a> abstraction is no longer needed.</p>
+
+<p>This is the <a href="https://github.com/rails/rails/commit/ed34652d1aca148fea61c5309c1bd5ff3a55abfa">official explanation</a> of what you need to do to update your existing Metals:</p>
+
+<ul>
+<li>If your metal behaves like a middleware, add it to the middleware stack via config.middleware.use. You can use methods on the middleware stack to control exactly whereit should go.</li>
+<li>If it behaves like a Rack endpoint, you can link to it in the router. This will result in more optimal routing time, and allows you to remove code in your endpoint that matches specific URLs in favor of the more powerful handling in the router itself.</li>
+</ul>
+
+<p>For the future, you can use ActionController::Metal to get a very fast controller with the ability to opt-in to specific controller features without paying the penalty of the full controller stack.</p>
+
+<h3>Railties</h3>
+
+<p><a href="http://api.rubyonrails.org/classes/Rails/Railtie.html">Railties</a> deprecates the following constants during this version:</p>
+
+<ul>
+<li><code>RAILS_ROOT</code> in favor of <code>Rails.root</code></li>
+<li><code>RAILS_ENV</code> in favor of <code>Rails.env</code></li>
+<li><code>RAILS_DEFAULT_LOGGER</code> in favor of <code>Rails.logger</code></li>
+</ul>
+
+<p>Also, PLUGIN/rails/tasks and PLUGIN/tasks are no longer loaded all tasks, now must be in PLUGIN/lib/tasks.</p>
+
+<h2>8. Next steps</h2>
+
+<p>After you get your application propertly running in Rails 3.0, you will probably want to keep working on this Rails upgrade journey. So don&#39;t forget to check our complete <a href="https://www.ombulabs.com/blog/tags/upgrades">Rails upgrade series</a> to make that easy.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50)">
+                <span class="hidden">Luciano Becerra's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Luciano Becerra </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Upgrade Rails from 2.3 to 3.0&amp;url=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+        </footer>
+
+    </article>
+    <footer class="site-footer clearfix">
+  <section class="copyright">
+    <figure>
+      <img src="/blog/assets/images/creative-commons.png"
+           alt="Creative Commons Attribution-NonCommercial">
+      <figcaption>
+        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+           target="_blank"
+           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
+    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
+  </section>
+</footer>
+
+</main>
+
+      <div id="sidebar">
+  <h2 class="category-name">Listing all tags</h2>
+    
+
+    
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/"
+             title="Articles about "></a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/aws"
+             title="Articles about Aws">Aws</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/backbone"
+             title="Articles about Backbone">Backbone</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/benchmark"
+             title="Articles about Benchmark">Benchmark</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/best-practices"
+             title="Articles about Best Practices">Best Practices</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/bugs"
+             title="Articles about Bugs">Bugs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/carrierwave"
+             title="Articles about Carrierwave">Carrierwave</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/circle-ci"
+             title="Articles about Circle Ci">Circle Ci</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/continuous-integration"
+             title="Articles about Continuous Integration">Continuous Integration</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/conventions"
+             title="Articles about Conventions">Conventions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/design"
+             title="Articles about Design">Design</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/docker"
+             title="Articles about Docker">Docker</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/git"
+             title="Articles about Git">Git</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/github"
+             title="Articles about Github">Github</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/imap"
+             title="Articles about Imap">Imap</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/lean-startup"
+             title="Articles about Lean Startup">Lean Startup</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/open-source"
+             title="Articles about Open Source">Open Source</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/protractor"
+             title="Articles about Protractor">Protractor</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rails"
+             title="Articles about Rails">Rails</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/react"
+             title="Articles about React">React</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/rubygems"
+             title="Articles about Rubygems">Rubygems</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/s3"
+             title="Articles about S3">S3</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/security"
+             title="Articles about Security">Security</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software Development">Software Development</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/software-quality"
+             title="Articles about Software Quality">Software Quality</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
+        </h3>
+    
+        <h3 class="tag-name">
+          <a href="/blog/tags/upgrades"
+             title="Articles about Upgrades">Upgrades</a>
+        </h3>
+    
+</div>
+
+    </div>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
