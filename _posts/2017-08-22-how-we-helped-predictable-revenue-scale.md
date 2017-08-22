@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How We Helped Predictable Revenue Scale"
-date: 2017-08-21 12:06:00
+date: 2017-08-22 8:06:00
 categories: ["case-study"]
 author: "etagwerker"
 ---
@@ -38,7 +38,7 @@ I should mention, your push for [pair programming](http://wiki.c2.com/?PairProgr
 
 **Ernesto:** I'm glad to hear that. We are big fans of pair programming. **How are guys doing it now? Are you doing it like just when it's needed or do you have scheduled pair programming sessions?**
 
-**Preston:** We generally do as needed, but also if there's a special situation where somebody who has knowledge needs to share with somebody who doesn't. We'll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people comes into the office. There's usually a lot of programming going on at that time since we're all sitting around together anyway.
+**Preston:** We generally do as needed, but also if there's a special situation where somebody who has knowledge needs to share with somebody who doesn't. We'll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people come into the office. There is usually a lot of programming going on at that time since we're all sitting around together anyway.
 
 **Ernesto:** Cool. So the last question is quite technical and it's about the cluster of server nodes we helped implement and if you could tell me a little bit about the problem we were having before that solution.
 
