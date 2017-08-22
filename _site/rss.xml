@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>http://localhost:4000</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 21 Aug 2017 08:06:00 -0400</pubDate>
+    <pubDate>Tue, 22 Aug 2017 04:06:00 -0400</pubDate>
     <item>
       <title>How We Helped Predictable Revenue Scale</title>
       <link>http://localhost:4000/case-study/how-we-helped-predictable-revenue-scale.html</link>
@@ -44,7 +44,7 @@ I should mention, your push for pair programming has been very influential on ou
 
 Ernesto: I&#39;m glad to hear that. We are big fans of pair programming. How are guys doing it now? Are you doing it like just when it&#39;s needed or do you have scheduled pair programming sessions?
 
-Preston: We generally do as needed, but also if there&#39;s a special situation where somebody who has knowledge needs to share with somebody who doesn&#39;t. We&#39;ll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people comes into the office. There&#39;s usually a lot of programming going on at that time since we&#39;re all sitting around together anyway.
+Preston: We generally do as needed, but also if there&#39;s a special situation where somebody who has knowledge needs to share with somebody who doesn&#39;t. We&#39;ll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people come into the office. There is usually a lot of programming going on at that time since we&#39;re all sitting around together anyway.
 
 Ernesto: Cool. So the last question is quite technical and it&#39;s about the cluster of server nodes we helped implement and if you could tell me a little bit about the problem we were having before that solution.
 
@@ -62,7 +62,7 @@ Thanks for your time and your feedback! I really appreciate you taking the time 
 
 Preston: No worries. Hope it helps.
 ]]></description>
-      <pubDate>Mon, 21 Aug 2017 08:06:00 -0400</pubDate>
+      <pubDate>Tue, 22 Aug 2017 04:06:00 -0400</pubDate>
       <guid>http://localhost:4000/case-study/how-we-helped-predictable-revenue-scale.html</guid>
       <content:encoded><![CDATA[<p>A few weeks ago I had the opportunity to talk to <a href="https://www.linkedin.com/in/tarential">Preston St. Pierre</a>, CTO of <a href="http://predictablerevenue.com">Predictable Revenue</a>. We worked with Preston and his team for 2 years to help them scale their software development.</p>
 
@@ -96,7 +96,7 @@ Preston: No worries. Hope it helps.
 
 <p><strong>Ernesto:</strong> I&#39;m glad to hear that. We are big fans of pair programming. <strong>How are guys doing it now? Are you doing it like just when it&#39;s needed or do you have scheduled pair programming sessions?</strong></p>
 
-<p><strong>Preston:</strong> We generally do as needed, but also if there&#39;s a special situation where somebody who has knowledge needs to share with somebody who doesn&#39;t. We&#39;ll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people comes into the office. There&#39;s usually a lot of programming going on at that time since we&#39;re all sitting around together anyway.</p>
+<p><strong>Preston:</strong> We generally do as needed, but also if there&#39;s a special situation where somebody who has knowledge needs to share with somebody who doesn&#39;t. We&#39;ll get them to pair up together while working on a feature just to transfer that knowledge. Additionally, now we have office days. Every Wednesday people come into the office. There is usually a lot of programming going on at that time since we&#39;re all sitting around together anyway.</p>
 
 <p><strong>Ernesto:</strong> Cool. So the last question is quite technical and it&#39;s about the cluster of server nodes we helped implement and if you could tell me a little bit about the problem we were having before that solution.</p>
 
@@ -114,7 +114,7 @@ Preston: No worries. Hope it helps.
 
 <p><strong>Preston:</strong> No worries. Hope it helps.</p>
 ]]></content:encoded>
-      <dc:date>2017-08-21T08:06:00-04:00</dc:date>
+      <dc:date>2017-08-22T04:06:00-04:00</dc:date>
     </item>
     <item>
       <title>Announcing FastRuby.io</title>
@@ -4003,6 +4003,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-08-21T08:06:00-04:00</dc:date>
+    <dc:date>2017-08-22T04:06:00-04:00</dc:date>
   </channel>
 </rss>
