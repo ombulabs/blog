@@ -89,56 +89,6 @@
       <article class="post">
     <header class="post-header">
         <h2 class="post-title">
-          <a href="/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html">A comprehensive guide to interacting with IMAP using Ruby</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" />
-  
-  <a href="/blog/authors/mauro-oto"
-     title="Articles by Mauro Otonelli">
-     Mauro Otonelli
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/ruby"
-         title="Articles about Ruby">Ruby</a>,
-      <a href="/blog/tags/imap"
-         title="Articles about Imap">Imap</a>
-
-
-
-<time class="post-date" datetime="2016-05-30">
-  30 May 2016
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping
-your head around its API is not so easy. Not only is the <a href="https://tools.ietf.org/html/rfc3501">IMAP API</a>
-a bit obscure and cryptic, but Ruby&#39;s IMAP <a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html">documentation</a>
-is not so great either.</p>
-
-<p>Searching the internet for examples doesn&#39;t yield too many results, so I&#39;ll try
-to write down some of the things I&#39;ve learned. The examples I&#39;ll show use
-Gmail as the target IMAP server.</p>
- <a class="read-more" href="/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-    
-
-      <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
           <a href="/blog/rails/dry/dry-your-test-unit.html">DRY your tests</a>
         </h2>
     </header>
@@ -987,6 +937,63 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
 
 <p>Don&#39;t just say <em>&quot;It doesn&#39;t work!&quot;</em>, don&#39;t be that person! Next time file an issue so that we can all benefit from your pain.</p>
  <a class="read-more" href="/blog/open-source/bugs/how-to-report-a-bug.html">Read more &raquo;</a>
+    </section>
+</article>
+
+
+    
+
+      <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
+          <a href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Adding Docker to a Ruby gem</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/docker"
+         title="Articles about Docker">Docker</a>,
+      <a href="/blog/tags/rubygems"
+         title="Articles about Rubygems">Rubygems</a>,
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>
+
+
+
+<time class="post-date" datetime="2015-12-29">
+  29 Dec 2015
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
+
+<p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
+
+<p>Here are the steps:</p>
+
+<ol>
+<li><p>Download the <a href="https://www.docker.com/docker-toolbox">Docker Toolbox</a>, a 176+ MB package.</p></li>
+<li><p>Install the package, which will expand to 400+ MB in your filesystem.</p></li>
+<li><p>In the terminal: <code>docker-machine start default</code></p></li>
+<li><p>Then within your project: <code>docker-compose up</code> (before this I had to run <code>eval &quot;$(docker-machine env default)&quot;</code> because of <a href="https://github.com/docker/compose/issues/2180#issuecomment-147766435">this issue</a>). Get ready to wait for a few minutes while it sets up your virtual machine.</p></li>
+<li><p>Finally: <code>docker-compose run --rm gem</code></p></li>
+</ol>
+ <a class="read-more" href="/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html">Read more &raquo;</a>
     </section>
 </article>
 
