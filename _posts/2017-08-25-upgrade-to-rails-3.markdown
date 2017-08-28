@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Upgrade Rails from 2.3 to 3.0"
-date: 2017-08-25 16:06:00
+date: 2017-08-28 16:06:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
@@ -64,7 +64,7 @@ config.gem 'aws-sdk',  :version => '1.0.0' # (config/environment.rb)
 
 config.gem 'pry', :version => ['>= 0.6.0', '< 0.7.0'] # (config/development.rb)
 
-# After:
+# Now:
 (Gemfile)
 
 gem 'aws-sdk', '1.0.0'
@@ -169,7 +169,7 @@ Also, `PLUGIN/rails/tasks` and `PLUGIN/tasks` are no longer loaded all tasks, no
 # Before:
 vendor/plugins/ombulabs_patches/tasks/s3_backup.rake
 
-# After:
+# Now:
 lib/tasks/ombulabs_patches/s3_backup.rake
 ```
 
