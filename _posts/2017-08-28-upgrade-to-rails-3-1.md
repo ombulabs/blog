@@ -6,7 +6,7 @@ categories: ["rails", "upgrades"]
 author: "luciano"
 ---
 
-This second of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.0 to 3.1. If you are in an older version, you can take a look of our [previous article](https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-rails-upgrades.html).
+This is the second article of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.0 to 3.1. If you are in an older version, you can take a look at our [previous article](https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-rails-upgrades.html).
 
 <!--more-->
 
@@ -27,7 +27,7 @@ Rails 3.1 requires Ruby 1.8.7 or higher, but no more than 1.9.3. If you want to 
 ## 3. Tools
 Rails 3.1 comes with a generator that helps the upgrade process. You just need to run `rake rails:update` to see a [guide](https://gist.github.com/ryanb/1101906) of how to upgrade your application.
 
-Sometimes it's also useful to check which files changed between two specifics versions of Rails. Fortunately [Rails Diff](http://railsdiff.org/3.0.20/3.1.12) makes that easy.
+Sometimes it's also useful to check which files changed between two specific versions of Rails. Fortunately [Rails Diff](http://railsdiff.org/3.0.20/3.1.12) makes that easy.
 
 ## Config files
 - You should **remove** any references to `ActionView::Base.debug_rjs` in your project.
@@ -38,7 +38,7 @@ Sometimes it's also useful to check which files changed between two specifics ve
 config.action_view.debug_rjs = true
 ```
 
-- if you want to wrap parameters into a nested hash add a `config/initializers/wrap_parameters.rb` file with the following contents. This file comes by default in new applications.
+- If you want to wrap parameters into a nested hash add a `config/initializers/wrap_parameters.rb` file with the following contents. This file comes by default in new applications.
 
 ```
 # Be sure to restart your server when you modify this file.
