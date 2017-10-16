@@ -8,6 +8,8 @@ author: "etagwerker"
 
 A few weeks ago I had the opportunity to talk to [Preston St. Pierre](https://www.linkedin.com/in/tarential), CTO of [Predictable Revenue](http://predictablerevenue.com). We worked with Preston and his team for 2 years to help them scale their software development.
 
+<!--more-->
+
 **Ernesto:** First of all, thanks for taking the time to talk to me. I have a few questions about our past engagement. Let's start with this one: **What was the main problem you were having when you hired us?**
 
 **Preston:** I suppose the main problem was lack of developer hours. We needed somebody that was flexible, on time, that we could hire for more hours or less hours if we had the budget.
