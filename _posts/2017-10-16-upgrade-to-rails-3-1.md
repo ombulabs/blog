@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Upgrade Rails from 3.0 to 3.1"
-date: 2017-08-28 11:02:00
+date: 2017-10-16 11:02:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
