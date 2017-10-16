@@ -1,35 +1,36 @@
 ---
 layout: post
 title:  "Upgrade Rails from 3.0 to 3.1"
-date: 2017-10-16 11:02:00
+date: 2017-10-16 09:30:00
 categories: ["rails", "upgrades"]
 author: "luciano"
 ---
 
-This is the second article of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.0 to 3.1. If you are in an older version, you can take a look at our [previous article](https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-rails-upgrades.html).
+This is the second article of our [Upgrade Rails series](https://www.ombulabs.com/blog/tags/upgrades). We will be covering the most important aspects that you need to know to update your [Ruby on Rails](http://rubyonrails.org/) application from [version 3.0](http://guides.rubyonrails.org/3_0_release_notes.html) to 3.1. If you are in an older version, you can take a look at our [previous article](https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html).
 
 <!--more-->
 
-1. Considerations
-2. Ruby version
-3. Config files
-4. jQuery
-5. Asset Pipeline
-6. Next steps
+1. [Considerations](#considerations)
+2. [Ruby version](#ruby-version)
+3. [Tools](#tools)
+4. [Config files](#config-files)
+5. [jQuery](#jquery)
+6. [Asset Pipeline](#asset_pipeline)
+7. [Next steps](#next-steps)
 
 
-## 1. Considerations
+<h2 id="considerations">1. Considerations</h2>
 Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest [patch version](http://semver.org) before moving to the next major/minor version. For example, in order to follow this article, your [Rails version](https://rubygems.org/gems/rails/versions) should be at 3.0.20 before updating to Rails 3.1.12
 
-## 2. Ruby version
-Rails 3.1 requires Ruby 1.8.7 or higher, but no more than 1.9.3. If you want to use Ruby 1.9.x, we recommend you skip directly to 1.9.3. Also Ruby 1.9.1 is not usable because it has segmentation faults on Rails 3.1. That means that the compatible Ruby versions for Rails 3.1 are 1.8.7, 1.9.2, or 1.9.3. Keep in mind that the next Rails version (3.2) will be the last one that supports Ruby 1.8.7 and 1.9.2.
+<h2 id="ruby-version">2. Ruby version</h2>
+Rails 3.1 requires Ruby [1.8.7](https://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released) or higher, but no more than [1.9.3](https://www.ruby-lang.org/en/news/2011/10/31/ruby-1-9-3-p0-is-released). If you want to use Ruby 1.9.x, we recommend you skip directly to 1.9.3. Also Ruby [1.9.1](https://www.ruby-lang.org/en/news/2009/01/30/ruby-1-9-1-released) is not usable because it has segmentation faults on Rails 3.1. That means that the compatible [Ruby versions](https://www.ruby-lang.org/en/downloads/releases/) for Rails 3.1 are 1.8.7, [1.9.2](https://www.ruby-lang.org/en/news/2010/08/18/ruby-1-9-2-released), or 1.9.3. Keep in mind that the next Rails version (3.2) will be the last one that supports Ruby 1.8.7 and 1.9.2.
 
-## 3. Tools
-Rails 3.1 comes with a generator that helps the upgrade process. You just need to run `rake rails:update` to see a [guide](https://gist.github.com/ryanb/1101906) of how to upgrade your application.
+<h2 id="tools">3. Tools</h2>
+Rails 3.1 comes with a generator that helps the upgrade process. You just need to run `rake rails:update` to see a [guide](https://gist.github.com/ryanb/1101906) that details how to upgrade your application.
 
 Sometimes it's also useful to check which files changed between two specific versions of Rails. Fortunately [Rails Diff](http://railsdiff.org/3.0.20/3.1.12) makes that easy.
 
-## Config files
+<h2 id="config-files">4. Config files</h2>
 - You should **remove** any references to `ActionView::Base.debug_rjs` in your project.
 
 ```
@@ -56,7 +57,7 @@ ActiveSupport.on_load(:active_record) do
 end
 ```
 
-## 4. jQuery
+<h2 id="jquery">5. jQuery</h2>
 [jQuery](https://jquery.com/) is the default JavaScript library that comes with Rails 3.1.
 
 To add this you need to include the [jquery-rails](https://github.com/rails/jquery-rails) gem in your [Gemfile](https://bundler.io/gemfile.html)
@@ -74,8 +75,7 @@ And then include the libraries in your `app/assets/javascripts/application.js`
 
 So now you can get rid of your jQuery assets like `jquery.js` or `jquery.min.js`.
 
-## 5. Asset Pipeline
-
+<h2 id="asset_pipeline">6. Asset Pipeline</h2>
 [Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html) is an optional feature in Rails 3.1, but we recommend to include it to take advantage of it. In order to do that, you should apply the following changes:
 
 - Add to your `Gemfile`:
@@ -135,5 +135,5 @@ config.serve_static_assets = true
 config.static_cache_control = "public, max-age=3600"
 ```
 
-## 6. Next steps
+<h2 id="next-steps">7. Next steps</h2>
 After you get your application propertly running in Rails 3.1, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://www.ombulabs.com/blog/tags/upgrades) to make that easy.
