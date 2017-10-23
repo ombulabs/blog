@@ -174,4 +174,4 @@ lib/tasks/ombulabs_patches/s3_backup.rake
 ```
 
 <h2 id="next-steps">8. Next steps</h2>
-After you get your application propertly running in Rails 3.0, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://www.ombulabs.com/blog/tags/upgrades) to make that easy.
+After you get your application properly running in Rails 3.0, you will probably want to keep working on this Rails upgrade journey. So don't forget to check our complete [Rails upgrade series](https://www.ombulabs.com/blog/tags/upgrades) to make that easy.
