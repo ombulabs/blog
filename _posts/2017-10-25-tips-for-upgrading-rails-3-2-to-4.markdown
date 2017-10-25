@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "The definitive guide to upgrading from Rails 3.2 to 4.0"
-date: 2017-09-01 16:48:00
+title: "The Definitive Guide to Upgrading from Rails 3.2 to 4.0"
+date: 2017-10-25 16:48:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
@@ -10,28 +10,28 @@ _This article is part of our Upgrade Rails series. To see more of them, [click h
 
 A [previous post](https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html)
 covered some general tips to take into account for this migration. This article
-will try to go a bit more in depth. We will first go from 3.2 to 4.0, and then
-to 4.2. Depending on the complexity of your app, a Rails upgrade can take
-anywhere from one week for a single developer, to a few months for two developers.
+will try to go a bit more in depth. We will first go from 3.2 to 4.0, then to
+4.1 and finally to 4.2. Depending on the complexity of your app, a Rails upgrade
+can take anywhere from one week for a single developer, to a few months for two
+developers.
 
-1. Ruby version
-2. Gems
-3. Config files (config/)
-4. Application code
-  a. Models (app/models/)
-  b. Controllers (app/controllers/)
-5. Tests
-6. Miscellaneous
-7. Next steps
+1. [Ruby version](#ruby-version)
+2. [Gems](#gems)
+3. [Config files (config/)](#config-files)
+4. [Application code](#application-code)
+  1. [Models (app/models/)](#models)
+  2. [Controllers (app/controllers/)](#controllers)
+5. [Tests](#tests)
+6. [Miscellaneous](#miscellaneous)
+7. [Next steps](#next-steps)
 
-## 1. Ruby version
+## <a id="ruby-version"></a> 1. Ruby version
 
 Rails 3.2.x is the last version to support Ruby 1.8.7. If you're using Ruby 1.8.7,
-you'll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is out of the scope
-of this guide, but check out [this guide](http://www.darkridge.com/~jpr5/2012/10/03/ruby-1.8.7-1.9.3-migration), which
-is very complete and serves as a sort of checklist, and we've used it in the past.
+you'll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is not covered
+in this guide, but check out [this guide](http://www.darkridge.com/~jpr5/2012/10/03/ruby-1.8.7-1.9.3-migration) for more details on that.
 
-## 2. Gems
+## <a id="gems"></a> 2. Gems
 
 You can add the aptly named [rails4_upgrade gem](https://github.com/alindeman/rails4_upgrade)
 to your Rails 3 project's Gemfile and find gems which you'll need to update:
@@ -56,13 +56,13 @@ to your Rails 3 project's Gemfile and find gems which you'll need to update:
 Instead of going through your currently bundled gems or `Gemfile.lock` manually,
 you get a report of the gems you need to upgrade.
 
-## 3. Config
+## <a id="config-files"></a> 3. Config files
 
-Rails includes the `rails:update` [task](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task),
-which you can use as a guideline as explained thoroughly in
-[this post](http://thomasleecopeland.com/2015/08/06/running-rails-update.html)
-to get rid of unnecessary code or monkey-patches in your config files and
-initializers, specially if your Rails 3 app was running on Rails 2.
+Rails includes the `rails:update` [task](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task).
+You can use this task as a guideline as explained thoroughly in
+[this post](http://thomasleecopeland.com/2015/08/06/running-rails-update.html).
+It will help you get rid of unnecessary code or monkey-patches in your config
+files and initializers, specially if your Rails 3 app was running on Rails 2.
 
 As an alternative, check out [RailsDiff](http://railsdiff.org/3.2.22.5/4.0.13),
 which provides an overview of the changes in a basic Rails app between 3.2 and
@@ -75,9 +75,9 @@ a try. It attempts to apply [this git patch](https://github.com/bsodmike/upgrade
 to 4.0. However, I don't recommend this for complex or mature apps, as there
 will be plenty of conflicts.
 
-## 4. Application code
+## <a id="application-code"></a> 4. Application code
 
-### a. Models
+### <a id="models"></a> a. Models
 
 - All dynamic finder methods except for `.find_by_...` are deprecated:
 
@@ -108,9 +108,29 @@ has_many :posts, order: 'position'
 has_many :posts, -> { order('position') }
 ```
 
-- Protected Attributes are deprecated, but you can add the [gem for it](https://github.com/rails/protected_attributes).
+(Friendly reminder: beware when using [default_scope](https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html))
+
+- Protected attributes is deprecated, but you can still add the [protected_attributes](https://github.com/rails/protected_attributes) gem.
 However, since the Rails core team dropped its support since Rails 5.0, you
 should begin migrating your models to Strong Parameters anyway.
+
+To do so, you will need to remove calls to `attr_accessible` from your models,
+and add a new method to your model's controller with a name like `user_params`
+or `your_model_params`:
+
+```ruby
+class UsersController < ApplicationController
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+end
+```
+
+Finally, change (most) references to `params[:user]` to `user_params` in your
+controller's actions. If the reference is for an update or a creation, like
+`user.update_attributes(params[:user])`, change it to `user.update_attributes(user_params)`.
+This new method permits using the `name` and `email` attributes of the user
+model and disallows writing any other attribute the user model may have (like `id`).
 
 - ActiveRecord Observers were removed from the Rails 4.0 codebase and extracted
 into a gem. You can regain usage by adding the gem to your Gemfile:
@@ -129,7 +149,7 @@ approach.
 gem 'active_resource' # https://github.com/rails/activeresource
 ```
 
-### b. Controllers
+### <a id="controllers"></a> b. Controllers
 
 - ActionController Sweeper was extracted into the `rails-observers` gem, you can
 regain usage by adding the gem to your Gemfile:
@@ -157,13 +177,13 @@ You will need to add the gem:
 gem 'actionpack-action_caching' # https://github.com/rails/actionpack-action_caching
 ```
 
-## 5. Tests
+## <a id="tests"></a> 5. Tests
 
 From Ruby 1.9.x onwards, you have to include the [`test-unit` gem](https://rubygems.org/gems/test-unit)
 in your Gemfile as it was removed from the standard lib. As an alternative,
 migrate to `Minitest`, `RSpec` or your favorite test framework.
 
-## 6. Miscellaneous
+## <a id="miscellaneous"></a> 6. Miscellaneous
 
 - Routes now require you to specify the request method, so you no longer can
 rely on the catch-all default.
@@ -184,9 +204,9 @@ either by searching for the project on [RubyGems](https://rubygems.org)/[Github]
 or by moving the plugin to your `lib` directory and require it from somewhere
 within your Rails app.
 
-## 7. Next steps
+## <a id="next-steps"></a> 7. Next steps
 
-If you're running Rails 4.0, congratulations!
+If you successfully followed all of these steps, by now you should be running Rails 4.0!
 
-Stay tuned for our Rails 4.0 to Rails 4.2 article, check out our [Rails performance articles](https://www.ombulabs.com/blog/tags/performance) to fine-tune
-your app, and feel free to tell us how your upgrade went.
+To fine-tune your app, check out [FastRuby.io](https://fastruby.io), and feel
+free to tell us how your upgrade went.
