@@ -36,12 +36,12 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://www.ombulabs.com/rails/upgrades/tips-for-upgrading-rails-3-2-to-4.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="This article is part of our Upgrade Rails series. To see more of them, click here. A previous post covered some general tips to take into account for this migration. This article will try to go a bit more in depth. We will first go from 3.2 to 4.0, and..." />
-    <meta property="og:site_name" content="The definitive guide to upgrading from Rails 3.2 to 4.0 by @mauro_oto" />
+    <meta property="og:description" content="This article is part of our Upgrade Rails series. To see more of them, click here. A previous post covered some general tips to take into account for this migration. This article will try to go a bit more in depth. We will first go from 3.2 to 4.0, then..." />
+    <meta property="og:site_name" content="The Definitive Guide to Upgrading from Rails 3.2 to 4.0 by @mauro_oto" />
     
-      <meta property="article:published_time" content="2017-09-01 12:48:00 -0400" />
-      <meta property="article:modified_time" content="2017-09-01 12:48:00 -0400" />
-      <meta property="article:section" content="This article is part of our Upgrade Rails series. To see more of them, click here. A previous post covered some general tips to take into account for this migration. This article will try to go a bit more in depth. We will first go from 3.2 to 4.0, and..." />
+      <meta property="article:published_time" content="2017-10-25 16:48:00 +0000" />
+      <meta property="article:modified_time" content="2017-10-25 16:48:00 +0000" />
+      <meta property="article:section" content="This article is part of our Upgrade Rails series. To see more of them, click here. A previous post covered some general tips to take into account for this migration. This article will try to go a bit more in depth. We will first go from 3.2 to 4.0, then..." />
       <meta property="article:tag" content="The Definitive Guide to Upgrading From Rails 3.2 to 4.0 - The Lean Software Boutique" />
     
 
@@ -78,7 +78,7 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">The definitive guide to upgrading from Rails 3.2 to 4.0</h1>
+            <h1 class="post-title">The Definitive Guide to Upgrading from Rails 3.2 to 4.0</h1>
             <section class="post-meta">
               
               
@@ -103,8 +103,8 @@
 
 
 
-<time class="post-date" datetime="2017-09-01">
-  01 Sep 2017
+<time class="post-date" datetime="2017-10-25">
+  25 Oct 2017
 </time>
 
             </section>
@@ -115,30 +115,33 @@
 
 <p>A <a href="https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html">previous post</a>
 covered some general tips to take into account for this migration. This article
-will try to go a bit more in depth. We will first go from 3.2 to 4.0, and then
-to 4.2. Depending on the complexity of your app, a Rails upgrade can take
-anywhere from one week for a single developer, to a few months for two developers.</p>
+will try to go a bit more in depth. We will first go from 3.2 to 4.0, then to
+4.1 and finally to 4.2. Depending on the complexity of your app, a Rails upgrade
+can take anywhere from one week for a single developer, to a few months for two
+developers.</p>
 
 <ol>
-<li>Ruby version</li>
-<li>Gems</li>
-<li>Config files (config/)</li>
-<li>Application code
-a. Models (app/models/)
-b. Controllers (app/controllers/)</li>
-<li>Tests</li>
-<li>Miscellaneous</li>
-<li>Next steps</li>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files (config/)</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#models">Models (app/models/)</a></li>
+<li><a href="#controllers">Controllers (app/controllers/)</a></li>
+</ol></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+<li><a href="#next-steps">Next steps</a></li>
 </ol>
 
-<h2>1. Ruby version</h2>
+<h2><a id="ruby-version"></a> 1. Ruby version</h2>
 
 <p>Rails 3.2.x is the last version to support Ruby 1.8.7. If you&#39;re using Ruby 1.8.7,
-you&#39;ll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is out of the scope
-of this guide, but check out <a href="http://www.darkridge.com/%7Ejpr5/2012/10/03/ruby-1.8.7-1.9.3-migration">this guide</a>, which
-is very complete and serves as a sort of checklist, and we&#39;ve used it in the past.</p>
+you&#39;ll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is not covered
+in this guide, but check out <a href="http://www.darkridge.com/%7Ejpr5/2012/10/03/ruby-1.8.7-1.9.3-migration">this guide</a> for more details on that.</p>
 
-<h2>2. Gems</h2>
+<h2><a id="gems"></a> 2. Gems</h2>
 
 <p>You can add the aptly named <a href="https://github.com/alindeman/rails4_upgrade">rails4_upgrade gem</a>
 to your Rails 3 project&#39;s Gemfile and find gems which you&#39;ll need to update:</p>
@@ -162,13 +165,13 @@ to your Rails 3 project&#39;s Gemfile and find gems which you&#39;ll need to upd
 <p>Instead of going through your currently bundled gems or <code>Gemfile.lock</code> manually,
 you get a report of the gems you need to upgrade.</p>
 
-<h2>3. Config</h2>
+<h2><a id="config-files"></a> 3. Config files</h2>
 
-<p>Rails includes the <code>rails:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>,
-which you can use as a guideline as explained thoroughly in
-<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>
-to get rid of unnecessary code or monkey-patches in your config files and
-initializers, specially if your Rails 3 app was running on Rails 2.</p>
+<p>Rails includes the <code>rails:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.
+It will help you get rid of unnecessary code or monkey-patches in your config
+files and initializers, specially if your Rails 3 app was running on Rails 2.</p>
 
 <p>As an alternative, check out <a href="http://railsdiff.org/3.2.22.5/4.0.13">RailsDiff</a>,
 which provides an overview of the changes in a basic Rails app between 3.2 and
@@ -181,9 +184,9 @@ a try. It attempts to apply <a href="https://github.com/bsodmike/upgrade_rails_3
 to 4.0. However, I don&#39;t recommend this for complex or mature apps, as there
 will be plenty of conflicts.</p>
 
-<h2>4. Application code</h2>
+<h2><a id="application-code"></a> 4. Application code</h2>
 
-<h3>a. Models</h3>
+<h3><a id="models"></a> a. Models</h3>
 
 <ul>
 <li>All dynamic finder methods except for <code>.find_by_...</code> are deprecated:</li>
@@ -216,12 +219,34 @@ will be plenty of conflicts.</p>
 <span class="n">has_many</span> <span class="ss">:posts</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">order</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span> <span class="p">}</span>
 </code></pre></div>
 
+<p>(Friendly reminder: beware when using <a href="https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">default_scope</a>)</p>
+
 <ul>
-<li><p>Protected Attributes are deprecated, but you can add the <a href="https://github.com/rails/protected_attributes">gem for it</a>.
+<li>Protected attributes is deprecated, but you can still add the <a href="https://github.com/rails/protected_attributes">protected_attributes</a> gem.
 However, since the Rails core team dropped its support since Rails 5.0, you
-should begin migrating your models to Strong Parameters anyway.</p></li>
-<li><p>ActiveRecord Observers were removed from the Rails 4.0 codebase and extracted
-into a gem. You can regain usage by adding the gem to your Gemfile:</p></li>
+should begin migrating your models to Strong Parameters anyway.</li>
+</ul>
+
+<p>To do so, you will need to remove calls to <code>attr_accessible</code> from your models,
+and add a new method to your model&#39;s controller with a name like <code>user_params</code>
+or <code>your_model_params</code>:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">user_params</span>
+    <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:user</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:email</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+<p>Finally, change (most) references to <code>params[:user]</code> to <code>user_params</code> in your
+controller&#39;s actions. If the reference is for an update or a creation, like
+<code>user.update_attributes(params[:user])</code>, change it to <code>user.update_attributes(user_params)</code>.
+This new method permits using the <code>name</code> and <code>email</code> attributes of the user
+model and disallows writing any other attribute the user model may have (like <code>id</code>).</p>
+
+<ul>
+<li>ActiveRecord Observers were removed from the Rails 4.0 codebase and extracted
+into a gem. You can regain usage by adding the gem to your Gemfile:</li>
 </ul>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;rails-observers&#39;</span> <span class="c1"># https://github.com/rails/rails-observers</span>
@@ -238,7 +263,7 @@ approach.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;active_resource&#39;</span> <span class="c1"># https://github.com/rails/activeresource</span>
 </code></pre></div>
 
-<h3>b. Controllers</h3>
+<h3><a id="controllers"></a> b. Controllers</h3>
 
 <ul>
 <li>ActionController Sweeper was extracted into the <code>rails-observers</code> gem, you can
@@ -266,13 +291,13 @@ through either:</li>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;actionpack-action_caching&#39;</span> <span class="c1"># https://github.com/rails/actionpack-action_caching</span>
 </code></pre></div>
 
-<h2>5. Tests</h2>
+<h2><a id="tests"></a> 5. Tests</h2>
 
 <p>From Ruby 1.9.x onwards, you have to include the <a href="https://rubygems.org/gems/test-unit"><code>test-unit</code> gem</a>
 in your Gemfile as it was removed from the standard lib. As an alternative,
 migrate to <code>Minitest</code>, <code>RSpec</code> or your favorite test framework.</p>
 
-<h2>6. Miscellaneous</h2>
+<h2><a id="miscellaneous"></a> 6. Miscellaneous</h2>
 
 <ul>
 <li>Routes now require you to specify the request method, so you no longer can
@@ -296,12 +321,12 @@ or by moving the plugin to your <code>lib</code> directory and require it from s
 within your Rails app.</li>
 </ul>
 
-<h2>7. Next steps</h2>
+<h2><a id="next-steps"></a> 7. Next steps</h2>
 
-<p>If you&#39;re running Rails 4.0, congratulations!</p>
+<p>If you successfully followed all of these steps, by now you should be running Rails 4.0!</p>
 
-<p>Stay tuned for our Rails 4.0 to Rails 4.2 article, check out our <a href="https://www.ombulabs.com/blog/tags/performance">Rails performance articles</a> to fine-tune
-your app, and feel free to tell us how your upgrade went.</p>
+<p>To fine-tune your app, check out <a href="https://fastruby.io">FastRuby.io</a>, and feel
+free to tell us how your upgrade went.</p>
 
         </section>
 
@@ -327,7 +352,7 @@ your app, and feel free to tell us how your upgrade went.</p>
           <!-- Share links section -->
           <section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=The definitive guide to upgrading from Rails 3.2 to 4.0&amp;url=http://www.ombulabs.com/rails/upgrades/tips-for-upgrading-rails-3-2-to-4.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=The Definitive Guide to Upgrading from Rails 3.2 to 4.0&amp;url=http://www.ombulabs.com/rails/upgrades/tips-for-upgrading-rails-3-2-to-4.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
