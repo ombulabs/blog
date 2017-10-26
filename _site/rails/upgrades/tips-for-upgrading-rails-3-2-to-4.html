@@ -135,13 +135,13 @@ developers.</p>
 <li><a href="#next-steps">Next steps</a></li>
 </ol>
 
-<h2><a id="ruby-version"></a> 1. Ruby version</h2>
+<h2 id="ruby-version">1. Ruby version</h2>
 
 <p>Rails 3.2.x is the last version to support Ruby 1.8.7. If you&#39;re using Ruby 1.8.7,
 you&#39;ll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is not covered
 in this guide, but check out <a href="http://www.darkridge.com/%7Ejpr5/2012/10/03/ruby-1.8.7-1.9.3-migration">this guide</a> for more details on that.</p>
 
-<h2><a id="gems"></a> 2. Gems</h2>
+<h2 id="gems">2. Gems</h2>
 
 <p>You can add the aptly named <a href="https://github.com/alindeman/rails4_upgrade">rails4_upgrade gem</a>
 to your Rails 3 project&#39;s Gemfile and find gems which you&#39;ll need to update:</p>
@@ -165,7 +165,7 @@ to your Rails 3 project&#39;s Gemfile and find gems which you&#39;ll need to upd
 <p>Instead of going through your currently bundled gems or <code>Gemfile.lock</code> manually,
 you get a report of the gems you need to upgrade.</p>
 
-<h2><a id="config-files"></a> 3. Config files</h2>
+<h2 id="config-files">3. Config files</h2>
 
 <p>Rails includes the <code>rails:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
 You can use this task as a guideline as explained thoroughly in
@@ -184,9 +184,9 @@ a try. It attempts to apply <a href="https://github.com/bsodmike/upgrade_rails_3
 to 4.0. However, I don&#39;t recommend this for complex or mature apps, as there
 will be plenty of conflicts.</p>
 
-<h2><a id="application-code"></a> 4. Application code</h2>
+<h2 id="application-code">4. Application code</h2>
 
-<h3><a id="models"></a> a. Models</h3>
+<h2 id="models">a. Models</h2>
 
 <ul>
 <li>All dynamic finder methods except for <code>.find_by_...</code> are deprecated:</li>
@@ -263,7 +263,7 @@ approach.</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;active_resource&#39;</span> <span class="c1"># https://github.com/rails/activeresource</span>
 </code></pre></div>
 
-<h3><a id="controllers"></a> b. Controllers</h3>
+<h2 id="controllers">b. Controllers</h2>
 
 <ul>
 <li>ActionController Sweeper was extracted into the <code>rails-observers</code> gem, you can
@@ -291,13 +291,13 @@ through either:</li>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;actionpack-action_caching&#39;</span> <span class="c1"># https://github.com/rails/actionpack-action_caching</span>
 </code></pre></div>
 
-<h2><a id="tests"></a> 5. Tests</h2>
+<h2 id="tests">5. Tests</h2>
 
 <p>From Ruby 1.9.x onwards, you have to include the <a href="https://rubygems.org/gems/test-unit"><code>test-unit</code> gem</a>
 in your Gemfile as it was removed from the standard lib. As an alternative,
 migrate to <code>Minitest</code>, <code>RSpec</code> or your favorite test framework.</p>
 
-<h2><a id="miscellaneous"></a> 6. Miscellaneous</h2>
+<h2 id="miscellaneous">6. Miscellaneous</h2>
 
 <ul>
 <li>Routes now require you to specify the request method, so you no longer can
@@ -321,7 +321,7 @@ or by moving the plugin to your <code>lib</code> directory and require it from s
 within your Rails app.</li>
 </ul>
 
-<h2><a id="next-steps"></a> 7. Next steps</h2>
+<h2 id="next-steps">7. Next steps</h2>
 
 <p>If you successfully followed all of these steps, by now you should be running Rails 4.0!</p>
 

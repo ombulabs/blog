@@ -25,13 +25,13 @@ developers.
 6. [Miscellaneous](#miscellaneous)
 7. [Next steps](#next-steps)
 
-## <a id="ruby-version"></a> 1. Ruby version
+<h2 id="ruby-version">1. Ruby version</h2>
 
 Rails 3.2.x is the last version to support Ruby 1.8.7. If you're using Ruby 1.8.7,
 you'll need to upgrade to Ruby 1.9.3 or newer. The Ruby upgrade is not covered
 in this guide, but check out [this guide](http://www.darkridge.com/~jpr5/2012/10/03/ruby-1.8.7-1.9.3-migration) for more details on that.
 
-## <a id="gems"></a> 2. Gems
+<h2 id="gems">2. Gems</h2>
 
 You can add the aptly named [rails4_upgrade gem](https://github.com/alindeman/rails4_upgrade)
 to your Rails 3 project's Gemfile and find gems which you'll need to update:
@@ -56,7 +56,7 @@ to your Rails 3 project's Gemfile and find gems which you'll need to update:
 Instead of going through your currently bundled gems or `Gemfile.lock` manually,
 you get a report of the gems you need to upgrade.
 
-## <a id="config-files"></a> 3. Config files
+<h2 id="config-files">3. Config files</h2>
 
 Rails includes the `rails:update` [task](http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task).
 You can use this task as a guideline as explained thoroughly in
@@ -75,9 +75,9 @@ a try. It attempts to apply [this git patch](https://github.com/bsodmike/upgrade
 to 4.0. However, I don't recommend this for complex or mature apps, as there
 will be plenty of conflicts.
 
-## <a id="application-code"></a> 4. Application code
+<h2 id="application-code">4. Application code</h2>
 
-### <a id="models"></a> a. Models
+<h2 id="models">a. Models</h2>
 
 - All dynamic finder methods except for `.find_by_...` are deprecated:
 
@@ -149,7 +149,7 @@ approach.
 gem 'active_resource' # https://github.com/rails/activeresource
 ```
 
-### <a id="controllers"></a> b. Controllers
+<h2 id="controllers">b. Controllers</h2>
 
 - ActionController Sweeper was extracted into the `rails-observers` gem, you can
 regain usage by adding the gem to your Gemfile:
@@ -177,13 +177,13 @@ You will need to add the gem:
 gem 'actionpack-action_caching' # https://github.com/rails/actionpack-action_caching
 ```
 
-## <a id="tests"></a> 5. Tests
+<h2 id="tests">5. Tests</h2>
 
 From Ruby 1.9.x onwards, you have to include the [`test-unit` gem](https://rubygems.org/gems/test-unit)
 in your Gemfile as it was removed from the standard lib. As an alternative,
 migrate to `Minitest`, `RSpec` or your favorite test framework.
 
-## <a id="miscellaneous"></a> 6. Miscellaneous
+<h2 id="miscellaneous">6. Miscellaneous</h2>
 
 - Routes now require you to specify the request method, so you no longer can
 rely on the catch-all default.
@@ -204,7 +204,7 @@ either by searching for the project on [RubyGems](https://rubygems.org)/[Github]
 or by moving the plugin to your `lib` directory and require it from somewhere
 within your Rails app.
 
-## <a id="next-steps"></a> 7. Next steps
+<h2 id="next-steps">7. Next steps</h2>
 
 If you successfully followed all of these steps, by now you should be running Rails 4.0!
 
