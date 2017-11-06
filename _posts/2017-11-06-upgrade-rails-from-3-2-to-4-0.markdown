@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "The Definitive Guide to Upgrading from Rails 3.2 to 4.0"
-date: 2017-10-25 16:48:00
+title: "Upgrade Rails from 3.2 to 4.0"
+date: 2017-11-06 12:42:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
@@ -112,7 +112,7 @@ has_many :posts, -> { order('position') }
 
 - Protected attributes is deprecated, but you can still add the [protected_attributes](https://github.com/rails/protected_attributes) gem.
 However, since the Rails core team dropped its support since Rails 5.0, you
-should begin migrating your models to Strong Parameters anyway.
+should begin migrating your models to [Strong Parameters](http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters) anyway.
 
 To do so, you will need to remove calls to `attr_accessible` from your models,
 and add a new method to your model's controller with a name like `user_params`
