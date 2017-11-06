@@ -8,10 +8,10 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 25 Oct 2017 12:48:00 -0400</pubDate>
+    <pubDate>Mon, 06 Nov 2017 07:42:00 -0500</pubDate>
     <item>
-      <title>The Definitive Guide to Upgrading from Rails 3.2 to 4.0</title>
-      <link>https://www.ombulabs.com/blog/rails/upgrades/tips-for-upgrading-rails-3-2-to-4.html</link>
+      <title>Upgrade Rails from 3.2 to 4.0</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 A previous post
@@ -207,8 +207,8 @@ If you successfully followed all of these steps, by now you should be running Ra
 To fine-tune your app, check out FastRuby.io, and feel
 free to tell us how your upgrade went.
 ]]></description>
-      <pubDate>Wed, 25 Oct 2017 12:48:00 -0400</pubDate>
-      <guid>https://www.ombulabs.com/blog/rails/upgrades/tips-for-upgrading-rails-3-2-to-4.html</guid>
+      <pubDate>Mon, 06 Nov 2017 07:42:00 -0500</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>A <a href="https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html">previous post</a>
@@ -316,7 +316,7 @@ will be plenty of conflicts.</p>
 <ul>
 <li>Protected attributes is deprecated, but you can still add the <a href="https://github.com/rails/protected_attributes">protected_attributes</a> gem.
 However, since the Rails core team dropped its support since Rails 5.0, you
-should begin migrating your models to Strong Parameters anyway.</li>
+should begin migrating your models to <a href="http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters">Strong Parameters</a> anyway.</li>
 </ul>
 
 <p>To do so, you will need to remove calls to <code>attr_accessible</code> from your models,
@@ -404,7 +404,7 @@ within your Rails app.</li>
 <p>To fine-tune your app, check out <a href="https://fastruby.io">FastRuby.io</a>, and feel
 free to tell us how your upgrade went.</p>
 ]]></content:encoded>
-      <dc:date>2017-10-25T12:48:00-04:00</dc:date>
+      <dc:date>2017-11-06T07:42:00-05:00</dc:date>
     </item>
     <item>
       <title>Upgrade Rails from 3.0 to 3.1</title>
@@ -4679,6 +4679,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-10-25T12:48:00-04:00</dc:date>
+    <dc:date>2017-11-06T07:42:00-05:00</dc:date>
   </channel>
 </rss>
