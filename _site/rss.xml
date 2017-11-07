@@ -8,15 +8,15 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 23 Oct 2017 06:00:00 -0400</pubDate>
+    <pubDate>Tue, 07 Nov 2017 04:30:00 -0500</pubDate>
     <item>
       <title>Upgrade Rails from 3.1 to 3.2</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-2.html</link>
       <description><![CDATA[This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.1 to 3.2.
 ]]></description>
-      <pubDate>Mon, 23 Oct 2017 06:00:00 -0400</pubDate>
+      <pubDate>Tue, 07 Nov 2017 04:30:00 -0500</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-2.html</guid>
-      <content:encoded><![CDATA[<p>This is the third article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_1_release_notes.html">version 3.1</a> to 3.2.</p>
+      <content:encoded><![CDATA[<p>This is the third article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_1_release_notes.html">version 3.1</a> to <a href="http://guides.rubyonrails.org/3_2_release_notes.html">3.2</a>.</p>
 
 <!--more-->
 
@@ -40,7 +40,7 @@
 
 <h2 id="tools">3. Tools</h2>
 
-<p>Rails 3.2 comes with a <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">generator</a> that helps you to update the configuration files. The <code>rake rails:update</code> generator will identify every configuration file in your application that differs from a new Rails application. When it detects a conflict, it will offer to overwrite your file. Keep in mind that many of your files will be different because you’ve made changes from a default new Rails application. When the generator offers to overwrite a file, enter a <code>d</code> for review the differences.</p>
+<p>Rails 3.2 comes with a <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">generator</a> that helps you to update the configuration files. The <code>rake rails:update</code> generator will identify every configuration file in your application that differs from a new Rails application. When it detects a conflict, it will offer to overwrite your file. Keep in mind that many of your files will be different because you’ve made changes from a default new Rails application. When the generator offers to overwrite a file, enter a <code>d</code> in order to review the differences.</p>
 
 <p>Sometimes it&#39;s also useful to check which files changed between two specific versions of Rails. Fortunately <a href="http://railsdiff.org/3.1.12/3.2.22.5">Rails Diff</a> makes that easy.</p>
 
@@ -85,7 +85,7 @@ end
 
 <p>After you get your application properly running in Rails 3.2, you will probably want to keep working on this Rails upgrade journey. So don&#39;t forget to check our complete <a href="https://www.ombulabs.com/blog/tags/upgrades">Rails upgrade series</a> to make that easy.</p>
 ]]></content:encoded>
-      <dc:date>2017-10-23T06:00:00-04:00</dc:date>
+      <dc:date>2017-11-07T04:30:00-05:00</dc:date>
     </item>
     <item>
       <title>Upgrade Rails from 3.0 to 3.1</title>
@@ -94,7 +94,7 @@ end
 ]]></description>
       <pubDate>Mon, 16 Oct 2017 05:30:00 -0400</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-1.html</guid>
-      <content:encoded><![CDATA[<p>This is the second article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_0_release_notes.html">version 3.0</a> to 3.1. If you are in an older version, you can take a look at our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html">previous article</a>.</p>
+      <content:encoded><![CDATA[<p>This is the second article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_0_release_notes.html">version 3.0</a> to <a href="http://guides.rubyonrails.org/3_1_release_notes.html">3.1</a>. If you are in an older version, you can take a look at our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html">previous article</a>.</p>
 
 <!--more-->
 
@@ -230,7 +230,7 @@ config.static_cache_control = &quot;public, max-age=3600&quot;
 ]]></description>
       <pubDate>Mon, 28 Aug 2017 12:06:00 -0400</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html</guid>
-      <content:encoded><![CDATA[<p>This article is the first of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/2_3_release_notes.html">version 2.3</a> to 3.0.</p>
+      <content:encoded><![CDATA[<p>This article is the first of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/2_3_release_notes.html">version 2.3</a> to <a href="http://guides.rubyonrails.org/3_0_release_notes.html">3.0</a>.</p>
 
 <!--more-->
 
@@ -4360,6 +4360,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-10-23T06:00:00-04:00</dc:date>
+    <dc:date>2017-11-07T04:30:00-05:00</dc:date>
   </channel>
 </rss>
