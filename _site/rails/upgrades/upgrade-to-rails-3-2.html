@@ -6,38 +6,43 @@
 
     
 
-    <title>Upgrades at The Lean Software Boutique</title>
+    <title>Upgrade Rails From 3.1 to 3.2 - The Lean Software Boutique</title>
 
 
     
     
-    <meta name="description" content="Articles about Upgrades in the The Lean Software Boutique blog." />
+    <meta name="description" content="This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ..." />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="Upgrades at The Lean Software Boutique">
-    <meta itemprop="description" content="Articles about Upgrades in the The Lean Software Boutique blog.">
+    <meta itemprop="name" content="Upgrade Rails From 3.1 to 3.2 - The Lean Software Boutique">
+    <meta itemprop="description" content="This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ...">
     <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@OmbuLabs">
 
-    <meta name="twitter:title" content="Upgrades at The Lean Software Boutique">
-    <meta name="twitter:description" content="Articles about Upgrades in the The Lean Software Boutique blog.">
+    <meta name="twitter:title" content="Upgrade Rails From 3.1 to 3.2 - The Lean Software Boutique">
+    <meta name="twitter:description" content="This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on ...">
     <meta name="twitter:creator" content="@OmbuLabs">
     <!-- Twitter summary card with large image must be at least 280x150px -->
     <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Upgrades at The Lean Software Boutique" />
+    <meta property="og:title" content="Upgrade Rails From 3.1 to 3.2 - The Lean Software Boutique" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://www.ombulabs.com/tags/upgrades/" />
+    <meta property="og:url" content="http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3-2.html" />
     <meta property="og:image" content="http://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="Articles about Upgrades in the The Lean Software Boutique blog." />
-    <meta property="og:site_name" content="Category: upgrades" />
+    <meta property="og:description" content="This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.1 to 3.2." />
+    <meta property="og:site_name" content="Upgrade Rails from 3.1 to 3.2 by @lubc32" />
+    
+      <meta property="article:published_time" content="2017-11-07 04:30:00 -0500" />
+      <meta property="article:modified_time" content="2017-11-07 04:30:00 -0500" />
+      <meta property="article:section" content="This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.1 to 3.2." />
+      <meta property="article:tag" content="Upgrade Rails From 3.1 to 3.2 - The Lean Software Boutique" />
     
 
     <meta property="fb:admins" content="10153304864537860" />
@@ -68,18 +73,15 @@
       <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
   </header>
     <div id="wrapper">
-      <h2 class="category-name">Articles about <span class="tag">Upgrades</span></h2>
+      <main class="content post-layout" role="main">
 
-<main id="content" class="content category">
+    <article class="post">
 
-  <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/upgrades/upgrade-to-rails-3-2.html">Upgrade Rails from 3.1 to 3.2</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
+        <header class="post-header">
+            <h1 class="post-title">Upgrade Rails from 3.1 to 3.2</h1>
+            <section class="post-meta">
+              
+              
 
 
   
@@ -105,140 +107,145 @@
   07 Nov 2017
 </time>
 
-    </footer>
-    <section class="post-excerpt">
-        <p>This is the third article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_1_release_notes.html">version 3.1</a> to <a href="http://guides.rubyonrails.org/3_2_release_notes.html">3.2</a>.</p>
- <a class="read-more" href="/blog/rails/upgrades/upgrade-to-rails-3-2.html">Read more &raquo;</a>
-    </section>
-</article>
+            </section>
+        </header>
+
+        <section class="post-content">
+          <p>This is the third article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_1_release_notes.html">version 3.1</a> to <a href="http://guides.rubyonrails.org/3_2_release_notes.html">3.2</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#considerations">Considerations</a></li>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#config-files">Config files</a></li>
+<li><a href="#gemfile">Gemfile</a></li>
+<li><a href="#deprecations">Deprecations</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="considerations">1. Considerations</h2>
+
+<p>Before beginning with the upgrade process, we recommend that each version of your Rails app has the latest <a href="http://semver.org">patch version</a> before moving to the next major/minor version. For example, in order to follow this article, your <a href="https://rubygems.org/gems/rails/versions">Rails version</a> should be at 3.1.12 before updating to Rails 3.2.22</p>
+
+<h2 id="ruby-version">2. Ruby version</h2>
+
+<p>Depending on which patch version of Rails 3.2 you are using, the <a href="https://www.ruby-lang.org/en/downloads/releases/">Ruby versions</a> that you can use will change. Since we recommend you to always use the latest patch version, we will focus this article on <a href="http://weblog.rubyonrails.org/2015/6/16/Rails-3-2-22-4-1-11-and-4-2-2-have-been-released-and-more/">Rails 3.2.22</a>. The minor Ruby version that you can use is <a href="https://www.ruby-lang.org/en/news/2008/05/31/ruby-1-8-7-has-been-released">1.8.7</a>, and the latest one is <a href="https://www.ruby-lang.org/en/news/2014/12/25/ruby-2-2-0-released/">2.2</a>. As always, we recommend you to use the latest version to avoid any bugs or vulnerabilities.</p>
+
+<h2 id="tools">3. Tools</h2>
+
+<p>Rails 3.2 comes with a <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">generator</a> that helps you to update the configuration files. The <code>rake rails:update</code> generator will identify every configuration file in your application that differs from a new Rails application. When it detects a conflict, it will offer to overwrite your file. Keep in mind that many of your files will be different because you’ve made changes from a default new Rails application. When the generator offers to overwrite a file, enter a <code>d</code> in order to review the differences.</p>
+
+<p>Sometimes it&#39;s also useful to check which files changed between two specific versions of Rails. Fortunately <a href="http://railsdiff.org/3.1.12/3.2.22.5">Rails Diff</a> makes that easy.</p>
+
+<h2 id="config-files">4. Config files</h2>
+
+<p>There are a few settings that you need to add to your environment filters</p>
+
+<ul>
+<li>Add to <code>config/environments/development.rb</code></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Raise exception on mass assignment protection for Active Record models
+config.active_record.mass_assignment_sanitizer = :strict
+
+# Log the query plan for queries taking more than this (works
+# with SQLite, MySQL, and PostgreSQL)
+config.active_record.auto_explain_threshold_in_seconds = 0.5
+</code></pre></div>
+
+<ul>
+<li>Add to <code>config/environments/test.rb</code></li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span># Raise exception on mass assignment protection for Active Record models
+config.active_record.mass_assignment_sanitizer = :strict
+</code></pre></div>
+
+<h2 id="gemfile">5. Gemfile</h2>
+
+<ul>
+<li>You should update a couple of gems inside your assets group</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>gem &quot;rails&quot;, &quot;~&gt; 3.2.0&quot;
+
+group :assets do
+  gem &#39;sass-rails&#39;,   &#39;~&gt; 3.2.6&#39;
+  gem &#39;coffee-rails&#39;, &#39;~&gt; 3.2.2&#39;
+  gem &#39;uglifier&#39;,     &#39;&gt;= 1.0.3&#39;
+end
+</code></pre></div>
+
+<h2 id="deprecations">6. Deprecations</h2>
+
+<p>Rails 3.2 deprecates <code>vendor/plugins</code>, and it&#39;s the last Rails version that support it. If your plan is to migrate to Rails 4 in the future, you can start replacing any plugins by extracting them to gems and adding them to your <code>Gemfile</code>, or you can move them into <code>lib/my_plugin/*</code>. We cover this topic in depth in our Rails 4.0 upgrade guide.</p>
+
+<h2 id="next-steps">7. Next steps</h2>
+
+<p>After you get your application properly running in Rails 3.2, you will probably want to keep working on this Rails upgrade journey. So don&#39;t forget to check our complete <a href="https://www.ombulabs.com/blog/tags/upgrades">Rails upgrade series</a> to make that easy.</p>
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+          
+            
+            <figure class="author-image">
+              
+                <a class="img" href="" style="background-image: url(//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50)">
+                <span class="hidden">Luciano Becerra's Picture</span></a>
+              
+            </figure>
+            <section class="author">
+              <h4> Luciano Becerra </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="http://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section>
+          
+
+          <!-- Share links section -->
+          <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Upgrade Rails from 3.1 to 3.2&amp;url=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3-2.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3-2.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=http://www.ombulabs.com/rails/upgrades/upgrade-to-rails-3-2.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+          <!-- Disqus comments -->
+          <section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
 
 
-  <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/upgrades/upgrade-to-rails-3-1.html">Upgrade Rails from 3.0 to 3.1</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
+        </footer>
 
-
-  
-    <img class="author-thumb" src="//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50" alt="Luciano Becerra" nopin="nopin" />
-  
-  <a href="/blog/authors/luciano"
-     title="Articles by Luciano Becerra">
-     Luciano Becerra
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/upgrades"
-         title="Articles about Upgrades">Upgrades</a>
-
-
-
-<time class="post-date" datetime="2017-10-16">
-  16 Oct 2017
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>This is the second article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_0_release_notes.html">version 3.0</a> to <a href="http://guides.rubyonrails.org/3_1_release_notes.html">3.1</a>. If you are in an older version, you can take a look at our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html">previous article</a>.</p>
- <a class="read-more" href="/blog/rails/upgrades/upgrade-to-rails-3-1.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-  <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/upgrades/upgrade-to-rails-3.html">Upgrade Rails from 2.3 to 3.0</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50" alt="Luciano Becerra" nopin="nopin" />
-  
-  <a href="/blog/authors/luciano"
-     title="Articles by Luciano Becerra">
-     Luciano Becerra
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/upgrades"
-         title="Articles about Upgrades">Upgrades</a>
-
-
-
-<time class="post-date" datetime="2017-08-28">
-  28 Aug 2017
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>This article is the first of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/2_3_release_notes.html">version 2.3</a> to <a href="http://guides.rubyonrails.org/3_0_release_notes.html">3.0</a>.</p>
- <a class="read-more" href="/blog/rails/upgrades/upgrade-to-rails-3.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-  <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html">Announcing FastRuby.io</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
-  
-  <a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/upgrades"
-         title="Articles about Upgrades">Upgrades</a>
-
-
-
-<time class="post-date" datetime="2017-06-07">
-  07 Jun 2017
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>Today we are happy to announce the launch of our first productized service: <a href="https://fastruby.io">fastruby.io</a> - Speedy Ruby on Rails Upgrades by Ombu Labs.</p>
-
-<p>We are quite familiar with this sort of projects and decided to package it under its own domain. We have been doing <a href="http://rubyonrails.org">Ruby on Rails</a> upgrades since 2009, for our <a href="https://www.ombulabs.com/#products">own products</a> and <a href="https://www.ombulabs.com/#clients">client projects</a>, and we are looking forward to shipping more of them.</p>
- <a class="read-more" href="/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-<footer class="site-footer clearfix">
+    </article>
+    <footer class="site-footer clearfix">
   <section class="copyright">
     <figure>
       <img src="/blog/assets/images/creative-commons.png"
