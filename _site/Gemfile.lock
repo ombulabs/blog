@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    blog ()
+    blog (0)
       dotenv
       jekyll (~> 3.0)
       jekyll-authors
@@ -134,4 +134,4 @@ DEPENDENCIES
   rack-contrib
 
 BUNDLED WITH
-   1.14.6
+   1.15.4
