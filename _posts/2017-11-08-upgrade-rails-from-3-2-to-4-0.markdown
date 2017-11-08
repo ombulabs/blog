@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrade Rails from 3.2 to 4.0"
-date: 2017-11-06 12:42:00
+date: 2017-11-08 12:42:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
