@@ -15,6 +15,8 @@ will try to go a bit more in depth. We will first go from 3.2 to 4.0, then to
 can take anywhere from one week for a single developer, to a few months for two
 developers.
 
+<!--more-->
+
 1. [Ruby version](#ruby-version)
 2. [Gems](#gems)
 3. [Config files (config/)](#config-files)
