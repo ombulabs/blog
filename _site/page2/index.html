@@ -89,6 +89,61 @@
       <article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/performance/rails/writing-fast-rails.html">Tips for Writing Fast Rails: Part 1</a>
+        </h2>
+    </header>
+    <footer class="post-meta">
+      
+
+
+  
+    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
+  
+  <a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>
+
+
+ 
+  on
+    
+      <a href="/blog/tags/performance"
+         title="Articles about Performance">Performance</a>,
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>
+
+
+
+<time class="post-date" datetime="2016-10-11">
+  11 Oct 2016
+</time>
+
+    </footer>
+    <section class="post-excerpt">
+        <p><a href="http://rubyonrails.org/">Rails</a> is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that <strong>performs poorly</strong>.</p>
+
+<p>At <a href="http://www.ombulabs.com">Ombu Labs</a> we like to <a href="http://www.ombulabs.com/blog/tags/maintenance">maintain Ruby on Rails
+applications</a>. In the process
+of maintaining them, adding features and fixing bugs, we like to improve
+the code and its performance (because we are <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">good <em>boy scouts</em></a>!)</p>
+
+<p>Here are some tips based on our experience.</p>
+
+<h2>Prefer <code>where</code> instead of <code>select</code></h2>
+
+<p>When you are performing a lot of calculations, you should load as little as
+possible into memory. <strong>Always</strong> prefer a SQL query vs. an object&#39;s method call.</p>
+ <a class="read-more" href="/blog/performance/rails/writing-fast-rails.html">Read more &raquo;</a>
+    </section>
+</article>
+
+
+    
+
+      <article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/rspec/ruby/spy-vs-double-vs-instance-double.html">Spy vs Double vs Instance Double</a>
         </h2>
     </header>
@@ -838,68 +893,6 @@ performance of some of the more critical API endpoints.</p>
 <p>This request would take anywhere from 400ms to 3000ms to respond, which is
 <strong>WAY</strong> too long.</p>
  <a class="read-more" href="/blog/rails/performance/hunting-down-a-slow-rails-request.html">Read more &raquo;</a>
-    </section>
-</article>
-
-
-    
-
-      <article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html">10 Steps to Evaluate a Rails Project</a>
-        </h2>
-    </header>
-    <footer class="post-meta">
-      
-
-
-  
-    <img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" />
-  
-  <a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>
-
-
- 
-  on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/maintenance"
-         title="Articles about Maintenance">Maintenance</a>
-
-
-
-<time class="post-date" datetime="2016-02-17">
-  17 Feb 2016
-</time>
-
-    </footer>
-    <section class="post-excerpt">
-        <p>It will come a time when you will have to decide whether to maintain a <a href="http://rubyonrails.org">Rails</a> project <strong>or not</strong>.</p>
-
-<p>If you want to seriously consider it, you should follow these 10 steps:</p>
-
-<h3>1. Setup the development environment</h3>
-
-<p>Git clone the repository and try to start the server. Is the <code>README</code> clear enough? Can you follow the steps in the file and easily get started?</p>
-
-<p>A lot of projects will have a <code>README</code> that is out of date and/or instructions that don&#39;t work right off the bat.</p>
-
-<p>Most of the projects will define guidelines like these:</p>
-
-<ul>
-<li>Configure your <code>config/database.yml</code></li>
-<li>Configure your <code>.env</code> file</li>
-<li>Setup the database <code>rake db:create db:migrate db:seed</code></li>
-<li>Start the server <code>rails server</code></li>
-</ul>
-
-<p>The best projects will have a one-liner that will setup the entire environment for you.</p>
- <a class="read-more" href="/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html">Read more &raquo;</a>
     </section>
 </article>
 
