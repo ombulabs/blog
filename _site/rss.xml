@@ -8,20 +8,20 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 13 Nov 2017 04:45:00 -0500</pubDate>
+    <pubDate>Wed, 15 Nov 2017 04:45:00 -0500</pubDate>
     <item>
       <title>Setup Monit notifications on Slack</title>
       <link>https://www.ombulabs.com/blog/monit/slack/setup-monit-notifications-on-slack.html</link>
-      <description><![CDATA[Monit is a powerful tool for monitoring processes on Unix systems and sometimes it could be very useful to receive notifications about a specific process from your server to your everyday tool, Slack. This article will show you exactly how to do that.
+      <description><![CDATA[Monit is a powerful tool for monitoring processes on Unix systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, Slack. This article will show you exactly how to do that.
 ]]></description>
-      <pubDate>Mon, 13 Nov 2017 04:45:00 -0500</pubDate>
+      <pubDate>Wed, 15 Nov 2017 04:45:00 -0500</pubDate>
       <guid>https://www.ombulabs.com/blog/monit/slack/setup-monit-notifications-on-slack.html</guid>
-      <content:encoded><![CDATA[<p><a href="https://mmonit.com/monit/">Monit</a> is a powerful tool for monitoring processes on <a href="https://en.wikipedia.org/wiki/Unix">Unix</a> systems and sometimes it could be very useful to receive notifications about a specific process from your server to your everyday tool, <a href="https://slack.com/">Slack</a>. This article will show you exactly how to do that.</p>
+      <content:encoded><![CDATA[<p><a href="https://mmonit.com/monit/">Monit</a> is a powerful tool for monitoring processes on <a href="https://en.wikipedia.org/wiki/Unix">Unix</a> systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, <a href="https://slack.com/">Slack</a>. This article will show you exactly how to do that.</p>
 
 <!--more-->
 
 <p>In the examples we are using a <a href="https://en.wikipedia.org/wiki/Linux">Linux</a> environment running <a href="https://www.ubuntu.com/">Ubuntu</a> <code>16.04</code>.
-Also the process that we will be monitoring is <a href="https://projects.eclipse.org/projects/technology.mosquitto">Mosquitto</a>, but can be applied to any process just by changing the configuration.</p>
+Also the process that we will be monitoring is <a href="https://projects.eclipse.org/projects/technology.mosquitto">Mosquitto</a>, but you can monitor any process just by changing the configuration.</p>
 
 <h3>Setup Slack</h3>
 
@@ -49,7 +49,7 @@ curl -s -X POST --data-urlencode &quot;payload=$PAYLOAD&quot; $URL
 </code></pre></div>
 <p>If you want to see how to customize the Slack messages you can take a look at the <a href="https://api.slack.com/incoming-webhooks#sending_messages">official documentation</a>.</p>
 
-<p>Before run the script we should add some permissions (I saved it as <code>slack-webhook.sh</code> in <code>/usr/local/bin/</code>)</p>
+<p>Before running the script we should add some permissions (I saved it as <code>slack-webhook.sh</code> in <code>/usr/local/bin/</code>)</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ sudo chmod u+x /usr/local/bin/slack-webhook.sh
 </code></pre></div>
 <p>Now let&#39;s run it to see if it&#39;s working</p>
@@ -80,26 +80,26 @@ $ sudo apt install monit -y
   if changed pid then exec &quot;/bin/bash -c &#39;PROCESS=Mosquitto /usr/local/bin/slack-webhook.sh&#39;&quot;
   if 1 restart within 1 cycle then exec &quot;/bin/bash -c &#39;PROCESS=Mosquitto /usr/local/bin/slack-webhook.sh&#39;&quot;
 </code></pre></div>
-<p>This configuration will restart the process in case you stop it manually or if it gets stop by itself. And when that happens it will call the <code>slack-webhook</code> script to publish a message in the Slack channel.
+<p>This configuration will restart the process in case you stop it manually or if it gets stopped by itself. And when that happens it will call the <code>slack-webhook</code> script to publish a message in the Slack channel.
 You can see a bunch of real-world configuration examples on <a href="https://mmonit.com/wiki/Monit/ConfigurationExamples">this link</a>.</p>
 
-<p>Don&#39;t forget to restart Monit after make changes in the configuration.</p>
+<p>Don&#39;t forget to restart Monit after you make changes in the configuration.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ monit reload
 Reinitializing monit daemon
 </code></pre></div>
 <p>You can easily test this by manually killing the process.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ps -aux | grep mosquitto
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>$ ps aux | grep mosquitto
 mosquit+ 23073  0.0  0.2  44200  4916 ?        S    19:48   0:00 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
 
 $ kill -9 23073
 </code></pre></div>
-<p>The process will be automatically restarted after a couple of second and you will receive a message in your Slack channel.</p>
+<p>The process will be automatically restarted after a couple of seconds and you will receive a message in your Slack channel.</p>
 
 <p><img src="/blog/assets/images/monit-message-2.png" alt="Monit message"></p>
 
 <p>This is just one type of message that you can implement in your Slack team, but you can also do some cooler things with Monit, like sending reports or alerts. You just need to change the configuration files based on that.</p>
 ]]></content:encoded>
-      <dc:date>2017-11-13T04:45:00-05:00</dc:date>
+      <dc:date>2017-11-15T04:45:00-05:00</dc:date>
     </item>
     <item>
       <title>Upgrade Rails from 3.2 to 4.0</title>
@@ -4665,6 +4665,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-11-13T04:45:00-05:00</dc:date>
+    <dc:date>2017-11-15T04:45:00-05:00</dc:date>
   </channel>
 </rss>
