@@ -1,17 +1,17 @@
 ---
 layout: post
 title:  "Setup Monit notifications on Slack"
-date: 2017-11-13 09:45:00
+date: 2017-11-15 09:45:00
 categories: ["monit", "slack"]
 author: "luciano"
 ---
 
-[Monit](https://mmonit.com/monit/) is a powerful tool for monitoring processes on [Unix](https://en.wikipedia.org/wiki/Unix) systems and sometimes it could be very useful to receive notifications about a specific process from your server to your everyday tool, [Slack](https://slack.com/). This article will show you exactly how to do that.
+[Monit](https://mmonit.com/monit/) is a powerful tool for monitoring processes on [Unix](https://en.wikipedia.org/wiki/Unix) systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, [Slack](https://slack.com/). This article will show you exactly how to do that.
 
 <!--more-->
 
 In the examples we are using a [Linux](https://en.wikipedia.org/wiki/Linux) environment running [Ubuntu](https://www.ubuntu.com/) `16.04`.
-Also the process that we will be monitoring is [Mosquitto](https://projects.eclipse.org/projects/technology.mosquitto), but can be applied to any process just by changing the configuration.
+Also the process that we will be monitoring is [Mosquitto](https://projects.eclipse.org/projects/technology.mosquitto), but you can monitor any process just by changing the configuration.
 
 ### Setup Slack
 
@@ -42,7 +42,7 @@ curl -s -X POST --data-urlencode "payload=$PAYLOAD" $URL
 
 If you want to see how to customize the Slack messages you can take a look at the [official documentation](https://api.slack.com/incoming-webhooks#sending_messages).
 
-Before run the script we should add some permissions (I saved it as `slack-webhook.sh` in `/usr/local/bin/`)
+Before running the script we should add some permissions (I saved it as `slack-webhook.sh` in `/usr/local/bin/`)
 
 ```
 $ sudo chmod u+x /usr/local/bin/slack-webhook.sh
@@ -86,10 +86,10 @@ check process mosquitto with pidfile /var/run/mosquitto.pid
   if 1 restart within 1 cycle then exec "/bin/bash -c 'PROCESS=Mosquitto /usr/local/bin/slack-webhook.sh'"
 ```
 
-This configuration will restart the process in case you stop it manually or if it gets stop by itself. And when that happens it will call the `slack-webhook` script to publish a message in the Slack channel.
+This configuration will restart the process in case you stop it manually or if it gets stopped by itself. And when that happens it will call the `slack-webhook` script to publish a message in the Slack channel.
 You can see a bunch of real-world configuration examples on [this link](https://mmonit.com/wiki/Monit/ConfigurationExamples).
 
-Don't forget to restart Monit after make changes in the configuration.
+Don't forget to restart Monit after you make changes in the configuration.
 
 ```
 $ monit reload
@@ -99,13 +99,13 @@ Reinitializing monit daemon
 You can easily test this by manually killing the process.
 
 ```
-$ ps -aux | grep mosquitto
+$ ps aux | grep mosquitto
 mosquit+ 23073  0.0  0.2  44200  4916 ?        S    19:48   0:00 /usr/sbin/mosquitto -c /etc/mosquitto/mosquitto.conf
 
 $ kill -9 23073
 ```
 
-The process will be automatically restarted after a couple of second and you will receive a message in your Slack channel.
+The process will be automatically restarted after a couple of seconds and you will receive a message in your Slack channel.
 
 <img src="/blog/assets/images/monit-message-2.png" alt="Monit message">
 
