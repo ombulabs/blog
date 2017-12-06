@@ -8,7 +8,221 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 15 Nov 2017 04:45:00 -0500</pubDate>
+    <pubDate>Wed, 06 Dec 2017 11:31:00 -0500</pubDate>
+    <item>
+      <title>Upgrade Rails from 4.0 to 4.1</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</link>
+      <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
+
+This article will cover the most important aspects that you need to know to get
+your Ruby on Rails application from version 4.0 to 4.1.
+]]></description>
+      <pubDate>Wed, 06 Dec 2017 11:31:00 -0500</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</guid>
+      <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
+
+<p>This article will cover the most important aspects that you need to know to get
+your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/4_0_release_notes.html">version 4.0</a> to <a href="http://guides.rubyonrails.org/4_1_release_notes.html">4.1</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files (config/)</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#models">Models (app/models/)</a></li>
+</ol></li>
+<li><a href="#tests">Tests</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="ruby-version">1. Ruby version</h2>
+
+<p>Rails 4.1 requires Ruby 1.9.3 or later. Ruby 1.8.7 support was dropped in
+Rails 4.0, so you should already be running 1.9.3 or later. For Rails 4.1,
+Ruby 2.0 (or newer) is preferred according to the <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#ruby-versions">official upgrade guide</a>.</p>
+
+<h2 id="gems">2. Gems</h2>
+
+<p>If your application relies on <code>MultiJSON</code>, you will need to add the gem to your
+<code>Gemfile</code> (<code>gem &#39;multi_json&#39;</code>) if it&#39;s not already there, since it was removed
+from Rails 4.1.</p>
+
+<p>Alternatively, stop using MultiJSON and migrate your application to use
+<code>to_json</code> and <code>JSON.parse</code>.</p>
+
+<h2 id="config-files">3. Config files</h2>
+
+<p>Rails includes the <code>rails:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.</p>
+
+<p>As an alternative, check out <a href="http://railsdiff.org/4.0.13/4.1.16">RailsDiff</a>,
+which provides an overview of the changes in a basic Rails app between 4.0 and
+4.1 (or any other source/target versions).</p>
+
+<h2 id="application-code">4. Application code</h2>
+
+<h2 id="models">a. Models</h2>
+
+<ul>
+<li>Return from callbacks is no longer allowed:</li>
+</ul>
+
+<p>Before:
+<code>ruby
+before_save { return false }
+</code></p>
+
+<p>After:
+<code>ruby
+before_save { false }
+</code></p>
+
+<p>See: https://github.com/rails/rails/pull/13271</p>
+
+<ul>
+<li>Removal of deprecated finders:</li>
+</ul>
+
+<p><code>activerecord-deprecated_finders</code> (https://github.com/rails/activerecord-deprecated_finders)
+was removed as a dependency from Rails 4.1. From the gem&#39;s README:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>To migrate dynamic finders to Rails 4.1+:
+
+find_all_by_... should become where(...).
+find_last_by_... should become where(...).last.
+scoped_by_... should become where(...).
+find_or_initialize_by_... should become find_or_initialize_by(...).
+find_or_create_by_... should become find_or_create_by(...).
+</code></pre></div>
+<p>If you can&#39;t afford to upgrade the finders now, then add the gem back yourself
+into the <code>Gemfile</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;activerecord-deprecated_finders&#39;</span>
+</code></pre></div>
+<p>See our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html">last upgrade post</a> for more information.</p>
+
+<ul>
+<li>Default scopes are now chained to other scopes:</li>
+</ul>
+
+<p>If you thought default scopes on models could be confusing, there&#39;s even another
+(un?)expected twist to it:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">default_scope</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
+<span class="n">scope</span> <span class="ss">:inactive</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">false</span> <span class="p">}</span>
+</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">all</span>
+<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</span>
+
+<span class="no">User</span><span class="o">.</span><span class="n">inactive</span>
+<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</span>
+</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">all</span>
+<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</span>
+
+<span class="no">User</span><span class="o">.</span><span class="n">inactive</span>
+<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39; AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</span>
+</code></pre></div>
+<p>If you depended on this behavior, you will need to work around it using
+<code>unscoped</code>, <code>unscope</code> or the new <code>rewhere</code> method (https://github.com/rails/rails/commit/f950b2699f97749ef706c6939a84dfc85f0b05f2).</p>
+
+<p>(Friendly reminder: beware when using <a href="https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">default_scope</a>)</p>
+
+<ul>
+<li>No more mutable methods on ActiveRecord relations:</li>
+</ul>
+
+<p><code>ActiveRecord::Relation</code> no longer has access to mutator methods like <code>#map!</code>,
+<code>#delete_if</code> or <code>#compact!</code>. If you need to use them, you will need to convert
+the <code>Relation</code> to an <code>Array</code> by calling <code>#to_a</code> first.</p>
+
+<p>Before:
+<code>ruby
+Project.where(title: &#39;Rails Upgrade&#39;).compact!
+</code></p>
+
+<p>After:
+<code>ruby
+projects = Project.where(name: &#39;Rails Upgrade&#39;).to_a
+projects.compact!
+</code></p>
+
+<ul>
+<li>Implicit joins are removed:</li>
+</ul>
+
+<p>Before Rails 4.1, if you had this code:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>ActiveRecord 4.0 would know to join <code>posts</code> and <code>comments</code> in the executed SQL,
+and it would work just fine.</p>
+
+<p>However, Rails shouldn&#39;t have to be smart and parse your <code>where</code> with a regular
+expression to figure out what tables you want to join, since it leads to
+bugs (https://github.com/rails/rails/issues/9712).</p>
+
+<p>To fix this problem, you need to use an explicit join:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>UNLESS your intention was to actually eager load the post&#39;s comments.
+In that case, you can use the following syntax:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">eager_load</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Or:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">references</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span>
+</code></pre></div>
+<p>Both are equivalent and produce the same SQL.</p>
+
+<p>For a more in depth explanation of the differences between <code>joins</code>, <code>includes</code>,
+<code>references</code>, <code>eager_load</code> and even <code>preload</code>, <a href="http://blog.ifyouseewendy.com/blog/2015/11/11/preload-eager_load-includes-references-joins/">check out this post</a>.</p>
+
+<p>Finally, if you get this deprecation warning:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>DEPRECATION WARNING: Implicit join references were removed with Rails 4.1.Make sure to remove this configuration because it does nothing.
+</code></pre></div>
+<p>Just remove <code>config.active_record.disable_implicit_join_references</code> from your
+config files.</p>
+
+<h2 id="tests">5. Tests</h2>
+
+<ul>
+<li>CSRF protection now covers GET requests with JS responses:</li>
+</ul>
+
+<p>If your tests hit JS URLs, you&#39;ll need to use <code>xhr</code> instead of <code>get</code>:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="ss">:js</span>
+</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">xhr</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">:create</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="ss">:js</span>
+</code></pre></div>
+<p>See: https://github.com/rails/rails/pull/13345</p>
+
+<h2 id="miscellaneous">6. Miscellaneous</h2>
+
+<ul>
+<li>Flash message keys are strings now:</li>
+</ul>
+
+<p>If you were using the <code>flash</code> hash or its keys and expected symbols,
+you will need to use strings now:</p>
+
+<p>Before:
+<code>ruby
+flash.to_hash.except(:notify)
+</code></p>
+
+<p>After:
+<code>ruby
+flash.to_hash.except(&quot;notify&quot;)
+</code></p>
+
+<h2 id="next-steps">7. Next steps</h2>
+
+<p>If you successfully followed all of these steps, you should now be running Rails 4.1!</p>
+
+<p>To fine-tune your app, check out <a href="https://fastruby.io">FastRuby.io</a>, and feel
+free to tell us how your upgrade went.</p>
+]]></content:encoded>
+      <dc:date>2017-12-06T11:31:00-05:00</dc:date>
+    </item>
     <item>
       <title>Setup Monit notifications on Slack</title>
       <link>https://www.ombulabs.com/blog/monit/slack/setup-monit-notifications-on-slack.html</link>
@@ -4665,6 +4879,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2017-11-15T04:45:00-05:00</dc:date>
+    <dc:date>2017-12-06T11:31:00-05:00</dc:date>
   </channel>
 </rss>
