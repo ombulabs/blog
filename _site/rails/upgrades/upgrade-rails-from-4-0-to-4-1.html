@@ -140,9 +140,9 @@ Ruby 2.0 (or newer) is preferred according to the <a href="http://edgeguides.rub
 
 <h2 id="gems">2. Gems</h2>
 
-<p>If your application relies on <code>MultiJSON</code>, you will need to add the gem to your
-<code>Gemfile</code> (<code>gem &#39;multi_json&#39;</code>) if it&#39;s not already there, since it was removed
-from Rails 4.1.</p>
+<p>If your application relies on <a href="https://github.com/intridea/multi_json"><code>MultiJSON</code></a>,
+you will need to add the gem to your <code>Gemfile</code> (<code>gem &#39;multi_json&#39;</code>) if it&#39;s not
+already there, since it was removed from Rails 4.1.</p>
 
 <p>Alternatively, stop using MultiJSON and migrate your application to use
 <code>to_json</code> and <code>JSON.parse</code>.</p>
@@ -210,16 +210,25 @@ into the <code>Gemfile</code>:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">default_scope</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
 <span class="n">scope</span> <span class="ss">:inactive</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">false</span> <span class="p">}</span>
-</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">all</span>
-<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</span>
+</code></pre></div>
 
-<span class="no">User</span><span class="o">.</span><span class="n">inactive</span>
-<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</span>
-</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">User</span><span class="o">.</span><span class="n">all</span>
-<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</span>
+<p>Rails &lt; 4.1
+```ruby
+User.all</p>
 
-<span class="no">User</span><span class="o">.</span><span class="n">inactive</span>
-<span class="c1"># SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39; AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</span>
+<h1>SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</h1>
+
+<p>User.inactive</p>
+
+<h1>SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</h1>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Rails &gt;= 4.1:
+```ruby
+User.all
+# SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;
+
+User.inactive
+# SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39; AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;
 </code></pre></div>
 
 <p>If you depended on this behavior, you will need to work around it using
@@ -294,14 +303,20 @@ config files.</p>
 <h2 id="tests">5. Tests</h2>
 
 <ul>
-<li>CSRF protection now covers GET requests with JS responses:</li>
+<li><a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">CSRF protection</a>) now covers GET requests with JS responses:</li>
 </ul>
 
 <p>If your tests hit JS URLs, you&#39;ll need to use <code>xhr</code> instead of <code>get</code>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="ss">:js</span>
-</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">xhr</span> <span class="ss">:post</span><span class="p">,</span> <span class="ss">:create</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="ss">:js</span>
-</code></pre></div>
+<p>Before:
+<code>ruby
+post :create, format: :js
+</code></p>
+
+<p>After:
+<code>ruby
+xhr :post, :create, format: :js
+</code></p>
 
 <p>See: https://github.com/rails/rails/pull/13345</p>
 

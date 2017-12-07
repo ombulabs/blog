@@ -30,9 +30,9 @@ Ruby 2.0 (or newer) is preferred according to the [official upgrade guide](http:
 
 <h2 id="gems">2. Gems</h2>
 
-If your application relies on `MultiJSON`, you will need to add the gem to your
-`Gemfile` (`gem 'multi_json'`) if it's not already there, since it was removed
-from Rails 4.1.
+If your application relies on [`MultiJSON`](https://github.com/intridea/multi_json),
+you will need to add the gem to your `Gemfile` (`gem 'multi_json'`) if it's not
+already there, since it was removed from Rails 4.1.
 
 Alternatively, stop using MultiJSON and migrate your application to use
 `to_json` and `JSON.parse`.
@@ -99,6 +99,7 @@ default_scope { where active: true }
 scope :inactive, -> { where active: false }
 ```
 
+Rails < 4.1
 ```ruby
 User.all
 # SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
@@ -107,6 +108,7 @@ User.inactive
 # SELECT "users".* FROM "users" WHERE "users"."active" = 'false'
 ```
 
+Rails >= 4.1:
 ```ruby
 User.all
 # SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
@@ -187,14 +189,16 @@ config files.
 
 <h2 id="tests">5. Tests</h2>
 
-- CSRF protection now covers GET requests with JS responses:
+- [CSRF protection](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf)) now covers GET requests with JS responses:
 
 If your tests hit JS URLs, you'll need to use `xhr` instead of `get`:
 
+Before:
 ```ruby
 post :create, format: :js
 ```
 
+After:
 ```ruby
 xhr :post, :create, format: :js
 ```
