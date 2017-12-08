@@ -58,7 +58,7 @@ Just like this:
 There is still some work to be done. That's why we have made this tool
 [open source](/blog/tags/open-source/). We are open to suggestions, bug reports, code contributions and general feedback: [https://github.com/ombulabs/infractores](https://github.com/ombulabs/infractores)
 
-As always, we developed an [MVP](http://www.ombulabs.com/blog/tags/mvp) that can
+As always, we developed an [MVP](https://www.ombulabs.com/blog/tags/mvp) that can
 later be extended and refined. We hope to learn from how the community uses
 this tool.
 

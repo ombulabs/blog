@@ -1619,7 +1619,7 @@ possible into memory. Always prefer a SQL query vs. an object&#39;s method call.
       <guid>http://localhost:4000/performance/rails/writing-fast-rails.html</guid>
       <content:encoded><![CDATA[<p><a href="http://rubyonrails.org/">Rails</a> is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that <strong>performs poorly</strong>.</p>
 
-<p>At <a href="http://www.ombulabs.com">Ombu Labs</a> we like to <a href="http://www.ombulabs.com/blog/tags/maintenance">maintain Ruby on Rails
+<p>At <a href="https://www.ombulabs.com">Ombu Labs</a> we like to <a href="https://www.ombulabs.com/blog/tags/maintenance">maintain Ruby on Rails
 applications</a>. In the process
 of maintaining them, adding features and fixing bugs, we like to improve
 the code and its performance (because we are <a href="http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule">good <em>boy scouts</em></a>!)</p>
@@ -1743,10 +1743,10 @@ about <a href="https://speakerdeck.com/sferik/writing-fast-ruby">Writing Fast Ru
 great tips for improving performance in your Ruby application or library.</p>
 
 <p>And, if you need help improving the
-<a href="http://www.ombulabs.com/blog/tags/performance">performance</a> of your Rails
-application, <a href="http://www.ombulabs.com/contact">get in touch</a>! We are constantly
+<a href="https://www.ombulabs.com/blog/tags/performance">performance</a> of your Rails
+application, <a href="https://www.ombulabs.com/contact">get in touch</a>! We are constantly
 looking for new projects and opportunities to improve your
-<a href="http://www.ombulabs.com/blog/tags/rails">Rails</a> performance.</p>
+<a href="https://www.ombulabs.com/blog/tags/rails">Rails</a> performance.</p>
 ]]></content:encoded>
       <dc:date>2016-10-11T04:37:00-04:00</dc:date>
     </item>
@@ -1909,7 +1909,7 @@ what you prefer.</p>
 their <code>bin/setup</code> convention:
 <a href="https://robots.thoughtbot.com/bin-setup">./bin/setup</a></p>
 
-<p>At <a href="http://www.ombulabs.com/">Ombu Labs</a>, one of our latest <code>bin/setup</code> scripts
+<p>At <a href="https://www.ombulabs.com/">Ombu Labs</a>, one of our latest <code>bin/setup</code> scripts
 looks like this:</p>
 
 <script src="https://gist.github.com/etagwerker/956448c7a4b058b45e23f562deca8d79.js">
@@ -1950,7 +1950,7 @@ need to <strong>standardize</strong> this into something flexible like <code>./b
 <script src="https://gist.github.com/etagwerker/e38b8021c0028f20d1f19932716d2c67.js">
 </script>
 
-<p>From now on, all the web applications that we build at <a href="http://www.ombulabs.com">Ombu Labs</a>
+<p>From now on, all the web applications that we build at <a href="https://www.ombulabs.com">Ombu Labs</a>
 will be able to get started like this:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>./bin/start
 </code></pre></div>
@@ -2109,11 +2109,11 @@ during a work day. If it&#39;s a holiday, it won&#39;t bother you. :)
 ]]></description>
       <pubDate>Mon, 06 Jun 2016 05:31:00 -0400</pubDate>
       <guid>http://localhost:4000/open-source/introducing-pecas.html</guid>
-      <content:encoded><![CDATA[<p>At <a href="http://www.ombulabs.com">Ombu Labs</a> we are big fans and happy customers
+      <content:encoded><![CDATA[<p>At <a href="https://www.ombulabs.com">Ombu Labs</a> we are big fans and happy customers
 of <a href="https://letsfreckle.com/">Freckle</a>. We use their widget to track all the
 hours that we spend on client projects,
-<a href="http://www.ombulabs.com/#open-source">open source</a> development, and
-<a href="http://www.ombulabs.com/#products">our own products</a>.</p>
+<a href="https://www.ombulabs.com/#open-source">open source</a> development, and
+<a href="https://www.ombulabs.com/#products">our own products</a>.</p>
 
 <p>Today I&#39;m happy to introduce <a href="http://ombulabs.github.io/pecas/">Pecas, time tracking leaderboards for Freckle</a>! <strong>Pecas</strong> is an
 <a href="http://github.com/ombulabs/pecas">open source</a> tool that integrates with your
@@ -2128,7 +2128,7 @@ during a work day. If it&#39;s a holiday, it won&#39;t bother you. :)</p>
 
 <!--more-->
 
-<p>I like to check it out every week to see if we are on track for our <a href="http://www.ombulabs.com/blog/software-development/time-and-material.html">time and material</a>
+<p>I like to check it out every week to see if we are on track for our <a href="https://www.ombulabs.com/blog/software-development/time-and-material.html">time and material</a>
 projects. We need to work 40 hours per week for some of our clients and it&#39;s a
 good way to detect deviations.</p>
 
@@ -2405,7 +2405,7 @@ a small class/object. Every time I see an opportunity to
 
 <p>Today I wrote a spec to make sure that we gracefully ignore SPAMmy
 contact requests in the Ombu Labs
-<a href="http://www.ombulabs.com/contact">contact page</a>. It initially looked like this:</p>
+<a href="https://www.ombulabs.com/contact">contact page</a>. It initially looked like this:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
   <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
   <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
@@ -2566,7 +2566,7 @@ design patterns, elegant object-oriented solutions, tips and tricks.
       <content:encoded><![CDATA[<p>There are a few <a href="https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices">agile practices</a> that <strong>I really love</strong>. <a href="http://c2.com/cgi/wiki?PairProgramming">Pair programming</a>
 is one of them.</p>
 
-<p>We try to do it as much as possible at <a href="http://www.ombulabs.com">Ombu Labs</a>. We
+<p>We try to do it as much as possible at <a href="https://www.ombulabs.com">Ombu Labs</a>. We
 usually keep the sessions under <strong>two hours</strong> and try to follow a regular
 schedule.</p>
 
@@ -2756,7 +2756,7 @@ wanted to <strong>stop, take a photo, tweet it, and move on</strong>.</p>
 <p>There is still some work to be done. That&#39;s why we have made this tool
 <a href="/blog/tags/open-source/">open source</a>. We are open to suggestions, bug reports, code contributions and general feedback: <a href="https://github.com/ombulabs/infractores">https://github.com/ombulabs/infractores</a></p>
 
-<p>As always, we developed an <a href="http://www.ombulabs.com/blog/tags/mvp">MVP</a> that can
+<p>As always, we developed an <a href="https://www.ombulabs.com/blog/tags/mvp">MVP</a> that can
 later be extended and refined. We hope to learn from how the community uses
 this tool.</p>
 
@@ -2934,13 +2934,13 @@ In this article I will focus on how we evaluate new developers, but parts of the
 ]]></description>
       <pubDate>Thu, 14 Apr 2016 13:03:00 -0400</pubDate>
       <guid>http://localhost:4000/team/jobs/our-hiring-process.html</guid>
-      <content:encoded><![CDATA[<p>This is our process to hire new team members at <a href="http://www.ombulabs.com">Ombu Labs</a>. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s <strong>very important</strong> for us to hire <strong>A players</strong>.</p>
+      <content:encoded><![CDATA[<p>This is our process to hire new team members at <a href="https://www.ombulabs.com">Ombu Labs</a>. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s <strong>very important</strong> for us to hire <strong>A players</strong>.</p>
 
 <p>In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.</p>
 
 <!--more-->
 
-<p>We usually hire Junior and Senior developers. You can find our open positions <a href="http://www.ombulabs.com/jobs">over here</a>.</p>
+<p>We usually hire Junior and Senior developers. You can find our open positions <a href="https://www.ombulabs.com/jobs">over here</a>.</p>
 
 <h2>How to Apply</h2>
 
@@ -2994,7 +2994,7 @@ In this article I will focus on how we evaluate new developers, but parts of the
 
 <p>We don&#39;t want to waste anyone&#39;s time. That&#39;s why our hiring process is <strong>so long</strong>. In order to keep our team&#39;s quality high, we prefer to spend more time than usual making a decision.</p>
 
-<p>If you are looking for a <strong>new challenge</strong>, check out our open positions: <a href="http://www.ombulabs.com/jobs">http://www.ombulabs.com/jobs</a></p>
+<p>If you are looking for a <strong>new challenge</strong>, check out our open positions: <a href="https://www.ombulabs.com/jobs">https://www.ombulabs.com/jobs</a></p>
 ]]></content:encoded>
       <dc:date>2016-04-14T13:03:00-04:00</dc:date>
     </item>
@@ -3383,7 +3383,7 @@ No vulnerabilities found
 </code></pre></div>
 <h3>7. Setup Code Climate</h3>
 
-<p>This is a quick (and <strong>paid</strong>) step to check code quality. At <a href="http://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client&#39;s projects.</p>
+<p>This is a quick (and <strong>paid</strong>) step to check code quality. At <a href="https://www.ombulabs.com">Ombu Labs</a> we have a business account that we use for our products and our client&#39;s projects.</p>
 
 <p><a href="https://codeclimate.com">Code Climate</a> is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.</p>
 
@@ -3432,7 +3432,7 @@ No vulnerabilities found
 
 <p>Project maintainers, product owners and founders won&#39;t know the state of the code. You can&#39;t trust their opinion.</p>
 
-<p>At <a href="http://www.ombulabs.com">Ombu Labs</a>, if all these steps <strong>pass</strong> we will be happy to take over the project. If most of them <strong>fail</strong> we will usually send the company a <strong>free</strong> code quality report and respectfully decline.</p>
+<p>At <a href="https://www.ombulabs.com">Ombu Labs</a>, if all these steps <strong>pass</strong> we will be happy to take over the project. If most of them <strong>fail</strong> we will usually send the company a <strong>free</strong> code quality report and respectfully decline.</p>
 
 <p>I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!</p>
 ]]></content:encoded>
@@ -4256,11 +4256,11 @@ Fixed bids make clients think that their project will be finished in a fixed per
 
 <p>I have been working with clients since 2008 and I found that the best relationships I&#39;ve had have been with this model. It&#39;s the best way to maintain a healthy relationship with our client and it&#39;s less risky for both our clients and us.</p>
 
-<p>This model works very well for clients that want to work with an agile team in a lean project. And we love to <a href="http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html">apply Lean Startup</a> not only to our own products but also to our clients&#39; projects.</p>
+<p>This model works very well for clients that want to work with an agile team in a lean project. And we love to <a href="https://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html">apply Lean Startup</a> not only to our own products but also to our clients&#39; projects.</p>
 
 <p>We rigorously track all the time that we spend on projects. Every invoice we send includes a list of tasks and the total amount for the work we completed.</p>
 
-<p>We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, <a href="http://www.ombulabs.com/#contact">get in touch!</a></p>
+<p>We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, <a href="https://www.ombulabs.com/#contact">get in touch!</a></p>
 ]]></content:encoded>
       <dc:date>2015-11-18T22:55:00-05:00</dc:date>
     </item>
@@ -4373,7 +4373,7 @@ messages to your team&#39;s channels.
 ]]></description>
       <pubDate>Wed, 29 Jul 2015 13:40:00 -0400</pubDate>
       <guid>http://localhost:4000/ruby/slack-notifications-with-slack-notify.html</guid>
-      <content:encoded><![CDATA[<p>We have been using Slack at <a href="http://www.ombulabs.com">OmbuLabs</a> for a while now
+      <content:encoded><![CDATA[<p>We have been using Slack at <a href="https://www.ombulabs.com">OmbuLabs</a> for a while now
 after switching from HipChat, and haven&#39;t looked back. It looks and feels much
 better than any other available platform of its kind. Slack provides
 <a href="https://api.slack.com/incoming-webhooks">WebHooks</a>, which you can use to post
@@ -4677,7 +4677,7 @@ It is easier to apply the methodology to our own products than to our client pro
 ]]></description>
       <pubDate>Tue, 30 Jun 2015 19:29:00 -0400</pubDate>
       <guid>http://localhost:4000/lean-startup/the-lean-startup-way.html</guid>
-      <content:encoded><![CDATA[<p>At <a href="http://www.ombulabs.com">OmbuLabs</a> we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.</p>
+      <content:encoded><![CDATA[<p>At <a href="https://www.ombulabs.com">OmbuLabs</a> we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.</p>
 
 <p>It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.</p>
 

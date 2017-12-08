@@ -54,8 +54,8 @@ We will work with one or two week sprints and we can show results by the end of 
 
 I have been working with clients since 2008 and I found that the best relationships I've had have been with this model. It's the best way to maintain a healthy relationship with our client and it's less risky for both our clients and us.
 
-This model works very well for clients that want to work with an agile team in a lean project. And we love to [apply Lean Startup](http://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html) not only to our own products but also to our clients' projects.
+This model works very well for clients that want to work with an agile team in a lean project. And we love to [apply Lean Startup](https://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html) not only to our own products but also to our clients' projects.
 
 We rigorously track all the time that we spend on projects. Every invoice we send includes a list of tasks and the total amount for the work we completed.
 
-We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, [get in touch!](http://www.ombulabs.com/#contact)
+We have a great team of developers, designers and product managers ready to work on your project. If you are interested in working with us, [get in touch!](https://www.ombulabs.com/#contact)

@@ -6,13 +6,13 @@ categories: ["team", "jobs"]
 author: "etagwerker"
 ---
 
-This is our process to hire new team members at [Ombu Labs](http://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
+This is our process to hire new team members at [Ombu Labs](https://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
 
 In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
 
 <!--more-->
 
-We usually hire Junior and Senior developers. You can find our open positions [over here](http://www.ombulabs.com/jobs).
+We usually hire Junior and Senior developers. You can find our open positions [over here](https://www.ombulabs.com/jobs).
 
 ## How to Apply
 
@@ -66,4 +66,4 @@ We are very careful when adding people to our team. We want to work with the bes
 
 We don't want to waste anyone's time. That's why our hiring process is **so long**. In order to keep our team's quality high, we prefer to spend more time than usual making a decision.
 
-If you are looking for a **new challenge**, check out our open positions: [http://www.ombulabs.com/jobs](http://www.ombulabs.com/jobs)
+If you are looking for a **new challenge**, check out our open positions: [https://www.ombulabs.com/jobs](https://www.ombulabs.com/jobs)
