@@ -49,17 +49,19 @@ which provides an overview of the changes in a basic Rails app between 4.0 and
 
 <h2 id="application-code">4. Application code</h2>
 
-<h2 id="models">a. Models</h2>
+<h3 id="models">a. Models</h2>
 
 - Return from callbacks is no longer allowed:
 
 Before:
-```ruby
+
+```
 before_save { return false }
 ```
 
 After:
-```ruby
+
+```
 before_save { false }
 ```
 
@@ -83,7 +85,7 @@ find_or_create_by_... should become find_or_create_by(...).
 If you can't afford to upgrade the finders now, then add the gem back yourself
 into the `Gemfile`:
 
-```ruby
+```
 gem 'activerecord-deprecated_finders'
 ```
 
@@ -94,27 +96,29 @@ See our [last upgrade post](https://www.ombulabs.com/blog/rails/upgrades/upgrade
 If you thought default scopes on models could be confusing, there's even another
 (un?)expected twist to it:
 
-```ruby
-default_scope { where active: true }
-scope :inactive, -> { where active: false }
 ```
+class User < ActiveRecord::Base
+  default_scope { where active: true }
+  scope :inactive, -> { where active: false }
 
-Rails < 4.1
-```ruby
-User.all
-# SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
+  # ...
+end
 
-User.inactive
-# SELECT "users".* FROM "users" WHERE "users"."active" = 'false'
-```
+# Rails < 4.1
+> User.all
+SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
 
-Rails >= 4.1:
-```ruby
-User.all
-# SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
+> User.inactive
+SELECT "users".* FROM "users" WHERE "users"."active" = 'false'
 
-User.inactive
-# SELECT "users".* FROM "users" WHERE "users"."active" = 'true' AND "users"."active" = 'false'
+# Rails >= 4.1:
+
+> User.all
+SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
+
+> User.inactive
+SELECT "users".* FROM "users" WHERE "users"."active" = 'true'
+AND "users"."active" = 'false'
 ```
 
 If you depended on this behavior, you will need to work around it using
@@ -129,12 +133,14 @@ If you depended on this behavior, you will need to work around it using
 the `Relation` to an `Array` by calling `#to_a` first.
 
 Before:
-```ruby
+
+```
 Project.where(title: 'Rails Upgrade').compact!
 ```
 
 After:
-```ruby
+
+```
 projects = Project.where(name: 'Rails Upgrade').to_a
 projects.compact!
 ```
@@ -143,7 +149,7 @@ projects.compact!
 
 Before Rails 4.1, if you had this code:
 
-```ruby
+```
 Post.includes(:comments).where("comments.title = 'foo'")
 ```
 
@@ -156,20 +162,20 @@ bugs (https://github.com/rails/rails/issues/9712).
 
 To fix this problem, you need to use an explicit join:
 
-```ruby
+```
 Post.joins(:comments).where("comments.title = 'foo'")
 ```
 
 UNLESS your intention was to actually eager load the post's comments.
 In that case, you can use the following syntax:
 
-```ruby
+```
 Post.eager_load(:comments).where("comments.title = 'foo'")
 ```
 
 Or:
 
-```ruby
+```
 Post.includes(:comments).where("comments.title = 'foo'").references(:comments)
 ```
 
@@ -194,12 +200,14 @@ config files.
 If your tests hit JS URLs, you'll need to use `xhr` instead of `get`:
 
 Before:
-```ruby
+
+```
 post :create, format: :js
 ```
 
 After:
-```ruby
+
+```
 xhr :post, :create, format: :js
 ```
 
@@ -213,12 +221,14 @@ If you were using the `flash` hash or its keys and expected symbols,
 you will need to use strings now:
 
 Before:
-```ruby
+
+```
 flash.to_hash.except(:notify)
 ```
 
 After:
-```ruby
+
+```
 flash.to_hash.except("notify")
 ```
 

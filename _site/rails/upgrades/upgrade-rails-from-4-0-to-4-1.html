@@ -159,21 +159,21 @@ which provides an overview of the changes in a basic Rails app between 4.0 and
 
 <h2 id="application-code">4. Application code</h2>
 
-<h2 id="models">a. Models</h2>
+<p><h3 id="models">a. Models</h2></p>
 
 <ul>
 <li>Return from callbacks is no longer allowed:</li>
 </ul>
 
-<p>Before:
-<code>ruby
-before_save { return false }
-</code></p>
+<p>Before:</p>
 
-<p>After:
-<code>ruby
-before_save { false }
-</code></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>before_save { return false }
+</code></pre></div>
+
+<p>After:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>before_save { false }
+</code></pre></div>
 
 <p>See: https://github.com/rails/rails/pull/13271</p>
 
@@ -196,7 +196,7 @@ find_or_create_by_... should become find_or_create_by(...).
 <p>If you can&#39;t afford to upgrade the finders now, then add the gem back yourself
 into the <code>Gemfile</code>:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;activerecord-deprecated_finders&#39;</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>gem &#39;activerecord-deprecated_finders&#39;
 </code></pre></div>
 
 <p>See our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html">last upgrade post</a> for more information.</p>
@@ -208,27 +208,28 @@ into the <code>Gemfile</code>:</p>
 <p>If you thought default scopes on models could be confusing, there&#39;s even another
 (un?)expected twist to it:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">default_scope</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">true</span> <span class="p">}</span>
-<span class="n">scope</span> <span class="ss">:inactive</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span> <span class="ss">active</span><span class="p">:</span> <span class="kp">false</span> <span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>class User &lt; ActiveRecord::Base
+  default_scope { where active: true }
+  scope :inactive, -&gt; { where active: false }
 
-<p>Rails &lt; 4.1
-```ruby
-User.all</p>
+  # ...
+end
 
-<h1>SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;</h1>
+# Rails &lt; 4.1
+&gt; User.all
+SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;
 
-<p>User.inactive</p>
+&gt; User.inactive
+SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;false&#39;
 
-<h1>SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;false&#39;</h1>
+# Rails &gt;= 4.1:
 
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Rails &gt;= 4.1:
-```ruby
-User.all
-# SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;
+&gt; User.all
+SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;
 
-User.inactive
-# SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39; AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;
+&gt; User.inactive
+SELECT &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;active&quot; = &#39;true&#39;
+AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;
 </code></pre></div>
 
 <p>If you depended on this behavior, you will need to work around it using
@@ -244,16 +245,16 @@ User.inactive
 <code>#delete_if</code> or <code>#compact!</code>. If you need to use them, you will need to convert
 the <code>Relation</code> to an <code>Array</code> by calling <code>#to_a</code> first.</p>
 
-<p>Before:
-<code>ruby
-Project.where(title: &#39;Rails Upgrade&#39;).compact!
-</code></p>
+<p>Before:</p>
 
-<p>After:
-<code>ruby
-projects = Project.where(name: &#39;Rails Upgrade&#39;).to_a
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Project.where(title: &#39;Rails Upgrade&#39;).compact!
+</code></pre></div>
+
+<p>After:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>projects = Project.where(name: &#39;Rails Upgrade&#39;).to_a
 projects.compact!
-</code></p>
+</code></pre></div>
 
 <ul>
 <li>Implicit joins are removed:</li>
@@ -261,7 +262,7 @@ projects.compact!
 
 <p>Before Rails 4.1, if you had this code:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.includes(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;)
 </code></pre></div>
 
 <p>ActiveRecord 4.0 would know to join <code>posts</code> and <code>comments</code> in the executed SQL,
@@ -273,18 +274,18 @@ bugs (https://github.com/rails/rails/issues/9712).</p>
 
 <p>To fix this problem, you need to use an explicit join:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">joins</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.joins(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;)
 </code></pre></div>
 
 <p>UNLESS your intention was to actually eager load the post&#39;s comments.
 In that case, you can use the following syntax:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">eager_load</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.eager_load(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;)
 </code></pre></div>
 
 <p>Or:</p>
 
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Post</span><span class="o">.</span><span class="n">includes</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;comments.title = &#39;foo&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">references</span><span class="p">(</span><span class="ss">:comments</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.includes(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;).references(:comments)
 </code></pre></div>
 
 <p>Both are equivalent and produce the same SQL.</p>
@@ -308,15 +309,15 @@ config files.</p>
 
 <p>If your tests hit JS URLs, you&#39;ll need to use <code>xhr</code> instead of <code>get</code>:</p>
 
-<p>Before:
-<code>ruby
-post :create, format: :js
-</code></p>
+<p>Before:</p>
 
-<p>After:
-<code>ruby
-xhr :post, :create, format: :js
-</code></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>post :create, format: :js
+</code></pre></div>
+
+<p>After:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>xhr :post, :create, format: :js
+</code></pre></div>
 
 <p>See: https://github.com/rails/rails/pull/13345</p>
 
@@ -329,15 +330,15 @@ xhr :post, :create, format: :js
 <p>If you were using the <code>flash</code> hash or its keys and expected symbols,
 you will need to use strings now:</p>
 
-<p>Before:
-<code>ruby
-flash.to_hash.except(:notify)
-</code></p>
+<p>Before:</p>
 
-<p>After:
-<code>ruby
-flash.to_hash.except(&quot;notify&quot;)
-</code></p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>flash.to_hash.except(:notify)
+</code></pre></div>
+
+<p>After:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>flash.to_hash.except(&quot;notify&quot;)
+</code></pre></div>
 
 <h2 id="next-steps">7. Next steps</h2>
 
