@@ -6,11 +6,11 @@ categories: ["open-source"]
 author: "etagwerker"
 ---
 
-At [Ombu Labs](http://www.ombulabs.com) we are big fans and happy customers
+At [Ombu Labs](https://www.ombulabs.com) we are big fans and happy customers
 of [Freckle](https://letsfreckle.com/). We use their widget to track all the
 hours that we spend on client projects,
-[open source](http://www.ombulabs.com/#open-source) development, and
-[our own products](http://www.ombulabs.com/#products).
+[open source](https://www.ombulabs.com/#open-source) development, and
+[our own products](https://www.ombulabs.com/#products).
 
 Today I'm happy to introduce [Pecas, time tracking leaderboards for Freckle](http://ombulabs.github.io/pecas/)! **Pecas** is an
 [open source](http://github.com/ombulabs/pecas) tool that integrates with your
@@ -25,7 +25,7 @@ during a work day. If it's a holiday, it won't bother you. :)
 
 <!--more-->
 
-I like to check it out every week to see if we are on track for our [time and material](http://www.ombulabs.com/blog/software-development/time-and-material.html)
+I like to check it out every week to see if we are on track for our [time and material](https://www.ombulabs.com/blog/software-development/time-and-material.html)
 projects. We need to work 40 hours per week for some of our clients and it's a
 good way to detect deviations.
 

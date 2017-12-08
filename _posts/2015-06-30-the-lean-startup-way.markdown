@@ -6,7 +6,7 @@ categories: ["lean-startup"]
 author: etagwerker
 ---
 
-At [OmbuLabs](http://www.ombulabs.com) we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
+At [OmbuLabs](https://www.ombulabs.com) we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
 
 It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
 

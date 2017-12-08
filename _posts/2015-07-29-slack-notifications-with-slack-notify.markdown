@@ -6,7 +6,7 @@ categories: ["ruby"]
 author: "mauro-oto"
 ---
 
-We have been using Slack at [OmbuLabs](http://www.ombulabs.com) for a while now
+We have been using Slack at [OmbuLabs](https://www.ombulabs.com) for a while now
 after switching from HipChat, and haven't looked back. It looks and feels much
 better than any other available platform of its kind. Slack provides
 [WebHooks](https://api.slack.com/incoming-webhooks), which you can use to post

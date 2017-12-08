@@ -8,8 +8,8 @@ author: "etagwerker"
 
 [Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that **performs poorly**.
 
-At [Ombu Labs](http://www.ombulabs.com) we like to [maintain Ruby on Rails
-applications](http://www.ombulabs.com/blog/tags/maintenance). In the process
+At [Ombu Labs](https://www.ombulabs.com) we like to [maintain Ruby on Rails
+applications](https://www.ombulabs.com/blog/tags/maintenance). In the process
 of maintaining them, adding features and fixing bugs, we like to improve
 the code and its performance (because we are [good *boy scouts*](http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule)!)
 
@@ -150,7 +150,7 @@ about [Writing Fast Ruby](https://speakerdeck.com/sferik/writing-fast-ruby): [ht
 great tips for improving performance in your Ruby application or library.
 
 And, if you need help improving the
-[performance](http://www.ombulabs.com/blog/tags/performance) of your Rails
-application, [get in touch](http://www.ombulabs.com/contact)! We are constantly
+[performance](https://www.ombulabs.com/blog/tags/performance) of your Rails
+application, [get in touch](https://www.ombulabs.com/contact)! We are constantly
 looking for new projects and opportunities to improve your
-[Rails](http://www.ombulabs.com/blog/tags/rails) performance.
+[Rails](https://www.ombulabs.com/blog/tags/rails) performance.

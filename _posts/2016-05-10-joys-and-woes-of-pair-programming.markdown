@@ -9,7 +9,7 @@ author: "etagwerker"
 There are a few [agile practices](https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices) that **I really love**. [Pair programming](http://c2.com/cgi/wiki?PairProgramming)
 is one of them.
 
-We try to do it as much as possible at [Ombu Labs](http://www.ombulabs.com). We
+We try to do it as much as possible at [Ombu Labs](https://www.ombulabs.com). We
 usually keep the sessions under **two hours** and try to follow a regular
 schedule.
 

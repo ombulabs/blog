@@ -12,7 +12,7 @@ a small class/object. Every time I see an opportunity to
 
 Today I wrote a spec to make sure that we gracefully ignore SPAMmy
 contact requests in the Ombu Labs
-[contact page](http://www.ombulabs.com/contact). It initially looked like this:
+[contact page](https://www.ombulabs.com/contact). It initially looked like this:
 
 ```ruby
 test "gracefully ignores spammy requests with valid attributes" do
