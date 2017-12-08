@@ -125,7 +125,8 @@ your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a hre
 <li><a href="#application-code">Application code</a>
 
 <ol>
-<li><a href="#models">Models (app/models/)</a></li>
+<li><a href="#callbacks">Callbacks</a></li>
+<li><a href="#active-record">ActiveRecord</a></li>
 </ol></li>
 <li><a href="#tests">Tests</a></li>
 <li><a href="#miscellaneous">Miscellaneous</a></li>
@@ -159,7 +160,7 @@ which provides an overview of the changes in a basic Rails app between 4.0 and
 
 <h2 id="application-code">4. Application code</h2>
 
-<p><h3 id="models">a. Models</h2></p>
+<p><h3 id="callbacks">a. Callbacks</h2></p>
 
 <ul>
 <li>Return from callbacks is no longer allowed:</li>
@@ -175,7 +176,9 @@ which provides an overview of the changes in a basic Rails app between 4.0 and
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>before_save { false }
 </code></pre></div>
 
-<p>See: https://github.com/rails/rails/pull/13271</p>
+<p>See: <a href="https://github.com/rails/rails/pull/13271">https://github.com/rails/rails/pull/13271</a></p>
+
+<p><h3 id="active-record">b. ActiveRecord</h2></p>
 
 <ul>
 <li>Removal of deprecated finders:</li>
@@ -233,7 +236,7 @@ AND &quot;users&quot;.&quot;active&quot; = &#39;false&#39;
 </code></pre></div>
 
 <p>If you depended on this behavior, you will need to work around it using
-<code>unscoped</code>, <code>unscope</code> or the new <code>rewhere</code> method (https://github.com/rails/rails/commit/f950b2699f97749ef706c6939a84dfc85f0b05f2).</p>
+<code>unscoped</code>, <code>unscope</code> or the new <code>rewhere</code> method (<a href="https://github.com/rails/rails/commit/f950b2699f97749ef706c6939a84dfc85f0b05f2">source</a>)</p>
 
 <p>(Friendly reminder: beware when using <a href="https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html">default_scope</a>)</p>
 
@@ -270,14 +273,14 @@ and it would work just fine.</p>
 
 <p>However, Rails shouldn&#39;t have to be smart and parse your <code>where</code> with a regular
 expression to figure out what tables you want to join, since it leads to
-bugs (https://github.com/rails/rails/issues/9712).</p>
+bugs (for example: <a href="https://github.com/rails/rails/issues/9712">https://github.com/rails/rails/issues/9712</a>).</p>
 
 <p>To fix this problem, you need to use an explicit join:</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.joins(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;)
 </code></pre></div>
 
-<p>UNLESS your intention was to actually eager load the post&#39;s comments.
+<p>Unless your intention was to actually eager load the post&#39;s comments.
 In that case, you can use the following syntax:</p>
 
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Post.eager_load(:comments).where(&quot;comments.title = &#39;foo&#39;&quot;)
@@ -295,7 +298,7 @@ In that case, you can use the following syntax:</p>
 
 <p>Finally, if you get this deprecation warning:</p>
 
-<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>DEPRECATION WARNING: Implicit join references were removed with Rails 4.1.Make sure to remove this configuration because it does nothing.
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>DEPRECATION WARNING: Implicit join references were removed with Rails 4.1. Make sure to remove this configuration because it does nothing.
 </code></pre></div>
 
 <p>Just remove <code>config.active_record.disable_implicit_join_references</code> from your
@@ -304,7 +307,7 @@ config files.</p>
 <h2 id="tests">5. Tests</h2>
 
 <ul>
-<li><a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">CSRF protection</a>) now covers GET requests with JS responses:</li>
+<li><a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">CSRF protection</a> now covers GET requests with JS responses:</li>
 </ul>
 
 <p>If your tests hit JS URLs, you&#39;ll need to use <code>xhr</code> instead of <code>get</code>:</p>
@@ -319,7 +322,7 @@ config files.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>xhr :post, :create, format: :js
 </code></pre></div>
 
-<p>See: https://github.com/rails/rails/pull/13345</p>
+<p>See: <a href="https://github.com/rails/rails/pull/13345">https://github.com/rails/rails/pull/13345</a></p>
 
 <h2 id="miscellaneous">6. Miscellaneous</h2>
 
@@ -342,10 +345,10 @@ you will need to use strings now:</p>
 
 <h2 id="next-steps">7. Next steps</h2>
 
-<p>If you successfully followed all of these steps, you should now be running Rails 4.1!</p>
+<p>If you successfully followed all of these steps, you should now be running Rails 4.1! Do you have any other tips? Share it with us in the comments section.</p>
 
-<p>To fine-tune your app, check out <a href="https://fastruby.io">FastRuby.io</a>, and feel
-free to tell us how your upgrade went.</p>
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
+upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
 
         </section>
 

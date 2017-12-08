@@ -17,7 +17,8 @@ your [Ruby on Rails](http://rubyonrails.org/) application from [version 4.0](htt
 2. [Gems](#gems)
 3. [Config files (config/)](#config-files)
 4. [Application code](#application-code)
-  1. [Models (app/models/)](#models)
+  1. [Callbacks](#callbacks)
+  2. [ActiveRecord](#active-record)
 5. [Tests](#tests)
 6. [Miscellaneous](#miscellaneous)
 7. [Next steps](#next-steps)
@@ -49,7 +50,7 @@ which provides an overview of the changes in a basic Rails app between 4.0 and
 
 <h2 id="application-code">4. Application code</h2>
 
-<h3 id="models">a. Models</h2>
+<h3 id="callbacks">a. Callbacks</h2>
 
 - Return from callbacks is no longer allowed:
 
@@ -65,7 +66,9 @@ After:
 before_save { false }
 ```
 
-See: https://github.com/rails/rails/pull/13271
+See: [https://github.com/rails/rails/pull/13271](https://github.com/rails/rails/pull/13271)
+
+<h3 id="active-record">b. ActiveRecord</h2>
 
 - Removal of deprecated finders:
 
@@ -122,7 +125,7 @@ AND "users"."active" = 'false'
 ```
 
 If you depended on this behavior, you will need to work around it using
-`unscoped`, `unscope` or the new `rewhere` method (https://github.com/rails/rails/commit/f950b2699f97749ef706c6939a84dfc85f0b05f2).
+`unscoped`, `unscope` or the new `rewhere` method ([source](https://github.com/rails/rails/commit/f950b2699f97749ef706c6939a84dfc85f0b05f2))
 
 (Friendly reminder: beware when using [default_scope](https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html))
 
@@ -158,7 +161,7 @@ and it would work just fine.
 
 However, Rails shouldn't have to be smart and parse your `where` with a regular
 expression to figure out what tables you want to join, since it leads to
-bugs (https://github.com/rails/rails/issues/9712).
+bugs (for example: [https://github.com/rails/rails/issues/9712](https://github.com/rails/rails/issues/9712)).
 
 To fix this problem, you need to use an explicit join:
 
@@ -166,7 +169,7 @@ To fix this problem, you need to use an explicit join:
 Post.joins(:comments).where("comments.title = 'foo'")
 ```
 
-UNLESS your intention was to actually eager load the post's comments.
+Unless your intention was to actually eager load the post's comments.
 In that case, you can use the following syntax:
 
 ```
@@ -187,7 +190,7 @@ For a more in depth explanation of the differences between `joins`, `includes`,
 Finally, if you get this deprecation warning:
 
 ```
-DEPRECATION WARNING: Implicit join references were removed with Rails 4.1.Make sure to remove this configuration because it does nothing.
+DEPRECATION WARNING: Implicit join references were removed with Rails 4.1. Make sure to remove this configuration because it does nothing.
 ```
 
 Just remove `config.active_record.disable_implicit_join_references` from your
@@ -195,7 +198,7 @@ config files.
 
 <h2 id="tests">5. Tests</h2>
 
-- [CSRF protection](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf)) now covers GET requests with JS responses:
+- [CSRF protection](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf) now covers GET requests with JS responses:
 
 If your tests hit JS URLs, you'll need to use `xhr` instead of `get`:
 
@@ -211,7 +214,7 @@ After:
 xhr :post, :create, format: :js
 ```
 
-See: https://github.com/rails/rails/pull/13345
+See: [https://github.com/rails/rails/pull/13345](https://github.com/rails/rails/pull/13345)
 
 <h2 id="miscellaneous">6. Miscellaneous</h2>
 
@@ -234,7 +237,7 @@ flash.to_hash.except("notify")
 
 <h2 id="next-steps">7. Next steps</h2>
 
-If you successfully followed all of these steps, you should now be running Rails 4.1!
+If you successfully followed all of these steps, you should now be running Rails 4.1! Do you have any other tips? Share it with us in the comments section.
 
-To fine-tune your app, check out [FastRuby.io](https://fastruby.io), and feel
-free to tell us how your upgrade went.
+If you don't have the time to upgrade your Rails app, check out our [Ruby on Rails
+upgrade](https://fastruby.io) service: [FastRuby.io](https://fastruby.io)
