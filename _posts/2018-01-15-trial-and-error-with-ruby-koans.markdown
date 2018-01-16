@@ -22,9 +22,9 @@ The exercise [About Objects](https://github.com/ercohen14/ruby-koans/blob/master
 
       assert_equal true, obj           != copy
       assert_equal true, obj.object_id != copy.object_id
-      end
+    end
 
-After the Ruby concept exercises, the Koans culminate in a series of projects that allow the user to apply what they have learned about each concept to complete more complex exercises. One that served useful to me was the [About Triangle Project](https://github.com/ercohen14/ruby-koans/blob/master/about_triangle_project.rb).
+After the Ruby concept exercises, the Koans culminate in a series of projects that allow the user to apply what they have learned about each concept to complete more complex exercises. One that proved useful to me was the [About Triangle Project](https://github.com/ercohen14/ruby-koans/blob/master/about_triangle_project.rb).
 
 This exercise gives the user side lengths of three different triangles, and asks the user to write code to test whether each triangle is equilateral, isosceles or scalene.
 
