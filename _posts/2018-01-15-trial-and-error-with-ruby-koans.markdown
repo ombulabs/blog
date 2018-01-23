@@ -3,7 +3,7 @@ layout: post
 title: "Trial and Error with Ruby Koans"
 date: 2018-01-23
 categories: ["Ruby", "Learning"]
-author: "Emily Cohen"
+author: "emily"
 ---
 
 After reading introductory primers and watching instructional videos for beginners learning Ruby, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing [Ruby Koans](http://rubykoans.com), **a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion**.
