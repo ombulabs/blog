@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Trial and Error with Ruby Koans"
-date: 2018-01-16
+date: 2018-01-23
 categories: ["Ruby", "Learning"]
 author: "Emily Cohen"
 ---
