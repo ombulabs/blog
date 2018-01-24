@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Trial and Error with Ruby Koans"
-date: 2018-01-23
+date: 2018-01-24
 categories: ["Ruby", "Learning"]
 author: "emily"
 ---
 
-After reading introductory primers and watching instructional videos for beginners learning Ruby, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing [Ruby Koans](http://rubykoans.com), **a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion**.
+After reading introductory primers and watching instructional videos for beginners learning [Ruby](https://www.ruby-lang.org/en), I needed a program that would allow me to test out Ruby concepts for myself. I began practicing [**Ruby Koans**](http://rubykoans.com), **a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion**.
 
 <!--more-->
 
@@ -14,7 +14,7 @@ Instead of providing problems and requiring that the user figure out the answers
 
 The first exercises run through Ruby concepts including **[strings](https://github.com/ercohen14/ruby-koans/blob/master/about_strings.rb)**, **[arrays](https://github.com/ercohen14/ruby-koans/blob/master/about_arrays.rb)** and **[methods](https://github.com/ercohen14/ruby-koans/blob/master/about_methods.rb)**.
 
-The exercise [About Objects](https://github.com/ercohen14/ruby-koans/blob/master/about_objects.rb) was particularly useful for me as a Junior Developer. I had heard time and again that *"in Ruby, everything is an object”*, however I didn’t understand what *“being an object”* actually entailed. This exercise went through what it means to be an object, specifying that although many items are objects, no two objects are ever exactly the same.
+The exercise [About Objects](https://github.com/ercohen14/ruby-koans/blob/master/about_objects.rb) was particularly useful for me as a Junior Developer. I had heard time and again that [*"in Ruby, everything is an object”*](https://launchschool.com/books/oo_ruby/read/the_object_model), however I didn’t understand what *“being an object”* actually entailed. This exercise went through what it means to be an object, specifying that although many items are objects, no two objects are ever exactly the same.
 
     def test_clone_creates_a_different_object
       obj = Object.new
@@ -49,6 +49,8 @@ This exercise gives the user side lengths of three different triangles, and asks
         end
       end
 
-The answer combines a number of basic Ruby operators, including ==, && and ||, and is a simple exercise to begin thinking about the ways that Ruby can solve more complex problems.
+The answer combines a number of basic [Ruby operators](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Operators), including ==, && and ||, and is a simple exercise to begin thinking about the ways that Ruby can solve more complex problems.
 
 **I would highly recommend Ruby Koans** to any developer who has some knowledge of Ruby and test-driven development and is looking to learn more.
+
+In our Junior Developer Training Path at OmbuLabs, we typically complete the Ruby Koans after reading a Ruby primer book, such as [The Well-Grounded Rubyist](https://www.manning.com/books/the-well-grounded-rubyist-second-edition), to get an understanding of the fundamentals of Ruby. What steps did you take to learn to code? Do you have a great Junior Developer Training Path to recommend? Let us know!

@@ -8,15 +8,15 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 23 Jan 2018 00:00:00 -0500</pubDate>
+    <pubDate>Wed, 24 Jan 2018 00:00:00 -0500</pubDate>
     <item>
       <title>Trial and Error with Ruby Koans</title>
       <link>https://www.ombulabs.com/blog/ruby/learning/trial-and-error-with-ruby-koans.html</link>
       <description><![CDATA[After reading introductory primers and watching instructional videos for beginners learning Ruby, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing Ruby Koans, a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion.
 ]]></description>
-      <pubDate>Tue, 23 Jan 2018 00:00:00 -0500</pubDate>
+      <pubDate>Wed, 24 Jan 2018 00:00:00 -0500</pubDate>
       <guid>https://www.ombulabs.com/blog/ruby/learning/trial-and-error-with-ruby-koans.html</guid>
-      <content:encoded><![CDATA[<p>After reading introductory primers and watching instructional videos for beginners learning Ruby, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing <a href="http://rubykoans.com">Ruby Koans</a>, <strong>a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion</strong>.</p>
+      <content:encoded><![CDATA[<p>After reading introductory primers and watching instructional videos for beginners learning <a href="https://www.ruby-lang.org/en">Ruby</a>, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing <a href="http://rubykoans.com"><strong>Ruby Koans</strong></a>, <strong>a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion</strong>.</p>
 
 <!--more-->
 
@@ -24,7 +24,7 @@
 
 <p>The first exercises run through Ruby concepts including <strong><a href="https://github.com/ercohen14/ruby-koans/blob/master/about_strings.rb">strings</a></strong>, <strong><a href="https://github.com/ercohen14/ruby-koans/blob/master/about_arrays.rb">arrays</a></strong> and <strong><a href="https://github.com/ercohen14/ruby-koans/blob/master/about_methods.rb">methods</a></strong>.</p>
 
-<p>The exercise <a href="https://github.com/ercohen14/ruby-koans/blob/master/about_objects.rb">About Objects</a> was particularly useful for me as a Junior Developer. I had heard time and again that <em>&quot;in Ruby, everything is an object”</em>, however I didn’t understand what <em>“being an object”</em> actually entailed. This exercise went through what it means to be an object, specifying that although many items are objects, no two objects are ever exactly the same.</p>
+<p>The exercise <a href="https://github.com/ercohen14/ruby-koans/blob/master/about_objects.rb">About Objects</a> was particularly useful for me as a Junior Developer. I had heard time and again that <a href="https://launchschool.com/books/oo_ruby/read/the_object_model"><em>&quot;in Ruby, everything is an object”</em></a>, however I didn’t understand what <em>“being an object”</em> actually entailed. This exercise went through what it means to be an object, specifying that although many items are objects, no two objects are ever exactly the same.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>def test_clone_creates_a_different_object
   obj = Object.new
   copy = obj.clone
@@ -56,11 +56,13 @@ end
     end
   end
 </code></pre></div>
-<p>The answer combines a number of basic Ruby operators, including ==, &amp;&amp; and ||, and is a simple exercise to begin thinking about the ways that Ruby can solve more complex problems.</p>
+<p>The answer combines a number of basic <a href="https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Operators">Ruby operators</a>, including ==, &amp;&amp; and ||, and is a simple exercise to begin thinking about the ways that Ruby can solve more complex problems.</p>
 
 <p><strong>I would highly recommend Ruby Koans</strong> to any developer who has some knowledge of Ruby and test-driven development and is looking to learn more.</p>
+
+<p>In our Junior Developer Training Path at OmbuLabs, we typically complete the Ruby Koans after reading a Ruby primer book, such as <a href="https://www.manning.com/books/the-well-grounded-rubyist-second-edition">The Well-Grounded Rubyist</a>, to get an understanding of the fundamentals of Ruby. What steps did you take to learn to code? Do you have a great Junior Developer Training Path to recommend? Let us know!</p>
 ]]></content:encoded>
-      <dc:date>2018-01-23T00:00:00-05:00</dc:date>
+      <dc:date>2018-01-24T00:00:00-05:00</dc:date>
     </item>
     <item>
       <title>Upgrade Rails from 4.0 to 4.1</title>
@@ -4937,6 +4939,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T18:35:00+00:00</dc:date>
     </item>
-    <dc:date>2018-01-23T00:00:00-05:00</dc:date>
+    <dc:date>2018-01-24T00:00:00-05:00</dc:date>
   </channel>
 </rss>
