@@ -47,11 +47,13 @@ according to the <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_ra
 
 <h2 id="gems">2. Gems</h2>
 
-<p>If you&#39;re using RSpec 2, you&#39;ll need to migrate to RSpec 3, since RSpec 2 doesn&#39;t
-officially support Rails 4.2. To make this process easier, you can update to
-RSpec 2.99, which will print a bunch of deprecation warnings at the end of the
-test run, and you&#39;ll need to fix these before updating to RSpec 3. For more
-information, check out their <a href="http://rspec.info/upgrading-from-rspec-2/">official upgrade guide</a>.</p>
+<p>If you&#39;re using <a href="https://relishapp.com/rspec/rspec-core/v/2-14/docs/">RSpec 2</a>,
+you&#39;ll need to migrate to <a href="https://relishapp.com/rspec/rspec-core/v/3-7/docs">RSpec 3</a>,
+since RSpec 2 doesn&#39;t officially support Rails 4.2. To make this process easier,
+you can update to <a href="https://rubygems.org/gems/rspec/versions/2.99.0">RSpec 2.99</a>,
+which will print a bunch of deprecation warnings at the end of the test run,
+and you&#39;ll need to fix these before updating to RSpec 3. For more information,
+check out their <a href="http://rspec.info/upgrading-from-rspec-2/">official upgrade guide</a>.</p>
 
 <p>You can also use the awesome <a href="http://yujinakayama.me/transpec/">Transpec</a> to
 automate the RSpec 2 to 3 upgrade process.</p>
@@ -70,8 +72,9 @@ You can use this task as a guideline as explained thoroughly in
 which provides an overview of the changes in a basic Rails app between 4.1.x and
 4.2.x (or any other source/target versions).</p>
 
-<p>After upgrading to Rails 4.2 for an application that needs to run in development
-on port 80, I came across an unexpected problem due to <a href="https://github.com/rack/rack/commit/28b014484a8ac0bbb388e7eaeeef159598ec64fc">a change in Rack</a>.
+<p>After upgrading to <a href="https://rubygems.org/gems/rails/versions/4.2.9">Rails 4.2</a> for
+an application that needs to run in development on port 80, I came across an
+unexpected problem due to <a href="https://github.com/rack/rack/commit/28b014484a8ac0bbb388e7eaeeef159598ec64fc">a change in Rack</a>.
 Rails now listens on <code>localhost</code> instead of <code>0.0.0.0</code>. You will run into the
 same problem in case you need to access your Rails server from a different
 machine. To work around it, you need to start your server by binding to

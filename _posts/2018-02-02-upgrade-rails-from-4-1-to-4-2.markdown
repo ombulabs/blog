@@ -29,11 +29,13 @@ according to the [official upgrade guide](http://edgeguides.rubyonrails.org/upgr
 
 <h2 id="gems">2. Gems</h2>
 
-If you're using RSpec 2, you'll need to migrate to RSpec 3, since RSpec 2 doesn't
-officially support Rails 4.2. To make this process easier, you can update to
-RSpec 2.99, which will print a bunch of deprecation warnings at the end of the
-test run, and you'll need to fix these before updating to RSpec 3. For more
-information, check out their [official upgrade guide](http://rspec.info/upgrading-from-rspec-2/).
+If you're using [RSpec 2](https://relishapp.com/rspec/rspec-core/v/2-14/docs/),
+you'll need to migrate to [RSpec 3](https://relishapp.com/rspec/rspec-core/v/3-7/docs),
+since RSpec 2 doesn't officially support Rails 4.2. To make this process easier,
+you can update to [RSpec 2.99](https://rubygems.org/gems/rspec/versions/2.99.0),
+which will print a bunch of deprecation warnings at the end of the test run,
+and you'll need to fix these before updating to RSpec 3. For more information,
+check out their [official upgrade guide](http://rspec.info/upgrading-from-rspec-2/).
 
 You can also use the awesome [Transpec](http://yujinakayama.me/transpec/) to
 automate the RSpec 2 to 3 upgrade process.
@@ -52,8 +54,9 @@ As an alternative, check out [RailsDiff](http://railsdiff.org/4.1.16/4.2.10),
 which provides an overview of the changes in a basic Rails app between 4.1.x and
 4.2.x (or any other source/target versions).
 
-After upgrading to Rails 4.2 for an application that needs to run in development
-on port 80, I came across an unexpected problem due to [a change in Rack](https://github.com/rack/rack/commit/28b014484a8ac0bbb388e7eaeeef159598ec64fc).
+After upgrading to [Rails 4.2](https://rubygems.org/gems/rails/versions/4.2.9) for
+an application that needs to run in development on port 80, I came across an
+unexpected problem due to [a change in Rack](https://github.com/rack/rack/commit/28b014484a8ac0bbb388e7eaeeef159598ec64fc).
 Rails now listens on `localhost` instead of `0.0.0.0`. You will run into the
 same problem in case you need to access your Rails server from a different
 machine. To work around it, you need to start your server by binding to
