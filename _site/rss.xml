@@ -8,7 +8,168 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 24 Jan 2018 00:00:00 -0500</pubDate>
+    <pubDate>Fri, 02 Feb 2018 06:32:00 -0500</pubDate>
+    <item>
+      <title>Upgrade Rails from 4.1 to 4.2</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</link>
+      <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
+
+This article will cover the most important aspects that you need to know to get
+your Ruby on Rails application from version 4.1 to 4.2.
+]]></description>
+      <pubDate>Fri, 02 Feb 2018 06:32:00 -0500</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</guid>
+      <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
+
+<p>This article will cover the most important aspects that you need to know to get
+your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/4_1_release_notes.html">version 4.1</a> to <a href="http://guides.rubyonrails.org/4_2_release_notes.html">4.2</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files (config/)</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#active-record">ActiveRecord</a></li>
+<li><a href="#action-mailer">ActionMailer</a></li>
+</ol></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="ruby-version">1. Ruby version</h2>
+
+<p>Rails 4.2 requires Ruby 1.9.3 or later, and Ruby 2.0 (or newer) is preferred
+according to the <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#ruby-versions">official upgrade guide</a>.</p>
+
+<h2 id="gems">2. Gems</h2>
+
+<p>If you&#39;re using <a href="https://relishapp.com/rspec/rspec-core/v/2-14/docs/">RSpec 2</a>,
+you&#39;ll need to migrate to <a href="https://relishapp.com/rspec/rspec-core/v/3-7/docs">RSpec 3</a>,
+since RSpec 2 doesn&#39;t officially support Rails 4.2. To make this process easier,
+you can update to <a href="https://rubygems.org/gems/rspec/versions/2.99.0">RSpec 2.99</a>,
+which will print a bunch of deprecation warnings at the end of the test run,
+and you&#39;ll need to fix these before updating to RSpec 3. For more information,
+check out their <a href="http://rspec.info/upgrading-from-rspec-2/">official upgrade guide</a>.</p>
+
+<p>You can also use the awesome <a href="http://yujinakayama.me/transpec/">Transpec</a> to
+automate the RSpec 2 to 3 upgrade process.</p>
+
+<p>Once you&#39;re on Rails 4.2, you will be able to remove the <a href="https://github.com/travisjeffery/timecop"><code>Timecop</code></a>
+gem if you&#39;re using it, and replace it with new test helper methods <code>travel</code>,
+<code>travel_to</code> and <code>travel_back</code>. See: <a href="http://api.rubyonrails.org/classes/ActiveSupport/Testing/TimeHelpers.html">TimeHelpers</a></p>
+
+<h2 id="config-files">3. Config files</h2>
+
+<p>Rails includes the <code>rails:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.</p>
+
+<p>As an alternative, check out <a href="http://railsdiff.org/4.1.16/4.2.10">RailsDiff</a>,
+which provides an overview of the changes in a basic Rails app between 4.1.x and
+4.2.x (or any other source/target versions).</p>
+
+<p>After upgrading to <a href="https://rubygems.org/gems/rails/versions/4.2.9">Rails 4.2</a> for
+an application that needs to run in development on port 80, I came across an
+unexpected problem due to <a href="https://github.com/rack/rack/commit/28b014484a8ac0bbb388e7eaeeef159598ec64fc">a change in Rack</a>.
+Rails now listens on <code>localhost</code> instead of <code>0.0.0.0</code>. You will run into the
+same problem in case you need to access your Rails server from a different
+machine. To work around it, you need to start your server by binding to
+<code>0.0.0.0</code> by using:</p>
+
+<p><code>rails server -b 0.0.0.0 -p 80</code></p>
+
+<p>Alternatively, you can try the <a href="https://stackoverflow.com/a/33249657/2754597">solution here</a>
+to avoid providing <code>-b 0.0.0.0</code> when you start the server. If you&#39;re using
+<a href="https://github.com/ddollar/foreman">Foreman</a> and run into this problem, you can
+edit your <code>Procfile</code>&#39;s <code>web</code> entry so that it reads:</p>
+
+<p><code>web: bundle exec rails s -b 0.0.0.0</code></p>
+
+<h2 id="application-code">4. Application code</h2>
+
+<p><h3 id="active-record">a. ActiveRecord</h2></p>
+
+<ul>
+<li>ActiveRecord &lt;= 4.2 suppresses exceptions raised in the <code>after_commit</code> and
+<code>after_rollback</code> callbacks by default. They are rescued and printed on the log,
+and they don&#39;t propagate. You can opt into raising these exceptions now by
+adding the following configuration:</li>
+</ul>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">config</span><span class="o">.</span><span class="n">active_record</span><span class="o">.</span><span class="n">raise_in_transactional_callbacks</span> <span class="o">=</span> <span class="kp">true</span>
+</code></pre></div>
+<p>Starting from ActiveRecord 5.0, these exceptions are always raised regardless
+of this setting, so you <em>should</em> opt into it and update your code accordingly.</p>
+
+<p>See: <a href="https://github.com/rails/rails/pull/16537">https://github.com/rails/rails/pull/16537</a></p>
+
+<ul>
+<li>If you pass an object to <code>#find</code>, you will now run into the following
+deprecation warning:</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`.
+Please pass the id of the object by calling `.id`.
+</code></pre></div>
+<p>You will need to change your <code>.find</code> calls to pass an id instead of an object.</p>
+
+<p>Before:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Comment</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">comment</span><span class="p">)</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">Comment</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">comment</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</code></pre></div>
+<p>The same goes for <code>#exists?</code> calls, if you pass an object as a parameter for it,
+you will need to provide an id instead.</p>
+
+<p><h3 id="action-mailer">b. ActionMailer</h2></p>
+
+<ul>
+<li><code>deliver</code> and <code>deliver!</code> are deprecated, in favor of <code>deliver_now</code> and
+<code>deliver_now!</code>.</li>
+</ul>
+
+<p>Before:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">NotificationMailer</span><span class="o">.</span><span class="n">daily_summary</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">deliver</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="no">NotificationMailer</span><span class="o">.</span><span class="n">daily_summary</span><span class="p">(</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">deliver_now</span>
+</code></pre></div>
+<h2 id="miscellaneous">5. Miscellaneous</h2>
+
+<ul>
+<li><code>respond_with</code> and the class-level <code>respond_to</code> were removed from Rails 4.2
+and moved to the <a href="https://rubygems.org/gems/responders"><code>responders</code></a> gem.</li>
+</ul>
+
+<p>If you&#39;re using these in your controllers, you will need to add:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;responders&#39;</span><span class="p">,</span> <span class="s1">&#39;~&gt; 2.0&#39;</span>
+</code></pre></div>
+<p>to your <code>Gemfile</code>.</p>
+
+<ul>
+<li>Rails&#39; HTML sanitizer was rewritten to use the more secure <a href="https://rubygems.org/gems/loofah">Loofah</a>
+gem. As a result, your expected sanitized output might be slightly different for
+some inputs. If you experience problems with it, you can restore the behavior by
+adding:</li>
+</ul>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;rails-deprecated_sanitizer&#39;</span>
+</code></pre></div>
+<p>to your <code>Gemfile</code>. It will only be supported for Rails 4.2, so it&#39;s
+recommended that you <em>do not</em> do this and stick with the new default HTML
+sanitizer.</p>
+
+<h2 id="next-steps">6. Next steps</h2>
+
+<p>If you successfully followed all of these steps, you should now be running Rails 4.2! Do you have any other useful tips or recommendations? Share them with us in the comments section.</p>
+
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
+upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
+]]></content:encoded>
+      <dc:date>2018-02-02T06:32:00-05:00</dc:date>
+    </item>
     <item>
       <title>Trial and Error with Ruby Koans</title>
       <link>https://www.ombulabs.com/blog/ruby/learning/trial-and-error-with-ruby-koans.html</link>
@@ -4939,6 +5100,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-01-24T00:00:00-05:00</dc:date>
+    <dc:date>2018-02-02T06:32:00-05:00</dc:date>
   </channel>
 </rss>
