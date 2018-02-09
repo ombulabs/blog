@@ -237,18 +237,24 @@ or even 5.1, you should take these changes into account:</p>
 
 <h3>Must do:</h3>
 
-<p>After modifying an object and after saving to the database, or within <code>after_save</code>:
-- <code>attribute_changed?</code> should now be <code>saved_change_to_attribute?</code>
-- <code>changed?</code> should now be <code>saved_changes?</code>
-- <code>changes</code> should now be <code>saved_changes</code>
-- <code>previous_changes</code> has no replacement, since the behavior for it changes.</p>
+<p>After modifying an object and after saving to the database, or within <code>after_save</code>:</p>
+
+<ul>
+<li><code>attribute_changed?</code> should now be <code>saved_change_to_attribute?</code></li>
+<li><code>changed?</code> should now be <code>saved_changes?</code></li>
+<li><code>changes</code> should now be <code>saved_changes</code></li>
+<li><code>previous_changes</code> has no replacement, since the behavior for it changes.</li>
+</ul>
 
 <h3>Optional (less ambiguity, more readable, but longer):</h3>
 
-<p>After modifying an object and before saving to the database, or within <code>before_save</code>:
-- <code>attribute_changed?</code> should now be <code>will_save_change_to_attribute?</code>
-- <code>changed?</code> should now be <code>has_changes_to_save?</code>
-- <code>changes</code> should now be <code>changes_to_save</code></p>
+<p>After modifying an object and before saving to the database, or within <code>before_save</code>:</p>
+
+<ul>
+<li><code>attribute_changed?</code> should now be <code>will_save_change_to_attribute?</code></li>
+<li><code>changed?</code> should now be <code>has_changes_to_save?</code></li>
+<li><code>changes</code> should now be <code>changes_to_save</code></li>
+</ul>
 
         </section>
 

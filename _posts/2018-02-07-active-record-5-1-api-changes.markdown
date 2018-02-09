@@ -136,6 +136,7 @@ or even 5.1, you should take these changes into account:
 ### Must do:
 
 After modifying an object and after saving to the database, or within `after_save`:
+
 - `attribute_changed?` should now be `saved_change_to_attribute?`
 - `changed?` should now be `saved_changes?`
 - `changes` should now be `saved_changes`
@@ -144,6 +145,7 @@ After modifying an object and after saving to the database, or within `after_sav
 ### Optional (less ambiguity, more readable, but longer):
 
 After modifying an object and before saving to the database, or within `before_save`:
+
 - `attribute_changed?` should now be `will_save_change_to_attribute?`
 - `changed?` should now be `has_changes_to_save?`
 - `changes` should now be `changes_to_save`
