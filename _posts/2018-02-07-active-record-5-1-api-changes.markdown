@@ -67,7 +67,7 @@ were just saved.
 The last three methods' behavior remains unchanged between Rails 5.1 and
 Rails 5.2, but the first four emit those warning messages, and their behavior
 changes between these two versions. These changes are best explained in [this commit](https://github.com/rails/rails/commit/16ae3db5a5c6a08383b974ae6c96faac5b4a3c81),
-and the best aspect of it IMHO is explicitness.
+and the best aspect of it in my opinion is explicitness.
 
 It reduces the ambiguity of simply using `changed?`, which would return `true`
 when the object was dirty, not yet saved to the database (within `before_save`),
@@ -149,3 +149,6 @@ After modifying an object and before saving to the database, or within `before_s
 - `attribute_changed?` should now be `will_save_change_to_attribute?`
 - `changed?` should now be `has_changes_to_save?`
 - `changes` should now be `changes_to_save`
+
+If you or your team lack the time to do the upgrade, you can get in touch with
+us at [FastRuby.io](https://fastruby.io) and we can help you!

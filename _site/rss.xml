@@ -82,7 +82,7 @@ in Rails 5.1 and Rails 5.2.</p>
 <p>The last three methods&#39; behavior remains unchanged between Rails 5.1 and
 Rails 5.2, but the first four emit those warning messages, and their behavior
 changes between these two versions. These changes are best explained in <a href="https://github.com/rails/rails/commit/16ae3db5a5c6a08383b974ae6c96faac5b4a3c81">this commit</a>,
-and the best aspect of it IMHO is explicitness.</p>
+and the best aspect of it in my opinion is explicitness.</p>
 
 <p>It reduces the ambiguity of simply using <code>changed?</code>, which would return <code>true</code>
 when the object was dirty, not yet saved to the database (within <code>before_save</code>),
@@ -162,6 +162,9 @@ or even 5.1, you should take these changes into account:</p>
 <li><code>changed?</code> should now be <code>has_changes_to_save?</code></li>
 <li><code>changes</code> should now be <code>changes_to_save</code></li>
 </ul>
+
+<p>If you or your team lack the time to do the upgrade, you can get in touch with
+us at <a href="https://fastruby.io">FastRuby.io</a> and we can help you!</p>
 ]]></content:encoded>
       <dc:date>2018-02-07T10:08:00-05:00</dc:date>
     </item>
