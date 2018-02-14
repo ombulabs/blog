@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 07 Feb 2018 10:08:00 -0500</pubDate>
+    <pubDate>Wed, 14 Feb 2018 05:20:00 -0500</pubDate>
     <item>
       <title>Cleaning up: ActiveRecord::Dirty 5.2 API Changes</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/active-record-5-1-api-changes.html</link>
@@ -22,7 +22,7 @@ are behavior changes, and there are some new additions as well.
 To better understand these modifications, we&#39;ll take a look at sample projects
 in Rails 5.1 and Rails 5.2.
 ]]></description>
-      <pubDate>Wed, 07 Feb 2018 10:08:00 -0500</pubDate>
+      <pubDate>Wed, 14 Feb 2018 05:20:00 -0500</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/active-record-5-1-api-changes.html</guid>
       <content:encoded><![CDATA[<p>With the release of Rails 5.2 just around the corner
 (<a href="https://rubygems.org/gems/rails/versions/5.2.0.rc1">Rails 5.2 RC1</a> is already available!),
@@ -166,7 +166,7 @@ or even 5.1, you should take these changes into account:</p>
 <p>If you or your team lack the time to do the upgrade, you can get in touch with
 us at <a href="https://fastruby.io">FastRuby.io</a> and we can help you!</p>
 ]]></content:encoded>
-      <dc:date>2018-02-07T10:08:00-05:00</dc:date>
+      <dc:date>2018-02-14T05:20:00-05:00</dc:date>
     </item>
     <item>
       <title>Upgrade Rails from 4.1 to 4.2</title>
@@ -5259,6 +5259,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-02-07T10:08:00-05:00</dc:date>
+    <dc:date>2018-02-14T05:20:00-05:00</dc:date>
   </channel>
 </rss>
