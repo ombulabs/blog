@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrading a Huge Monolith from Rails 4.0 to Rails 5.1"
-date: 2018-02-15
+date: 2018-02-16
 categories: ["rails", "upgrades", "case-study"]
 author: "emily"
 ---
