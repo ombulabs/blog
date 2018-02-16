@@ -21,6 +21,9 @@ author:         'OmbuLabs'
 exclude: [vendor]
 gems: [jekyll-paginate]
 
+sass:
+  style: compressed
+
 defaults:
   -
     scope:
@@ -64,5 +67,5 @@ authors:
     display_name: Emily Cohen
     gravatar: 1abbc4d93954d2df607cc3ec7fa9f418
     email: emily@ombulabs.com
-    twitter: 
+    twitter:
     github: ercohen14
