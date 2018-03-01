@@ -8,7 +8,153 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 16 Feb 2018 00:00:00 -0500</pubDate>
+    <pubDate>Thu, 01 Mar 2018 06:19:00 -0500</pubDate>
+    <item>
+      <title>Upgrade Rails from 4.2 to 5.0</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</link>
+      <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
+
+This article will cover the most important aspects that you need to know to get
+your Ruby on Rails application from version 4.2 to 5.0.
+]]></description>
+      <pubDate>Thu, 01 Mar 2018 06:19:00 -0500</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</guid>
+      <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
+
+<p>This article will cover the most important aspects that you need to know to get
+your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/4_2_release_notes.html">version 4.2</a> to <a href="http://guides.rubyonrails.org/5_0_release_notes.html">5.0</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files (config/)</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#active-record">ActiveRecord</a></li>
+<li><a href="#controllers">Controllers</a></li>
+</ol></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="ruby-version">1. Ruby version</h2>
+
+<p><a href="http://weblog.rubyonrails.org/2016/6/30/Rails-5-0-final/">Rails 5.0</a> requires <a href="https://www.ruby-lang.org/en/news/2015/04/13/ruby-2-2-2-released/">Ruby 2.2.2</a> or later.</p>
+
+<p>This Ruby upgrade shouldn&#39;t generate any problems. However, if you run into this
+exception in your test suite:</p>
+
+<p><code>cannot load such file -- test/unit/assertions (Load Error)</code></p>
+
+<p>then you&#39;ll need to add:</p>
+
+<p><code>gem &#39;test-unit&#39;</code></p>
+
+<p>to your <code>Gemfile</code>.</p>
+
+<h2 id="gems">2. Gems</h2>
+
+<ul>
+<li>It&#39;s recommended that you check your <code>Gemfile</code> against <a href="http://www.ready4rails.net">Ready4Rails</a>
+to check whether you have any older gems which may not be compatible with Rails
+5 yet. (As of the release of this blog post, there are only a few gems which
+don&#39;t support Rails 5 yet, this is more of a problem when you&#39;re upgrading
+early on).</li>
+</ul>
+
+<p>If any of the gems are missing on Ready4Rails, you&#39;ll need to check the Github
+page for the project manually. In case you own the gem, you&#39;ll need to make sure
+they work on Rails 5 or update it.</p>
+
+<h2 id="config-files">3. Config files</h2>
+
+<p>Rails includes the <code>rails app:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.</p>
+
+<p>As an alternative, check out <a href="http://railsdiff.org/4.2.10/5.0.6">RailsDiff</a>,
+which provides an overview of the changes in a basic Rails app between 4.2.x and
+5.0.x (or any other source/target versions).</p>
+
+<h2 id="application-code">4. Application code</h2>
+
+<p><h3 id="active-record">a. ActiveRecord</h2></p>
+
+<ul>
+<li>ActiveRecord models will now inherit from ApplicationRecord by default instead
+of ActiveRecord::Base. You should create an <code>application_record.rb</code> file under
+<code>app/models</code> with:</li>
+</ul>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">ApplicationRecord</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="nb">self</span><span class="o">.</span><span class="n">abstract_class</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>And then update all of your models to inherit from <code>ApplicationRecord</code> instead
+of <code>ActiveRecord::Base</code>. The only class that inherits from <code>ActiveRecord::Base</code>
+will be <code>ApplicationRecord</code>.</p>
+
+<ul>
+<li><code>belongs_to</code> associations are <a href="https://github.com/rails/rails/pull/18937/files">now required by default</a>.
+This means that if the association doesn&#39;t exist for a model when saving it, an
+error will be triggered. You can turn this feature off for an association by
+using <code>optional: true</code>:</li>
+</ul>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">belongs_to</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">optional</span><span class="p">:</span> <span class="kp">true</span>
+</code></pre></div>
+<p><h3 id="controllers">b. Controllers</h2></p>
+
+<ul>
+<li>If you&#39;re not already using strong parameters, and still rely on
+<code>protected_attributes</code>, you should migrate your application to strong
+parameters before attempting to upgrade to Rails 5.0.
+<a href="https://github.com/rails/protected_attributes"><code>protected_attributes</code></a> is
+no longer supported on Rails 5.0.</li>
+</ul>
+
+<p>A few months ago we worked on a project to attempt to automate this strong
+parameters migration process with the gem <a href="https://github.com/fastruby/rails_upgrader">RailsUpgrader</a>.</p>
+
+<p>There are still efforts being made to keep <code>protected_attributes</code> alive though,
+like the <a href="https://github.com/westonganger/protected_attributes_continued"><code>protected_attributes_continued</code></a>
+gem, but I would strongly recommend against using it.</p>
+
+<ul>
+<li>Parameters now behave differently, they no longer inherit from
+<code>HashWithIndifferentAccess</code>. Some methods (e.g.: <code>fetch</code>, <code>slice</code>, <code>except</code>) you
+may be now calling on <code>params</code> will no longer work. You will need to <code>permit</code>
+the parameters, call <code>to_h</code>, and only then you&#39;ll be able to run the <code>Hash</code>
+methods you need on them.</li>
+</ul>
+
+<p>For more information: <a href="https://github.com/rails/rails/pull/20868">https://github.com/rails/rails/pull/20868</a></p>
+
+<h2 id="testing">5. Testing</h2>
+
+<ul>
+<li>One of the most common methods in controller tests, <code>assigns</code>, has been
+extracted from Rails and moved to the <a href="https://github.com/rails/rails-controller-testing"><code>rails-controller-testing</code></a> gem.
+If you wish to continue using it (and <code>assert_template</code>), you&#39;ll need to add it
+to your <code>Gemfile</code>:</li>
+</ul>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">gem</span> <span class="s1">&#39;rails-controller-testing&#39;</span>
+</code></pre></div>
+<ul>
+<li>Instead of using <code>ActionDispatch::Http::UploadedFile</code> to test uploads, you&#39;ll
+need to update those tests to use <a href="http://www.rubydoc.info/github/brynary/rack-test/Rack/Test/UploadedFile"><code>Rack::Test::UploadedFile</code></a>.</li>
+</ul>
+
+<h2 id="next-steps">6. Next steps</h2>
+
+<p>If you successfully followed all of these steps, you should now be running Rails 5.0! Do you have any other useful tips or recommendations? Share them with us in the comments section.</p>
+
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
+upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
+]]></content:encoded>
+      <dc:date>2018-03-01T06:19:00-05:00</dc:date>
+    </item>
     <item>
       <title>Upgrading a Huge Monolith from Rails 4.0 to Rails 5.1</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/case-study/upgrading-a-monolith.html</link>
@@ -5284,6 +5430,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-02-16T00:00:00-05:00</dc:date>
+    <dc:date>2018-03-01T06:19:00-05:00</dc:date>
   </channel>
 </rss>
