@@ -40,10 +40,9 @@ to your `Gemfile`.
 <h2 id="gems">2. Gems</h2>
 
 - It's recommended that you check your `Gemfile` against [Ready4Rails](http://www.ready4rails.net)
-to check if you have any older gems which may not be compatible with Rails
-5 yet. (As of the release of this blog post, there are only a few gems which
-don't support Rails 5 yet, this is more of a problem when you're upgrading
-early on).
+to ensure all your gems are compatible with Rails 5.
+As of the release of this blog post, there are only a few gems which don't
+support Rails 5 yet. This is more of a problem when you're upgrading early on.
 
 If any of the gems are missing on Ready4Rails, you'll need to manually check the
 Github page for the project to find out its status. In case you own the gem,
@@ -94,8 +93,10 @@ parameters before attempting to upgrade to Rails 5.0.
 [`protected_attributes`](https://github.com/rails/protected_attributes) is
 no longer supported on Rails 5.0.
 
-A few months ago we worked on a project to attempt to automate this strong
-parameters migration process with the gem [RailsUpgrader](https://github.com/fastruby/rails_upgrader).
+A few months ago we worked on a project to attempt to automate the strong
+parameters migration process, and this resulted in the gem [RailsUpgrader](https://github.com/fastruby/rails_upgrader).
+It's in a beta state, but you can try using it if you have too many models, or
+at least as a guide for a WIP branch.
 
 There are still efforts being made to keep `protected_attributes` alive though,
 like the [`protected_attributes_continued`](https://github.com/westonganger/protected_attributes_continued)
