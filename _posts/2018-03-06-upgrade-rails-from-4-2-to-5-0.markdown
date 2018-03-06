@@ -40,14 +40,14 @@ to your `Gemfile`.
 <h2 id="gems">2. Gems</h2>
 
 - It's recommended that you check your `Gemfile` against [Ready4Rails](http://www.ready4rails.net)
-to check whether you have any older gems which may not be compatible with Rails
+to check if you have any older gems which may not be compatible with Rails
 5 yet. (As of the release of this blog post, there are only a few gems which
 don't support Rails 5 yet, this is more of a problem when you're upgrading
 early on).
 
-If any of the gems are missing on Ready4Rails, you'll need to check the Github
-page for the project manually. In case you own the gem, you'll need to make sure
-they work on Rails 5 or update it.
+If any of the gems are missing on Ready4Rails, you'll need to manually check the
+Github page for the project to find out its status. In case you own the gem,
+you'll need to make sure it works on Rails 5 or update it.
 
 <h2 id="config-files">3. Config files</h2>
 
@@ -99,7 +99,8 @@ parameters migration process with the gem [RailsUpgrader](https://github.com/fas
 
 There are still efforts being made to keep `protected_attributes` alive though,
 like the [`protected_attributes_continued`](https://github.com/westonganger/protected_attributes_continued)
-gem, but I would strongly recommend against using it.
+gem. I would strongly recommend against using it since its support is limited,
+and it won't work in future Rails versions.
 
 - Parameters now behave differently, they no longer inherit from
 `HashWithIndifferentAccess`. Some methods (e.g.: `fetch`, `slice`, `except`) you
