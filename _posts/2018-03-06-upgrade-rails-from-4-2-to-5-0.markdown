@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Upgrade Rails from 4.2 to 5.0"
-date: 2018-03-01 11:19:00
+date: 2018-03-06 10:53:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 ---
