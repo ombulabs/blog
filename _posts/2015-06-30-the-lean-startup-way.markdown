@@ -15,7 +15,7 @@ It is easier to apply the methodology to our own products than to our client pro
 And we have ran many experiments to create and maintain these products:
 
 * [OmbuShop](http://www.ombushop.com/): The best way to setup your online shop in Latin America. A SaaS product that enables businesses to easily setup their online shop.
-* [Vidrieras.in](http://www.vidrieras.in/): A directory of businesses in Argentina.
+* [TuTiendaOnline](http://www.tutiendaonline.com.ar/): A directory of shops in Argentina.
 * [Bolognesa](http://bolognesa.herokuapp.com/): A [Pomodoro](http://pomodorotechnique.com/) tracker.
 
 With client projects, we first need to explain what the [Lean Startup](http://theleanstartup.com/) methodology is. The best clients we have had already had an understanding of the methodology.
