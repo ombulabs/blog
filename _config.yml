@@ -19,7 +19,7 @@ url:            'https://www.ombulabs.com/blog'
 author:         'OmbuLabs'
 
 exclude: [vendor]
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 sass:
   style: compressed

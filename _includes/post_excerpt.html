@@ -5,7 +5,7 @@
         </h2>
     </header>
     <footer class="post-meta">
-      {% include post_meta.html %}
+      {%- include post_meta.html -%}
     </footer>
     <section class="post-excerpt">
         {{ post.excerpt | markdownify }} <a class="read-more" href="{{ post.url | prepend: site.baseurl }}">Read more &raquo;</a>

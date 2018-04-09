@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% assign author = site.authors[page.author] %}
+{%- assign author = site.authors[page.author] -%}
 <h2 class="author-name">Articles by <span class="tag">{{ author.display_name }}</span>
 </h2>
 <h3 class="author-description"><a href="http://twitter.com/{{author.twitter}}"
@@ -10,9 +10,9 @@ layout: default
                                       target="_blank">Follow @{{ page.author }} on Twitter</a></h3>
 
 <main id="content" class="content category">
-{% for post in site.posts %}
-  {% if post.author == page.author %}
-    {% include post_excerpt.html %}
-  {% endif %}
-{% endfor %}
+{%- for post in site.posts -%}
+  {%- if post.author == page.author -%}
+    {%- include post_excerpt.html -%}
+  {%- endif -%}
+{%- endfor -%}
 </main>
