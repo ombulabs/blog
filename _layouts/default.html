@@ -54,7 +54,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/ombu_blog/application.css" />
 </head>
 <body class="{%- if page.post_class -%}{{page.post_class}}{%- else -%}home-template{%- endif -%}">
-  <header class="main-header {%- if page.cover -%}" style="background-image: url({{ page.cover }}) {%else%}no-cover{%- endif -%}">
+  <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{%- endif -%}">
       <nav class="main-nav overlay clearfix">
               {%- if page.logo -%}
                   <a class="blog-logo" href="{{ site.baseurl }}">
