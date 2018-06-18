@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Another successful Rails Girls event"
-date: 2018-06-01 09:00:00
+date: 2018-06-18 14:00:00
 categories: ["learning", "rails"]
 author: "luciano"
 ---
