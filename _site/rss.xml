@@ -8,7 +8,42 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Tue, 06 Mar 2018 05:53:00 -0500</pubDate>
+    <pubDate>Mon, 18 Jun 2018 10:00:00 -0400</pubDate>
+    <item>
+      <title>Another successful Rails Girls event</title>
+      <link>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</link>
+      <description><![CDATA[Last month was the fifth edition of the Rails Girls Buenos Aires event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.
+]]></description>
+      <pubDate>Mon, 18 Jun 2018 10:00:00 -0400</pubDate>
+      <guid>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</guid>
+      <content:encoded><![CDATA[<p>Last month was the fifth edition of the <a href="http://railsgirls.com/buenosaires-en.html">Rails Girls Buenos Aires</a> event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.</p>
+
+<!--more-->
+
+<p><img src="/blog/assets/images/rails-girls/everybody.jpg"></p>
+
+<p>For those who have never heard of Rails Girls, it’s a 2-day workshop to introduce women to programming, with a focus on the <a href="https://rubyonrails.org/">Ruby on Rails</a> framework. We also talk about the current situation of women in technology and the things that we can do to increase the number of women working in this industry.</p>
+
+<p>During the workshop, each participant developed a basic Ruby on Rails application from scratch. Most of the participants had no previous experience in programming but one of the great things about Rails is that it&#39;s incredibly friendly for beginners. It allows you to create applications without worrying about some advanced concepts that aren&#39;t necessary to know yet.</p>
+
+<p>This event was a great experience once again, even as a coach you end up learning a lot from the participants. Here are a couple of photos from that day:</p>
+
+<p><img src="/blog/assets/images/rails-girls/group1.jpg"></p>
+
+<p><img src="/blog/assets/images/rails-girls/teaching.jpg"></p>
+
+<p><img src="/blog/assets/images/rails-girls/group2.jpg"></p>
+
+<p><img src="/blog/assets/images/rails-girls/mvc.jpg"></p>
+
+<p><img src="/blog/assets/images/rails-girls/group3.jpg"></p>
+
+<p><img src="/blog/assets/images/rails-girls/rails-landing.jpg"></p>
+
+<p>At Ombu Labs we believe that it is very important that more companies start working to have more diverse teams. That&#39;s why we decided to contribute to this cause, and we’re going to keep doing it.</p>
+]]></content:encoded>
+      <dc:date>2018-06-18T10:00:00-04:00</dc:date>
+    </item>
     <item>
       <title>Upgrade Rails from 4.2 to 5.0</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</link>
@@ -5432,6 +5467,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-03-06T05:53:00-05:00</dc:date>
+    <dc:date>2018-06-18T10:00:00-04:00</dc:date>
   </channel>
 </rss>
