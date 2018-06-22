@@ -56,6 +56,48 @@
 </div><article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html">How to interact with hidden elements with Protractor</a>
+        </h2>
+    </header>
+    <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>on
+    
+      <a href="/blog/tags/protractor"
+         title="Articles about Protractor">Protractor</a><time class="post-date" datetime="2015-12-08">
+  08 Dec 2015
+</time>
+</footer>
+    <section class="post-excerpt">
+        <p>The other day I was trying to interact with a hidden file input field:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-sm-3&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">accept</span><span class="o">=</span><span class="s">&quot;.csv&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;geofence_file_input&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;textbox-for-geofencefile&quot;</span><span class="p">&gt;</span>Select File<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">span</span> <span class="na">ng-if</span><span class="o">=</span><span class="s">&quot;LineItemForm.augmentations.geofence.file&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
+<p>And the CSS:</p>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span></span><span class="p">.</span><span class="nc">hidden</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Which caused this problem:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>Failed: Wait timed out after 100015ms
+</code></pre></div>
+
+<p>Workarounds include <em>displaying it</em>, <em>interacting with it</em>, <em>hiding it</em> again, which I didn&#39;t like.</p>
+ <a class="read-more" href="/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html">Read more &raquo;</a>
+    </section>
+</article>
+<article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/software-development/time-and-material.html">Time and Material</a>
         </h2>
     </header>

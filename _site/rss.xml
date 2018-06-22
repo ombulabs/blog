@@ -8,7 +8,24 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 18 Jun 2018 10:00:00 -0400</pubDate>
+    <pubDate>Fri, 22 Jun 2018 07:10:00 -0400</pubDate>
+    <item>
+      <title>Announcing Gemfile.lock Audit Tool</title>
+      <link>https://www.ombulabs.com/blog/rails/ruby/rubygems/announcing-audit-tool.html</link>
+      <description><![CDATA[Today we are happy to announce the launch of our new microsite: Gemfile.lock Audit Tool - a tool created to allow users to check their Gemfile.lock for vulnerabilities in a quick and secure manner.
+]]></description>
+      <pubDate>Fri, 22 Jun 2018 07:10:00 -0400</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/ruby/rubygems/announcing-audit-tool.html</guid>
+      <content:encoded><![CDATA[<p>Today we are happy to announce the launch of our new microsite: <a href="https://audit.fastruby.io">Gemfile.lock Audit Tool</a> - a tool created to allow users to check their Gemfile.lock for vulnerabilities in a quick and secure manner.</p>
+
+<!--more-->
+
+<p>The tool uses the <a href="https://github.com/rubysec/bundler-audit">bundler-audit gem</a> to check for vulnerable versions of gems and insecure gem sources. The tool updates automatically with new warnings as the bundler-audit gem database of vulnerabilities is updated.</p>
+
+<p>Thanks to this tool, users can now easily audit their Gemfile.lock without installing any gems or editing their code. Check it out at <a href="https://audit.fastruby.io">https://audit.fastruby.io</a>, and let us know what you think!</p>
+]]></content:encoded>
+      <dc:date>2018-06-22T07:10:00-04:00</dc:date>
+    </item>
     <item>
       <title>Another successful Rails Girls event</title>
       <link>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</link>
@@ -5467,6 +5484,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-06-18T10:00:00-04:00</dc:date>
+    <dc:date>2018-06-22T07:10:00-04:00</dc:date>
   </channel>
 </rss>
