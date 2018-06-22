@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/ombu_blog/application.css" />
 </head>
 <body class="home-template">
-  <header class="main-headerno-cover">
+  <header class="main-header no-cover">
       <nav class="main-nav overlay clearfix"><a class="back-button icon-arrow-left"
                  href="/blog">Home</a>
           <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
@@ -56,14 +56,54 @@
 </div><article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/rspec/continuous-integration/how-to-track-down-a-flaky-test.html">'Flaky' tests: a short story</a>
+        </h2>
+    </header>
+    <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
+     title="Articles by Mauro Otonelli">
+     Mauro Otonelli
+  </a>on
+    
+      <a href="/blog/tags/rspec"
+         title="Articles about Rspec">Rspec</a>,
+      <a href="/blog/tags/continuous-integration"
+         title="Articles about Continuous Integration">Continuous Integration</a><time class="post-date" datetime="2017-05-04">
+  04 May 2017
+</time>
+</footer>
+    <section class="post-excerpt">
+        <p>One of the hardest failing tests to debug are those which fail randomly, also
+known as <strong>&quot;flaky&quot;</strong> tests. You write your test cases, you run the tests in your
+environment (in random order), and see them all pass. Afterwards, you push your
+code, your CI server runs them and <em>one test fails</em>.</p>
+
+<p>This is not an uncommon scenario, and one <em>too common</em> when using integration
+tests which use JS, with <code>Capybara-Webkit</code> or <code>Selenium</code>.
+But if your failing test doesn&#39;t communicate with an external API, doesn&#39;t use
+JS, and passes locally, it can be a bit nerve-wracking.</p>
+
+<p>After you have identified the failing test, and it still passes after running it
+locally, one way to figure out <strong>why</strong> it&#39;s failing is running its context
+multiple times.</p>
+
+<p>To automate this process a bit, I like to use the following command:</p>
+ <a class="read-more" href="/blog/rspec/continuous-integration/how-to-track-down-a-flaky-test.html">Read more &raquo;</a>
+    </section>
+</article>
+<article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/continuous-integration/circle-ci/how-to-run-multiple-dependency-builds-on-your-ci-server.html">How to run multiple dependent builds on Circle CI</a>
         </h2>
     </header>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50" alt="Luciano Becerra" nopin="nopin" /><a href="/blog/authors/luciano"
      title="Articles by Luciano Becerra">
      Luciano Becerra
-  </a>on<a href="/blog/tags/continuous-integration"
-         title="Articles about Continuous Integration">Continuous Integration</a>,<a href="/blog/tags/circle-ci"
+  </a>on
+    
+      <a href="/blog/tags/continuous-integration"
+         title="Articles about Continuous Integration">Continuous Integration</a>,
+      <a href="/blog/tags/circle-ci"
          title="Articles about Circle Ci">Circle Ci</a><time class="post-date" datetime="2017-02-23">
   23 Feb 2017
 </time>
@@ -83,8 +123,11 @@ If you have a core project and many projects that depend on it, you want to run 
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,<a href="/blog/tags/react"
+  </a>on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/react"
          title="Articles about React">React</a><time class="post-date" datetime="2017-02-13">
   13 Feb 2017
 </time>
@@ -112,9 +155,13 @@ trying to use capybara-webkit with <a href="https://facebook.github.io/react">Re
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9219f1f8634fafcbed16e72a0bb5a414?s=50" alt="Luciano Becerra" nopin="nopin" /><a href="/blog/authors/luciano"
      title="Articles by Luciano Becerra">
      Luciano Becerra
-  </a>on<a href="/blog/tags/open-source"
-         title="Articles about Open Source">Open Source</a>,<a href="/blog/tags/ruby"
-         title="Articles about Ruby">Ruby</a>,<a href="/blog/tags/rubygems"
+  </a>on
+    
+      <a href="/blog/tags/open-source"
+         title="Articles about Open Source">Open Source</a>,
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>,
+      <a href="/blog/tags/rubygems"
          title="Articles about Rubygems">Rubygems</a><time class="post-date" datetime="2017-02-09">
   09 Feb 2017
 </time>
@@ -134,8 +181,11 @@ We wanted to integrate <a href="https://www.ombushop.com">OmbuShop</a> with AFIP
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,<a href="/blog/tags/ruby"
+  </a>on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/ruby"
          title="Articles about Ruby">Ruby</a><time class="post-date" datetime="2016-12-14">
   14 Dec 2016
 </time>
@@ -161,9 +211,13 @@ Ruby global variable and requiring the gem manually.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/benchmark"
-         title="Articles about Benchmark">Benchmark</a>,<a href="/blog/tags/performance"
-         title="Articles about Performance">Performance</a>,<a href="/blog/tags/rails"
+  </a>on
+    
+      <a href="/blog/tags/benchmark"
+         title="Articles about Benchmark">Benchmark</a>,
+      <a href="/blog/tags/performance"
+         title="Articles about Performance">Performance</a>,
+      <a href="/blog/tags/rails"
          title="Articles about Rails">Rails</a><time class="post-date" datetime="2016-12-02">
   02 Dec 2016
 </time>
@@ -187,8 +241,11 @@ scope returns any results from the database, there are better ways than using
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/rspec"
-         title="Articles about Rspec">Rspec</a>,<a href="/blog/tags/ruby"
+  </a>on
+    
+      <a href="/blog/tags/rspec"
+         title="Articles about Rspec">Rspec</a>,
+      <a href="/blog/tags/ruby"
          title="Articles about Ruby">Ruby</a><time class="post-date" datetime="2016-11-08">
   08 Nov 2016
 </time>
@@ -216,8 +273,11 @@ default.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
      title="Articles by Ernesto Tagwerker">
      Ernesto Tagwerker
-  </a>on<a href="/blog/tags/performance"
-         title="Articles about Performance">Performance</a>,<a href="/blog/tags/rails"
+  </a>on
+    
+      <a href="/blog/tags/performance"
+         title="Articles about Performance">Performance</a>,
+      <a href="/blog/tags/rails"
          title="Articles about Rails">Rails</a><time class="post-date" datetime="2016-10-11">
   11 Oct 2016
 </time>
@@ -248,8 +308,11 @@ possible into memory. <strong>Always</strong> prefer a SQL query vs. an object&#
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/rspec"
-         title="Articles about Rspec">Rspec</a>,<a href="/blog/tags/ruby"
+  </a>on
+    
+      <a href="/blog/tags/rspec"
+         title="Articles about Rspec">Rspec</a>,
+      <a href="/blog/tags/ruby"
          title="Articles about Ruby">Ruby</a><time class="post-date" datetime="2016-08-17">
   17 Aug 2016
 </time>
@@ -284,8 +347,11 @@ different ways to implement a mock object.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
      title="Articles by Ernesto Tagwerker">
      Ernesto Tagwerker
-  </a>on<a href="/blog/tags/maintenance"
-         title="Articles about Maintenance">Maintenance</a>,<a href="/blog/tags/conventions"
+  </a>on
+    
+      <a href="/blog/tags/maintenance"
+         title="Articles about Maintenance">Maintenance</a>,
+      <a href="/blog/tags/conventions"
          title="Articles about Conventions">Conventions</a><time class="post-date" datetime="2016-07-04">
   04 Jul 2016
 </time>
@@ -313,7 +379,9 @@ anyone can clone your project and get it up and running in a few minutes.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/rails"
+  </a>on
+    
+      <a href="/blog/tags/rails"
          title="Articles about Rails">Rails</a><time class="post-date" datetime="2016-07-01">
   01 Jul 2016
 </time>
@@ -352,7 +420,9 @@ upgrading to Rails 4.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
      title="Articles by Ernesto Tagwerker">
      Ernesto Tagwerker
-  </a>on<a href="/blog/tags/open-source"
+  </a>on
+    
+      <a href="/blog/tags/open-source"
          title="Articles about Open Source">Open Source</a><time class="post-date" datetime="2016-06-06">
   06 Jun 2016
 </time>
@@ -386,8 +456,11 @@ during a work day. If it&#39;s a holiday, it won&#39;t bother you. :)</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/350875eb8fce8553e12040c5a1f5d5d0?s=50" alt="Mauro Otonelli" nopin="nopin" /><a href="/blog/authors/mauro-oto"
      title="Articles by Mauro Otonelli">
      Mauro Otonelli
-  </a>on<a href="/blog/tags/ruby"
-         title="Articles about Ruby">Ruby</a>,<a href="/blog/tags/imap"
+  </a>on
+    
+      <a href="/blog/tags/ruby"
+         title="Articles about Ruby">Ruby</a>,
+      <a href="/blog/tags/imap"
          title="Articles about Imap">Imap</a><time class="post-date" datetime="2016-05-30">
   30 May 2016
 </time>
@@ -413,8 +486,11 @@ Gmail as the target IMAP server.</p>
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
      title="Articles by Ernesto Tagwerker">
      Ernesto Tagwerker
-  </a>on<a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,<a href="/blog/tags/dry"
+  </a>on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/dry"
          title="Articles about Dry">Dry</a><time class="post-date" datetime="2016-05-16">
   16 May 2016
 </time>
@@ -457,8 +533,11 @@ class), then it is <strong>SPAM</strong> and it gracefully ignores the request.<
     <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
      title="Articles by Ernesto Tagwerker">
      Ernesto Tagwerker
-  </a>on<a href="/blog/tags/agile"
-         title="Articles about Agile">Agile</a>,<a href="/blog/tags/pair-programming"
+  </a>on
+    
+      <a href="/blog/tags/agile"
+         title="Articles about Agile">Agile</a>,
+      <a href="/blog/tags/pair-programming"
          title="Articles about Pair Programming">Pair Programming</a><time class="post-date" datetime="2016-05-12">
   12 May 2016
 </time>
@@ -490,44 +569,6 @@ patterns, frameworks, languages, code style,
 When you program with someone with more experience, you will often learn about
 design patterns, elegant object-oriented solutions, tips and tricks.</p>
  <a class="read-more" href="/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html">Read more &raquo;</a>
-    </section>
-</article>
-<article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/open-source/crowdsourcing/introducing-infractores.html">Introducing Infractores</a>
-        </h2>
-    </header>
-    <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>on<a href="/blog/tags/open-source"
-         title="Articles about Open Source">Open Source</a>,<a href="/blog/tags/crowdsourcing"
-         title="Articles about Crowdsourcing">Crowdsourcing</a><time class="post-date" datetime="2016-04-29">
-  29 Apr 2016
-</time>
-</footer>
-    <section class="post-excerpt">
-        <p>I&#39;ve always been a big fan of <a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software">scratching your own itch</a>. My latest itch was the <strong>insane amount of parking
-violations</strong> that I see everyday in <strong>Buenos Aires</strong>, near <a href="https://foursquare.com/v/ombulabs-hq/52f0e47311d25da04d101b62">our office</a>.</p>
-
-<p>We decided to build a <strong>simple tool</strong> that would allow anyone with a <a href="https://twitter.com">Twitter</a> account to <em>report a parking violation</em>. All
-you need to do is submit a <strong>geolocated tweet</strong> and a couple of photos
-(<strong>as evidence!</strong>)</p>
-
-<p>Here is an example:</p>
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="es" dir="ltr">Ah, ¿no se puede estacionar en paradas de colectivo? Ya fueee... <a href="https://twitter.com/hashtag/InfractoresBA?src=hash">#InfractoresBA</a> <a href="https://t.co/XXmu1pdAib">pic.twitter.com/XXmu1pdAib</a></p>&mdash; E r n e s t o (@_nesto) <a href="https://twitter.com/_nesto/status/722065061309726720">April 18, 2016</a></blockquote>
-
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>You can check out this tool over here: <a href="http://www.infractoresba.com.ar">http://www.infractoresba.com.ar</a></p>
-
-<p>This page shows all the parking violations reported by users to
-<a href="https://twitter.com/infractoresBA">@InfractoresBA</a> or with the
-<a href="https://twitter.com/search?src=typd&q=%23InfractoresBA">#InfractoresBA</a> hashtag.
-It&#39;s <strong>as simple as that</strong>.</p>
- <a class="read-more" href="/blog/open-source/crowdsourcing/introducing-infractores.html">Read more &raquo;</a>
     </section>
 </article>
 <nav class="pagination" role="pagination"><a class="newer-posts" href="/blog" title="Previous Page">&laquo; Newer Posts</a><span class="page-number"> Page 2 of 4 </span><a class="older-posts" href="/blog/page3/" title="Next Page">Older Posts &raquo;</a></nav>
