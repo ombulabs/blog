@@ -2,7 +2,7 @@
 layout: post
 title: "Refactoring: clean your ruby code with design patterns"
 date: 2018-06-25 12:00:00
-categories: ["design-patterns"]
+categories: ["code-refactor"]
 author: "cleiviane"
 ---
 

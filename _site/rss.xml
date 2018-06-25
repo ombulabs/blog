@@ -11,7 +11,7 @@
     <pubDate>Mon, 25 Jun 2018 08:00:00 -0400</pubDate>
     <item>
       <title>Refactoring: clean your ruby code with design patterns</title>
-      <link>http://localhost:4000/design-patterns/refactoring-with-design-patterns.html</link>
+      <link>http://localhost:4000/code-refactor/refactoring-with-design-patterns.html</link>
       <description><![CDATA[Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: none of new functionality should be added and the external behavior should not be affected.
 
 One of the Ruby on Rails developer challenges is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.
@@ -19,7 +19,7 @@ One of the Ruby on Rails developer challenges is to keep your code clean, simple
 There are several techniques that a developer can follow to improve his code by code refactoring, such as extract method, move method, move field, switch statements, etc. If you are not familiarized with them, please visit the Refactoring Guru site.
 ]]></description>
       <pubDate>Mon, 25 Jun 2018 08:00:00 -0400</pubDate>
-      <guid>http://localhost:4000/design-patterns/refactoring-with-design-patterns.html</guid>
+      <guid>http://localhost:4000/code-refactor/refactoring-with-design-patterns.html</guid>
       <content:encoded><![CDATA[<p>Code refactoring can be defined as <strong><em>“the process of introducing small and incremental changes to leave the code in a better state than it was.”</em></strong>. When refactoring your code you have to consider two things: none of new functionality should be added and the external behavior should not be affected.</p>
 
 <p>One of the Ruby on Rails developer challenges is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.</p>
