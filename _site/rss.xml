@@ -155,6 +155,32 @@ using <code>optional: true</code>:</li>
 </ul>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">belongs_to</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">optional</span><span class="p">:</span> <span class="kp">true</span>
 </code></pre></div>
+<ul>
+<li>ActiveRecord migrations now need to be tagged with the Rails version they are
+created under. One of the reasons for this is that strings in Rails 4.2 had a
+default size of 4 bytes. In Rails 5.0, their default size is now of 8 bytes. See
+<a href="https://stackoverflow.com/a/35930912/2754597">this comment</a> from Rails core
+team member Rafael França regarding this change.</li>
+</ul>
+
+<p>To resolve this, you&#39;ll need to update your current migrations in your <code>db/migrate</code> directory:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">CreatePosts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+</code></pre></div><div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">CreatePosts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="o">[</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span><span class="o">]</span>
+</code></pre></div>
+<p>If you add a new migration after updating to Rails 5.0, you&#39;ll also need to tag
+them appropriately:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="k">class</span> <span class="nc">CreateProducts</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span><span class="o">[</span><span class="mi">5</span><span class="o">.</span><span class="mi">0</span><span class="o">]</span>
+</code></pre></div>
+<p>This will help with potential compatibility issues, so your database can be
+correctly reconstructed from the migrations. Strings in your 4.2 migrations
+will use the previous default size of 4 bytes instead of the new default.</p>
+
+<p>Note you shouldn&#39;t add the patch version to the tag, just the major and minor
+version numbers (<code>4.2</code>, <code>5.0</code>, <code>5.1</code>, <code>5.2</code>).</p>
+
+<p>(Thanks to Cory McDonald in the comments section for reminding us about this
+important change!)</p>
+
 <p><h3 id="controllers">b. Controllers</h2></p>
 
 <ul>

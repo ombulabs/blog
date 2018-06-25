@@ -85,6 +85,39 @@ using `optional: true`:
 belongs_to :user, optional: true
 ```
 
+- ActiveRecord migrations now need to be tagged with the Rails version they are
+created under. One of the reasons for this is that strings in Rails 4.2 had a
+default size of 4 bytes. In Rails 5.0, their default size is now of 8 bytes. See
+[this comment](https://stackoverflow.com/a/35930912/2754597) from Rails core
+team member Rafael França regarding this change.
+
+To resolve this, you'll need to update your current migrations in your `db/migrate` directory:
+
+```ruby
+class CreatePosts < ActiveRecord::Migration
+```
+
+```ruby
+class CreatePosts < ActiveRecord::Migration[4.2]
+```
+
+If you add a new migration after updating to Rails 5.0, you'll also need to tag
+them appropriately:
+
+```ruby
+class CreateProducts < ActiveRecord::Migration[5.0]
+```
+
+This will help with potential compatibility issues, so your database can be
+correctly reconstructed from the migrations. Strings in your 4.2 migrations
+will use the previous default size of 4 bytes instead of the new default.
+
+Note you shouldn't add the patch version to the tag, just the major and minor
+version numbers (`4.2`, `5.0`, `5.1`, `5.2`).
+
+(Thanks to Cory McDonald in the comments section for reminding us about this
+important change!)
+
 <h3 id="controllers">b. Controllers</h2>
 
 - If you're not already using strong parameters, and still rely on
