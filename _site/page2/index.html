@@ -56,6 +56,31 @@
 </div><article class="post">
     <header class="post-header">
         <h2 class="post-title">
+          <a href="/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html">Announcing FastRuby.io</a>
+        </h2>
+    </header>
+    <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>on
+    
+      <a href="/blog/tags/rails"
+         title="Articles about Rails">Rails</a>,
+      <a href="/blog/tags/upgrades"
+         title="Articles about Upgrades">Upgrades</a><time class="post-date" datetime="2017-06-07">
+  07 Jun 2017
+</time>
+</footer>
+    <section class="post-excerpt">
+        <p>Today we are happy to announce the launch of our first productized service: <a href="https://fastruby.io">fastruby.io</a> - Speedy Ruby on Rails Upgrades by Ombu Labs.</p>
+
+<p>We are quite familiar with this sort of projects and decided to package it under its own domain. We have been doing <a href="http://rubyonrails.org">Ruby on Rails</a> upgrades since 2009, for our <a href="https://www.ombulabs.com/#products">own products</a> and <a href="https://www.ombulabs.com/#clients">client projects</a>, and we are looking forward to shipping more of them.</p>
+ <a class="read-more" href="/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html">Read more &raquo;</a>
+    </section>
+</article>
+<article class="post">
+    <header class="post-header">
+        <h2 class="post-title">
           <a href="/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html">AWS S3 Policies for Carrierwave</a>
         </h2>
     </header>
@@ -508,53 +533,6 @@ Gmail as the target IMAP server.</p>
  <a class="read-more" href="/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html">Read more &raquo;</a>
     </section>
 </article>
-<article class="post">
-    <header class="post-header">
-        <h2 class="post-title">
-          <a href="/blog/rails/dry/dry-your-test-unit.html">DRY your tests</a>
-        </h2>
-    </header>
-    <footer class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
-     title="Articles by Ernesto Tagwerker">
-     Ernesto Tagwerker
-  </a>on
-    
-      <a href="/blog/tags/rails"
-         title="Articles about Rails">Rails</a>,
-      <a href="/blog/tags/dry"
-         title="Articles about Dry">Dry</a><time class="post-date" datetime="2016-05-16">
-  16 May 2016
-</time>
-</footer>
-    <section class="post-excerpt">
-        <p>I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
-a small class/object. Every time I see an opportunity to
-<a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a> my specs, I take it.</p>
-
-<p>Today I wrote a spec to make sure that we gracefully ignore SPAMmy
-contact requests in the Ombu Labs
-<a href="https://www.ombulabs.com/contact">contact page</a>. It initially looked like this:</p>
-
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="nb">test</span> <span class="s2">&quot;gracefully ignores spammy requests with valid attributes&quot;</span> <span class="k">do</span>
-  <span class="vi">@valid_contact</span> <span class="o">=</span> <span class="n">contacts</span><span class="p">(</span><span class="ss">:two</span><span class="p">)</span>
-  <span class="n">attributes</span> <span class="o">=</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">attributes</span>
-                             <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="ss">email_confirmation</span><span class="p">:</span> <span class="vi">@valid_contact</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
-
-  <span class="n">assert_no_difference</span><span class="p">(</span><span class="s2">&quot;Contact.count&quot;</span><span class="p">)</span> <span class="k">do</span>
-    <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">contact</span><span class="p">:</span> <span class="n">attributes</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s1">&#39;js&#39;</span>
-  <span class="k">end</span>
-
-  <span class="n">assert_response</span> <span class="ss">:success</span>
-<span class="k">end</span>
-</code></pre></div>
-
-<p>The new behavior adds a simple <a href="http://www.sitepoint.com/easy-spam-prevention-using-hidden-form-fields/">SPAM trap field</a>
-that bots will usually fall for.
-If a bot is submitting the <code>email_confirmation</code> field (which is hidden by a CSS
-class), then it is <strong>SPAM</strong> and it gracefully ignores the request.</p>
- <a class="read-more" href="/blog/rails/dry/dry-your-test-unit.html">Read more &raquo;</a>
-    </section>
-</article>
 <nav class="pagination" role="pagination"><a class="newer-posts" href="/blog" title="Previous Page">&laquo; Newer Posts</a><span class="page-number"> Page 2 of 4 </span><a class="older-posts" href="/blog/page3/" title="Next Page">Older Posts &raquo;</a></nav>
 <footer class="site-footer clearfix">
   <section class="copyright">
@@ -614,8 +592,8 @@ class), then it is <strong>SPAM</strong> and it gracefully ignores the request.<
           <a href="/blog/tags/crowdsourcing"
              title="Articles about Crowdsourcing">Crowdsourcing</a>
         </h3><h3 class="tag-name">
-          <a href="/blog/tags/design"
-             title="Articles about Design">Design</a>
+          <a href="/blog/tags/design-patterns"
+             title="Articles about Design Patterns">Design Patterns</a>
         </h3><h3 class="tag-name">
           <a href="/blog/tags/docker"
              title="Articles about Docker">Docker</a>
