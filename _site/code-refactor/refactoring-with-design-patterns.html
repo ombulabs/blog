@@ -27,10 +27,10 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html" />
     <meta property="og:image" content="https://www.ombulabs.com/assets/isotype.png" />
-    <meta property="og:description" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: none of new functionality should be added and the external behavior should not be affected...." />
+    <meta property="og:description" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected. One..." />
     <meta property="og:site_name" content="Refactoring: clean your ruby code with design patterns" /><meta property="article:published_time" content="2018-06-25 08:00:00 -0400" />
       <meta property="article:modified_time" content="2018-06-25 08:00:00 -0400" />
-      <meta property="article:section" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: none of new functionality should be added and the external behavior should not be affected...." />
+      <meta property="article:section" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected. One..." />
       <meta property="article:tag" content="Refactoring: Clean Your Ruby Code With Design Patterns - The Lean Software Boutique" /><meta property="fb:admins" content="10153304864537860" />
 
     <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
@@ -70,22 +70,24 @@
         </header>
 
         <section class="post-content">
-          <p>Code refactoring can be defined as <strong><em>“the process of introducing small and incremental changes to leave the code in a better state than it was.”</em></strong>. When refactoring your code you have to consider two things: none of new functionality should be added and the external behavior should not be affected.</p>
+          <p>Code refactoring can be defined as <strong><em>“the process of introducing small and incremental changes to leave the code in a better state than it was.”</em></strong>. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected.</p>
 
 <p>One of the Ruby on Rails developer challenges is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.</p>
 
 <p>There are several techniques that a developer can follow to improve his code by code refactoring, such as extract method, move method, move field, switch statements, etc. If you are not familiarized with them, please visit the <a href="https://refactoring.guru/">Refactoring Guru site</a>.</p>
 
+<p>Another technique developers try to follow is to apply good design patterns to their code. In this post we&#39;ll try to go over some of the documented design patterns and how you can apply them to your Ruby code.</p>
+
 <!--more-->
 
 <h2 id="design-patterns">Design Patterns</h2>
 
-<p>Another technique developers try to follow is to apply good design patterns to its code. A design pattern can be described as “typical solutions to commonly occurring problems in software design. They are blueprints, that can be taken and customized to solve a particular design problem in your code”. So design patterns are not rules but guides that can help you to find the best solution given a particular situation. That is why, as pragmatic developers, we have always a good design pattern on the hand.</p>
+<p>A design pattern can be described as <strong><em>“typical solutions to commonly occurring problems in software design. They are blueprints, that can be taken and customized to solve a particular design problem in your code”</em></strong>. So design patterns are not rules but guides that can help you to find the best solution given a particular situation. That is why, as pragmatic developers, we have always a good design pattern on the hand.</p>
 
-<p>Explain each pattern in detail is out of this article’s scope, so if you are not familiar with the presented design patterns, a good reference is the book Design Patterns: Elements of Reusable Object-Oriented
+<p>Explaining each pattern in detail is out of this article’s scope, so if you are not familiar with the presented design patterns, a good reference is the book Design Patterns: Elements of Reusable Object-Oriented
 Software, written by the famous Gang of Four (GoF).</p>
 
-<p>Since we have cataloged over 23 design patterns, our intention here is to show our readers the most used and how they can be useful to clean our ruby code.</p>
+<p>Since there are 23 design patterns cataloged in the GoF, our intention here is to cover the most used of them and how they can be useful to clean our Ruby code.</p>
 
 <h2 id="factory-method">Factory Method</h2>
 
@@ -152,7 +154,7 @@ Software, written by the famous Gang of Four (GoF).</p>
 
 <p>Now let&#39;s say that our next functionality is to calculate the net salary of the employees. The net salary is the salary that they will receive once all the taxes are applied.</p>
 
-<p>Since different countries have different taxes rules our code need to handle this when perform the calculation.</p>
+<p>Since different countries have different taxes rules our code needs to handle this when perform the calculation.</p>
 
 <p>Let&#39;s implement the <code>EmployeeSalary</code> class:</p>
 
@@ -179,11 +181,11 @@ Software, written by the famous Gang of Four (GoF).</p>
 <span class="k">end</span>
 </code></pre></div>
 
-<p>We can easily see that the <code>calculate_net_salary</code> will massive grow each time that we need to add a new country. This situation breaks the <a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">open/closed principle</a> that says: <em>&quot;software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification&quot;</em>. This means that to make a class do new things you shouldn’t need to change the class itself.</p>
+<p>We can easily see that the <code>calculate_net_salary</code> will massively grow each time that we need to add a new country. This situation breaks the <a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">open/closed principle</a> that says: <em>&quot;software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification&quot;</em>. This means that to make a class do new things you shouldn’t need to change the class itself.</p>
 
 <p>If we can not extend the <code>calculate_net_salary</code> method to make a new country calculation without a lot of modification we are not following this principle. To solve this situation we can apply the Strategy Pattern to refactor our code.</p>
 
-<p>The <strong>Strategy</strong> is a behavioral design patter that suggests to take a class that does something important in a lot of different ways and extract all these algorithms into separate classes called strategies. The original class, called <em>context</em>, will receive a field that references to one of the strategies.</p>
+<p>The <strong>Strategy</strong> is a behavioral design pattern that suggests to take a class that does something important in a lot of different ways and extract all these algorithms into separate classes called strategies. The original class, called <em>context</em>, will receive a field that references to one of the strategies.</p>
 
 <p>With that concept in mind we can refactor the context class:</p>
 
@@ -198,7 +200,7 @@ Software, written by the famous Gang of Four (GoF).</p>
     <span class="vi">@strategies</span> <span class="o">=</span> <span class="p">{</span>
       <span class="s1">&#39;USA&#39;</span><span class="p">:</span> <span class="no">UsaTaxes</span><span class="p">,</span>
       <span class="s1">&#39;ARG&#39;</span><span class="p">:</span> <span class="no">ArgentinaTaxes</span><span class="p">,</span>
-      <span class="s1">&#39;USA&#39;</span><span class="p">:</span> <span class="no">BrazilTaxes</span>
+      <span class="s1">&#39;BRA&#39;</span><span class="p">:</span> <span class="no">BrazilTaxes</span>
     <span class="p">}</span>
   <span class="k">end</span>
 
