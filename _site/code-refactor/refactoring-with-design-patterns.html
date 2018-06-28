@@ -28,8 +28,8 @@
     <meta property="og:url" content="https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html" />
     <meta property="og:image" content="https://www.ombulabs.com/assets/isotype.png" />
     <meta property="og:description" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected. One..." />
-    <meta property="og:site_name" content="Refactoring: clean your ruby code with design patterns" /><meta property="article:published_time" content="2018-06-25 08:00:00 -0400" />
-      <meta property="article:modified_time" content="2018-06-25 08:00:00 -0400" />
+    <meta property="og:site_name" content="Refactoring: Clean your ruby code with design patterns" /><meta property="article:published_time" content="2018-06-28 08:00:00 -0400" />
+      <meta property="article:modified_time" content="2018-06-28 08:00:00 -0400" />
       <meta property="article:section" content="Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected. One..." />
       <meta property="article:tag" content="Refactoring: Clean Your Ruby Code With Design Patterns - The Lean Software Boutique" /><meta property="fb:admins" content="10153304864537860" />
 
@@ -59,12 +59,12 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Refactoring: clean your ruby code with design patterns</h1>
+            <h1 class="post-title">Refactoring: Clean your ruby code with design patterns</h1>
             <section class="post-meta">on
     
       <a href="/blog/tags/code-refactor"
-         title="Articles about Code Refactor">Code Refactor</a><time class="post-date" datetime="2018-06-25">
-  25 Jun 2018
+         title="Articles about Code Refactor">Code Refactor</a><time class="post-date" datetime="2018-06-28">
+  28 Jun 2018
 </time>
 </section>
         </header>
@@ -72,9 +72,9 @@
         <section class="post-content">
           <p>Code refactoring can be defined as <strong><em>“the process of introducing small and incremental changes to leave the code in a better state than it was.”</em></strong>. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected.</p>
 
-<p>One of the Ruby on Rails developer challenges is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.</p>
+<p>One of the biggest challenges as a Ruby on Rails Developer is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.</p>
 
-<p>There are several techniques that a developer can follow to improve his code by code refactoring, such as extract method, move method, move field, switch statements, etc. If you are not familiarized with them, please visit the <a href="https://refactoring.guru/">Refactoring Guru site</a>.</p>
+<p>There are several techniques that a developer can follow to improve their code by code refactoring, such as extract method, move method, move field, switch statements, etc. If you are not familiarized with them, please visit the <a href="https://refactoring.guru/">Refactoring Guru site</a>.</p>
 
 <p>Another technique developers try to follow is to apply good design patterns to their code. In this post we&#39;ll try to go over some of the documented design patterns and how you can apply them to your Ruby code.</p>
 
@@ -84,16 +84,16 @@
 
 <p>A design pattern can be described as <strong><em>“typical solutions to commonly occurring problems in software design. They are blueprints, that can be taken and customized to solve a particular design problem in your code”</em></strong>. So design patterns are not rules but guides that can help you to find the best solution given a particular situation. That is why, as pragmatic developers, we have always a good design pattern on the hand.</p>
 
-<p>Explaining each pattern in detail is out of this article’s scope, so if you are not familiar with the presented design patterns, a good reference is the book Design Patterns: Elements of Reusable Object-Oriented
-Software, written by the famous Gang of Four (GoF).</p>
+<p>Explaining each pattern in detail is out of this article’s scope, so if you are not familiar with the presented design patterns, a good reference is the book <a href="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8">Design Patterns: Elements of Reusable Object-Oriented
+Software</a>, written by the famous Gang of Four (GoF).</p>
 
-<p>Since there are 23 design patterns cataloged in the GoF, our intention here is to cover the most used of them and how they can be useful to clean our Ruby code.</p>
+<p>Since there are 23 design patterns cataloged in the book, our intention here is to cover the most used of them and how they can be useful to clean our Ruby code.</p>
 
 <h2 id="factory-method">Factory Method</h2>
 
-<p>When we think about a factory, what comes to mind is a place that builds different products that share common characteristics: cars, electronics, toys, medicines, cakes and several others. You expect that all car factories will build cars and these cars will have different colors, sizes, shapes, etc,  right?</p>
+<p>When we think about a factory, what comes to mind is a place that builds different products that share common characteristics: cars, electronics, toys, medicines, cakes and several others. You expect that all car factories will build cars and these cars will have different colors, sizes, shapes, etc, right?</p>
 
-<p>Now, let’s say that we have to build an application and one of the functionalities is to create employees. The employees can be one of three different types:  full-time, part-time and contractor and each type of employee will have a different hourly rate. So the requirement is to send a hash with the employee information and based on the type, we need to create the correct employee object.</p>
+<p>Now, let’s say that we have to build an application and one of the functionalities is to create employees. The employees can be one of three different types: full-time, part-time and contractor and each type of employee will have a different hourly rate. So the requirement is to send a hash with the employee information and based on the type, we need to create the correct employee object.</p>
 
 <p>Let’s create the <code>Employee</code> class:</p>
 
@@ -123,7 +123,7 @@ Software, written by the famous Gang of Four (GoF).</p>
 
 <p>This code works. It creates an employee and fills its information based on the given type. But the code is not beautiful and imagine the trouble if we need to change an existing employee type or even add a new one.</p>
 
-<p>To improve this code we could apply a refactor to extract the business logic of create employees to another class, then the Employee class will have only the responsibility to call the correct employee constructor.  The process of extracting the creation business logic to specific classes and methods is the goal of the Factory Method.</p>
+<p>To improve this code we could apply a refactor to extract the business logic of create employees to another class, then the Employee class will have only the responsibility to call the correct employee constructor. The process of extracting the creation business logic to specific classes and methods is the goal of the Factory Method.</p>
 
 <p>The basic principle of this pattern is to have factories creating products, a metaphor to a real factory. With the Factory Method we will change our code to:</p>
 
@@ -234,7 +234,7 @@ Software, written by the famous Gang of Four (GoF).</p>
 <span class="k">end</span>
 </code></pre></div>
 
-<p>That way the single responsibility of the <code>EmployeeSalary</code> class is delegate the calculation work to a linked strategy instead of executing it on its own.</p>
+<p>That way the single responsibility of the <code>EmployeeSalary</code> class is to delegate the calculation work to a linked strategy instead of executing it on its own.</p>
 
 <p>Wherever we need to get the net salary we should call the <code>EmployeeSalary</code> class like this:</p>
 
@@ -242,6 +242,10 @@ Software, written by the famous Gang of Four (GoF).</p>
 </code></pre></div>
 
 <p>Now if we need to add a new country we just need to create a new strategy and add to the context class. With this refactor we can keep all the concerns separated and the code is cleaner and easier to maintain.</p>
+
+<h2 id="factory-method">Next steps</h2>
+
+<p>In this post we talked about two very useful design patterns and how can we use them to improve code quality. We hope this was helpful for you. Keep following our blog, we will talk more about this subject soon.</p>
 
         </section><footer class="post-footer"><figure class="author-image"><a class="img" href="" style="background-image: url(/assets/images/profile.png)">
                 <span class="hidden"></span></a></figure>
@@ -252,7 +256,7 @@ Software, written by the famous Gang of Four (GoF).</p>
               </p>
             </section><!-- Share links section --><section class="share">
     <h4>Share this post</h4>
-    <a class="icon-twitter" href="http://twitter.com/share?text=Refactoring: clean your ruby code with design patterns&amp;url=https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html"
+    <a class="icon-twitter" href="http://twitter.com/share?text=Refactoring: Clean your ruby code with design patterns&amp;url=https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html"
         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
         <span class="hidden">Twitter</span>
     </a>
