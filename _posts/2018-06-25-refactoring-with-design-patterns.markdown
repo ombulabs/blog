@@ -191,5 +191,5 @@ Taxes.new.net_salary(1000, "BRA")
 
 Now if we need to add a new country we just need to create a new strategy and add to the context class. With this refactor we can keep all the concerns separated and the code is cleaner and easier to maintain.
 
-<h2 id="factory-method">Next steps</h2>
+<h2 id="next-steps">Next steps</h2>
 In this post we talked about two very useful design patterns and how can we use them to improve code quality. We hope this was helpful for you. Keep following our blog, we will talk more about this subject soon.
