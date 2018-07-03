@@ -10,7 +10,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
     end
 
     SitemapGenerator::Sitemap.default_host = site.config['url']
-    SitemapGenerator::Sitemap.public_path = File.join(Dir.pwd, "_site")
+    public_path = Dir.pwd.end_with?("blog") ? "_site" : "blog/_site"
+    SitemapGenerator::Sitemap.public_path = public_path
     SitemapGenerator::Sitemap.create compress: false do
       files.each do |file|
         add file.path.sub(/^_site/,''), changefreq: 'weekly'
