@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    blog (0)
+    blog ()
       dotenv
       jekyll (~> 3.5.0)
       jekyll-authors
@@ -29,7 +29,7 @@ GEM
     colorator (1.1.0)
     colored (1.2)
     concurrent-ruby (1.0.5)
-    dotenv (2.2.1)
+    dotenv (2.4.0)
     ethon (0.10.1)
       ffi (>= 1.3.0)
     ffi (1.9.18)
@@ -140,4 +140,4 @@ DEPENDENCIES
   rack-contrib
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
