@@ -5,7 +5,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     puts "Generating sitemap.xml.gz"
 
     files = []
-    Dir[File.join(Dir.pwd, '_site/**/*.html')].each do |page|
+    Dir['_site/**/*.html'].each do |page|
       files << File.new(page)
     end
 
