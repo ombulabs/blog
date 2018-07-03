@@ -15,6 +15,9 @@ scope returns any results from the database, there are better ways than using
 
 <!--more-->
 
+*In Rails 5.1 and up, the performance of `any?` and `exists?` has been fixed, so
+they are now equally performant.*
+
 `present?` is slow because:
 
 ```ruby
