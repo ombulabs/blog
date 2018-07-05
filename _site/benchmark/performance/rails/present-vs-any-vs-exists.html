@@ -86,6 +86,9 @@ scope returns any results from the database, there are better ways than using
 
 <!--more-->
 
+<p><em>In Rails 5.1 and up, the performance of <code>any?</code> and <code>exists?</code> has been fixed, so
+they are now equally performant.</em></p>
+
 <p><code>present?</code> is slow because:</p>
 
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">irb</span><span class="p">(</span><span class="n">main</span><span class="p">):</span><span class="mo">003</span><span class="p">:</span><span class="mi">0</span><span class="o">&gt;</span> <span class="no">Project</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="mi">57</span><span class="p">)</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">where</span><span class="o">.</span><span class="n">not</span><span class="p">(</span><span class="ss">deleted_at</span><span class="p">:</span> <span class="kp">nil</span><span class="p">)</span><span class="o">.</span><span class="n">present?</span>
