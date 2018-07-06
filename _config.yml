@@ -17,9 +17,13 @@ timezone: America/New_York
 # Details for the RSS feed generator
 url:            'https://www.ombulabs.com/blog'
 author:         'OmbuLabs'
+feed:
+  path: rss.xml
 
 exclude: [vendor]
-plugins: [jekyll-paginate]
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
 
 sass:
   style: compressed
