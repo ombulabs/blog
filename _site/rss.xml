@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Fri, 29 Jun 2018 06:05:00 -0400</pubDate>
+    <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
     <item>
       <title>Upgrade Rails from 5.0 to 5.1</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</link>
@@ -17,7 +17,7 @@
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 5.0 to 5.1.
 ]]></description>
-      <pubDate>Fri, 29 Jun 2018 06:05:00 -0400</pubDate>
+      <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
@@ -143,7 +143,7 @@ even if you&#39;re using RSpec:</p>
 <p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
 upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
 ]]></content:encoded>
-      <dc:date>2018-06-29T06:05:00-04:00</dc:date>
+      <dc:date>2018-07-18T06:05:00-04:00</dc:date>
     </item>
     <item>
       <title>Refactoring: Clean your ruby code with design patterns</title>
@@ -5829,6 +5829,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-06-29T06:05:00-04:00</dc:date>
+    <dc:date>2018-07-18T06:05:00-04:00</dc:date>
   </channel>
 </rss>
