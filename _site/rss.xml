@@ -8,7 +8,143 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 28 Jun 2018 08:00:00 -0400</pubDate>
+    <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
+    <item>
+      <title>Upgrade Rails from 5.0 to 5.1</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</link>
+      <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
+
+This article will cover the most important aspects that you need to know to get
+your Ruby on Rails application from version 5.0 to 5.1.
+]]></description>
+      <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</guid>
+      <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
+
+<p>This article will cover the most important aspects that you need to know to get
+your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/5_0_release_notes.html">version 5.0</a> to <a href="http://guides.rubyonrails.org/5_1_release_notes.html">5.1</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#active-record">ActiveRecord</a></li>
+<li><a href="#controllers">Controllers</a></li>
+</ol></li>
+<li><a href="#testing">Testing</a></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="ruby-version">1. Ruby version</h2>
+
+<p>Like Rails 5.0, <a href="https://weblog.rubyonrails.org/2017/4/27/Rails-5-1-final/">Rails 5.1</a> requires <a href="https://www.ruby-lang.org/en/news/2015/04/13/ruby-2-2-2-released/">Ruby 2.2.2</a> or later.</p>
+
+<h2 id="gems">2. Gems</h2>
+
+<ul>
+<li>Make sure the gems you use are compatible with Rails 5.1, you can check this
+using <a href="http://www.ready4rails.net">Ready4Rails</a>. If a gem is missing on
+Ready4Rails, you&#39;ll need to manually check the Github page for the project to
+find out its status. In case you own the gem, you&#39;ll need to make sure it
+supports Rails 5.1 and if it doesn&#39;t, update it.</li>
+</ul>
+
+<h2 id="config-files">3. Config files</h2>
+
+<p>Rails includes the <code>rails app:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.</p>
+
+<p>As an alternative, check out <a href="http://railsdiff.org/5.0.7/5.1.6">RailsDiff</a>,
+which provides an overview of the changes in a basic Rails app between 5.0.x and
+5.1.x (or any other source/target versions). Always target your upgrade to the
+latest patch version (e.g: 5.1.6 instead of 5.1.0).</p>
+
+<p>Some assets configuration changes you&#39;ll have to do on your
+<code>config/environments/{development, test, production}.rb</code> files are:</p>
+
+<p>Before:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">config</span><span class="o">.</span><span class="n">serve_static_files</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="n">config</span><span class="o">.</span><span class="n">static_cache_control</span> <span class="o">=</span> <span class="s2">&quot;public, max-age=3600&quot;</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">config</span><span class="o">.</span><span class="n">public_file_server</span><span class="o">.</span><span class="n">enabled</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="n">config</span><span class="o">.</span><span class="n">public_file_server</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="s2">&quot;public, max-age=3600&quot;</span>
+</code></pre></div>
+<h2 id="application-code">4. Application code</h2>
+
+<p><h3 id="active-record">4.1. ActiveRecord</h2></p>
+
+<ul>
+<li><p>The <code>raise_in_transactional_callbacks</code> option is now removed. It was
+already deprecated and covered in a <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html">previous upgrade</a>.</p></li>
+<li><p>Also removed was <code>use_transactional_fixtures</code>, which was <a href="https://github.com/rails/rails/pull/19282">replaced by</a>
+<code>use_transactional_tests</code>.</p></li>
+<li><p><code>ActiveRecord::Base#uniq</code> was removed, it was deprecated in Rails 5.0 and has
+been replaced by <code>#distinct</code>. Check out https://github.com/rails/rails/pull/20198
+for the discussion.</p></li>
+</ul>
+
+<p><h3 id="controllers">4.2. Controllers</h2></p>
+
+<ul>
+<li>Before Rails 5.1, conditions in filters could be invoked using strings. They
+now have to be symbols:</li>
+</ul>
+
+<p>Before</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span>  <span class="n">before_action</span> <span class="ss">:authenticate_user!</span><span class="p">,</span> <span class="k">unless</span><span class="p">:</span> <span class="s1">&#39;has_project_guest_id&#39;</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span>  <span class="n">before_action</span> <span class="ss">:authenticate_user!</span><span class="p">,</span> <span class="k">unless</span><span class="p">:</span> <span class="ss">:has_project_guest_id</span>
+</code></pre></div>
+<ul>
+<li>All <code>*_filter</code> methods are now called <code>*_action</code>:</li>
+</ul>
+
+<p>These methods were actually already deprecated in Rails 5.0, and Rails 5.1
+removes support for <code>*_filter</code> usage, so you should be using <code>*_action</code>.</p>
+
+<p>Before:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">skip_before_filter</span> <span class="ss">:authenticate_user!</span>
+<span class="n">before_filter</span> <span class="ss">:authenticate_user!</span>
+<span class="n">after_filter</span> <span class="ss">:do_something</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">skip_before_action</span> <span class="ss">:authenticate_user!</span>
+<span class="n">before_action</span> <span class="ss">:authenticate_user!</span>
+<span class="n">after_action</span> <span class="ss">:do_something</span>
+</code></pre></div>
+<h2 id="testing">5. Testing</h2>
+
+<ul>
+<li>Parameters in controller tests now need a <code>params</code> key:</li>
+</ul>
+
+<p>Rails 5.0 had already deprecated this behavior, and Rails 5.1 drops support for
+passing parameters without using keyword arguments. This change is necessary
+even if you&#39;re using RSpec:</p>
+
+<p>Before:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">expect</span> <span class="p">{</span> <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="n">params</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">change</span><span class="p">(</span><span class="no">Project</span><span class="p">,</span> <span class="ss">:count</span><span class="p">)</span><span class="o">.</span><span class="n">by</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<p>After:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">expect</span> <span class="p">{</span> <span class="n">post</span> <span class="ss">:create</span><span class="p">,</span> <span class="ss">params</span><span class="p">:</span> <span class="n">params</span> <span class="p">}</span><span class="o">.</span><span class="n">to</span> <span class="n">change</span><span class="p">(</span><span class="no">Project</span><span class="p">,</span> <span class="ss">:count</span><span class="p">)</span><span class="o">.</span><span class="n">by</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="next-steps">6. Next steps</h2>
+
+<p>If you successfully followed all of these steps, you should now be running Rails 5.1! Do you have any other useful tips or recommendations? Share them with us in the comments section.</p>
+
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
+upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
+]]></content:encoded>
+      <dc:date>2018-07-18T06:05:00-04:00</dc:date>
+    </item>
     <item>
       <title>Refactoring: Clean your ruby code with design patterns</title>
       <link>https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html</link>
@@ -5693,6 +5829,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-06-28T08:00:00-04:00</dc:date>
+    <dc:date>2018-07-18T06:05:00-04:00</dc:date>
   </channel>
 </rss>
