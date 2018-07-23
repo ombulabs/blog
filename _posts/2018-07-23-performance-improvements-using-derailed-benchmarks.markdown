@@ -6,7 +6,7 @@ categories: ["rails", "performance", "benchmark"]
 author: "mauro-oto"
 ---
 
-{% include youtube.html id="update_me" %}
+{% include youtube.html id="iwNWCizFlPM" %}
 
 **Transcript:**
 
