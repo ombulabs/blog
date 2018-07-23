@@ -8,7 +8,131 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
+    <pubDate>Mon, 23 Jul 2018 07:48:00 -0400</pubDate>
+    <item>
+      <title>OmbuCast Episode 1 - Performance improvements using derailed_benchmarks</title>
+      <link>https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</link>
+      <description><![CDATA[
+
+Transcript:
+
+Hello and welcome to the first OmbuCast by Ombu Labs. In this screencast we&#39;ll
+be taking a look at the
+derailed_benchmarks gem,
+and how you can use it to benchmark your Rails application and find, and
+hopefully fix bottlenecks in your code.
+]]></description>
+      <pubDate>Mon, 23 Jul 2018 07:48:00 -0400</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</guid>
+      <content:encoded><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/iwNWCizFlPM" frameborder="0" allowfullscreen></iframe>
+
+<p><strong>Transcript:</strong></p>
+
+<p>Hello and welcome to the first OmbuCast by Ombu Labs. In this screencast we&#39;ll
+be taking a look at the
+<a href="https://github.com/schneems/derailed_benchmarks"><code>derailed_benchmarks</code></a> gem,
+and how you can use it to benchmark your Rails application and find, and
+hopefully fix bottlenecks in your code.</p>
+
+<!--more-->
+
+<p>There are two ways you can benchmark your application, one is statically, which
+uses your <code>Gemfile</code> to check for any gems which might be too big - which take
+too much memory - and the other one is dynamically. To be able to run these,
+you&#39;ll need to be able to boot your Rails application in production mode
+locally. To be able to run the benchmarks I&#39;ll be showing, you&#39;ll need both the
+<code>derailed_benchmarks</code> gem and also the
+<a href="https://github.com/tmm1/stackprof"><code>stackprof</code></a> gem.</p>
+
+<p>To show how the gem works, I created a test application, which just returns an
+array - a JSON - which has many users, and it&#39;s a Rails 5.2 app. So it probably
+won&#39;t be similar to results you may get from your own applications, but it&#39;s
+good enough for, just showing how to apply these techniques.</p>
+
+<p>So the first thing that you should do is finding out which one of your endpoints
+is slow, be it in production or in development (usually you&#39;ll want to optimize
+your production endpoints). And when you do that, you will need to measure how
+many iterations per second the endpoint can do. This is to get a baseline, an
+idea of how many, or, how fast, your endpoint initially is, and then when you
+optimize, you can measure if the optimization was good or not. So our first step
+then would be to run the IPS task that <code>derailed_benchmarks</code> provides and
+specify that our path to hit will be <code>/users.json</code>.</p>
+
+<p><code>PATH_TO_HIT=/users.json bundle exec derailed exec perf:ips</code></p>
+
+<p>So we run this task and it will give us a number, which is the
+IPS, the iterations per second, in this case it&#39;s 263. And this is the starting
+point, so any modifications that we do to the code should not make it fall under
+263 iterations per second for this endpoint in particular. So to start
+optimizing, one thing we can do is to run the <code>stackprof</code> task that
+<code>derailed_benchmarks</code> provides, to find where there are any potential
+bottlenecks.</p>
+
+<p><code>PATH_TO_HIT=/users.json bundle exec derailed exec perf:stackprof</code></p>
+
+<p>Like before, we specify the <code>/users.json</code> endpoint, and run the
+<code>stackprof</code> task. And we get this output from <code>stackprof</code>. The methods on top
+are the ones that took the most CPU time: the logger, garbage collection. And
+then there&#39;s one that probably jumps out, which is <code>Time.parse</code>, which we&#39;re
+using in our controller here, and it&#39;s not exactly a very time consuming task to
+parse the time, but since it&#39;s hard-coded, we can use <code>Time.at</code>, which is
+slightly more performant than <code>Time.parse</code>, and it will accomplish the same
+result. So what we can do here is to check in a Rails console.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="mi">2</span><span class="o">.</span><span class="mi">4</span><span class="o">.</span><span class="mi">2</span> <span class="p">:</span><span class="mo">001</span> <span class="o">&gt;</span> <span class="no">Time</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s2">&quot;2018-02-12 12:00:00 UTC&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span>
+ <span class="o">=&gt;</span> <span class="mi">1518436800</span>
+</code></pre></div>
+<p>We can cast to integer, and we get the time that we can use for passing to
+<code>Time.at</code>, and then we should do the same for the second one.</p>
+
+<p>If you apply this kind of refactor in a real application, note that these should
+probably be constants and not just magic numbers. So now we can run the
+<code>stackprof</code> task again, and, yeah, <code>Time.parse</code> should now be gone. This doesn&#39;t
+necessarily mean that your iterations per second will be better, it&#39;s a good
+indicator, but you still need to double check. So we can check our IPS again,
+and, they&#39;re roughly the same as before, which makes sense since it&#39;s a very
+small modification, and also a very small app. What we can try and do is make
+other changes to our app, and one such change can be the optimization of this
+code here.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">users</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;send_reminder_at &gt; ?&quot;</span><span class="p">,</span> <span class="n">hour_12</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+  <span class="p">{</span> <span class="nb">id</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="ss">email</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="ss">full_name</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">full_name</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>This is actually instantiating one user per iteration, so for each user, we have
+to instantiate one object - one user object. So to save memory, we can introduce
+a gem, it&#39;s called <code>pluck_to_hash</code>. It acts like ActiveRecord&#39;s <code>pluck</code>, but it
+produces a hash like the JSON we&#39;re trying to produce. So let&#39;s try to install
+it, and see how our iterations per second change, if they change.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">users_scope</span> <span class="o">=</span> <span class="no">User</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;send_reminder_at &gt; ?&quot;</span><span class="p">,</span> <span class="n">hour_12</span><span class="p">)</span>
+                  <span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;created_at &lt; ?&quot;</span><span class="p">,</span> <span class="n">cut_off_date</span><span class="p">)</span>
+<span class="n">users</span> <span class="o">=</span> <span class="n">users_scope</span><span class="o">.</span><span class="n">pluck_to_hash</span><span class="p">(</span><span class="ss">:id</span><span class="p">,</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">:full_name</span><span class="p">)</span>
+</code></pre></div>
+<p>And now we can run our IPS task again, and measure the change. And yeah,
+that&#39;s a noticeable difference, there&#39;s about 60 more iterations per second.
+Like I mentioned before though, this is a small scale application, so you may
+have similar results, or you may not, it depends on your application. Since our
+Rails application is serving a JSON, another gem we can use is called
+<a href="https://github.com/ohler55/oj"><code>OJ</code></a>. It stands for &quot;optimized JSON&quot;, and it&#39;s
+a faster JSON parser than the default that Rails uses. We&#39;ll install it in our
+app by adding it to the <code>Gemfile</code>. And then we need to create an initializer,
+and we can check our updated IPS.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="c1"># config/initializers/oj.rb</span>
+
+<span class="no">Oj</span><span class="o">.</span><span class="n">optimize_rails</span>
+</code></pre></div>
+<p>And that&#39;s another performance improvement there, it almost - 400 iterations per
+second from 320 and 270 before that, that&#39;s almost 100%, you should keep in mind
+though that all of these improvements should be done with a good test suite,
+since you should make sure that these changes don&#39;t break compatibility with
+your current application. And again, these modifications probably don&#39;t make
+much sense in an application this small, but hopefully you can apply them to
+your larger Rails applications.</p>
+
+<p>And on a final note, you should benchmark, improve, rinse and repeat. I hope you
+found these techniques useful, let me know in the comments if you have doubts
+about any of them, and I will see you on the next episode.</p>
+]]></content:encoded>
+      <dc:date>2018-07-23T07:48:00-04:00</dc:date>
+    </item>
     <item>
       <title>Upgrade Rails from 5.0 to 5.1</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</link>
@@ -5829,6 +5953,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-07-18T06:05:00-04:00</dc:date>
+    <dc:date>2018-07-23T07:48:00-04:00</dc:date>
   </channel>
 </rss>
