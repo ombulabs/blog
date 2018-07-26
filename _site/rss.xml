@@ -467,6 +467,110 @@ Software</a>, written by the famous Gang of Four (GoF).</p>
       <dc:date>2018-06-22T07:10:00-04:00</dc:date>
     </item>
     <item>
+      <title>Upgrade Rails from 5.1 to 5.2</title>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</link>
+      <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
+
+This article will cover the most important aspects that you need to know to get
+your Ruby on Rails application from version 5.1 to 5.2.
+]]></description>
+      <pubDate>Thu, 21 Jun 2018 06:42:00 -0400</pubDate>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</guid>
+      <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
+
+<p>This article will cover the most important aspects that you need to know to get
+your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/5_1_release_notes.html">version 5.1</a> to <a href="http://guides.rubyonrails.org/5_2_release_notes.html">5.2</a>.</p>
+
+<!--more-->
+
+<ol>
+<li><a href="#ruby-version">Ruby version</a></li>
+<li><a href="#gems">Gems</a></li>
+<li><a href="#config-files">Config files</a></li>
+<li><a href="#application-code">Application code</a>
+
+<ol>
+<li><a href="#active-storage">Active Storage</a></li>
+<li><a href="#credentials">Credentials</a></li>
+</ol></li>
+<li><a href="#next-steps">Next steps</a></li>
+</ol>
+
+<h2 id="ruby-version">1. Ruby version</h2>
+
+<p>Like Rails 5.0 and 5.1, <a href="https://weblog.rubyonrails.org/2018/4/9/Rails-5-2-0-final/">Rails 5.2</a> requires at least <a href="https://www.ruby-lang.org/en/news/2015/04/13/ruby-2-2-2-released/">Ruby 2.2.2</a>.</p>
+
+<h2 id="gems">2. Gems</h2>
+
+<ul>
+<li><p>At the time of writing, the Rails 5.2 release is relatively recent, which
+means that some gems may still not be fully compatible, or contain deprecation
+warnings if you&#39;re not using their latest version. <a href="http://www.ready4rails.net">Ready4Rails</a>
+can help you check if the gem is compatible with Rails 5.0, but it may have
+annoying bugs/deprecation warnings on 5.2. Some (popular) gem examples are:</p></li>
+<li><p><a href="https://rubygems.org/gems/friendly_id">friendly_id</a> supports Rails 5.2 without deprecation warnings on the latest release, 5.2.4. <a href="https://github.com/norman/friendly_id/pull/849">[PR]</a></p></li>
+<li><p><a href="https://rubygems.org/gems/activeadmin">activeadmin</a> supports Rails 5.2 without deprecation warnings on the latest release, 1.3.0. <a href="https://github.com/activeadmin/activeadmin/pull/5343">[PR]</a></p></li>
+<li><p><a href="https://rubygems.org/gems/acts-as-taggable-on">acts-as-taggable-on</a> added deprecation-free Rails 5.2 without warnings on the latest release, 6.0.0. <a href="https://github.com/mbleigh/acts-as-taggable-on/pull/887">[PR]</a></p></li>
+<li><p><a href="https://rubygems.org/gems/awesome_nested_set">awesome_nested_set</a> supports Rails 5.2 without deprecation warnings on the latest release, 3.1.4. <a href="https://github.com/collectiveidea/awesome_nested_set/pull/383">[PR]</a></p></li>
+<li><p><a href="https://rubygems.org/gems/jbuilder/">jbuilder</a> supports Rails 5.2 <em>with</em> deprecation warnings on the latest release, 2.7.0. <a href="https://github.com/rails/jbuilder/pull/430">[PR] (not yet in a release)</a></p></li>
+</ul>
+
+<h2 id="config-files">3. Config files</h2>
+
+<p>Rails includes the <code>rails app:update</code> <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#the-update-task">task</a>.
+You can use this task as a guideline as explained thoroughly in
+<a href="http://thomasleecopeland.com/2015/08/06/running-rails-update.html">this post</a>.</p>
+
+<p>As an alternative, check out <a href="http://railsdiff.org/5.1.6/5.2.0">RailsDiff</a>,
+which provides an overview of the changes in a basic Rails app between 5.1.x and
+5.2.x (or any other source/target versions).</p>
+
+<h2 id="application-code">4. Application code</h2>
+
+<p>There were not too many deprecations between 5.1 and 5.2 compared to past
+releases (<a href="https://guides.rubyonrails.org/5_2_release_notes.html#upgrading-to-rails-5-2">see the full changelog here</a>).</p>
+
+<p>However, one major feature is the introduction of <a href="https://edgeguides.rubyonrails.org/active_storage_overview.html">ActiveStorage</a>.</p>
+
+<p><h3 id="active-storage">a. Active Storage</h2></p>
+
+<p>Active Storage is a replacement for <a href="https://rubygems.org/gems/paperclip/">Paperclip</a>
+and other gems, like <a href="https://github.com/shrinerb/shrine">Shrine</a>. Paperclip in
+particular <a href="https://github.com/thoughtbot/paperclip#deprecated">has been deprecated</a>.
+If you&#39;re using Paperclip, the maintainers wrote an in-depth migration guide
+which you can <a href="https://github.com/thoughtbot/paperclip/blob/master/MIGRATING.md">follow here</a>.</p>
+
+<p><h3 id="credentials">b. Credentials</h2></p>
+
+<p>Another major feature is the introduction of Credentials. It will eventually
+replace the current <code>config/secrets.yml</code>. Since there are also encrypted
+secrets (<code>config/secrets.yml.enc</code>), its intention is to clear up the confusion.</p>
+
+<p>Your private credentials will reside in <code>config/credentials.yml.enc</code>, a file
+that can be safely committed into your repository (its contents are encrypted).
+To un-encrypt them, there&#39;s a master key (<code>config/master.key</code>) which should
+<em>NOT</em> be in your repository (it&#39;s git-ignored by default if you start a new
+Rails 5.2 app). To edit the credentials, you don&#39;t directly access
+<code>credentials.yml.enc</code>, instead, there&#39;s a <code>bin/rails credentials:edit</code> task
+which opens an unencrypted version of the file (as long as you have the master
+key).</p>
+
+<p>One controversial aspect of it is the <a href="https://github.com/rails/rails/issues/31349">cross-environment credential sharing</a>,
+the credentials file will keep all of your development, test and production keys.
+For more information on Credentials and a work-around to this last issue, check
+out <a href="https://blog.eq8.eu/til/rails-52-credentials-tricks.html">this post</a>, where
+they use <code>Hash#dig</code> to configure per-environment credentials.</p>
+
+<h2 id="next-steps">5. Next steps</h2>
+
+<p>If you successfully followed all of these steps, you should now be running Rails 5.2! Do you have any other useful tips or recommendations? Did we miss anything? Share them with us in the comments section.</p>
+
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
+upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
+]]></content:encoded>
+      <dc:date>2018-06-21T06:42:00-04:00</dc:date>
+    </item>
+    <item>
       <title>Another successful Rails Girls event</title>
       <link>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</link>
       <description><![CDATA[Last month was the fifth edition of the Rails Girls Buenos Aires event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.
