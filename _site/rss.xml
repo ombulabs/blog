@@ -45,17 +45,18 @@ your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a hre
 
 <h2 id="gems">2. Gems</h2>
 
-<ul>
-<li><p>At the time of writing, the Rails 5.2 release is relatively recent, which
+<p>At the time of writing, the Rails 5.2 release is relatively recent, which
 means that some gems may still not be fully compatible, or contain deprecation
 warnings if you&#39;re not using their latest version. <a href="http://www.ready4rails.net">Ready4Rails</a>
 can help you check if the gem is compatible with Rails 5.0, but it may have
-annoying bugs/deprecation warnings on 5.2. Some (popular) gem examples are:</p></li>
-<li><p><a href="https://rubygems.org/gems/friendly_id">friendly_id</a> supports Rails 5.2 without deprecation warnings on the latest release, 5.2.4. <a href="https://github.com/norman/friendly_id/pull/849">[PR]</a></p></li>
-<li><p><a href="https://rubygems.org/gems/activeadmin">activeadmin</a> supports Rails 5.2 without deprecation warnings on the latest release, 1.3.0. <a href="https://github.com/activeadmin/activeadmin/pull/5343">[PR]</a></p></li>
-<li><p><a href="https://rubygems.org/gems/acts-as-taggable-on">acts-as-taggable-on</a> added deprecation-free Rails 5.2 without warnings on the latest release, 6.0.0. <a href="https://github.com/mbleigh/acts-as-taggable-on/pull/887">[PR]</a></p></li>
-<li><p><a href="https://rubygems.org/gems/awesome_nested_set">awesome_nested_set</a> supports Rails 5.2 without deprecation warnings on the latest release, 3.1.4. <a href="https://github.com/collectiveidea/awesome_nested_set/pull/383">[PR]</a></p></li>
-<li><p><a href="https://rubygems.org/gems/jbuilder/">jbuilder</a> supports Rails 5.2 <em>with</em> deprecation warnings on the latest release, 2.7.0. <a href="https://github.com/rails/jbuilder/pull/430">[PR] (not yet in a release)</a></p></li>
+annoying bugs/deprecation warnings on 5.2. Some (popular) gem examples are:</p>
+
+<ul>
+<li><a href="https://rubygems.org/gems/friendly_id">friendly_id</a> supports Rails 5.2 without deprecation warnings on the latest release, 5.2.4. <a href="https://github.com/norman/friendly_id/pull/849">[PR]</a></li>
+<li><a href="https://rubygems.org/gems/activeadmin">activeadmin</a> supports Rails 5.2 without deprecation warnings on the latest release, 1.3.0. <a href="https://github.com/activeadmin/activeadmin/pull/5343">[PR]</a></li>
+<li><a href="https://rubygems.org/gems/acts-as-taggable-on">acts-as-taggable-on</a> added deprecation-free Rails 5.2 without warnings on the latest release, 6.0.0. <a href="https://github.com/mbleigh/acts-as-taggable-on/pull/887">[PR]</a></li>
+<li><a href="https://rubygems.org/gems/awesome_nested_set">awesome_nested_set</a> supports Rails 5.2 without deprecation warnings on the latest release, 3.1.4. <a href="https://github.com/collectiveidea/awesome_nested_set/pull/383">[PR]</a></li>
+<li><a href="https://rubygems.org/gems/jbuilder/">jbuilder</a> supports Rails 5.2 <em>with</em> deprecation warnings on the latest release, 2.7.0. <a href="https://github.com/rails/jbuilder/pull/430">[PR] (not yet in a release)</a></li>
 </ul>
 
 <h2 id="config-files">3. Config files</h2>
@@ -108,8 +109,8 @@ they use <code>Hash#dig</code> to configure per-environment credentials.</p>
 
 <p>If you successfully followed all of these steps, you should now be running Rails 5.2! Do you have any other useful tips or recommendations? Did we miss anything? Share them with us in the comments section.</p>
 
-<p>If you don&#39;t have the time to upgrade your Rails app, check out our <a href="https://fastruby.io">Ruby on Rails
-upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
+<p>If you don&#39;t have the time to upgrade your Rails app, check out our Ruby on Rails
+upgrade service: <a href="https://fastruby.io">FastRuby.io</a></p>
 ]]></content:encoded>
       <dc:date>2018-07-26T12:42:00-04:00</dc:date>
     </item>

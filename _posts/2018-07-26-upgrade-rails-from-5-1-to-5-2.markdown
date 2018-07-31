@@ -27,7 +27,7 @@ Like Rails 5.0 and 5.1, [Rails 5.2](https://weblog.rubyonrails.org/2018/4/9/Rail
 
 <h2 id="gems">2. Gems</h2>
 
-- At the time of writing, the Rails 5.2 release is relatively recent, which
+At the time of writing, the Rails 5.2 release is relatively recent, which
 means that some gems may still not be fully compatible, or contain deprecation
 warnings if you're not using their latest version. [Ready4Rails](http://www.ready4rails.net)
 can help you check if the gem is compatible with Rails 5.0, but it may have
@@ -89,5 +89,5 @@ they use `Hash#dig` to configure per-environment credentials.
 
 If you successfully followed all of these steps, you should now be running Rails 5.2! Do you have any other useful tips or recommendations? Did we miss anything? Share them with us in the comments section.
 
-If you don't have the time to upgrade your Rails app, check out our [Ruby on Rails
-upgrade](https://fastruby.io) service: [FastRuby.io](https://fastruby.io)
+If you don't have the time to upgrade your Rails app, check out our Ruby on Rails
+upgrade service: [FastRuby.io](https://fastruby.io)
