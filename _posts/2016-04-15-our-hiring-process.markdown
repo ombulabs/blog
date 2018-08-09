@@ -31,15 +31,16 @@ If we like what we see, we will send you an email to coordinate an initial inter
 In this interview we will talk about your experience, what you are passionate about, what you are looking for, what we are looking for, and some concepts that are really important to us.
 
 In this stage we want to get a sense of what you are looking for and if we are a **good fit for you**.
-So is it time for you ask all your questions about the company and the position that you are applying for.
+
+Now is a good time to ask all your questions about the company and the position you're interviewing for.
 
 ## Technical Interview
 
 If we like what you said on the initial interview, we will send you an new invitation to talk with one of our senior developers.
 
-In this conversation we will talk about your work experience, what are the interesting things are you doing, what technologies are you familiarized. You will be asked some technical and random questions.
+In this conversation we will talk about your work experience, the interesting things you've worked on, the technologies you are interested in. We will ask you some technical and random questions.
 
-In this stage we want to get a sense of what is your knowledge level and see if it matches with what we are looking for.
+In this stage we want to get a sense of your level of knowledge and see if it matches what we are looking for.
 
 ## Paid Pair Programming Time
 
