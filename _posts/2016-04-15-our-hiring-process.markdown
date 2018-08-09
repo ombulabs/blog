@@ -24,15 +24,23 @@ I realize that there are great developers that have never made any open source c
 
 We want to see some recent code samples and evaluate you based on your work, not on your work history. **Experience** is important but **passion** is more important.
 
-## First Interview
+## Non Technical Interview
 
 If we like what we see, we will send you an email to coordinate an initial interview.
 
-In this interview we will talk about your experience, what you know, what you are passionate about, what you are looking for, what we are looking for, and some concepts that are really important to us.
+In this interview we will talk about your experience, what you are passionate about, what you are looking for, what we are looking for, and some concepts that are really important to us.
 
 In this stage we want to get a sense of what you are looking for and if we are a **good fit for you**.
 
-You can expect some technical questions and some random questions.
+Now is a good time to ask all your questions about the company and the position you're interviewing for.
+
+## Technical Interview
+
+If we like what you said on the initial interview, we will send you an new invitation to talk with one of our senior developers.
+
+In this conversation we will talk about your work experience, the interesting things you've worked on, the technologies you are interested in. We will ask you some technical and random questions.
+
+In this stage we want to get a sense of your level of knowledge and see if it matches what we are looking for.
 
 ## Paid Pair Programming Time
 
