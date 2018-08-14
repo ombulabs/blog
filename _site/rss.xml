@@ -8,7 +8,7 @@
     <title>OmbuLabs Blog</title>
     <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Thu, 26 Jul 2018 12:42:00 -0400</pubDate>
+    <pubDate>Tue, 14 Aug 2018 08:42:00 -0400</pubDate>
     <item>
       <title>Upgrade Rails from 5.1 to 5.2</title>
       <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</link>
@@ -17,7 +17,7 @@
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 5.1 to 5.2.
 ]]></description>
-      <pubDate>Thu, 26 Jul 2018 12:42:00 -0400</pubDate>
+      <pubDate>Tue, 14 Aug 2018 08:42:00 -0400</pubDate>
       <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
@@ -112,7 +112,7 @@ they use <code>Hash#dig</code> to configure per-environment credentials.</p>
 <p>If you don&#39;t have the time to upgrade your Rails app, check out our Ruby on Rails
 upgrade service: <a href="https://fastruby.io">FastRuby.io</a></p>
 ]]></content:encoded>
-      <dc:date>2018-07-26T12:42:00-04:00</dc:date>
+      <dc:date>2018-08-14T08:42:00-04:00</dc:date>
     </item>
     <item>
       <title>OmbuCast Episode 1 - Performance improvements using derailed_benchmarks</title>
@@ -6066,6 +6066,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-07-26T12:42:00-04:00</dc:date>
+    <dc:date>2018-08-14T08:42:00-04:00</dc:date>
   </channel>
 </rss>
