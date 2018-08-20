@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><title>How We Use Pivotal Tracker at Ombu Labs - The Lean Software Boutique</title><meta name="description" content="We tend to use GitHub for everything at Ombu Labs, but sometimes our clientsprefer Pivotal Tracker. We have no problemwith Pivotal Tracker, we just..." />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="How We Use Pivotal Tracker at Ombu Labs - The Lean Software Boutique">
+    <meta itemprop="description" content="We tend to use GitHub for everything at Ombu Labs, but sometimes our clients prefer Pivotal Tracker. We have no problem with Pivotal Tracker, we ju...">
+    <!-- meta itemprop="image" content="http://www.example.com/image.jpg" -->
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@OmbuLabs">
+
+    <meta name="twitter:title" content="How We Use Pivotal Tracker at Ombu Labs - The Lean Software Boutique">
+    <meta name="twitter:description" content="We tend to use GitHub for everything at Ombu Labs, but sometimes our clients prefer Pivotal Tracker. We have no problem with Pivotal Tracker, we ju...">
+    <meta name="twitter:creator" content="@OmbuLabs">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <!-- meta name="twitter:image:src" content="http://www.example.com/image.html" -->
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="How We Use Pivotal Tracker at Ombu Labs - The Lean Software Boutique" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html" />
+    <meta property="og:image" content="https://www.ombulabs.com/assets/isotype.png" />
+    <meta property="og:description" content="We tend to use GitHub for everything at Ombu Labs, but sometimes our clients prefer Pivotal Tracker. We have no problem with Pivotal Tracker, we just like to keep everything in one place, that is why we prefer GitHub for everything. There are many things that are easier with Pivotal..." />
+    <meta property="og:site_name" content="How we use Pivotal Tracker at Ombu Labs by @etagwerker" /><meta property="article:published_time" content="2018-08-20 07:10:00 -0400" />
+      <meta property="article:modified_time" content="2018-08-20 07:10:00 -0400" />
+      <meta property="article:section" content="We tend to use GitHub for everything at Ombu Labs, but sometimes our clients prefer Pivotal Tracker. We have no problem with Pivotal Tracker, we just like to keep everything in one place, that is why we prefer GitHub for everything. There are many things that are easier with Pivotal..." />
+      <meta property="article:tag" content="How We Use Pivotal Tracker at Ombu Labs - The Lean Software Boutique" /><meta property="fb:admins" content="10153304864537860" />
+
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/screen.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro" rel="stylesheet" type="text/css">
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/blog/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/ombu_blog/application.css" />
+</head>
+<body class="home-template">
+  <header class="main-header no-cover">
+      <nav class="main-nav overlay clearfix"><a class="back-button icon-arrow-left"
+                 href="/blog">Home</a>
+          <a class="subscribe-button icon-feed" href="/blog/rss.xml">Subscribe</a>
+      </nav>
+      <div class="vertical">
+          <div class="main-header-content inner">
+              <h1 class="page-title logo"><a href="/blog">OmbuLabs Blog</a></h1>
+              <h2 class="page-description slogan">The Lean Software Boutique</h2>
+          </div>
+      </div>
+      <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+  </header>
+    <div id="wrapper">
+      <main class="content post-layout" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">How we use Pivotal Tracker at Ombu Labs</h1>
+            <section class="post-meta"><img class="author-thumb" src="//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50" alt="Ernesto Tagwerker" nopin="nopin" /><a href="/blog/authors/etagwerker"
+     title="Articles by Ernesto Tagwerker">
+     Ernesto Tagwerker
+  </a>on
+    
+      <a href="/blog/tags/agile"
+         title="Articles about Agile">Agile</a>,
+      <a href="/blog/tags/pivotal-tracker"
+         title="Articles about Pivotal Tracker">Pivotal Tracker</a><time class="post-date" datetime="2018-08-20">
+  20 Aug 2018
+</time>
+</section>
+        </header>
+
+        <section class="post-content">
+          <p>We tend to use <a href="https://github.com">GitHub</a> for everything at <a href="https://www.ombulabs.com">Ombu Labs</a>, but sometimes our clients
+prefer <a href="https://www.pivotaltracker.com">Pivotal Tracker</a>. We have no problem
+with Pivotal Tracker, we just like to keep everything in one place, that is why
+we prefer GitHub for everything.</p>
+
+<p>There are many things that are easier with Pivotal Tracker, as long as you are
+using it the right way. Some of its features are very useful for agile teams like
+ours. This is how we like to use it to ship value with every sprint and keep
+track of our <a href="http://wiki.c2.com/?ProjectVelocity">velocity</a>.</p>
+
+<!--more-->
+
+<h2>Step 1: Filing user stories</h2>
+
+<p>Every thing has to be tracked according to the type of story. Most of the user
+stories are either <em>features</em> or <em>bugs</em>, although sometimes there will be <em>chores</em> to be
+done. If a <em>chore</em> reoccurs many times, then it&#39;s probably time to write a <em>feature</em>
+to reduce the time spent completing that <em>chore</em>.</p>
+
+<h2>Step 2: Describing user stories</h2>
+
+<p>Every <a href="https://www.mountaingoatsoftware.com/agile/user-stories">user story</a> should
+be a simple description of a feature:</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>As a &lt; type of user &gt;, I want &lt; some goal &gt; so that &lt; some business goal &gt;.
+</code></pre></div>
+
+<p>The description of the user story should be very clear about the expected outcome.
+This will explain what is the exit criteria for the story. It is very helpful
+for designers and developers to understand what needs to happen for a user to
+be happy with the feature.</p>
+
+<p>This is an example from one of our recent projects (<a href="https://audit.fastruby.io/">https://audit.fastruby.io/</a>):</p>
+
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>As a user I want to submit my Gemfile.lock
+so that I can see an audit analysis of its vulnerabilities.
+</code></pre></div>
+
+<p><img src="/blog/assets/images/user-story-audit-fastruby-io.png" alt="Example of a simple user story" class="medium-img"></p>
+
+<p>If the client requested this feature, you should add them as the <em>Requester</em> of
+the story. If it was you, then you can add yourself to it.</p>
+
+<h2>Step 3: Estimating user stories</h2>
+
+<p>Before you start working on a user story, you will need to estimate it. You
+can estimate it with 0, 1, 2, 3, 5, or 8 points. We prefer to use a <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci</a>
+sequence to estimate stories.</p>
+
+<p>If a story is more complicated than 8 points, you should break it down in two or
+more stories. When you estimate, you must remember that you are <a href="https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points">estimating
+complexity</a>,
+<strong>not hours</strong>. Different developers might take different amount of time
+in completing that story, so <strong>we shouldn&#39;t estimate hours</strong>.</p>
+
+<p>For the example we mentioned before, we estimate that that story has 3 points of
+complexity.</p>
+
+<p><img src="/blog/assets/images/user-story-estimation-fibonacci.png" alt="State of a simple user story before you estimate it" class="medium-img"></p>
+
+<h2>Step 4: Starting and finishing user stories</h2>
+
+<p>You should always pick the first unassigned story from the top of the backlog.
+If the first story is assigned to someone, you may check with them if they need
+your help with it.</p>
+
+<p><img src="/blog/assets/images/user-story-start.png" alt="State of a user story after you have estimated it" class="medium-img"></p>
+
+<p>Once you start a story, the clock starts ticking on that story. You should try
+to finish it as soon as possible.</p>
+
+<p>When the time comes and you&#39;re done working on the code and tests for that story,
+you will submit a pull request and attach it to the user story. At that point,
+you can click the <em>Finish</em> button.</p>
+
+<p><img src="/blog/assets/images/user-story-deliver.png" alt="State of a user story after you finish it" class="medium-img"></p>
+
+<h2>Step 5: Delivering a user story</h2>
+
+<p>When your pull request has been approved by a code reviewer, you or the reviewer
+can merge this pull request and deploy it. If the code doesn&#39;t get deployed
+automatically (<strong>it should!</strong>), you should deploy it to staging so that the
+<em>Requester</em> can accept or reject the implementation.</p>
+
+<p>Before you click <em>Deliver</em> you should perform a quick <a href="http://wiki.c2.com/?SmokeTest">smoke test</a> to make sure
+that your changes were successfully deployed to the staging environment.</p>
+
+<p>After that, you can go ahead and <em>Deliver</em> the user story. This will move the
+story to an Accept/Reject state:</p>
+
+<p><img src="/blog/assets/images/user-story-accept-reject.png" alt="State of a user story after you finish it" class="medium-img"></p>
+
+<h2>Step 6: Accepting or rejecting a user story</h2>
+
+<p>If the <em>Requester</em> approves the story, they will mark it as accepted. No more
+work is necessary in this user story. Great!</p>
+
+<p>If they reject the story, they should provide a detailed description about the
+rejection. If you were the <em>Requester</em> you can ask yourself this question to
+describe the problem/s:</p>
+
+<ul>
+<li>What did you expect and what did actually happen?</li>
+<li>What cases worked and what cases didn&#39;t work as expected?</li>
+<li>Was the interface clear enough to understand what was going on?</li>
+<li>Did you test many cases and it failed with an edge case?</li>
+</ul>
+
+<p><img src="/blog/assets/images/user-story-rejecting-story.png" alt="State of a user story after you deliver it" class="medium-img"></p>
+
+<p>If possible, describe the exact scenario and steps that you took to find a
+problem with the user story. If you think that adding a screenshot will help,
+you should add it as a comment after you reject the story.</p>
+
+<h2>Step 7: Restarting a rejected user story</h2>
+
+<p>There will be times when your implementation is not good enough. It may fall
+short in terms of usability, performance, or behavior. The good news is that
+our process works. Someone verified a feature you implemented and found issues
+with the implementation.</p>
+
+<p>When the time comes, you will find a user story in this state:</p>
+
+<p><img src="/blog/assets/images/user-story-restart.png" alt="State of a user story after someone rejects it" class="medium-img"></p>
+
+<p>You can simply restart the user story and resume working on it. If you need to
+submit another pull request to patch the feature, you can continue with step 4.</p>
+
+<h2>Conclusion</h2>
+
+<p>Pivotal Tracker provides a great way to track velocity and they recently launched
+an integration with Github which improves traceability from feature to
+implementation.</p>
+
+<p>It is not our first choice when it comes to project management tools, but we
+can adapt to our client&#39;s tools and thrive using it.</p>
+
+        </section><footer class="post-footer"><figure class="author-image"><a class="img" href="" style="background-image: url(//2.gravatar.com/avatar/9299203e7e9b9ae35e39eb66f3155f15?s=50)">
+                <span class="hidden">Ernesto Tagwerker's Picture</span></a></figure>
+            <section class="author">
+              <h4> Ernesto Tagwerker </h4>
+              <p>
+                We are the Lean Software Boutique. Check us out at <a href="https://www.ombulabs.com">www.ombulabs.com</a>
+              </p>
+            </section><!-- Share links section --><section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=How we use Pivotal Tracker at Ombu Labs&amp;url=https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+<!-- Disqus comments --><section class="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+
+        var disqus_shortname = 'ombulabs';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+</footer>
+
+    </article><footer class="site-footer clearfix">
+  <section class="copyright">
+    <figure>
+      <img src="/blog/assets/images/creative-commons.png"
+           alt="Creative Commons Attribution-NonCommercial">
+      <figcaption>
+        <a href="http://creativecommons.org/licenses/by-nc/3.0/"
+           target="_blank"
+           title="Creative Commons Attribution-NonCommercial">Creative Commons Attribution-NonCommercial</a>
+      </figcaption>
+    </figure>
+  </section>
+  <section class="poweredby">Made with love using <a href="https://github.com/jekyll/jekyll" target="_blank">Jekyll</a> and
+    <a target="_blank" href="http://github.com/rosario/kasper">Kasper theme</a>
+  </section>
+</footer>
+</main>
+<div id="sidebar">
+  <h2 class="category-name">Listing all tags</h2><h3 class="tag-name">
+          <a href="/blog/tags/"
+             title="Articles about "></a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/agile"
+             title="Articles about Agile">Agile</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/aws"
+             title="Articles about Aws">Aws</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/backbone"
+             title="Articles about Backbone">Backbone</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/benchmark"
+             title="Articles about Benchmark">Benchmark</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/best-practices"
+             title="Articles about Best Practices">Best Practices</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/bugs"
+             title="Articles about Bugs">Bugs</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/carrierwave"
+             title="Articles about Carrierwave">Carrierwave</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/case-study"
+             title="Articles about Case Study">Case Study</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/circle-ci"
+             title="Articles about Circle Ci">Circle Ci</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/code-refactor"
+             title="Articles about Code Refactor">Code Refactor</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/continuous-integration"
+             title="Articles about Continuous Integration">Continuous Integration</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/conventions"
+             title="Articles about Conventions">Conventions</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/crowdsourcing"
+             title="Articles about Crowdsourcing">Crowdsourcing</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/design"
+             title="Articles about Design">Design</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/docker"
+             title="Articles about Docker">Docker</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/dry"
+             title="Articles about Dry">Dry</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/git"
+             title="Articles about Git">Git</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/github"
+             title="Articles about Github">Github</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/hubot"
+             title="Articles about Hubot">Hubot</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/imap"
+             title="Articles about Imap">Imap</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/jobs"
+             title="Articles about Jobs">Jobs</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/lean-startup"
+             title="Articles about Lean Startup">Lean Startup</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/learning"
+             title="Articles about Learning">Learning</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/linux"
+             title="Articles about Linux">Linux</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/maintenance"
+             title="Articles about Maintenance">Maintenance</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/monit"
+             title="Articles about Monit">Monit</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/mvp"
+             title="Articles about Mvp">Mvp</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/open-source"
+             title="Articles about Open Source">Open Source</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/pair-programming"
+             title="Articles about Pair Programming">Pair Programming</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/performance"
+             title="Articles about Performance">Performance</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/pivotal-tracker"
+             title="Articles about Pivotal Tracker">Pivotal Tracker</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/protractor"
+             title="Articles about Protractor">Protractor</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/rails"
+             title="Articles about Rails">Rails</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/react"
+             title="Articles about React">React</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/rspec"
+             title="Articles about Rspec">Rspec</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/ruby"
+             title="Articles about Ruby">Ruby</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/rubygems"
+             title="Articles about Rubygems">Rubygems</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/s3"
+             title="Articles about S3">S3</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/security"
+             title="Articles about Security">Security</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/sessions"
+             title="Articles about Sessions">Sessions</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/slack"
+             title="Articles about Slack">Slack</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/software-development"
+             title="Articles about Software Development">Software Development</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/software-quality"
+             title="Articles about Software Quality">Software Quality</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/team"
+             title="Articles about Team">Team</a>
+        </h3><h3 class="tag-name">
+          <a href="/blog/tags/upgrades"
+             title="Articles about Upgrades">Upgrades</a>
+        </h3></div>
+</div>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.1.0/jquery.fitvids.min.js"></script>
+    <script type="text/javascript" src="/blog/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17795190-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+</body>
+</html>
