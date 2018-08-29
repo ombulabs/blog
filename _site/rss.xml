@@ -8,7 +8,168 @@
     <title>OmbuLabs Blog</title>
     <link>http://localhost:4000</link>
     <description>The Lean Software Boutique</description>
-    <pubDate>Mon, 20 Aug 2018 07:10:00 -0400</pubDate>
+    <pubDate>Wed, 29 Aug 2018 07:10:00 -0400</pubDate>
+    <item>
+      <title>How we use Pivotal Tracker at Ombu Labs</title>
+      <link>http://localhost:4000/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</link>
+      <description><![CDATA[We tend to use GitHub for everything at Ombu Labs, but sometimes our clients
+prefer Pivotal Tracker. We have no problem
+with Pivotal Tracker, we just like to keep everything in one place, that is why
+we prefer GitHub for everything.
+
+There are many things that are easier with Pivotal Tracker, as long as you are
+using it the right way. Some of its features are very useful for agile teams like
+ours. This is how we like to use it to ship value with every sprint and keep
+track of our velocity.
+]]></description>
+      <pubDate>Wed, 29 Aug 2018 07:10:00 -0400</pubDate>
+      <guid>http://localhost:4000/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</guid>
+      <content:encoded><![CDATA[<p>We tend to use <a href="https://github.com">GitHub</a> for everything at <a href="https://www.ombulabs.com">Ombu Labs</a>, but sometimes our clients
+prefer <a href="https://www.pivotaltracker.com">Pivotal Tracker</a>. We have no problem
+with Pivotal Tracker, we just like to keep everything in one place, that is why
+we prefer GitHub for everything.</p>
+
+<p>There are many things that are easier with Pivotal Tracker, as long as you are
+using it the right way. Some of its features are very useful for agile teams like
+ours. This is how we like to use it to ship value with every sprint and keep
+track of our <a href="http://wiki.c2.com/?ProjectVelocity">velocity</a>.</p>
+
+<!--more-->
+
+<h2>Step 1: Filing user stories</h2>
+
+<p>Every single thing has to be tracked according to the type of story. Most of the user
+stories are either <em>features</em> or <em>bugs</em>, although sometimes there will be <em>chores</em> to be
+done. If a <em>chore</em> reoccurs many times, then it&#39;s probably time to write a <em>feature</em>
+to reduce the time spent completing that <em>chore</em>.</p>
+
+<h2>Step 2: Describing user stories</h2>
+
+<p>Every <a href="https://www.mountaingoatsoftware.com/agile/user-stories">user story</a> should
+be a simple description of a feature:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>As a &lt; type of user &gt;, I want &lt; some goal &gt; so that &lt; some business goal &gt;.
+</code></pre></div>
+<p>The description of the user story should be very clear about the expected outcome.
+This will explain what is the exit criteria for the story. It is very helpful
+for designers and developers to understand what needs to happen for a user to
+be happy with the feature.</p>
+
+<p>This is an example from one of our recent projects (<a href="https://audit.fastruby.io/">https://audit.fastruby.io/</a>):</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>As a user I want to submit my Gemfile.lock
+so that I can see an audit analysis of its vulnerabilities.
+</code></pre></div>
+<p><img src="/blog/assets/images/user-story-audit-fastruby-io.png" alt="Example of a simple user story" class="medium-img"></p>
+
+<p>If the client requested this feature, you should add them as the <em>Requester</em> of
+the story. If it was you, then you can add yourself to it.</p>
+
+<h2>Step 3: Estimating user stories</h2>
+
+<p>Before you start working on a user story, you will need to estimate it. You
+can estimate it with 0, 1, 2, 3, 5, or 8 points. We prefer to use a <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci</a>
+sequence to estimate stories.</p>
+
+<p>If a story is more complicated than 8 points, you should break it down in two or
+more stories. When you estimate, you must remember that you are <a href="https://rubygarage.org/blog/3-reasons-to-estimate-with-story-points">estimating
+complexity</a>,
+<strong>not hours</strong>. Different developers might take different amount of time
+in completing that story, so <strong>we shouldn&#39;t estimate hours</strong>.</p>
+
+<p>For the example we mentioned before, we estimate that that story has 3 points of
+complexity.</p>
+
+<p><img src="/blog/assets/images/user-story-estimation-fibonacci.png" alt="State of a simple user story before you estimate it" class="medium-img"></p>
+
+<p>Story points are not hours. Given a user story that has 3 story points of complexity,
+a Senior Developer might take 2 hours shipping it, a Junior Developer might take
+5 hours shipping it.</p>
+
+<h2>Step 4: Starting and finishing user stories</h2>
+
+<p>You should always pick the first unassigned story from the top of the backlog.
+If the first story is assigned to someone, you may check with them if they need
+your help with it.</p>
+
+<p><img src="/blog/assets/images/user-story-start.png" alt="State of a user story after you have estimated it" class="medium-img"></p>
+
+<p>Once you start a story, the clock starts ticking on that story. You should try
+to finish it as soon as possible.</p>
+
+<p>When the time comes and you&#39;re done working on the code and tests for that story,
+you will submit a pull request and attach it to the user story. At that point,
+you can click the <em>Finish</em> button.</p>
+
+<p><img src="/blog/assets/images/user-story-deliver.png" alt="State of a user story after you finish it" class="medium-img"></p>
+
+<h2>Step 5: Delivering a user story</h2>
+
+<p>When your pull request has been approved by a code reviewer, you or the reviewer
+can merge this pull request and deploy it. If the code doesn&#39;t get deployed
+automatically (<strong>it should!</strong>), you should deploy it to staging so that the
+<em>Requester</em> can accept or reject the implementation.</p>
+
+<p>Before you click <em>Deliver</em> you should perform a quick <a href="http://wiki.c2.com/?SmokeTest">smoke test</a> to make sure
+that your changes were successfully deployed to the staging environment.</p>
+
+<p>After that, you can go ahead and <em>Deliver</em> the user story. This will move the
+story to an Accept/Reject state:</p>
+
+<p><img src="/blog/assets/images/user-story-accept-reject.png" alt="State of a user story after you finish it" class="medium-img"></p>
+
+<h2>Step 6: Accepting or rejecting a user story</h2>
+
+<p>If the <em>requester</em> approves the story, they will mark it as accepted. No more
+work is necessary in this user story. Great!</p>
+
+<p>If they reject the story, they should provide a detailed description about the
+rejection. If you were the <em>requester</em> you can ask yourself this question to
+describe the problem/s:</p>
+
+<ul>
+<li>What did you expect and what did actually happen?</li>
+<li>What cases worked and what cases didn&#39;t work as expected?</li>
+<li>Was the interface clear enough to understand what was going on?</li>
+<li>Did you test many cases and it failed with an edge case?</li>
+</ul>
+
+<p><img src="/blog/assets/images/user-story-rejecting-story.png" alt="State of a user story after you deliver it" class="medium-img"></p>
+
+<p>If possible, describe the exact scenario and steps that you took to find a
+problem with the user story. If you think that adding a screenshot will help,
+you should add it as a comment after you reject the story.</p>
+
+<h2>Step 7: Restarting a rejected user story</h2>
+
+<p>There will be times when your implementation is not good enough. It may fall
+short in terms of usability, performance, or behavior. The good news is that
+our process works. Someone verified a feature you implemented and found issues
+with the implementation.</p>
+
+<p>When the time comes, you will find a user story in this state:</p>
+
+<p><img src="/blog/assets/images/user-story-restart.png" alt="State of a user story after someone rejects it" class="medium-img"></p>
+
+<p>You can simply restart the user story and resume working on it. If you need to
+submit another pull request to patch the feature, you can continue with step 4.</p>
+
+<h2>Conclusion</h2>
+
+<p><a href="https://www.pivotaltracker.com/">Pivotal Tracker</a> provides a great way to track team velocity. This helps in determining when a big feature will be shipped. As much as we like
+to use <a href="https://github.com/">GitHub</a> for everything, Pivotal Tracker integrates nicely with them (they recently launched this integration!) which improves traceability from feature to
+implementation.</p>
+
+<p>It is not our first choice when it comes to project management tools, but we
+can adapt to our client&#39;s tools and thrive using it. Pivotal Tracker is more
+advanced than GitHub Projects and it provides great features for managing your
+user stories, backlog, icebox, and team velocity.</p>
+
+<p>At <a href="https://www.ombulabs.com">Ombu Labs</a> we like to invite all stakeholders to our project management
+tools. I like how Pivotal Tracker makes it easy to communicate that some stories
+will be delivered in this sprint and some will have to wait until the next sprint.
+It is a great way to manage expectations.</p>
+]]></content:encoded>
+      <dc:date>2018-08-29T07:10:00-04:00</dc:date>
+    </item>
     <item>
       <title>How we use Pivotal Tracker at Ombu Labs</title>
       <link>http://localhost:4000/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</link>
@@ -6216,6 +6377,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-    <dc:date>2018-08-20T07:10:00-04:00</dc:date>
+    <dc:date>2018-08-29T07:10:00-04:00</dc:date>
   </channel>
 </rss>
