@@ -6,12 +6,12 @@
   xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
   <channel>
     <title>OmbuLabs Blog</title>
-    <link>http://localhost:4000</link>
+    <link>https://www.ombulabs.com/blog</link>
     <description>The Lean Software Boutique</description>
     <pubDate>Thu, 06 Sep 2018 07:10:00 -0400</pubDate>
     <item>
       <title>How we use Pivotal Tracker at Ombu Labs</title>
-      <link>http://localhost:4000/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</link>
+      <link>https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</link>
       <description><![CDATA[We tend to use GitHub for everything at Ombu Labs, but sometimes our clients
 prefer Pivotal Tracker. We have no problem
 with Pivotal Tracker, we just like to keep everything in one place, that is why
@@ -23,7 +23,7 @@ ours. This is how we like to use it to ship value with every sprint and keep
 track of our velocity.
 ]]></description>
       <pubDate>Thu, 06 Sep 2018 07:10:00 -0400</pubDate>
-      <guid>http://localhost:4000/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</guid>
+      <guid>https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html</guid>
       <content:encoded><![CDATA[<p>We tend to use <a href="https://github.com">GitHub</a> for everything at <a href="https://www.ombulabs.com">Ombu Labs</a>, but sometimes our clients
 prefer <a href="https://www.pivotaltracker.com">Pivotal Tracker</a>. We have no problem
 with Pivotal Tracker, we just like to keep everything in one place, that is why
@@ -172,14 +172,14 @@ It is a great way to manage expectations.</p>
     </item>
     <item>
       <title>Upgrade Rails from 5.1 to 5.2</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 5.1 to 5.2.
 ]]></description>
       <pubDate>Tue, 14 Aug 2018 08:42:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>This article will cover the most important aspects that you need to know to get
@@ -277,7 +277,7 @@ upgrade service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>OmbuCast Episode 1 - Performance improvements using derailed_benchmarks</title>
-      <link>http://localhost:4000/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</link>
+      <link>https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</link>
       <description><![CDATA[
 
 Transcript:
@@ -289,7 +289,7 @@ and how you can use it to benchmark your Rails application and find, and
 hopefully fix bottlenecks in your code.
 ]]></description>
       <pubDate>Mon, 23 Jul 2018 07:48:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html</guid>
       <content:encoded><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/iwNWCizFlPM" frameborder="0" allowfullscreen></iframe>
 
 <p><strong>Transcript:</strong></p>
@@ -401,14 +401,14 @@ about any of them, and I will see you on the next episode.</p>
     </item>
     <item>
       <title>Upgrade Rails from 5.0 to 5.1</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 5.0 to 5.1.
 ]]></description>
       <pubDate>Wed, 18 Jul 2018 06:05:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-5-0-to-5-1.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>This article will cover the most important aspects that you need to know to get
@@ -537,7 +537,7 @@ upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>Refactoring: Clean your ruby code with design patterns</title>
-      <link>http://localhost:4000/code-refactor/refactoring-with-design-patterns.html</link>
+      <link>https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html</link>
       <description><![CDATA[Code refactoring can be defined as “the process of introducing small and incremental changes to leave the code in a better state than it was.”. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected.
 
 One of the biggest challenges as a Ruby on Rails Developer is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.
@@ -547,7 +547,7 @@ There are several techniques that a developer can follow to improve their code b
 Another technique developers try to follow is to apply good design patterns to their code. In this post we&#39;ll try to go over some of the documented design patterns and how you can apply them to your Ruby code.
 ]]></description>
       <pubDate>Thu, 28 Jun 2018 08:00:00 -0400</pubDate>
-      <guid>http://localhost:4000/code-refactor/refactoring-with-design-patterns.html</guid>
+      <guid>https://www.ombulabs.com/blog/code-refactor/refactoring-with-design-patterns.html</guid>
       <content:encoded><![CDATA[<p>Code refactoring can be defined as <strong><em>“the process of introducing small and incremental changes to leave the code in a better state than it was.”</em></strong>. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected.</p>
 
 <p>One of the biggest challenges as a Ruby on Rails Developer is to keep your code clean, simple and easy to maintain and that is why we are always refactoring our code.</p>
@@ -717,11 +717,11 @@ Software</a>, written by the famous Gang of Four (GoF).</p>
     </item>
     <item>
       <title>Announcing Gemfile.lock Audit Tool</title>
-      <link>http://localhost:4000/rails/ruby/rubygems/announcing-audit-tool.html</link>
+      <link>https://www.ombulabs.com/blog/rails/ruby/rubygems/announcing-audit-tool.html</link>
       <description><![CDATA[Today we are happy to announce the launch of our new microsite: Gemfile.lock Audit Tool - a tool created to allow users to check their Gemfile.lock for vulnerabilities in a quick and secure manner.
 ]]></description>
       <pubDate>Fri, 22 Jun 2018 07:10:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/ruby/rubygems/announcing-audit-tool.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/ruby/rubygems/announcing-audit-tool.html</guid>
       <content:encoded><![CDATA[<p>Today we are happy to announce the launch of our new microsite: <a href="https://audit.fastruby.io">Gemfile.lock Audit Tool</a> - a tool created to allow users to check their Gemfile.lock for vulnerabilities in a quick and secure manner.</p>
 
 <!--more-->
@@ -734,11 +734,11 @@ Software</a>, written by the famous Gang of Four (GoF).</p>
     </item>
     <item>
       <title>Another successful Rails Girls event</title>
-      <link>http://localhost:4000/learning/rails/another-successful-rails-girls-event.html</link>
+      <link>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</link>
       <description><![CDATA[Last month was the fifth edition of the Rails Girls Buenos Aires event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.
 ]]></description>
       <pubDate>Mon, 18 Jun 2018 10:00:00 -0400</pubDate>
-      <guid>http://localhost:4000/learning/rails/another-successful-rails-girls-event.html</guid>
+      <guid>https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html</guid>
       <content:encoded><![CDATA[<p>Last month was the fifth edition of the <a href="http://railsgirls.com/buenosaires-en.html">Rails Girls Buenos Aires</a> event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.</p>
 
 <!--more-->
@@ -769,14 +769,14 @@ Software</a>, written by the famous Gang of Four (GoF).</p>
     </item>
     <item>
       <title>Upgrade Rails from 4.2 to 5.0</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 4.2 to 5.0.
 ]]></description>
       <pubDate>Tue, 06 Mar 2018 05:53:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-2-to-5-0.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>This article will cover the most important aspects that you need to know to get
@@ -943,11 +943,11 @@ upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>Upgrading a Huge Monolith from Rails 4.0 to Rails 5.1</title>
-      <link>http://localhost:4000/rails/upgrades/case-study/upgrading-a-monolith.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/case-study/upgrading-a-monolith.html</link>
       <description><![CDATA[We recently collaborated with Power Home Remodeling on a Rails upgrade for their self-described “monolith CRM/ERP application” and were able to speak to them about their experience with Ombu Labs.
 ]]></description>
       <pubDate>Fri, 16 Feb 2018 00:00:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/case-study/upgrading-a-monolith.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/case-study/upgrading-a-monolith.html</guid>
       <content:encoded><![CDATA[<p>We recently collaborated with <a href="https://powerhrg.com">Power Home Remodeling</a> on a <a href="https://fastruby.io">Rails upgrade</a> for their self-described “monolith CRM/ERP application” and were able to speak to them about their experience with <a href="https://www.ombulabs.com">Ombu Labs</a>.</p>
 
 <!--more-->
@@ -968,7 +968,7 @@ upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>Cleaning up: ActiveRecord::Dirty 5.2 API Changes</title>
-      <link>http://localhost:4000/rails/upgrades/active-record-5-1-api-changes.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/active-record-5-1-api-changes.html</link>
       <description><![CDATA[With the release of Rails 5.2 just around the corner
 (Rails 5.2 RC1 is already available!),
 we will be taking a look at some of the upcoming changes to the ActiveRecord::Dirty
@@ -980,7 +980,7 @@ To better understand these modifications, we&#39;ll take a look at sample projec
 in Rails 5.1 and Rails 5.2.
 ]]></description>
       <pubDate>Wed, 14 Feb 2018 05:20:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/active-record-5-1-api-changes.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/active-record-5-1-api-changes.html</guid>
       <content:encoded><![CDATA[<p>With the release of Rails 5.2 just around the corner
 (<a href="https://rubygems.org/gems/rails/versions/5.2.0.rc1">Rails 5.2 RC1</a> is already available!),
 we will be taking a look at some of the upcoming changes to the <code>ActiveRecord::Dirty</code>
@@ -1127,14 +1127,14 @@ us at <a href="https://fastruby.io">FastRuby.io</a> and we can help you!</p>
     </item>
     <item>
       <title>Upgrade Rails from 4.1 to 4.2</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 4.1 to 4.2.
 ]]></description>
       <pubDate>Fri, 02 Feb 2018 06:32:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-1-to-4-2.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>This article will cover the most important aspects that you need to know to get
@@ -1288,11 +1288,11 @@ upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>Trial and Error with Ruby Koans</title>
-      <link>http://localhost:4000/ruby/learning/trial-and-error-with-ruby-koans.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/learning/trial-and-error-with-ruby-koans.html</link>
       <description><![CDATA[After reading introductory primers and watching instructional videos for beginners learning Ruby, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing Ruby Koans, a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion.
 ]]></description>
       <pubDate>Wed, 24 Jan 2018 00:00:00 -0500</pubDate>
-      <guid>http://localhost:4000/ruby/learning/trial-and-error-with-ruby-koans.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/learning/trial-and-error-with-ruby-koans.html</guid>
       <content:encoded><![CDATA[<p>After reading introductory primers and watching instructional videos for beginners learning <a href="https://www.ruby-lang.org/en">Ruby</a>, I needed a program that would allow me to test out Ruby concepts for myself. I began practicing <a href="http://rubykoans.com"><strong>Ruby Koans</strong></a>, <strong>a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion</strong>.</p>
 
 <!--more-->
@@ -1343,14 +1343,14 @@ end
     </item>
     <item>
       <title>Upgrade Rails from 4.0 to 4.1</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 This article will cover the most important aspects that you need to know to get
 your Ruby on Rails application from version 4.0 to 4.1.
 ]]></description>
       <pubDate>Wed, 06 Dec 2017 11:31:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-4-0-to-4-1.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>This article will cover the most important aspects that you need to know to get
@@ -1562,11 +1562,11 @@ upgrade</a> service: <a href="https://fastruby.io">FastRuby.io</a></p>
     </item>
     <item>
       <title>Setup Monit notifications on Slack</title>
-      <link>http://localhost:4000/monit/slack/setup-monit-notifications-on-slack.html</link>
+      <link>https://www.ombulabs.com/blog/monit/slack/setup-monit-notifications-on-slack.html</link>
       <description><![CDATA[Monit is a powerful tool for monitoring processes on Unix systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, Slack. This article will show you exactly how to do that.
 ]]></description>
       <pubDate>Wed, 15 Nov 2017 04:45:00 -0500</pubDate>
-      <guid>http://localhost:4000/monit/slack/setup-monit-notifications-on-slack.html</guid>
+      <guid>https://www.ombulabs.com/blog/monit/slack/setup-monit-notifications-on-slack.html</guid>
       <content:encoded><![CDATA[<p><a href="https://mmonit.com/monit/">Monit</a> is a powerful tool for monitoring processes on <a href="https://en.wikipedia.org/wiki/Unix">Unix</a> systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, <a href="https://slack.com/">Slack</a>. This article will show you exactly how to do that.</p>
 
 <!--more-->
@@ -1654,7 +1654,7 @@ $ kill -9 23073
     </item>
     <item>
       <title>Upgrade Rails from 3.2 to 4.0</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</link>
       <description><![CDATA[This article is part of our Upgrade Rails series. To see more of them, click here.
 
 A previous post
@@ -1665,7 +1665,7 @@ can take anywhere from one week for a single developer, to a few months for two
 developers.
 ]]></description>
       <pubDate>Wed, 08 Nov 2017 07:42:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-rails-from-3-2-to-4-0.html</guid>
       <content:encoded><![CDATA[<p><em>This article is part of our Upgrade Rails series. To see more of them, <a href="https://www.ombulabs.com/blog/tags/upgrades">click here</a></em>.</p>
 
 <p>A <a href="https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html">previous post</a>
@@ -1867,11 +1867,11 @@ free to tell us how your upgrade went.</p>
     </item>
     <item>
       <title>Upgrade Rails from 3.1 to 3.2</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-to-rails-3-2.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-2.html</link>
       <description><![CDATA[This is the third article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.1 to 3.2.
 ]]></description>
       <pubDate>Tue, 07 Nov 2017 04:30:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-to-rails-3-2.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-2.html</guid>
       <content:encoded><![CDATA[<p>This is the third article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_1_release_notes.html">version 3.1</a> to <a href="http://guides.rubyonrails.org/3_2_release_notes.html">3.2</a>.</p>
 
 <!--more-->
@@ -1945,11 +1945,11 @@ end
     </item>
     <item>
       <title>Upgrade Rails from 3.0 to 3.1</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-to-rails-3-1.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-1.html</link>
       <description><![CDATA[This is the second article of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 3.0 to 3.1. If you are in an older version, you can take a look at our previous article.
 ]]></description>
       <pubDate>Mon, 16 Oct 2017 05:30:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-to-rails-3-1.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3-1.html</guid>
       <content:encoded><![CDATA[<p>This is the second article of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org/">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/3_0_release_notes.html">version 3.0</a> to <a href="http://guides.rubyonrails.org/3_1_release_notes.html">3.1</a>. If you are in an older version, you can take a look at our <a href="https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html">previous article</a>.</p>
 
 <!--more-->
@@ -2081,11 +2081,11 @@ config.static_cache_control = &quot;public, max-age=3600&quot;
     </item>
     <item>
       <title>Upgrade Rails from 2.3 to 3.0</title>
-      <link>http://localhost:4000/rails/upgrades/upgrade-to-rails-3.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html</link>
       <description><![CDATA[This article is the first of our Upgrade Rails series. We will be covering the most important aspects that you need to know to update your Ruby on Rails application from version 2.3 to 3.0.
 ]]></description>
       <pubDate>Mon, 28 Aug 2017 12:06:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/upgrade-to-rails-3.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/upgrade-to-rails-3.html</guid>
       <content:encoded><![CDATA[<p>This article is the first of our <a href="https://www.ombulabs.com/blog/tags/upgrades">Upgrade Rails series</a>. We will be covering the most important aspects that you need to know to update your <a href="http://rubyonrails.org">Ruby on Rails</a> application from <a href="http://guides.rubyonrails.org/2_3_release_notes.html">version 2.3</a> to <a href="http://guides.rubyonrails.org/3_0_release_notes.html">3.0</a>.</p>
 
 <!--more-->
@@ -2270,11 +2270,11 @@ lib/tasks/ombulabs_patches/s3_backup.rake
     </item>
     <item>
       <title>How We Helped Predictable Revenue Scale</title>
-      <link>http://localhost:4000/case-study/how-we-helped-predictable-revenue-scale.html</link>
+      <link>https://www.ombulabs.com/blog/case-study/how-we-helped-predictable-revenue-scale.html</link>
       <description><![CDATA[A few weeks ago I had the opportunity to talk to Preston St. Pierre, CTO of Predictable Revenue. We worked with Preston and his team for 2 years to help them scale their software development.
 ]]></description>
       <pubDate>Tue, 22 Aug 2017 04:06:00 -0400</pubDate>
-      <guid>http://localhost:4000/case-study/how-we-helped-predictable-revenue-scale.html</guid>
+      <guid>https://www.ombulabs.com/blog/case-study/how-we-helped-predictable-revenue-scale.html</guid>
       <content:encoded><![CDATA[<p>A few weeks ago I had the opportunity to talk to <a href="https://www.linkedin.com/in/tarential">Preston St. Pierre</a>, CTO of <a href="http://predictablerevenue.com">Predictable Revenue</a>. We worked with Preston and his team for 2 years to help them scale their software development.</p>
 
 <!--more-->
@@ -2331,13 +2331,13 @@ lib/tasks/ombulabs_patches/s3_backup.rake
     </item>
     <item>
       <title>Announcing FastRuby.io</title>
-      <link>http://localhost:4000/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html</link>
+      <link>https://www.ombulabs.com/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html</link>
       <description><![CDATA[Today we are happy to announce the launch of our first productized service: fastruby.io - Speedy Ruby on Rails Upgrades by Ombu Labs.
 
 We are quite familiar with this sort of projects and decided to package it under its own domain. We have been doing Ruby on Rails upgrades since 2009, for our own products and client projects, and we are looking forward to shipping more of them.
 ]]></description>
       <pubDate>Wed, 07 Jun 2017 11:06:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/upgrades/announcing-fastruby-io-productized-rails-upgrades.html</guid>
       <content:encoded><![CDATA[<p>Today we are happy to announce the launch of our first productized service: <a href="https://fastruby.io">fastruby.io</a> - Speedy Ruby on Rails Upgrades by Ombu Labs.</p>
 
 <p>We are quite familiar with this sort of projects and decided to package it under its own domain. We have been doing <a href="http://rubyonrails.org">Ruby on Rails</a> upgrades since 2009, for our <a href="https://www.ombulabs.com/#products">own products</a> and <a href="https://www.ombulabs.com/#clients">client projects</a>, and we are looking forward to shipping more of them.</p>
@@ -2358,7 +2358,7 @@ We are quite familiar with this sort of projects and decided to package it under
     </item>
     <item>
       <title>AWS S3 Policies for Carrierwave</title>
-      <link>http://localhost:4000/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</link>
+      <link>https://www.ombulabs.com/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</link>
       <description><![CDATA[When you create IAM credentials and policies for
 your app, you should make sure that they have access to the resources that they
 need and not more than that!.
@@ -2368,7 +2368,7 @@ is reduced to the resources associated with them (and not all the buckets in
 your S3 account)
 ]]></description>
       <pubDate>Wed, 10 May 2017 05:02:00 -0400</pubDate>
-      <guid>http://localhost:4000/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</guid>
+      <guid>https://www.ombulabs.com/blog/aws/carrierwave/s3/aws-s3-policies-for-carrierwave.html</guid>
       <content:encoded><![CDATA[<p>When you create <a href="https://aws.amazon.com/iam/">IAM</a> credentials and policies for
 your app, you should make sure that they have access to the resources that they
 need <strong>and not more than that!</strong>.</p>
@@ -2470,7 +2470,7 @@ the IAM user using the AWS administration panel.</p>
     </item>
     <item>
       <title>'Flaky' tests: a short story</title>
-      <link>http://localhost:4000/rspec/continuous-integration/how-to-track-down-a-flaky-test.html</link>
+      <link>https://www.ombulabs.com/blog/rspec/continuous-integration/how-to-track-down-a-flaky-test.html</link>
       <description><![CDATA[One of the hardest failing tests to debug are those which fail randomly, also
 known as &quot;flaky&quot; tests. You write your test cases, you run the tests in your
 environment (in random order), and see them all pass. Afterwards, you push your
@@ -2488,7 +2488,7 @@ multiple times.
 To automate this process a bit, I like to use the following command:
 ]]></description>
       <pubDate>Thu, 04 May 2017 07:02:00 -0400</pubDate>
-      <guid>http://localhost:4000/rspec/continuous-integration/how-to-track-down-a-flaky-test.html</guid>
+      <guid>https://www.ombulabs.com/blog/rspec/continuous-integration/how-to-track-down-a-flaky-test.html</guid>
       <content:encoded><![CDATA[<p>One of the hardest failing tests to debug are those which fail randomly, also
 known as <strong>&quot;flaky&quot;</strong> tests. You write your test cases, you run the tests in your
 environment (in random order), and see them all pass. Afterwards, you push your
@@ -2566,12 +2566,12 @@ that the entire build doesn&#39;t fail because of <em>that one pesky</em> test.<
     </item>
     <item>
       <title>How to run multiple dependent builds on Circle CI</title>
-      <link>http://localhost:4000/continuous-integration/circle-ci/how-to-run-multiple-dependency-builds-on-your-ci-server.html</link>
+      <link>https://www.ombulabs.com/blog/continuous-integration/circle-ci/how-to-run-multiple-dependency-builds-on-your-ci-server.html</link>
       <description><![CDATA[We all know the importance of having a CI tool integrated in your project. It allows you to run your entire test suite every time you want to merge a set of changes.
 If you have a core project and many projects that depend on it, you want to run the tests for the core project and the dependent projects at the same time. This article explains how you can do it with Circle CI.
 ]]></description>
       <pubDate>Thu, 23 Feb 2017 10:21:00 -0500</pubDate>
-      <guid>http://localhost:4000/continuous-integration/circle-ci/how-to-run-multiple-dependency-builds-on-your-ci-server.html</guid>
+      <guid>https://www.ombulabs.com/blog/continuous-integration/circle-ci/how-to-run-multiple-dependency-builds-on-your-ci-server.html</guid>
       <content:encoded><![CDATA[<p>We all know the importance of having a <a href="https://en.wikipedia.org/wiki/Continuous_integration">CI</a> tool integrated in your project. It allows you to run your entire test suite every time you want to merge a set of changes.
 If you have a core project and many projects that depend on it, you want to run the tests for the core project and the dependent projects at the same time. This article explains how you can do it with <a href="https://circleci.com">Circle CI</a>.</p>
 
@@ -2620,7 +2620,7 @@ In <code>my-app/Gemfile</code> we should have something like this:</p>
     </item>
     <item>
       <title>How to test a React app using capybara-webkit</title>
-      <link>http://localhost:4000/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</link>
+      <link>https://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</link>
       <description><![CDATA[I have been using the capybara-webkit
 gem for a while now since I first tried it out after making the switch from
 Capybara + Selenium.
@@ -2633,7 +2633,7 @@ In this post, I will explain how I worked around the issues that came up when
 trying to use capybara-webkit with React.
 ]]></description>
       <pubDate>Mon, 13 Feb 2017 05:27:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/react/how-to-test-a-react-app-using-capybara-webkit.html</guid>
       <content:encoded><![CDATA[<p>I have been using the <a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a>
 gem for a while now since I first tried it out after making the switch from
 Capybara + Selenium.</p>
@@ -2707,12 +2707,12 @@ know in the comments section below.</p>
     </item>
     <item>
       <title>Announcing AfipBill</title>
-      <link>http://localhost:4000/open-source/ruby/rubygems/announcing-afip-bill.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/ruby/rubygems/announcing-afip-bill.html</link>
       <description><![CDATA[If you live in Argentina and you ever use AFIP, you should already know that their platform is not the best in terms of user friendliness.
 We wanted to integrate OmbuShop with AFIP (using their API) in order to generate and print the bills for each seller. Unfortunately, there is no way to do this because the API doesn&#39;t generate a printable version (PDF) of the bill.
 ]]></description>
       <pubDate>Thu, 09 Feb 2017 10:06:00 -0500</pubDate>
-      <guid>http://localhost:4000/open-source/ruby/rubygems/announcing-afip-bill.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/ruby/rubygems/announcing-afip-bill.html</guid>
       <content:encoded><![CDATA[<p>If you live in Argentina and you ever use AFIP, you should already know that their platform is not the best in terms of user friendliness.
 We wanted to integrate <a href="https://www.ombushop.com">OmbuShop</a> with AFIP (using their <a href="http://www.afip.gob.ar/ws">API</a>) in order to generate and print the bills for each seller. Unfortunately, there is no way to do this because the API doesn&#39;t generate a printable version (PDF) of the bill.</p>
 
@@ -2729,7 +2729,7 @@ If you detect a way to improve the codebase, feel free to send us a PR.</p>
     </item>
     <item>
       <title>How to use any gem in the Rails production console</title>
-      <link>http://localhost:4000/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
+      <link>https://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</link>
       <description><![CDATA[How many times did you come across a great gem you wanted to try out in
 a production console, like benchmark-ips
 or awesome-print?
@@ -2740,7 +2740,7 @@ process. This is possible by modifying the $LOAD_PATH
 Ruby global variable and requiring the gem manually.
 ]]></description>
       <pubDate>Wed, 14 Dec 2016 13:06:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/ruby/how-to-use-any-gem-in-production-console.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/ruby/how-to-use-any-gem-in-production-console.html</guid>
       <content:encoded><![CDATA[<p>How many times did you come across a great gem you wanted to try out in
 a production console, like <a href="https://github.com/evanphx/benchmark-ips">benchmark-ips</a>
 or <a href="https://github.com/awesome-print/awesome_print">awesome-print</a>?</p>
@@ -2787,7 +2787,7 @@ gem&#39;s structure to figure out what file you need to require. For example, fo
     </item>
     <item>
       <title>Present? vs Any? vs Exists?</title>
-      <link>http://localhost:4000/benchmark/performance/rails/present-vs-any-vs-exists.html</link>
+      <link>https://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html</link>
       <description><![CDATA[When working on a Rails project, you may have seen present? calls on
 ActiveRecord relationships. This might feel natural, mostly because present?
 exists on all objects via ActiveSupport, so you expect the relationship to respond to it,
@@ -2796,7 +2796,7 @@ scope returns any results from the database, there are better ways than using
 present?.
 ]]></description>
       <pubDate>Fri, 02 Dec 2016 08:31:00 -0500</pubDate>
-      <guid>http://localhost:4000/benchmark/performance/rails/present-vs-any-vs-exists.html</guid>
+      <guid>https://www.ombulabs.com/blog/benchmark/performance/rails/present-vs-any-vs-exists.html</guid>
       <content:encoded><![CDATA[<p>When working on a Rails project, you may have seen <code>present?</code> calls on
 ActiveRecord relationships. This might feel natural, mostly because <code>present?</code>
 exists on all objects <a href="http://guides.rubyonrails.org/active_support_core_extensions.html#blank-questionmark-and-present-questionmark">via ActiveSupport</a>, so you expect the relationship to respond to it,
@@ -2870,7 +2870,7 @@ quick performance win to replace these calls to use either <code>any?</code> or 
     </item>
     <item>
       <title>Brief look at RSpec's formatting options</title>
-      <link>http://localhost:4000/rspec/ruby/using-rspecs-documentation-format.html</link>
+      <link>https://www.ombulabs.com/blog/rspec/ruby/using-rspecs-documentation-format.html</link>
       <description><![CDATA[A few weeks ago, I noticed weird output in the RSpec
 test suite (~4000 tests) for a Rails application:
 .............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
@@ -2881,7 +2881,7 @@ database doesn&#39;t recognize the type to use for a column, it casts to string 
 default.
 ]]></description>
       <pubDate>Tue, 08 Nov 2016 07:53:00 -0500</pubDate>
-      <guid>http://localhost:4000/rspec/ruby/using-rspecs-documentation-format.html</guid>
+      <guid>https://www.ombulabs.com/blog/rspec/ruby/using-rspecs-documentation-format.html</guid>
       <content:encoded><![CDATA[<p>A few weeks ago, I noticed weird output in the <a href="https://relishapp.com/rspec">RSpec</a>
 test suite (~4000 tests) for a <a href="http://rubyonrails.org">Rails</a> application:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text"><span></span>.............................................................................................unknown OID 353414: failed to recognize type of &#39;&lt;field&gt;&#39;. It will be treated as String  ...........................................................................................................................................
@@ -2935,7 +2935,7 @@ RSpec&#39;s default formatting, remember you can always add the flag to your
     </item>
     <item>
       <title>Tips for Writing Fast Rails: Part 1</title>
-      <link>http://localhost:4000/performance/rails/writing-fast-rails.html</link>
+      <link>https://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html</link>
       <description><![CDATA[Rails is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that performs poorly.
 
 At Ombu Labs we like to maintain Ruby on Rails
@@ -2951,7 +2951,7 @@ When you are performing a lot of calculations, you should load as little as
 possible into memory. Always prefer a SQL query vs. an object&#39;s method call.
 ]]></description>
       <pubDate>Tue, 11 Oct 2016 04:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/performance/rails/writing-fast-rails.html</guid>
+      <guid>https://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html</guid>
       <content:encoded><![CDATA[<p><a href="http://rubyonrails.org/">Rails</a> is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that <strong>performs poorly</strong>.</p>
 
 <p>At <a href="https://www.ombulabs.com">Ombu Labs</a> we like to <a href="https://www.ombulabs.com/blog/tags/maintenance">maintain Ruby on Rails
@@ -3087,7 +3087,7 @@ looking for new projects and opportunities to improve your
     </item>
     <item>
       <title>Spy vs Double vs Instance Double</title>
-      <link>http://localhost:4000/rspec/ruby/spy-vs-double-vs-instance-double.html</link>
+      <link>https://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</link>
       <description><![CDATA[When writing tests for services, you may sometimes want to use mock objects
 instead of real objects. In case you&#39;re using ActiveRecord and real
 objects, your tests may hit the database and slow down your suite. The
@@ -3105,7 +3105,7 @@ instance_double. First, the spy:
 =&gt; #&lt;Double (anonymous)&gt;
 ]]></description>
       <pubDate>Wed, 17 Aug 2016 02:04:00 -0400</pubDate>
-      <guid>http://localhost:4000/rspec/ruby/spy-vs-double-vs-instance-double.html</guid>
+      <guid>https://www.ombulabs.com/blog/rspec/ruby/spy-vs-double-vs-instance-double.html</guid>
       <content:encoded><![CDATA[<p>When writing tests for services, you may sometimes want to use mock objects
 instead of real objects. In case you&#39;re using ActiveRecord and real
 objects, your tests may hit the database and slow down your suite. The
@@ -3202,7 +3202,7 @@ implementation is worth it.</p>
     </item>
     <item>
       <title>The Need for bin/start</title>
-      <link>http://localhost:4000/maintenance/conventions/standard-getting-started.html</link>
+      <link>https://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</link>
       <description><![CDATA[Getting started with a new project should be as simple as possible, even for
 someone who is not technical. As a maintainer, you must make sure that
 anyone can clone your project and get it up and running in a few minutes.
@@ -3215,7 +3215,7 @@ Start
 
 ]]></description>
       <pubDate>Mon, 04 Jul 2016 08:31:00 -0400</pubDate>
-      <guid>http://localhost:4000/maintenance/conventions/standard-getting-started.html</guid>
+      <guid>https://www.ombulabs.com/blog/maintenance/conventions/standard-getting-started.html</guid>
       <content:encoded><![CDATA[<p>Getting started with a new project should be <strong>as simple as possible</strong>, even for
 someone who is not technical. As a maintainer, you <strong>must</strong> make sure that
 anyone can clone your project and get it up and running in a few minutes.</p>
@@ -3313,7 +3313,7 @@ should <strong>never</strong> take more than a few minutes.</p>
     </item>
     <item>
       <title>Tips for upgrading from Rails 3.2 to 4.0</title>
-      <link>http://localhost:4000/rails/tips-for-upgrading-rails-3-2-to-4.html</link>
+      <link>https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html</link>
       <description><![CDATA[There are already quite a few guides in the wild to help with the upgrade of
 Rails 3.2 to Rails 4.0.
 The official Rails guide
@@ -3337,7 +3337,7 @@ It serves as a drop-in replacement for people who want to use CanCan after
 upgrading to Rails 4.
 ]]></description>
       <pubDate>Fri, 01 Jul 2016 14:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/tips-for-upgrading-rails-3-2-to-4.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/tips-for-upgrading-rails-3-2-to-4.html</guid>
       <content:encoded><![CDATA[<p>There are already quite a few guides in the wild to help with the upgrade of
 Rails 3.2 to Rails 4.0.
 The <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-3-2-to-rails-4-0">official Rails guide</a>
@@ -3424,7 +3424,7 @@ app was previously running on Rails 2.</p>
     </item>
     <item>
       <title>Introducing Pecas: Dashboards for Freckle</title>
-      <link>http://localhost:4000/open-source/introducing-pecas.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/introducing-pecas.html</link>
       <description><![CDATA[At Ombu Labs we are big fans and happy customers
 of Freckle. We use their widget to track all the
 hours that we spend on client projects,
@@ -3443,7 +3443,7 @@ On top of that, it will send you an email alert if you haven&#39;t tracked any h
 during a work day. If it&#39;s a holiday, it won&#39;t bother you. :)
 ]]></description>
       <pubDate>Mon, 06 Jun 2016 05:31:00 -0400</pubDate>
-      <guid>http://localhost:4000/open-source/introducing-pecas.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/introducing-pecas.html</guid>
       <content:encoded><![CDATA[<p>At <a href="https://www.ombulabs.com">Ombu Labs</a> we are big fans and happy customers
 of <a href="https://letsfreckle.com/">Freckle</a>. We use their widget to track all the
 hours that we spend on client projects,
@@ -3479,7 +3479,7 @@ set it up using <a href="http://heroku.com">Heroku</a> and your Freckle API key:
     </item>
     <item>
       <title>A comprehensive guide to interacting with IMAP using Ruby</title>
-      <link>http://localhost:4000/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</link>
       <description><![CDATA[A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping
 your head around its API is not so easy. Not only is the IMAP API
 a bit obscure and cryptic, but Ruby&#39;s IMAP documentation
@@ -3490,7 +3490,7 @@ to write down some of the things I&#39;ve learned. The examples I&#39;ll show us
 Gmail as the target IMAP server.
 ]]></description>
       <pubDate>Mon, 30 May 2016 08:09:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/imap/a-comprehensive-guide-to-interacting-with-imap-using-ruby.html</guid>
       <content:encoded><![CDATA[<p>A few times in the past I&#39;ve had to interact with IMAP via Ruby, and wrapping
 your head around its API is not so easy. Not only is the <a href="https://tools.ietf.org/html/rfc3501">IMAP API</a>
 a bit obscure and cryptic, but Ruby&#39;s IMAP <a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/net/imap/rdoc/Net/IMAP.html">documentation</a>
@@ -3707,7 +3707,7 @@ if you found this useful, let me know in the comments section!</p>
     </item>
     <item>
       <title>DRY your tests</title>
-      <link>http://localhost:4000/rails/dry/dry-your-test-unit.html</link>
+      <link>https://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</link>
       <description><![CDATA[I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 DRY my specs, I take it.
@@ -3733,7 +3733,7 @@ If a bot is submitting the email_confirmation field (which is hidden by a CSS
 class), then it is SPAM and it gracefully ignores the request.
 ]]></description>
       <pubDate>Mon, 16 May 2016 08:31:00 -0400</pubDate>
-      <guid>http://localhost:4000/rails/dry/dry-your-test-unit.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/dry/dry-your-test-unit.html</guid>
       <content:encoded><![CDATA[<p>I&#39;m a big fan of having small classes. I&#39;m not a big fan of having huge specs for
 a small class/object. Every time I see an opportunity to
 <a href="http://c2.com/cgi/wiki?DontRepeatYourself">DRY</a> my specs, I take it.</p>
@@ -3869,7 +3869,7 @@ classes. It will <strong>improve maintenance</strong> in the long run.</p>
     </item>
     <item>
       <title>The Joys and Woes of Pair Programming</title>
-      <link>http://localhost:4000/agile/pair-programming/joys-and-woes-of-pair-programming.html</link>
+      <link>https://www.ombulabs.com/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html</link>
       <description><![CDATA[There are a few agile practices that I really love. Pair programming
 is one of them.
 
@@ -3897,7 +3897,7 @@ When you program with someone with more experience, you will often learn about
 design patterns, elegant object-oriented solutions, tips and tricks.
 ]]></description>
       <pubDate>Thu, 12 May 2016 10:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/agile/pair-programming/joys-and-woes-of-pair-programming.html</guid>
+      <guid>https://www.ombulabs.com/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html</guid>
       <content:encoded><![CDATA[<p>There are a few <a href="https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices">agile practices</a> that <strong>I really love</strong>. <a href="http://c2.com/cgi/wiki?PairProgramming">Pair programming</a>
 is one of them.</p>
 
@@ -4010,7 +4010,7 @@ improved but not during the session.</li>
     </item>
     <item>
       <title>Introducing Infractores</title>
-      <link>http://localhost:4000/open-source/crowdsourcing/introducing-infractores.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</link>
       <description><![CDATA[I&#39;ve always been a big fan of scratching your own itch. My latest itch was the insane amount of parking
 violations that I see everyday in Buenos Aires, near our office.
 
@@ -4032,7 +4032,7 @@ This page shows all the parking violations reported by users to
 It&#39;s as simple as that.
 ]]></description>
       <pubDate>Fri, 29 Apr 2016 11:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/open-source/crowdsourcing/introducing-infractores.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/crowdsourcing/introducing-infractores.html</guid>
       <content:encoded><![CDATA[<p>I&#39;ve always been a big fan of <a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar#Lessons_for_creating_good_open_source_software">scratching your own itch</a>. My latest itch was the <strong>insane amount of parking
 violations</strong> that I see everyday in <strong>Buenos Aires</strong>, near <a href="https://foursquare.com/v/ombulabs-hq/52f0e47311d25da04d101b62">our office</a>.</p>
 
@@ -4115,7 +4115,7 @@ want people to use it to <strong>improve their communities</strong>.</p>
     </item>
     <item>
       <title>Using Bumbler to reduce runtime dependencies</title>
-      <link>http://localhost:4000/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</link>
       <description><![CDATA[A few weeks ago, I found an interesting project called
  Bumbler. If your project uses Bundler,
  Bumbler shows you your project&#39;s largest dependencies.
@@ -4123,7 +4123,7 @@ When you find yourself staring at the screen after running
  bundle exec rails c, you may want to give this tool a try.
 ]]></description>
       <pubDate>Mon, 25 Apr 2016 07:39:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/performance/using-bumbler-to-reduce-runtime-dependencies.html</guid>
       <content:encoded><![CDATA[<p>A few weeks ago, I found an interesting project called
  <a href="https://github.com/nevir/Bumbler">Bumbler</a>. If your project uses Bundler,
  Bumbler shows you your project&#39;s largest dependencies.
@@ -4189,13 +4189,13 @@ Slow requires:
     </item>
     <item>
       <title>Use session variables to optimize your user flow</title>
-      <link>http://localhost:4000/ruby/rails/sessions/session-user-flow.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</link>
       <description><![CDATA[Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
 
 Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.
 ]]></description>
       <pubDate>Fri, 22 Apr 2016 04:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/rails/sessions/session-user-flow.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/rails/sessions/session-user-flow.html</guid>
       <content:encoded><![CDATA[<p>Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.</p>
 
 <p>Let&#39;s say that you want to show some users a new fancy sign up form and the rest the old form. If you store the version of the sign up form in a session variable, you don&#39;t need to persist this info in your database.</p>
@@ -4262,13 +4262,13 @@ Remember to require the classes for all objects kept in the session.
     </item>
     <item>
       <title>Our Hiring Process</title>
-      <link>http://localhost:4000/team/jobs/our-hiring-process.html</link>
+      <link>https://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</link>
       <description><![CDATA[This is our process to hire new team members at Ombu Labs. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s very important for us to hire A players.
 
 In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
 ]]></description>
       <pubDate>Thu, 14 Apr 2016 13:03:00 -0400</pubDate>
-      <guid>http://localhost:4000/team/jobs/our-hiring-process.html</guid>
+      <guid>https://www.ombulabs.com/blog/team/jobs/our-hiring-process.html</guid>
       <content:encoded><![CDATA[<p>This is our process to hire new team members at <a href="https://www.ombulabs.com">Ombu Labs</a>. It&#39;s a process that we have been improving ever since we started our operations. It&#39;s <strong>very important</strong> for us to hire <strong>A players</strong>.</p>
 
 <p>In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.</p>
@@ -4343,13 +4343,13 @@ In this article I will focus on how we evaluate new developers, but parts of the
     </item>
     <item>
       <title>The Landing Page MVP</title>
-      <link>http://localhost:4000/lean-startup/mvp/the-landing-page-mvp.html</link>
+      <link>https://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</link>
       <description><![CDATA[There is no good reason why an MVP should take more than one month. If that happens, it means that the scope of the minimum viable product wasn&#39;t small enough.
 
 You want to build the smallest feature set in order to start learning from your target market. It doesn&#39;t have to be feature complete. It doesn&#39;t even have to offer a feature. It doesn&#39;t even need to be a web-based MVP.
 ]]></description>
       <pubDate>Tue, 05 Apr 2016 07:03:00 -0400</pubDate>
-      <guid>http://localhost:4000/lean-startup/mvp/the-landing-page-mvp.html</guid>
+      <guid>https://www.ombulabs.com/blog/lean-startup/mvp/the-landing-page-mvp.html</guid>
       <content:encoded><![CDATA[<p>There is no good reason why an <strong>MVP</strong> should take more than one month. If that happens, it means that the scope of the <a href="https://leanstack.com/minimum-viable-product/">minimum viable product</a> wasn&#39;t small enough.</p>
 
 <p>You want to build the smallest feature set in order to start learning from your target market. It doesn&#39;t have to be feature complete. It doesn&#39;t even have to offer a feature. It doesn&#39;t even need to be a web-based MVP.</p>
@@ -4478,11 +4478,11 @@ You want to build the smallest feature set in order to start learning from your 
     </item>
     <item>
       <title>Announcing The Ombu Labs Shop!</title>
-      <link>http://localhost:4000/design/ombulabs-products.html</link>
+      <link>https://www.ombulabs.com/blog/design/ombulabs-products.html</link>
       <description><![CDATA[We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
 ]]></description>
       <pubDate>Fri, 01 Apr 2016 08:35:00 -0400</pubDate>
-      <guid>http://localhost:4000/design/ombulabs-products.html</guid>
+      <guid>https://www.ombulabs.com/blog/design/ombulabs-products.html</guid>
       <content:encoded><![CDATA[<p>We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!</p>
 
 <!--more-->
@@ -4526,7 +4526,7 @@ You want to build the smallest feature set in order to start learning from your 
     </item>
     <item>
       <title>Hunting Down a Slow Rails Request</title>
-      <link>http://localhost:4000/rails/performance/hunting-down-a-slow-rails-request.html</link>
+      <link>https://www.ombulabs.com/blog/rails/performance/hunting-down-a-slow-rails-request.html</link>
       <description><![CDATA[Recently, we started using Skylight in production
 for one of our clients&#39; Rails applications, in an attempt to try to improve the
 performance of some of the more critical API endpoints.
@@ -4547,7 +4547,7 @@ This request would take anywhere from 400ms to 3000ms to respond, which is
 WAY too long.
 ]]></description>
       <pubDate>Fri, 04 Mar 2016 06:03:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/performance/hunting-down-a-slow-rails-request.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/performance/hunting-down-a-slow-rails-request.html</guid>
       <content:encoded><![CDATA[<p>Recently, we started using <a href="https://www.skylight.io">Skylight</a> in production
 for one of our clients&#39; Rails applications, in an attempt to try to improve the
 performance of some of the more critical API endpoints.</p>
@@ -4629,7 +4629,7 @@ more acceptable value.</p>
     </item>
     <item>
       <title>10 Steps to Evaluate a Rails Project</title>
-      <link>http://localhost:4000/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
+      <link>https://www.ombulabs.com/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</link>
       <description><![CDATA[It will come a time when you will have to decide whether to maintain a Rails project or not.
 
 If you want to seriously consider it, you should follow these 10 steps:
@@ -4652,7 +4652,7 @@ Start the server rails server
 The best projects will have a one-liner that will setup the entire environment for you.
 ]]></description>
       <pubDate>Wed, 17 Feb 2016 08:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/maintenance/ten-steps-to-evaluate-a-rails-project.html</guid>
       <content:encoded><![CDATA[<p>It will come a time when you will have to decide whether to maintain a <a href="http://rubyonrails.org">Rails</a> project <strong>or not</strong>.</p>
 
 <p>If you want to seriously consider it, you should follow these 10 steps:</p>
@@ -4783,7 +4783,7 @@ No vulnerabilities found
     </item>
     <item>
       <title>Set up and run Hubot without using Heroku</title>
-      <link>http://localhost:4000/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</link>
+      <link>https://www.ombulabs.com/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</link>
       <description><![CDATA[Hubot makes it incredibly easy to setup on a Heroku
 server, by taking advantage of its Procfile support. Simply running
 git push heroku master deploys the app and starts it.
@@ -4795,7 +4795,7 @@ use something like monit, systemd or tmux to better manage your Hubot
 process.
 ]]></description>
       <pubDate>Fri, 29 Jan 2016 06:16:00 -0500</pubDate>
-      <guid>http://localhost:4000/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</guid>
+      <guid>https://www.ombulabs.com/blog/hubot/linux/set-up-and-run-hubot-in-non-heroku-server.html</guid>
       <content:encoded><![CDATA[<p><a href="https://hubot.github.com">Hubot</a> makes it incredibly easy to setup on a Heroku
 server, by taking advantage of its Procfile support. Simply running
 <code>git push heroku master</code> deploys the app and starts it.</p>
@@ -4883,11 +4883,11 @@ or simple things like getting pictures of pugs delivered to your channel!</p>
     </item>
     <item>
       <title>Let vs Instance Variables</title>
-      <link>http://localhost:4000/rails/rspec/ruby/let-vs-instance.html</link>
+      <link>https://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</link>
       <description><![CDATA[Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a before block.
 ]]></description>
       <pubDate>Fri, 22 Jan 2016 05:36:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/rspec/ruby/let-vs-instance.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/rspec/ruby/let-vs-instance.html</guid>
       <content:encoded><![CDATA[<p>Maybe in the past you stumbled over the two different approaches to setup your test variables. One way is the more programmatical approach by using instance variables, usually initialized in a <code>before</code> block.</p>
 
 <!--more-->
@@ -5054,7 +5054,7 @@ You just need to change a <code>let</code> variable within a context block and y
     </item>
     <item>
       <title>Protect your sensitive data in Git</title>
-      <link>http://localhost:4000/open-source/security/protect-your-sensitive-data-in-git.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/security/protect-your-sensitive-data-in-git.html</link>
       <description><![CDATA[If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
 
 One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.
@@ -5134,7 +5134,7 @@ This tool provides some commands to completely remove big files as well as passw
 The easiest and much simpler solution is to initialize a new git repository, after making sure to have all sensitive information removed. The downside is obviously the loss of the project&#39;s Git history.
 ]]></description>
       <pubDate>Thu, 21 Jan 2016 05:36:00 -0500</pubDate>
-      <guid>http://localhost:4000/open-source/security/protect-your-sensitive-data-in-git.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/security/protect-your-sensitive-data-in-git.html</guid>
       <content:encoded><![CDATA[<p>If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.</p>
 
 <p><strong>One thing that a lot of people forget, is that this information stay forever in your repository history, if you do not rewrite the history of your repository.</strong></p>
@@ -5217,7 +5217,7 @@ drwxrwxr-x  <span class="m">8</span> sirko sirko  <span class="m">4096</span> De
     </item>
     <item>
       <title>How to report a bug</title>
-      <link>http://localhost:4000/open-source/bugs/how-to-report-a-bug.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/bugs/how-to-report-a-bug.html</link>
       <description><![CDATA[The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.
 
 1. Make sure it hasn&#39;t been reported yet
@@ -5268,7 +5268,7 @@ Ideally, detailed issue reports will become pull requests in the future. You (or
 Don&#39;t just say &quot;It doesn&#39;t work!&quot;, don&#39;t be that person! Next time file an issue so that we can all benefit from your pain.
 ]]></description>
       <pubDate>Fri, 01 Jan 2016 08:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/open-source/bugs/how-to-report-a-bug.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/bugs/how-to-report-a-bug.html</guid>
       <content:encoded><![CDATA[<p>The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.</p>
 
 <h3>1. Make sure it hasn&#39;t been reported yet</h3>
@@ -5322,7 +5322,7 @@ Don&#39;t just say &quot;It doesn&#39;t work!&quot;, don&#39;t be that person! N
     </item>
     <item>
       <title>Adding Docker to a Ruby gem</title>
-      <link>http://localhost:4000/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</link>
+      <link>https://www.ombulabs.com/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</link>
       <description><![CDATA[As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a pull request to add a Dockerfile to DatabaseCleaner
 
 I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run rake.
@@ -5338,7 +5338,7 @@ Finally: docker-compose run --rm gem
 
 ]]></description>
       <pubDate>Tue, 29 Dec 2015 08:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</guid>
+      <guid>https://www.ombulabs.com/blog/docker/rubygems/open-source/adding-docker-to-a-ruby-gem.html</guid>
       <content:encoded><![CDATA[<p>As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a <a href="https://github.com/DatabaseCleaner/database_cleaner/pull/384">pull request</a> to add a Dockerfile to <a href="https://github.com/DatabaseCleaner/database_cleaner">DatabaseCleaner</a></p>
 
 <p>I thought it was a good idea, because the current version of DatabaseCleaner requires you to have Postgres, MySQL, Redis, and Mongo up and running before you run <code>rake</code>.</p>
@@ -5385,7 +5385,7 @@ Provided configuration options:
     </item>
     <item>
       <title>Adding Csrf-Protection to your Rails-Backbone App</title>
-      <link>http://localhost:4000/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</link>
+      <link>https://www.ombulabs.com/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</link>
       <description><![CDATA[When integrating Backbone.js in your Rails App, you might face the problem of the inability to verify the CSRF-Token.
 
 The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.
@@ -5431,7 +5431,7 @@ Processing by ProductsController#create as JSON
 Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
 ]]></description>
       <pubDate>Tue, 15 Dec 2015 22:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</guid>
+      <guid>https://www.ombulabs.com/blog/rails/backbone/security/adding-csrf-protection-to-your-rails-backbone-app.html</guid>
       <content:encoded><![CDATA[<p>When integrating <a href="http://backbonejs.org">Backbone.js</a> in your <a href="http://rubyonrails.org">Rails</a> App, you might face the problem of the inability to verify the CSRF-Token.</p>
 
 <p>The CSRF Protection secures your app with a token. Rails makes sure that the person who is interacting with your app is someone who started a session in your site, not some random attacker from another site. So you should not turn it off, unless you know what you are doing.</p>
@@ -5480,7 +5480,7 @@ Completed 200 OK in 40.6ms (Views: 0.6ms | ActiveRecord: 10.3ms)
     </item>
     <item>
       <title>How to interact with hidden elements with Protractor</title>
-      <link>http://localhost:4000/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</link>
+      <link>https://www.ombulabs.com/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</link>
       <description><![CDATA[The other day I was trying to interact with a hidden file input field:
 &lt;div class=&quot;col-sm-3&quot;&gt;
   &lt;input class=&quot;btn btn-default&quot; class=&quot;hidden&quot; accept=&quot;.csv&quot;  id=&quot;geofence_file_input&quot;&gt;
@@ -5499,7 +5499,7 @@ Failed: Wait timed out after 100015ms
 Workarounds include displaying it, interacting with it, hiding it again, which I didn&#39;t like.
 ]]></description>
       <pubDate>Tue, 08 Dec 2015 22:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</guid>
+      <guid>https://www.ombulabs.com/blog/protractor/how-to-hide-elements-for-protractor-e2e-tests.html</guid>
       <content:encoded><![CDATA[<p>The other day I was trying to interact with a hidden file input field:</p>
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-sm-3&quot;</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">accept</span><span class="o">=</span><span class="s">&quot;.csv&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;geofence_file_input&quot;</span><span class="p">&gt;</span>
@@ -5540,7 +5540,7 @@ Workarounds include displaying it, interacting with it, hiding it again, which I
     </item>
     <item>
       <title>Time and Material</title>
-      <link>http://localhost:4000/software-development/time-and-material.html</link>
+      <link>https://www.ombulabs.com/blog/software-development/time-and-material.html</link>
       <description><![CDATA[As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
 
 All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.
@@ -5548,7 +5548,7 @@ All of our clients are startups. Fixed bids are counterproductive for startups. 
 Fixed bids make clients think that their project will be finished in a fixed period of time if their requirements don&#39;t change while developing the project. That is a big if!
 ]]></description>
       <pubDate>Wed, 18 Nov 2015 22:55:00 -0500</pubDate>
-      <guid>http://localhost:4000/software-development/time-and-material.html</guid>
+      <guid>https://www.ombulabs.com/blog/software-development/time-and-material.html</guid>
       <content:encoded><![CDATA[<p>As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.</p>
 
 <p>All of our clients are startups. Fixed bids are counterproductive for startups. They give the client a false sense of security and they punish changing requirements.</p>
@@ -5609,7 +5609,7 @@ Fixed bids make clients think that their project will be finished in a fixed per
     </item>
     <item>
       <title>Almundo's Bill Vulnerability</title>
-      <link>http://localhost:4000/security/almundo-bill-vulnerability.html</link>
+      <link>https://www.ombulabs.com/blog/security/almundo-bill-vulnerability.html</link>
       <description><![CDATA[The other day my friend Juan Rossi reported a vulnerability in the Almundo billing system. Since then, the vulnerability has been fixed by Superfactura, their billing software provider.
 
 Almundo is one of the biggest travel agencies in Argentina. Their site is among the 250 most visited websites in the country.
@@ -5617,7 +5617,7 @@ Almundo is one of the biggest travel agencies in Argentina. Their site is among 
 The vulnerability allowed anyone to download billing information about their clients by creating a pretty simple HTTP GET request. No programming knowledge required.
 ]]></description>
       <pubDate>Mon, 24 Aug 2015 23:55:00 -0400</pubDate>
-      <guid>http://localhost:4000/security/almundo-bill-vulnerability.html</guid>
+      <guid>https://www.ombulabs.com/blog/security/almundo-bill-vulnerability.html</guid>
       <content:encoded><![CDATA[<p>The other day my friend <a href="https://twitter.com/juanchorossi">Juan Rossi</a> reported a vulnerability in the <a href="http://almundo.com/">Almundo</a> billing system. Since then, the vulnerability has been fixed by <a href="http://superfactura.com.ar/">Superfactura</a>, their billing software provider.</p>
 
 <p>Almundo is one of the <a href="http://www.alexa.com/siteinfo/almundo.com.ar">biggest travel agencies in Argentina</a>. Their site is among the 250 most visited websites in the country.</p>
@@ -5657,7 +5657,7 @@ The vulnerability allowed anyone to download billing information about their cli
     </item>
     <item>
       <title>The 7 Days Open Source Challenge</title>
-      <link>http://localhost:4000/open-source/the-7-days-open-source-challenge.html</link>
+      <link>https://www.ombulabs.com/blog/open-source/the-7-days-open-source-challenge.html</link>
       <description><![CDATA[Last Wednesday I gave a lightning talk about open source at the Buenos Aires Ruby Meetup. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.
 
 The rules are simple:
@@ -5669,7 +5669,7 @@ When you break your streak, you have to start over from day 1
 
 ]]></description>
       <pubDate>Mon, 03 Aug 2015 23:55:00 -0400</pubDate>
-      <guid>http://localhost:4000/open-source/the-7-days-open-source-challenge.html</guid>
+      <guid>https://www.ombulabs.com/blog/open-source/the-7-days-open-source-challenge.html</guid>
       <content:encoded><![CDATA[<p>Last Wednesday I gave a lightning talk about open source at the <a href="http://www.meetup.com/rubyba/events/223814545/">Buenos Aires Ruby Meetup</a>. I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.</p>
 
 <p>The rules are simple:</p>
@@ -5707,7 +5707,7 @@ When you break your streak, you have to start over from day 1
     </item>
     <item>
       <title>Slack notifications with Slack-Notify gem</title>
-      <link>http://localhost:4000/ruby/slack-notifications-with-slack-notify.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/slack-notifications-with-slack-notify.html</link>
       <description><![CDATA[We have been using Slack at OmbuLabs for a while now
 after switching from HipChat, and haven&#39;t looked back. It looks and feels much
 better than any other available platform of its kind. Slack provides
@@ -5715,7 +5715,7 @@ WebHooks, which you can use to post
 messages to your team&#39;s channels.
 ]]></description>
       <pubDate>Wed, 29 Jul 2015 13:40:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/slack-notifications-with-slack-notify.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/slack-notifications-with-slack-notify.html</guid>
       <content:encoded><![CDATA[<p>We have been using Slack at <a href="https://www.ombulabs.com">OmbuLabs</a> for a while now
 after switching from HipChat, and haven&#39;t looked back. It looks and feels much
 better than any other available platform of its kind. Slack provides
@@ -5791,7 +5791,7 @@ channel dedicated solely to notifications if you are part of a bigger team.</p>
     </item>
     <item>
       <title>Why using default_scope is a bad idea</title>
-      <link>http://localhost:4000/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</link>
       <description><![CDATA[default_scope is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
@@ -5799,7 +5799,7 @@ deleted_on column on your model and setting the default scope to
 deleted_on: nil
 ]]></description>
       <pubDate>Mon, 20 Jul 2015 05:55:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/rails/best-practices/why-using-default-scope-is-a-bad-idea.html</guid>
       <content:encoded><![CDATA[<p><code>default_scope</code> is a method provided by ActiveRecord, which allows you to set
 a default scope (as its name implies) for all operations done on a given model.
 It can be useful for allowing soft-deletion in your models, by having a
@@ -5849,13 +5849,13 @@ scopes instead. If you really need to use it, use it with care.</p>
     </item>
     <item>
       <title>Mercado Pago Security Hole</title>
-      <link>http://localhost:4000/security/mercado-pago-security-vulnerability.html</link>
+      <link>https://www.ombulabs.com/blog/security/mercado-pago-security-vulnerability.html</link>
       <description><![CDATA[On April 17th we discovered a security vulnerability in the Mercado Pago API. Before disclosing this information, we contacted Mercado Libre and sent them a detailed report of the security hole and how to reproduce it.
 
 The vulnerability allowed anyone to get an access token without using the right secret for an account.
 ]]></description>
       <pubDate>Tue, 14 Jul 2015 19:29:00 -0400</pubDate>
-      <guid>http://localhost:4000/security/mercado-pago-security-vulnerability.html</guid>
+      <guid>https://www.ombulabs.com/blog/security/mercado-pago-security-vulnerability.html</guid>
       <content:encoded><![CDATA[<p>On April 17th we discovered a security vulnerability in the <a href="https://www.mercadopago.com.ar/developers/en/api-docs/">Mercado Pago API</a>. Before disclosing this information, we contacted <a href="http://www.mercadolibre.com/">Mercado Libre</a> and sent them a detailed report of the security hole and how to reproduce it.</p>
 
 <p>The vulnerability allowed anyone to get an access token without using the right secret for an account.</p>
@@ -6013,13 +6013,13 @@ The vulnerability allowed anyone to get an access token without using the right 
     </item>
     <item>
       <title>The Lean Startup Way</title>
-      <link>http://localhost:4000/lean-startup/the-lean-startup-way.html</link>
+      <link>https://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html</link>
       <description><![CDATA[At OmbuLabs we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
 
 It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.
 ]]></description>
       <pubDate>Tue, 30 Jun 2015 19:29:00 -0400</pubDate>
-      <guid>http://localhost:4000/lean-startup/the-lean-startup-way.html</guid>
+      <guid>https://www.ombulabs.com/blog/lean-startup/the-lean-startup-way.html</guid>
       <content:encoded><![CDATA[<p>At <a href="https://www.ombulabs.com">OmbuLabs</a> we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.</p>
 
 <p>It is easier to apply the methodology to our own products than to our client projects. With our products, we decide what goals we want to reach and what experiments we are going to run to validate our hypotheses.</p>
@@ -6058,7 +6058,7 @@ It is easier to apply the methodology to our own products than to our client pro
     </item>
     <item>
       <title>How to Git push with blocked ports</title>
-      <link>http://localhost:4000/git/github/how-to-git-push-with-blocked-ports.html</link>
+      <link>https://www.ombulabs.com/blog/git/github/how-to-git-push-with-blocked-ports.html</link>
       <description><![CDATA[Often times I find myself working out of a coffee shop with a terrible Internet connection. We have a nice office at OmbuLabs but there is still that Je ne sais quoi at coffee shops.
 
 The cool thing about Git is that you can git commit all your changes while enjoying a cup of coffee and git push later (when you&#39;re back at home with a decent connection)
@@ -6066,7 +6066,7 @@ The cool thing about Git is that you can git commit all your changes while enjoy
 But what if you want to git push from the coffee shop? Sometimes the only ports that are open are port 80 (HTTP) and 443 (HTTPS).
 ]]></description>
       <pubDate>Sun, 28 Jun 2015 14:29:00 -0400</pubDate>
-      <guid>http://localhost:4000/git/github/how-to-git-push-with-blocked-ports.html</guid>
+      <guid>https://www.ombulabs.com/blog/git/github/how-to-git-push-with-blocked-ports.html</guid>
       <content:encoded><![CDATA[<p>Often times I find myself working out of a coffee shop with a <strong>terrible Internet connection</strong>. We have a nice office at <a href="https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62">OmbuLabs</a> but there is still that <em>Je ne sais quoi</em> at coffee shops.</p>
 
 <p>The cool thing about <a href="https://git-scm.com/">Git</a> is that you can <code>git commit</code> all your changes while enjoying a cup of coffee and <code>git push</code> later (when you&#39;re back at home with a decent connection)</p>
@@ -6093,13 +6093,13 @@ Everything up-to-date
     </item>
     <item>
       <title>Our Definition of "Done"</title>
-      <link>http://localhost:4000/software-development/software-quality/our-definition-of-done.html</link>
+      <link>https://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html</link>
       <description><![CDATA[Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a really long time? Maybe you have. Is it &quot;done&quot;?
 
 That is a tough question, so I&#39;ll write down our definition of done.
 ]]></description>
       <pubDate>Thu, 18 Jun 2015 07:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/software-development/software-quality/our-definition-of-done.html</guid>
+      <guid>https://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html</guid>
       <content:encoded><![CDATA[<p>Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you&#39;ve been working on this feature for a <strong>really long time</strong>? Maybe you have. Is it &quot;done&quot;?</p>
 
 <p>That is a tough question, so I&#39;ll write down <em>our definition of done</em>.</p>
@@ -6128,14 +6128,14 @@ That is a tough question, so I&#39;ll write down our definition of done.
     </item>
     <item>
       <title>Enumerable#grep vs Enumerable#select</title>
-      <link>http://localhost:4000/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</link>
+      <link>https://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</link>
       <description><![CDATA[Often, Enumerable#select is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
 Enumerable#grep.
 ]]></description>
       <pubDate>Thu, 09 Apr 2015 07:37:00 -0400</pubDate>
-      <guid>http://localhost:4000/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</guid>
+      <guid>https://www.ombulabs.com/blog/ruby/benchmark/enumerator-grep-vs-enumerator-select.html</guid>
       <content:encoded><![CDATA[<p>Often, <code>Enumerable#select</code> is the chosen method to obtain elements from an
 Array for a given block. Without thinking twice, we may be doing more work than
 necessary by not taking advantage of another method from the Enumerable module,
@@ -6188,13 +6188,13 @@ as <code>#map</code> does and reads very nicely. For example:</p>
     </item>
     <item>
       <title>4 Useful Github tricks which should be more popular</title>
-      <link>http://localhost:4000/git/github/4-useful-github-tricks.html</link>
+      <link>https://www.ombulabs.com/blog/git/github/4-useful-github-tricks.html</link>
       <description><![CDATA[If you are using git in 2015, you are probably also using Github, unless you&#39;re self-hosting or still betting on Bitbucket.
 
 Below are some cool, useful tricks you can use on Github which can probably make your life easier:
 ]]></description>
       <pubDate>Mon, 19 Jan 2015 13:35:00 -0500</pubDate>
-      <guid>http://localhost:4000/git/github/4-useful-github-tricks.html</guid>
+      <guid>https://www.ombulabs.com/blog/git/github/4-useful-github-tricks.html</guid>
       <content:encoded><![CDATA[<p>If you are using git in 2015, you are probably also using <a href="http://www.github.com">Github</a>, unless you&#39;re self-hosting or still betting on <a href="http://www.bitbucket.com">Bitbucket</a>.</p>
 
 <p>Below are some cool, useful tricks you can use on Github which can probably make your life easier:</p>
