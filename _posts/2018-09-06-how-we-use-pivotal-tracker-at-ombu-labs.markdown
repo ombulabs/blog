@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How we use Pivotal Tracker at Ombu Labs"
-date: 2018-08-20 11:10:00
+date: 2018-09-06 11:10:00
 categories: ["agile", "pivotal-tracker"]
 author: "etagwerker"
 ---
@@ -20,7 +20,7 @@ track of our [velocity](http://wiki.c2.com/?ProjectVelocity).
 
 ## Step 1: Filing user stories
 
-Every thing has to be tracked according to the type of story. Most of the user
+Every single thing has to be tracked according to the type of story. Most of the user
 stories are either *features* or *bugs*, although sometimes there will be *chores* to be
 done. If a *chore* reoccurs many times, then it's probably time to write a *feature*
 to reduce the time spent completing that *chore*.
@@ -68,6 +68,10 @@ complexity.
 
 <img src="/blog/assets/images/user-story-estimation-fibonacci.png" alt="State of a simple user story before you estimate it" class="medium-img">
 
+Story points are not hours. Given a user story that has 3 story points of complexity,
+a Senior Developer might take 2 hours shipping it, a Junior Developer might take
+5 hours shipping it.
+
 ## Step 4: Starting and finishing user stories
 
 You should always pick the first unassigned story from the top of the backlog.
@@ -102,11 +106,11 @@ story to an Accept/Reject state:
 
 ## Step 6: Accepting or rejecting a user story
 
-If the *Requester* approves the story, they will mark it as accepted. No more
+If the *requester* approves the story, they will mark it as accepted. No more
 work is necessary in this user story. Great!
 
 If they reject the story, they should provide a detailed description about the
-rejection. If you were the *Requester* you can ask yourself this question to
+rejection. If you were the *requester* you can ask yourself this question to
 describe the problem/s:
 
 - What did you expect and what did actually happen?
@@ -136,9 +140,16 @@ submit another pull request to patch the feature, you can continue with step 4.
 
 ## Conclusion
 
-Pivotal Tracker provides a great way to track velocity and they recently launched
-an integration with Github which improves traceability from feature to
+[Pivotal Tracker](https://www.pivotaltracker.com/) provides a great way to track team velocity. This helps in determining when a big feature will be shipped. As much as we like
+to use [GitHub](https://github.com/) for everything, Pivotal Tracker integrates nicely with them (they recently launched this integration!) which improves traceability from feature to
 implementation.
 
 It is not our first choice when it comes to project management tools, but we
-can adapt to our client's tools and thrive using it.
+can adapt to our client's tools and thrive using it. Pivotal Tracker is more
+advanced than GitHub Projects and it provides great features for managing your
+user stories, backlog, icebox, and team velocity.
+
+At [Ombu Labs](https://www.ombulabs.com) we like to invite all stakeholders to our project management
+tools. I like how Pivotal Tracker makes it easy to communicate that some stories
+will be delivered in this sprint and some will have to wait until the next sprint.
+It is a great way to manage expectations.
