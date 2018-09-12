@@ -15,7 +15,7 @@ author_title_prefix: "Articles by "
 timezone: America/New_York
 
 # Details for the RSS feed generator
-url:            'https://www.ombulabs.com/blog'
+url:            'https://www.ombulabs.com'
 author:         'OmbuLabs'
 feed:
   path: rss.xml
