@@ -8,7 +8,6 @@
     <title>OmbuLabs Blog</title>
     <link>http://localhost:4000</link>
     <description>The Lean Software Boutique</description>
-<<<<<<< HEAD
     <pubDate>Thu, 06 Sep 2018 07:10:00 -0400</pubDate>
     <item>
       <title>How we use Pivotal Tracker at Ombu Labs</title>
@@ -171,9 +170,6 @@ It is a great way to manage expectations.</p>
 ]]></content:encoded>
       <dc:date>2018-09-06T07:10:00-04:00</dc:date>
     </item>
-=======
-    <pubDate>Tue, 14 Aug 2018 08:42:00 -0400</pubDate>
->>>>>>> Regenerated blog
     <item>
       <title>Upgrade Rails from 5.1 to 5.2</title>
       <link>http://localhost:4000/rails/upgrades/upgrade-rails-from-5-1-to-5-2.html</link>
@@ -6231,10 +6227,6 @@ Below are some cool, useful tricks you can use on Github which can probably make
 ]]></content:encoded>
       <dc:date>2015-01-19T13:35:00-05:00</dc:date>
     </item>
-<<<<<<< HEAD
     <dc:date>2018-09-06T07:10:00-04:00</dc:date>
-=======
-    <dc:date>2018-08-14T08:42:00-04:00</dc:date>
->>>>>>> Regenerated blog
   </channel>
 </rss>
