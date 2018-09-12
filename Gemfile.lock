@@ -6,6 +6,7 @@ PATH
       jekyll (~> 3.5.0)
       jekyll-authors
       jekyll-categories
+      jekyll-feed
       jekyll-paginate
       jekyll-titleize
       pygments.rb
@@ -29,7 +30,7 @@ GEM
     colorator (1.1.0)
     colored (1.2)
     concurrent-ruby (1.0.5)
-    dotenv (2.4.0)
+    dotenv (2.5.0)
     ethon (0.10.1)
       ffi (>= 1.3.0)
     ffi (1.9.18)
@@ -62,6 +63,8 @@ GEM
       jekyll (>= 0.10.0)
     jekyll-categories (0.0.2)
       jekyll (>= 0.10.0)
+    jekyll-feed (0.10.0)
+      jekyll (~> 3.3)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
@@ -69,7 +72,7 @@ GEM
       titleize (~> 1.3)
     jekyll-watch (1.5.1)
       listen (~> 3.0)
-    kramdown (1.16.2)
+    kramdown (1.17.0)
     liquid (4.0.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -109,7 +112,7 @@ GEM
     rouge (1.11.1)
     ruby_dep (1.5.0)
     safe_yaml (1.0.4)
-    sass (3.5.6)
+    sass (3.5.7)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -138,6 +141,9 @@ DEPENDENCIES
   pry-byebug
   pry-nav
   rack-contrib
+
+RUBY VERSION
+   ruby 2.2.9p480
 
 BUNDLED WITH
    1.16.2
