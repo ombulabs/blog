@@ -6,14 +6,15 @@ categories: ["continuous-learning"]
 author: "etagwerker"
 ---
 
-At Ombu Labs we believe that if we are not learning from your mistakes we are
+At [Ombu Labs](https://www.ombulabs.com) we believe that if we are not learning from our mistakes we are
 doing it wrong. It is simple: *The only unforgivable mistake is to not learn
 from our mistakes.*
 
 That is why we try to incorporate feedback into everything we do. We
 embrace [peer reviews](https://www.slideshare.net/ombulabs/peer-reviews-44220969) and
 [pair programming](https://www.ombulabs.com/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html)
-as a way to get constant feedback on a daily basis.
+as a way to get constant feedback on a daily basis. _Even this article_ had reviews
+from 3 different people! ([https://github.com/ombulabs/blog/pull/154](https://github.com/ombulabs/blog/pull/154))
 
 Another step that we incorporate into every client relationship is an exit
 call. This call gives us an opportunity to assess how well we performed.
@@ -33,7 +34,7 @@ Here are some of the questions that we like to ask:
 
 - What did you _like_ about our service?
 
-- What did you _hate_ about our service?
+- What did you _dislike_ about our service?
 
 - What did you think about our [Rails upgrade](https://www.ombulabs.com/blog/tags/upgrades) process?
 Is there anything we can do to improve it?
@@ -60,4 +61,4 @@ We have written a few case studies based on these exit calls. For example:
 
 Our secret sauce for our productized [Rails upgrade service](https://fastruby.io) ([https://fastruby.io](https://fastruby.io))
 is constantly changing, getting better with every project we ship. Exit calls are
-the best way to keep getting better.
+the best way to keep improving as a company.
