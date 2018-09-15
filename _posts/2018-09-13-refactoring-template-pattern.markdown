@@ -6,7 +6,7 @@ categories: ["code-refactor", "design-patterns"]
 author: "cleiviane"
 ---
 
-In our last article of the [refactoring series](https://www.ombulabs.com/blog/tags/code-refactor) we saw how design patterns can be used to let our Ruby code beautiful and clean. Design patterns are a powerful tool for any developer and a familiarity with them will lead to better code by forcing a consideration of SOLID principles.
+In our last article of the [refactoring series](https://www.ombulabs.com/blog/tags/code-refactor) we saw how design patterns can be used to make our Ruby code beautiful and clean. Design patterns are a powerful tool for any developer and a familiarity with them will lead to better code by forcing a consideration of SOLID principles.
 
 Now let's talk about other pattern that when properly used can be very helpful: *The Template Method*.
 
@@ -102,6 +102,6 @@ end
 Looks good, right? If we ever need to create a new format, we just need to create a new concrete class, making this a perfect example of the [Open/Closed Principle](https://www.oodesign.com/open-close-principle.html). And by designing our code this way it will be easier and safer to change anything in the future.
 
 ## Conclusion
-The Template method is a powerful tool that every developer needs to have on hands. If you need to vary just a few methods or make them optional this pattern is a perfect solution. The template class should implement the skeleton, while the subclasses should implement the details in the way that it needs.
+The Template method is a powerful tool that every developer needs to have on hand. If you need to vary just a few methods or make them optional this pattern is a perfect solution. The template class should implement the skeleton, while the subclasses should implement the details in the way that it needs.
 
 I hope that this was useful for you. We will keep talking about principles and patterns here in our blog, so stay tuned!
