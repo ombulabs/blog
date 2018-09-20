@@ -6,7 +6,7 @@ categories: ["rails", "security"]
 author: "lubc"
 ---
 
-The internet is a wonderful place, but there will always be people that don't have good intentions when they visit our websites. That's why you need to be aware of the vulnerabilities that your application can have and how to avoid them. In this article I'll cover two common security problems in [Rails](https://rubyonrails.org) applications (I'll probably make a second part since this is very extensive topic).
+The internet is a wonderful place, but there will always be people that don't have good intentions when they visit our websites. That's why you need to be aware of the vulnerabilities that your application can have and how to avoid them. In this article I'll cover two common security problems in [Rails](https://rubyonrails.org) applications (I'll probably make a second part since this is a very extensive topic).
 
 <!--more-->
 
