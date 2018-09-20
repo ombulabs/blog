@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Step up the security of your Rails app | Part 1"
-date: 2018-09-19 12:10:00
+date: 2018-09-20 12:10:00
 categories: ["rails", "security"]
 author: "lubc"
 ---
 
-The internet is a wonderful place, but there will always be people that don't have good intentions when they visit our websites. That's why you need to be aware of the vulnerabilities that your application can have and how to avoid them. In this article I'll cover two common security problems in [Rails](https://rubyonrails.org) applications (I'll probable make a second part since this is very extended topic).
+The internet is a wonderful place, but there will always be people that don't have good intentions when they visit our websites. That's why you need to be aware of the vulnerabilities that your application can have and how to avoid them. In this article I'll cover two common security problems in [Rails](https://rubyonrails.org) applications (I'll probably make a second part since this is very extensive topic).
 
 <!--more-->
 
@@ -38,7 +38,7 @@ eval(evil_string)
 
 #### How to avoid it?
 `eval` is a very powerful method that should only be used in a few specific cases. Most of the time it is possible to accomplish the same goal with a safer solution.
-A rule of thumb is that should never use it with user input. At least without properly sanitize it.
+A rule of thumb is that you should never use it with user input. At least without properly sanitizing it.
 
 ---
 
@@ -46,7 +46,7 @@ A rule of thumb is that should never use it with user input. At least without pr
 #### What is it?
 It allows the attacker to manipulate a specific [SQL](https://en.wikipedia.org/wiki/SQL) query that you have in your code and get access to your database.
 
-Rails uses [Active Record](https://guides.rubyonrails.org/active_record_basics.html) as it's default [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping), and it's very efficient in terms of security. But it's still possible to write a vulnerable query.
+Rails uses [Active Record](https://guides.rubyonrails.org/active_record_basics.html) as its default [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping), and it's very efficient in terms of security. But it's still possible to write a vulnerable query.
 
 #### Example
 
@@ -54,7 +54,7 @@ Rails uses [Active Record](https://guides.rubyonrails.org/active_record_basics.h
 # User input
 params[:search] # You probably expect just a string with part of the user's name
                 # But it can contain something like:
-                # "'); DROP TABLE products ; SELECT * FROM users WHERE (name LIKE '%"
+                # "'); DROP TABLE users; SELECT * FROM products WHERE (name LIKE '%"
 
 # Vulnerable code
 evil_string = params[:search]
@@ -62,6 +62,9 @@ User.where("first_name LIKE '%#{evil_string}%'")
 
 # Bye table
 ```
+<a href="https://xkcd.com/327/" target="_blank">
+  <img src="/blog/assets/images/exploits_of_a_mom.png" alt="Rails SQL Injection">
+</a>
 
 Take a look at [https://rails-sqli.org](https://rails-sqli.org) if you want to see a larger variety of examples for this exploit.
 
