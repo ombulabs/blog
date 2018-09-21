@@ -12,14 +12,14 @@ The internet is a wonderful place, but there will always be people that don't ha
 
 It's also worth to mention that Rails itself has improved a lot [over the years](https://www.youtube.com/watch?v=Btrmc1wO3pc) to make everything more secure and easy for the people who use it. That's one of the reasons why it's so important to [upgrade your Rails project](https://www.ombulabs.com/blog/tags/upgrades).
 
-Before we start you should know that Rails has an [official security guide](https://guides.rubyonrails.org/security.html) with a large variety of common vulnerabilities. I recommend to take a look at it if you want to dive deeper into this topic. Also at the end of this article I'll leave a few links to some useful tools that will help you to level up your security in Rails.
+Before we start you should know that Rails has an [official security guide](https://guides.rubyonrails.org/security.html) with a large variety of common vulnerabilities. I recommend to take a look at it if you want to dive deeper into this topic. Also at the end of this article I'll leave a few links to some useful tools that will help you level up security in your Rails application.
 
 Okay, let's jump into it:
 
 ## Command Injection
 #### What is it?
 It allows the attacker to run any command on your server.
-[Ruby](https://www.ruby-lang.org/en/) has a [method](https://apidock.com/ruby/Kernel/eval) called `eval` which can take a string and execute what's inside of it. This can likely be the reason of this security issue if you use it wrong.
+[Ruby](https://www.ruby-lang.org/en/) has a [method](https://apidock.com/ruby/Kernel/eval) called `eval` which can take a string and execute what's inside of it. This can likely be the reason of this security issue if you use it the wrong way.
 
 #### Example
 
@@ -38,13 +38,24 @@ eval(evil_string)
 
 #### How to avoid it?
 `eval` is a very powerful method that should only be used in a few specific cases. Most of the time it is possible to accomplish the same goal with a safer solution.
-A rule of thumb is that you should never use it with user input. At least without properly sanitizing it.
+If you see a call to `eval` you must be very sure that you are properly sanitizing it. Using [regular expressions](https://ruby-doc.org/core-2.5.1/Regexp.html) is a good way to accomplish that.
+
+```ruby
+# Secure code
+evil_string = params[:shop][:items_ids]
+secure_string = /\[\d*,?\d*,?\d*\]/.match(evil_string).to_s
+
+eval(secure_string)
+```
 
 ---
 
 ## SQL Injection
 #### What is it?
-It allows the attacker to manipulate a specific [SQL](https://en.wikipedia.org/wiki/SQL) query that you have in your code and get access to your database.
+It allows the attacker to manipulate a specific [SQL](https://en.wikipedia.org/wiki/SQL) query that you have in your code and get unauthorized access to parts of your database. That way the attacker could do things like:
+- Read information that should have been private
+- Update records in your database that should have been out of reach
+- Drop your database
 
 Rails uses [Active Record](https://guides.rubyonrails.org/active_record_basics.html) as its default [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping), and it's very efficient in terms of security. But it's still possible to write a vulnerable query.
 
@@ -60,7 +71,7 @@ params[:search] # You probably expect just a string with part of the user's name
 evil_string = params[:search]
 User.where("first_name LIKE '%#{evil_string}%'")
 
-# Bye table
+# Bye users table
 ```
 <a href="https://xkcd.com/327/" target="_blank">
   <img src="/blog/assets/images/exploits_of_a_mom.png" alt="Rails SQL Injection">
