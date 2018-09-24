@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Step up the security of your Rails app | Part 1"
-date: 2018-09-20 12:10:00
+date: 2018-09-24 12:10:00
 categories: ["rails", "security"]
 author: "lubc"
 ---
