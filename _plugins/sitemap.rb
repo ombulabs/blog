@@ -9,7 +9,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
       files << File.new(page)
     end
 
-    SitemapGenerator::Sitemap.default_host = site.config['url']
+    SitemapGenerator::Sitemap.default_host = site.config['url'] + "/blog"
     public_path = Dir.pwd.end_with?("blog") ? "_site" : "public/blog"
     SitemapGenerator::Sitemap.public_path = public_path
     SitemapGenerator::Sitemap.create compress: false do
@@ -20,4 +20,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
     puts "Generated sitemap.xml.gz"
   end
+
+  puts "Running tests..."
+  system "bundle exec rspec spec/blog_spec.rb"
+  puts "All done!"
 end
