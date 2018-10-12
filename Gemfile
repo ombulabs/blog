@@ -12,3 +12,7 @@ group :development do
   gem 'byebug'
   gem 'html-proofer'
 end
+
+group :test do
+  gem 'rspec'
+end
