@@ -79,4 +79,4 @@ end
 
 ## Conclusion
 
-As you can see, changing the way that you solve the problem can have significant performance improvements. Don't forget to take a look a the `ActiveRecord::Calculations` [documentation](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html) to see all the available methods.
+As you can see, changing the way that you solve the problem can have significant performance improvements. Don't forget to take a look at the `ActiveRecord::Calculations` [documentation](https://api.rubyonrails.org/classes/ActiveRecord/Calculations.html) to see all the available methods.
