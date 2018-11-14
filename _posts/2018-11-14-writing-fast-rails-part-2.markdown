@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Tips for Writing Fast Rails: Part 2"
-date: 2018-11-13 10:10:00
+date: 2018-11-13 09:10:00
 categories: ["rails", "performance"]
 author: "luciano"
 ---
