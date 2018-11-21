@@ -21,7 +21,7 @@ During the Kickoff Call, we like to start off by introducing ourselves and getti
 
 We want to understand what the client wants to do in terms of project management. **_Do they use an existing service to manage stories? If so, what do they use? Do they want us to join an existing project board?_**
 
-At [Ombu Labs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (issues, pull requests) and [Pivotal Tracker](https://www.pivotaltracker.com) for project management.
+At [Ombu Labs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (pull requests) and [Pivotal Tracker](https://www.pivotaltracker.com) for project management (user stories).
 
 #### Access
 
