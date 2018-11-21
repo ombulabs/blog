@@ -9,7 +9,7 @@ author: "emily"
 When starting a new software development project with a client, it is important to get started on the right foot. The way you communicate with a client at the beginning of a project can set the tone for how communication will be throughout the project.
 
 
-Therefore, at [Ombu Labs](https://www.ombulabs.com), we believe it is crucial to start off every new project with a *Kickoff Call*, where we can take time to get to know the client's team and speak in depth about their goals and priorities for the project. We like to discuss the following list of topics with clients during our calls.
+Therefore, at [Ombu Labs](https://www.ombulabs.com), we believe it is crucial to start off every new project with a *Kickoff Call*, where we can take time to get to know the client's team and speak in depth about their goals and priorities for the project. We like to discuss the following list of topics with clients during our calls:
 
 <!--more-->
 
@@ -21,7 +21,7 @@ During the Kickoff Call, we like to start off by introducing ourselves and getti
 
 We want to understand what the client wants to do in terms of project management. **_Do they use an existing service to manage stories? If so, what do they use? Do they want us to join an existing project board?_**
 
-At [Ombu Labs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (pull requests) and [Pivotal Tracker](https://www.pivotaltracker.com) for project management (user stories).
+At [Ombu Labs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (pull requests) and [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) for project management (user stories).
 
 #### Access
 
@@ -33,7 +33,7 @@ Once the team has access to the code, developers should try to get started setti
 
 #### Communication
 
-**Chat**: We want to invite the client to our [Slack](www.slack.com) (we prefer this) or join their own internal communication tool. That way we can move our conversation from email into a more dynamic environment. There will be plenty of questions and we should have a direct line to a tech leader in our client's company.
+**Chat**: We want to invite the client to our [Slack](https://slack.com) (we prefer this) or join their own internal communication tool. That way we can move our conversation from email into a more dynamic environment. There will be plenty of questions and we should have a direct line to a tech leader in our client's company.
 
 **Calls**: In terms of calls, we like to have one or two calls per week: at the beginning and end of the week. That way we can share what we are planning to work on during the week, what we have accomplished, and what blockers we may have. During the call at the end of the week, we can demo the work that has been done for the client. **_Work with the client and team members to find a time that works for everyone._**
 
@@ -47,7 +47,7 @@ In every project, we will do internal quality assurance and code reviews, but we
 
 **_What kind of Git branching model does the client follow? Do they have master, develop, and feature + fixes branches? Or do they have only one master branch and feature + fixes branches?_**
 
-In our [Rails Upgrade](https://fastruby.io) projects for example, we encourage our clients to merge our changes to master as soon as possible and get them to production as soon as possible. That way we can know right away if the code works or if there are some issues.
+In our [Rails Upgrade](https://fastruby.io) projects for example, we encourage our clients to merge our changes to master as soon as possible and get them to staging as soon as possible. That way we can know right away if the code works or if there are some issues.
 
 #### Error Handling
 
