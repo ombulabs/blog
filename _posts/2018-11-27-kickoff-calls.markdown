@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Kickoff Calls for New Projects"
-date: 2018-11-21 11:00:00
+date: 2018-11-27 11:00:00
 categories: ["agile", "continuous-learning"]
 author: "emily"
 ---
@@ -39,7 +39,7 @@ Once the team has access to the code, developers should try to get started setti
 
 Sometimes clients will want us to participate in their daily calls, we can do this as well. We should find out what level of communication they're comfortable with.
 
-#### Quality Assurance/Code Review
+#### Quality Assurance / Code Review
 
 In every project, we will do internal quality assurance and code reviews, but we should encourage our clients to do their own quality assurance and code reviews as well. **_If we need to get someone to review our pull requests, who should we reach out to when we want to merge something to master? What is the client's code review process?_**
 
@@ -51,10 +51,12 @@ In our [Rails Upgrade](https://fastruby.io) projects for example, we encourage o
 
 #### Error Handling
 
-If we are joining an existing, productive project, we need to make sure that the client is using an error tracking solution (e.g. Rollbar, Sentry, or Airbrake).
+If we are joining an existing, productive project, we need to make sure that the client is using an error tracking solution (e.g. [Rollbar](https://rollbar.com), [Sentry](https://sentry.io/welcome/), or [Airbrake](https://airbrake.io)).
 
 **_If so, what are they using? Could we get access to their resources?_** This will help us a lot in responding immediately to bugs we may introduce during the project.
 
 #### Deployment Strategy
 
-**_How often does the client deploy? When are good days/times to deploy changes?_** We usually try to avoid Friday afternoon/evenings for deployments, because we don't want to introduce any bugs over the weekend.
+Our preferred deployment strategy is to deploy `develop` to `staging` and `master` to `production`. **_What is the client's strategy?_**
+
+**_How often does the client deploy? When are good days/times to deploy changes?_** We usually try to avoid deploying on Fridays, because we don't want to introduce any bugs over the weekend.
