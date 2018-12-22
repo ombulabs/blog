@@ -7,12 +7,14 @@ author: "etagwerker"
 ---
 
 If you are interested in Ruby and Rails performance, you have probably read articles
-by Nate Berkopec from Speedshop. At Ombu Labs we are big fans of his work, his
-Complete Guide to Rails Performance book and Slack community.
+by [Nate Berkopec](https://twitter.com/nateberkopec) from [Speedshop](https://www.speedshop.co/). At Ombu
+Labs we are big fans of his work, his
+[Complete Guide to Rails Performance book](https://www.railsspeed.com/) and
+Slack community.
 
-When Nate announced a series of public workshops I didn't hesitate and signed up
-as quickly as possible. Here are my notes from my experience at the workshop on
-October 17th.
+When Nate announced a series of [public workshops](https://www.speedshop.co/workshops.html) I
+didn't hesitate and signed upas quickly as possible. Here are my notes from my
+experience at the workshop on October 17th.
 
 <!--more-->
 
@@ -22,9 +24,9 @@ The workshop mentioned a lot of the concepts outlined in his book. The 80/20 rul
 is a good guiding principle for doing performance optimization.
 
 80% of the work performed in an application will come from 20% of the code. This
-is a good rule to prioritize performance optimizations: “Applying
+is a good rule to prioritize performance optimizations: _"Applying
 optimization/attention equally to every line of code is a waste of time when
-only 20% of the code causes 80% of the problems”.
+only 20% of the code causes 80% of the problems"_
 
 In order to judge which parts of your application have performance problems, you
 should have statistical data from your production environment
@@ -44,7 +46,7 @@ a quick intro to the ideas of benchmarking and profiling.
 
 One of the best things about this workshop was that it wasn't just theory, for
 every topic there was a practical part to apply what you learned. For this
-section, we used `wrk` to benchmark our applications.
+section, we used [`wrk`](https://github.com/wg/wrk) to benchmark our applications.
 
 You can quickly install `wrk` with Homebrew: `brew install wrk`
 
@@ -69,10 +71,11 @@ $ wrk -c 100 -t 100 -d 10 --latency https://www.ombushop.com
  Transfer/sec:      5.23MB
  ```
 
-For testing purposes I used one of our products (Ombu Shop) and its production
-environment. I don't recommend that you do that: It could cause problems in
-your production environment and network latency could be high at the moment of
-your test (which would report something inaccurate)
+For testing purposes I used one of our products ([Ombu Shop](https://www.ombushop.com)) and
+its production environment. I don't recommend that you do that: It could cause
+problems in your production environment and network latency could be high at
+the moment of your test (which would report something inaccurate just because
+your Internet connection had a hiccup)
 
 I would suggest using your local environment and making sure to run it using
 `RAILS_ENV=production`.
@@ -83,22 +86,23 @@ distribution. In this case: 50% of requests returned in less than 32.03ms;
 75% of requests returned in less than 36.93; and 99% of the requests returned
 in less than 711.25ms.
 
-Considering benchmarks don’t usually follow a normal distribution you should
+Considering benchmarks don't usually follow a normal distribution you should
 always look at the _Max_ and _+/- Stdev_ values.
 
 Nate's advice is to use production-like data. If you have little data in your
-database, you might end up with great numbers that are just not realistic.
+database, you might end up with great results that are just not realistic.
 You should try to use a realistic data dump before running your benchmark.
 
 ## Little's Law: How many servers do I need?
 
 In this section there was some very interesting data about products that were
-running on Rails at some point in time: Twitter; Shopify; and Envato.
+running on Rails at some point in time: [Twitter](https://twitter.com);
+[Shopify](https://shopify.com); and [Envato](https://envato.com/).
 
 We saw some historical data about their average load and the amount of
-application servers that they were using at the timehow well they did in
+application servers that they were using at the time and how well they did in
 terms of amount of servers for their average load. There was something clearly
-wrong with the way Twitter was calculating the amount of application instances
+wrong with the way _Twitter_ was calculating the amount of application instances
 that they needed.
 
 You can calculate the ideal amount of servers using this formula:
@@ -110,7 +114,9 @@ arrival rate of 30 requests per second. That means that we need at least 10
 application instances on average. To be on the safe side, we should probably
 have at least 40 application instances to support peak load.
 
-Lesson learned: The amount of servers that you currently have divided by the
+### Lesson learned
+
+The amount of servers that you currently have divided by the
 amount of servers estimated by Little's Law should be between 10% and 25%.
 This makes sense because load is variable and you are using average metrics to
 calculate the ideal amount of servers.
@@ -118,11 +124,11 @@ calculate the ideal amount of servers.
 ## Microbenchmarks
 
 This section was a good refresher about different benchmarking tools in Ruby.
-`benchmark` is a good starting point and present in the standard library, but
-if you want to take it one step further, you can use `benchmark-ips` which
-provides metrics about iterations per second. An extension of that gem is
-`benchmark-ipsa` which shows information about the allocations of the code you
-are benchmarking.
+[`benchmark`](https://ruby-doc.org/stdlib-2.5.0/libdoc/benchmark/rdoc/Benchmark.html) is
+a good starting point and present in the standard library, but
+if you want to take it one step further, you can use [`benchmark-ips`](https://github.com/evanphx/benchmark-ips) which provides metrics about iterations per second. An extension of that
+gem is [`benchmark-ipsa`](https://github.com/jondot/benchmark-ipsa) which shows
+information about the allocations of the code you are benchmarking.
 
 One word of caution is to not let microbenchmarks drive every decision you
 make: Sometimes you feel the urge to search and replace Ruby idioms in order
@@ -137,11 +143,12 @@ profiling: statistical vs. tracing.
 
 One of the pros of statistical profiling is that it has low overhead. One of
 the cons is that it provides low precision. Some examples of statistical
-profilers are NewRelic and Skylight. As much as I love Skylight's simplicity
-and user interface, NewRelic provides way more data for you to analyze your app.
+profilers are [NewRelic](https://newrelic.com/) and [Skylight](https://www.skylight.io/).
+As much as I love Skylight's simplicity and user interface, NewRelic provides
+way more data for you to analyze your app.
 
 Tracing profilers have high overhead, but their precision is perfect. An example
-of such a profiler is `ruby-prof`.
+of such a profiler is [`ruby-prof`](https://github.com/ruby-prof/ruby-prof).
 
 One word of caution is to take into account that profiling isn't free. It will
 slow down your application a little bit. It is important to only use one
@@ -151,8 +158,8 @@ profiler at a time.
 
 After profiling our applications and finding slow endpoints, we learned about
 memory allocation and garbage collection in Ruby. We played around with
-ObjectSpace which is a good way to see how many objects are in memory at any
-point in time.
+[ObjectSpace](https://ruby-doc.org/core-2.5.0/ObjectSpace.html) which is a
+good way to see how many objects are in memory at any point in time.
 
 You can do this in your Rails application like this:
 
@@ -188,12 +195,13 @@ pp ObjectSpace.count_objects
 
 Some libraries that were mentioned in this section:
 
-- `derailed_benchmarks` - I didn't get to play with this one, but we recently
-published a screencast about this gem: https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html
+- [`derailed_benchmarks`](https://github.com/schneems/derailed_benchmarks) - I
+didn't get to play with this one, but we recently published a screencast about
+this gem: [https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html](https://www.ombulabs.com/blog/rails/performance/benchmark/performance-improvements-using-derailed-benchmarks.html)
 
-- `memory_profiler` - I got to see some interesting information provided by
-this gem using `rack-mini-profiler`. If you want to use this gem without
-`rack-mini-profiler` you can easily do it like this:
+- [`memory_profiler`](https://github.com/SamSaffron/memory_profiler) - I got
+to see some interesting information provided by this gem using `rack-mini-profiler`.
+If you want to use this gem without [`rack-mini-profiler`](https://github.com/MiniProfiler/rack-mini-profiler) you can easily do it like this:
 
 ```
 require 'memory_profiler'
@@ -204,9 +212,10 @@ end
 report.pretty_print
 ```
 
-- `oink` - This is a pretty interesting gem that analyzes your logs to find the
-endpoints that use the most amount of memory. I haven't used it yet, but it is
-definitely worth a try if you are having problems with memory hogs. ;)
+- [`oink`](https://github.com/noahd1/oink) - This is a pretty interesting gem
+that analyzes your logs to find the endpoints that use the most amount of memory.
+I haven't used it yet, but it is definitely worth a try if you are having
+problems with memory hogs. ;)
 
 ## Rack Mini Profiler
 
@@ -237,8 +246,8 @@ the allocations grouped by gem. This feature depends on the `memory_profiler` ge
 
 <img src="/blog/assets/images/railsperf/04-rack-mini-profiler-memory.png" alt="Memory stats for a request with Rack Mini Profiler" >
 
-If you want to see a CPU flame graph (What is a flame graph?), you can add
-`?pp=flamegraph` to find the hottest code paths.
+If you want to see a CPU flame graph ([What is a flame graph?](http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)), you can add `?pp=flamegraph` to find the hottest code
+paths.
 
 Adding `?pp=flamegraph` to the path will output something like this:
 
@@ -250,15 +259,15 @@ within that huge graph. You will need to zoom in to find some poorly performant
 application code.
 
 If you have a hard time interpreting the data in the flame graph, try reading
-Sam Saffron's approach to dealing with information overload.
+[Sam Saffron's approach to dealing with information overload](https://community.miniprofiler.com/t/how-to-deal-with-information-overload-in-flamegraphs/437).
 
 I could probably write a lot more about this super useful gem, but maybe that
 deserves a new article. If you want to explore further, you can add `?pp=help` to
 any request and see some documentation.
 
 One thing to keep in mind is to make sure to use production-like data to
-profile your application. You can get some unrealistic results if you don’t use
-enough data.Also, run the profile multiple times to make sure that you see many
+profile your application. You can get some unrealistic results if you don't use
+enough data. Also, run the profile multiple times to make sure that you see many
 samples, not just one or two. There may be some outliers if you only run it
 twice.
 
@@ -281,7 +290,7 @@ for determining whether your page is slow, average, or fast!
 
 <img src="/blog/assets/images/railsperf/07-average-server-response-time.png" alt="Average browser load time" >
 
-A good tip is to throttle your own Internet connection to something like Slow 3G
+A great tip is to throttle your own Internet connection to something like Slow 3G
 to see your application when your connection is not super fast (most of us
 develop using broadband connection). You can do this over here:
 
@@ -294,7 +303,7 @@ spreadsheets in Ombu Shop's homepage.
 <img src="/blog/assets/images/railsperf/09-frames.png" alt="Watch your page load in different frames" >
 
 We made the mistake of loading our spreadsheet near the end of the page, not
-near the beginning (before the JavaScript is loaded) so for a split second
+near the beginning (before the JavaScript assets are loaded) so for a split second
 our page looks like plain text without any style in it.
 
 <img src="/blog/assets/images/railsperf/10-head-css.png" alt="Stylesheets should load before Javascript - Source code example" >
