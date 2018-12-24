@@ -8,6 +8,12 @@ RSpec.describe 'Ombu Labs Blog' do
     let(:file_path) { "_site/#{post}" }
     let(:url) { "https://www.ombulabs.com/blog/#{post}" }
 
+    before do
+      unless File.exists?(file_path)
+        system("jekyll build")
+      end
+    end
+
     it 'generates correct URLs' do
       expect(File.exists?(file_path)).to be_truthy
     end
