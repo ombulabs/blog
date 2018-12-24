@@ -50,7 +50,7 @@ section, we used [`wrk`](https://github.com/wg/wrk) to benchmark our application
 
 You can quickly install `wrk` with Homebrew: `brew install wrk`
 
-Then you can quickly run a benchmark for one of your pages:
+Then you can run a benchmark for one of your pages:
 
 ```
 $ wrk -c 100 -t 100 -d 10 --latency https://www.ombushop.com
