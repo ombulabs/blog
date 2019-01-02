@@ -1,19 +1,19 @@
 ---
 layout: post
 title:  "Notes from The Complete Guide to Rails Performance's Workshop"
-date: 2018-12-20 11:00:00
+date: 2019-01-02 9:00:00
 categories: ["rails", "performance"]
 author: "etagwerker"
 ---
 
-If you are interested in Ruby and Rails performance, you have probably read articles
+If you are interested in Ruby and Rails performance, you have definitely read articles
 by [Nate Berkopec](https://twitter.com/nateberkopec) from [Speedshop](https://www.speedshop.co/). At Ombu
 Labs we are big fans of his work, his
 [Complete Guide to Rails Performance book](https://www.railsspeed.com/) and
 Slack community.
 
 When Nate announced a series of [public workshops](https://www.speedshop.co/workshops.html) I
-didn't hesitate and signed upas quickly as possible. Here are my notes from my
+didn't hesitate and signed up as quickly as possible. Here are my notes from my
 experience at the workshop on October 17th.
 
 <!--more-->
@@ -30,11 +30,11 @@ only 20% of the code causes 80% of the problems"_
 
 In order to judge which parts of your application have performance problems, you
 should have statistical data from your production environment
-(for example: NewRelic or Skylight reports from the last month's usage). This
-data will be useful for determining what parts of your application is likely in
-need of optimization.
+(for example: [NewRelic](https://newrelic.com) or [Skylight](https://www.skylight.io) reports
+from the last month's usage). This data will be useful for determining what parts
+of your application is likely in need of optimization.
 
-As Nate would say: "80% of an application's work occurs in 20% of its code."
+As Nate would say: _"80% of an application's work occurs in 20% of its code."_
 Similarly:
 
 <img src="/blog/assets/images/railsperf/01-pareto-memory.png" alt="Pareto slide about Memory" >
@@ -81,22 +81,22 @@ I would suggest using your local environment and making sure to run it using
 `RAILS_ENV=production`.
 
 This quick benchmark gives you a metric that could work as a guiding light:
-requests per second. Also, you can see some information about the latency
+*requests per second*. Also, you can see some information about the latency
 distribution. In this case: 50% of requests returned in less than 32.03ms;
 75% of requests returned in less than 36.93; and 99% of the requests returned
 in less than 711.25ms.
 
-Considering benchmarks don't usually follow a normal distribution you should
-always look at the _Max_ and _+/- Stdev_ values.
+Considering benchmarks don't usually follow a [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution) you
+should always look at the _Max_ and _+/- Stdev_ values.
 
 Nate's advice is to use production-like data. If you have little data in your
 database, you might end up with great results that are just not realistic.
-You should try to use a realistic data dump before running your benchmark.
+You should import a realistic data dump before running your benchmark.
 
 ## Little's Law: How many servers do I need?
 
 In this section there was some very interesting data about products that were
-running on Rails at some point in time: [Twitter](https://twitter.com);
+running [Rails](https://rubyonrails.org) at some point in time: [Twitter](https://twitter.com);
 [Shopify](https://shopify.com); and [Envato](https://envato.com/).
 
 We saw some historical data about their average load and the amount of
@@ -117,7 +117,9 @@ have at least 40 application instances to support peak load.
 ### Lesson learned
 
 The amount of servers that you currently have divided by the
-amount of servers estimated by Little's Law should be between 10% and 25%.
+amount of servers estimated by [Little's Law](http://web.mit.edu/~sgraves/www/papers/Little%27s%20Law-Published.pdf) should
+be between 10% and 25%.
+
 This makes sense because load is variable and you are using average metrics to
 calculate the ideal amount of servers.
 
@@ -126,9 +128,10 @@ calculate the ideal amount of servers.
 This section was a good refresher about different benchmarking tools in Ruby.
 [`benchmark`](https://ruby-doc.org/stdlib-2.5.0/libdoc/benchmark/rdoc/Benchmark.html) is
 a good starting point and present in the standard library, but
-if you want to take it one step further, you can use [`benchmark-ips`](https://github.com/evanphx/benchmark-ips) which provides metrics about iterations per second. An extension of that
+if you want to take it one step further, you can use [`benchmark-ips`](https://github.com/evanphx/benchmark-ips) which
+provides metrics about iterations per second. An extension of that
 gem is [`benchmark-ipsa`](https://github.com/jondot/benchmark-ipsa) which shows
-information about the allocations of the code you are benchmarking.
+information about the memory allocations of the code you are benchmarking.
 
 One word of caution is to not let microbenchmarks drive every decision you
 make: Sometimes you feel the urge to search and replace Ruby idioms in order
@@ -246,8 +249,8 @@ the allocations grouped by gem. This feature depends on the `memory_profiler` ge
 
 <img src="/blog/assets/images/railsperf/04-rack-mini-profiler-memory.png" alt="Memory stats for a request with Rack Mini Profiler" >
 
-If you want to see a CPU flame graph ([What is a flame graph?](http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)), you can add `?pp=flamegraph` to find the hottest code
-paths.
+If you want to see a CPU flame graph ([What is a flame graph?](http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)),
+you can add `?pp=flamegraph` to find the hottest code paths.
 
 Adding `?pp=flamegraph` to the path will output something like this:
 
@@ -276,8 +279,9 @@ speed it up.
 
 ## Chrome Dev Tools
 
-After profiling a slow controller, Nate showed us a few sections in the Chrome
-Dev Tools that are quite useful for finding slow web pages.
+After profiling a slow controller, Nate showed us a few sections in the [Chrome
+Dev Tools](https://developers.google.com/web/tools/chrome-devtools/) that are
+quite useful for finding problems with slow web pages.
 
 Also, here are are some great charts that will give you a good rule of thumb
 for determining whether your page is slow, average, or fast!
@@ -290,7 +294,7 @@ for determining whether your page is slow, average, or fast!
 
 <img src="/blog/assets/images/railsperf/07-average-server-response-time.png" alt="Average browser load time" >
 
-A great tip is to throttle your own Internet connection to something like Slow 3G
+A great tip is to throttle your own Internet connection to something like _Slow 3G_
 to see your application when your connection is not super fast (most of us
 develop using broadband connection). You can do this over here:
 
@@ -311,7 +315,7 @@ our page looks like plain text without any style in it.
 ## Final Thoughts
 
 Even for someone who has been working with Ruby/Rails since 2009 and performance
-optimization projects since 2015, this workshop taught me a lot of things.
+optimization projects since 2015, this workshop taught me a lot of useful things.
 I can't imagine how much value you would get if you were just starting with
 Ruby/Rails performance tuning.
 
@@ -320,4 +324,4 @@ and learning from Nate's experience. What I valued the most was the constant
 Q&A (every section had room for questions).
 
 If you have the chance to attend Nate's workshop, you shouldn't hesitate.
-I can't recommend it highly enough.
+I can't recommend it highly enough!
