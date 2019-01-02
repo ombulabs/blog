@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.email       = ["hello@ombulabs.com"]
   s.authors     = ["OmbuLabs"]
   s.files       = Dir["_site/**/*"]
-  s.homepage    = "https://github.com/ombulabs/blog.ombulabs.com"
+  s.homepage    = "https://github.com/ombulabs/blog"
   s.license     = "MIT"
 
   s.add_dependency('rake', '~> 12.0')
