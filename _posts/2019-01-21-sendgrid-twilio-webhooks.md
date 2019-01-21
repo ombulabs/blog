@@ -6,7 +6,9 @@ categories: ["rails"]
 author: "luciano"
 ---
 
-If you're looking for services that handle the delivery of your emails and SMSs in your app, [SendGrid](https://sendgrid.com/) and [Twilio](https://www.twilio.com/) are some of the most complete options out there. In this article we're gonna focus on a common scenario when using these services: how can we have a real time status of the emails and text messages that we send from our [Rails](https://rubyonrails.org/) app.
+If you're looking for services that handle the delivery of your emails and SMSs in your app, [SendGrid](https://sendgrid.com/) and [Twilio](https://www.twilio.com/) are some of the most complete options out there.
+
+In this article we're gonna focus on a common scenario when using those services: **How can we have a real time status of the emails and text messages that we send from our [Rails](https://rubyonrails.org/) app**.
 
 <!--more-->
 
@@ -53,7 +55,7 @@ class TwilioController < ApplicationController
 end
 ```
 
-We excluded the `webhook` endpoints with `protect_from_forgery except: :webhook` so they can be accessed from outside of the app. But to keep the security in place it's important to add some kind of validation so only requests with a specific token can trigger the endpoints:
+We excluded the `webhook` endpoints with `protect_from_forgery except: :webhook` so they can be accessed from outside of our app. But to keep the security in place it's important to add some kind of validation so only requests with a specific token can trigger the endpoints:
 
 ```ruby
 # config/routes.rb
@@ -129,7 +131,7 @@ def send!
 end
 ```
 
-If everything went well, when we send an email or SMS, the SendGrid and Twilio API will hit our endpoints. Which by the way are not doing anything yet. So let's add the logic to update the status in our database:
+If everything went well, when we send an email or SMS, the SendGrid and Twilio API will hit our endpoints every time there is a change in the status. So now let's add the logic to update the status in our database:
 
 ```ruby
 # app/controllers/sendgrid_controller.rb
