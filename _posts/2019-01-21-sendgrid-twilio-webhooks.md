@@ -37,7 +37,7 @@ post "twilio_webhook", to: "twilio#webhook"
 # app/controllers/sendgrid_controller.rb
 
 class SendgridController < ApplicationController
-  protect_from_forgery except: :webhook
+  skip_before_action :verify_authenticity_token
 
   def webhook
   end
@@ -48,14 +48,14 @@ end
 # app/controllers/twilio_controller.rb
 
 class TwilioController < ApplicationController
-  protect_from_forgery except: :webhook
+  skip_before_action :verify_authenticity_token
 
   def webhook
   end
 end
 ```
 
-We excluded the `webhook` endpoints with `protect_from_forgery except: :webhook` so they can be accessed from outside of our app. But to keep the security in place it's important to add some kind of validation so only requests with a specific token can trigger the endpoints:
+We skipped the `verify_authenticity_token` action so it doesn't raise an `InvalidAuthenticityToken` exception when the endpoint is accessed from outside of our app. But to keep the security in place it's important to add a custom verification so only requests with a specific token can access the endpoints:
 
 ```ruby
 # config/routes.rb
@@ -68,18 +68,15 @@ post "twilio_webhook/:token", to: "twilio#webhook"
 # app/controllers/sendgrid_controller.rb
 
 class SendgridController < ApplicationController
-  protect_from_forgery except: :webhook
-  before_action :validate_webhook_token
+  skip_before_action :verify_authenticity_token, if: :valid_webhook_token?
 
   def webhook
   end
 
   private
 
-  def validate_webhook_token
-    if params[:token] != ENV["SENDGRID_WEBHOOK_TOKEN"])
-      render json: {}, status: :unauthorized
-    end
+  def valid_webhook_token?
+    params[:token] == ENV["SENDGRID_WEBHOOK_TOKEN"]
   end
 end
 ```
@@ -88,18 +85,15 @@ end
 # app/controllers/twilio_controller.rb
 
 class TwilioController < ApplicationController
-  protect_from_forgery except: :webhook
-  before_action :validate_webhook_token, :set_contact
+  skip_before_action :verify_authenticity_token, if: :valid_webhook_token?
 
   def webhook
   end
 
   private
 
-  def validate_webhook_token
-    if params[:token] != ENV["TWILIO_WEBHOOK_TOKEN"])
-      render json: {}, status: :unauthorized
-    end
+  def valid_webhook_token?
+    params[:token] == ENV["TWILIO_WEBHOOK_TOKEN"]
   end
 end
 ```
@@ -137,8 +131,8 @@ If everything went well, when we send an email or SMS, the SendGrid and Twilio A
 # app/controllers/sendgrid_controller.rb
 
 class SendgridController < ApplicationController
-  protect_from_forgery except: :webhook
-  before_action :validate_webhook_token, :set_contact
+  skip_before_action :verify_authenticity_token, if: :valid_webhook_token?
+  before_action :set_contact
 
   def webhook
     @contact.update_column(:email_status, sendgrid_params[:event])
@@ -148,10 +142,8 @@ class SendgridController < ApplicationController
 
   private
 
-  def validate_webhook_token
-    if params[:token] != ENV["SENDGRID_WEBHOOK_TOKEN"])
-      render json: {}, status: :unauthorized
-    end
+  def valid_webhook_token?
+    params[:token] == ENV["SENDGRID_WEBHOOK_TOKEN"]
   end
 
   def set_contact
@@ -168,8 +160,8 @@ end
 # app/controllers/twilio_controller.rb
 
 class TwilioController < ApplicationController
-  protect_from_forgery except: :webhook
-  before_action :validate_webhook_token, :set_contact
+  skip_before_action :verify_authenticity_token, if: :valid_webhook_token?
+  before_action :set_contact
 
   def webhook
     @contact.update_column(:sms_status, params[:SmsStatus])
@@ -179,10 +171,8 @@ class TwilioController < ApplicationController
 
   private
 
-  def validate_webhook_token
-    if params[:token] != ENV["TWILIO_WEBHOOK_TOKEN"])
-      render json: {}, status: :unauthorized
-    end
+  def valid_webhook_token?
+    params[:token] == ENV["TWILIO_WEBHOOK_TOKEN"]
   end
 
   def set_contact
