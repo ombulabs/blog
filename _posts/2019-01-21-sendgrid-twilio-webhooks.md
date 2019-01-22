@@ -8,7 +8,7 @@ author: "luciano"
 
 If you're looking for services that handle the delivery of your emails and SMSs in your app, [SendGrid](https://sendgrid.com/) and [Twilio](https://www.twilio.com/) are some of the most complete options out there.
 
-In this article we're gonna focus on a common scenario when using those services: **How can we have a real time status of the emails and text messages that we send from our [Rails](https://rubyonrails.org/) app**.
+In this article we are going to focus on a common scenario when using those services: **How can we have a real time status of the emails and text messages that we send from our [Rails](https://rubyonrails.org/) app**.
 
 <!--more-->
 
