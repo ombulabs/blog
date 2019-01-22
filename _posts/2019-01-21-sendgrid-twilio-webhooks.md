@@ -107,7 +107,7 @@ SENDGRID_WEBHOOK_TOKEN = 1234567890qwertyuiop
 TWILIO_WEBHOOK_TOKEN   = 0987654321poiuytrewq
 ```
 
-Once we have the two new endpoints we should add the URL of them to the Sendgrid and Twilio configuration.
+Once we have the two new endpoints we should add their URL to the Sendgrid and Twilio configuration.
 For SendGrid that has to be done in their [platform](https://app.sendgrid.com/settings/mail_settings):
 
 <img src="/blog/assets/images/sendgrid_webhook.png" alt="SendGrid webhook configuration">
@@ -181,6 +181,6 @@ class TwilioController < ApplicationController
 end
 ```
 
-And that's pretty much it. I recommend you to put a debugger in the `webhook` method so you can clearly see the parameters you receive so you can tweak it to your needs.
+And that's pretty much it. I recommend that you put a debugger in the `webhook` method so you can clearly see the parameters you receive so you can tweak it to your needs.
 
-I hope this quick tutorial had some value to you. Feel free to ask any question in the comments section below.
+I hope this quick tutorial has been of value to you. Feel free to ask any question in the comments section below.
