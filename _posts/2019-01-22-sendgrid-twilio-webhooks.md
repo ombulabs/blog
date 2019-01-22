@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Consuming SendGrid and Twilio webhooks in Rails"
-date: 2019-01-21 10:00:00
+date: 2019-01-22 10:00:00
 categories: ["rails"]
 author: "luciano"
 ---
