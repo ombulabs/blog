@@ -13,7 +13,7 @@ In this article we are going to focus on a common scenario when using those serv
 <!--more-->
 
 Let's say we have a `contacts` table with the following columns: `name`, `email`, `phone_number`, `email_status` and `sms_status`.
-When we send an email or SMS with Sendgrid and Twilio, there are a series of events that happen, such as "failed", "delivered", "open" and many more. Here you can see the full list of them:
+When we send an email or SMS with Sendgrid and Twilio, there are a set of possible outcomes, such as "failed", "delivered", "open" and many more. Here you can see the full list of them:
 
 - [Sendgrid statuses](https://sendgrid.com/blog/the-nine-events-of-email/)
 - [Twilio statuses](https://support.twilio.com/hc/en-us/articles/223134347-What-are-the-Possible-SMS-and-MMS-Message-Statuses-and-What-do-They-Mean-)
