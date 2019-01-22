@@ -112,7 +112,7 @@ For SendGrid that has to be done in their [platform](https://app.sendgrid.com/se
 
 <img src="/blog/assets/images/sendgrid_webhook.png" alt="SendGrid webhook configuration">
 
-And for Twilio it has to be done using the `status_callback` parameter when we send the text message:
+And for [Twilio](https://github.com/twilio/twilio-ruby) it has to be done using the `status_callback` parameter when we send the text message:
 
 ```ruby
 def send!
