@@ -56,14 +56,14 @@
 <body class="{%- if page.post_class -%}{{page.post_class}}{%- else -%}home-template{%- endif -%}">
   <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{%- endif -%}">
       <nav class="main-nav overlay clearfix">
-              {%- if page.logo -%}
-                  <a class="blog-logo" href="{{ site.baseurl }}">
-                      <img src="{{ page.logo }}" alt="Blog Logo" />
-                  </a>
-              {%- endif -%}
-              <a class="back-button icon-arrow-left"
-                 href="{%- if page.url == '/index.html' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}">Home</a>
-          <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml">Subscribe</a>
+        {%- if page.logo -%}
+            <a class="blog-logo" href="{{ site.baseurl }}">
+                <img src="{{ page.logo }}" alt="Blog Logo" />
+            </a>
+        {%- endif -%}
+          <a class="back-button icon-arrow-left"
+                 href="{%- if page.url == '/index.html' -%}{{ site.domain_name }}{%- else -%}{{ site.baseurl }}{%- endif -%}"><span>Home</span></a>
+          <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"><span>Subscribe</span></a>
       </nav>
       <div class="vertical">
           <div class="main-header-content inner">
