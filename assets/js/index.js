@@ -15,7 +15,26 @@
 
         $(".scroll-down").arctic_scroll();
 
+        $(".ad-close").click(function (event) {
+            $("#advertisement").hide();
+            event.preventDefault();
+
+        }); 
+
     });
+
+    $document.scroll(function(){
+
+        var headerHeight = $(".main-header").outerHeight();
+        var scrollTop = $(document).scrollTop();
+      
+        if(scrollTop >= headerHeight){
+          $("#sidebar").addClass("fixed");
+        }else{
+          $("#sidebar").removeClass("fixed");
+        }
+      
+    })
 
     // Arctic Scroll by Paul Adam Davis
     // https://github.com/PaulAdamDavis/Arctic-Scroll
