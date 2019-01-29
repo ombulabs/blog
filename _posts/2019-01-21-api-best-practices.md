@@ -21,7 +21,7 @@ Over the years, I've used a *lot* of APIs myself, and here are some best practic
 Versioning an API is something that's surprisingly difficult to do well, and yet absolutely necessary.  As time goes
 by and your API gains more and more users, the time will come when you need to make changes to the public interface
 that may break a lot of your users' existing code.  Versioning allows you to neatly sidestep this problem by just
-putting the breaking changes in a new version.  Actually doing this, however, will need a [lot](https://restfulapi.net/versioning/) [of](https://apigee.com/about/blog/developer/common-misconceptions-about-api-versioning) [careful](https://blog.apisyouwonthate.com/api-versioning-has-no-right-way-f3c75457c0b7) [thought](https://blog.restcase.com/restful-api-versioning-insights/).  What's most important here isn't necessarily the way you choose to do it, however.  What's most important is that you *bother to do it at all*.
+putting the breaking changes in a new version.  Actually doing this, however, will need a [lot](https://restfulapi.net/versioning/) [of](https://apigee.com/about/blog/developer/common-misconceptions-about-api-versioning) [careful](https://blog.apisyouwonthate.com/api-versioning-has-no-right-way-f3c75457c0b7) [detailed](https://semver.org/) [thought](https://blog.restcase.com/restful-api-versioning-insights/).  What's most important here isn't necessarily the way you choose to do it, however.  What's most important is that you *bother to do it at all*.
 
 ### Return navigation information in link headers, where applicable
 If you're returning paginated data, or results that are otherwise part of a large data set, it would be a good
@@ -47,8 +47,8 @@ when those rate limits are exceeded.  **Error 429 (Too Many Requests)** is the o
 
 ### Use proper status codes
 Pay close attention to what your API is doing, and what sorts of error cases it will encounter.  For almost all
-of the common errors that you might encounter, there's an HTTP status *that maps directly to that particular
-type of error*.  Use it!
+of the common errors that you might encounter, there's an HTTP status [*that maps directly to that particular
+type of error*](https://tools.ietf.org/html/rfc7231#section-6).  Use it!
 
 There's more to this than just being pedantic, by the way.  Since most developers will be interacting with HTTP
 through some kind of library (like Ruby's [RestClient](https://github.com/rest-client/rest-client), for instance),
