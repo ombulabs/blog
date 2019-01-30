@@ -79,9 +79,9 @@ Which brings us to the next thing every good API needs:
 
 All of the thoughtful design in the world won't mean a thing if no one knows how to use it.  Document every facet
 of your API - the individual endpoints, what they require, what is optional, and what they return, including errors
-and headers.  It's almost impossible to overdo this part.  If you find yourself wondering wether you should document
+and headers.  It's almost impossible to overdo this part.  If you find yourself wondering if you should document
 some aspect of your API, the answer is "Yes."  Writing documentation is rarely fun, and writing it well is difficult.
-The difficulty is worth it, though, because the strength of documentation alone can often be a deciding factor in wether
+The difficulty is worth it, though, because the strength of documentation alone can often be a deciding factor in whether
 an API actually picks up users.  One interesting option here is [Swagger](https://swagger.io/solutions/api-documentation/),
 also known as the OpenAPI Specification.  This standard defines an inline documentation format for specifying API endpoints
 and behavior, and comes with a rich tool chain that helps to automatically generate associated code scaffolding such as
