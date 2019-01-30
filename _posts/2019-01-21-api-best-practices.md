@@ -10,8 +10,7 @@ If you've been a web developer for any length of time at all these days, you've 
 few web based APIs here and there.  It's possible that you've even written one (or more!) yourself.
 API design is a rich topic with a lot of deep roots, but some cursory research will show a number of best
 practices that public facing APIs should implement.  Understanding these practices will give you a firm basis
-for judging wether you've been saddled with using a poorly designed API, and allow you to design more useful
-APIs when it's your turn.
+for judging the quality of APIs as a user and consumer, and allow you to design more useful APIs when it's your turn.
 
 <!--more-->
 
@@ -83,7 +82,11 @@ of your API - the individual endpoints, what they require, what is optional, and
 and headers.  It's almost impossible to overdo this part.  If you find yourself wondering wether you should document
 some aspect of your API, the answer is "Yes."  Writing documentation is rarely fun, and writing it well is difficult.
 The difficulty is worth it, though, because the strength of documentation alone can often be a deciding factor in wether
-an API actually picks up users.
+an API actually picks up users.  One interesting option here is [Swagger](https://swagger.io/solutions/api-documentation/),
+also known as the OpenAPI Specification.  This standard defines an inline documentation format for specifying API endpoints
+and behavior, and comes with a rich tool chain that helps to automatically generate associated code scaffolding such as
+SDK skeletons and test suites.  Support may vary depending on your environment, and some people have objections to the
+code conventions that some of these tools enforce, but it's worth a look if you're about to write an API of your own.
 
 These are just a few of the [many](https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/), [many](https://github.com/RestCheatSheet/api-cheat-sheet#api-design-cheat-sheet), [many](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 different practices and design patterns that go into building an API that's a useful tool instead of an annoying chore.
