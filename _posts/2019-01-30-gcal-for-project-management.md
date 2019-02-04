@@ -20,7 +20,7 @@ In order to manage the different types of projects we work on at [Ombu Labs](htt
 
 1. **General Admin/Personal**. This calendar includes our team's daily [scrum](https://www.scrum.org/resources/what-is-scrum) call, sprint retrospectives and occasional [donut calls](https://www.donut.com). Any general office-related or personal tasks could go here. Need to track your billable hours using a time-tracker? Need to create client invoices? Have a performance review coming up? These could all be scheduled in this calendar.
 
-2. **Ombu Labs Products & Open Source**. In this calendar, I have our team's weekly [OmbuShop](http://www.ombushop.com/) call, [FastRuby.io](https://fastruby.io/) pair programming sessions and some hours that are blocked off to work on open source projects.
+2. **Ombu Labs Products & Open Source**. In this calendar, I have our team's weekly [OmbuShop](http://www.ombushop.com/) call, [FastRuby.io](https://fastruby.io/) [pair programming](https://www.ombulabs.com/blog/agile/pair-programming/joys-and-woes-of-pair-programming.html) sessions and some hours that are blocked off to work on open source projects.
 
 3. **Client Projects**. This calendar contains all events relating to our client projects. This includes demo calls, check-ins with clients and pair programming sessions.
 
@@ -30,7 +30,7 @@ In order to manage the different types of projects we work on at [Ombu Labs](htt
 
 Shared calendars are a great way to get your team on board with a group of scheduled events. At [Ombu Labs](https://www.ombulabs.com), we use the shared calendars feature in our **Vacations Calendar** and our **Birthdays Calendar**.
 
-When a team member is going on vacation, they mark the days they will be away on the shared **Vacations Calendar**, so that their absence appears on the top of everyone else's calendar. This is preferable to the _*Out of Office*_ feature, which only shows up on your individual calendar.
+When a team member is going on vacation, they mark the days they will be away on the shared **Vacations Calendar**, so that their absence appears on the top of everyone else's calendar. This is preferable to the [_*Out of Office*_](https://gsuiteupdates.googleblog.com/2018/06/better-manage-your-work-and-personal_27.html ) feature, which only shows up on your individual calendar.
 
 The shared **Birthday Calendar** works similarly. If the calendar is enabled, team member birthdays will appear at the top of your calendar. Both of these shared calendars can be hidden by each team member to reduce clutter as well.
 
@@ -50,7 +50,7 @@ For a client that requests a weekly demo call and a weekly status call, it could
 
 #### Scheduling Meetings & Calls
 
-Scheduling meetings and calls with team members and clients can be complicated, especially with teams that have different schedules and live in multiple time zones. There are a few [Google Calendar](https://www.google.com/calendar) features that make scheduling a breeze.
+Scheduling meetings and calls with team members and clients can be complicated, especially with teams that have different schedules and live in multiple time zones. There are a few Google Calendar features that make scheduling a breeze.
 
 **Suggested Times & Find a Time Feature**. When creating an event, these two features work to find an ideal time for your event, based on the calendars of your event guests. To use them, all you need to do is create a new event and add your guests on the right side of the screen.
 
@@ -62,11 +62,11 @@ Second, the **Find a Time** feature. You will find this button next to "Event De
 
   <img src="/blog/assets/images/find-a-time.png" alt="Find a Time Feature">
 
-**Adding a Call Link**. At [Ombu Labs](https://www.ombulabs.com), we generally work remotely, so it is important that every event created includes a video call link. Our preferred video call service is [Zoom](https://zoom.us). [Zoom](https://zoom.us) has a feature that allows you to schedule a video call and embed the link directly into a [Google Calendar](https://www.google.com/calendar) event. They also allow you to copy the video call link and paste it yourself into a pre-existing [Google Calendar](https://www.google.com/calendar) event.
+**Adding a Call Link**. At [Ombu Labs](https://www.ombulabs.com), we generally work remotely, so it is important that every event created includes a video call link. Our preferred video call service is [Zoom](https://zoom.us). Zoom has a feature that allows you to schedule a video call and embed the link directly into a Google Calendar event. They also allow you to copy the video call link and paste it yourself into a pre-existing Google Calendar event.
 
 Regardless of what service you use, adding a call link directly to the event allows guests to know where the call will be held in advance. This avoids the last minute scramble to find a call link.
 
-**Email or Notification Feature**. [Google Calendar](https://www.google.com/calendar) gives you two reminder options for your events. The first is a notification, which appears on your calendar or on your laptop (or phone) based on your configuration. The second is an email notification, which is sent to you automatically before your event. You can add as many or as few notifications as you want.
+**Email or Notification Feature**. Google Calendar gives you two reminder options for your events. The first is a notification, which appears on your calendar or on your laptop (or phone) based on your configuration. The second is an email notification, which is sent to you automatically before your event. You can add as many or as few notifications as you want.
 
 <img src="/blog/assets/images/notifications.png" alt="Notifications">
 
@@ -76,4 +76,4 @@ The "reminders" feature is a simple yet powerful way to manage following up with
 
 <img src="/blog/assets/images/reminders.png" alt="Reminders">
 
-These are just a few of the ways that I use [Google Calendar](https://www.google.com/calendar) for Account Management. The are many tricks and tools, let us know what are your favorites!
+These are just a few of the ways that I use Google Calendar for Account Management. The are many tricks and tools, let us know what are your favorites!
