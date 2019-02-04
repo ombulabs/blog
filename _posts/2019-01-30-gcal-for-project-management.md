@@ -6,9 +6,9 @@ categories: ["agile", "project-management"]
 author: "emily"
 ---
 
-At [Ombu Labs](https://www.ombulabs.com), we like to split our time between working on our own products, open source code and client projects.
+At [Ombu Labs](https://www.ombulabs.com), we like to split our time between working on our own products, open source and client projects.
 
-Our own products include everything from [OmbuShop](http://www.ombushop.com/), an e-commerce platform, to [FastRuby.io](https://fastruby.io/), a Ruby on Rails upgrade service. In terms of open source, we recently created [Audit Tool](https://audit.fastruby.io) and are constantly searching for more projects to contribute to. We also work on a variety of interesting client projects, and generally take on two to three of them at a time.
+Our own products include everything from [OmbuShop](http://www.ombushop.com/), an e-commerce platform, to [FastRuby.io](https://fastruby.io/), a Ruby on Rails upgrade service. In terms of open source, we recently created [Audit Tool](https://audit.fastruby.io) and are constantly searching for more projects to contribute to. We also work on a variety of interesting client projects, and with our current team size, like to take on two to three of them at a time.
 
 **As an Account Manager, it can get hectic trying to manage all of this. [Google Calendar](https://www.google.com/calendar) can be a serious help.**
 
@@ -42,7 +42,7 @@ At [Ombu Labs](https://www.ombulabs.com), we typically work on two to three clie
 
 **Color Coding**. In my calendar, I like to color-code my calls and meetings by client. If the team has two weekly calls with a client, both of those calls in my calendar will be the color purple, for example. This helps to get an idea of how much time in a week is spent on each client. If my weekly calendar has no purple, it tells me that I should schedule a check-in with the client or the team working on the project.
 
-**Schedule Consistency**. Another way to keep consistency with client projects is to schedule project calls around the same time of day or the same day of the week. For a client with once a week check-in calls, it could be helpful to schedule that check-in every Monday morning.
+**Schedule Consistency**. Another way to keep consistency with client projects is to schedule project calls around the same time of day or the same day of the week. We prefer to have weekly calls, alternating between one week being a demo call and the next week being a planning call. For a client with once a week calls, it could be helpful to schedule that check-in every Monday morning.
 
 For a client that requests a weekly demo call and a weekly status call, it could be helpful to have both calls, for example, in the afternoon, say 4pm. Obviously this is not always possible, but it can be helpful for the client and the team to get into a routine of having work ready to go at the same time of day or day of the week.
 
@@ -76,4 +76,4 @@ The "reminders" feature is a simple yet powerful way to manage following up with
 
 <img src="/blog/assets/images/reminders.png" alt="Reminders">
 
-These are just a few of the ways that I use Google Calendar for Account Management. The are many tricks and tools, let us know what are your favorites!
+These are just a few of the ways that I use Google Calendar for Account Management. There are many tricks and tools, let us know what your favorite are in a comment!
