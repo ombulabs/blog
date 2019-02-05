@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Google Calendar for Account Management"
-date: 2019-01-30 10:00:00
+date: 2019-02-05 10:00:00
 categories: ["agile", "project-management"]
 author: "emily"
 ---
@@ -30,7 +30,7 @@ In order to manage the different types of projects we work on at [Ombu Labs](htt
 
 Shared calendars are a great way to get your team on board with a group of scheduled events. At [Ombu Labs](https://www.ombulabs.com), we use the shared calendars feature in our **Vacations Calendar** and our **Birthdays Calendar**.
 
-When a team member is going on vacation, they mark the days they will be away on the shared **Vacations Calendar**, so that their absence appears on the top of everyone else's calendar. This is preferable to the [_*Out of Office*_](https://gsuiteupdates.googleblog.com/2018/06/better-manage-your-work-and-personal_27.html ) feature, which only shows up on your individual calendar.
+When a team member is going on vacation, they mark the days they will be away on the shared **Vacations Calendar**, so that their absence appears on the top of everyone else's calendar. This is preferable to the [_*Out of Office*_](https://gsuiteupdates.googleblog.com/2018/06/better-manage-your-work-and-personal_27.html) feature, which only shows up on your individual calendar.
 
 The shared **Birthday Calendar** works similarly. If the calendar is enabled, team member birthdays will appear at the top of your calendar. Both of these shared calendars can be hidden by each team member to reduce clutter as well.
 
