@@ -4,6 +4,7 @@ title:  "Tips for Writing Fast Rails: Part 2"
 date: 2018-11-13 09:10:00
 categories: ["rails", "performance"]
 author: "luciano"
+canonical_url: true
 ---
 
 Some time ago we wrote a couple of [Tips for Writing Fast Rails](https://www.ombulabs.com/blog/performance/rails/writing-fast-rails.html). It was about time we wrote part two so here it is!

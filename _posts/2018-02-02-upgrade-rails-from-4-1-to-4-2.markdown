@@ -4,6 +4,7 @@ title: "Upgrade Rails from 4.1 to 4.2"
 date: 2018-02-02 11:32:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
+canonical_url: true
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
