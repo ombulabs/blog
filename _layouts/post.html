@@ -22,18 +22,20 @@ post_class: post-template
     <section class="post-content">
       {{ content }}
     </section>
-
+    
     {%- if page.archive -%}
-      <section class="archive">
+    <section class="archive">
         <h5>Archive</h5>
         <ul>
-          {%- for post in site.posts -%}
-            <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-          {%- endfor -%}
+            {%- for post in site.posts -%}
+                <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {%- endfor -%}
         </ul>
-      </section>
+    </section>
     {%- endif -%}
-
+    <div>
+      {%- include tag_list.html -%}
+    </div>
     <footer class="post-footer">
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
@@ -52,6 +54,7 @@ post_class: post-template
             We are the Lean Software Boutique. Check us out at <a href="https://www.ombulabs.com">www.ombulabs.com</a>
           </p>
         </section>
+          
       {%- endif -%}
 
       <!-- Share links section -->
