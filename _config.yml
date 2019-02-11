@@ -13,6 +13,7 @@ category_dir: 'tags'
 excerpt_separator: "<!--more-->"
 author_title_prefix: "Articles by "
 timezone: America/New_York
+fastruby_blog: 'https://www.fastruby.io/blog'
 
 # Details for the RSS feed generator
 url:            'https://www.ombulabs.com'
@@ -79,3 +80,9 @@ authors:
     email: cleiviane@ombulabs.com
     twitter:
     github: cleivianecosta
+  rdormer:
+    display_name: "Robert Dormer"
+    gravatar: 3a78cb7c677068e77327414293ea16e7
+    email: robert@ombulabs.com
+    twitter:
+    github: rdormer
