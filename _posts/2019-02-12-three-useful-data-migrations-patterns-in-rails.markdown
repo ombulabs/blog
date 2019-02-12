@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Three Useful Data Migration Patterns for Rails"
-date: 2019-02-05 10:00:00
+date: 2019-02-12 15:00:00
 categories: ["rails", "data-migrations"]
 author: "etagwerker"
 ---
