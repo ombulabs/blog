@@ -141,8 +141,8 @@ mentioned in the first pattern: As your application evolves, your *data rake
 tasks* will fall out of date. How can we fix that?
 
 The best way is to fix it with an additional class. We can call it
-`ChangeDefaultStateForPosts`. It will be PORO that will run the data migration.
-This will help us add test coverage for it.
+`ChangeDefaultStateForPosts`. It will be a plain old Ruby object (PORO) that will
+run the data migration. This will help us add test coverage for it.
 
 ```
 class ChangeDefaultStateForPosts
