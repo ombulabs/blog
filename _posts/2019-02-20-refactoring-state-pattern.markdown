@@ -43,7 +43,7 @@ class Order < ApplicationRecord
     when "pending"
       state = "completed"
     when "completed"
-    state = "delivered"
+      state = "delivered"
     else
       state = "cart"
     end
