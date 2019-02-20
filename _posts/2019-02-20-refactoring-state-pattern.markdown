@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Refactoring with Design Patterns - The State Pattern"
-date: 2019-02-19 10:00:00
+date: 2019-02-20 10:00:00
 categories: ["code-refactor", "design-patterns"]
 author: "cleiviane"
 ---
