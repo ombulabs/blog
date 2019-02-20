@@ -22,7 +22,7 @@ Think of the solution as a [finite sate machine](https://brilliant.org/wiki/fini
 
 Here at Ombulabs a good example of when we need to use state pattern is in one of our products, [Ombushop](https://secure.ombushop.com). It's an e-commerce platform where users can create their customized store and sell products online.
 
-One of the objects we need to handle is the `Order` (of course), which will change its state several times until we can say that the order is complete. The order if first created when the buyer adds a product to the cart, then if the buyer is in the checkout page the order will change to checkout state, when the payment is done we need to change the order to pending and that way the order will move from one state to other until it's completed or canceled. This is a very typical scenario where we can use the state.
+One of the objects we need to handle is the `Order` (of course), which will change its state several times until we can say that the order is complete. The order is first created when the buyer adds a product to the cart, then if the buyer is in the checkout page the order will change to checkout state, when the payment is done we need to change the order to pending and that way the order will move from one state to another until it's completed or canceled. This is a very typical scenario where we can use the state.
 
 <!--more-->
 
@@ -42,14 +42,14 @@ class Order < ApplicationRecord
       state = "complete"
     when "complete"
       state = "delivered"
-    else "complete"
+    else
       state = "cart"
     end
   end
 end
 ```
 
-Doesn't feel good, right? What if you need to do some validations before allow to change to the next state? What if I need to go back to a previous state? The code would be more complex and the `change_state` method would clearly have more than one responsibility. We can solve this problem by applying the state pattern.
+Doesn't feel good, right? What if you need to do some validations before allowing to change to the next state? What if I need to go back to a previous state? The code would be more complex and the `change_state` method would clearly have more than one responsibility. We can solve this problem by applying the state pattern.
 
 There are a few gems that can help us with this job, but I recommend the [AASM gem](https://github.com/aasm/aasm) because it's easy to understand and implement, we just need to include the gem in our model and start to set our states:
 
