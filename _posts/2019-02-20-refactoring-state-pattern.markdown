@@ -8,9 +8,9 @@ author: "cleiviane"
 
 In this series of [code refactoring](https://www.ombulabs.com/blog/tags/code-refactor) posts we are discussing how design patterns can be used to make our [Ruby](https://www.ruby-lang.org/en/) code beautiful, maintainable and clean.
 
-Today I want to talk about a pattern that can be very useful when we need to control the flow of a set of events of our objects: *The State Pattern* a.k.a *Finite State Machine*.
+Today I want to talk about a pattern that can be very useful when we need to control the flow of a set of events of our objects: *[The State Pattern](http://wiki.c2.com/?StatePattern)* a.k.a *Finite State Machine*.
 
-As a developer it is common to see objects changing of states. At the beginning managing the state of an object can be as simple as having some boolean attributes where you can check if the object is in state A or B. But when the complexity increases you can end up with a number of states that are difficult to manage without breaking the [SOLID principles](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod). That is where we can benefit from the elegant solution the State Pattern gives to us.
+As a developer it is common to see objects changing their state. At the beginning managing the state of an object can be as simple as having some boolean attributes where you can check if the object is in state A or B. But when the complexity increases you can end up with a number of states that are difficult to manage without breaking the [SOLID principles](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod). That is where we can implement the elegant solution provided by the State Pattern.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ According to the [Refactoring Guru](https://refactoring.guru/design-patterns/sta
 
 Think of the solution as a [finite sate machine](https://brilliant.org/wiki/finite-state-machines/) where you can control your objects making sure that they can be in only one state at a time, so the objects will transition from one state to another to perform a set of different actions.
 
-Here at Ombulabs a good example of when we need to use state pattern is in one of our products, [Ombushop](https://secure.ombushop.com). It's an e-commerce platform where users can create their customized store and sell products online.
+Here at Ombulabs a good example of when we need to use state pattern is in one of our products, [Ombushop](https://www.ombushop.com). It's an e-commerce platform where users can create their customized store and sell products online.
 
 One of the objects we need to handle is the `Order` (of course), which will change its state several times until we can say that the order is complete. The order is first created when the buyer adds a product to the cart, then if the buyer is in the checkout page the order will change to checkout state, when the payment is done we need to change the order to pending and that way the order will move from one state to another until it's completed or canceled. This is a very typical scenario where we can use the state.
 
@@ -35,13 +35,15 @@ class Order < ApplicationRecord
   def change_state
     case state
     when "cart"
+      state = "checkout"
+    when "checkout"
       state = "paying"
     when "paying"
-      state = "payment_pending"
-    when "payment_pending"
-      state = "complete"
-    when "complete"
-      state = "delivered"
+      state = "pending"
+    when "pending"
+      state = "completed"
+    when "completed"
+    state = "delivered"
     else
       state = "cart"
     end
@@ -53,7 +55,7 @@ Doesn't feel good, right? What if you need to do some validations before allowin
 
 There are a few gems that can help us with this job, but I recommend the [AASM gem](https://github.com/aasm/aasm) because it's easy to understand and implement, we just need to include the gem in our model and start to set our states:
 
-Back to Ombushop's code, using the assm we can refactor the `Order` model like this:
+Back to Ombushop's code, using the aasm we can refactor the `Order` model like this:
 
 ```ruby
 class Order < ApplicationRecord
@@ -99,14 +101,15 @@ AASS also provides some useful methods such like:
 
 ```ruby
   order = Order.new
-  order.pending? # => true
+  order.cart? # => true
   order.pending
+  order.pending? # => true
   order.may_complete? # => true
   order.complete
   order.completed? # => true
 ```
 
-This can help us to manage the states in our code more efficiently without creating a lot of extra methods. It also makes it easier to add a new state if you ever need in the future.
+This can help us to manage states in our code more efficiently without creating a lot of extra methods. It also makes it easier to add a new state if you ever need in the future.
 
 ## Conclusion
 Handling the states of an object is a hard job by itself. In this article we saw how applying the state pattern can make our life better offering a solution to this. Next time that you have an object that behaves differently depending on its current state, the number of states is finite and the object changes of state frequently remember of this important design pattern.
