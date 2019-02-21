@@ -18,7 +18,7 @@ As a developer it is common to see objects changing their state. At the beginnin
 
 According to the [Refactoring Guru](https://refactoring.guru/design-patterns/state): <strong>_"The main idea of the State pattern is that, at any given moment, there’s a finite number of states which an object can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously."_</strong>
 
-Think of the solution as a [finite sate machine](https://brilliant.org/wiki/finite-state-machines/) where you can control your objects making sure that they can be in only one state at a time, so the objects will transition from one state to another to perform a set of different actions.
+Think of the solution as a [finite state machine](https://brilliant.org/wiki/finite-state-machines/) where you can control your objects making sure that they can be in only one state at a time, so the objects will transition from one state to another to perform a set of different actions.
 
 Here at Ombulabs a good example of when we need to use state pattern is in one of our products, [Ombushop](https://www.ombushop.com). It's an e-commerce platform where users can create their customized store and sell products online.
 
