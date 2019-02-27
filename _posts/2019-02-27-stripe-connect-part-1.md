@@ -1,24 +1,24 @@
 ---
 layout: post
-title: "Implementing Stripe Connect in Rails | Part 1"
+title: "Implementing Stripe Connect in Rails: Part 1"
 date: 2019-02-27 16:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
 ---
 
-In a recent project for [OmbuLabs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments but at the same time we wanted to take a fee from it.
+In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same allowing us to collect a fee from each transaction they made.
 That's where [Stripe Connect](https://stripe.com/connect) came into place.
 
 <!--more-->
 
 To make things easier to follow we will break this topic in two articles:
-- Part 1: How to allow your users link a Stripe account so they can accept payments.
-- Part 2: How your users can receive payments in their Stripe account and how you can receive a fee for that into your own Stripe account.
+- Part 1: How to allow your users to link a Stripe account in order to accept payments.
+- Part 2: How your users can receive payments in their Stripe account and how you can receive a fee for each transaction into your own Stripe account.
 
 
 ## Part 1: How to allow your users link a Stripe account so they can accept payments
 
-One of the first things you have to decide is which [Stripe account type](https://stripe.com/docs/connect/accounts) you want for your users. Each option works better for different needs. For this article we'll be using [Express accounts](https://stripe.com/docs/connect/express-accounts) (the following steps can change a bit if you decide to use a different account type)
+One of the first things you have to decide is which [Stripe account type](https://stripe.com/docs/connect/accounts) you want for your users. Each option serves better for different needs. For this article we'll be using [Express accounts](https://stripe.com/docs/connect/express-accounts) (the following steps can change a bit if you decide to use a different account type).
 
 ### Workflow
 The user experience for connecting a Stripe account should look something like this:
@@ -30,7 +30,7 @@ The user experience for connecting a Stripe account should look something like t
 
 ### Create your own Stripe account
 If you don't have a Stripe account yet you can create one [here](https://dashboard.stripe.com/register?redirect=%2Fconnect%2Foverview).
-For now you'll only need it to access to your [settings](https://dashboard.stripe.com/account/applications/settings) and [credentials](https://dashboard.stripe.com/account/apikeys).
+For now you'll only need it to access your [settings](https://dashboard.stripe.com/account/applications/settings) and [credentials](https://dashboard.stripe.com/account/apikeys).
 
 ### Add a "Connect with Stripe" button
 Users should have a [link](https://stripe.com/docs/connect/express-accounts#integrating-oauth) to create their Stripe account.
@@ -96,7 +96,7 @@ end
 ```
 ### Add `stripe_user_id` to our database
 
-We should have the `stripe_user_id` column in our users table so we can connect the Stripe accounts to our User objects.
+If the response was successful we'll receive a `stripe_user_id` which represents the Stripe account that we just created. We should store that in our database so we know what's the Stripe Account of each `User` object.
 
 ```ruby
 # db/migrate/20190227164333_add_stripe_user_id_to_users.rb
@@ -153,7 +153,7 @@ Now that we have a `stripe_user_id` we can show a message instead of the "Connec
 
 ### Bonus
 
-Stripe offers your connected accounts to have access to a [dashboard](https://stripe.com/docs/connect/express-dashboard) where they can see their balance and some of the information they entered during the setup. You can include a link to it so your users can access there.
+Stripe allows your connected accounts to have access to a [dashboard](https://stripe.com/docs/connect/express-dashboard) where they can see their balance and some of the information they entered during setup. You can include a link to it so your users can access it.
 
 ```ruby
 # app/views/users/settings.html.erb
@@ -184,4 +184,4 @@ end
 
 ### Conclusion
 
-This first part was just to be able to connect Stripe accounts to your users. Stay tuned for the next part where we'll be talking about the payments, charges, fees and more!
+This first post was to allow to connect Stripe accounts to your users. Stay tuned for the next part where we'll be talking about the payments, charges, fees and more!
