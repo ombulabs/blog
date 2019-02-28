@@ -172,6 +172,8 @@ get "stripe/dashboard/:user_id", to: "stripe#dashboard", as: :stripe_dashboard
 You'll need to install the [stripe gem](https://github.com/stripe/stripe-ruby) if you haven't installed it yet.
 
 ```ruby
+# app/controllers/stripe_controller.rb
+
 class StripeController < ApplicationController
   def dashboard
     account = Stripe::Account.retrieve(@user.stripe_user_id)
