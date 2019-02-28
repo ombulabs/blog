@@ -1,31 +1,31 @@
 ---
 layout: post
 title: "Implementing Stripe Connect in Rails: Part 1"
-date: 2019-02-27 16:00:00
+date: 2019-02-28 10:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
 ---
 
-In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same allowing us to collect a fee from each transaction they made.
+In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same allowing us to collect a fee from each transaction they receive.
 That's where [Stripe Connect](https://stripe.com/connect) came into place.
 
 <!--more-->
 
 To make things easier to follow we will break this topic in two articles:
-- Part 1: How to allow your users to link a Stripe account in order to accept payments.
+- Part 1: How to allow your users to connect a Stripe account in order to accept payments.
 - Part 2: How your users can receive payments in their Stripe account and how you can receive a fee for each transaction into your own Stripe account.
 
 
-## Part 1: How to allow your users link a Stripe account so they can accept payments
+## Part 1: How to allow your users to connect a Stripe account in order to accept payments
 
 One of the first things you have to decide is which [Stripe account type](https://stripe.com/docs/connect/accounts) you want for your users. Each option serves better for different needs. For this article we'll be using [Express accounts](https://stripe.com/docs/connect/express-accounts) (the following steps can change a bit if you decide to use a different account type).
 
 ### Workflow
 The user experience for connecting a Stripe account should look something like this:
-- User clicks on a "Connect with Stripe" button
-- User is redirected to a Stripe page to setup their account
+- User clicks on a "Connect with Stripe" button.
+- User is redirected to a Stripe page to setup their account.
 - Once the setup is completed, the user is redirected to an endpoint that we previously selected (`stripe#connect`).
-- Once in that endpoint, we make a POST request to Stripe to finish the account creation
+- Once in that endpoint, we make a POST request to Stripe to finish the connection of the account.
 - If the response was successful, we save in our database the `stripe_user_id`  that we received and then we show a success message to the user.
 
 ### Create your own Stripe account
@@ -33,19 +33,19 @@ If you don't have a Stripe account yet you can create one [here](https://dashboa
 For now you'll only need it to access your [settings](https://dashboard.stripe.com/account/applications/settings) and [credentials](https://dashboard.stripe.com/account/apikeys).
 
 ### Add a "Connect with Stripe" button
-Users should have a [link](https://stripe.com/docs/connect/express-accounts#integrating-oauth) to create their Stripe account.
+Users should have a [link](https://stripe.com/docs/connect/express-accounts#integrating-oauth) to connect their Stripe account.
 For the UI we can use one of the [designed buttons](https://stripe.com/newsroom/brand-assets) that Stripe offers.
 
 ```ruby
 # app/views/users/settings.html.erb
 
-<%= link_to image_tag("stripe_connect_button.png"), stripe_connect_link %>
+<%= link_to image_tag("stripe_button.png"), stripe_button_link %>
 ```
 
 ```ruby
 # app/helpers/users_helper.rb
 
-def stripe_connect_link
+def stripe_button_link
   stripe_url = "https://connect.stripe.com/express/oauth/authorize"
   redirect_uri = stripe_connect_url
   client_id = ENV["STRIPE_CLIENT_ID"]
@@ -147,7 +147,7 @@ Now that we have a `stripe_user_id` we can show a message instead of the "Connec
 <% if @user.stripe_user_id %>
   Connected with Stripe
 <% else %>
-  <%= link_to image_tag("stripe_connect_button.png"), stripe_connect_link %>
+  <%= link_to image_tag("stripe_button.png"), stripe_button_link %>
 <% end %>
 ```
 
