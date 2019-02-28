@@ -6,7 +6,7 @@ categories: ["rails", "stripe"]
 author: "luciano"
 ---
 
-In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same allowing us to collect a fee from each transaction they receive.
+In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same time allowing us to collect a fee from each transaction they receive.
 That's where [Stripe Connect](https://stripe.com/connect) came into place.
 
 <!--more-->
@@ -29,10 +29,10 @@ The user experience for connecting a Stripe account should look something like t
 - If the response was successful, we save in our database the `stripe_user_id`  that we received and then we show a success message to the user.
 
 ### Create your own Stripe account
-If you don't have a Stripe account yet you can create one [here](https://dashboard.stripe.com/register?redirect=%2Fconnect%2Foverview).
+If you don't have a Stripe account yet, you can create one [here](https://dashboard.stripe.com/register?redirect=%2Fconnect%2Foverview).
 For now you'll only need it to access your [settings](https://dashboard.stripe.com/account/applications/settings) and [credentials](https://dashboard.stripe.com/account/apikeys).
 
-### Add a "Connect with Stripe" button
+### Step 1: Add a "Connect with Stripe" button
 Users should have a [link](https://stripe.com/docs/connect/express-accounts#integrating-oauth) to connect their Stripe account.
 For the UI we can use one of the [designed buttons](https://stripe.com/newsroom/brand-assets) that Stripe offers.
 
@@ -54,7 +54,7 @@ def stripe_button_link
 end
 ```
 
-### Add an endpoint to be redirected after the account setup
+### Step 2: Add an endpoint to be redirected after the account setup
 
 In the URL for the "Connect with Stripe" button we specified that after the user completes the Stripe account setup, it will [redirect](https://stripe.com/docs/connect/express-accounts#redirected) to `stripe_connect_url`, so let's create that endpoint.
 
@@ -75,7 +75,7 @@ class StripeController < ApplicationController
 end
 ```
 
-### Make a POST request to Stripe to finish the account setup
+### Step 3: Make a POST request to Stripe to finish the account setup
 At this point we have the necessary params to make the final [request](https://stripe.com/docs/connect/express-accounts#complete-express-connection) to complete the account connection. We're using [httparty](https://github.com/jnunemaker/httparty) for that, but you can do it with [Net::HTTP
 ](https://ruby-doc.org/stdlib-2.6.1/libdoc/net/http/rdoc/Net/HTTP.html) too.
 
@@ -94,9 +94,9 @@ class StripeController < ApplicationController
   end
 end
 ```
-### Add `stripe_user_id` to our database
+### Step 4: Add `stripe_user_id` to our database
 
-If the response was successful we'll receive a `stripe_user_id` which represents the Stripe account that we just created. We should store that in our database so we know what's the Stripe Account of each `User` object.
+If the response was successful we'll receive a `stripe_user_id` which represents the Stripe account that we just connected. We should store that in our database so we know what's the Stripe Account of each `User` object.
 
 ```ruby
 # db/migrate/20190227164333_add_stripe_user_id_to_users.rb
@@ -108,9 +108,9 @@ class AddStripeUserIdToUsers < ActiveRecord::Migration[5.2]
 end
 ```
 
-### Save the `stripe_user_id` and show a message to the user
+### Step 5: Save the `stripe_user_id` and show a message to the user
 
-Finally if the response was successful we redirect with a message and we also update the User with the `stripe_user_id` that we received.
+Finally, we redirect with a success message and we also update the User with the `stripe_user_id` that we received.
 
 ```ruby
 # app/controllers/stripe_controller.rb
@@ -184,4 +184,4 @@ end
 
 ### Conclusion
 
-This first post was to allow to connect Stripe accounts to your users. Stay tuned for the next part where we'll be talking about the payments, charges, fees and more!
+This first post was to show how to connect Stripe accounts to your users. Stay tuned for the next part where we'll be talking about the payments, charges, fees and more!
