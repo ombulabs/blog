@@ -12,6 +12,7 @@ That's where [Stripe Connect](https://stripe.com/connect) came into place.
 <!--more-->
 
 To make things easier to follow we will break this topic in two articles:
+
 - Part 1: How to allow your users to connect a Stripe account in order to accept payments.
 - Part 2: How your users can receive payments in their Stripe account and how you can receive a fee for each transaction into your own Stripe account.
 
@@ -22,6 +23,7 @@ One of the first things you have to decide is which [Stripe account type](https:
 
 ### Workflow
 The user experience for connecting a Stripe account should look something like this:
+
 - User clicks on a "Connect with Stripe" button.
 - User is redirected to a Stripe page to setup their account.
 - Once the setup is completed, the user is redirected to an endpoint that we previously selected (`stripe#connect`).
