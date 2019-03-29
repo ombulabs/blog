@@ -16,7 +16,7 @@ Since the client didn't want to spend money paying for Sidekiq Pro, we had the c
 
 ## Show me the code
 
-After the user uploads the CSV file we will save the data into the database and schedule one job that will schedule one background job for each row into the saved CSV file. This is necessary because the uploaded files are too big and scheduling all the jobs in execution time would also time out.
+After the user uploads the CSV file we save the data into the database and schedule one job that will schedule one background job for each row into the saved CSV file. This is necessary because the uploaded files are too big and scheduling all the jobs in execution time would also time out.
 
 This is what we have in our first Job class:
 
