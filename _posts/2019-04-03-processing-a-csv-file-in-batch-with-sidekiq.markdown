@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Processing a CSV file in batch with Sidekiq"
-date: 2019-03-19 10:00:00
+date: 2019-04-03 10:00:00
 categories: ["sidekiq"]
 author: "cleiviane"
 ---
