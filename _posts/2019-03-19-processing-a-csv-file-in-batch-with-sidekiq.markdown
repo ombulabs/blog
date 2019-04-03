@@ -10,13 +10,13 @@ author: "cleiviane"
 
 Recently, that was the case of one of [Ombu Labs](http://ombulabs.com)' clients. They needed to upload a CSV file with over 10 thousand rows of loans data, which makes processing the file synchronously impossible because the browser will time out after a few seconds. Breaking the file into smaller ones wasn't a good idea either, because it would take an unacceptable amount of time to finish. So we decided to use the Sidekiq's batch logic.
 
-Since the client didn't want to spend money paying for Sidekiq Pro, we had the challenge of implementing the same pattern that Sidekiq Pro uses in their Batches processing. This article will show how we did it.
+Since Sidekiq Pro wasn't an option at the time, we had the challenge of implementing the same pattern that Sidekiq Pro uses in their Batches processing. This article will show how we did it.
 
 <!--more-->
 
 ## Show me the code
 
-After the user uploads the CSV file we save the data into the database and schedule one job that will schedule one background job for each row into the saved CSV file. This is necessary because the uploaded files are too big and scheduling all the jobs in execution time would also time out.
+After the user uploads the CSV file we save the data into the database and schedule one job that will schedule one background job for each row into the saved CSV file. This is necessary because the uploaded files are too big, and trying to processing them as a single file would eventually time out as well.
 
 This is what we have in our first Job class:
 
@@ -39,7 +39,7 @@ end
 
 This job is retrieving the batch created during the upload and keeping track of the batch status by setting it as "Processing".
 
-At [Ombu Labs](https://www.ombulabs.com/) we like to use the [Service Objects Pattern](https://medium.com/selleo/essential-rubyonrails-patterns-part-1-service-objects-1af9f9573ca1), so let's extract the logic to schedule all the other jobs to the `BatchProcessor` class:
+At [Ombu Labs](https://www.ombulabs.com/) we like to use the [Service Objects Pattern](https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial), so let's extract the logic to schedule all the other jobs to the `BatchProcessor` class:
 
 ```ruby
 class BatchProcessor
@@ -84,4 +84,6 @@ Now the service `LoanCreator` can handle the business logic to create a loan and
 
 ## Conclusion
 
-As we can see this pattern can be very helpful when you need to turn a big file upload into a batch background process by breaking it into several small jobs and keeping track of each job in the batch. This helped us to improve the performance of the upload process for our client and allowed us to generate a report with all the rows that end up with a problem (eg. the row didn't have a required field), making possible for the user to re-upload the file after fixing all the issues.
+As we can see this pattern can be very helpful when you need to turn a big file upload into a batch background process by breaking it into several small jobs and keeping track of each job in the batch.
+
+This approach helped us to improve the performance of the upload process for our client and allowed us to generate a report with all the rows that end up with a problem (eg. the row didn't have a required field), making possible for the user to re-upload the file after fixing all the issues.
