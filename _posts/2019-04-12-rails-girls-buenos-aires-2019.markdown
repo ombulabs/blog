@@ -14,16 +14,22 @@ Our goal this year was to go further and try to reach around 50 participants (al
 
 Some of the coaches were girls that participated in a previous event and now they took the role of coach so they can share their knowledge that they've been acquiring during the last couple of months. We find that really motivating during these events.
 
-[group photo]
+<img src="/blog/assets/images/rails-girls-2019/group.JPG">
 
 The event turned out great and there was a lot of positive feedback from the participants. For most of them this was their first approach into coding, so there was a lot of learning during the 2-day workshop.
 
-Here are some of the photos we have from the event:
+<img src="/blog/assets/images/rails-girls-2019/panoramic.JPG">
 
-[photos]
+<img src="/blog/assets/images/rails-girls-2019/teaching_1.JPG">
 
-A few days after the event we regrouped with some of the coaches to talk about feedback and things we can improve for future events. In appreciation for participating we gave them an Amazon Gift card and a Rails Girls t-shirt.
+<img src="/blog/assets/images/rails-girls-2019/teaching_2.JPG">
 
-[coaches photo]
+<img src="/blog/assets/images/rails-girls-2019/teaching_3.JPG">
+
+<img src="/blog/assets/images/rails-girls-2019/code.JPG">
+
+A few days after the event we regrouped with some of the coaches to talk about feedback and things we can improve for future events. In appreciation for participating we gave them an Amazon Gift card and also a Rails Girls t-shirt.
+
+<img src="/blog/assets/images/rails-girls-2019/coaches.jpg">
 
 We have a lot of plans for making this community grow so we can impact the life of more people every time. Looking forward for the next edition!
