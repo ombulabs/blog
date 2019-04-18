@@ -28,7 +28,7 @@ Make smaller pull requests. This is the best way to speed up your review time. *
 
 ### 2. Break down large pull requests into smaller ones
 
-[A study] (https://opensource.com/article/18/6/anatomy-perfect-pull-request) demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
+[A study](https://opensource.com/article/18/6/anatomy-perfect-pull-request) demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
 
 Breaking down large pull requests keeps you in accordance with the **Single Responsibility Pattern**. The SRP is a computer programming principle that states that every module or class should have responsibility for a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class.
 
