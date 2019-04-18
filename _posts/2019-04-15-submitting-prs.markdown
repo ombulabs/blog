@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Submit Great Pull Requests"
-date: 2019-04-15 15:00:00
+date: 2019-04-18 15:00:00
 categories: ["agile", "learning", "pull-requests"]
 author: "emily"
 ---
@@ -20,7 +20,7 @@ Fellow developers need to be able to understand what the pull request is trying 
 - Speed up the code review process and consequently, product development
 - Target the right branch, usually either master or develop, depending on the project
 
-In order to make a **great pull request**, follow these Ombu Labs approved tips:
+In order to make a **great pull request**, follow these [Ombu Labs](https://www.ombulabs.com) approved tips:
 
 ### 1. Make smaller pull requests
 
@@ -28,7 +28,7 @@ Make smaller pull requests. This is the best way to speed up your review time. *
 
 ### 2. Break down large pull requests into smaller ones
 
-A study demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
+[A study] (https://opensource.com/article/18/6/anatomy-perfect-pull-request) demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
 
 Breaking down large pull requests keeps you in accordance with the **Single Responsibility Pattern**. The SRP is a computer programming principle that states that every module or class should have responsibility for a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class.
 
