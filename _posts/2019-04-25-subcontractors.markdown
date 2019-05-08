@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Working with subcontractors"
-date: 2019-04-25 09:00:00
+title: "Working With Subcontractors"
+date: 2019-05-08 09:00:00
 categories: ["bizdev"]
 author: "rdormer"
 ---
@@ -22,13 +22,14 @@ That's not to say that there aren't some downsides.  For one, take every downsid
 
 Speaking of time - finding contractors with the same availability and schedule as your needs can be remarkably hard.  Coordinating availability with your _client_ can be hard enough.  Coordinating it with a third party can be nearly intractable.
 
-Many of these issues can be fixed by having a deep pipeline of potential partners to work with.  Building that pipeline, however, brings difficulties of it's own - in addition to selling your services to clients, you now have the added work of selling your opportunities to potential partners.
+Many of these issues can be fixed by having a deep pipeline of potential partners to work with.  Building that pipeline, however, brings difficulties of its own - in addition to selling your services to clients, you now have the added work of selling your opportunities to potential partners.
 
 ## Choosing a good partner
 
 As difficult as it can be - it's worth it.  If you're a development agency, a good subcontractor can be worth their weight in billable hours.  They can help you take advantage of opportunities you'd otherwise miss, and let you preview what it might be like to have another full time developer on staff.  Not to mention the value of building out the all important network, the list of contacts and colleagues that agencies often live or die by.  So what are some good attributes to look for?
 
 * *Previous experience with freelancing / contracting* - Working as a subcontractor is definitely not for someone who is just getting their feet wet in the freelancing world.
+* *A public track record* - Testimonials from satisfied clients, open source contributions, and even blog posts can demonstrate a solid technical skillset.  Even better if they demonstrate a development philosophy that meshes well with your own!
 * *Strong communication skills* - communication becomes even more critical with a third party in the mix.
 * *A pre-existing relationship* - while it's not strictly necessary, working with someone you already know (and therefore trust) can ease some of the difficulties.
 * *Flexibility* - subcontracting for a contracting agency is still an unusual practice. Having a bit of mental flexibility and the ability and willingness to try new things helps ensure success.
