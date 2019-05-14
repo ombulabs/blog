@@ -24,11 +24,11 @@ In order to make a **great pull request**, follow these [Ombu Labs](https://www.
 
 ### 1. Make smaller pull requests
 
-Make smaller pull requests. This is the best way to speed up your review time. **The smaller the pull request, the  easier it is for the reviewers to understand** it and provide feedback.
+This is the best way to speed up your review time. **The smaller the pull request, the easier it is for the reviewers to understand** it and provide feedback.
 
 ### 2. Break down large pull requests into smaller ones
 
-[A study] (https://opensource.com/article/18/6/anatomy-perfect-pull-request) demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
+[A study](https://opensource.com/article/18/6/anatomy-perfect-pull-request) demonstrated that **a good pull request should not have more than 250 lines of changed code**. If the functionality you are working on is too big or complex, it could be helpful to split it into smaller and more manageable pull requests.
 
 Breaking down large pull requests keeps you in accordance with the **Single Responsibility Pattern**. The SRP is a computer programming principle that states that every module or class should have responsibility for a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class.
 
@@ -40,23 +40,22 @@ Similarly, a useful summary title makes it clear to the reviewer what’s being 
 
 Here are some examples:
 
-- Add test case for getEventTarget
-- Improve cryptic error message when creating a component starting with a lowercase letter
-
+- "Add test case for getEventTarget"
+- "Improve cryptic error message when creating a component starting with a lowercase letter"
 
 ### 4. Write useful descriptions
 
 The most helpful descriptions guide reviewers through the code as much as possible, highlighting related files and grouping them into concepts or problems that are being solved. Inside the pull request description try to:
 
-- Describe what was changed in the pull request
-- If there was some research done for the pull request, make sure to mention that and link to relevant sources
-- Explain why this pull request exists or add a link to the story that is being addressed
+- Describe what was changed in the pull request.
+- If there was some research done for the pull request, make sure to mention that and link to relevant sources.
+- Explain why this pull request exists or add a link to the story that is being addressed.
 - Make it clear how the code does what it's supposed to do— for example, does it change a column in the database? How is this done? What happens to the old data?
 - Use screenshots to demonstrate what has changed. This is especially important for CSS, HTML and JS changes.
-- If the PR is not ready for review, make it clear by adding WIP(Work in Progress) in the title or description
+- If the PR is not ready for review, make it clear by adding WIP (Work in Progress) in the title or description.
 - Add comments to specific parts of the code (in Github/Bitbucket) if you think that it could help the reviewer to understand it.
 
-These suggestions can save reviewer a lot of time. Take a look at this sample PR to see what a good description looks like: https://github.com/rails/rails/pull/32865
+These suggestions can save reviewer a lot of time. Take a look at [this sample PR](https://github.com/rails/rails/pull/32865) to see what a good description looks like.
 
 ### 5. Review and Submit
 
