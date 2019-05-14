@@ -60,4 +60,14 @@ These suggestions can save reviewer a lot of time. Take a look at this sample PR
 
 ### 5. Review and Submit
 
-Before finishing the submission of your pull request, make sure that you review it yourself. Check if the explanation is good enough and take a look at all the changed files to see if something is wrong or missing. Then go ahead and submit!
+Before finishing the submission of your pull request, make sure that you review it yourself. Check that the explanation is good enough and take a look at all the changed files to see if something is wrong or missing. Then go ahead and submit!
+
+Here is the workflow that we like to follow:
+
+1. Submit a PR (the title and description should describe the changes or point to a page with more info).
+2. The build should pass. If it doesn't, work on it until it does.
+3. When the build passes, the reviewer will assign themselves the PR before they start reviewing it.
+4. The reviewer will review it giving useful feedback and asking questions. If the PR needs work, the reviewer will add the needs-more-work label.
+5. Address the questions and update your PR.
+6. When all issues have been addressed or solved, remove the needs-more-work label and ping the reviewer with @reviewer
+7. If there are more issues, the reviewer will go to step #4. If not, the reviewer will merge the PR and delete your branch! 
