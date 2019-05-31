@@ -21,7 +21,12 @@ Jekyll::Hooks.register :site, :post_write do |site|
     puts "Generated sitemap.xml.gz"
   end
 
-  puts "Running tests..."
-  system "bundle exec rspec spec/blog_spec.rb"
+  if ENV["RACK_ENV"] == "production"
+    puts "Skipping tests in production..."
+  else
+    puts "Running tests..."
+    system "bundle exec rspec spec/blog_spec.rb"
+  end
+
   puts "All done!"
 end
