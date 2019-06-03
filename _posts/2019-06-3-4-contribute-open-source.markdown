@@ -6,7 +6,10 @@ categories: ["open-source"]
 author: "bronzdoc"
 ---
 
-Contributing to open source might be scary, you might be thinking that you PR will not have a good quality or that people will judge you by your code, or that fixing that little typo is not worth it. I had all this questions in my head before i did my first contribution to open source and stoped me for a long time to contribute.
+
+Contributing to open source might be scary, you might think that you pull request (PR) is not good enough; that people will judge you by your code; or that fixing that little typo is not worth it.
+
+I had all these questions in my head before I submitted my first contribution to an open source project and it stopped me many times.
 
 So my suggestions is, start small, look for low hanging issues in a project you want to contribute, start looking at the issues and see if they have been solved previously and suggest a fix, by doing this you will start learning the code base and it will give you confidence to start tackling more complex issues.
 
