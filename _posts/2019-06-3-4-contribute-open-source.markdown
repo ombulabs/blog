@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Contributing to open source"
+title: "Contributing To Open Source"
 date: 2019-06-03 09:00:00
 categories: ["open-source"]
 author: "bronzdoc"
