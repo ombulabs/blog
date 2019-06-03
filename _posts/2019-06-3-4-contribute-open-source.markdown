@@ -18,8 +18,8 @@ This is a set of steps that would help you get started in your open source journ
 ### If you think you found a bug:
 1. Search in Stack Overflow
 2. Search in GitHub's Issues
-3. If I don't find anything anywhere, submit an issue
-4. If I know a patch that works, submit a PR
+3. If you don't find anything anywhere, submit an issue
+4. If you know a patch that works, submit a PR
 5. Wait for feedback
 
 ### If you think something will be a nice feature:
