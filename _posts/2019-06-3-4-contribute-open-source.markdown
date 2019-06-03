@@ -30,6 +30,6 @@ This is a set of steps that would help you get started in your open source journ
 5. Wait for feddback
 
 
-These steps are not written in gold, but i think they might help you get you started.
-There are situations where i personally wouldn't submit an issue first, i.e typos, formatting issues, etc
+These steps are not written in gold, but I think they might help you get you started.
+There are situations where I personally wouldn't submit an issue first, i.e typos, formatting issues, etc
 but this depends on how large is the change and how well you know the codebase.
