@@ -767,8 +767,13 @@ body:not(.post-template) .post-title {
 .read-more {
 }
 
+.author-info{
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 .post-meta {
-    display: block;
     margin: 1.75rem 0 0 0;
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
@@ -786,7 +791,7 @@ body:not(.post-template) .post-title {
 
 .post-meta a {
     color: #9EABB3;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .post-meta a:hover {
