@@ -45,7 +45,7 @@ Of course, developers love to disagree, and any conventions like this
 will inevitably be a potential source of griping.  From experience,
 it'll be a fraction of the complaining you'll hear if you *don't* have
 standard conventions, though.  Even the most opinionated developers
-will be professional enough to get used to it quickly enough.  Wether
+will be professional enough to get used to it in short order.  Whether
 they admit it or not, most experienced developers would rather have a
 convention they're not crazy about than no conventions at all.
 
@@ -96,6 +96,14 @@ every developer's workflow.  This is probably better than integrating
 it into something more centralized, like a Jenkins server - it's best
 that code doesn't make it into your repository unless it conforms to
 conventions, rather than flagging it after the fact.
+
+# StandardRB
+
+If Rubocop looks like a bit much for you right now, there's a lighter weight
+alternative in [StandardRB](https://github.com/testdouble/standard).  Think of
+it as a largely pre-configured version of Rubocop, leaving you with a simple and
+relatively stripped down set of rules to deal with.  It's a solid way to start
+enforcing conventions without diving into the minutiae.
 
 # Getting over the hump
 
