@@ -10,7 +10,7 @@ Everyone has had the experience of working on a gnarly, difficult to
 understand code-base.  The sort of code base that makes you hate your
 job.  Often it comes down to poor design, but [code
 conventions](https://en.wikipedia.org/wiki/Coding_conventions) also
-play a large part in wether you wake up dreading your job in the
+play a large part in whether you wake up dreading your job in the
 morning.  The overall design (choice of design patterns and how
 modules and classes are organized and factored) is the long range, big
 picture strategy of how an application will be made.  Code
