@@ -34,7 +34,7 @@ Before getting started make sure you know the basics of version control and [git
 5. Wait for feddback again! you are getting closer! maintainers of the project will give you more feedback about the feature; don't take the feedback personal and discuss the feedback if you disagree with something it might be a good way to learn from one and other.
 
 ### Triaging issue
-You might or not have a feature of issue to fix, another good way you could start contributing is by simply looking at the github issues, start checking if there are issues that are solved and notify the maintainers that the issue should be closed or if you see a feature maybe you could give feedback about it or maybe you could start reviewing existing PR's! the goal here is to lose the fear and to motivate you get involve in the project you choosed.
+You might not have a feature idea or issue to report. That shouldn't stop you from contributing to an open source project. You could triage open issues and pull requests. That's another great way you could start contributing. Start checking if there are issues that are already solved and notify maintainers that the issue should be closed.  You could give feedback about a feature proposal. You could start reviewing existing PRs! The main goal here is to lose your fear and motivate yourself to get involved in your favorite project.
 
 ## Projects to contribute
 
