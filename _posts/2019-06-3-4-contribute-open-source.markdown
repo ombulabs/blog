@@ -14,20 +14,20 @@ So my suggestion is: start small. Look for low hanging issues in a project you w
 
 Before getting started make sure you know the basics of version control and [git](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics)
 
-> Note: I'll be focusing on GitHub as the platform to contribute since is the most popular.
+> Note: I'll be focusing on GitHub as the platform to contribute considering it's the most popular social coding community.
 
 ## This is a set of steps that would help you get started in your open source journey:
 
 ### If you think you found a bug
 
-1. Look in the web to check the bug aleady exists
+1. Search for issues in Google and in GitHub Issues to determine whether the bug already exists or it is a new one.
 2. If you don't find anything anywhere, submit an issue to the project repository explaining what you found and how you expected the program to behave and what you are getting
 3. If you know a patch that works, submit a PR
 4. Wait for feedback and make changes to you PR if the maintainers of the project have any until the PR is ready to merge!
 
 ### If you think something will be a nice feature
 
-1. Look in the web to check the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it.
+1. Search in Google if the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it.
 2. If you don't find anything in the web, issue tracker, etc, submit an issue explaining why you think your feature will add value to the project
 3. Wait for feeback from the project maintainers and learn about why your feature is or not addecuate to the project
 4. If you got a positive feedback about your feature, start working on your feature and dont' get scared to ask for help if you get stuck. Finaly submit a PR!
@@ -43,5 +43,5 @@ You can find a list of "Awesome first PR Opportunities" [here](https://github.co
 ## Conclusion
 
 These steps are not written in gold, but I think they might help you get started.
-There a few cases where I wouldn't submit an issue first (i.e typos, formatting issues) 
+There a few cases where I wouldn't submit an issue first (i.e typos, formatting issues)
 but this depends on the complexity of the change and how well you know the codebase.
