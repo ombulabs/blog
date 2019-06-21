@@ -42,6 +42,6 @@ You can find a list of "Awesome first PR Opportunities" [here](https://github.co
 
 ## Conclusion
 
-These steps are not written in gold, but I think they might help you get you started.
+These steps are not written in gold, but I think they might help you get started.
 There are situations where I personally wouldn't submit an issue first, i.e typos, formatting issues, etc
 but this depends on how large is the change and how well you know the codebase.
