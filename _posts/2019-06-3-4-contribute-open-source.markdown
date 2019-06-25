@@ -6,7 +6,7 @@ categories: ["open-source"]
 author: "bronzdoc"
 ---
 
-Contributing to open source might be scary, you might think that you pull request (PR) is not good enough; that people will judge you by your code; or that fixing that little typo is not worth it.
+Contributing to open source might be scary, you might think that your pull request (PR) is not good enough; that people will judge you by your code; or that fixing that little typo is not worth it.
 
 I had all these questions in my head before I submitted my first contribution to an open source project and it stopped me many times.
 
@@ -23,7 +23,7 @@ Before getting started make sure you know the basics of version control and [git
 1. Search for issues in Google and in GitHub Issues to determine whether the bug already exists or it is a new one.
 2. If you don't find anything anywhere, submit an issue to the project repository explaining what you found and how you expected the program to behave and what you are getting
 3. If you know a patch that works, submit a PR
-4. Wait for feedback and make changes to you PR if the maintainers of the project have any until the PR is ready to merge!
+4. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
 
 ### If you think something will be a nice feature
 
