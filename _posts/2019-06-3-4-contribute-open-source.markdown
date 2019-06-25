@@ -10,6 +10,8 @@ Contributing to open source might be scary, you might think that your pull reque
 
 I had all these questions in my head before I submitted my first contribution to an open source project and it stopped me many times.
 
+<!--more-->
+
 So my suggestion is: start small. Look for low hanging issues in a project you want to contribute to; start reviewing issues; and see if they have been solved in the past. Then you can suggest a fix. If you take it one small issue at a time, you will start learning the code base and it will give you the confidence you need to start tackling more complex issues.
 
 Before getting started make sure you know the basics of version control and [git](https://git-scm.com/book/en/v1/Getting-Started-Git-Basics)
