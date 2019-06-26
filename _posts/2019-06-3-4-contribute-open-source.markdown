@@ -27,7 +27,7 @@ Before getting started make sure you know the basics of version control and [git
 3. If you know a patch that works, submit a PR
 4. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
 
-### If you think something will be a nice feature
+### If you think something would be a nice feature
 
 1. Search in Google if the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it.
 2. If you don't find anything in the web, issue tracker, etc, submit an issue explaining why you think your feature will add value to the project
