@@ -36,11 +36,16 @@ Before getting started make sure you know the basics of version control and [git
 5. Wait for feddback again! you are getting closer! maintainers of the project will give you more feedback about the feature; don't take the feedback personal and discuss the feedback if you disagree with something it might be a good way to learn from one and other.
 
 ### Triaging issue
+
 You might not have a feature idea or issue to report. That shouldn't stop you from contributing to an open source project. You could triage open issues and pull requests. That's another great way you could start contributing. Start checking if there are issues that are already solved and notify maintainers that the issue should be closed.  You could give feedback about a feature proposal. You could start reviewing existing PRs! The main goal here is to lose your fear and motivate yourself to get involved in your favorite project.
+
+### My first open source contribution
+Just as a fun fact, this was [my first open source contribution](https://github.com/plaidchat/plaidchat/pull/74)
 
 ## Projects to contribute
 
-You can find a list of "Awesome first PR Opportunities" [here](https://github.com/MunGell/awesome-for-beginners)
+- You can find a list of "Awesome first PR Opportunities" [here](https://github.com/MunGell/awesome-for-beginners)
+- Pick your favorite repos to receive a different open issue in your inbox every day using [codetriage](https://www.codetriage.com/)
 
 ## Conclusion
 
