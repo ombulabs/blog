@@ -24,8 +24,12 @@ Before getting started make sure you know the basics of version control and [git
 
 1. Search for issues in Google and in GitHub Issues to determine whether the bug already exists or it is a new one
 2. If you don't find anything anywhere, submit an issue to the project repository explaining what you found and how you expected the program to behave and how the program behaves in your own environment
-3. If you know a patch that works, submit a PR
-4. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
+3. Before you submit the patch, you might want to mention the potential solution in the GitHub Issue. Sometimes I find it useful when I say something like this:
+ ```
+ I found that the problem is in this line () and that it would work if I changed it to this (), would you be interested in a pull request with this solution?
+ ```
+4. Submit a PR with a potential solution
+5. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
 
 ### If you think something would be a nice feature
 
