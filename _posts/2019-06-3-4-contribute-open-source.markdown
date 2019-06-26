@@ -29,7 +29,7 @@ Before getting started make sure you know the basics of version control and [git
  I found that the problem is in this line () and that it would work if I changed it to this (), would you be interested in a pull request with this solution?
  ```
 4. Submit a PR with a potential solution
-5. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
+5. Wait for feedback. If the maintainers of the project have any suggestions make changes to your PR until the PR is ready to merge!
 
 ### If you think something would be a nice feature
 
