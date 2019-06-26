@@ -22,18 +22,18 @@ Before getting started make sure you know the basics of version control and [git
 
 ### If you think you found a bug
 
-1. Search for issues in Google and in GitHub Issues to determine whether the bug already exists or it is a new one.
-2. If you don't find anything anywhere, submit an issue to the project repository explaining what you found and how you expected the program to behave and how the program behaves in your own environment.
+1. Search for issues in Google and in GitHub Issues to determine whether the bug already exists or it is a new one
+2. If you don't find anything anywhere, submit an issue to the project repository explaining what you found and how you expected the program to behave and how the program behaves in your own environment
 3. If you know a patch that works, submit a PR
 4. Wait for feedback and make changes to your PR if the maintainers of the project have any until the PR is ready to merge!
 
 ### If you think something would be a nice feature
 
-1. Search in Google if the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it.
+1. Search in Google if the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it
 2. If you don't find anything in the web, issue tracker, etc, submit an issue explaining why you think your feature will add value to the project
 3. Wait for feedback from the project maintainers and learn about why your feature is or not addecuate to the project
 4. If you got positive feedback about your feature, start working on it. Don't be scared to ask for help if you get stuck. Finally submit a PR!
-5. Wait for feedback again! You are almost there! Maintainers will give you more feedback about your feature; don't take it personal and respectfully discuss feedback. If you disagree with something it might be a good opportunity to learn from someone else's experience.
+5. Wait for feedback again! You are almost there! Maintainers will give you more feedback about your feature; don't take it personal and respectfully discuss feedback. If you disagree with something it might be a good opportunity to learn from someone else's experience
 
 ### Triaging issue
 
