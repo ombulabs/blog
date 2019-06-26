@@ -41,7 +41,7 @@ Before getting started make sure you know the basics of version control and [git
 
 ### Triaging issue
 
-You might not have a feature idea or issue to report. That shouldn't stop you from contributing to an open source project. You could triage open issues and pull requests. That's another great way you could start contributing. Start checking if there are issues that are already solved and notify maintainers that the issue should be closed.  You could give feedback about a feature proposal. You could start reviewing existing PRs! The main goal here is to lose your fear and motivate yourself to get involved in your favorite project.
+You might not have a feature idea or issue to report. That shouldn't stop you from contributing to an open source project. You could triage open issues and pull requests. That's another great way you could start contributing. Start checking if there are issues that are already solved and notify maintainers that the issue should be closed. You could give feedback about a feature proposal. You could start reviewing existing PRs! The main goal here is to lose your fear and motivate yourself to get involved in your favorite project.
 
 ### My first open source contribution
 Just as a fun fact, this was [my first open source contribution](https://github.com/plaidchat/plaidchat/pull/74)
