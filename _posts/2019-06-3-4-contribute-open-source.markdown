@@ -32,7 +32,7 @@ Before getting started make sure you know the basics of version control and [git
 1. Search in Google if the feaure was already proposed or what other people think of your feature; if the feature is already proposed and you think you can improve it, comment your ideas about it.
 2. If you don't find anything in the web, issue tracker, etc, submit an issue explaining why you think your feature will add value to the project
 3. Wait for feedback from the project maintainers and learn about why your feature is or not addecuate to the project
-4. If you got a positive feedback about your feature, start working on your feature and dont' get scared to ask for help if you get stuck. Finaly submit a PR!
+4. If you got positive feedback about your feature, start working on it. Don't be scared to ask for help if you get stuck. Finally submit a PR!
 5. Wait for feedback again! You are almost there! Maintainers will give you more feedback about your feature; don't take it personal and respectfully discuss feedback. If you disagree with something it might be a good opportunity to learn from someone else's experience.
 
 ### Triaging issue
