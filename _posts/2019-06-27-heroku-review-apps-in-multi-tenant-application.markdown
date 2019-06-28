@@ -6,7 +6,7 @@ categories: ["heroku"]
 author: "cleiviane"
 ---
 
-Recently at [Ombu Labs](https://www.ombulabs.com) I had the mission of setting up Heroku [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) for one of our projects. Since the project is built in a multi-tenant architecture (using the [apartment gem](https://github.com/influitive/apartment)) it was a little challengeable to setup.
+Recently at [Ombu Labs](https://www.ombulabs.com) I had the mission of setting up Heroku [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) for one of our projects. Since the project is built in a multi-tenant architecture (using the [apartment gem](https://github.com/influitive/apartment)) it was a bit challenging to setup.
 
 ### What are Review Apps?
 Review Apps is a feature of Heroku that automatically deploys each pull request’s code to a new Heroku application. It's an excellent resource to help others (specially code reviewers) to visualize and understand the changes that were made.
@@ -69,7 +69,7 @@ The next step is to add an add-on to connect the apps to heroku postgresql. In o
 
 ### Copy DB to review app
 
-The recommendation from Heroku is to use the `db/seeds` file to populate your initial database. But for this project we wanted to actually have a copy of the staging database. Since review apps uses a limited resource for database, copying the entire database would cause a database disruption. But since we are using tenants in our application ([apartment gem](https://github.com/influitive/apartment)) our strategy was to copy just one schema and prevent that issue.
+The recommendation from Heroku is to use the `db/seeds` file to populate your initial database. But for this project we wanted to actually have a copy of the staging database. Since review apps use a limited resource for the database, copying the entire database would cause a database disruption. But since we are using tenants in our application ([apartment gem](https://github.com/influitive/apartment)) our strategy was to copy just one schema and prevent that issue.
 
 To be able to dump and restore the DB we created a rails task:
 
@@ -83,7 +83,7 @@ end
 
 ```
 
-and added a postdeploy instruction to run it:
+and added a postdeploy instruction into the `app.json` to run the task:
 
 ```
 "scripts": {
@@ -95,4 +95,4 @@ That's it!
 
 ## Conclusion
 
-Review Apps are certainly a great resource provided by Heroku, but it can be a little tricky to configure, so I hope this post is helpful for others facing the same situation.
+Review Apps are certainly a great resource provided by Heroku, but it can be a little tricky to configure in specific situations, so I hope this post is helpful for others facing the same situation.
