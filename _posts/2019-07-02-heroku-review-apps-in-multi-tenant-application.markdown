@@ -8,10 +8,10 @@ author: "cleiviane"
 
 Recently at [Ombu Labs](https://www.ombulabs.com) I had the mission of setting up Heroku [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) for one of our projects. Since the project is built in a multi-tenant architecture (using the [apartment gem](https://github.com/influitive/apartment)) it was a bit challenging to setup.
 
+<!--more-->
+
 ### What are Review Apps?
 Review Apps is a feature of Heroku that automatically deploys each pull request’s code to a new Heroku application. It's an excellent resource to help others (specially code reviewers) to visualize and understand the changes that were made.
-
-<!--more-->
 
 ### Enabling Review Apps in Heroku
 The first step is to enable the review apps feature for the desired app using the Heroku dashboard.
