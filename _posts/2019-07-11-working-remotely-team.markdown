@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tips for Working Remotely in a Team"
-date: 2019-07-02 09:00:00
+date: 2019-07-11 12:30:00
 categories: ["agile", "remote"]
 author: "emily"
 ---
