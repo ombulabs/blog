@@ -10,7 +10,7 @@ We have been a fully remote company for a year and a half now. Making the transi
 
 <!--more-->
 
-Have a daily call: We have an office-wide [scrum](https://www.atlassian.com/agile/scrum) call every at 9:45am. We encourage employees to participate via video and to share their goals for the day and any blockers they may have. It is important for teams to have scheduled “face to face” time on a daily basis in order to stay connected. We prefer chatting in the morning.
+Have a daily call: We have an office-wide [scrum](https://www.atlassian.com/agile/scrum) call every day at 9:45am. We encourage employees to participate via video and to share their goals for the day and any blockers they may have. It is important for teams to have scheduled “face to face” time on a daily basis in order to stay connected. We prefer chatting in the morning.
 
 Time tracking: We use [Noko](https://nokotime.com/) to track our daily working hours. It is helpful for team members to keep track of what assignments they are working on and to know how much time they are dedicating to each project or client.
 
