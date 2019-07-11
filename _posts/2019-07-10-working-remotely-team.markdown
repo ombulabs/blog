@@ -20,6 +20,11 @@ We have been a fully remote company for a year and a half now. Making the transi
 
 **Impromptu calls**: We use [Slack](https://slack.com) for most of our communication. It is generally quick and easy to use. However, if something is taking too long via slack, or your question is not being answered, it is important to have a quick call about it.
 
+**Know Your Team**: We really like to use [Know Your Team](https://knowyourteam.com) to get to know each other better. Know Your Team sends out weekly icebreaker questions to team members and then shares the answers with the whole team. Some of our most discussed questions:
+- What are you going to ship this week? What is blocking you?
+- Where did you go on your first airplane ride?
+- Do you feel like we have too many meetings?
+
 **Feedback calls**: We like to have monthly One on One Feedback Meetings with [Ombu Labs](https://www.ombulabs.com) CEO [Ernesto Tagwerker](https://www.ombulabs.com/#staff). We discuss monthly goals, blockers, our happiness level, ways to improve the company and much more. Getting feedback is especially helpful for remote employees.
 
 **End of the week call**: One of our favorite remote office traditions is to have an “End of Week Team Call” on Friday afternoons.  We go over office announcements and news and have each team member share their accomplishments during the week (personal or professional). It is a good time for our team to connect and have an end of the week cheers.  
