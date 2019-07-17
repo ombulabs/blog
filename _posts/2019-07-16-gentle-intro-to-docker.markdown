@@ -2,11 +2,11 @@
 layout: post
 title: "A Gentle Introduction To Docker"
 date: 2019-07-16 12:30:00
-categories: ["devops", "docker", "tutorials"]
+categories: ["DevOps", "docker", "tutorials"]
 author: "rdormer"
 ---
 
-If you're like I was not too long ago, the DevOps world gives you a chance to experience what most non-developers probably feel like when they read about what we do on a day to day basis - confused, and maybe a little bored and frustrated, with an utter lack of even basic knowledge. It doesn't help that Devops is rapidly becoming a field of expertise unto itself, or that most of the relevant players seem determined to hide behind vague descriptions like "enterprise platform" and "containerization solution." As a day to day working developer, adding an entire new skillset can be a daunting and intimidating prospect.  
+If you're like I was not too long ago, the DevOps world gives you a chance to experience what most non-developers probably feel like when they read about what we do on a day to day basis - confused, and maybe a little bored and frustrated, with an utter lack of even basic knowledge. It doesn't help that DevOps is rapidly becoming a field of expertise unto itself, or that most of the relevant players seem determined to hide behind vague descriptions like "enterprise platform" and "containerization solution." As a day to day working developer, adding an entire new skillset can be a daunting and intimidating prospect.
 
 <!--more-->
 
@@ -14,19 +14,21 @@ Fear not, though. Getting some basic knowledge is not as hard as it might seem. 
 
 # Familiar Territory
 
-As a Ruby developer, you've undoubtedly used either RVM or rbenv. We all know why - managing dependencies can be a major pain. Being able to segregate an application into it's own environment with it's own clean slate consisting of only the dependencies that application has drastically simplifies administration and deployment and reduces aggravation. If you're comfortable with this idea, then you're already familiar with the idea of a *container* - a virtual environment used to separate dependencies and configuration from the rest of the system. It not only saves you a lot of hassle, it lets you run different applications with different dependencies on the same machine without any fireworks or panicky phone calls.
+As a Ruby developer, you've undoubtedly used either [RVM](https://rvm.io/) or [rbenv](https://github.com/rbenv/rbenv). We all know why - managing dependencies can be a major pain. Being able to segregate an application into its own environment with its own clean slate consisting of only the dependencies that application has drastically simplifies administration and deployment and reduces aggravation. If you're comfortable with this idea, then you're already familiar with the idea of a [*container*](https://www.docker.com/resources/what-container) - a virtual environment used to separate dependencies and configuration from the rest of the system. It not only saves you a lot of hassle, it lets you run different applications with different dependencies on the same machine without any fireworks or panicky phone calls.
 
 # The next logical step
 
-Of course, other developers using other languages and environments long ago figured out that they would like to have the same thing for themselves. In some cases they came up with their own language specific solution to this problem. At the end of the day, though, what you really want is a way to create virtual containers that is language agnostic. Eons ago, when mainframes and workstations roamed the earth, Unix developers came up with the concept of the chroot jail. Although mainly intended for use as a security measure, it inadvertently accomplishes the same sort of dependency isolation we're talking about here, although in a less manageable fashion.  Since it's not specifically meant for deploying applications and managing dependencies, using it in an RVM-ish fashion would be a fairly painful exercise. What would be *really* nice if you could create such environments easily - from a template, for instance - and had a suite of tools to manage them.
+Of course, other developers using other languages and environments long ago figured out that they would like to have the same thing for themselves. In some cases they came up with their own language specific solution to this problem. At the end of the day, though, what you really want is a way to create virtual containers that is language agnostic. Eons ago, when mainframes and workstations roamed the earth, Unix developers came up with the concept of the chroot jail.
 
-# And we widen to reveal....
+Although mainly intended for use as a security measure, it inadvertently accomplishes the same sort of dependency isolation we're talking about here, in a less manageable fashion.  Since it's not specifically meant for deploying applications and managing dependencies, using it in an RVM-ish fashion would be a fairly painful exercise. What would be *really* nice if you could create such environments easily - from a template, for instance - and had a suite of tools to manage them.
 
-Enter [Docker](http://docker.com).  It started life as a cloud computing platform, but after a few years, it's creators open sourced it. Open sourcing it did what open sourcing does - changed things - and now we have the modern Docker you've been hearing so much about. But Docker does more than just generalizing the abilities of a language specific manager to any executable application - it brings a number of new abilities to the table. You can migrate a container to an entirely new host, replicate a single container any arbitrary number of times, and encapsulate complex services in an easy to run, atomic fashion. A full listing could (and has) fill a book.  You get the idea.
+# And we widen to reveal...
+
+Enter [Docker](http://docker.com).  It started life as a cloud computing platform, but after a few years, its creators open sourced it. Open sourcing it did what open sourcing does - changed things - and now we have the modern Docker you've been hearing so much about. But Docker does more than just generalizing the abilities of a language specific manager to any executable application - it brings a number of new abilities to the table. You can migrate a container to an entirely new host, replicate a single container any arbitrary number of times, and encapsulate complex services in an easy to run, atomic fashion. A full listing could (and has) fill a book.  You get the idea.
 
 # Show me
 
-Glad you asked.  The simplest way to get started with Docker is to [install it](https://hub.docker.com/) - you'll have to create an account to get the goodies, and the installation can be a bit of a process, so be ready for that.  Once the smoke has cleared and you're done gritting your teeth, open up a command line and try:
+Glad you asked.  The simplest way to get started with Docker is to [install it](https://docs.docker.com/install/) - you can save yourself some confusion (and creating an un-needed account) by perusing the [binaries repository](https://download.docker.com/) as well.  Installation can be a bit of a process, so be ready for that.  Once the smoke has cleared and you're done gritting your teeth, open up a command line and try:
 
 ``docker run hello-world``
 
@@ -36,7 +38,7 @@ How about something that's a little more fun to play with?  Run:
 
 ``docker run -it ubuntu bash``
 
-Just like before, Docker will download an image - this time, the well known Linux variant Ubuntu - and then create a container to run it in.  Note the extra argument that we added at the end, though - a command that will be executed within the downloaded image.  It's the same basic syntax (and idea) that you would use to run a command remotely with ssh.  In this case, it'll give you a nice, interactive shell that lets you poke around in your container.  The ``-it`` bit is a pair of command line options that allocate a terminal and tell Docker that you want to actually interact with the container.  Now try:
+Just like before, Docker will download an image - this time, the well known Linux variant Ubuntu - and then create a container to run it in.  Note the extra argument that we added at the end, though - a command that will be executed within the container created from the downloaded image.  It's the same basic syntax (and idea) that you would use to run a command remotely with ssh.  In this case, it'll give you a nice, interactive shell that lets you poke around in your container.  The ``-it`` bit is a pair of command line options that allocate a terminal and tell Docker that you want to actually interact with the container.  Now try:
 
 ``cd /``
 
