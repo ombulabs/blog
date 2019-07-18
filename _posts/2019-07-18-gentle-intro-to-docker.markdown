@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Gentle Introduction To Docker"
-date: 2019-07-16 12:30:00
+date: 2019-07-18 12:30:00
 categories: ["DevOps", "docker", "tutorials"]
 author: "rdormer"
 ---
