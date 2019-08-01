@@ -7,18 +7,32 @@ author:
 ---
 
 # VIM 101
-This is an introduction to vim. It will show you vim is easier than you think and yes, I'll teach you how to exit ;)
 
-## Basic stuff
-  * $ vim filename
-  * :o filename
+I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its unix philosophy....
+If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor).
+
+So all you need to know is that vim is a text editor... a poweful one.  in my opinion its power comes with how flexible it can be. It can be as simple or complex as you wish. It can serve you to edit a simple config file on a server or you can make it a complete code editing environment if you want.
+
+In this blog post I'll show you the basics of vim and how you can interact with it and yes I'll teach you how to exit ;)
+
+I'll asume you already have vim installed, if you are on a \*nix system you proably already have it.
+
+## VIM modes
+Vim is a "modal editor" that means vim will behave different depending on which mode you currently are.
+
+I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. There are a couple more, but this are the basics ones, and it's all you need to know for now.
+
+### NORMAL - The default's vim mode
+
+This is where you'll spend most of your time and it's the mode where the magic happens. In this mode you can execute commands.
+
+ * INSERT - The mode where you can write stuff
+ * VISUAL - The mode in which you can select chunks of text
+
+Open a terminal and type `vim filename`
   * :q
+  * :q!
   * :w
-
-## Basic VIM modes
- * NORMAL
- * INSERT
- * VISUAL
 
 ## Navigation
  * h,j,k,l
