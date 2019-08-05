@@ -78,7 +78,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 ## INSERT - The mode where you can "insert" text
   You probably were wondering, how do I actually write something into vim, well... this is the mode where you can do that.
 
-  You enter INSERT mode by pressing the letter `i`. In this mode you'll use you keyboard like in any other editor, vim will not behave special when you are in this mode.
+  You enter INSERT mode by pressing the letter `i`. In this mode you'll use your keyboard like in any other editor, vim will not behave in a special way when you are in this mode.
 
   In vim, you are not expected to be in this mode all the time Whenever you finish your writing you go back to **NORMAL** mode, you do that by pressing the **ESC** key.
 
