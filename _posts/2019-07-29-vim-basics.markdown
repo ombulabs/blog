@@ -11,15 +11,15 @@ author: bronzdoc
 I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its unix philosophy....
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor).
 
-So all you need to know is that vim is a text editor... in my opinion one of vim strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can serve you to edit a simple config file on a server or you can make it a complete code editing environment if you want.
+So all you need to know is that vim is a text editor. In my opinion one of vim's strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can be used to edit a simple config file on a server or you can make it a complete code editing environment.
 
-In this blog post I'll show you the basics of vim and the smallest amount of knowledge to make vim useful for yourself and yes I'll teach you how to exit ;)
+In this blog post I'll show you the basics of vim and provide you with the smallest amount of knowledge necessary to make vim useful for yourself, and yes I'll teach you how to exit ;)
 
-I'll asume you already have vim installed, if you are on a \*nix system you proably already have it.
+I'll assume you already have vim installed, if you are on a \*nix system you probably already have it.
 
 Open terminal and type: `vim vim-basic`.
 
-You'll see something like the folowing:
+You'll see something like the following:
 ```
                                                       VIM - Vi IMproved
 
@@ -43,19 +43,19 @@ congrats! you are using vim ha!
 
 
 ## VIM modes
-Vim is a "modal editor" that means vim will behave different depending on which mode you currently are.
+Vim is a "modal editor", which means vim will behave different depending on which mode you are currently on.
 
-I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. There are a couple more, but this are the basics ones, and it's all you need to know for now.
+I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. There are a couple more, but these are the basics ones, and they are all you need to know for now.
 
 
-## NORMAL - The default's vim mode
+## NORMAL - The default vim mode
 
 This is where you'll spend most of your time and it's the mode where the magic happens. In this mode you can execute commands.
 Commands can be a simple letter, for example if you press the letter `j` you'll see your cursor goes down one line and if you press the letter `k` it will go up.
-In this mode you'll do things like navigate trough your text file, removing, copyieng and pasting text.
+In this mode you'll do things like navigate through your text file, removing, copying and pasting text.
 
 ### Navigation
-While you are in **NORMAL** mode you would need to move around your text file. This are the basics commads that will help you achieve that.
+While you are in **NORMAL** mode you would need to move around your text file. These are the basics commands that will help you achieve that.
 
 ```
       k
@@ -72,13 +72,13 @@ While you are in **NORMAL** mode you would need to move around your text file. T
   yy - copy(yank) the current line.
 
 ### Pasting text
-  p  - Paste to the underneath line.
+  p  - paste to the line underneath.
 
 
 ## INSERT - The mode where you can "insert" text
-  You problay were wondering, how do I actually write something into vim, well... this is the mode where you can do that.
+  You probably were wondering, how do I actually write something into vim, well... this is the mode where you can do that.
 
-  You enter INSERT mode by pressing the letter `i`. In this mode you'll use you keyboard like in any other editor, vim will not behave special when you are in this mode.
+  You enter INSERT mode by pressing the letter `i`. In this mode you'll use your keyboard like in any other editor, vim will not behave in a special way when you are in this mode.
 
   In vim, you are not expected to be in this mode all the time Whenever you finish your writing you go back to **NORMAL** mode, you do that by pressing the **ESC** key.
 
@@ -87,22 +87,22 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
   * :w  - Save your changes.
   * :q  - Quit vim.
-  * :q! - Quit vim even if your changes where not saved.
+  * :q! - Quit vim even if your changes were not saved.
 
 
 ## VISUAL - The mode in which you can select chunks of text
  While in normal mode you enter this mode by pressing the letter `v`. You'll notice that the text will highlight if you go up, down, left or right.
 
- You could select a paragraph, a single word or even a letter and apply commands to that selected piece of text. You could copy(yy) a selected of text or delete (dd) it if you wish. to exit visual mode you press `ESC` and you will return to **NORMAL** mode.
+ You could select a paragraph, a single word or even a letter and apply commands to that selected piece of text. You could copy(yy) a selection of text or delete (dd) it if you wish. To exit visual mode you press `ESC` and will return to **NORMAL** mode.
 
 
 ## Resources
- This are a couple of resources that can help you improve your vim skilss.
+ These are a couple of resources that can help you improve your vim skills.
 
   * vimtutor                   - If you are on a \*nix system you can type in the terminal `vimtutor` for a vim tutorial.
   * http://vim-adventures.com/ - A game that will teach you vim
-  * :h :help                   - vim goto help command
+  * :h :help                   - vim go to help command
 
 
 ## Conclusion
- This is a really basic introduction to vim and it's just the top of the iceberg of what vim really can do. I hope this little introduction will motivate you to keep learning vim and showed you that to start using vim you only need a couple of concepts and commands.
+ This is a really basic introduction to vim and it's just the tip of the iceberg of what vim really can do. I hope this little introduction will motivate you to keep learning vim and showed you that to start using vim you only need a couple of concepts and commands.
