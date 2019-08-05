@@ -48,7 +48,7 @@ Vim is a "modal editor", which means vim will behave different depending on whic
 I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. There are a couple more, but these are the basics ones, and they are all you need to know for now.
 
 
-## NORMAL - The default's vim mode
+## NORMAL - The default vim mode
 
 This is where you'll spend most of your time and it's the mode where the magic happens. In this mode you can execute commands.
 Commands can be a simple letter, for example if you press the letter `j` you'll see your cursor goes down one line and if you press the letter `k` it will go up.
