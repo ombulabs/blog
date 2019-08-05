@@ -13,7 +13,7 @@ If you are interested in that, you can give it a look [here](https://en.wikipedi
 
 So all you need to know is that vim is a text editor. In my opinion one of vim's strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can be used to edit a simple config file on a server or you can make it a complete code editing environment.
 
-In this blog post I'll show you the basics of vim and the smallest amount of knowledge to make vim useful for yourself and yes I'll teach you how to exit ;)
+In this blog post I'll show you the basics of vim and provide you with the smallest amount of knowledge necessary to make vim useful for yourself, and yes I'll teach you how to exit ;)
 
 I'll asume you already have vim installed, if you are on a \*nix system you proably already have it.
 
