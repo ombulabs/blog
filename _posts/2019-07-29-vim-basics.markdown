@@ -55,7 +55,7 @@ Commands can be a simple letter, for example if you press the letter `j` you'll 
 In this mode you'll do things like navigate through your text file, removing, copying and pasting text.
 
 ### Navigation
-While you are in **NORMAL** mode you would need to move around your text file. This are the basics commads that will help you achieve that.
+While you are in **NORMAL** mode you would need to move around your text file. These are the basics commands that will help you achieve that.
 
 ```
       k
