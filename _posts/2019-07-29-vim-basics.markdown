@@ -15,7 +15,7 @@ So all you need to know is that vim is a text editor. In my opinion one of vim's
 
 In this blog post I'll show you the basics of vim and provide you with the smallest amount of knowledge necessary to make vim useful for yourself, and yes I'll teach you how to exit ;)
 
-I'll asume you already have vim installed, if you are on a \*nix system you proably already have it.
+I'll assume you already have vim installed, if you are on a \*nix system you probably already have it.
 
 Open terminal and type: `vim vim-basic`.
 
