@@ -19,7 +19,7 @@ I'll asume you already have vim installed, if you are on a \*nix system you proa
 
 Open terminal and type: `vim vim-basic`.
 
-You'll see something like the folowing:
+You'll see something like the following:
 ```
                                                       VIM - Vi IMproved
 
