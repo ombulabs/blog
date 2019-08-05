@@ -72,7 +72,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
   yy - copy(yank) the current line.
 
 ### Pasting text
-  p  - Paste to the underneath line.
+  p  - paste to the line underneath.
 
 
 ## INSERT - The mode where you can "insert" text
