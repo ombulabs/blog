@@ -97,7 +97,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
 
 ## Resources
- This are a couple of resources that can help you improve your vim skilss.
+ These are a couple of resources that can help you improve your vim skills.
 
   * vimtutor                   - If you are on a \*nix system you can type in the terminal `vimtutor` for a vim tutorial.
   * http://vim-adventures.com/ - A game that will teach you vim
