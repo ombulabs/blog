@@ -52,7 +52,7 @@ I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. 
 
 This is where you'll spend most of your time and it's the mode where the magic happens. In this mode you can execute commands.
 Commands can be a simple letter, for example if you press the letter `j` you'll see your cursor goes down one line and if you press the letter `k` it will go up.
-In this mode you'll do things like navigate trough your text file, removing, copyieng and pasting text.
+In this mode you'll do things like navigate through your text file, removing, copying and pasting text.
 
 ### Navigation
 While you are in **NORMAL** mode you would need to move around your text file. This are the basics commads that will help you achieve that.
