@@ -105,4 +105,4 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
 
 ## Conclusion
- This is a really basic introduction to vim and it's just the top of the iceberg of what vim really can do. I hope this little introduction will motivate you to keep learning vim and showed you that to start using vim you only need a couple of concepts and commands.
+ This is a really basic introduction to vim and it's just the tip of the iceberg of what vim really can do. I hope this little introduction will motivate you to keep learning vim and showed you that to start using vim you only need a couple of concepts and commands.
