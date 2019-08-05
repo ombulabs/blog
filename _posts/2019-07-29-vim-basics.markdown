@@ -11,7 +11,7 @@ author: bronzdoc
 I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its unix philosophy....
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor).
 
-So all you need to know is that vim is a text editor... in my opinion one of vim strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can serve you to edit a simple config file on a server or you can make it a complete code editing environment if you want.
+So all you need to know is that vim is a text editor. In my opinion one of vim's strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can be used to edit a simple config file on a server or you can make it a complete code editing environment.
 
 In this blog post I'll show you the basics of vim and the smallest amount of knowledge to make vim useful for yourself and yes I'll teach you how to exit ;)
 
