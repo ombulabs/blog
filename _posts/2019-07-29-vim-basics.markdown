@@ -46,7 +46,7 @@ congrats! you are using vim ha!
 
 
 ## VIM modes
-Vim is a "modal editor", which means vim will behave different depending on which mode you are currently on.
+Vim is a "modal editor", which means vim will behave differently depending on which mode you are currently on.
 
 I'll introduce you to three basic modes. **NORMAL**, **INSERT** and **VISUAL**. There are a couple more, but these are the basics ones, and they are all you need to know for now.
 
