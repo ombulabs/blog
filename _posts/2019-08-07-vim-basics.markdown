@@ -1,14 +1,14 @@
 ---
 layout: post
 title: vim Basics
-date: 2019-07-29 22:28:02
+date: 2019-08-07 10:28:02
 categories: ["text editor", "vim", "best text editor"]
 author: bronzdoc
 ---
 
 # VIM basics
 
-I would not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
+I will not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
 
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
