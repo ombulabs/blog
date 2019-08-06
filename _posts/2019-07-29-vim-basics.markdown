@@ -8,8 +8,11 @@ author: bronzdoc
 
 # VIM basics
 
-I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its unix philosophy....
-If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor).
+I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its philosophy...
+s
+If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
+
+<!--more-->
 
 So all you need to know is that vim is a text editor. In my opinion one of vim's strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can be used to edit a simple config file on a server or you can make it a complete code editing environment.
 
@@ -21,22 +24,22 @@ Open terminal and type: `vim vim-basic`.
 
 You'll see something like the following:
 ```
-                                                      VIM - Vi IMproved
+                                              VIM - Vi IMproved
 
-                                                       version 8.1.500
-                                                   by Bram Moolenaar et al.
-                                         Vim is open source and freely distributable
+                                               version 8.1.500
+                                           by Bram Moolenaar et al.
+                                 Vim is open source and freely distributable
 
-                                                Help poor children in Uganda!
-                                        type  :help iccf<Enter>       for information
+                                        Help poor children in Uganda!
+                                type  :help iccf<Enter>       for information
 
-                                        type  :q<Enter>               to exit
-                                        type  :help<Enter>  or  <F1>  for on-line help
-                                        type  :help version8<Enter>   for version info
+                                type  :q<Enter>               to exit
+                                type  :help<Enter>  or  <F1>  for on-line help
+                                type  :help version8<Enter>   for version info
 
-                                                Running in Vi compatible mode
-                                        type  :set nocp<Enter>        for Vim defaults
-                                        type  :help cp-default<Enter> for info on this
+                                        Running in Vi compatible mode
+                                type  :set nocp<Enter>        for Vim defaults
+                                type  :help cp-default<Enter> for info on this
 ```
 
 congrats! you are using vim ha!
