@@ -16,34 +16,29 @@ If you are interested in that, you can give it a look [here](https://en.wikipedi
 
 So all you need to know is that vim is a text editor. In my opinion one of vim's strengths comes with how flexible it can be. It can be as simple or complex as you wish. It can be used to edit a simple config file on a server or you can make it a complete code editing environment.
 
+Vim is different than any text editor you've probably used. The main idea of vim is that using the mouse in an editor is slow.
+You'll move around a text file using one-key shortcuts so you technically wouldn't move your hands out of the keyboard.
+
 In this blog post I'll show you the basics of vim and provide you with the smallest amount of knowledge necessary to make vim useful for yourself, and yes I'll teach you how to exit ;)
 
 I'll assume you already have vim installed, if you are on a \*nix system you probably already have it.
 
+Type `vim -v` in a terminal to see if vim is installed, you see somethig like:
+
+```
+VIM - Vi IMproved 8.1 (2018 May 18, compiled Oct 29 2018 06:56:05)
+macOS version
+Included patches: 1-500
+Compiled by Homebrew
+Huge version without GUI.  Features included (+) or not (-):
+...
+```
+
+If you don't have vim installed you can install it from [here](https://www.vim.org/download.php).
+
 Open terminal and type: `vim vim-basic`.
 
-You'll see something like the following:
-```
-                                              VIM - Vi IMproved
-
-                                               version 8.1.500
-                                           by Bram Moolenaar et al.
-                                 Vim is open source and freely distributable
-
-                                        Help poor children in Uganda!
-                                type  :help iccf<Enter>       for information
-
-                                type  :q<Enter>               to exit
-                                type  :help<Enter>  or  <F1>  for on-line help
-                                type  :help version8<Enter>   for version info
-
-                                        Running in Vi compatible mode
-                                type  :set nocp<Enter>        for Vim defaults
-                                type  :help cp-default<Enter> for info on this
-```
-
 congrats! you are using vim ha!
-
 
 ## VIM modes
 Vim is a "modal editor", which means vim will behave differently depending on which mode you are currently on.
