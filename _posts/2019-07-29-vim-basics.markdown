@@ -8,7 +8,7 @@ author: bronzdoc
 
 # VIM basics
 
-I would not bore you by telling you the history of vim, and the differences between vi and vim and all of its philosophy...
+I would not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
 s
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
@@ -94,7 +94,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
 
 ## VISUAL - The mode in which you can select chunks of text
- While in normal mode you enter this mode by pressing the letter `v`. You'll notice that the text will highlight if you go up, down, left or right.
+ While in normal mode you enter the visual mode by pressing the letter `v`. You'll notice that the text will highlight if you go up, down, left or right.
 
  You could select a paragraph, a single word or even a letter and apply commands to that selected piece of text. You could copy(yy) a selection of text or delete (dd) it if you wish. To exit visual mode you press `ESC` and will return to **NORMAL** mode.
 
