@@ -9,7 +9,7 @@ author: bronzdoc
 # VIM basics
 
 I would not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
-s
+
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
 <!--more-->
