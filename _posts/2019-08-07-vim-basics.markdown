@@ -99,7 +99,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
   * vimtutor                   - If you are on a \*nix system you can type in the terminal `vimtutor` for a vim tutorial.
   * http://vim-adventures.com/ - A game that will teach you vim
-  * :h :help                   - vim go to help command
+  * `:h` or `:help`                   - Vim's go to help command
 
 
 ## Conclusion
