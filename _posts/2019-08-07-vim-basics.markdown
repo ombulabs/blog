@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vim Basics
+title: Vim Guide for Beginners
 date: 2019-08-07 10:28:02
 categories: ["learning", "vim"]
 author: bronzdoc
