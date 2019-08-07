@@ -2,7 +2,7 @@
 layout: post
 title: vim Basics
 date: 2019-08-07 10:28:02
-categories: ["text editor", "vim", "best text editor"]
+categories: ["learning", "vim"]
 author: bronzdoc
 ---
 
