@@ -85,7 +85,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
   * `:w`  - Save your changes.
   * :q  - Quit vim.
-  * :q! - Quit vim even if your changes were not saved.
+  * `:q!` - Quit vim even if your changes were not saved.
 
 
 ## VISUAL - The mode in which you can select chunks of text
