@@ -23,7 +23,7 @@ In this blog post I'll show you the basics of vim and provide you with the small
 
 I'll assume you already have vim installed, if you are on a \*nix system you probably already have it.
 
-Type `vim -v` in a terminal to see if vim is installed, you see somethig like:
+Type `vim -v` in a terminal to see if vim is installed, you'll see something like:
 
 ```
 VIM - Vi IMproved 8.1 (2018 May 18, compiled Oct 29 2018 06:56:05)
