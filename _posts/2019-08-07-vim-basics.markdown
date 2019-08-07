@@ -8,7 +8,7 @@ author: bronzdoc
 
 # VIM basics
 
-I will not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
+I will not bore you by telling you the history of [Vim](https://github.com/vim/vim), and the differences between vi and Vim and all of its philosophy...
 
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
