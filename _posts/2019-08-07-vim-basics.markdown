@@ -1,14 +1,14 @@
 ---
 layout: post
-title: vim Basics
+title: Vim Guide for Beginners
 date: 2019-08-07 10:28:02
-categories: ["text editor", "vim", "best text editor"]
+categories: ["learning", "vim"]
 author: bronzdoc
 ---
 
 # VIM basics
 
-I will not bore you by telling you the history of Vim, and the differences between vi and Vim and all of its philosophy...
+I will not bore you by telling you the history of [Vim](https://github.com/vim/vim), and the differences between vi and Vim and all of its philosophy...
 
 If you are interested in that, you can give it a look [here](https://en.wikipedia.org/wiki/Vim_(text_editor)).
 
@@ -23,7 +23,7 @@ In this blog post I'll show you the basics of vim and provide you with the small
 
 I'll assume you already have vim installed, if you are on a \*nix system you probably already have it.
 
-Type `vim -v` in a terminal to see if vim is installed, you see somethig like:
+Type `vim -v` in a terminal to see if vim is installed, you'll see something like:
 
 ```
 VIM - Vi IMproved 8.1 (2018 May 18, compiled Oct 29 2018 06:56:05)
@@ -64,13 +64,13 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 ```
 
 ### Removing text
-  dd - delete the current line.
+  `dd` - delete the current line.
 
 ### Copy text
-  yy - copy(yank) the current line.
+  `yy` - copy(yank) the current line.
 
 ### Pasting text
-  p  - paste to the line underneath.
+  `p`  - paste to the line underneath.
 
 
 ## INSERT - The mode where you can "insert" text
@@ -81,11 +81,11 @@ While you are in **NORMAL** mode you would need to move around your text file. T
   In vim, you are not expected to be in this mode all the time Whenever you finish your writing you go back to **NORMAL** mode, you do that by pressing the **ESC** key.
 
   After writing or editing your changes you'll probably want to save your file and quit vim.
-  Press **ESC** and go back to normal mode, then you could do the any of following:
+  Press **ESC** and go back to normal mode, then you could write any of the following commands:
 
-  * :w  - Save your changes.
-  * :q  - Quit vim.
-  * :q! - Quit vim even if your changes were not saved.
+  * `:w`  - Save your changes.
+  * `:q`  - Quit vim.
+  * `:q!` - Quit vim even if your changes were not saved.
 
 
 ## VISUAL - The mode in which you can select chunks of text
@@ -99,7 +99,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 
   * vimtutor                   - If you are on a \*nix system you can type in the terminal `vimtutor` for a vim tutorial.
   * http://vim-adventures.com/ - A game that will teach you vim
-  * :h :help                   - vim go to help command
+  * `:h` or `:help`                   - Vim's go to help command
 
 
 ## Conclusion
