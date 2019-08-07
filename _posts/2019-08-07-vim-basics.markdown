@@ -83,7 +83,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
   After writing or editing your changes you'll probably want to save your file and quit vim.
   Press **ESC** and go back to normal mode, then you could do the any of following:
 
-  * :w  - Save your changes.
+  * `:w`  - Save your changes.
   * :q  - Quit vim.
   * :q! - Quit vim even if your changes were not saved.
 
