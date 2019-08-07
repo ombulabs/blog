@@ -81,7 +81,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
   In vim, you are not expected to be in this mode all the time Whenever you finish your writing you go back to **NORMAL** mode, you do that by pressing the **ESC** key.
 
   After writing or editing your changes you'll probably want to save your file and quit vim.
-  Press **ESC** and go back to normal mode, then you could do the any of following:
+  Press **ESC** and go back to normal mode, then you could write any of the following commands:
 
   * `:w`  - Save your changes.
   * `:q`  - Quit vim.
