@@ -64,7 +64,7 @@ While you are in **NORMAL** mode you would need to move around your text file. T
 ```
 
 ### Removing text
-  dd - delete the current line.
+  `dd` - delete the current line.
 
 ### Copy text
   yy - copy(yank) the current line.
