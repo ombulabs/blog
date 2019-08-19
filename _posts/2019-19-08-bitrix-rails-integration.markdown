@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Integrate Bitrix24 to your Rails app: Part 1"
+title: "How to Integrate Bitrix24 to your Rails app: Part 1"
 date: 2019-08-19 13:00:00
 categories: ["rails", "bitrix"]
 author: "luciano"
