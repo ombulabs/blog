@@ -8,6 +8,8 @@ author: "rdormer"
 
 In my [last article](https://www.ombulabs.com/blog/devops/docker/tutorials/gentle-intro-to-docker.html), I gave a brief tour of what Docker is, and basic usage. Once you've got your feet under you with basic usage, you'll reach the point where you want to start making your own containers. You'll certainly need to know how to roll your own if you want to use Docker in your own infrastructure.
 
+<!--more-->
+
 ## Container basics
 
 Broadly speaking, there are two types of Docker images - *base images*, and images that are built on top of them. Most of the time, when you're making an image of your own, you'll be inheriting from a base (or parent) image, and tweaking it by layering changes over top of it.  Layering is exactly what you're doing, by the way - as you execute commands and copy data into a container, all of the changes you're making are written to a *writable layer* (also known as the *container layer*). There's a lot more to this particular subject - see [storage drivers](https://docs.docker.com/storage/storagedriver/) and [volumes](https://docs.docker.com/storage/volumes/) for a lot more information.
