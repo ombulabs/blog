@@ -72,7 +72,8 @@ class BitrixService
       app_id: @app_id,
       app_key: @app_key,
       endpoint: @endpoint,
-      redirect_uri: @redirect_uri }
+      redirect_uri: @redirect_uri
+    }
 
     Bitrix24CloudApi::Client.new(params)
   end
@@ -139,7 +140,8 @@ class BitrixService
                 app_id: @app_id,
                 app_key: @app_key,
                 endpoint: @endpoint,
-                redirect_uri: @redirect_uri }
+                redirect_uri: @redirect_uri
+               }
              end
 
     Bitrix24CloudApi::Client.new(params)
