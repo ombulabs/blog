@@ -49,7 +49,7 @@ class PageController < ApplicationController
 end
 ```
 
-The problem with this approach is that we just fatten our controller, adding 13 more lines to it. And, in a better thinking, is it really the responsibility of the controller to check if the discount code is valid or not? I would say this is the kind of thing we should create a service for:
+The problem with this approach is that we just fattened our controller, adding 13 more lines to it. Also, we can ask ourselves: is it really the responsibility of the controller to check if the discount code is valid or not? I would say this is the kind of thing we should create a service for:
 
 ```ruby
 class DiscountValidator
