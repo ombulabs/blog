@@ -6,7 +6,7 @@ categories: ["rails"]
 author: "cleiviane"
 ---
 
-Service Objects is a controversial pattern for several different reasons: some developers like to use it, others like to use similar patterns and some think that they are just unnecessary due that fat models approach recommended to Rails apps.  
+Service Objects are a controversial idea for several different reasons: some developers like to use them, others like to use similar patterns, and some think that they are just unnecessary because they prefer fat models.  
 
 Here at Ombulabs we like to use Service Objects whenever we can, we think it's a great way to keep our controllers skinny.
 
