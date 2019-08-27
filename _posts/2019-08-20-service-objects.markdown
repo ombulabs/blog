@@ -20,7 +20,7 @@ A Service is a stateless object that encapsulates a set of steps and usually has
 
 Recently we added a new feature in our productized service FastRuby.io , to verify if the visitor is suitable for a discount or not, for that validation we need to check if the discount is inside a 24 hour window,  connect to an external API service to check if it's a valid discount code and then decide to show or hide the discounted price.
 
-This is not something we should do in a model. A model is a representation of a plain ruby object that can be instantiated. In this case we are going to instantiate any validator model, it's a good thing to avoid instantiate objects whenever it's possible.
+This is not something we should do in a model. A model is a representation of a plain ruby object that can be instantiated. In this case we are not going to instantiate any validator model, it's a good thing to avoid instantiating objects whenever it's possible.
 
 So if we can't use a model for this task, should we leave it in the controller? Let's try that:
 
