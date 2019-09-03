@@ -97,4 +97,4 @@ An important notice here is the convention for class and method's name. The name
 
 ## Conclusion
 
-Service objects are a great resource to help improve the readability of your code and keep things with only one responsibility.  What about you, do you like to use service objects? Or do you prefer to use some other pattern instead? I would love to see your thoughts in our comments!
+Service objects are a great resource to help improve the readability of your code and keep things with only one responsibility.  What about you, do you like to use service objects? Or do you prefer to use some other pattern instead? I would love to see your thoughts in the comments section!
