@@ -90,7 +90,7 @@ class PageController < ApplicationController
 end
 ```
 
-It looks much better, right? With this changes we are refactoring our code so when we look to our controller we know exactly what it does without knowing how the discount validation is done. The code is cleaner and easier to read.
+It looks much better, right? With these changes we are refactoring our code so when we look at our controller we know exactly what it does without knowing how the discount validation is done. The code is cleaner and easier to read.
 
 An important notice here is the convention for class and method's name. The name of the service class needs to describes the kind of action that is going to be performed, and with that you realized that we are creating specialized classes that holds a single action in your application. This is also why the method name needs to tell your service to do this action. Other examples of method names could be: `call`, `execute`, `run`.
 
