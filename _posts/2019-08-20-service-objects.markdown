@@ -20,7 +20,7 @@ A Service is a stateless object that encapsulates a set of steps and usually has
 
 Recently we added a new feature in our productized service [FastRuby.io](https://fastruby.io) , to verify if the visitor is suitable for a discount or not. For that validation we need to check if the discount is inside a 24 hours window, connect to an external API service to check if it's a valid discount code and then decide to show or hide the discounted price.
 
-This is not something we should do in a model. A model is a representation of a plain ruby object that can be instantiated. In this case we are going to instantiate any validator model, it's a good thing to avoid instantiate objects whenever it's possible.
+This is not something we should do in a model. A model is a representation of a plain ruby object that can be instantiated. In this case we are not going to instantiate any validator model, it's a good thing to avoid instantiating objects whenever it's possible.
 
 So if we can't use a model for this task, should we leave it in the controller? Let's try that:
 
@@ -49,7 +49,7 @@ class PageController < ApplicationController
 end
 ```
 
-The problem with this approach is that we just fatten our controller, adding 13 more lines to it. And, in a better thinking, is it really the responsibility of the controller to check if the discount code is valid or not? I would say this is the kind of thing we should create a service for:
+The problem with this approach is that we just fattened our controller, adding 13 more lines to it. Also, we can ask ourselves: is it really the responsibility of the controller to check if the discount code is valid or not? I would say this is the kind of thing we should create a service for:
 
 ```ruby
 class DiscountValidator
