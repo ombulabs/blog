@@ -16,7 +16,7 @@ In this post I would like to discuss my idea about service objects and why it's 
 
 ## What is a Service Object?
 
-A Service is a stateless object that encapsulates a set of steps and usually has a single purpose. It's a great resource to decompose fat active record models while still maintaining the controllers thin, because we take away some validations which don't belong to a model nor a controller.  
+A Service is a stateless object that encapsulates a set of steps and usually has a single purpose. It's a great resource to decompose fat Active Record models while still maintaining the controllers thin, because we take away some validations which don't belong to a model nor a controller.  
 
 Recently we added a new feature in our productized service [FastRuby.io](https://fastruby.io) , to verify if the visitor is suitable for a discount or not. For that validation we need to check if the discount is inside a 24 hours window, connect to an external API service to check if it's a valid discount code and then decide to show or hide the discounted price.
 
