@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Service Objects: beyond fat models and skinny controllers"
-date: 2019-09-03 10:00:00
+date: 2019-09-04 12:00:00
 categories: ["rails"]
 author: "cleiviane"
 ---
