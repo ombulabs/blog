@@ -4,6 +4,7 @@ title: "The New Fastruby.io"
 date: 2019-08-27 14:30:00
 categories: ["fast-ruby", "design"]
 author: "emily"
+published: false
 ---
 
 We launched [Fastruby.io](https://fastruby.io), our first productized service, back in June 2017. At the time, we had been doing [Ruby on Rails](http://rubyonrails.org) upgrades since 2009, for our [own products](https://www.ombulabs.com/#products) and [client projects](https://www.ombulabs.com/#clients). We decided to package these upgrades under their own domain through [Fastruby.io](https://fastruby.io).
