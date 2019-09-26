@@ -38,3 +38,7 @@ To edit a post, simply edit the content for one of the markdown files and the HT
 ## Deleting a post
 
 To delete a post, you can unpublish it by setting a `published` flag under the post's YAML variables, see: http://jekyllrb.com/docs/frontmatter/
+
+## To deploy
+
+See Ombu Labs repository instructions - "As is we don't have automatic deployments for the blog, so you can run bin/deploy for now."
