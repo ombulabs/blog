@@ -6,7 +6,7 @@ categories: ["software-development", "software-quality"]
 author: abizzinotto
 ---
 
-Manual testing is a necessary part of software development and quality assurance. And although it's important to have a dedicated tester in your team, you as a developer can also help speed up the QA, and thus the software development process, by becoming a better manual tester of your own code.
+Manual testing is a necessary part of software development and quality assurance. And although it's important to have a dedicated tester in your team, you as a developer can also help speed up QA, and thus the software development process, by becoming a better manual tester of your own code.
 
 But how to do that? I'll cover 4 simple points that will help you get there!
 
