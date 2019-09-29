@@ -16,7 +16,7 @@ Manual testing is a necessary part of software development and quality assurance
 
 Therefore, it is important to have a software tester in your team who knows not only the application but also the end user well. This person will be the “official” manual tester and will find those edge cases for you. But, as a developer, it is also important for you to stay on top of things and manually test your own code before moving on to the Quality Assurance phase. This way, you can ensure your code does exactly what it was intended to do.
 
-Here at OmbuLabs we follow some principles and guidelines to manual test our own code before it goes to QA. In this post, we’ll walk you through these.
+Here at [OmbuLabs](https://www.ombulabs.com) we follow some principles and guidelines to manually test our own code before it goes to QA. In this post, we’ll walk you through these guidelines.
 
 ##It all starts with the user story
 
