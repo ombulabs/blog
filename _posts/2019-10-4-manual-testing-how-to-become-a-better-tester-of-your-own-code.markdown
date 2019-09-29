@@ -14,7 +14,7 @@ But how to do that? I'll cover 4 simple points that will help you get there!
 
 Manual testing is a necessary part of software development and quality assurance. It’s true that it is prone to errors, after all, every human activity is, and can also be time-consuming and boring. It’s also true that automated testing reduces testing time a great deal and is more reliable. But automated tests can only go so far. Human intuition and curiosity cannot be replaced by an automated task.
 
-Therefore, it is important to have a software tester in your team who knows not only the application but also the end user well. This person will be the “official” manual tester and will find those edge cases for you. But, as a developer, it is also important for you to stay on top of things and manual test your own code before moving it to Quality Assurance. This way, you can ensure your code exactly what it was intended to do.
+Therefore, it is important to have a software tester in your team who knows not only the application but also the end user well. This person will be the “official” manual tester and will find those edge cases for you. But, as a developer, it is also important for you to stay on top of things and manually test your own code before moving on to the Quality Assurance phase. This way, you can ensure your code does exactly what it was intended to do.
 
 Here at OmbuLabs we follow some principles and guidelines to manual test our own code before it goes to QA. In this post, we’ll walk you through these.
 
