@@ -14,6 +14,8 @@ Here at OmbuLabs we have some techniques that we employ that ensure our high sat
 
 <!--more-->
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">A QA engineer walks into a bar. Orders a beer. Orders 0 beers. Orders 99999999999 beers. Orders a lizard. Orders -1 beers. Orders a ueicbksjdhd. <br><br>First real customer walks in and asks where the bathroom is. The bar bursts into flames, killing everyone.</p>&mdash; Brenan Keller (@brenankeller) <a href="https://twitter.com/brenankeller/status/1068615953989087232?ref_src=twsrc%5Etfw">November 30, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 ##So… How do I become a better Manual Tester?
 
 Anyone with common sense, empathy and basic knowledge of computer applications can run manual tests. But to ensure quality tests are being run and quality bug reports are being produced, there are certain things that need to be observed. 
