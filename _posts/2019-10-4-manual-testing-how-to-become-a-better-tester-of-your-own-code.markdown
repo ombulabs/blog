@@ -24,7 +24,7 @@ Here at OmbuLabs we work with user stories. And every user story has a definitio
 
 Now, we have automated tests in place to make sure a feature does what it needs and produces the expected outcome. But there are aspects that need manual testing. How does it look on the screen? What if the user decides to follow an alternate path to get the same result?
 
-When manual testing your own code, always go back to the user story and go through the intended flow. Does everything work as expected? Do you see exactly what you’re supposed to see? Is it easy enough for a non-technical person to follow those steps? Where could errors happen?
+When manually testing your own code, always go back to the user story and go through the intended flow. Does everything work as expected? Do you see exactly what you’re supposed to see? Is it easy enough for a non-technical person to follow those steps? Where could errors happen? What are the edge cases that a non-technical user could try? 
 
 ##Write manual tests beforehand
 
