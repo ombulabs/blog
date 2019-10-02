@@ -10,7 +10,7 @@ No app is flawless. We all know that. Quality Assurance is an important part of 
 
 But… how to be a better manual tester? Applications have evolved greatly and are becoming more and more powerful, but the manual testing process stays pretty much the same. So what is it that will make you stand out?
 
-Here at OmbuLabs we have some techniques that we employ that ensure our high satisfaction rates. In this post, we’ll share some tips with you.
+Here at [OmbuLabs](https://www.ombulabs.com) we have some techniques that we employ that ensure our high satisfaction rates. In this post, we’ll share some tips with you.
 
 <!--more-->
 
