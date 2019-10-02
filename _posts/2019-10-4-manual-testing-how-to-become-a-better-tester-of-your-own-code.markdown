@@ -22,7 +22,7 @@ Here at [OmbuLabs](https://www.ombulabs.com) we follow some principles and guide
 
 Here at OmbuLabs we work with user stories. And every user story has a definition and a scope. Therefore, we have a bug that needs to be fixed, a feature that needs to be added, a chore that needs to be performed, and other situations specific to the project. What all of these have in common is they present a problem to be solved. As such, there is a specific result or outcome that is expected. 
 
-Now, we have automated tests in place to make sure a feature does what it needs and produces the expected outcome. But there are aspects that need manual testing. How does it look on the screen? What if the user decides to follow an alternate path to get the same result?
+Now, we have automated tests in place to make sure a feature does what it needs and produces the expected outcome or a bug fix actually fixed the bug. But there are aspects that need manual testing. How does it look on the screen? What if the user decides to follow an alternate path to get the same result?
 
 When manually testing your own code, always go back to the user story and go through the intended flow. Does everything work as expected? Do you see exactly what you’re supposed to see? Is it easy enough for a non-technical person to follow those steps? Where could errors happen? What are the edge cases that a non-technical user could try? 
 
@@ -31,6 +31,8 @@ When manually testing your own code, always go back to the user story and go thr
 It won’t be possible to just think of all the possibilities and note them down. It isn’t even practical. But it’s always a good idea to take some time to think of the actual actions to be taken by the user to use the feature you’re coding or the one impacted by the bug you’re solving.
 
 This also needs to be done together with the Product Owner (Client). So when defining a story, use the description area to describe manual tests to be run before moving it to QA. This also helps prevent bias from impacting the quality of the tests. If you write manual tests after coding the feature or just test without writing tests, you’ll be unconsciously biased since you’ll be conditioned to follow the same thought process you followed when coding. As as we know, users are very good at not using the software the way it was intended by the developer.
+
+When writing manual tests, however, make sure to pay attention to tasks that can be automated. Manual tests are a necessary part of software development but it should be reserved to tasks that cannot be automated.
 
 ##Leave some time between finishing coding and running the tests
 
