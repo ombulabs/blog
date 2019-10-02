@@ -30,7 +30,7 @@ When manually testing your own code, always go back to the user story and go thr
 
 It won’t be possible to just think of all the possibilities and note them down. It isn’t even practical. But it’s always a good idea to take some time to think of the actual actions to be taken by the user to use the feature you’re coding or the one impacted by the bug you’re solving.
 
-This also needs to be done together with the Product Owner. So when defining a story, use the description area to describe manual tests to be run before moving it to QA. This also helps prevent bias from impacting the quality of the tests. If you write manual tests after coding the feature or just test without writing tests, you’ll be unconsciously biased since you’ll be conditioned to follow the same thought process you followed when coding. As as we know, users are very good at not using the software the way it was intended by the developer.
+This also needs to be done together with the Product Owner (Client). So when defining a story, use the description area to describe manual tests to be run before moving it to QA. This also helps prevent bias from impacting the quality of the tests. If you write manual tests after coding the feature or just test without writing tests, you’ll be unconsciously biased since you’ll be conditioned to follow the same thought process you followed when coding. As as we know, users are very good at not using the software the way it was intended by the developer.
 
 ##Leave some time between finishing coding and running the tests
 
