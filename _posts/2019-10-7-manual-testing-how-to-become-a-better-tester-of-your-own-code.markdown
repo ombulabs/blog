@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Manual Testing: How to become a better tester of your own code"
-date: 2019-10-4 11:00:00
+date: 2019-10-7 15:00:00
 categories: ["software-development", "software-quality"]
 author: abizzinotto
 ---
@@ -20,11 +20,11 @@ Here at [OmbuLabs](https://www.ombulabs.com) we follow some principles and guide
 
 ##It all starts with the user story
 
-Here at OmbuLabs we work with user stories. And every user story has a definition and a scope. Therefore, we have a bug that needs to be fixed, a feature that needs to be added, a chore that needs to be performed, and other situations specific to the project. What all of these have in common is they present a problem to be solved. As such, there is a specific result or outcome that is expected. 
+Here at OmbuLabs we work with user stories. And every user story has a definition and a scope. Therefore, we have a bug that needs to be fixed, a feature that needs to be added, a chore that needs to be performed, and other situations specific to the project. What all of these have in common is they present a problem to be solved. As such, there is a specific result or outcome that is expected.
 
 Now, we have automated tests in place to make sure a feature does what it needs and produces the expected outcome or a bug fix actually fixed the bug. But there are aspects that need manual testing. How does it look on the screen? What if the user decides to follow an alternate path to get the same result?
 
-When manually testing your own code, always go back to the user story and go through the intended flow. Does everything work as expected? Do you see exactly what you’re supposed to see? Is it easy enough for a non-technical person to follow those steps? Where could errors happen? What are the edge cases that a non-technical user could try? 
+When manually testing your own code, always go back to the user story and go through the intended flow. Does everything work as expected? Do you see exactly what you’re supposed to see? Is it easy enough for a non-technical person to follow those steps? Where could errors happen? What are the edge cases that a non-technical user could try?
 
 ##Write manual tests beforehand
 
@@ -42,6 +42,6 @@ Finished working on your story? Great! Take some time to either go on a break or
 
 It is important to keep in mind that the Product Owner (client) might not be a very technical person. They might not even be technical at all. Additionally, they know what they want that feature to accomplish or that bug to solve, or how the end user will interact with the software, but they might not fully understand how much of that knowledge is not being passed on to the development team.
 
-As such, if you are unsure the path you’re following is the intended one, or the tests you’re running are enough, ask questions. 
+As such, if you are unsure the path you’re following is the intended one, or the tests you’re running are enough, ask questions.
 
 Your code will still go through QA and additional manual tests will still be run by the teams’ tester, but these steps will make you a better tester of your own code and assure it reaches the next step in development in better shape!
