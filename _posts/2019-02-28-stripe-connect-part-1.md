@@ -188,4 +188,4 @@ end
 
 ### Conclusion
 
-This first post was to show how to connect Stripe accounts to your users. Check out [Part 2](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-in-rails-part-2.htm) to learn how to use the main objects from the Stripe API!
+This first post was to show how to connect Stripe accounts to your users. Check out [Part 2](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-in-rails-part-2.html) to learn how to use Charges, Transfers, Refunds, and more!
