@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Implementing Stripe Connect in Rails: Part 2"
-date: 2019-10-11 10:00:00
+date: 2019-10-11 14:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
 ---
 
-Some time ago we wrote [an article](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-part-1.html) to explain how to implement [Stripe Connect](https://stripe.com/connect) in a [Rails](https://rubyonrails.org) application. That article covered mainly the connection part between Rails and Stripe. This one will cover the fun part, which is making transaction, charges, and more.
+Some time ago we wrote [an article](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-part-1.html) to explain how to implement [Stripe Connect](https://stripe.com/connect) in a [Rails](https://rubyonrails.org) application. That article covered mainly the connection part between Rails and Stripe. This one will cover the fun part, which is making transactions, charges, refunds, and more.
 
 If you haven't check the [first part](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-part-1.html) yet I recommend you to do it since this article will continue from where that one ended.
 
@@ -28,19 +28,20 @@ Once you have your form ready to collect payment information you'll probably wan
 # app/controllers/payments_controller.rb
 
 class PaymentsController < ApplicationController
-  # submitting Stripe form triggers this endpoint
+  # triggered after submit payment form
   def create
     # ...
 
     charge = StripeChargeService.charge!(params[:stripeToken])
 
-    # ... (create Payment, store charge id in db, respond, etc)
+    # ... (create Payment, store charge id in db, respond, etc.)
   end
 end
 ```
-There are a few different approaches to implement the Stripe Charge. Each implementation fits better for different needs since in some cases the platform account should be the one that pays for the Stripe fee and in some other cases it would be the connected account. I recommend you to take a look at the [official guides](https://stripe.com/docs/connect/charges) to make sure that you choose the one that fits better for you.
+There are a few different [approaches](https://stripe.com/docs/connect/charges#choosing-approach) to implement the Stripe Charge. Each implementation fits better for different needs since in some cases the platform account should be the one that pays for the [Stripe fee](https://stripe.com/connect/pricing) and in some other cases it would be the connected account. I recommend you to take a look at the [official guides](https://stripe.com/docs/connect/charges) to make sure that you choose the one that fits better for you.
 
 Example implementation:
+
 ```ruby
 # app/services/stripe_charge_service.rb
 
@@ -154,10 +155,10 @@ class StripeRefundService
 end
 ```
 
-By default it only refunds the portion of the Charge that went to the connected account, but you can set `refund_application_fee: true` to refund the platform account part too. Check out the [API documentation](https://stripe.com/docs/api/refunds) to see all the available attributes that you can use.
+By default it only refunds the portion of the Charge that went to the connected account, but you can set `refund_application_fee: true` to refund the platform account part too. Check out the [API documentation](https://stripe.com/docs/api/refunds) to see all the available attributes that you can use. Also keep in mind that the [Stripe fee](https://stripe.com/connect/pricing) that was paid by the platform account or connected account (depending of your configuration) is not refundable, so you're gonna lose that part if you perform a refund.
 
 ### Conclusion
 
-This was an overview of some of the most popular Stripe object that you might use. The Stripe API is very complete and have a lot more things that you can do. So I recommend you to take a look to their guides for the things that we not covered in this article.
+This was an overview of some of the most popular Stripe object that are available. The Stripe API is very powerful and have a lot more things that you can do. So I recommend you to take a look to their guides for the things that were not covered in this article.
 
-If you have any question feel free to ask it in the comments section below.
+If you have any question feel free to leave a comment below.
