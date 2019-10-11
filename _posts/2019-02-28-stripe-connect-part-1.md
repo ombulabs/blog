@@ -14,7 +14,7 @@ That's where [Stripe Connect](https://stripe.com/connect) came into place.
 To make things easier to follow we will break this topic in two articles:
 
 - Part 1: How to allow your users to connect a Stripe account in order to accept payments.
-- Part 2: How your users can receive payments in their Stripe account and how you can receive a fee for each transaction into your own Stripe account.
+- [Part 2](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-in-rails-part-2.html): How to use Charges, Transfers, Refunds, and more.
 
 
 ## Part 1: How to allow your users to connect a Stripe account in order to accept payments
@@ -188,4 +188,4 @@ end
 
 ### Conclusion
 
-This first post was to show how to connect Stripe accounts to your users. Stay tuned for the next part where we'll be talking about the payments, charges, fees and more!
+This first post was to show how to connect Stripe accounts to your users. Check out [Part 2](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-in-rails-part-2.html) to learn how to use Charges, Transfers, Refunds, and more!
