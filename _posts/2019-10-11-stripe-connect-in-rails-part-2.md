@@ -145,7 +145,7 @@ class StripeRefundService
     # ...
 
     Stripe::Refund.create({
-      charge: charge_token,
+      charge: charge_id_token, # id of the Stripe Charge object
       amount: amount,
       refund_application_fee: true
     }, stripe_account: user.stripe_user_id)
