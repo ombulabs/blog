@@ -9,9 +9,9 @@ We recently collaborated with [Amitree](https://www.home.amitree.com/) on a Rail
 
 <!--more-->
 
-We spoke with [Marcus McLaughlin](https://www.linkedin.com/in/marcusmclaughlin/), Head of Engineering at [Amitree](https://www.home.amitree.com/), about the work performed to upgrade their app. Mark states that their application is fairly large, about 5 year old and has a heavy reliance on background processing.
+We spoke with [Marcus McLaughlin](https://www.linkedin.com/in/marcusmclaughlin/), Head of Engineering at [Amitree](https://www.home.amitree.com/), about the work performed to upgrade their app. Marcus states that their application is fairly large, about 5 year old and has a heavy reliance on background processing.
 
-[Amitree](https://www.home.amitree.com/) was having difficulty allocating developer attention to the Rails upgrade project, a common issue experienced by many companies. Their application fell out of date because, in Mark's words, "upgrading continually fell down our priority list, and we never had a business critical reason to upgrade the application until the version we were running was about to go entirely out of support". That is why they decided to come to Ombu Labs for help.
+[Amitree](https://www.home.amitree.com/) was having difficulty allocating developer attention to the Rails upgrade project, a common issue experienced by many companies. Their application fell out of date because, in Marcus' words, "upgrading continually fell down our priority list, and we never had a business critical reason to upgrade the application until the version we were running was about to go entirely out of support". That is why they decided to come to Ombu Labs for help.
 
 Initially, [Amitree](https://www.home.amitree.com/) ordered the [OmbuLabs Roadmap](https://www.fastruby.io/roadmap) so they could have a good estimate of what would be needed to do the upgrade. The roadmap proved to be useful "both in terms of the information that it provided, but also in terms of building my [Marcus'] confidence in Ombu Labs ability to deliver the estimate".
 
