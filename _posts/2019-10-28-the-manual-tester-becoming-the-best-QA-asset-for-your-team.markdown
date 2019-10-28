@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Manual Tester: Becoming the Best QA Asset For Your Team"
-date: 2019-10-15 10:00:00
+date: 2019-10-28 08:00:00
 categories: ["software-development", "software-quality"]
 author: abizzinotto
 ---
