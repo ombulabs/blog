@@ -1,12 +1,14 @@
 ---
 layout: post
 title: "Roll your own Docker containers (part 2)"
-date: 2019-10-11 12:30:00
+date: 2019-10-31 12:30:00
 categories: ["DevOps", "docker", "tutorials"]
 author: "rdormer"
 ---
 
 The [last time](https://www.ombulabs.com/blog/devops/docker/tutorials/docker-containers-pt-1.html) we looked at Docker, we looked at the most basic and easy version of using it - building an image from a base image, a parent, and then layering additions and changes on top of it.  With a carefully chosen base image, this can be an extremely flexible and relatively straightforward way of getting an image up and running in a [container](https://www.docker.com/resources/what-container).
+
+<!--more-->
 
 But what if you don't need or want a base image?  Sometimes, you need the utmost control over the contents of your image, either because of security concerns or perhaps because of storage or memory constraints.  Sometimes what you really need is to add your own dependencies and absolutely nothing else to a blank image.  You do this by creating your own base image, from scratch.
 
