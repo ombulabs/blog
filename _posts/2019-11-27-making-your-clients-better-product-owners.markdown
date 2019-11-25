@@ -14,7 +14,7 @@ Here I'll share some strategies we implement to help our clients become better P
 
 <!--more-->
 
-##Communicate expectations clearly
+## Communicate expectations clearly
 
 Not every client is familiar with the responsibilities of the Product Owner. Not every client is even familiar with Scrum as a whole. Therefore, it is important to communicate expectations clearly at the beginning of the project.
 
@@ -38,7 +38,7 @@ As such, the team expects the Product Owner to keep the backlog groomed and orga
 
 If the team needs any clarification on any of the stories, they'll look to the Product Owner to answer their questions. During sprint planning calls, any clarifications in terms of the scope of a story or the requirements will be directed to the Product Owner.
 
-##Make sure the Scrum Master and the Product Owner are aligned and the Scrum Master is able to help as much as possible
+## Make sure the Scrum Master and the Product Owner are aligned and the Scrum Master is able to help as much as possible
 
 You may find yourself in scenarios where the person assigned to the project by the client is not the product manager or the client has never heard of Scrum before.
 
@@ -64,7 +64,7 @@ The Scrum Master can help the Product Owner understand these concepts.
 
 One of the biggest problems of working with the client as the Product Owner is prioritisation. A lot of the time they will see everything as a priority. So rethinking how you talk to them about prioritisation is a good idea. Don't simply ask them to go into the backlog and prioritise stories. Instead, take some time to review the backlog with them before the next sprint planning call and ask questions such as "compared to all these other stories here, how important would it be to your business to have this done?" or "what feature here do you think would make the largest number of users happy?".
 
-##Make sure they understand the time commitment and the impact it has on the team
+## Make sure they understand the time commitment and the impact it has on the team
 
 A frequent problem with having the client as the Product Owner is the time commitment. You might end up experiencing a lot of absences, specially during sprint planning and retro calls. 
 
@@ -74,7 +74,7 @@ Make sure the Product Owner understands the impact an absence on a sprint planni
 
 If they are not available for the calls or not available to answer questions during a sprint, there might be delays during the project, stories might need to be reworked due to lack of understand and might even be worked in the wrong order because the backlog wasn't prioritised.
 
-##Make it clear that there must be ONE Product Owner
+## Make it clear that there must be ONE Product Owner
 
 Some clients will have multiple people involved in a project and, as such, several different stakeholders might attend your demo calls. The problem? In many situations, several different people might start asking for features, changes, tweaks or just "one more button".
 
@@ -82,6 +82,6 @@ It is important to make it clear to your client from the very beginning that the
 
 It is also important to enforce that during the demo calls. If the client's stakeholders start discussing new features, nice-to-haves and whatnot, the Scrum Master must intervene and make it clear that the suggestions are being noted but will be discussed further with the assigned Product Owner, who'll be responsible for making sure the user stories written for them are clear and provide the team with all the information needed and assigning a priority to them.
 
-##Conclusion
+## Conclusion
 
 Communicating clearly is key to making your clients better Product Owners and having in mind "red-flag" behaviours and a Scrum Master that knows how to identify them and steer the client back to the Product Owner track. These strategies should help.
