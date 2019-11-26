@@ -84,4 +84,4 @@ It is also important to enforce those rules during demo calls. If the client's s
 
 ## Conclusion
 
-Communicating clearly is key to making your clients better Product Owners and having in mind "red-flag" behaviours and a Scrum Master that knows how to identify them and steer the client back to the Product Owner track. These strategies should help.
+Communicating clearly is key to making your clients better Product Owners and having in mind "red-flag" behaviors. It is also key to count with a Scrum Master who knows how to identify red flags and steer the client back to the Product Owner track. These strategies should help.
