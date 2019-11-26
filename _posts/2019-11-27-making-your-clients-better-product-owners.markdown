@@ -18,7 +18,7 @@ Here I'll share some strategies we implement to help our clients become better P
 
 Not every client is familiar with the responsibilities of the Product Owner. Not every client is even familiar with Agile/Lean methodologies. Therefore, it is important to communicate expectations clearly at the beginning of the project.
 
-During the [kick-off call](https://www.ombulabs.com/blog/agile/continuous-learning/kickoff-calls.html), make sure the person on the client's team assigned to the project understands what the Scrum master and the Scrum team expect from them. Some key points to cover:
+During the [kick-off call](https://www.ombulabs.com/blog/agile/continuous-learning/kickoff-calls.html), make sure the point of contact on the client's team understands what the Scrum master and the Scrum team expect from them. Some key points to cover:
 
 **_Product Owner is a role you play in the Scrum team._**
 
