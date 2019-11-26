@@ -24,7 +24,7 @@ During the [kick-off call](https://www.ombulabs.com/blog/agile/continuous-learni
 
 It is not the same thing as being a Product Manager. As a Product Owner, there's a need to be much more team focused than market/customer focused. A good way to explain the difference is to outline what the workflow would look like if there was a Product Manager **and** a Product Owner.
 
-The Product Manager would conduct user research, identify market needs, align it with business goals and own the vision for a product. They would then communicate the requirements to the Product Owner. The Product Owner, in turn, would translate those requirements into user stories, prioritise them and work with the team to make execute on the solution.
+The Product Manager would conduct user research, identify market needs, align it with business goals and own the vision for a product. They would then communicate the requirements to the Product Owner. The Product Owner, in turn, would translate those requirements into user stories, prioritize them and work with the team to implement the solution.
 
 **_The Product Owner is the point of reference for all things backlog related._** 
 
