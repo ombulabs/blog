@@ -6,7 +6,7 @@ categories: ["Scrum", "Agile"]
 author: "abizzinotto"
 ---
 
-Different clients bring different projects, perspectives, workflows, and experiences, as well as different challenges. Before starting a project, one of those challenges is to define who will be the Product Owner. 
+Different clients bring different projects, perspectives, workflows, and experiences, as well as different challenges. Before starting a project, one of those challenges is to define who will be the [Product Owner](https://www.scrumguides.org/scrum-guide.html#team-po). 
 
 Ideally, you would be able to assign the role internally or to the client based solely on the characteristics of the project. However, that's not always the case. It might just be that the client insists on being the Product Owner or that you are a small team and can't really assign the role internally. Whatever the reason, you might end up in a situation where your client isn't really a good Product Owner.
 
