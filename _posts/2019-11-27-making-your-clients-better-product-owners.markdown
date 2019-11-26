@@ -72,7 +72,7 @@ It is important to make it clear from the very beginning of the project that the
 
 Make sure the Product Owner understands the impact an absence on a sprint planning call or a retro call with have on the team and on the project. Make it clear that, as the Product Owner, the team expects them to provide guidance in terms of priorities, answer questions about stories and accept stories that were delivered. 
 
-If they are not available for the calls or not available to answer questions during a sprint, there might be delays during the project, stories might need to be reworked due to lack of understand and might even be worked in the wrong order because the backlog wasn't prioritised.
+If they are not available for the calls nor to answer questions during a sprint, there might be delays during the project. Stories might need to be reworked due to lack of understanding and might even be worked in the wrong order because the backlog wasn't prioritized.
 
 ## Make it clear that there must be ONE Product Owner
 
