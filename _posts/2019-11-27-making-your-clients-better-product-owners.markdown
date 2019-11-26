@@ -68,7 +68,7 @@ One of the biggest problems of working with the client as the Product Owner is p
 
 A frequent problem with having the client as the Product Owner is the time commitment. You might end up experiencing a lot of absences, specially during sprint planning and retro calls. 
 
-It is important to make it clear from the very beginning of the project that the team needs the Product Owner to be available and to be available not only for those calls but also on a day-to-day basis to answer questions and accept stories.
+It is important to make it clear from the very beginning of the project that the team needs the Product Owner to be available, not only for those calls but also on a day-to-day basis to answer questions and accept stories.
 
 Make sure the Product Owner understands the impact an absence on a sprint planning call or a retro call with have on the team and on the project. Make it clear that, as the Product Owner, the team expects them to provide guidance in terms of priorities, answer questions about stories and accept stories that were delivered. 
 
