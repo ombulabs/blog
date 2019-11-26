@@ -80,7 +80,7 @@ Some clients will have multiple people involved in a project and, as such, sever
 
 It is important to make it clear to your client from the very beginning that the team will rely on ONE person to own the backlog, prioritize it and make sure user stories meet the requirements. This person will make sure that every change or tweak that comes afterwards will be added as a new story.
 
-It is also important to enforce that during the demo calls. If the client's stakeholders start discussing new features, nice-to-haves and whatnot, the Scrum Master must intervene and make it clear that the suggestions are being noted but will be discussed further with the assigned Product Owner, who'll be responsible for making sure the user stories written for them are clear and provide the team with all the information needed and assigning a priority to them.
+It is also important to enforce those rules during demo calls. If the client's stakeholders start discussing new features, nice-to-haves, bells, and whistles, the Scrum Master must intervene and make it clear that suggestions are being noted. Those notes will be discussed further with the Product Owner, who will be responsible for making sure user stories are written and clear. The PO will provide the team with all the necessary details and prioritize all new stories.
 
 ## Conclusion
 
