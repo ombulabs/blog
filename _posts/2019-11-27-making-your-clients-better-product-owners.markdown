@@ -78,7 +78,7 @@ If they are not available for the calls nor to answer questions during a sprint,
 
 Some clients will have multiple people involved in a project and, as such, several different stakeholders might attend your demo calls. The problem? In many situations, several different people might start asking for features, changes, tweaks or just "one more button".
 
-It is important to make it clear to your client from the very beginning that the team will rely on ONE person to own the backlog, prioritise it and make sure user stories meet the requirements. And that every change or tweak that comes afterwards, if it is new functionality that wasn't specified, will need to be added as a new story.
+It is important to make it clear to your client from the very beginning that the team will rely on ONE person to own the backlog, prioritize it and make sure user stories meet the requirements. This person will make sure that every change or tweak that comes afterwards will be added as a new story.
 
 It is also important to enforce that during the demo calls. If the client's stakeholders start discussing new features, nice-to-haves and whatnot, the Scrum Master must intervene and make it clear that the suggestions are being noted but will be discussed further with the assigned Product Owner, who'll be responsible for making sure the user stories written for them are clear and provide the team with all the information needed and assigning a priority to them.
 
