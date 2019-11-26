@@ -28,7 +28,7 @@ The Product Manager would conduct user research, identify market needs, align it
 
 **_The Product Owner is the point of reference for all things backlog related._** 
 
-This is the person that brings in the client's vision, that knows what project stakeholders on the client's side want. But they'll also need to be the one to translate that into user stories and priorities within the backlog. They don't need to necessarily be the ones writing user stories, but they'll be the ones making sure stories are well defined and the team understands what needs to be done.
+This is the person who brings in the client's vision, who knows what project stakeholders want. But they'll also need to be the one to translate that into user stories and priorities within the backlog. They don't need to necessarily be the ones writing user stories, but they'll be the ones making sure stories are well defined and the team understands what needs to be done.
 
 **_The Product Owner is responsible for ensuring the backlog is visible, transparent and clear to all._** 
 
