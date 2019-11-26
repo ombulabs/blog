@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Outdated Article: A GitHub app that helps you manage your Jekyll blog"
-date: 2019-11-22 10:30:00
+date: 2019-11-26 10:30:00
 categories: ["github", "jekyll", "ruby"]
 author: "luciano"
 ---
