@@ -52,7 +52,7 @@ The vision on what needs to be done and what problems need to be solved will com
 
 **_The Scrum Master can be firmer during Scrum calls to make sure they fulfill their actual purpose._** 
 
-Working with someone on the client's team might mean they are under pressure from their stakeholders and will end up gravitating towards being more of a or project manager than a Product Owner. The Scrum Master can pay attention to that and intervene when needed. 
+Working with someone on the client's team might mean they are under pressure from their stakeholders and will end up gravitating towards being more of a Project Manager than a Product Owner. The Scrum Master can pay attention to that and intervene when needed. 
 
 If the Product Owner is using the Sprint Planning calls to just add that "one more story", communicate clearly and explain what the sprint planning calls are for and why is it important to the team and more efficient long term to respect the limitations set. 
 
