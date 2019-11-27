@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Outdated Article: A GitHub app that helps you manage your Jekyll blog"
-date: 2019-11-26 10:30:00
+title: "Blogcop: A GitHub app that helps you manage your Jekyll blog"
+date: 2019-11-27 10:30:00
 categories: ["github", "jekyll", "ruby"]
 author: "luciano"
 ---
@@ -22,26 +22,26 @@ Since we didn't find any existing tool that does such thing we decided to make o
 
 Our blog is hosted on [GitHub](https://github.com/ombulabs/blog) so we thought it would be a good idea to have a [GitHub app](https://developer.github.com/apps/about-apps/#about-github-apps) that does the job. That way anyone can simply install the app in their repo and start using this feature.
 
-#### Outdated Article
+#### Blogcop
 
-[Outdated Article](https://github.com/marketplace/outdated-article) is a GitHub bot that we built to solve the problem mentioned above.
+[Blogcop](https://github.com/marketplace/outdated-article) is a GitHub bot that we built to solve the problem mentioned above.
 
-Outdated Article will:
+Blogcop will:
 
 - Be triggered when you push a commit to master.
 - Look for articles that have not been updated in the last 3 months (by looking at their last commit date).
 - Create an Issue for every outdated article.
 
-<img src="/blog/assets/images/outdated-article-issue.jpg" alt="Outdated Article Issue" />
+<img src="/blog/assets/images/blogcop-issue.jpg" alt="Blogcop Issue" />
 
 
 - Create a Pull Request to unpublish every outdated article.
 
-<img src="/blog/assets/images/outdated-article-pr.jpg" alt="Outdated Article PR" />
+<img src="/blog/assets/images/blogcop-pr.jpg" alt="Blogcop PR" />
 
-<img src="/blog/assets/images/outdated-article-pr-change.jpg" alt="Outdated Article PR change" />
+<img src="/blog/assets/images/blogcop-pr-change.jpg" alt="Blogcop PR change" />
 
-If you are interested you can check the GitHub app's source code in: [https://github.com/ombulabs/outdated-article](https://github.com/ombulabs/outdated-article).
+If you are interested you can check the GitHub app's source code in: [https://github.com/ombulabs/blogcop](https://github.com/ombulabs/blogcop).
 The bot is a simple [Sinatra](http://sinatrarb.com) app that was built using the [github-app-template](https://github.com/github-developer/github-app-template). If you want to learn more about building GitHub apps I recommend you checking at the [official documentation](https://developer.github.com/apps/building-github-apps).
 
 ### Conclusion
