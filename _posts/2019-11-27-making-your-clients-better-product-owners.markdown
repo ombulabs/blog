@@ -48,7 +48,7 @@ Some strategies that are helpful here:
 
 **_The Scrum Master can write user stories_** 
 
-The vision on what needs to be done and the problems that need to be solved will come from the Product Owner. But they might not know how to write a good user story. In this case, the Scrum Master and even the team can help by translating that vision into user stories.
+The vision on what needs to be done and what problems need to be solved will come from the Product Owner. But they might not know how to write a good user story. In this case, the Scrum Master and even the team can help by translating that vision into user stories.
 
 **_The Scrum Master can be firmer during Scrum calls to make sure they fulfill their actual purpose._** 
 
