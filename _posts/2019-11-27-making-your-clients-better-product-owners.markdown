@@ -18,7 +18,7 @@ Here I'll share some strategies we implement to help our clients become better P
 
 Not every client is familiar with the responsibilities of the Product Owner. Not every client is even familiar with Agile/Lean methodologies. Therefore, it is important to communicate expectations clearly at the beginning of the project.
 
-During the [kick-off call](https://www.ombulabs.com/blog/agile/continuous-learning/kickoff-calls.html), make sure the point of contact on the client's team understands what the Scrum master and the Scrum team expect from them. Some key points to cover:
+During the [kick-off call](https://www.ombulabs.com/blog/agile/continuous-learning/kickoff-calls.html), make sure the point of contact in the client's team understands what the Scrum master and the Scrum team expect from them. Some key points to cover:
 
 **_Product Owner is a role you play in the Scrum team._**
 
@@ -32,7 +32,7 @@ This is the person who brings in the client's vision, who knows what project sta
 
 **_The Product Owner is responsible for ensuring the backlog is visible, transparent and clear to all._** 
 
-As such, the team expects the Product Owner to keep the backlog groomed and organised. They need to make sure priorities are assigned and are current. If priorities changed, this needs to be reflected in the backlog. If stories became irrelevant, they need to be removed from the backlog.
+As such, the team expects the Product Owner to keep the backlog groomed and organized. They need to make sure priorities are assigned and are current. If priorities changed, this needs to be reflected in the backlog. If stories became irrelevant, they need to be removed from the backlog.
 
 **_The Product Owner is the main point of contact for conceptual questions._** 
 
@@ -40,7 +40,7 @@ If the team needs any clarification on any of the stories, they'll look to the P
 
 ## Make sure the Scrum Master and the Product Owner are aligned and the Scrum Master is able to help as much as possible
 
-You may find yourself in scenarios where the person assigned to the project by the client is not the product manager or the client has never heard of Scrum before.
+You may find yourself in scenarios where the person assigned to the project by the client is not the Product Manager or the client has never heard of Scrum before.
 
 In these situations, it is important for your Scrum Master to be able to step up and assist as much as possible. After all, they are familiar with Scrum already and are in a good position to help.
 
@@ -62,7 +62,9 @@ The Scrum Master can help the Product Owner understand these concepts.
 
 **_Rethink how you talk to the Product Owner about priorities._** 
 
-One of the biggest problems of working with the client as the Product Owner is prioritisation. A lot of the time they will see everything as a priority. So rethinking how you talk to them about prioritisation is a good idea. Don't simply ask them to go into the backlog and prioritise stories. Instead, take some time to review the backlog with them before the next sprint planning call and ask questions such as "compared to all these other stories here, how important would it be to your business to have this done?" or "what feature here do you think would make the largest number of users happy?".
+One of the biggest problems of working with the client as the Product Owner is prioritization. A lot of the time they will see everything as a priority. So rethinking how you talk to them about prioritization is a good idea. 
+
+Don't simply ask them to go into the backlog and prioritize stories. Instead, take some time to review the backlog with them before the next sprint planning call and ask questions such as "compared to all these other stories here, how important would it be to your business to have this done?" or "what feature here do you think would make the largest number of users happy?".
 
 ## Make sure they understand the time commitment and the impact it has on the team
 
@@ -80,8 +82,8 @@ Some clients will have multiple people involved in a project and, as such, sever
 
 It is important to make it clear to your client from the very beginning that the team will rely on ONE person to own the backlog, prioritize it and make sure user stories meet the requirements. This person will make sure that every change or tweak that comes afterwards will be added as a new story.
 
-It is also important to enforce those rules during demo calls. If the client's stakeholders start discussing new features, nice-to-haves, bells, and whistles, the Scrum Master must intervene and make it clear that suggestions are being noted. Those notes will be discussed further with the Product Owner, who will be responsible for making sure user stories are written and clear. The PO will provide the team with all the necessary details and prioritize all new stories.
+It is also important to enforce those rules during demo calls. If the client's stakeholders start discussing new features, nice-to-haves, bells, and whistles, the Scrum Master must intervene and make it clear that suggestions are being noted. Those notes will be discussed further with the Product Owner, who will be responsible for making sure user stories are written and clear. They will then provide the team with all the necessary details and prioritize all new stories.
 
 ## Conclusion
 
-Communicating clearly is key to making your clients better Product Owners and having in mind "red-flag" behaviors. It is also key to count with a Scrum Master who knows how to identify red flags and steer the client back to the Product Owner track. These strategies should help.
+Communicating clearly is key to making your clients better Product Owners and having in mind "red-flag" behaviors. It is also key to count on a Scrum Master who knows how to identify red flags and steer the client back to the Product Owner track. These strategies should help.
