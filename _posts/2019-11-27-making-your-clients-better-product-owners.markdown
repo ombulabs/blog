@@ -54,7 +54,7 @@ The vision on what needs to be done and what problems need to be solved will com
 
 Working with someone on the client's team might mean they are under pressure from their stakeholders and will end up gravitating towards being more of a Project Manager than a Product Owner. The Scrum Master can pay attention to that and intervene when needed. 
 
-If the Product Owner is using the Sprint Planning calls to just add that "one more story", communicate clearly and explain what the sprint planning calls are for and why is it important to the team and more efficient long term to respect the limitations set. 
+If the Product Owner is using Sprint Planning calls to just add that "one more story", communicate clearly and explain what the sprint planning calls are for and why is it important to the team and more efficient long term to respect the limitations set. 
 
 If they start using retro calls as a way to pressure the team, make sure they understand retro calls are supposed to be an opportunity for learning and improvement that goes both ways. Asking why more things weren't done isn't going to help. The important thing is to evaluate what could be improved in the process and workflow so that more can be done. 
 
