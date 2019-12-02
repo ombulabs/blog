@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Blogcop: A GitHub app that helps you manage your Jekyll blog"
-date: 2019-11-27 10:30:00
+date: 2019-12-02 10:30:00
 categories: ["github", "jekyll", "ruby"]
 author: "luciano"
 ---
