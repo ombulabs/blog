@@ -32,14 +32,14 @@ Blogcop will:
 - Look for articles that have not been updated in the last 3 months (by looking at their last commit date).
 - Create an Issue for every outdated article.
 
-<img src="/blog/assets/images/blogcop-issue.jpg" alt="Blogcop Issue" />
+<img src="/blog/assets/images/blogcop-issue.png" alt="Blogcop Issue" />
 
 
 - Create a Pull Request to unpublish every outdated article.
 
-<img src="/blog/assets/images/blogcop-pr.jpg" alt="Blogcop PR" />
+<img src="/blog/assets/images/blogcop-pr.png" alt="Blogcop PR" />
 
-<img src="/blog/assets/images/blogcop-pr-change.jpg" alt="Blogcop PR change" />
+<img src="/blog/assets/images/blogcop-pr-change.png" alt="Blogcop PR change" />
 
 If you are interested you can check the GitHub app's source code in: [https://github.com/ombulabs/blogcop](https://github.com/ombulabs/blogcop).
 The bot is a simple [Sinatra](http://sinatrarb.com) app that was built using the [github-app-template](https://github.com/github-developer/github-app-template). If you want to learn more about building GitHub apps I recommend you checking at the [official documentation](https://developer.github.com/apps/building-github-apps).
