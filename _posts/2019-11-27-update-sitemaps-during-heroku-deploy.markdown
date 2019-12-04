@@ -51,7 +51,7 @@ As you can see, inside the `Sitemap.create` block we need to add all routes of o
 
 If your site has only static content, your job here it's done. You just need to use the rails task from the sitemap_generator itself `rake sitemap:refresh` and a `sitemap.xml` file will be added to the `public` folder.
 
-But in my case new routes will be added every time that someone writes a new article. And as we know, the blog it's a Jekyll application,
+But in my case new routes will be added every time someone writes a new article. And as we know, the blog is a Jekyll application,
 so we can't get the routes using the rake task provided by the `sitemap_generator` gem.
 
 ## Generating the sitemap index
