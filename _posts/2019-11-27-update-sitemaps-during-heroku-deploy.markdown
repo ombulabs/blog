@@ -21,7 +21,7 @@ According to [Google](https://support.google.com/webmasters/answer/156184?hl=en)
 
 It tells search engines which pages and files you think are important in your site, and also provides valuable information about these files: for example, when the page was last updated, how often the page is changed, among others.
 
-So it's important to keep it always up-to-date.
+So it's important to always keep it up-to-date.
 
 ## Configuring the Gem
 
