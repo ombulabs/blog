@@ -25,7 +25,7 @@ So it's important to always keep it up-to-date.
 
 ## Configuring the Gem
 
-Listing all routes of a website and add them to a XML file seems to be a repetitive task, so I thought that we might have a gem for it already. And we do. It's the [`sitemap_generator`](https://github.com/kjvarga/sitemap_generator) gem, which does exactly what we need: provide a few rails tasks to generate and refresh the application sitemap.
+Listing all routes of a website and adding them to an XML file seems to be a repetitive task, so I thought that we might have a gem for it already. And we do. It's the [`sitemap_generator`](https://github.com/kjvarga/sitemap_generator) gem, which does exactly what we need: provide a few rails tasks to generate and refresh the application's sitemap.
 
 Installing the gem is pretty easy, just add it to your `Gemfile`:
 
