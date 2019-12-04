@@ -31,7 +31,7 @@ Installing the gem is pretty easy, just add it to your `Gemfile`:
 
 `gem 'sitemap_generator'`
 
-run the `bundle install` and then run this task:
+run `bundle install` and then run this task:
 
 `rake sitemap:install`
 
