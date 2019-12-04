@@ -19,7 +19,7 @@ In this article I'll show you my journey to figure out how to make everything wo
 According to [Google](https://support.google.com/webmasters/answer/156184?hl=en) itself:
 > "A sitemap is a file where you provide information about the pages, videos, and other files on your site, and the relationships between them. Search engines like Google read this file to more intelligently crawl your site."
 
-It tells to search engines which pages and files you think are important in your site, and also provides valuable information about these files: for example, when the page was last updated, how often the page is changed, and others.
+It tells search engines which pages and files you think are important in your site, and also provides valuable information about these files: for example, when the page was last updated, how often the page is changed, among others.
 
 So it's important to keep it always up-to-date.
 
