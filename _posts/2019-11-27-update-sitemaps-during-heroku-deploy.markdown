@@ -8,7 +8,7 @@ author: "cleiviane"
 
 A few months ago I received the task of making the [FastRuby.io](https://www.fastruby.io) sitemap refresh automatically after each deploy. That sounds like it would be pretty straightforward if we didn't have one issue (it's never that easy, right?). For the [FastRuby blog](https://www.fastruby.io/blog) we created a gem that encapsulates a Jekkyl application. The discussion of why do we have a gem for our blog is actually a good topic for a new post. For now, I want to focus in the sitemap task that I had.
 
-Since the blog it's a gem, we also need to make sure that whatever tool we use to generate the sitemap would also cover new blog posts.
+Since the blog is a gem, we also need to make sure that whatever tool we use to generate the sitemap covers new blog posts.
 
 In this article I'll show you my journey to figure out how to made everything work together.
 
