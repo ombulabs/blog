@@ -96,7 +96,7 @@ end
 
 ```
 
-As you can notice, in the first `SitemapGenerator::Sitemap.create` block we are listing all files inside the `blog` folder and adding their path to the blog_sitemap file.
+As you can see, in the first `SitemapGenerator::Sitemap.create` block we are listing all files inside the `blog` folder and adding their path to the blog_sitemap file.
 
 After that we are generating the `sitemap` for the website itself, listing all important pages and adding the `blog_sitemap` to the index.
 
