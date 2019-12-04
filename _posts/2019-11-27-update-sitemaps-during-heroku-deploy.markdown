@@ -10,7 +10,7 @@ A few months ago I received the task of making the [FastRuby.io](https://www.fas
 
 Since the blog is a gem, we also need to make sure that whatever tool we use to generate the sitemap covers new blog posts.
 
-In this article I'll show you my journey to figure out how to made everything work together.
+In this article I'll show you my journey to figure out how to make everything work together.
 
 <!--more-->
 
