@@ -56,7 +56,7 @@ so we can't get the routes using the rake task provided by the `sitemap_generato
 
 ## Generating the sitemap index
 
-To solve this issue, my idea was to change the `sitemap_generator` config to instead of generate just one `sitemap.xml` file, it would create two sitemaps (one for the blog and one for the website) and add them to a index file.
+To solve this issue, my idea was to change the `sitemap_generator` config to create two sitemaps (one for the blog and one for the website) and add them to an index file instead of generating just one `sitemap.xml` file.
 
 
 This is how the `config/sitemap.rb` file needs to be changed:
