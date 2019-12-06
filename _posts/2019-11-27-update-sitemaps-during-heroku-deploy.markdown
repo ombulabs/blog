@@ -61,7 +61,7 @@ To solve this issue, my idea was to change the `sitemap_generator` config to cre
 
 This is how the `config/sitemap.rb` file needs to be changed:
 
-```
+```ruby
 blog_sitemap_opts = {
   create_index: false,
   default_host: 'https://fastruby.io/blog',
