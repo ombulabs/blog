@@ -37,7 +37,7 @@ Run `bundle install` and then run this task:
 
 That will create a config file with some information to be used by the gem, like the sample below:
 
-```
+```ruby
 require 'sitemap_generator'
 
 SitemapGenerator::Sitemap.default_host = 'http://example.com'
