@@ -35,7 +35,7 @@ Run `bundle install` and then run this task:
 
 `rake sitemap:install`
 
-that will create a config file with some information to be used by the gem, like the sample below:
+That will create a config file with some information to be used by the gem, like the sample below:
 
 ```
 require 'sitemap_generator'
