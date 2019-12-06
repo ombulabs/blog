@@ -18,7 +18,7 @@ In this article I'll describe how I used [Slack Workflows](https://slack.com/int
 
 Our onboarding process includes a few steps that must be completed before a new developer is up and running.
 
-First of all, we have specific tools they must have access to before being able to do anything else. Additionally, we also have some key articles in our internal wiki that are must reads, as they contain helpful information about guidelines, policies, company culture, etc. Finally, we have specific channels, repositories and projects they need to access to be familiar with our projects and open source contributions.
+First of all, we have specific tools they must have access to before being able to do anything else. Additionally, we also have some key articles in our internal wiki that are must reads, as they contain helpful information about guidelines, policies, company culture, etc. Finally, we have specific channels, repositories and projects they need to access to be familiar with our projects and open source projects.
 
 ## Using Slack Workflows to Onboard New Team Members
 
