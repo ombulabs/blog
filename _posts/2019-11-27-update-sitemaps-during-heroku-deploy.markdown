@@ -89,7 +89,7 @@ SitemapGenerator::Sitemap.create sitemap_opts do
   add '/#contact-us', changefreq: 'weekly'
   add '/team', changefreq: 'weekly'
 
-  # all other important page here
+  # all other important pages here
 
   add_to_index "blog_sitemap.xml", host: ENV['SITE_URL']
 end
