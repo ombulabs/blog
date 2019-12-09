@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to dynamically update your sitemap in Ruby"
-date: 2019-11-27 12:00:00
+date: 2019-12-09 12:00:00
 categories: ["seo", "sitemap", "ruby"]
 author: "cleiviane"
 ---
