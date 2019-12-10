@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Onboarding New Team Members with Slack Workflows"
-date: 2019-12-12 10:30:00
-categories: ["scrum", "Slack"]
+date: 2019-12-10 10:30:00
+categories: ["slack", "scrum", "agile"]
 author: "abizzinotto"
 ---
 
 When a new team member comes onboard, there are several tools and resources they need to access, as well as processes, practices and guidelines they need to be aware of. There is also workflow and company culture information you want to communicate. After all, each company has its unique features and you want new team members to be comfortable with the existing team.
 
-For remote teams, this process can be very challenging. Thankfully, if you use Slack, you can use their Workflows feature to easily onboard new team members, making the process actionable and easy to follow. 
+For remote teams, this process can be very challenging. Thankfully, if you use Slack, you can use their Workflows feature to easily onboard new team members, making the process actionable and easy to follow.
 
 In this article I'll describe how I used [Slack Workflows](https://slack.com/intl/en-br/help/articles/360035692513-Guide-to-Workflow-Builder) to make the onboarding process here at [OmbuLabs](https://www.ombulabs.com) quick and easy.
 
@@ -22,7 +22,7 @@ First of all, we have specific tools they must have access to before being able 
 
 ## Using Slack Workflows to Onboard New Team Members
 
-Recently, [Slack](https://www.slack.com) released their [Workflows](https://slack.com/intl/en-br/help/articles/360035692513-Guide-to-Workflow-Builder) feature. This allows a user to create workflows with different triggers, including a trigger when a new member joins a channel. 
+Recently, [Slack](https://www.slack.com) released their [Workflows](https://slack.com/intl/en-br/help/articles/360035692513-Guide-to-Workflow-Builder) feature. This allows a user to create workflows with different triggers, including a trigger when a new member joins a channel.
 
 We have an #onboarding channel in Slack to help new team members get situated. I created a workflow that is triggered when a new member joins that channel and is, essentially, a sequence of messages with instructions and/or information and a button that takes the new team member to the next step.
 
@@ -37,7 +37,7 @@ _#channel1
 …
 #channeln_
 
-_If you don't have access to any of those channels, please contact @someone._ 
+_If you don't have access to any of those channels, please contact @someone._
 
 _**Button 1:**
 I'm good! Let's move on!_
@@ -83,12 +83,12 @@ With a dedicated channel to receive these notifications, it's easier to keep tra
 
 3. **Workspace Guidelines**
 
-In addition to our team members, our Slack workspace is also shared with sub-contractors. We can use workflows to trigger a message whenever someone new joins the #general channel. 
+In addition to our team members, our Slack workspace is also shared with sub-contractors. We can use workflows to trigger a message whenever someone new joins the #general channel.
 
-This message contains general rules and workspace guidelines, as well as information on resources available and who to contact in case of questions. 
+This message contains general rules and workspace guidelines, as well as information on resources available and who to contact in case of questions.
 
 At the bottom of the message, there is a button to click to confirm they've read and understood the guidelines. Once that button is clicked, a notification is sent to the workspace administrators.
 
 ## Conclusion
 
-Slack workflows can be very helpful when onboarding new team members into a remote team. They're easy to setup and edit, so making updates doesn't require a lot of effort. They can also be used in a variety of other situations to make your team and daily processes more efficient. 
+Slack workflows can be very helpful when onboarding new team members into a remote team. They're easy to setup and edit, so making updates doesn't require a lot of effort. They can also be used in a variety of other situations to make your team and daily processes more efficient.
