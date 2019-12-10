@@ -32,10 +32,7 @@ _**Message 1:**
 Hello! Welcome to our team!
 First, let's make sure you have access to all these Slack channels:_
 
-_#channel1
-#channel2
-…
-#channeln_
+_channel-1, channel-2, channel-n_
 
 _If you don't have access to any of those channels, please contact @someone._
 
