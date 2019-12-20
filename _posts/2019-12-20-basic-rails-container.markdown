@@ -8,6 +8,8 @@ author: "rdormer"
 
 Here at OmbuLabs, we do a lot of work with older versions of Ruby and Rails.  Recently, I've been taking a look at [Docker](https://www.ombulabs.com/blog/tags/docker), the virtual container platform, to see how it might help us manage the often idiosyncratic setup that applications we work with might require.
 
+<!--more-->
+
 As I've noted [before](https://www.ombulabs.com/blog/devops/docker/tutorials/docker-containers-pt-2.html), setting up your own containers from scratch is usually a bad idea.  Wherever you can, start with a [base image](https://hub.docker.com/search?category=base&source=verified&type=image) to save you a *lot* of time.  We'll start with the Ubuntu base image:
 
 ```
