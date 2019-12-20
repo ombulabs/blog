@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Creating a Legacy Rails Container"
-date: 2019-12-20 12:30:00
+date: 2019-12-20 15:30:00
 categories: ["devops", "docker", "tutorials"]
 author: "rdormer"
 ---
