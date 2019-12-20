@@ -2,7 +2,7 @@
 layout: post
 title: "Roll your own Docker containers (part 1)"
 date: 2019-08-21 12:30:00
-categories: ["DevOps", "docker", "tutorials"]
+categories: ["devops", "docker", "tutorials"]
 author: "rdormer"
 ---
 
