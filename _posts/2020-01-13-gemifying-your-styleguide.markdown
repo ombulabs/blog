@@ -63,7 +63,7 @@ module Ombulabs
 end
 ```
 
-Now we need to copy all the assets for the `vendor\assets` folder. The project structure will be like this:
+Now we need to copy all the assets for the `vendor/assets` folder. The project structure will be like this:
 
 <img src="/blog/assets/images/gemifying-your-styleguide-img-01.png" alt="Folder structure" style="width: 300px; margin: 0;">
 
