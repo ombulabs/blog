@@ -6,7 +6,7 @@ categories: ["gem", "styleguide", "solid"]
 author: "cleiviane"
 ---
 
-At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see Ombu Lab's style guide at [this link](http://ombulabs.github.io/styleguide).
+At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see Ombu Lab's style guide at [this link](https://fastruby.github.io/styleguide).
 
 Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do it is copy the above style guide inside all of our apps, but this would end up in a lot of duplicated code. If we decided to change the font-style, for example, we would need to change in all apps individually.
 
@@ -109,5 +109,5 @@ You can see our style guide code in this GitHub repository: [https://github.com/
 
 As developers, we are always thinking in the better way to organize our code and follow good practices, so here is our solution to share the same assets code between our several products. If you're facing the same issue, I hope that this can be useful.
 
-## Extra
-Want to see our style guide applied? Check our proudly projects: [Fastruby.io](https://www.fastruby.io) and [Audit Tool](https://audit.fastruby.io).
+  ## Extra
+Want to see our style guide applied? We're proud to present our projects: [Fastruby.io](https://www.fastruby.io) and [Audit Tool](https://audit.fastruby.io).
