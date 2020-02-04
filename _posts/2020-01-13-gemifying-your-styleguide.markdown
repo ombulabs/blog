@@ -8,7 +8,7 @@ author: "cleiviane"
 
 At Ombu Labs we like to follow a style guide to drive our own products. A style guide is a document that provides guidelines for the way your brand should be presented from both a graphic and language perspective. You can see Ombu Lab's style guide at [this link](http://ombulabs.github.io/styleguide).
 
-Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do it is copy the above style guide inside all of our apps, but this would end up in a lot of duplicated code. If we decided to change the font-style, for example, we would need to change in all apps individually.
+Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do this is to copy the above style guide and paste it inside all of our apps, but this would end up causing a lot of duplicated code. If we decided to change the font-style, for example, we would need to change it in all apps individually.
 
 Another thing that we are super fans at Ombu Labs it's to follow good code and development practices. One of our favorites it's the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
 
