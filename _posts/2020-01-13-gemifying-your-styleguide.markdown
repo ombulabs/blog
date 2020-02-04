@@ -50,7 +50,7 @@ Gem::Specification.new do |spec|
 end
 ```
 
-By default the gem is created as a module, but we need to turn into an engine, because we need to be able to integrate the gem code into any Rails application. In case you want to understand more about Rails engine, check [this link](https://guides.rubyonrails.org/engines.html).
+By default the gem is created as a module but we need to turn it into an engine, because we need to be able to integrate the gem code into any Rails application. In case you want to understand more about the Rails engine, check [this link](https://guides.rubyonrails.org/engines.html).
 
 So, let's change the `lib/ombulabs-styleguide.rb`
 
