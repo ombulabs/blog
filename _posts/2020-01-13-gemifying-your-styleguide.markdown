@@ -10,7 +10,7 @@ At Ombu Labs we like to follow a style guide to drive our own products. A style 
 
 Since we have a few applications in place and it's important to make sure that they all use the same style, we need to ensure that they will all inherit the same CSS files. One way to do this is to copy the above style guide and paste it inside all of our apps, but this would end up causing a lot of duplicated code. If we decided to change the font-style, for example, we would need to change it in all apps individually.
 
-Another thing that we are super fans at Ombu Labs it's to follow good code and development practices. One of our favorites it's the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
+Something else we are super fans of at Ombu Labs is to follow good code and development practices. One of our favorites is the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
 
 In this article, I'll show you how we did it!
 
