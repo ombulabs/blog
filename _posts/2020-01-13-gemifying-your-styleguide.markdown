@@ -12,7 +12,7 @@ Since we have a few applications in place and it's important to make sure that t
 
 Another thing that we are super fans at Ombu Labs it's to follow good code and development practices. One of our favorites it's the [DRY (Don’t Repeat Yourself)](https://wiki.c2.com/?DontRepeatYourself) principle, which states that duplication in logic should be eliminated via abstraction. So to avoid the duplicated code here, we decided to create a gem to encapsulate our style guide and to be bundled in all of our products.
 
-In this article I'll show you how we made it!
+In this article, I'll show you how we did it!
 
 <!--more-->
 
