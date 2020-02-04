@@ -107,7 +107,7 @@ You can see our style guide code in this GitHub repository: [https://github.com/
 
 ## Conclusion
 
-As developers, we are always thinking in the better way to organize our code and follow good practices, so here is our solution to share the same assets code between our several products. If you're facing the same issue, I hope that this can be useful.
+As developers, we are always thinking about the best way to organize our code and follow good practices, so here is our solution to share the same assets code amongst our several products. If you're facing the same issue, I hope that this is useful.
 
 ## Extra
 Want to see our style guide applied? Check our proudly projects: [Fastruby.io](https://www.fastruby.io) and [Audit Tool](https://audit.fastruby.io).
