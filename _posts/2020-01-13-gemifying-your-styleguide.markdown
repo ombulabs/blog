@@ -2,7 +2,7 @@
 layout: post
 title: "Gemifying your style guide to DRY your CSS"
 date: 2020-01-30 10:30:00
-categories: ["gem", "styleguide", "solid"]
+categories: ["gems", "dry", "ruby"]
 author: "cleiviane"
 ---
 
