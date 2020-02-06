@@ -5,6 +5,7 @@ date: 2016-10-11 08:37:00
 categories: ["performance", "rails"]
 author: "etagwerker"
 canonical_url: true
+published: false
 ---
 
 [Rails](http://rubyonrails.org/) is a powerful framework. You can write a lot of features in a short period of time. In the process you can easily write code that **performs poorly**.
