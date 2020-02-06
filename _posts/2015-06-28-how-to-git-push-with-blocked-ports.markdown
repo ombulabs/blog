@@ -4,6 +4,7 @@ title:  "How to Git push with blocked ports"
 date: 2015-06-28 18:29:00
 categories: ["git", "github"]
 author: etagwerker
+published: false
 ---
 
 Often times I find myself working out of a coffee shop with a **terrible Internet connection**. We have a nice office at [OmbuLabs](https://es.foursquare.com/v/ombushop-hq/52f0e47311d25da04d101b62) but there is still that *Je ne sais quoi* at coffee shops.
