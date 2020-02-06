@@ -5,6 +5,7 @@ date: 2018-10-22 11:10:00
 categories: ["rails", "upgrades", "case-study"]
 author: "emily"
 canonical_url: true
+published: false
 ---
 
 We recently spoke with Ryan Findley, Principal at [Neomind Labs](https://www.neomindlabs.com). We worked with his team to execute a **[Rails upgrade](https://fastruby.io) from 2.3 to 4.2** on one of their applications.
