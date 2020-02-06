@@ -4,6 +4,7 @@ title: "Trial and Error with Ruby Koans"
 date: 2018-01-24
 categories: ["ruby", "learning"]
 author: "emily"
+published: false
 ---
 
 After reading introductory primers and watching instructional videos for beginners learning [Ruby](https://www.ruby-lang.org/en), I needed a program that would allow me to test out Ruby concepts for myself. I began practicing [**Ruby Koans**](http://rubykoans.com), **a testing-based program that runs through a variety of Ruby concepts in a trial and error fashion**.
