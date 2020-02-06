@@ -4,6 +4,7 @@ title: "10 Steps to Evaluate a Rails Project"
 date: 2016-02-17 13:55:00
 categories: ["rails","maintenance"]
 author: "etagwerker"
+published: false
 ---
 
 It will come a time when you will have to decide whether to maintain a [Rails](http://rubyonrails.org) project **or not**.
