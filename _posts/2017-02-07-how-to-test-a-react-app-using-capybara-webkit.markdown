@@ -4,6 +4,7 @@ title:  "How to test a React app using capybara-webkit"
 date: 2017-02-13 10:27:00
 categories: ["rails", "react"]
 author: "mauro-oto"
+published: false
 ---
 
 I have been using the [capybara-webkit](https://github.com/thoughtbot/capybara-webkit)
