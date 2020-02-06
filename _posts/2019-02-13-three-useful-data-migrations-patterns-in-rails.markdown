@@ -4,6 +4,7 @@ title: "Three Useful Data Migration Patterns for Rails"
 date: 2019-02-13 09:00:00
 categories: ["rails", "data-migrations"]
 author: "etagwerker"
+published: false
 ---
 
 At [Ombu Labs](https://www.ombulabs.com), we are big fans of [Ruby on Rails](https://rubyonrails.org) and [design patterns](https://www.ombulabs.com/blog/tags/design-patterns), especially [convention over configuration](https://rubyonrails.org/doctrine/#convention-over-configuration)! The beauty of Rails is that
