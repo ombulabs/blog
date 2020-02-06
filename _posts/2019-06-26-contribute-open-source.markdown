@@ -4,6 +4,7 @@ title: "Contributing To Open Source"
 date: 2019-06-26 09:00:00
 categories: ["open-source"]
 author: "bronzdoc"
+published: false
 ---
 
 Contributing to open source might be scary, you might think that your pull request (PR) is not good enough; that people will judge you by your code; or that fixing that little typo is not worth it.
