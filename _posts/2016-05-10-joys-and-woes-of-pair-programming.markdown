@@ -4,6 +4,7 @@ title: "The Joys and Woes of Pair Programming"
 date: 2016-05-12 14:37:00
 categories: ["agile", "pair-programming"]
 author: "etagwerker"
+published: false
 ---
 
 There are a few [agile practices](https://en.wikipedia.org/wiki/Agile_software_development#Agile_practices) that **I really love**. [Pair programming](http://c2.com/cgi/wiki?PairProgramming)
