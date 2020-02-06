@@ -2,7 +2,7 @@
 layout: post
 title: Tips-for-creating-open-source-projects-that-are-contributor-friendly
 date: 2020-01-28 06:31:01
-categories: [open source]
+categories: [open-source]
 author: bronzdoc
 
 ---
