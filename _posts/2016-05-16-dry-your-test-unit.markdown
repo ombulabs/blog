@@ -4,6 +4,7 @@ title: "DRY your tests"
 date: 2016-05-16 12:31:00
 categories: ["rails", "dry"]
 author: "etagwerker"
+published: false
 ---
 
 I'm a big fan of having small classes. I'm not a big fan of having huge specs for
