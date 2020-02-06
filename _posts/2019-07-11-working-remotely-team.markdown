@@ -4,6 +4,7 @@ title: "Tips for Working Remotely in a Team"
 date: 2019-07-11 12:30:00
 categories: ["agile", "remote"]
 author: "emily"
+published: false
 ---
 
 We have been a fully remote company for a year and a half now. Making the transition to being fully remote can be challenging for any team. During the past year and a half we have worked on making sure that our team is as productive, communicative and social as it was when we had a traditional office space. Here are some tips that we have found to be useful for remote teams:
