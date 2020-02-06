@@ -4,6 +4,7 @@ title:  "Tools We Use at Ombu Labs"
 date: 2019-01-09 10:00:00
 categories: ["agile"]
 author: "emily"
+published: false
 ---
 
 At Ombu Labs, we have a number of tools that help us to keep organized, write better code and communicate more effectively with our clients.
