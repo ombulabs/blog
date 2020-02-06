@@ -4,6 +4,7 @@ title: "Using Bumbler to reduce runtime dependencies"
 date: 2016-04-25 11:39:00
 categories: ["ruby", "performance"]
 author: "mauro-oto"
+published: false
 ---
 
 A few weeks ago, I found an interesting project called
