@@ -4,6 +4,7 @@ title:  "'Flaky' tests: a short story"
 date: 2017-05-04 11:02:00
 categories: ["rspec", "continuous-integration"]
 author: "mauro-oto"
+published: false
 ---
 
 One of the hardest failing tests to debug are those which fail randomly, also
