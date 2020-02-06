@@ -4,6 +4,7 @@ title: "The 7 Days Open Source Challenge"
 date: 2015-08-04 03:55:00
 categories: ["open-source"]
 author: "etagwerker"
+published: false
 ---
 
 Last Wednesday I gave a lightning talk about open source at the [Buenos Aires Ruby Meetup](http://www.meetup.com/rubyba/events/223814545/). I proposed a challenge to all attendees: Contribute to one (or many) open source projects for 7 days straight.
