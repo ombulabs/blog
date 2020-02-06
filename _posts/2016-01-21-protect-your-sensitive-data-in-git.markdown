@@ -4,6 +4,7 @@ title: "Protect your sensitive data in Git"
 date: 2016-01-21 10:36:00
 categories: ["open-source", "security"]
 author: "schmierkov"
+published: false
 ---
 
 If you are working with open source or if you are going to open source a repository, you should ensure that none of your sensitive data (API Keys, Credentials, Passwords) can be accessed by anyone.
