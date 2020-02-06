@@ -4,6 +4,7 @@ title: "Another successful Rails Girls event"
 date: 2018-06-18 14:00:00
 categories: ["learning", "rails"]
 author: "luciano"
+published: false
 ---
 
 Last month was the fifth edition of the [Rails Girls Buenos Aires](http://railsgirls.com/buenosaires-en.html) event,  and the third time Ombu Labs participated as a sponsor and part of the coaching team. This time it took place in the impressive offices of Google Argentina where 25 participants attended. All of them were very excited and motivated to start learning new skills.
