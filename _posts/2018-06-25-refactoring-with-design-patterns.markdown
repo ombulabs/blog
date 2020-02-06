@@ -4,6 +4,7 @@ title: "Refactoring: Clean your ruby code with design patterns"
 date: 2018-06-28 12:00:00
 categories: ["code-refactor"]
 author: "cleiviane"
+published: false
 ---
 
 Code refactoring can be defined as <strong>_“the process of introducing small and incremental changes to leave the code in a better state than it was.”_</strong>. When refactoring your code you have to consider two things: no new functionality should be added and the external behavior should not be affected.
