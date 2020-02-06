@@ -4,6 +4,7 @@ title: "How to Integrate Bitrix24 with your Rails app: Part 1"
 date: 2019-08-23 16:00:00
 categories: ["rails", "bitrix"]
 author: "luciano"
+published: false
 ---
 
 In a recent project for [Ombu Labs](https://www.ombulabs.com), we had to integrate [Bitrix24](https://www.bitrix24.com/) (the tool that the client was using to administrate their business) with the [Rails](https://rubyonrails.org/) application that we were building for a client.
