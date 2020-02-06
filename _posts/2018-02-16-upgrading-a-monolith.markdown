@@ -5,6 +5,7 @@ date: 2018-02-16
 categories: ["rails", "upgrades", "case-study"]
 author: "emily"
 canonical_url: true
+published: false
 ---
 
 We recently collaborated with [Power Home Remodeling](https://powerhrg.com) on a [Rails upgrade](https://fastruby.io) for their self-described “monolith CRM/ERP application” and were able to speak to them about their experience with [Ombu Labs](https://www.ombulabs.com).
