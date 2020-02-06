@@ -4,6 +4,7 @@ title:  "How to run multiple dependent builds on Circle CI"
 date: 2017-02-23 15:21:00
 categories: ["continuous-integration", "circle-ci"]
 author: "luciano"
+published: false
 ---
 
 We all know the importance of having a [CI](https://en.wikipedia.org/wiki/Continuous_integration) tool integrated in your project. It allows you to run your entire test suite every time you want to merge a set of changes.
