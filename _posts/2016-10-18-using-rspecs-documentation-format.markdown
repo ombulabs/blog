@@ -4,6 +4,7 @@ title:  "Brief look at RSpec's formatting options"
 date: 2016-11-08 12:53:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
+published: false
 ---
 
 A few weeks ago, I noticed weird output in the [RSpec](https://relishapp.com/rspec)
