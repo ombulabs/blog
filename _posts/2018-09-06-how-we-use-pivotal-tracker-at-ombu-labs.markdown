@@ -4,6 +4,7 @@ title:  "How we use Pivotal Tracker at Ombu Labs"
 date: 2018-09-06 11:10:00
 categories: ["agile", "pivotal-tracker"]
 author: "etagwerker"
+published: false
 ---
 
 We tend to use [GitHub](https://github.com) for everything at [Ombu Labs](https://www.ombulabs.com), but sometimes our clients
