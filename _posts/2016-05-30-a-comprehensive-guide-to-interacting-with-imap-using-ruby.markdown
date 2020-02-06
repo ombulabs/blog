@@ -4,6 +4,7 @@ title: "A comprehensive guide to interacting with IMAP using Ruby"
 date: 2016-05-30 12:09:00
 categories: ["ruby", "imap"]
 author: "mauro-oto"
+published: false
 ---
 
 A few times in the past I've had to interact with IMAP via Ruby, and wrapping
