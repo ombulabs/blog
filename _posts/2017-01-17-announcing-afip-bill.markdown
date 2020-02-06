@@ -4,6 +4,7 @@ title:  "Announcing AfipBill"
 date: 2017-02-09 15:06:00
 categories: ["open-source", "ruby", "rubygems"]
 author: "luciano"
+published: false
 ---
 
 If you live in Argentina and you ever use AFIP, you should already know that their platform is not the best in terms of user friendliness.
