@@ -4,6 +4,7 @@ title:  "Refactoring with Design Patterns - The State Pattern"
 date: 2019-02-20 10:00:00
 categories: ["code-refactor", "design-patterns"]
 author: "cleiviane"
+published: false
 ---
 
 In this series of [code refactoring](https://www.ombulabs.com/blog/tags/code-refactor) posts we are discussing how design patterns can be used to make our [Ruby](https://www.ruby-lang.org/en/) code beautiful, maintainable and clean.
