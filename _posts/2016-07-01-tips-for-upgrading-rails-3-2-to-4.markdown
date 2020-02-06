@@ -5,6 +5,7 @@ date: 2016-07-01 18:37:00
 categories: ["rails"]
 author: "mauro-oto"
 canonical_url: true
+published: false
 ---
 
 There are already quite a few guides in the wild to help with the upgrade of
