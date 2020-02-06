@@ -4,6 +4,7 @@ title: "Setup Heroku Review Apps in a multi-tenant application"
 date: 2019-07-02 09:00:00
 categories: ["heroku"]
 author: "cleiviane"
+published: false
 ---
 
 Recently at [Ombu Labs](https://www.ombulabs.com) I had the mission of setting up Heroku [Review Apps](https://devcenter.heroku.com/articles/github-integration-review-apps) for one of our projects. Since the project is built in a multi-tenant architecture (using the [apartment gem](https://github.com/influitive/apartment)) it was a bit challenging to setup.
