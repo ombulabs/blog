@@ -4,6 +4,7 @@ title: "Code Conventions and Rubocop"
 date: 2019-06-19 09:00:00
 categories: ["ruby", "best-practices"]
 author: "rdormer"
+published: false
 ---
 
 Everyone has had the experience of working on a gnarly, difficult to
