@@ -4,6 +4,7 @@ title:  "How We Helped Predictable Revenue Scale"
 date: 2017-08-22 8:06:00
 categories: ["case-study"]
 author: "etagwerker"
+published: false
 ---
 
 A few weeks ago I had the opportunity to talk to [Preston St. Pierre](https://www.linkedin.com/in/tarential), CTO of [Predictable Revenue](http://predictablerevenue.com). We worked with Preston and his team for 2 years to help them scale their software development.
