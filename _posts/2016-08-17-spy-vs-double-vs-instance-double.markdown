@@ -4,6 +4,7 @@ title: "Spy vs Double vs Instance Double"
 date: 2016-08-17 06:04:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
+published: false
 ---
 
 When writing tests for services, you may sometimes want to use mock objects
