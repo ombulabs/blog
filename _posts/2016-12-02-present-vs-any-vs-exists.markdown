@@ -4,6 +4,7 @@ title:  "Present? vs Any? vs Exists?"
 date: 2016-12-02 13:31:00
 categories: ["benchmark", "performance", "rails"]
 author: "mauro-oto"
+published: false
 ---
 
 When working on a Rails project, you may have seen `present?` calls on
