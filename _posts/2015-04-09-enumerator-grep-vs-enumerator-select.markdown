@@ -4,6 +4,7 @@ title:  "Enumerable#grep vs Enumerable#select"
 date: 2015-04-09 11:37:00
 categories: ["ruby", "benchmark"]
 author: "mauro-oto"
+published: false
 ---
 
 Often, `Enumerable#select` is the chosen method to obtain elements from an
