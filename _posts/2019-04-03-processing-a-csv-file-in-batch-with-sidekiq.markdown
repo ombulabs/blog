@@ -4,6 +4,7 @@ title:  "Processing a CSV file in batch with Sidekiq"
 date: 2019-04-03 10:00:00
 categories: ["sidekiq"]
 author: "cleiviane"
+published: false
 ---
 
 [Sidekiq Pro](https://sidekiq.org/products/pro.html) comes with a great feature to process a collection of jobs as a batch, allowing them to be monitored as a group and executing a callback function when all the jobs are finished. This is useful when you need to load a lot of spreadsheet files into your database.  
