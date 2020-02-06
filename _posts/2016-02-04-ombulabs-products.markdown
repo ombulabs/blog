@@ -4,6 +4,7 @@ title: "Announcing The Ombu Labs Shop!"
 date: 2016-04-01 12:35:00
 categories: ["design"]
 author: "cecilia"
+published: false
 ---
 
 We recently worked on a series of Christmas presents for the team. We are happy to share part of the process and its final result!
