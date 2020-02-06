@@ -4,6 +4,7 @@ title: "Implementing Stripe Connect in Rails: Part 2"
 date: 2019-10-11 14:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
+published: false
 ---
 
 Some time ago we wrote [an article](https://www.ombulabs.com/blog/rails/stripe/stripe-connect-part-1.html) to explain how to implement [Stripe Connect](https://stripe.com/connect) in a [Rails](https://rubyonrails.org) application. That article covered mainly the connection part between Rails and Stripe. This one will cover the fun part, which is making transactions, charges, refunds, and more.
