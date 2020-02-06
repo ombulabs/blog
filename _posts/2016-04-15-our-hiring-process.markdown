@@ -4,6 +4,7 @@ title: "Our Hiring Process"
 date: 2016-04-14 17:03:00
 categories: ["team", "jobs"]
 author: "etagwerker"
+published: false
 ---
 
 This is our process to hire new team members at [Ombu Labs](https://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
