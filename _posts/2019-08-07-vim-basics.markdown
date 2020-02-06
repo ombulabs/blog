@@ -4,6 +4,7 @@ title: Vim Guide for Beginners
 date: 2019-08-07 10:28:02
 categories: ["learning", "vim"]
 author: bronzdoc
+published: false
 ---
 
 I will not bore you by telling you the history of [Vim](https://github.com/vim/vim), and the differences between vi and Vim and all of its philosophy...
