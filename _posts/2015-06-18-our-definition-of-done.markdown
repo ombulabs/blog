@@ -4,6 +4,7 @@ title:  "Our Definition of \"Done\""
 date: 2015-06-18 11:37:00
 categories: ["software-development", "software-quality"]
 author: etagwerker
+published: false
 ---
 
 Quality should be present in everything you do, but it should be balanced with the time you spend working on a feature. Does it feel like you've been working on this feature for a **really long time**? Maybe you have. Is it "done"?
