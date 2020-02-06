@@ -4,6 +4,7 @@ title:  "How to use any gem in the Rails production console"
 date: 2016-12-14 18:06:00
 categories: ["rails", "ruby"]
 author: "mauro-oto"
+published: false
 ---
 
 How many times did you come across a great gem you wanted to try out in
