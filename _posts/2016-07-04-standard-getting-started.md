@@ -4,6 +4,7 @@ title: "The Need for bin/start"
 date: 2016-07-04 12:31:00
 categories: ["maintenance", "conventions"]
 author: "etagwerker"
+published: false
 ---
 
 Getting started with a new project should be **as simple as possible**, even for
