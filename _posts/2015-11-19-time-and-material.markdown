@@ -4,6 +4,7 @@ title: "Time and Material"
 date: 2015-11-19 03:55:00
 categories: ["software-development"]
 author: "etagwerker"
+published: false
 ---
 
 As of 2016, we will no longer work with clients on fixed bid projects. They are not a good fit for us and we are not a good fit for them.
