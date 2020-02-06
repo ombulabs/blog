@@ -4,6 +4,7 @@ title: "The Lean Startup Way"
 date: 2015-06-30 23:29:00
 categories: ["lean-startup"]
 author: etagwerker
+published: false
 ---
 
 At [OmbuLabs](https://www.ombulabs.com) we like to split our time working on our own products, client projects, and open source code. We have embraced the Lean Startup methodology not only for our own products but also for our client projects.
