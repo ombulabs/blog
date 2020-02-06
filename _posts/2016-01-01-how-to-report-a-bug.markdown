@@ -4,6 +4,7 @@ title: "How to report a bug"
 date: 2016-01-01 13:55:00
 categories: ["open-source", "bugs"]
 author: "etagwerker"
+published: false
 ---
 
 The simplest way to contribute to an open source project is to file an issue. Here are a few steps for you to file issues that are useful for the project maintainers.
