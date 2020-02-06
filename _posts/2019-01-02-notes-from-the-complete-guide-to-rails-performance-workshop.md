@@ -4,6 +4,7 @@ title:  "Notes from The Complete Guide to Rails Performance's Workshop"
 date: 2019-01-02 9:00:00
 categories: ["rails", "performance"]
 author: "etagwerker"
+published: false
 ---
 
 If you are interested in Ruby and Rails performance, you have definitely read articles
