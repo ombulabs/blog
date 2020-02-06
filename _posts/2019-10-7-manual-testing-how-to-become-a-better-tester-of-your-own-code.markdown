@@ -4,6 +4,7 @@ title:  "Manual Testing: How to become a better tester of your own code"
 date: 2019-10-7 15:00:00
 categories: ["software-development", "software-quality"]
 author: abizzinotto
+published: false
 ---
 
 Manual testing is a necessary part of software development and quality assurance. And although it's important to have a dedicated tester in your team, you as a developer can also help speed up QA, and thus the software development process, by becoming a better manual tester of your own code.
