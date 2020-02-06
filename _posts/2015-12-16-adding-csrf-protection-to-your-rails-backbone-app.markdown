@@ -4,6 +4,7 @@ title: "Adding Csrf-Protection to your Rails-Backbone App"
 date: 2015-12-16 03:55:00
 categories: ["rails", "backbone", "security"]
 author: "schmierkov"
+published: false
 ---
 
 When integrating [Backbone.js](http://backbonejs.org) in your [Rails](http://rubyonrails.org) App, you might face the problem of the inability to verify the CSRF-Token.
