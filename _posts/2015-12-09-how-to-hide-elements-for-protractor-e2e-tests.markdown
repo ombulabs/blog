@@ -4,6 +4,7 @@ title: "How to interact with hidden elements with Protractor"
 date: 2015-12-09 03:55:00
 categories: ["protractor"]
 author: "etagwerker"
+published: false
 ---
 
 The other day I was trying to interact with a hidden file input field:
