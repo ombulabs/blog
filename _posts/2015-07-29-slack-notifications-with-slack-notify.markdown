@@ -4,6 +4,7 @@ title: "Slack notifications with Slack-Notify gem"
 date: 2015-07-29 17:40:00
 categories: ["ruby"]
 author: "mauro-oto"
+published: false
 ---
 
 We have been using Slack at [OmbuLabs](https://www.ombulabs.com) for a while now
