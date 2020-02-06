@@ -4,6 +4,7 @@ title:  "Setup Monit notifications on Slack"
 date: 2017-11-15 09:45:00
 categories: ["monit", "slack"]
 author: "luciano"
+published: false
 ---
 
 [Monit](https://mmonit.com/monit/) is a powerful tool for monitoring processes on [Unix](https://en.wikipedia.org/wiki/Unix) systems and sometimes it can be very useful to receive notifications about a specific process from your server to your everyday tool, [Slack](https://slack.com/). This article will show you exactly how to do that.
