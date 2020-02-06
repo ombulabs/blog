@@ -4,6 +4,7 @@ title: "Submit Great Pull Requests"
 date: 2019-04-18 15:00:00
 categories: ["agile", "learning", "pull-requests"]
 author: "emily"
+published: false
 ---
 
 Pull Requests let developers tell other team members about changes they've made to a project repository. Once a pull request is created, team members can review the set of changes, discuss potential modifications and even push follow-up commits before the changes are merged into the repository. Therefore, it is important to make sure that your pull requests are easily understandable to the reviewers.
