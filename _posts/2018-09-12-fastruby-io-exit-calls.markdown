@@ -4,6 +4,7 @@ title:  "FastRuby.io: Exit Calls"
 date: 2018-09-12 11:10:00
 categories: ["continuous-learning"]
 author: "etagwerker"
+published: false
 ---
 
 At [Ombu Labs](https://www.ombulabs.com) we believe that if we are not learning from our mistakes we are
