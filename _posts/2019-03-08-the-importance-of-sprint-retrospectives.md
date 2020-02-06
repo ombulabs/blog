@@ -4,6 +4,7 @@ title: "The Importance of Sprint Retrospectives"
 date: 2019-03-08 15:00:00
 categories: ["agile", "project-management"]
 author: "emily"
+published: false
 ---
 
 Sprint Retrospectives are a crucial part of our project management strategy at [Ombu Labs](https://www.ombulabs.com). Because we are a remote and international team of software developers, we miss out on the “water-cooler” conversations and small talk that would normally occur between employees in a typical office environment.
