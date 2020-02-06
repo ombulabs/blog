@@ -4,6 +4,7 @@ title:  "Rails Girls: Growing as a Community"
 date: 2019-04-15 10:00:00
 categories: ["learning", "rails"]
 author: "luciano"
+published: false
 ---
 
 In a [previous article](https://www.ombulabs.com/blog/learning/rails/another-successful-rails-girls-event.html) we talked about one of the [Rails Girls](http://railsgirls.com) events that we sponsored and co-organized in 2018. Fast forward one year to our first event of 2019 at [A3](https://areatresworkplace.com), a new coworking space located in Buenos Aires, we were once again sponsors and volunteers at another successful Rails Girls event.
