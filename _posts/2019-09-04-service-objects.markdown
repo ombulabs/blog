@@ -4,6 +4,7 @@ title:  "Service Objects: beyond fat models and skinny controllers"
 date: 2019-09-04 12:00:00
 categories: ["rails"]
 author: "cleiviane"
+published: false
 ---
 
 Service Objects are a controversial idea for several different reasons: some developers like to use them, others like to use similar patterns, and some think that they are just unnecessary because they prefer fat models.  
