@@ -4,6 +4,7 @@ title: "The Landing Page MVP"
 date: 2016-04-05 11:03:00
 categories: ["lean-startup", "mvp"]
 author: "etagwerker"
+published: false
 ---
 
 There is no good reason why an **MVP** should take more than one month. If that happens, it means that the scope of the [minimum viable product](https://leanstack.com/minimum-viable-product/) wasn't small enough.
