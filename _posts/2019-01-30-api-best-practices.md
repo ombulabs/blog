@@ -4,6 +4,7 @@ title: "Often neglected API best practices"
 date: 2019-01-30 09:00:00
 categories: ["best-practices", "APIs"]
 author: "rdormer"
+published: false
 ---
 
 If you've been a web developer for any length of time at all these days, you've no doubt used at least a
