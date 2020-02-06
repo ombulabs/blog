@@ -4,6 +4,7 @@ title: "Hunting Down a Slow Rails Request"
 date: 2016-03-04 11:03:00
 categories: ["rails", "performance"]
 author: "mauro-oto"
+published: false
 ---
 
 Recently, we started using [Skylight](https://www.skylight.io) in production
