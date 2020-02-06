@@ -4,6 +4,7 @@ title:  "Announcing FastRuby.io"
 date: 2017-06-07 15:06:00
 categories: ["rails", "upgrades"]
 author: "etagwerker"
+published: false
 ---
 
 Today we are happy to announce the launch of our first productized service: [fastruby.io](https://fastruby.io) - Speedy Ruby on Rails Upgrades by Ombu Labs.
