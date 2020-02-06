@@ -4,6 +4,7 @@ title: "Implementing Stripe Connect in Rails: Part 1"
 date: 2019-02-28 10:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
+published: false
 ---
 
 In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same time allowing us to collect a fee from each transaction they receive.
