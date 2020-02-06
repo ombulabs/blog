@@ -4,6 +4,7 @@ title:  "Kickoff Calls for New Projects"
 date: 2018-11-27 11:00:00
 categories: ["agile", "continuous-learning"]
 author: "emily"
+published: false
 ---
 
 When starting a new software development project with a client, it is important to get started on the right foot. The way you communicate with a client at the beginning of a project can set the tone for how communication will be throughout the project.
