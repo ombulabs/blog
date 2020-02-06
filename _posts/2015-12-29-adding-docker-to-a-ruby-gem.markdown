@@ -4,6 +4,7 @@ title: "Adding Docker to a Ruby gem"
 date: 2015-12-29 13:55:00
 categories: ["docker", "rubygems", "open-source"]
 author: "etagwerker"
+published: false
 ---
 
 As a maintainer of a few Ruby gems, I have to decide what is accepted and what gets rejected into the gems. The other day someone submitted a [pull request](https://github.com/DatabaseCleaner/database_cleaner/pull/384) to add a Dockerfile to [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner)
