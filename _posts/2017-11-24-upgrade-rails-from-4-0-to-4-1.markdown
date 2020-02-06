@@ -5,6 +5,7 @@ date: 2017-12-06 16:31:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 canonical_url: true
+published: false
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
