@@ -4,6 +4,7 @@ title: "Quick and easy admin options"
 date: 2019-03-18 09:00:00
 categories: ["security", "gems", "rails"]
 author: "rdormer"
+published: false
 ---
 
 One of the first complications that most webapps of any complexity will run into is the need for privileged users who can do things that normal users can't or shouldn't be able to do. Before too long, you're headed towards writing your very own administrative interface. This is not only extra work, but can be tricky to do without compromising the security of the application you're administering. Most [Rails](http://rubyonrails.org) developers will be familiar with this story, and Rails being Rails, it turns out that there are a couple of good options for extending your existing applications with a pre-generated, customizable admin console.
