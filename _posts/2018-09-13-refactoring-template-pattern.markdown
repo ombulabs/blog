@@ -4,6 +4,7 @@ title:  "Refactoring with Design Patterns - The Template Pattern"
 date: 2018-09-17 16:18:00
 categories: ["code-refactor", "design-patterns"]
 author: "cleiviane"
+published: false
 ---
 
 In our last article of the [refactoring series](https://www.ombulabs.com/blog/tags/code-refactor) we saw how design patterns can be used to make our Ruby code beautiful and clean. Design patterns are a powerful tool for any developer and a familiarity with them will lead to better code by forcing a consideration of SOLID principles.
