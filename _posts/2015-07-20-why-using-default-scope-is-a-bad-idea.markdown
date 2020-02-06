@@ -4,6 +4,7 @@ title: "Why using default_scope is a bad idea"
 date: 2015-07-20 09:55:00
 categories: ["ruby", "rails", "best-practices"]
 author: "mauro-oto"
+published: false
 ---
 
 `default_scope` is a method provided by ActiveRecord, which allows you to set
