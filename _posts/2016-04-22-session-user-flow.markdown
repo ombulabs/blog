@@ -4,6 +4,7 @@ title: "Use session variables to optimize your user flow"
 date: 2016-04-22 8:37:00
 categories: ["ruby", "rails", "sessions"]
 author: "schmierkov"
+published: false
 ---
 
 Sessions provide you a nice little data storage feature where the application does not need to get the information directly from the database. So you do not have to persist data in your database and can easily store info about the user on the fly. This is a nice way to enhance the user experience on your page.
