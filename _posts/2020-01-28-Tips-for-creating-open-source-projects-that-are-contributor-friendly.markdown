@@ -43,7 +43,7 @@ New contributions are always appreciated no matter if they are a feature, bug fi
 
 The welcome bot will post a message when a new issue is created, a PR is opened or a PR is merged for a new contributor. This is a nice way to make a person contributing to your project for the first time feel welcome.
 
-This is an example of the welcome bot for our Skunk project
+This is an example of the welcome bot for our [Skunk](https://github.com/fastruby/skunk) project
 
 ![skunk welcome bot](https://i.imgur.com/JyqBXcs.png)
 
