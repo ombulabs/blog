@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tips For Creating Contributor Friendly Open Source Projects
-date: 2020-01-28 06:31:01
+date: 2020-02-07 14:30:00
 categories: [open-source]
 author: bronzdoc
 
