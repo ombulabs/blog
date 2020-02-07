@@ -42,7 +42,8 @@ New contributions are always appreciated no matter if they are a feature, bug fi
 The welcome bot will post a message when a new issue is created, a PR is opened or a PR is merged for a new contributor. This is a nice way to make a person contributing to your project for the first time feel welcome.
 
 This is an example of the welcome bot for our Skunk project
-[skunk welcome bot](https://i.imgur.com/JyqBXcs.png)
+
+![skunk welcome bot](https://i.imgur.com/JyqBXcs.png)
 
 # Code Reviews
 After a PR is submitted you would want to review it. Be objective but celebrate and encourage changes whenever you can, this will not only make the person changes welcome but it will encourage them to keep working on the PR if you request some changes.
