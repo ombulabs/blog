@@ -12,6 +12,8 @@ At Ombu Labs we are firm believers of open source. We use open source but also l
 We know that contributing to open source can be a difficult task so we have been looking for easier ways help to onboard new and past contributors.
 Here is a list of tips and tools that we believe that can help you make your open source project a more friendly space.
 
+<!--more-->
+
 # Documentation
 
 Having proper documentation for your project is key to make your project more friendly. Document the steps to setup the project, known issues and a guide on how to properly contribute to the project with a CONTRIBUTING.md or adding steps in your README.md.
