@@ -50,10 +50,9 @@ After a PR is submitted you would want to review it. Be objective but celebrate 
 
 # Communication
 Having a direct channel of communication with the users of your projects is a nice way to make them feel welcome.
-Depending on how big your projects is you could have a slack or an IRC channel for people wanting to contribute could directly ask open ended questions about howto solve a simple problem or any doubt they might have.
+Depending on how big your project is you could have a slack or an IRC channel for people wanting to contribute. That way people could directly ask open ended questions about how to solve a simple problem or any doubt they might have.
 
 
 # Conclusion
 
 Maintaining an open source project could be hard, but if you make your project a nice and welcoming space for other people to contribute it could make easier to maintain in the long run.
-
