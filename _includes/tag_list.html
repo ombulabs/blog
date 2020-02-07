@@ -1,4 +1,4 @@
-<div id="tags">
+<div id="tags" role="list">
   <h2 class="category-name">Listing all tags</h2>
     {%- for post in site.posts -%}
       {%- for category in post.categories -%}
@@ -12,7 +12,7 @@
 
     {%- assign list = tags | split: ';' | sort -%}
     {%- for category in list -%}
-        <h3 class="tag-name">
+        <h3 class="tag-name" role="listitem">
           <a href="{{ site.baseurl }}/tags/{{ category | replace: ' ','-' }}"
              title="Articles about {{ category | titleize | replace: '-',' ' }}">{{ category | titleize  | replace: '-',' ' }}</a>
         </h3>
