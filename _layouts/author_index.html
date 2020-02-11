@@ -6,7 +6,7 @@ layout: default
   <div class="category-tag">
     {%- assign author = site.authors[page.author] -%}
     <div class="category-name">
-      <h2>Articles by <span class="tag">{{ author.display_name }}</span></h2>
+      <h2 aria-label="Articles by {{ author.display_name }}">Articles by {{ author.display_name }}</h2>
     </div>
     <div class="category-description">
       {%- if author.twitter -%}
@@ -15,9 +15,13 @@ layout: default
       {%- endif -%}
     </div>
   </div>
+  <div role="list">
   {%- for post in site.posts -%}
     {%- if post.author == page.author or post.authors contains page.author -%}
+    <div role="listitem">
       {%- include post_excerpt.html -%}
+    </div>
     {%- endif -%}
   {%- endfor -%}
+  </div>
 </main>
