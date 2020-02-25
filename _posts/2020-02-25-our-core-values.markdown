@@ -58,7 +58,7 @@ thought-leaders in our industry. Opennes is key to our leadership. When starting
 a project, we should ask ourselves: "Is there any reason to make this a closed
 source project?"
 
-## Own Tech Debt
+## Continuous Improvement
 
 We are here to pay off technical debt and invest in our clients' assets. We will 
 always strive to leave legacy systems in better shape than when we  started 
@@ -66,7 +66,10 @@ working on them.
 
 This does not simply apply to code. It also applies to our clients' culture,
 processes, dependencies, code coverage, documentation, best practices, and 
-anything that will make our client's life easier in the long term. 
+anything that will make our client's life easier in the long term.
+
+We are here to learn from our mistakes. The only unforgivable mistake is to 
+not learn from our mistakes.
 
 # Onwards
 
