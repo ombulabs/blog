@@ -1,5 +1,7 @@
 # The Ombu Labs Blog
 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
 Blog for the [Ombu Labs team](https://www.ombulabs.com/#team), powered by [Jekyll](https://jekyllrb.com).
 
 This is included as an engine in the [https://github.com/ombulabs/ombulabs.com](https://github.com/ombulabs/ombulabs.com) application.
