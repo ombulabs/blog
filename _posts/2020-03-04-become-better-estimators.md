@@ -54,4 +54,4 @@ This feature also opens up some possibilities for the future.
 
 We now have a database of actual story points telling us what the complexity of each story for each Rails upgrade project we work on is. A future possibility is to use that data to suggest estimates when working on similar projects. This way, we save time while still giving the developer room to evaluate actual complexity based on project particularities.
 
-For more information about upgrading your Rails application, check out our ["Upgrade Rails Series"](https://www.ombulabs.com/blog/rails/upgrades/case-study/upgrading-a-monolith.html), a series of do-it-yourself guides to upgrading Rails.
+For more information about upgrading your Rails application, check out our ["Upgrade Rails Series"](https://www.fastruby.io/blog/tags/upgrades), a series of do-it-yourself guides to upgrading Rails.
