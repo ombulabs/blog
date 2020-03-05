@@ -31,7 +31,11 @@ Once both developers have inputted their estimates, the Scrum master can go in a
 
 There will always be some discrepancy between estimates. After all, there were two different people estimating. However, sometimes the discrepancy is too big. How do we handle that?
 
-As a remote team, the estimation process isn't as straight forward as [planning poker](https://www.agilealliance.org/glossary/poker/) done in a meeting. So once the Scrum master reviews the estimates, if there are any stories with estimates that are too far apart, we have a "reconciliation call". During this call, the developers get a chance to talk about the story / stories in question and reach closer estimates.
+As a remote team, the estimation process isn't as straight forward as [planning poker](https://www.agilealliance.org/glossary/poker/) done in a meeting. So once the Scrum master reviews the estimates, if there are any stories with estimates that are too far apart, we have a "reconciliation call". 
+
+The main purpose of the reconciliation call is to understand what caused the discrepancy. The developers get a chance to explain why they believe a story is so simple or so complex and have a discussion about it to explore what's under the "tip of the iceberg". Maybe it's a giant iceberg and someone was only looking at the tip. Maybe there is no iceberg but someone thought there would be.
+
+The purpose of this call is to reach closer estimates. There is no need to agree on a particular estimate though. The goal is to reduce the discrepancy, not eliminate it completely.
 
 
 # Looking Back
