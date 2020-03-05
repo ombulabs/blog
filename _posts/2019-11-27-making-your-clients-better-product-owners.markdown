@@ -2,6 +2,7 @@
 layout: post
 title: "Making Your Clients Better Product Owners"
 date: 2019-11-27 12:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["scrum", "agile"]
 author: "abizzinotto"
 ---

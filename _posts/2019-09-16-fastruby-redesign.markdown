@@ -2,6 +2,7 @@
 layout: post
 title: "The New Fastruby.io"
 date: 2019-09-16 14:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["fast-ruby", "design"]
 author: "emily"
 ---

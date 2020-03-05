@@ -2,6 +2,7 @@
 layout: post
 title:  "Setup Monit notifications on Slack"
 date: 2017-11-15 09:45:00
+reviewed: 2020-03-05 10:00:00
 categories: ["monit", "slack"]
 author: "luciano"
 ---

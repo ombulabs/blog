@@ -2,6 +2,7 @@
 layout: post
 title: "Trial and Error with Ruby Koans"
 date: 2018-01-24
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "learning"]
 author: "emily"
 ---

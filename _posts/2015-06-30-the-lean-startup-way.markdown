@@ -2,6 +2,7 @@
 layout: post
 title: "The Lean Startup Way"
 date: 2015-06-30 23:29:00
+reviewed: 2020-03-05 10:00:00
 categories: ["lean-startup"]
 author: etagwerker
 ---

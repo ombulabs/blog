@@ -2,6 +2,7 @@
 layout: post
 title: "DRY your tests"
 date: 2016-05-16 12:31:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "dry"]
 author: "etagwerker"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Adding Csrf-Protection to your Rails-Backbone App"
 date: 2015-12-16 03:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "backbone", "security"]
 author: "schmierkov"
 ---

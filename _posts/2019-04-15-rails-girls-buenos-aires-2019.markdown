@@ -2,6 +2,7 @@
 layout: post
 title:  "Rails Girls: Growing as a Community"
 date: 2019-04-15 10:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["learning", "rails"]
 author: "luciano"
 ---

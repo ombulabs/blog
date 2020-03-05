@@ -2,6 +2,7 @@
 layout: post
 title: "Set up and run Hubot without using Heroku"
 date: 2016-01-29 11:16:00
+reviewed: 2020-03-05 10:00:00
 categories: ["hubot", "linux"]
 author: "mauro-oto"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "The 7 Days Open Source Challenge"
 date: 2015-08-04 03:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["open-source"]
 author: "etagwerker"
 ---

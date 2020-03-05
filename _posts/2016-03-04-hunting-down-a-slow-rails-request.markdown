@@ -2,6 +2,7 @@
 layout: post
 title: "Hunting Down a Slow Rails Request"
 date: 2016-03-04 11:03:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "performance"]
 author: "mauro-oto"
 ---

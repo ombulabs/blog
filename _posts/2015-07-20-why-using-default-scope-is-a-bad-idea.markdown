@@ -2,6 +2,7 @@
 layout: post
 title: "Why using default_scope is a bad idea"
 date: 2015-07-20 09:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "rails", "best-practices"]
 author: "mauro-oto"
 ---

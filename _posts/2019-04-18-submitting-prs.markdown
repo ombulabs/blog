@@ -2,6 +2,7 @@
 layout: post
 title: "Submit Great Pull Requests"
 date: 2019-04-18 15:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["agile", "learning", "pull-requests"]
 author: "emily"
 ---

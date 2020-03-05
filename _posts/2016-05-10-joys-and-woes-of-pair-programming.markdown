@@ -2,6 +2,7 @@
 layout: post
 title: "The Joys and Woes of Pair Programming"
 date: 2016-05-12 14:37:00
+reviewed: 2020-03-05 10:00:00
 categories: ["agile", "pair-programming"]
 author: "etagwerker"
 ---
