@@ -9,7 +9,7 @@ author: abizzinotto
 
 At OmbuLabs, we strongly believe in continuous improvement. 
 
-As a Scrum team, before starting a sprint we estimate the complexity of the stories using the Fibonacci scale. But how do we become better at estimating stories? How do we know we're evolving as a team?
+As a Scrum team, before starting a sprint we estimate the complexity of the stories using the [Fibonacci scale](http://www.velocitycounts.com/2013/05/why-do-high-performing-scrum-teams-tend-to-use-story-point-estimation/). But how do we become better at estimating stories? How do we know we're evolving as a team?
 
 In this article I outline the process we are following to become better estimators.
 
