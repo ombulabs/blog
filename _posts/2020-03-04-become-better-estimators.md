@@ -17,7 +17,7 @@ In this article I outline the process we are following to become better estimato
 
 # The Projects
 
-At OmbuLabs we work on a number of different, challenging projects. We do, however, also work on very similar projects, namely, Rails upgrade projects. Therefore, we identified the critical path we need to follow on every Rails upgrade from version A to version B and used it to create a template we can follow whenever we work on a project of this nature.
+At OmbuLabs we work on a number of different, challenging projects. We do, however, also work on very similar projects, namely, [Rails upgrade projects](https://fastruby.io). Therefore, we identified the critical path we need to follow on every Rails upgrade from version A to version B and used it to create a template we can follow whenever we work on a project of this nature.
 
 # The Blind Estimation
 
