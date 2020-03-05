@@ -42,7 +42,7 @@ During our retrospectives, we now take some time to evaluate the stories worked 
 
 To organize that process, we added a feature to our internal tool that allows the Scrum master to enter Actual Story Points for each story. Once all stories have been reviewed and actual complexity has been established, we calculate the offset.
 
-That measure of how off we were will help guide us on the next project, as well as tell us, overtime, how we're progressing to become better estimators.
+That measure of how far off we were will help guide us on the next project, as well as tell us, overtime, how we're progressing to become better estimators.
 
 # The Possibilities
 
