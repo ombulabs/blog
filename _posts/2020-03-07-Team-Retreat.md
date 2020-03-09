@@ -66,6 +66,6 @@ In order to ensure things went smoothly, we used the [Contributor Covenant](http
 
 # Feedback
 
-After the retreat, it is good to get feedback. 
+After the retreat, it is good to get feedback. This was our first team retrat, so there is definitely room for improvement.
 
-We shared a feedback form with the whole team giving people the chance to talk about our choice of destination, the activities and the experience itself. What was amazing? What could we do better? This feedback will help us plan better retreats and grow closer as a company
+We shared a feedback form with the whole team giving people the chance to talk about our choice of destination, the activities and the experience itself. What was amazing? What could we do better? This feedback will help us plan better retreats and grow closer as a company.
