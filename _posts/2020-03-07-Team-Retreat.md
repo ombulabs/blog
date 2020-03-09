@@ -39,7 +39,7 @@ We like to open our retreats with a talk from our CEO on the company's vision an
 
 It is also important to plan your agenda carefully. A good way to get to great topics is to ask yourself "what challenges are we facing right now? And, of these, which ones impact us the most?". In a team retreat we have the opportunity to bring all heads together in the same room. It is a unique opportunity to foster discussion face-to-face, without the reservations we all have when interacting online. Therefore, make it matter.
 
-At our team retreat, we talked about company culture, discussed our mentorship programme, and gathered ideas to make our systems and processes better. 
+At our team retreat, we talked about company culture, discussed our mentorship program, and gathered ideas to improve our systems and processes. 
 
 However, a good agenda must also include fun activities. A system we found effective was to intercalate presentations and discussions with fun team activities. This way, the day doesn't get boring and we can foster better discussions.
 
