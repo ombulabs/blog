@@ -54,6 +54,8 @@ Some activities we did include:
 - Ask Me Anything
 - Two Truths and a Lie
 
+![Team Retreat Activity](assets/images/team-retreat-activities.jpg)
+
 There is a great deal of flexibility with activities and lots of good games you can play with your team. Take advantage of it and choose games that will bring your team together.
 
 # Rules
