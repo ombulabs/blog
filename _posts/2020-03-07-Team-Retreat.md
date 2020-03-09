@@ -62,7 +62,17 @@ There is a great deal of flexibility with activities and lots of good games you 
 
 It is not all fun and games. It is important to understand the whole team will be together in one location for a company event. Even though we all want to have fun, it is important to keep it professional and make sure nobody is made uncomfortable. 
 
-In order to ensure things went smoothly, we used the [Contributor Covenant](https://www.contributor-covenant.org/) for inspiration to come up with a Code of Conduct that was shared with all team members. This way, we established procedures for team members to follow if they felt uncomfortable for any reason.
+In order to ensure things went smoothly, we used the [Contributor Covenant](https://www.contributor-covenant.org/) for inspiration to come up with a Code of Conduct that was shared with all teammembers. This way, we established procedures for team members to follow if they felt uncomfortable for any reason.
+
+# Time Off
+
+We planned the retreat to include some time off during the week so teammembers could interact in an unstructured environment as well as enjoy the location and engage in activities that interest them.
+
+We were away for a week. On Monday, we were all travelling in, so we didn't include any planned activities. On Tuesday, Wednesday and Thursday we worked on client projects during the morning and company activities in the afternoon. We left evenings out so teammembers could enjoy the resort and interact.
+
+Finally, we took Friday off. This gave everyone a chance to explore, engage on a more personal level and enjoy external activities of interest. 
+
+We found including time off during the retreat to be very positive. It allowed us to get to know each other on a personal level, foster better relationships and we also learnt a lot about each other's taste in music.
 
 # Feedback
 
