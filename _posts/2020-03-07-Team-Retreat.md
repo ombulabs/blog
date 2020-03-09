@@ -27,7 +27,7 @@ Therefore, it was definitely interesting for us to bring the team together and g
 
 When putting together a team retreat, it is important to plan it well. What are the best dates? How about a location? Team members will be travelling from their home countries to the retreat destination to spend a few days with the team, it is important to take distance into consideration.
 
-Additionally, it is important to plan for visas. What if a team mate's visa is denied? What if the process takes too long? One lesson we learnt is it is always better to plan ahead. At OmbuLabs, our goal now is to announce the retreat dates and destination a year in advance. This way, the team has a chance to get all necessary documentation sorted.
+Additionally, it is important to plan for visas. What if a teammate's Visa is denied? What if the process takes too long? One lesson we learnt is it is always better to plan ahead. At OmbuLabs, our goal now is to announce the retreat dates and destination a year in advance. This way, the team has a chance to get all necessary documentation sorted.
 
 It is also important to have a retreat point of contact. Someone who will be in charge of planning and can answer questions regarding flights, accommodation, schedule, documentation, etc. This way, team members aren't lost seeking information.
 
