@@ -60,7 +60,7 @@ There is a great deal of flexibility with activities and lots of good games you 
 
 It is not all fun and games. It is important to understand the whole team will be together in one location for a company event. Even though we all want to have fun, it is important to keep it professional and make sure nobody is made uncomfortable. 
 
-In order to ensure things went smoothly, we came up with a Code of Conduct that was shared with all team members. This way, we established procedures for team members to follow if they felt uncomfortable for any reason.
+In order to ensure things went smoothly, we used the [Contributor Covenant](https://www.contributor-covenant.org/) for inspiration to come up with a Code of Conduct that was shared with all team members. This way, we established procedures for team members to follow if they felt uncomfortable for any reason.
 
 # Feedback
 
