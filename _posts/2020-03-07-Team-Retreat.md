@@ -19,7 +19,7 @@ So how can we bring our team close together? How can we build that team spirit t
 
 # The Idea
 
-A team retreat is supposed to bring the team together. We are a distributed team, with team mates located in 4 different countries. As such, while some of our team mates are located in the same country / city and have a chance to meet in person every once in a while, folks in different countries only communicate online.
+A team retreat is supposed to bring the team together. We are a distributed team, with teammates located in four different countries. As such, while some of our teammates are located in the same country/city and have a chance to meet in person every once in a while, folks in different countries only communicate online.
 
 Therefore, it was definitely interesting for us to bring the team together and give everyone an opportunity to interact. After all, we spend a great part of our day in touch. We might as well put a "real world" face to the names.
 
