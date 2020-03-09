@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Team Retreat: How They Can It Help Remote Teams "Click"
+title: Team Retreat: How They Can Help Remote Teams "Click"
 date: 2020-03-12 14:30:00
 categories: [agile]
 author: abizzinotto
