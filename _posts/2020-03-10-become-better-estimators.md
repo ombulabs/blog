@@ -12,7 +12,7 @@ As a Scrum team, before starting a sprint we estimate the complexity of the stor
 
 In this article I outline the process we are following to become better estimators.
 
-<!--More-->
+<!--more-->
 
 # The Projects
 
