@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Some Resources and Advice For Junior Developers"
-date: 2020-03-02 14:30:00
-categories: []
+date: 2020-03-12 14:30:00
+categories: ["learning",  "software-development"]
 author: rdormer
 
 ---
@@ -12,17 +12,20 @@ author: rdormer
 One of the first things that a journeyman programmer will have to
 learn when they transition from full time student to working developer
 is that things in the real world are *never* as cut and dry as their
-classes may have made it seem.  At the end of the day, software is not
+classes may have made it seem. At the end of the day, software is not
 written because we love building castles of logic in the sky, it's
-written to make money.  That might seem like a trite observation, but
+written to make money. That might seem like a trite observation, but
 it explains almost everything you observe as a working developer.
+
+<!--more-->
+
 Because perfection isn't profitable, real world applications are
 developed under less than ideal circumstances, often under intense
-pressure, and with inevitable compromises.  Large applications sprawl,
+pressure, and with inevitable compromises. Large applications sprawl,
 get messy, and develop stagnant corners and scary basements.
 Questionable or just plain puzzling decisions are made by developers
 without explanation, justification, or documentation by developers who
-then leave the company, never to be seen or heard from again.  Most
+then leave the company, never to be seen or heard from again. Most
 junior developers are scared of making mistakes - imagine their
 surprise when they find themselves working on something that was
 written by another junior developer who did, in fact, make some major
@@ -30,13 +33,14 @@ mistakes - mistakes that are now their responsibility to fix.
 
 Some recommended reads at this stage:
 
-[The Number One Trait of a Great
+
+- [The Number One Trait of a Great
 Developer](https://www.pixelstech.net/article/1320490159-The-Number-One-Trait-of-a-Great-Developer)
-[Every app has a scary
+- [Every app has a scary
 basement](https://miksovsky.blogs.com/flowstate/2010/09/every-app-has-a-scary-basement.html)
-[A Taxonomy for "Bad Code
+- [A Taxonomy for "Bad Code
 Smells"](http://mikamantyla.eu/BadCodeSmellsTaxonomy.html)
-[The Law of Leaky
+- [The Law of Leaky
 Abstractions](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
 
@@ -73,11 +77,11 @@ process.
 
 Some more recommended reads:
 
-[How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
-[Technical Debt Isn't Just
+- [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+- [Technical Debt Isn't Just
 Technical](https://corgibytes.com/blog/2020/02/12/technical-debt-isnt-just-technical/)
 (communication solves a lot of problems up front!)
-[The Developer’s Edge: How To Become A Senior
+- [The Developer’s Edge: How To Become A Senior
 Developer](https://medium.com/zerotomastery/developers-edge-how-to-become-a-senior-developer-f1ec1738cf45)
  (notice how few of these skills are technical!)
 
@@ -88,7 +92,7 @@ are plenty of developers who have a bit of an ego problem. Aside from
 the obvious problems that this can cause with teamwork and
 professional behavior, losing perspective in this way can lead to
 skills starting to stagnate. When you take on a job as a developer,
-wether you realize it or not, you're implicitly taking on another
+whether you realize it or not, you're implicitly taking on another
 responsibility - the responsibility of always being a student. The
 biggest difference between a newbie developer and a seasoned veteran
 is that the senior developer *has been a student for a lot longer.*
@@ -104,14 +108,14 @@ personalities, stand out by staying humble.
 
 Some reminders to read over time:
 
-[The Greatest Developer Fallacy Or The Wisest Words You’ll Ever
+- [The Greatest Developer Fallacy Or The Wisest Words You’ll Ever
 Hear?](https://skorks.com/2011/02/the-greatest-developer-fallacy-or-the-wisest-words-youll-ever-hear/)
-[The Ten Commandments of Egoless
+- [The Ten Commandments of Egoless
 Programming](https://blog.codinghorror.com/the-ten-commandments-of-egoless-programming/)
-[Give it five minutes](https://signalvnoise.com/posts/3124-give-it-five-minutes)
-[Are you a 10x Programmer, or Just a
+- [Give it five minutes](https://signalvnoise.com/posts/3124-give-it-five-minutes)
+- [Are you a 10x Programmer, or Just a
 Jerk?](https://thenewstack.io/10x-programmer-just-jerk/)
-[Beautiful Code](https://alarmingdevelopment.org/?p=79)
-[You're a Bad Programmer. Embrace
+- [Beautiful Code](https://alarmingdevelopment.org/?p=79)
+- [You're a Bad Programmer. Embrace
 It.](https://dzone.com/articles/youre-bad-programmer-embrace)
-[Teach Yourself Programming in Ten Years](http://www.norvig.com/21-days.html)
+- [Teach Yourself Programming in Ten Years](http://www.norvig.com/21-days.html)
