@@ -1,13 +1,12 @@
 ---
 layout: post
 title: Using Actual Story Points to Become Better Estimators
-date: 2020-03-10 14:30:00
+date: 2020-03-10 09:30:00
 categories: [agile, scrum]
 author: abizzinotto
-
 ---
 
-At OmbuLabs, we strongly believe in continuous improvement. 
+At OmbuLabs, we strongly believe in continuous improvement.
 
 As a Scrum team, before starting a sprint we estimate the complexity of the stories using the [Fibonacci scale](http://www.velocitycounts.com/2013/05/why-do-high-performing-scrum-teams-tend-to-use-story-point-estimation/). But how do we become better at estimating stories? How do we know we're evolving as a team?
 
@@ -21,7 +20,7 @@ At OmbuLabs we work on a number of different, challenging projects. We do, howev
 
 # The Blind Estimation
 
-Once we have a project in our hands, we turn the steps in our Rails upgrade template into stories. Since we are a remote team, we developed an internal tool to facilitate the blind estimation process. Once the stories are created, two developers add their estimates for each story. 
+Once we have a project in our hands, we turn the steps in our Rails upgrade template into stories. Since we are a remote team, we developed an internal tool to facilitate the blind estimation process. Once the stories are created, two developers add their estimates for each story.
 
 To preserve the blind nature of the estimation, the developer estimating can only see the page to input their estimates. They cannot access anyone else's estimates.
 
@@ -31,12 +30,11 @@ Once both developers have inputted their estimates, the Scrum master can go in a
 
 There will always be some discrepancy between estimates. After all, there were two different people estimating. However, sometimes the discrepancy is too big. How do we handle that?
 
-As a remote team, the estimation process isn't as straight forward as [planning poker](https://www.agilealliance.org/glossary/poker/) done in a meeting. So once the Scrum master reviews the estimates, if there are any stories with estimates that are too far apart, we have a "reconciliation call". 
+As a remote team, the estimation process isn't as straight forward as [planning poker](https://www.agilealliance.org/glossary/poker/) done in a meeting. So once the Scrum master reviews the estimates, if there are any stories with estimates that are too far apart, we have a "reconciliation call".
 
 The main purpose of the reconciliation call is to understand what caused the discrepancy. The developers get a chance to explain why they believe a story is so simple or so complex and have a discussion about it to explore what's under the "tip of the iceberg". Maybe it's a giant iceberg and someone was only looking at the tip. Maybe there is no iceberg but someone thought there would be.
 
 The purpose of this call is to reach closer estimates. There is no need to agree on a particular estimate though. The goal is to reduce the discrepancy, not eliminate it completely.
-
 
 # Looking Back
 
