@@ -70,7 +70,7 @@ In order to ensure things went smoothly, we used the [Contributor Covenant](http
 
 We planned the retreat to include some time off during the week so team members could interact in an unstructured environment as well as enjoy the location and engage in activities that interest them.
 
-We were away for a week. On Monday, we were all travelling in, so we didn't include any planned activities. On Tuesday, Wednesday and Thursday we worked on client projects during the morning and company activities in the afternoon. We left evenings out so teammembers could enjoy the resort and interact.
+We were away for a week. On Monday, we were all travelling in, so we didn't include any planned activities. On Tuesday, Wednesday and Thursday we worked on client projects during the morning and company activities in the afternoon. We left evenings out so teammates could enjoy the resort and interact.
 
 Finally, we took Friday off. This gave everyone a chance to explore, engage on a more personal level and enjoy external activities of interest. 
 
