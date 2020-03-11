@@ -78,6 +78,6 @@ We found including time off during the retreat to be very positive. It allowed u
 
 # Feedback
 
-After the retreat, it is good to get feedback. This was our first team retrat, so there is definitely room for improvement.
+After the retreat, it is a good idea to get feedback. This was our first team retreat, so there is definitely room for improvement.
 
 We shared a feedback form with the whole team giving people the chance to talk about our choice of destination, the activities and the experience itself. What was amazing? What could we do better? This feedback will help us plan better retreats and grow closer as a company.
