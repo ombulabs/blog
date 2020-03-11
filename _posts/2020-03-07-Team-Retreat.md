@@ -15,6 +15,8 @@ There are several pieces of software that aim to facilitate communication in a r
 
 So how can we bring our team close together? How can we build that team spirit that comes from seeing every one and talking about our casual, social lives? Well, this month we had a team retreat. And it was great.
 
+![Team Retreat Official](assets/images/team_retreat/team-retreat-official.jpg)
+
 <!--more-->
 
 # The Idea
@@ -54,7 +56,7 @@ Some activities we did include:
 - Ask Me Anything
 - Two Truths and a Lie
 
-![Team Retreat Activity](assets/images/team-retreat-activities.jpg)
+![Team Retreat Activity](assets/images/team_retreat/team-retreat-activities.jpg)
 
 There is a great deal of flexibility with activities and lots of good games you can play with your team. Take advantage of it and choose games that will bring your team together.
 
