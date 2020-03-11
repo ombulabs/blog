@@ -74,7 +74,7 @@ We were away for a week. On Monday, we were all travelling in, so we didn't incl
 
 Finally, we took Friday off. This gave everyone a chance to explore, engage on a more personal level and enjoy external activities of interest. 
 
-We found including time off during the retreat to be very positive. It allowed us to get to know each other on a personal level, foster better relationships and we also learnt a lot about each other's taste in music.
+We found including time off during the retreat to be very positive. It allowed us to get to know each other on a personal level, foster better relationships and we also learned a lot about each other's background and taste in music.
 
 # Feedback
 
