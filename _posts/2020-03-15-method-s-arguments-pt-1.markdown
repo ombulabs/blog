@@ -18,7 +18,7 @@ But first, we need to define the glosary:
 
 Both methods and functions serve the same purpose: encapsulate a piece of code to reuse it with ease. And some times we use them as sinonyms, but there's a conceptual difference:
 
-- Functions should should return a result based only on the input, functions shouldn't depend on or modify the state of something that's not in the given inputs.
+- Functions return a result based only on the input, functions shouldn't depend on or modify the state of something that's not in the given inputs.
 - Methods are always executed in the context of an object, so we can call a method with no arguments but we always have access to the method's state and we can modify it.
 
 In Ruby, where everything is an object, we can never have real functions but we can have methods that won't use or modify the object's state if we want to have something similar.
@@ -28,10 +28,12 @@ In Ruby, where everything is an object, we can never have real functions but we 
 Another thing that's worth to differenciate is the concept of arguments and parameters. When we define a method, the parameters are part of the definition, the parameters are the variables that will contain the values that we use when calling that method. Arguments are the actual values that we use when we call a method. So, in this code:
 
 ```ruby
-def my_method(foo) # foo is a parameter when defining the method
+def my_method(foo)
+  # foo is a parameter when defining the method
 end
 
-my_method("bar") # "baz" is the argument we use when calling the method
+my_method("bar")
+# "baz" is the argument we use when calling the method
 ```
 
 Most of the times I'll use the word "arguments" for simplicity, since a method defines the parameters and accepts arguments.
@@ -72,9 +74,13 @@ puts other_circle.area
 # => 50.24
 ```
 
-# Positional arguments (required)
+# Positional arguments
 
-This type of arguments get that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments. Let's start with the required ones:
+This type of arguments get that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments.
+
+# Required positional arguments
+
+This positional arguments are required when calling a method, it's not that it's required to used them when defining the method (you can have no arguments, only optionals, etc). If the method defines required parameters you have to provide an argument for each position.
 
 ```ruby
 def foo(arg1)
@@ -91,14 +97,15 @@ foo
 We can have as many as we want:
 
 ```ruby
-def foo(arg1, arg2, arg3, arg4) # and more and more...
+def foo(arg1, arg2, arg3, arg4)
+# and more and more...
 ```
 
 > Note that methods with too many arguments are a sign of a bad design since the method is probably doing too many things!
 
-# Positional arguments (optional)
+# Optional positional arguments
 
-Some times we may want to allow the user to provide more input but not required them to do so. For that we can use optional arguments for which we define a default value in case the user didn't specify one. This is particularly usefull when we want to have some default behavior for our method but give the user the option to modify that, if we just hardcode the default value inside the method we wouldn't have this flexibility.
+Some times we may want to allow the user to provide more input but not require them to do so. For that, we can use optional arguments for which we define a default value in case the user didn't specify one. This is particularly usefull when we want to have some default behavior for our method but give the user the option to modify that, if we just hardcode the default value inside the method we wouldn't have this flexibility.
 
 ```ruby
 def foo(arg1 = 'default value')
@@ -116,7 +123,7 @@ We can have as many as we want, just like the required parameters.
 
 # Combining required and optional positional arguments
 
-Now we can combine both required and positional arguments:
+Now we can combine both required and positional arguments in one method definition:
 
 ```ruby
 def foo(arg1, arg2 = 'default value')
@@ -133,12 +140,13 @@ foo(1,2)
 #    arg2 is: 2
 ```
 
-Usually, when we mix both types of arguments, we put the required arguments first and then optional arguments. Ruby allows as to do weird things like:
+Usually, when we mix both types of arguments, we put the required arguments first and then the optional ones. But Ruby allows as to do weird things like:
 
 ```ruby
-def foo(arg1, arg2 = 'default value2', arg3)
+def foo(arg1, arg2 = 'default value', arg3)
   puts "arg1 is: #{arg1.inspect}"
   puts "arg2 is: #{arg2.inspect}"
+  puts "arg3 is: #{arg3.inspect}"
 end
 ```
 
@@ -152,14 +160,14 @@ foo(1, 2, 3)
 
 foo(1,2)
 # => arg1 is: 1
-#    arg2 is: default value2
+#    arg2 is: default value
 #    arg3 is: 2
 ```
 
-Notice that, on the second call, the second argument ends up at arg3. My first thought was that ruby first assigned the required arguments and then the optionals, but that's not the case, check this even more confusing with the next example:
+Notice that, on the second call, the second argument ends up at **arg3**. My first thought was that ruby first assigned the required arguments and then the optionals, but that's not the case, check this even more confusing example:
 
 ```ruby
-def foo(arg1, arg2 = 'default value2', arg3 = 'default value3', arg4)
+def foo(arg1, arg2 = 'default value X', arg3 = 'default value Y', arg4)
   puts "arg1 is: #{arg1.inspect}"
   puts "arg2 is: #{arg2.inspect}"
   puts "arg3 is: #{arg3.inspect}"
@@ -175,13 +183,13 @@ arg4 is: 4
 foo(1, 2, 3)
 arg1 is: 1
 arg2 is: 2
-arg3 is: "default value3"
+arg3 is: "default value Y"
 arg4 is: 3
 
 foo(1, 2)
 arg1 is: 1
-arg2 is: "default value2"
-arg3 is: "default value3"
+arg2 is: "default value X"
+arg3 is: "default value Y"
 arg4 is: 2
 ```
 
@@ -193,7 +201,7 @@ What Ruby seems to do is:
 
 > I would recommend to avoid this combination unless it's something with a really specific requirement since it's not too intuitive and it's hard to follow.
 
-Having optional arguments not grouped will rise an error
+Having optional arguments not grouped will rise an error:
 
 ```ruby
 def foo(arg1, arg2 = 'default value2', arg3, arg4 = 'default value4')
@@ -238,7 +246,7 @@ foo(2)
 #    arg2 is: 4
 ```
 
-The only requirement is that the arguments used in the default value was assigned previously, this won't work:
+The only requirement is that the arguments used in the default value was previously assigned, this won't work:
 
 ```ruby
 def foo(arg1 = arg2 * 2, arg2 = 1)
@@ -250,7 +258,7 @@ foo
 # NameError (undefined local variable or method `arg2' for main:Object)
 ```
 
-Also, we don't need to have simple operations like that for the default value, we can asign a function that will be called when assigning the values:
+Also, we don't need to have simple operations like that for the default value, we can assign a function that will be called when assigning the values:
 
 ```ruby
 def two_times(x)
@@ -280,7 +288,7 @@ foo(5, 6)
 This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments:
 
 ```ruby
-def foo(*args) # we use this special syntax with the * at the beginning
+def foo(*args) # we use this special syntax with the * (splat operator) at the beginning of the paremeter
   puts "args is: #{args.inspect}"
 end
 
@@ -355,6 +363,10 @@ foo(1, 2, 3, 4)
 #    args in bar is: [3, 4]
 ```
 
+> This special parameter must always be used after the other positional arguments.
+
 # Conclusion
 
-All this options gives us some flexibility but the order being that rigid also forces us to remember and respect the order and also remember what should be on each position. In the next post of the series we'll talk about keyword arguments that allows us to set arguments in any order.
+All these options gives us some flexibility, but the order being that rigid also forces us to remember and respect the order and also remember what does each position is, which really limits us.
+
+In the next post of this series we'll talk about keyword arguments that allows us to set arguments in any order, and on the next one we'll talk about the special block argument to inject code, some extra features like array desconstruction parameters and partially applied arguments to generate other methods.
