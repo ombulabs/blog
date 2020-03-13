@@ -10,7 +10,7 @@ Ruby is an object oriented language where everything is an object (even methods 
 
 Ruby provides a lot of options to pass arguments to our methods, so we'll make this topic a series so it's not too long. We'll split the options in different categories and then break down everything with some examples and/or use cases.
 
-But first, we need to define the glosary:
+But first, we need to define the glossary:
 
 <!--more-->
 
@@ -25,7 +25,7 @@ In Ruby, where everything is an object, we can never have real functions but we 
 
 # Arguments Vs. Parameters
 
-Another thing that's worth to differenciate is the concept of arguments and parameters. When we define a method, the parameters are part of the definition, the parameters are the variables that will contain the values that we use when calling that method. Arguments are the actual values that we use when we call a method. So, in this code:
+Another thing that's worth differentiating is the concept of arguments and parameters. When we define a method, the parameters are part of the definition, the parameters are the variables that will contain the values that we use when calling that method. Arguments are the actual values that we use when we call a method. So, in this code:
 
 ```ruby
 def my_method(foo)
@@ -33,7 +33,7 @@ def my_method(foo)
 end
 
 my_method("bar")
-# "baz" is the argument we use when calling the method
+# "bar" is the argument we use when calling the method
 ```
 
 Most of the times I'll use the word "arguments" for simplicity, since a method defines the parameters and accepts arguments.
@@ -76,11 +76,11 @@ puts other_circle.area
 
 # Positional arguments
 
-This type of arguments get that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments.
+This type of argument gets that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments.
 
 # Required positional arguments
 
-This positional arguments are required when calling a method, it's not that it's required to used them when defining the method (you can have no arguments, only optionals, etc). If the method defines required parameters you have to provide an argument for each position.
+These positional arguments are required when calling a method, it's not that it's required to use them when defining the method (you can have no arguments, only optionals, etc). If the method defines required parameters you have to provide an argument for each position.
 
 ```ruby
 def foo(arg1)
@@ -101,11 +101,11 @@ def foo(arg1, arg2, arg3, arg4)
 # and more and more...
 ```
 
-> Note that methods with too many arguments are a sign of a bad design since the method is probably doing too many things!
+> Note that methods with too many arguments are a sign of bad design since the method is probably doing too many things!
 
 # Optional positional arguments
 
-Some times we may want to allow the user to provide more input but not require them to do so. For that, we can use optional arguments for which we define a default value in case the user didn't specify one. This is particularly usefull when we want to have some default behavior for our method but give the user the option to modify that, if we just hardcode the default value inside the method we wouldn't have this flexibility.
+Sometimes we may want to allow the user to provide more input but not require them to do so. For that, we can use optional arguments for which we define a default value in case the user doesn't specify one. This is particularly useful when we want to have some default behavior for our method but give the user the option to modify that. If we just hardcoded the default value inside the method we wouldn't have this flexibility.
 
 ```ruby
 def foo(arg1 = 'default value')
@@ -140,7 +140,7 @@ foo(1,2)
 #    arg2 is: 2
 ```
 
-Usually, when we mix both types of arguments, we put the required arguments first and then the optional ones. But Ruby allows as to do weird things like:
+Usually, when we mix both types of arguments, we put the required arguments first and then the optional ones. But Ruby allows us to do weird things like:
 
 ```ruby
 def foo(arg1, arg2 = 'default value', arg3)
@@ -164,7 +164,7 @@ foo(1,2)
 #    arg3 is: 2
 ```
 
-Notice that, on the second call, the second argument ends up at **arg3**. My first thought was that ruby first assigned the required arguments and then the optionals, but that's not the case, check this even more confusing example:
+Notice that, on the second call, the second argument ends up at **arg3**. My first thought was that ruby first assigned the required arguments and then the optionals, but that's not the case. Check out this even more confusing example:
 
 ```ruby
 def foo(arg1, arg2 = 'default value X', arg3 = 'default value Y', arg4)
@@ -194,14 +194,14 @@ arg4 is: 2
 ```
 
 What Ruby seems to do is:
-- assign left most arguments to the first parameters
-- assign right most arguments to the last parameters
-- if not enough arguments, rise an error
+- assign leftmost arguments to the first parameters
+- assign rightmost arguments to the last parameters
+- if there are not enough arguments, raise an error
 - if there are unused arguments, assign them to the optional arguments in order from left to right
 
-> I would recommend to avoid this combination unless it's something with a really specific requirement since it's not too intuitive and it's hard to follow.
+> I would recommend avoiding this combination unless it's something with a really specific requirement since it's not too intuitive and it's hard to follow.
 
-Having optional arguments not grouped will rise an error:
+Having optional arguments not grouped will raise an error:
 
 ```ruby
 def foo(arg1, arg2 = 'default value2', arg3, arg4 = 'default value4')
@@ -246,7 +246,7 @@ foo(2)
 #    arg2 is: 4
 ```
 
-The only requirement is that the arguments used in the default value was previously assigned, this won't work:
+The only requirement is that the arguments used in the default value were previously assigned, this won't work:
 
 ```ruby
 def foo(arg1 = arg2 * 2, arg2 = 1)
@@ -330,7 +330,7 @@ foo(1)
 #    args is: []
 ```
 
-Notice that "args" is always an array, you usually deconstruct the array or us it as is as an array or to call another method:
+Notice that "args" is always an array. You usually deconstruct the array or use it as is as an array or to call another method:
 
 ```ruby
 def bar(arg1, *args)
@@ -348,8 +348,9 @@ def foo(arg1, *args)
   puts "dec2 is: #{dec2.inspect}"
   puts "rest is: #{rest.inspect}"
 
-  # we need the * again so ruby deconstructs the array in different
-  # if we don't do this, args would be an array assigned to arg1
+  # we need the * (splat operator) again so ruby deconstructs the array in different arguments
+  # if we don't do this, args would be an array assigned to arg1 in bar
+  # we'll talk about this with more details on another post
   bar(*args)
 end
 
@@ -367,6 +368,6 @@ foo(1, 2, 3, 4)
 
 # Conclusion
 
-All these options gives us some flexibility, but the order being that rigid also forces us to remember and respect the order and also remember what does each position is, which really limits us.
+All these options gives us some flexibility, but the order being that rigid also forces us to remember and respect the order and also remember what each position is, which really limits us.
 
-In the next post of this series we'll talk about keyword arguments that allows us to set arguments in any order, and on the next one we'll talk about the special block argument to inject code, some extra features like array desconstruction parameters and partially applied arguments to generate other methods.
+In the next post of this series we'll talk about keyword arguments that allow us to set arguments in any order, and on the next one we'll talk about the special block argument to inject code, some extra features like array deconstruction parameters and partially applied arguments to generate other methods.
