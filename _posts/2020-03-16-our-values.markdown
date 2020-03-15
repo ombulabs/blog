@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Our Core Values 
-date: 2020-03-16 14:30:00
+date: 2020-03-14 14:30:00
 categories: ["values"]
 author: etagwerker
 
@@ -125,6 +125,19 @@ call to figure out what went wrong and what could be improved moving forward.
 These meetings are not a witch hunt, they are a safe space for us to share our 
 experience, thoughts, and feelings. By following the takeaways discovered in 
 these meetings, we will avoid making the same mistakes over and over again.
+
+## Fun
+
+If our Slack conversations are all about work, there is something we are doing 
+wrong. We will always try to have fun and think of some our channels as the 
+"watercooler" for our remote team (For example: [https://github.com/ombulabs/blog/pull/404#pullrequestreview-371545098](https://github.com/ombulabs/blog/pull/404#pullrequestreview-371545098))
+
+We will strive to do a one-week team retreat every year. This will give us the 
+opportunity to connect on a different level. Team retreats will combine a bunch 
+of activities: leadership talks; fun activities; games; lunches; dinners; group 
+discussions; meme studies; and time off to have fun!
+
+<img src="/blog/assets/images/ombulabs-at-punta-cana.jpg" alt="Our team at Punta Cana's team retreat (2020)" class="full-img">
 
 # Onwards
 
