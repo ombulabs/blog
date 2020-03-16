@@ -8,9 +8,7 @@ author: arieljuod
 
 Ruby is an object oriented language where everything is an object (even methods are objects of the class Method!), so everything we need to do is done by calling methods on objects. That also means that methods have to provide a lot of flexibility because they are used everywhere.
 
-Ruby provides a lot of options to pass arguments to our methods, so we'll make this topic a series so it's not too long. We'll split the options in different categories and then break down everything with some examples and/or use cases.
-
-But first, we need to define the glossary:
+Ruby provides a lot of options to pass arguments to our methods, so we'll make this topic a series so it's not too long. We'll split the options into different categories and then break down everything with some examples and/or use cases.
 
 <!--more-->
 
@@ -285,13 +283,12 @@ foo(5, 6)
 
 # Variable arguments
 
-This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments:
+This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments. For this we use the splat operator (*) when defining the parameter.
 
 ```ruby
 def foo(*args) # we use this special syntax with the * (splat operator) at the beginning of the paremeter
   puts "args is: #{args.inspect}"
 end
-
 
 foo(1)
 # => args is: [1]
@@ -299,6 +296,8 @@ foo(1)
 foo(1,2)
 # => args is: [1, 2]
 ```
+
+> The parameter name doesn't have to be **args**, the required syntax is the * operator
 
 You can combine this with required and optional arguments too:
 
@@ -330,7 +329,7 @@ foo(1)
 #    args is: []
 ```
 
-Notice that "args" is always an array. You usually deconstruct the array or use it as is as an array or to call another method:
+Notice that **args** is always an array. You usually deconstruct the array or use it as is as an array or to call another method:
 
 ```ruby
 def bar(arg1, *args)
