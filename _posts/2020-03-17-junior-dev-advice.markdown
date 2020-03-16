@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Some Resources and Advice For Junior Developers"
-date: 2020-03-12 14:30:00
+date: 2020-03-17 14:30:00
 categories: ["learning",  "software-development"]
 author: rdormer
 
@@ -14,8 +14,8 @@ learn when they transition from full time student to working developer
 is that things in the real world are *never* as cut and dry as their
 classes may have made it seem. At the end of the day, software is not
 written because we love building castles of logic in the sky, it's
-written to make money. That might seem like a trite observation, but
-it explains almost everything you observe as a working developer.
+written to solve a real problem. That might seem like a trite observation,
+but it explains almost everything you observe as a working developer.
 
 <!--more-->
 
@@ -72,8 +72,8 @@ others. If someone's going to pay you all of that money, they'll
 expect a lot of transparency in return. And that expectation will
 only grow as you acquire more and more experience. Your experience
 will have value, and your employers will expect you to share that
-value with those around you, *without* stepping on any toes in the
-process.
+value with those around you  by coaching and mentoring teammates,
+*without* stepping on any toes in the process.
 
 Some more recommended reads:
 
@@ -85,7 +85,7 @@ Technical](https://corgibytes.com/blog/2020/02/12/technical-debt-isnt-just-techn
 Developer](https://medium.com/zerotomastery/developers-edge-how-to-become-a-senior-developer-f1ec1738cf45)
  (notice how few of these skills are technical!)
 
-# Stay humble
+# Stay Humble
 
 It won't take long for a newly minted developer to learn that there
 are plenty of developers who have a bit of an ego problem. Aside from
