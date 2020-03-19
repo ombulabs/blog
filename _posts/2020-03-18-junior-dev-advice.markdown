@@ -8,7 +8,7 @@ author: rdormer
 
 ## Tough Love
 
-One of the first things that a journeyman programmer will have to
+One of the first things that a journeyperson programmer will have to
 learn when they transition from full time student to working developer
 is that things in the real world are _never_ as cut and dry as their
 classes may have made it seem. At the end of the day, software is not
