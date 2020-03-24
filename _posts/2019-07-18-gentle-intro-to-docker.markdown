@@ -4,6 +4,7 @@ title: "A Gentle Introduction To Docker"
 date: 2019-07-18 12:30:00
 categories: ["devops", "docker", "tutorials"]
 author: "rdormer"
+published: false
 ---
 
 If you're like I was not too long ago, the DevOps world gives you a chance to experience what most non-developers probably feel like when they read about what we do on a day to day basis - confused, and maybe a little bored and frustrated, with an utter lack of even basic knowledge. It doesn't help that DevOps is rapidly becoming a field of expertise unto itself, or that most of the relevant players seem determined to hide behind vague descriptions like "enterprise platform" and "containerization solution." As a day to day working developer, adding an entire new skillset can be a daunting and intimidating prospect.
