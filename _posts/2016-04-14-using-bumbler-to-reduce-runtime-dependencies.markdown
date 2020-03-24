@@ -2,6 +2,7 @@
 layout: post
 title: "Using Bumbler to reduce runtime dependencies"
 date: 2016-04-25 11:39:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "performance"]
 author: "mauro-oto"
 ---

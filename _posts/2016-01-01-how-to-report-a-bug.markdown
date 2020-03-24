@@ -2,6 +2,7 @@
 layout: post
 title: "How to report a bug"
 date: 2016-01-01 13:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["open-source", "bugs"]
 author: "etagwerker"
 ---

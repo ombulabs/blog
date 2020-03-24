@@ -2,6 +2,7 @@
 layout: post
 title:  "'Flaky' tests: a short story"
 date: 2017-05-04 11:02:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rspec", "continuous-integration"]
 author: "mauro-oto"
 ---

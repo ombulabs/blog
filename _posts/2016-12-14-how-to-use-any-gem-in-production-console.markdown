@@ -2,6 +2,7 @@
 layout: post
 title:  "How to use any gem in the Rails production console"
 date: 2016-12-14 18:06:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "ruby"]
 author: "mauro-oto"
 ---

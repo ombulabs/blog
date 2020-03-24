@@ -2,6 +2,7 @@
 layout: post
 title: Vim Guide for Beginners
 date: 2019-08-07 10:28:02
+reviewed: 2020-03-05 10:00:00
 categories: ["learning", "vim"]
 author: bronzdoc
 ---

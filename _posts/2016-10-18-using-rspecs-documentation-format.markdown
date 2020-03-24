@@ -2,6 +2,7 @@
 layout: post
 title:  "Brief look at RSpec's formatting options"
 date: 2016-11-08 12:53:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rspec", "ruby"]
 author: "mauro-oto"
 ---

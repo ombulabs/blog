@@ -2,6 +2,7 @@
 layout: post
 title: "The Importance of Sprint Retrospectives"
 date: 2019-03-08 15:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["agile", "project-management"]
 author: "emily"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title: "Onboarding New Team Members with Slack Workflows"
 date: 2019-12-10 10:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["slack", "scrum", "agile"]
 author: "abizzinotto"
 ---

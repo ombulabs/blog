@@ -2,6 +2,7 @@
 layout: post
 title:  "How to Git push with blocked ports"
 date: 2015-06-28 18:29:00
+reviewed: 2020-03-05 10:00:00
 categories: ["git", "github"]
 author: etagwerker
 ---

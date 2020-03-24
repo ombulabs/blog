@@ -2,6 +2,7 @@
 layout: post
 title:  "Announcing FastRuby.io"
 date: 2017-06-07 15:06:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "etagwerker"
 ---

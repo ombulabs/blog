@@ -2,6 +2,7 @@
 layout: post
 title: "How to interact with hidden elements with Protractor"
 date: 2015-12-09 03:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["protractor"]
 author: "etagwerker"
 ---

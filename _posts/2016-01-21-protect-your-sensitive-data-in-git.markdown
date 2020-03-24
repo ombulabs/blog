@@ -2,6 +2,7 @@
 layout: post
 title: "Protect your sensitive data in Git"
 date: 2016-01-21 10:36:00
+reviewed: 2020-03-05 10:00:00
 categories: ["open-source", "security"]
 author: "schmierkov"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title:  "AWS S3 Policies for Carrierwave"
 date: 2017-05-10 09:02:00
+reviewed: 2020-03-05 10:00:00
 categories: ["aws", "carrierwave", "s3"]
 author: "etagwerker"
 ---

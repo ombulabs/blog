@@ -2,6 +2,7 @@
 layout: post
 title: "Code Conventions and Rubocop"
 date: 2019-06-19 09:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "best-practices"]
 author: "rdormer"
 ---

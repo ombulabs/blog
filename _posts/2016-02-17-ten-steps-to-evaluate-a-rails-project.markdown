@@ -2,6 +2,7 @@
 layout: post
 title: "10 Steps to Evaluate a Rails Project"
 date: 2016-02-17 13:55:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails","maintenance"]
 author: "etagwerker"
 ---

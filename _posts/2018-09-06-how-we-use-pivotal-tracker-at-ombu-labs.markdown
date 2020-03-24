@@ -2,6 +2,7 @@
 layout: post
 title:  "How we use Pivotal Tracker at Ombu Labs"
 date: 2018-09-06 11:10:00
+reviewed: 2020-03-05 10:00:00
 categories: ["agile", "pivotal-tracker"]
 author: "etagwerker"
 ---

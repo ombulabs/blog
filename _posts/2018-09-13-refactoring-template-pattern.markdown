@@ -2,6 +2,7 @@
 layout: post
 title:  "Refactoring with Design Patterns - The Template Pattern"
 date: 2018-09-17 16:18:00
+reviewed: 2020-03-05 10:00:00
 categories: ["code-refactor", "design-patterns"]
 author: "cleiviane"
 ---
