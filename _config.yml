@@ -30,8 +30,7 @@ sass:
   style: compressed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: posts
     values:
@@ -98,3 +97,9 @@ authors:
     email: amanda@ombulabs.com
     twitter: AmandaBizzinot2
     github: ABizzinotto
+  arieljuod:
+    display_name: "Ariel Juodziukynas"
+    gravatar:
+    email: ariel@ombulabs.com
+    twitter: arieljuod
+    github: arielj
