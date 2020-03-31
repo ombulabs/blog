@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Ruby Method's Arguments
-date: 2020-03-15 09:30:00
+title: "Exploring Method Arguments in Ruby: Part 1"
+date: 2020-04-01 09:00:00
 categories: [ruby, learning]
 author: arieljuod
 ---
@@ -12,7 +12,7 @@ Ruby provides a lot of options to pass arguments to our methods, so we'll make t
 
 <!--more-->
 
-# Methods Vs. Functions
+## Methods Vs. Functions
 
 Both methods and functions serve the same purpose: encapsulate a piece of code to reuse it with ease. And some times we use them as sinonyms, but there's a conceptual difference:
 
@@ -21,7 +21,7 @@ Both methods and functions serve the same purpose: encapsulate a piece of code t
 
 In Ruby, where everything is an object, we can never have real functions but we can have methods that won't use or modify the object's state if we want to have something similar.
 
-# Arguments Vs. Parameters
+## Arguments Vs. Parameters
 
 Another thing that's worth differentiating is the concept of arguments and parameters. When we define a method, the parameters are part of the definition, the parameters are the variables that will contain the values that we use when calling that method. Arguments are the actual values that we use when we call a method. So, in this code:
 
@@ -36,7 +36,7 @@ my_method("bar")
 
 Most of the times I'll use the word "arguments" for simplicity, since a method defines the parameters and accepts arguments.
 
-# No arguments
+## No arguments
 
 We can have methods that have no input, like this:
 
@@ -72,11 +72,11 @@ puts other_circle.area
 # => 50.24
 ```
 
-# Positional arguments
+## Positional arguments
 
 This type of argument gets that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments.
 
-# Required positional arguments
+## Required positional arguments
 
 These positional arguments are required when calling a method, it's not that it's required to use them when defining the method (you can have no arguments, only optionals, etc). If the method defines required parameters you have to provide an argument for each position.
 
@@ -101,7 +101,7 @@ def foo(arg1, arg2, arg3, arg4)
 
 > Note that methods with too many arguments are a sign of bad design since the method is probably doing too many things!
 
-# Optional positional arguments
+## Optional positional arguments
 
 Sometimes we may want to allow the user to provide more input but not require them to do so. For that, we can use optional arguments for which we define a default value in case the user doesn't specify one. This is particularly useful when we want to have some default behavior for our method but give the user the option to modify that. If we just hardcoded the default value inside the method we wouldn't have this flexibility.
 
@@ -119,7 +119,7 @@ foo
 
 We can have as many as we want, just like the required parameters.
 
-# Combining required and optional positional arguments
+## Combining required and optional positional arguments
 
 Now we can combine both required and positional arguments in one method definition:
 
@@ -192,6 +192,7 @@ arg4 is: 2
 ```
 
 What Ruby seems to do is:
+
 - assign leftmost arguments to the first parameters
 - assign rightmost arguments to the last parameters
 - if there are not enough arguments, raise an error
@@ -208,7 +209,7 @@ end
 # SyntaxError ((irb):1: syntax error, unexpected '=', expecting ')')
 ```
 
-# Optional arguments based on other arguments
+## Optional arguments based on other arguments
 
 Default value for optional arguments can use the value of other arguments:
 
@@ -281,9 +282,9 @@ foo(5, 6)
 #    arg2 is: 6 # we are actually overriding that multiplication
 ```
 
-# Variable arguments
+## Variable arguments
 
-This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments. For this we use the splat operator (*) when defining the parameter.
+This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments. For this we use the splat operator (\*) when defining the parameter.
 
 ```ruby
 def foo(*args) # we use this special syntax with the * (splat operator) at the beginning of the paremeter
@@ -297,7 +298,7 @@ foo(1,2)
 # => args is: [1, 2]
 ```
 
-> The parameter name doesn't have to be **args**, the required syntax is the * operator
+> The parameter name doesn't have to be **args**, the required syntax is the \* operator
 
 You can combine this with required and optional arguments too:
 
@@ -365,7 +366,7 @@ foo(1, 2, 3, 4)
 
 > This special parameter must always be used after the other positional arguments.
 
-# Conclusion
+## Conclusion
 
 All these options gives us some flexibility, but the order being that rigid also forces us to remember and respect the order and also remember what each position is, which really limits us.
 
