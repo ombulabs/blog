@@ -1,22 +1,24 @@
 ---
 layout: post
-title: Ruby Method's Arguments Part 2
+title: "Exploring Method Arguments in Ruby: Part 1"
 date: 2020-03-30 09:30:00
 categories: [ruby, learning]
 author: arieljuod
 ---
 
-On the first part of this series [insert link here] we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
+On the first part of this series [insert link here](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
+
+Positional and keyword arguments share a lot of characteristics so we'll split this article in similar sections, but there are some key differences we'll point on each section.
 
 <!--more-->
 
-# Keyword arguments
+## Keyword arguments
 
-The main difference between positional and keyword arguments is that the former have to be passed in a specific order while keyword arguments can be used in any order and have a key-value hash syntax.
+The main difference between positional and keyword arguments is that the former have to be passed in a specific order while keyword arguments can be used in any order using a different syntax.
 
-# Required keyword arguments
+## Required keyword arguments
 
-These keyword arguments are required when calling a method. If the method defines required parameters you have to provide an argument for each key. The syntax when defining required keyword arguments for a method is similar to positional arguments except you need a colon at the end of the parameter name.
+These keyword arguments are required when calling a method. If the method defines required parameters you have to provide an argument for each key. The syntax when defining required keyword arguments for a method is similar to positional arguments except you need a colon at the end of the parameter name. Like this:
 
 ```ruby
 def foo(arg1:)
@@ -41,6 +43,14 @@ foo(1) # notice ruby knows that it expects 0 positinal arguments but requires ke
 
 ```
 
+You can assign the same key multiple times and the last one will be the value for that parameter. You'll see a warning though (but no error):
+
+```ruby
+foo(arg1: 1, arg1: 2)
+# => warning: key :arg1 is duplicated and overwritten on line X
+#    arg1 is: 2
+```
+
 Up until ruby 2.6 you can wrap keyword arguments with curly braces with no issues. Ruby will deconstruct the hash into keyword arguments transparently:
 
 ```ruby
@@ -49,7 +59,7 @@ foo({arg1: 1})
 # => arg1 is: 1
 ```
 
-But this WON'T be allowed on ruby 3 and will raise an ArgumentError exception. If you use this with ruby 2.7 you'll see a deprecation warning:
+But this WON'T be allowed on ruby 3 and will raise an **ArgumentError** exception. If you use this with ruby 2.7 you'll see a deprecation warning:
 
 ```ruby
 # ruby 2.7
@@ -75,7 +85,7 @@ foo(arg1: 'bar', arg2: 'biz', arg3: 'baz', arg4: 'buz')
 foo(arg4: 'buz', arg2: 'biz', arg1: 'bar', arg3: 'baz')
 ```
 
-# Optional keyword arguments
+## Optional keyword arguments
 
 Similar to optional positional arguments, we can provide a default value and let the user override that if needed. The syntax is similar to required keyword arguments but with the default value like this:
 
@@ -90,13 +100,13 @@ foo(arg1: 1)
 foo
 # => arg1 is: default value
 
-foo(1) # this is not assigned to the keyword argument
+foo(1) # this is not assigned to the keyword argument, this is a positional argument!
 # ArgumentError (wrong number of arguments (given 1, expected 0))
 ```
 
 We can have as many as we want, just like the required parameters.
 
-# Combining required and optional keyword arguments
+## Combining required and optional keyword arguments
 
 Now we can combine both required and optional arguments in one method definition:
 
@@ -120,7 +130,7 @@ foo(arg2: 2, arg1: 1) # order doesn't matter
 
 ```
 
-You can mix required and optional keyword arguments order, it's not a problem. The only requirement is that parameter names should be unique.
+You can mix required and optional keyword arguments order, it's not a problem in this case.
 
 ```ruby
 def foo(arg1:, arg2: 'default value', arg3:, arg4: 'default for 4')
@@ -143,9 +153,9 @@ foo(arg1: 1, arg3: 2)
 #    arg4 is: default for 4
 ```
 
-# Optional arguments based on other arguments
+## Optional arguments based on other arguments
 
-Default value for keyword arguments can use the value of other arguments:
+Like positional arguments, default value for keyword arguments can use the value of other arguments:
 
 ```ruby
 def foo(arg1:, arg2: arg1 * 2)
@@ -162,7 +172,7 @@ foo(arg1: 1, arg2: 3)
 #    arg2 is: 3
 ```
 
-This can even depend on the value of optional arguments:
+This can also depend on the value of optional arguments:
 
 ```ruby
 def foo(arg1: 1, arg2: arg1 * 2)
@@ -234,7 +244,7 @@ foo(arg1: 5, arg2: 6)
 #    arg2 is: 6 # we are actually overriding that multiplication
 ```
 
-# Variable arguments
+## Variable arguments
 
 This type of optional keyword arguments don't have a default value. They exist only if assigned and you can access them using a special hash of arguments. We need to use this special syntax with the ** operator (double splat operator) in front of the parameter name:
 
@@ -284,7 +294,7 @@ foo(arg1: 1)
 #    kargs is: {}
 ```
 
-Notice that "kargs" is always an hash. You usually deconstruct the hash (using the double splat operator) or use it as is as a hash or to call another method:
+Notice that "kargs" is always a hash. You usually deconstruct the hash (using the double splat operator) or use it as is as a hash or to call another method:
 
 ```ruby
 def bar(arg2:, **kargs)
@@ -317,11 +327,9 @@ foo(arg1: 1, arg2: 2, arg3: 3, arg4: 4)
 def foo(**kargs, arg1:)
 ```
 
-# Combining positional and keyword arguments
+## Combining positional and keyword arguments
 
-You can combine this two types of arguments with a few requirements:
-* positional arguments go first, then keyword arguments
-* you can't repeat argument names
+You can combine this two types of arguments but with the only requirement that positional arguments go first, then keyword arguments.
 
 ```ruby
 def foo(arg1, arg2 = 'default for 2', *args, arg3:, arg4: 'default for 4', **kargs)
@@ -335,8 +343,8 @@ In that generic example we have:
 * arg4 => optional by key
 * kargs => optional by key, variable
 
-# Conclusion
+## Conclusion
 
 Now we can have methods with a lot of flexibility combining both positional and keyword arguments and making some of them required and some optionals, but we are not finished yet.
 
-Ruby gives us even more options that we will cover on the next post of this serie. We will also analyze a few common rails methods to see how they use all of this so we put everything in together with practical examples.
+Ruby gives us even more options that we will cover on the next post of this serie. We will also analyze a few common Rails methods to see how they use different types of arguments so we put everything together with practical examples.
