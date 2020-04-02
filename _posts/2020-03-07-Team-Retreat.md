@@ -13,7 +13,7 @@ While remote work has its benefits - diversity in background and experiences, ac
 
 There are several pieces of software that aim to facilitate communication in a remote work environment. At OmbuLabs, we use [Slack](https://slack.com) for our day-to-day conversations and [Zoom](https://zoom.us/) for our calls. However, as a remote team, we don't get to meet our teammates face to face. We don't have "water cooler" chats or as many opportunities for casual chats as an office environment.
 
-So how can we bring our team close together? How can we build that team spirit that comes from seeing every one and talking about our casual, social lives? Well, this month we had a team retreat. And it was great.
+So how can we bring our team closer together? How can we build that team spirit that comes from seeing everyone and talking about our casual, social lives? Well, this month we had a team retreat. And it was great.
 
 ![Team Retreat Official](assets/images/team_retreat/team-retreat-official.jpg)
 
