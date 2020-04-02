@@ -23,19 +23,19 @@ So how can we bring our team closer together? How can we build that team spirit 
 
 A team retreat is supposed to bring the team together. We are a distributed team, with teammates located in four different countries. As such, while some of our teammates are located in the same country/city and have a chance to meet in person every once in a while, folks in different countries only communicate online.
 
-Therefore, it was definitely interesting for us to bring the team together and give everyone an opportunity to interact. After all, we spend a great part of our day in touch. We might as well put a "real world" face to the names.
+Therefore, it was definitely interesting for us to bring the team together and give everyone an opportunity to interact. After all, we spend a great part of our day interacting with each other. We might as well put a "real world" face to the names.
 
 # The Planning
 
 When putting together a team retreat, it is important to plan it well. What are the best dates? How about a location? Team members will be travelling from their home countries to the retreat destination to spend a few days with the team, it is important to take distance into consideration.
 
-Additionally, it is important to plan for visas. What if a teammate's Visa is denied? What if the process takes too long? One lesson we learnt is it is always better to plan ahead. At OmbuLabs, our goal now is to announce the retreat dates and destination a year in advance. This way, the team has a chance to get all necessary documentation sorted.
+Additionally, it is important to plan for visas. What if a teammate's Visa is denied? What if the process takes too long? One lesson we learned is it is always better to plan ahead. At OmbuLabs, our goal now is to announce the retreat dates and destination a year in advance. This way, the team has a chance to get all necessary documentation sorted.
 
 It is also important to have a retreat point of contact. Someone who will be in charge of planning and can answer questions regarding flights, accommodation, schedule, documentation, etc. This way, team members aren't lost seeking information.
 
 # The Agenda
 
-Once the retreat is planned and everything is booked, we need an agenda for the event. After all, we're having a once in a year opportunity to bring everyone to the same location.
+Once the retreat is planned and everything is booked, we need an agenda for the event. After all, we only have the opportunity to bring everyone to the same location once a year.
 
 We like to open our retreats with a talk from our CEO on the company's vision and mission. This way, we all know where we're going.
 
@@ -43,7 +43,7 @@ It is also important to plan your agenda carefully. A good way to get to great t
 
 At our team retreat, we talked about company culture, discussed our mentorship program, and gathered ideas to improve our systems and processes. 
 
-However, a good agenda must also include fun activities. A system we found effective was to intercalate presentations and discussions with fun team activities. This way, the day doesn't get boring and we can foster better discussions.
+However, a good agenda must also include fun activities. A system we found effective was to break up presentations and discussions with fun team activities. This way, the day doesn't get boring and we can foster better discussions.
 
 # The Activities
 
