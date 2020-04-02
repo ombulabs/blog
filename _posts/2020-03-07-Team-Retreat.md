@@ -9,7 +9,7 @@ author: abizzinotto
 
 Remote work is a growing reality. In the 21st century, we have distributed companies that work 100% remotely, with team members scattered around the world.
 
-While remote work has its benefits - the diversity in background and experiences, access to an immense talent pool, cut down office costs to name a few - it also brings its challenges. And the biggest one is communication.
+While remote work has its benefits - diversity in background and experiences, access to an immense talent pool, cut down office costs to name a few - it also brings its challenges. And the biggest one is communication.
 
 There are several pieces of software that aim to facilitate communication in a remote work environment. At OmbuLabs, we use [Slack](https://slack.com) for our day-to-day conversations and [Zoom](https://zoom.us/) for our calls. However, as a remote team, we don't get to meet our teammates face to face. We don't have "water cooler" chats or as many opportunities for casual chats as an office environment.
 
