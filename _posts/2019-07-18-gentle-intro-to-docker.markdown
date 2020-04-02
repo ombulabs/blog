@@ -2,6 +2,7 @@
 layout: post
 title: "A Gentle Introduction To Docker"
 date: 2019-07-18 12:30:00
+reviewed: 2020-03-05 10:00:00
 categories: ["devops", "docker", "tutorials"]
 author: "rdormer"
 ---

@@ -2,6 +2,7 @@
 layout: post
 title:  "Kickoff Calls for New Projects"
 date: 2018-11-27 11:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["agile", "continuous-learning"]
 author: "emily"
 ---

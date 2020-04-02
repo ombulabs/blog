@@ -2,6 +2,7 @@
 layout: post
 title:  "FastRuby.io: Exit Calls"
 date: 2018-09-12 11:10:00
+reviewed: 2020-03-05 10:00:00
 categories: ["continuous-learning"]
 author: "etagwerker"
 ---

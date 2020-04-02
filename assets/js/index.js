@@ -15,7 +15,7 @@
 
         $(".scroll-down").arctic_scroll();
 
-        $(".ad-close").click(function (event) {
+        $(".adv-close").click(function (event) {
             $("#advertisement").hide();
             event.preventDefault();
 

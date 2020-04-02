@@ -2,6 +2,7 @@
 layout: post
 title: "Quick and easy admin options"
 date: 2019-03-18 09:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["security", "gems", "rails"]
 author: "rdormer"
 ---

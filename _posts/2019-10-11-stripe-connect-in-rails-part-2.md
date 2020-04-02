@@ -2,6 +2,7 @@
 layout: post
 title: "Implementing Stripe Connect in Rails: Part 2"
 date: 2019-10-11 14:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "stripe"]
 author: "luciano"
 ---

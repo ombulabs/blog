@@ -2,6 +2,7 @@
 layout: post
 title:  "How We Helped Predictable Revenue Scale"
 date: 2017-08-22 8:06:00
+reviewed: 2020-03-05 10:00:00
 categories: ["case-study"]
 author: "etagwerker"
 ---

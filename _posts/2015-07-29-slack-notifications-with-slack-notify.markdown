@@ -2,6 +2,7 @@
 layout: post
 title: "Slack notifications with Slack-Notify gem"
 date: 2015-07-29 17:40:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby"]
 author: "mauro-oto"
 ---
