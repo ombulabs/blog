@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Exploring Method Arguments in Ruby: Part 1"
-date: 2020-03-30 09:30:00
+title: "Exploring Method Arguments in Ruby: Part 2"
+date: 2020-04-05 09:30:00
 categories: [ruby, learning]
 author: arieljuod
 ---
 
-On the first part of this series [insert link here](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
+On [the first part of this series](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
 
 Positional and keyword arguments share a lot of characteristics so we'll split this article in similar sections, but there are some key differences we'll point on each section.
 
