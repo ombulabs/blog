@@ -1,10 +1,9 @@
 ---
 layout: post
-title: Team Retreat: How They Can Help Remote Teams "Click"
+title: "Team Retreat: How They Can Help Remote Teams "Click""
 date: 2020-04-03 10:30:00
 categories: [agile]
 author: abizzinotto
-
 ---
 
 Remote work is a growing reality. In the 21st century, we have distributed companies that work 100% remotely, with team members scattered around the world.
