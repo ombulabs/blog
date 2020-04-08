@@ -67,7 +67,7 @@ Newest pull request was opened on Feb 19, 2020.
 
 ## RubyMem.com
 
-[RubyMem.com](https://github.com/rubymem/rubymem.com) Is the website to report leaky gems.
+[RubyMem.com](https://github.com/rubymem/rubymem.com) is the website to report leaky gems.
 
 From Jan 01, 2020 through Apr 05, 2020, rubymem/rubymem.com gained 3 new commits, contributed by 2 authors. There were 3 additions and 3 deletions across 1 file.
 
