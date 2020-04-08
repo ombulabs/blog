@@ -102,7 +102,7 @@ Newest issue was opened on Feb 12, 2020.
 
 ### Outside Contributions by Our Team Members
 
-At OmbuLabs we can dedicate a certain ammount of time to contribute to external open source projects, these are some of them that we have contributed in the past months
+At OmbuLabs we can dedicate a certain amount of time to contribute to external open source projects, these are some of the projects that we have contributed to in the past months
 
 [Ernesto](https://github.com/etagwerker)
 
