@@ -100,7 +100,7 @@ Oldest issue was opened on Feb 12, 2020.
 Newest issue was opened on Feb 12, 2020.
 
 
-### Outside contributions by our team members
+### Outside Contributions by Our Team Members
 
 At OmbuLabs we can dedicate a certain ammount of time to contribute to external open source projects, these are some of them that we have contributed in the past months
 
