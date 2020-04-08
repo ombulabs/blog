@@ -7,7 +7,7 @@ author: bronzdoc
 
 ---
 
-# OmbuLabs Open Source 2020 Q1 report
+# Open Source at OmbuLabs: 2020 Q1 Report
 
 ![ombulabs open source report](https://external-preview.redd.it/zbCp6e3VikD9vsKOtTGVKI90UnWIOZN5NMRNSvgvXxE.jpg?width=960&crop=smart&auto=webp&s=9318c01ae704565ad90f4736aec5af6b671d98fa)
 
