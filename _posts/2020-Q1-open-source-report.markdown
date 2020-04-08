@@ -15,7 +15,7 @@ author: bronzdoc
 
 ## Skunk
 
-[Skunk](https://github.com/fastruby/skunk) Is a RubyCritic extension to calculate SkunkScore for a file or project.
+[Skunk](https://github.com/fastruby/skunk) is a RubyCritic extension to calculate the [SkunkScore](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html) for a file or project.
 
 From Jan 01, 2020 through Apr 05, 2020, fastruby/skunk gained 58 new commits, contributed by 5 authors. There were 506 additions and 269 deletions across 26 files.
 
