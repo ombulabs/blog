@@ -2,7 +2,7 @@
 layout: post
 title: 2020-q1-open-source-report
 date: 2020-04-09 20:12:12
-categories:[open source]
+categories: [open-source]
 author: bronzdoc
 
 ---
