@@ -48,7 +48,7 @@ Skunk has a new logo and we also have stickers so make sure to ping [Ernesto](ht
 
 ## BundlerLeak
 
-[bundler-leak](https://github.com/rubymem/bundler-leak) Is a tool to find leaky gems in your dependencies.
+[bundler-leak](https://github.com/rubymem/bundler-leak) is a tool to find leaky gems in your dependencies.
 
 From Jan 01, 2020 through Apr 02, 2020, rubymem/bundler-leak gained 15 new commits, contributed by 4 authors. There were 148 additions and 76 deletions across 11 files.
 
