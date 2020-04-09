@@ -23,6 +23,7 @@ From Jan 01, 2020 through Apr 05, 2020, fastruby/skunk gained 58 new commits, co
 There were 2 new contributors during this report period.
 
 [Grzegorz Jakubiak](https://github.com/grzegorz-jakubiak)
+
 [Sebastián Palma](https://github.com/sebastian-palma)
 
 ### Pull Requests
@@ -56,6 +57,7 @@ From Jan 01, 2020 through Apr 02, 2020, rubymem/bundler-leak gained 15 new commi
 There were 2 new contributors during this report period.
 
 [Alexander Popov](https://github.com/AlexWayfer)
+
 [chubchenko](https://github.com/chubchenko)
 
 ### Pull Requests
@@ -104,29 +106,38 @@ Newest issue was opened on Feb 12, 2020.
 
 At OmbuLabs we can dedicate a certain amount of time to contribute to external open source projects, these are some of the projects that we have contributed to in the past months
 
-[Ernesto](https://github.com/etagwerker)
 
-### Issues opened:
-   [Document public API for DatabaseCleaner::Configuration](https://github.com/DatabaseCleaner/database_cleaner/issues/631)
-   [Rename whitelist to allowlist] (https://github.com/DatabaseCleaner/database_cleaner/issues/626 )
-### Pull Requests opened:
-   [Stop testing EOLed ruby versions in Travis](https://github.com/attr-encrypted/attr_encrypted/pull/364)
-   [Grammar update](https://github.com/rails/rails/pull/38441)
-   [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179)
+### Ernesto ([etagwerker](https://github.com/etagwerker))
 
-[Cleiviane](https://github.com/cleicar)
+#### Pull Requests
 
-### Issues Opened:
-[Support to Rails 5.2](https://github.com/fac/hestia/issues/15)
+| Project | Pull Request |
+| --- | ----------- |
+| `attr-encrypted/attr_encrypted` | [Stop testing EOLed ruby versions in Travis](https://github.com/attr-encrypted/attr_encrypted/pull/364) |
+| `rails/rails` | [Grammar update](https://github.com/rails/rails/pull/38441)
+|  `devise-security/devise-security` | [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179) |
+---
 
-[Fiona](https://github.com/FionaDL)
+### Fiona ([FionaDl](https://github.com/FionaDL))
 
-### Pull Request Opened:
-[Substitutes OSVDB for NVD urls](https://github.com/devise-security/devise-security/pull/179)
+#### Pull Requests
 
-[Luis](https://github.com/bronzdoc)
+| Project | Pull Request |
+| --- | ----------- |
+| `rubysec/ruby-advisory-db` |  [Substitutes OSVDB for NVD urls](https://github.com/rubysec/ruby-advisory-db/pull/440) |
+---
 
-### Pull Request Opened:
-[Add --start-date and --end-date flags](https://github.com/duckinator/inq/pull/286)
-[Fix Travis parse](https://github.com/duckinator/inq/pull/290)
-[Fix code snippet execution](https://github.com/rubyapi/code-runtime/pull/2)
+### Luis ([bronzdoc](https://github.com/bronzdoc))
+
+#### Pull Requests
+
+| Project | Pull Request |
+| --- | ----------- |
+| `duckinator/inq` | [Add --start-date and --end-date flags](https://github.com/duckinator/inq/pull/286) |
+| `rubyapi/code-runtime` | [Fix code snippet execution](https://github.com/rubyapi/code-runtime/pull/2) |
+| `rubyapi/code-runtime` | [Fix Travis parse](https://github.com/duckinator/inq/pull/290) |
+---
+
+
+### Q2 Plans
+We have plans to contribute more in the second quarter, so if you have a project in the Rails space and need help, please let us know!
