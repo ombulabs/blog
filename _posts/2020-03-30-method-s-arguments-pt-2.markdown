@@ -6,9 +6,9 @@ categories: [ruby, learning]
 author: arieljuod
 ---
 
-On [the first part of this series](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
+In [the first part of this series](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") we talked about positional arguments, but there are more types. In this second part we'll talk about keyword arguments.
 
-Positional and keyword arguments share a lot of characteristics so we'll split this article in similar sections, but there are some key differences we'll point on each section.
+Positional and keyword arguments share a lot of characteristics so we'll split this article into similar sections, but there are some key differences we'll touch on in each section.
 
 <!--more-->
 
@@ -26,7 +26,7 @@ def foo(arg1:)
 end
 ```
 
-And you have to add key value pairs matching the keys defined on the method definition when calling the method. Keys MUST be symbols.
+And you have to add key value pairs matching the keys defined in the method definition when calling the method. Keys MUST be symbols.
 
 ```ruby
 foo(arg1: 1) # you have to specify the key / parameter name
@@ -68,7 +68,7 @@ foo({arg1: 1})
 #    arg1 is: 1
 ```
 
-Keyword arguments are not really useful for that simple example, but the benefit is more clear when we start adding more parameters.
+Keyword arguments are not really useful in that simple example, but the benefit is more clear when we start adding more parameters.
 
 ```ruby
 def foo(arg1:, arg2:, arg3:, arg4:) # and more and more...
@@ -329,7 +329,7 @@ def foo(**kargs, arg1:)
 
 ## Combining positional and keyword arguments
 
-You can combine this two types of arguments but with the only requirement that positional arguments go first, then keyword arguments.
+You can combine these two types of arguments; the only requirement is that positional arguments go first, then keyword arguments.
 
 ```ruby
 def foo(arg1, arg2 = 'default for 2', *args, arg3:, arg4: 'default for 4', **kargs)
@@ -347,4 +347,4 @@ In that generic example we have:
 
 Now we can have methods with a lot of flexibility combining both positional and keyword arguments and making some of them required and some optionals, but we are not finished yet.
 
-Ruby gives us even more options that we will cover on the next post of this serie. We will also analyze a few common Rails methods to see how they use different types of arguments so we put everything together with practical examples.
+Ruby gives us even more options that we will cover on the next post in this series. We will also analyze a few common Rails methods to see how they use different types of arguments so that we can put everything together with practical examples.
