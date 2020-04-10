@@ -118,7 +118,7 @@ At OmbuLabs we can dedicate a certain amount of time to contribute to external o
 |  `devise-security/devise-security` | [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179) |
 ---
 
-### Fiona ([FionaDl](https://github.com/FionaDL))
+### Fiona ([FionaDL](https://github.com/FionaDL))
 
 #### Pull Requests
 
