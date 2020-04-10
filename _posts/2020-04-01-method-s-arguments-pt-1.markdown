@@ -6,22 +6,22 @@ categories: [ruby, learning]
 author: arieljuod
 ---
 
-Ruby is an object oriented language where everything is an object (even methods are objects of the class Method!), so everything we need to do is done by calling methods on objects. That also means that methods have to provide a lot of flexibility because they are used everywhere.
+Ruby is an object oriented language where everything is an object (even methods are objects of the class [Method](https://ruby-doc.org/core-2.6.3/Method.html)!), so everything we need to do is done by calling methods on objects. That also means that methods have to provide a lot of flexibility because they are used everywhere.
 
 Ruby provides a lot of options to pass arguments to our methods, so we'll make this topic a series so it's not too long. We'll split the options into different categories and then break down everything with some examples and/or use cases.
 
 <!--more-->
 
-## Methods Vs. Functions
+## Methods vs. Functions
 
-Both methods and functions serve the same purpose: encapsulate a piece of code to reuse it with ease. And some times we use them as sinonyms, but there's a conceptual difference:
+Both methods and functions serve the same purpose: encapsulate a piece of code to reuse it with ease. And sometimes we use them as synonyms, but there's a conceptual difference:
 
 - Functions return a result based only on the input, functions shouldn't depend on or modify the state of something that's not in the given inputs.
 - Methods are always executed in the context of an object, so we can call a method with no arguments but we always have access to the method's state and we can modify it.
 
 In Ruby, where everything is an object, we can never have real functions but we can have methods that won't use or modify the object's state if we want to have something similar.
 
-## Arguments Vs. Parameters
+## Arguments vs. Parameters
 
 Another thing that's worth differentiating is the concept of arguments and parameters. When we define a method, the parameters are part of the definition, the parameters are the variables that will contain the values that we use when calling that method. Arguments are the actual values that we use when we call a method. So, in this code:
 
@@ -36,7 +36,7 @@ my_method("bar")
 
 Most of the times I'll use the word "arguments" for simplicity, since a method defines the parameters and accepts arguments.
 
-## No arguments
+## No Arguments
 
 We can have methods that have no input, like this:
 
@@ -72,11 +72,11 @@ puts other_circle.area
 # => 50.24
 ```
 
-## Positional arguments
+## Positional Arguments
 
 This type of argument gets that name because the order you use matters. You can have 0 or more positional arguments, and you can have required and optional arguments.
 
-## Required positional arguments
+## Required Positional Arguments
 
 These positional arguments are required when calling a method, it's not that it's required to use them when defining the method (you can have no arguments, only optionals, etc). If the method defines required parameters you have to provide an argument for each position.
 
@@ -101,7 +101,7 @@ def foo(arg1, arg2, arg3, arg4)
 
 > Note that methods with too many arguments are a sign of bad design since the method is probably doing too many things!
 
-## Optional positional arguments
+## Optional Positional Arguments
 
 Sometimes we may want to allow the user to provide more input but not require them to do so. For that, we can use optional arguments for which we define a default value in case the user doesn't specify one. This is particularly useful when we want to have some default behavior for our method but give the user the option to modify that. If we just hardcoded the default value inside the method we wouldn't have this flexibility.
 
@@ -119,7 +119,7 @@ foo
 
 We can have as many as we want, just like the required parameters.
 
-## Combining required and optional positional arguments
+## Combining Required and Optional Positional Arguments
 
 Now we can combine both required and positional arguments in one method definition:
 
@@ -162,7 +162,7 @@ foo(1,2)
 #    arg3 is: 2
 ```
 
-Notice that, on the second call, the second argument ends up at **arg3**. My first thought was that ruby first assigned the required arguments and then the optionals, but that's not the case. Check out this even more confusing example:
+Notice that, on the second call, the second argument ends up at **arg3**. My first thought was that Ruby first assigned the required arguments and then the optionals, but that's not the case. Check out this even more confusing example:
 
 ```ruby
 def foo(arg1, arg2 = 'default value X', arg3 = 'default value Y', arg4)
@@ -173,30 +173,30 @@ def foo(arg1, arg2 = 'default value X', arg3 = 'default value Y', arg4)
 end
 
 foo(1, 2, 3, 4)
-arg1 is: 1
-arg2 is: 2
-arg3 is: 3
-arg4 is: 4
+# => arg1 is: 1
+#    arg2 is: 2
+#    arg3 is: 3
+#    arg4 is: 4
 
 foo(1, 2, 3)
-arg1 is: 1
-arg2 is: 2
-arg3 is: "default value Y"
-arg4 is: 3
+#    arg1 is: 1
+#    arg2 is: 2
+#    arg3 is: "default value Y"
+#    arg4 is: 3
 
 foo(1, 2)
-arg1 is: 1
-arg2 is: "default value X"
-arg3 is: "default value Y"
-arg4 is: 2
+#    arg1 is: 1
+#    arg2 is: "default value X"
+#    arg3 is: "default value Y"
+#    arg4 is: 2
 ```
 
 What Ruby seems to do is:
 
-- assign leftmost arguments to the first parameters
-- assign rightmost arguments to the last parameters
-- if there are not enough arguments, raise an error
-- if there are unused arguments, assign them to the optional arguments in order from left to right
+- Assign leftmost arguments to the first parameters
+- Assign rightmost arguments to the last parameters
+- If there are not enough arguments, raise an error
+- If there are unused arguments, assign them to the optional arguments in order from left to right
 
 > I would recommend avoiding this combination unless it's something with a really specific requirement since it's not too intuitive and it's hard to follow.
 
@@ -209,7 +209,7 @@ end
 # SyntaxError ((irb):1: syntax error, unexpected '=', expecting ')')
 ```
 
-## Optional arguments based on other arguments
+## Optional Arguments Based on Other Arguments
 
 Default value for optional arguments can use the value of other arguments:
 
@@ -282,7 +282,7 @@ foo(5, 6)
 #    arg2 is: 6 # we are actually overriding that multiplication
 ```
 
-## Variable arguments
+## Variable Arguments
 
 This type of optional positional arguments don't have a default value. They exist only if assigned and you can access them using a special array of arguments. For this we use the splat operator (\*) when defining the parameter.
 
