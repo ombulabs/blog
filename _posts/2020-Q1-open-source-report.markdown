@@ -1,15 +1,25 @@
 ---
 layout: post
-title: 2020-q1-open-source-report
+title: "2020 Q1 open-source-report"
 date: 2020-04-09 20:12:12
 categories: [open-source]
 author: bronzdoc
 
 ---
 
+
 # Open Source at OmbuLabs: 2020 Q1 Report
 
+Our first quarter report for open source, we will be releasing this report on each quarter with the purpose of motivate us to contribute more and release more open source projects.
+
+<!--more-->
+
 ![ombulabs open source report](https://external-preview.redd.it/zbCp6e3VikD9vsKOtTGVKI90UnWIOZN5NMRNSvgvXxE.jpg?width=960&crop=smart&auto=webp&s=9318c01ae704565ad90f4736aec5af6b671d98fa)
+
+<div style="text-align: center; width: 500px;">
+  <img src="/blog/assets/images/corgi_fight.jpg" alt="open source">
+</div>
+
 
 # Relevant News
 
