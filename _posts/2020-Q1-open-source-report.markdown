@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "2020 Q1 open-source-report"
+title: "Open Source Report (2020 Q1)"
 date: 2020-04-09 20:12:12
 categories: [open-source]
 author: bronzdoc
