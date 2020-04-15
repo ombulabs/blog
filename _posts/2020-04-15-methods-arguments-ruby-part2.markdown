@@ -340,8 +340,8 @@ def foo(arg1, arg2 = 'default for 2', *args, arg3:, arg4: 'default for 4', **kar
 In that generic example we have:
 
 - arg1 => required by position
-- arg2 => optional by positional
-- args => optional by positional, variable
+- arg2 => optional by position
+- args => optional by position, variable
 - arg3 => required by key
 - arg4 => optional by key
 - kargs => optional by key, variable
