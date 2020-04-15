@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Exploring Method Arguments in Ruby: Part 2"
-date: 2020-04-05 09:30:00
+date: 2020-04-15 09:00:00
 categories: [ruby, learning]
 author: arieljuod
 ---
@@ -75,6 +75,7 @@ def foo(arg1:, arg2:, arg3:, arg4:) # and more and more...
 ```
 
 You can call that method with the parameters in any order:
+
 ```ruby
 foo(arg1: 'bar', arg3: 'baz', arg2: 'biz', arg4: 'buz')
 
@@ -213,6 +214,7 @@ foo
 # => arg1 is: 2
 #    arg2 is: 1
 ```
+
 > Notice keyword arguments can be used in any order **when calling** a method but you have to order them as needed **on the definition** of the method if you want to use arguments to calculate the default value of other arguments!
 
 You can use operations and method calls for the default value, just like default values for optional positional arguments.
@@ -246,7 +248,7 @@ foo(arg1: 5, arg2: 6)
 
 ## Variable Arguments
 
-This type of optional keyword arguments don't have a default value. They exist only if assigned and you can access them using a special hash of arguments. We need to use this special syntax with the ** operator (double splat operator) in front of the parameter name:
+This type of optional keyword arguments don't have a default value. They exist only if assigned and you can access them using a special hash of arguments. We need to use this special syntax with the \*\* operator (double splat operator) in front of the parameter name:
 
 ```ruby
 def foo(**kargs) # it's common to name it kargs
@@ -322,7 +324,7 @@ foo(arg1: 1, arg2: 2, arg3: 3, arg4: 4)
 ```
 
 > This special parameter must always be used after the other keyword arguments. This is not allowed:
-  
+
 ```ruby
 def foo(**kargs, arg1:)
 ```
@@ -336,12 +338,13 @@ def foo(arg1, arg2 = 'default for 2', *args, arg3:, arg4: 'default for 4', **kar
 ```
 
 In that generic example we have:
-* arg1 => required by position
-* arg2 => optional by positional
-* args => optional by positional, variable
-* arg3 => required by key
-* arg4 => optional by key
-* kargs => optional by key, variable
+
+- arg1 => required by position
+- arg2 => optional by positional
+- args => optional by positional, variable
+- arg3 => required by key
+- arg4 => optional by key
+- kargs => optional by key, variable
 
 ## Conclusion
 
