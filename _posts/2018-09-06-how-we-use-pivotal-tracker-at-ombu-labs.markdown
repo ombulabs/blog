@@ -15,7 +15,7 @@ There are many things that are easier with Pivotal Tracker, as long as you are u
 
 ## Step 1: Writing user stories
 
-All tasks related to a project should be tracked through user stories. A good to way to think about user stories is that it is a high-level requirement card. A user story can be used to represent a technical requirement, a use case, a usage requirement or even chores the development team needs to complete. [Pivotal Tracker](https://www.pivotaltracker.com) gives you the ability to create 4 different types of stories:
+All tasks related to a project should be tracked through user stories. A good way to think about user stories is that it is a high-level requirement card. A user story can be used to represent a technical requirement, a use case, a usage requirement or even chores the development team needs to complete. [Pivotal Tracker](https://www.pivotaltracker.com) gives you the ability to create 4 different types of stories:
 
 1. Feature
 2. Bug
@@ -31,9 +31,9 @@ In order to indicate priority, we organize the Icebox from most important to lea
 
 ## Step 2: Describing user stories
 
-Every [user story](https://www.agilealliance.org/glossary/user-stories/) should be a description of a requirement and consist of a summary and a description.
+Every [user story](https://www.agilealliance.org/glossary/user-stories/) should be a representation of a requirement and consist of a summary and a description.
 
-The summary is a concise description of the requirement and it clearly states what needs to be done and why. For a user story depicting a use case, for example, the following structure should be followed.
+The summary is a concise description of the requirement and it clearly states what needs to be done and why. For a user story representing a use case, for example, you should follow this structure:
 
 ```
 As a < type of user >, I want < some goal > so that < some business goal >.
@@ -59,6 +59,13 @@ Once stories are estimated, the team is ready to kick-off the sprint.
 ## Step 4: Starting user stories
 
 Once the sprint is planned, it's time to start working on the stories currently in the iteration.
+
+To track the different stages of a story, Pivotal Tracker gives you [four different states]( https://www.pivotaltracker.com/help/articles/story_states/) for a story:
+
+1. Started
+2. Finished
+3. Delivered
+4. Accepted / Rejected
 
 When a story is started, the clock starts ticking on that story, and we should try to finish it as soon as possible. In Pivotal Tracker, to indicate work on a story has been started, the *Start* button should be clicked.
 
@@ -115,7 +122,9 @@ At that point, a **new** user story should be created with the type set to **bug
 
 ## Conclusion
 
-[Pivotal Tracker](https://www.pivotaltracker.com/) provides a great way to track project progress and team velocity. This helps in determining when a big feature will be shipped. As much as we like to use [GitHub](https://github.com/) for everything, Pivotal Tracker integrates nicely with them (they recently launched this integration!) which improves traceability from feature to implementation.
+[Pivotal Tracker](https://www.pivotaltracker.com/) provides a great way to track project progress and team velocity. This helps in determining when a big feature will be shipped. As much as we like to use [GitHub](https://github.com/) for everything, [Pivotal Tracker integrates nicely with them](https://www.pivotaltracker.com/help/articles/github_integration/) (they recently launched this integration!) which improves traceability from feature to implementation.
+
+Additionally, Pivotal Tracker also integrates nicely with [Slack](https://slackhq.com/), which we use to communicate with each other. [This integration](https://www.pivotaltracker.com/help/articles/slack/) makes it easy to keep track of comments and notifications we need to address.
 
 At [Ombu Labs](https://www.ombulabs.com) we like to work closely with our clients' teams and communicate openly. We like how Pivotal Tracker makes it easy to communicate that some stories will be delivered in this sprint and some will have to wait until the next sprint. It is a great way to manage expectations. We like to invite our clients into our Pivotal Tracker project so we can work together in there; however, if our client already has a project management tool they use, we are happy to adapt.
 
