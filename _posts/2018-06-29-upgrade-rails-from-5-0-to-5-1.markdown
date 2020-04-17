@@ -6,6 +6,7 @@ reviewed: 2020-03-05 10:00:00
 categories: ["rails", "upgrades"]
 author: "mauro-oto"
 canonical_url: true
+redirect: https://www.fastruby.io/blog
 ---
 
 _This article is part of our Upgrade Rails series. To see more of them, [click here](https://www.ombulabs.com/blog/tags/upgrades)_.
