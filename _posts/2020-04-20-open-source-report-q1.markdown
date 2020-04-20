@@ -108,7 +108,7 @@ A total of 1 issue was opened.
 
 ### Outside contributions by our team members
 
-At OmbuLabs we can dedicate a certain amount of time to contribute to external open source projects, these are some of the projects that we have contributed to in the past months
+At OmbuLabs we can dedicate a certain amount of time to contribute to external open source projects. These are some of the projects that we have contributed to in the past months:
 
 #### Ernesto ([etagwerker](https://github.com/etagwerker))
 
@@ -118,13 +118,13 @@ At OmbuLabs we can dedicate a certain amount of time to contribute to external o
 | `rails/rails` | [Grammar update](https://github.com/rails/rails/pull/38441)
 |  `devise-security/devise-security` | [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179) |
 
-### Fiona ([FionaDL](https://github.com/FionaDL))
+#### Fiona ([FionaDL](https://github.com/FionaDL))
 
 | Project | Pull Request |
 | --- | ----------- |
 | `rubysec/ruby-advisory-db` |  [Substitutes OSVDB for NVD urls](https://github.com/rubysec/ruby-advisory-db/pull/440) |
 
-### Luis ([bronzdoc](https://github.com/bronzdoc))
+#### Luis ([bronzdoc](https://github.com/bronzdoc))
 
 | Project | Pull Request |
 | --- | ----------- |
