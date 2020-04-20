@@ -25,7 +25,7 @@ This is our first quarter report for open source projects, we will be releasing 
 - Had 506 additions and 269 deletions across 26 files.
 - It has a new logo and we also have stickers so make sure to ping [Ernesto](https://github.com/etagwerker) to give you some.
 
-<img src="/blog/assets/images/skunk_logo.png" alt="skunk" class="medium-img">
+<img src="/blog/assets/images/skunk_logo.png" alt="skunk" />
 
 #### New Contributors
 - [Grzegorz Jakubiak](https://github.com/grzegorz-jakubiak)
@@ -33,12 +33,14 @@ This is our first quarter report for open source projects, we will be releasing 
 
 #### Pull Requests
 A total of 11 pull requests were opened.
+
 - Average age: approximately 1 month and 3 weeks.
 - Oldest pull request was opened on Jan 30, 2020.
 - Newest pull request was opened on Feb 29, 2020.
 
 #### Issues
 A total of 3 issues were opened.
+
 - Average age: approximately 1 month and 3 weeks.
 - Oldest issue was opened on Jan 14, 2020.
 - Newest issue was opened on Mar 10, 2020.
@@ -55,11 +57,13 @@ A total of 3 issues were opened.
 
 #### New Contributors
 There were 2 new contributors during this report period.
+
 - [Alexander Popov](https://github.com/AlexWayfer)
 - [chubchenko](https://github.com/chubchenko)
 
 #### Pull Requests
 A total of 5 pull requests were opened.
+
 - Average age: approximately 1 month and 3 weeks.
 - Oldest pull request was opened on Jan 11, 2020.
 - Newest pull request was opened on Feb 19, 2020.
@@ -79,6 +83,7 @@ There were no new contributors during this report period.
 
 #### Pull Requests
 A total of 2 pull requests were opened.
+
 - Average age: approximately 1 month and 6 days.
 - Oldest pull request was opened on Feb 26, 2020.
 - Newest pull request was opened on Mar 03, 2020.
@@ -100,6 +105,7 @@ There was 1 new contributor during this report period.
 
 #### Issues
 A total of 1 issue was opened.
+
 - Average age: approximately 1 month and 3 weeks.
 - Oldest issue was opened on Feb 12, 2020.
 - Newest issue was opened on Feb 12, 2020.
