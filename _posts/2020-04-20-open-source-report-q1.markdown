@@ -118,25 +118,19 @@ At OmbuLabs we can dedicate a certain amount of time to contribute to external o
 
 #### Ernesto ([etagwerker](https://github.com/etagwerker))
 
-| Project | Pull Request |
-| --- | ----------- |
-| `attr-encrypted/attr_encrypted` | [Stop testing EOLed ruby versions in Travis](https://github.com/attr-encrypted/attr_encrypted/pull/364) |
-| `rails/rails` | [Grammar update](https://github.com/rails/rails/pull/38441)
-|  `devise-security/devise-security` | [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179) |
+- `attr-encrypted/attr_encrypted` - [Stop testing EOLed ruby versions in Travis](https://github.com/attr-encrypted/attr_encrypted/pull/364)
+- `rails/rails` - [Grammar update](https://github.com/rails/rails/pull/38441)
+- `devise-security/devise-security` - [Fixes/documentation for password complexity validator](https://github.com/devise-security/devise-security/pull/179)
 
 #### Fiona ([FionaDL](https://github.com/FionaDL))
 
-| Project | Pull Request |
-| --- | ----------- |
-| `rubysec/ruby-advisory-db` |  [Substitutes OSVDB for NVD urls](https://github.com/rubysec/ruby-advisory-db/pull/440) |
+- `rubysec/ruby-advisory-db` - [Substitutes OSVDB for NVD urls](https://github.com/rubysec/ruby-advisory-db/pull/440)
 
 #### Luis ([bronzdoc](https://github.com/bronzdoc))
 
-| Project | Pull Request |
-| --- | ----------- |
-| `duckinator/inq` | [Add --start-date and --end-date flags](https://github.com/duckinator/inq/pull/286) |
-| `rubyapi/code-runtime` | [Fix code snippet execution](https://github.com/rubyapi/code-runtime/pull/2) |
-| `rubyapi/code-runtime` | [Fix Travis parse](https://github.com/duckinator/inq/pull/290) |
+- `duckinator/inq` - [Add --start-date and --end-date flags](https://github.com/duckinator/inq/pull/286)
+- `rubyapi/code-runtime` - [Fix code snippet execution](https://github.com/rubyapi/code-runtime/pull/2)
+- `rubyapi/code-runtime` - [Fix Travis parse](https://github.com/duckinator/inq/pull/290)
 
 ## Q2 Plans
 We have plans to contribute more in the second quarter, so if you have a project in the Rails space and need help, please let us know!
