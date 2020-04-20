@@ -7,18 +7,18 @@ author: bronzdoc
 
 ---
 
-This is our first quarter report for open source projects, we will be releasing this report on each quarter with the purpose of motivate us to contribute more and release more open source projects.
+This is our first quarter report for open source projects, we will be releasing this report on each quarter of the year with the purpose of motivate us to contribute more and release more open source projects.
 
 <!--more-->
 
 <img src="/blog/assets/images/corgi_fight.jpg" alt="open source ombulabs" class="medium-img">
 
 
-## Relevant news for Q1 (1/1/2020 to 04/05/2020)
+## Relevant news for Q1 (Jan 1st - Apr 5th)
 
 ### Skunk
 
-[Skunk](https://github.com/fastruby/skunk) is a RubyCritic extension to calculate the [SkunkScore](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html) for a file or project.
+[Skunk](https://github.com/fastruby/skunk) is a [RubyCritic](https://github.com/whitesmith/rubycritic) extension to calculate the [SkunkScore](https://www.fastruby.io/blog/code-quality/intruducing-skunk-stink-score-calculator.html) for a file or project.
 
 #### Changes
 - Gained 58 new commits, contributed by 5 authors.
@@ -43,6 +43,7 @@ A total of 3 issues were opened.
 - Oldest issue was opened on Jan 14, 2020.
 - Newest issue was opened on Mar 10, 2020.
 
+---
 
 ### BundlerLeak
 
@@ -63,6 +64,8 @@ A total of 5 pull requests were opened.
 - Oldest pull request was opened on Jan 11, 2020.
 - Newest pull request was opened on Feb 19, 2020.
 
+---
+
 ### RubyMem.com
 
 [RubyMem.com](https://github.com/rubymem/rubymem.com) is the website to report leaky gems.
@@ -80,9 +83,11 @@ A total of 2 pull requests were opened.
 - Oldest pull request was opened on Feb 26, 2020.
 - Newest pull request was opened on Mar 03, 2020.
 
+---
+
 ### BlogCop
 
-[Blogcop](https://github.com/ombulabs/blogcop) is a simple GitHub bot made with Sinatra that helps you manage the outdated articles of your Jekyll blog.
+[Blogcop](https://github.com/ombulabs/blogcop) is a GitHub bot that helps you manage the outdated articles of your Jekyll blog.
 
 #### Changes
 - Gained 1 new commit, contributed by 1 author.
@@ -99,11 +104,11 @@ A total of 1 issue was opened.
 - Oldest issue was opened on Feb 12, 2020.
 - Newest issue was opened on Feb 12, 2020.
 
+---
 
-### Outside Contributions by Our Team Members
+### Outside contributions by our team members
 
 At OmbuLabs we can dedicate a certain amount of time to contribute to external open source projects, these are some of the projects that we have contributed to in the past months
-
 
 #### Ernesto ([etagwerker](https://github.com/etagwerker))
 
@@ -119,7 +124,6 @@ At OmbuLabs we can dedicate a certain amount of time to contribute to external o
 | --- | ----------- |
 | `rubysec/ruby-advisory-db` |  [Substitutes OSVDB for NVD urls](https://github.com/rubysec/ruby-advisory-db/pull/440) |
 
-
 ### Luis ([bronzdoc](https://github.com/bronzdoc))
 
 | Project | Pull Request |
@@ -127,7 +131,6 @@ At OmbuLabs we can dedicate a certain amount of time to contribute to external o
 | `duckinator/inq` | [Add --start-date and --end-date flags](https://github.com/duckinator/inq/pull/286) |
 | `rubyapi/code-runtime` | [Fix code snippet execution](https://github.com/rubyapi/code-runtime/pull/2) |
 | `rubyapi/code-runtime` | [Fix Travis parse](https://github.com/duckinator/inq/pull/290) |
-
 
 ## Q2 Plans
 We have plans to contribute more in the second quarter, so if you have a project in the Rails space and need help, please let us know!
