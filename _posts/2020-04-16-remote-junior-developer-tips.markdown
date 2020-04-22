@@ -24,7 +24,7 @@ We have many channels on Slack. Choosing the appropriate channel helps to let th
 Sometimes you can just choose a specific Senior Developer to ask the question to. Maybe the Senior Developer has helped you with that area in the past, and you won’t have to re-explain the problem, therefore it can be a quick question.
 
 ### Pivotal Tracker:
-We use pivotal tracker to keep track of user stories, and set sprints for the week. Pivotal Tracker also allows for comments and this has become a useful tool when keeping track of what’s been worked on in a story with a Senior Developer.
+We use [Pivotal Tracker]( https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) to keep track of user stories, and set sprints for the week. Pivotal Tracker also allows for comments and this has become a useful tool when keeping track of what’s been worked on in a story with a Senior Developer.
 
 You can explain the progress that has been made on a story so far. Then, when you  need to ask a Senior Developer for help, you can point them directly to the story which already holds information on the problem.
 
