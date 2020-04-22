@@ -49,7 +49,7 @@ When working in a remote environment it is difficult to form relationships and g
 This year we held a team retreat, this has made all the difference in company culture. As the Junior Developer it helped me build relationships with Senior Developers so that feelings of awkwardness and nervousness began to dissipate. You can read more about our retreat [here](https://www.ombulabs.com/blog/agile/remote/team-retreat-for-remote-companies.html).
 
 ### A Get To Know You Chat:
-Instrumental in the onboarding process at OmbuLabs is the chance to set up half hour meetings with each of your colleagues to learn a little more about them as people, and what they specifically do within the company.
+Instrumental in the [onboarding process](https://www.ombulabs.com/blog/slack/scrum/agile/onboarding-with-slack-workflows.html) at OmbuLabs is the chance to set up half hour meetings with each of your colleagues to learn a little more about them as people, and what they specifically do within the company.
 Some of the most important things I know about my colleagues I learned in these first half hour sessions. It was a way to quickly have an understanding of the make-up of the company and how everything is structured. This is especially important in a small company, but could also be used in an adjusted way in larger companies.
 
 ## Summary
