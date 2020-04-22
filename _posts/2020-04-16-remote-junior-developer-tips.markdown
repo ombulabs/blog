@@ -9,7 +9,7 @@ author: fionaDL
 Becoming the Apprentice, and then Junior Developer at OmbuLabs was both exciting and nerve racking. Learning a new company can be challenging, especially when the skills are new and the work is [remote](https://www.ombulabs.com/blog/tags/remote).
 
 Fortunately OmbuLabs made the journey a smooth and easy process. Here are some of the things that have been working.
-
+<!--more-->
 ## Communication, communication, communication.
 
 Communication is sometimes the hardest skill to excel in when working remotely. Here at OmbuLabs we use a variety of tools and methods to help make communication easier and more accessible.
