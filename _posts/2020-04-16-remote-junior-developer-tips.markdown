@@ -36,7 +36,7 @@ Pairing is the most important tool available to a remote Junior Developer. At Om
 On the journey to becoming a Developer there is A LOT to learn. Even when you finally make it to a comfortable place in your Developer career there will still be so much more to learn, so keeping track of it all is very helpful in the process.
 
 ### Journal:
-Keeping a journal (I use a google doc) is an important step in organizing all the things you learn or learn that you should learn. During pair sessions and throughout the day it is a good idea to take notes and jot down various resources and ideas that are thrown your way.
+Keeping a journal (I use a google doc) is an important step in organizing all the things you learn or that you should learn. During pair sessions and throughout the day it is a good idea to take notes and jot down various resources and ideas that are thrown your way.
 
 ### Backlog Grooming:
 This is a term stolen from agile, but it also applies well when looking back at the information and projects you’ve been gathering. It’s a good idea to go through the journal or notes, pull out things you need to study or work on, and check off ideas or concepts that you have gained an understanding in.
