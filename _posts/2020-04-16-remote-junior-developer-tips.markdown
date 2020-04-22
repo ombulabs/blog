@@ -6,7 +6,7 @@ categories: ["junior", "remote"]
 author: fionaDL
 ---
 
-Becoming the Apprentice, and then Junior Developer at OmbuLabs was both exciting and nerve racking. Learning a new company can be challenging, especially when the skills are new and the work is remote.
+Becoming the Apprentice, and then Junior Developer at OmbuLabs was both exciting and nerve racking. Learning a new company can be challenging, especially when the skills are new and the work is [remote](https://www.ombulabs.com/blog/tags/remote).
 
 Fortunately OmbuLabs made the journey a smooth and easy process. Here are some of the things that have been working.
 
