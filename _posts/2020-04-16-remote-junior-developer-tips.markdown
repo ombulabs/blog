@@ -3,7 +3,7 @@ layout: post
 title: 'Tips From One Remote Junior Developer to Another.'
 date: 2020-04-19 10:30:00
 categories: ["learning", "remote"]
-author: fionaDL
+author: fionadl
 ---
 
 Becoming the Apprentice, and then Junior Developer at OmbuLabs was both exciting and nerve racking. Learning a new company can be challenging, especially when the skills are new and the work is [remote](https://www.ombulabs.com/blog/tags/remote).
