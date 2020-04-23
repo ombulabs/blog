@@ -43,7 +43,7 @@ The description of the user story should describe the expected outcome clearly, 
 
 ## Step 3: Estimating user stories
 
-We like to start our sprints on Mondays and end our sprints on Fridays. Depending on the project, sprints may be 1 or 2 weeks long.
+We like to start our sprints on Mondays and end on Fridays. Depending on the project, sprints may be 1 or 2 weeks long.
 
 When we plan the sprint on Monday, we define which stories will be worked on during the sprint. At that point, stories should also be estimated. We like to use the [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number)
 sequence to estimate stories and we use an internal tool to do [blind estimation](https://www.ombulabs.com/blog/agile/scrum/become-better-estimators.html) as we are a remote, distributed team.
