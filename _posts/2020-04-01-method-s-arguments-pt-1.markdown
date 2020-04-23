@@ -371,3 +371,7 @@ foo(1, 2, 3, 4)
 All these options gives us some flexibility, but the order being that rigid also forces us to remember and respect the order and also remember what each position is, which really limits us.
 
 In the next post of this series we'll talk about keyword arguments that allow us to set arguments in any order, and on the next one we'll talk about the special block argument to inject code, some extra features like array deconstruction parameters and partially applied arguments to generate other methods.
+
+#### Next
+
+[Exploring Method Arguments in Ruby: Part 2](https://www.ombulabs.com/blog/ruby/learning/methods-arguments-ruby-part2.html)
