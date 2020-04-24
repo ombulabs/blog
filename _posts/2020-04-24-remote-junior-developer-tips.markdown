@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Tips From One Remote Junior Developer to Another.'
-date: 2020-04-19 10:30:00
+date: 2020-04-24 10:30:00
 categories: ["learning", "remote"]
 author: fionadl
 ---
