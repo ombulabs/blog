@@ -6,7 +6,7 @@ categories: [ruby, learning]
 author: arieljuod
 ---
 
-In [the first](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") and [second](https://www.ombulabs.com/blog/ruby/learning/methods-arguments-ruby-part2.html) issues of this series we talked about positional and keyword arguments, but we still have some extra option so our methods can do anything we want.
+In [the first](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") and [second](https://www.ombulabs.com/blog/ruby/learning/methods-arguments-ruby-part2.html) parts of this series we talked about positional and keyword arguments, but we still have some extra options so that our methods can do anything we want.
 
 In this final part we are going to explore blocks, array decomposition, partially applied methods and a few syntax tricks. We'll also study a few known methods to understand how eveything is used in real world applications.
 
@@ -79,7 +79,7 @@ end
 
 > So, as we see, we can always pass a block argument **even if a method doesn't actually use it!**.
 
-When we write a method, we may need to know wheter the user provided a block or not. If the block parameter is explicit we can just check if it's not nil, but we have a safer way to check that that also works with implicit blocks:
+When we write a method, we may need to know whether the user provided a block or not. If the block parameter is explicit we can just check that it isn't nil, but we have a safer way of checking that also works with implicit blocks:
 
 ```ruby
 def foo(arg1)
@@ -101,7 +101,7 @@ end
 
 ## Array Deconstruction
 
-Sometimes we may have a method that accepts an array as some of the arguments. Usually we just use a normal argument and extract the values inside the method:
+Sometimes we may have a method that accepts an array as one of the arguments. Usually we just use a normal argument and extract the values inside the method:
 
 ```ruby
 def foo(my_arr)
@@ -149,7 +149,7 @@ foo(1, 2, 'three', more_things: 'ignored')
 
 ## Arguments Delegation
 
-If you are writing a wrapper around another method, you usually need to accept the same arguments, do something, and then call the original method. If we need to use exactly the same arguments and we don't need them for our extra code, we can use a special delegation arguments introduced on Ruby 2.7 (the `...` operator):
+If you are writing a wrapper around another method, you usually need to accept the same arguments, do something, and then call the original method. If we need to use exactly the same arguments and we don't need them for our extra code, we can use a special argument for delegation introduced in Ruby 2.7 (the `...` operator):
 
 ```ruby
 def foo(...)
@@ -168,7 +168,7 @@ foo(1, 2)
 
 ## Partially Applied Methods
 
-We may have a process that does multiple calls to one method using mostly the same arguments and only changes some of them. To refactor those calls we can use the concept of functions (or methods) generators. The idea is to get our method, apply only some arguments, and then have a new method that requires only the rest of the arguments that were not applied yet.
+We may have a process that does multiple calls to one method using mostly the same arguments and only changes some of them. To refactor those calls we can use the concept of function (or method) generators. The idea is to get our method, apply only some arguments, and then have a new method that requires only the rest of the arguments that were not applied yet.
 
 Let's say we have a generic method to multiply two numbers:
 
@@ -254,4 +254,4 @@ end
 
 So we have covered more ways to make our methods super flexible so the user can use them and also customize the behavior to its needs.
 
-There are more small stricks that we can use, but it would make this article too long and repetitive, I'd recommend to read [this official anouncement](https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/) about the small differences introduced for Ruby 2.7 and Ruby 3.
+There are more small tricks that we can use, but it would make this article too long and repetitive, I recommend reading [this official anouncement](https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/) about the small differences introduced for Ruby 2.7 and Ruby 3.
