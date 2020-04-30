@@ -14,7 +14,7 @@ In this final part we are going to explore blocks, array decomposition, partiall
 
 ## Block Argument
 
-Sometimes it's not enough to pass a variable to a methods, sometimes we need to provide some customized code to modify what a method do. We can provide a block when calling a method following a special block syntax (really common on ruby):
+Sometimes it's not enough to pass a variable to a method, sometimes we need to provide some customized code to modify what a method does. We can provide a block when calling a method following a special block syntax (really common in ruby):
 
 ```ruby
 def foo(&my_block)
