@@ -252,6 +252,6 @@ end
 
 ## Conclusion
 
-So we have covered more ways to make our methods super flexible so the user can use them and also customize the behavior to its needs.
+We have covered more ways to make our methods super flexible so that we can use the methods and customize their behavior to our needs.
 
 There are more small tricks that we can use, but it would make this article too long and repetitive, I recommend reading [this official anouncement](https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/) about the small differences introduced for Ruby 2.7 and Ruby 3.
