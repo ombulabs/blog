@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Exploring Method Arguments in Ruby: Part 3"
-date: 2020-04-18 09:00:00
+date: 2020-05-05 09:00:00
 categories: [ruby, learning]
 author: arieljuod
 ---
@@ -198,7 +198,7 @@ multi3.(10) # => 30
 
 ## Case Study 1: link_to
 
-Let's analyze Rails' `link_to` method.
+Let's analyze Rails' [`link_to`](https://github.com/rails/rails/blob/v6.0.2.2/actionview/lib/action_view/helpers/url_helper.rb#L196) method.
 
 ```ruby
 # all arguments are optional, it just prints an empty "A" tag
@@ -225,7 +225,7 @@ end
 
 ## Case Study 2: pluralize
 
-Let's analyize another example: the `pluralize` helper method:
+Let's analyize another example: the [`pluralize`](https://github.com/rails/rails/blob/v6.0.2.2/actionview/lib/action_view/helpers/text_helper.rb#L230) helper method:
 
 ```ruby
 # it requires a count and a word in singular
@@ -252,6 +252,6 @@ end
 
 ## Conclusion
 
-We have covered more ways to make our methods super flexible so that we can use the methods and customize their behavior to our needs.
+We have covered more ways to make our methods super flexible so that we can use and customize their behavior to our needs.
 
 There are more small tricks that we can use, but it would make this article too long and repetitive, I recommend reading [this official anouncement](https://www.ruby-lang.org/en/news/2019/12/12/separation-of-positional-and-keyword-arguments-in-ruby-3-0/) about the small differences introduced for Ruby 2.7 and Ruby 3.
