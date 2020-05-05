@@ -351,3 +351,7 @@ In that generic example we have:
 Now we can have methods with a lot of flexibility combining both positional and keyword arguments and making some of them required and some optional, but we are not finished yet.
 
 Ruby gives us even more options that we will cover on the next post in this series. We will also analyze a few common Rails methods to see how they use different types of arguments so that we can put everything together with practical examples.
+
+#### Next
+
+[Exploring Method Arguments in Ruby: Part 3](https://www.ombulabs.com/blog/ruby/learning/methods-arguments-ruby-part3.html)
