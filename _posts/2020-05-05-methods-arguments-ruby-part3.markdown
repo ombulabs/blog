@@ -8,7 +8,7 @@ author: arieljuod
 
 In [the first](https://www.ombulabs.com/blog/ruby/learning/method-s-arguments-pt-1.html "Exploring Method Arguments in Ruby: Part 1 - The Lean Software Boutique") and [second](https://www.ombulabs.com/blog/ruby/learning/methods-arguments-ruby-part2.html) parts of this series we talked about positional and keyword arguments, but we still have some extra options so that our methods can do anything we want.
 
-In this final part we are going to explore blocks, array decomposition, partially applied methods and a few syntax tricks. We'll also study a few known methods to understand how eveything is used in real world applications.
+In this final part we are going to explore blocks, array decomposition, partially applied methods and a few syntax tricks. We'll also study a few known methods to understand how everything is used in real world applications.
 
 <!--more-->
 
