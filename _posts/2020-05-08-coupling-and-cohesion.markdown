@@ -12,17 +12,18 @@ you're first starting out - and even as you continue to gain
 experience - figuring out what those parts should be, and where they
 should live within a codebase can be a daunting task.  Design patterns
 and principles can help, but trying to keep them in mind as you design
-and implement solutions can be overwhelming. Thankfully, there's a
-pair of principles that can cut many of these gordian knots, and
-render decision making much clearer, simpler, and easier to articulate
-to others. Understanding and using the concepts of *coupling* and
-*cohesion* to guide your design and refactoring decisions yielded
+and implement solutions can be overwhelming.
+
+Thankfully, there's a pair of principles that can cut many of these gordian
+knots, and render decision making much clearer, simpler, and easier to
+articulate to others. Understanding and using the concepts of *coupling* and
+*cohesion* to guide my design and refactoring decisions yielded
 immediate results for me.
 
 <!--more-->
 
 Judging from a lot of the code that I've had
-to work on over the years, it could help quite a few other developers
+to work on over the years, I think it could help quite a few other developers
 as well.
 
 ## The problem in a nutshell
@@ -34,6 +35,7 @@ SOLID and DRY, [abstraction](https://simpleprogrammer.com/respecting-abstraction
 and design patterns. I knew that classes should "talk" to each other
 as little as possible. But, when it came time to actually write (or
 improve) code, the results were always somehow less than satisfactory.
+
 Ideally, we want neatly factored designs with relatively small methods
 and classes, each of which only does one thing, with zero side
 effects. But as I tried to reach that ideal, I seemed to always wind
@@ -44,8 +46,8 @@ ruining the organization of the code. The question of "where should
 this code live" is something that every working developer will run
 into over and over again.
 
-Learning about the twin concepts of coupling and cohesion suddenly
-clarified why I had been having trouble. Even better, all of the
+Learning about the twin concepts of [coupling and cohesion](https://wiki.c2.com/?CouplingAndCohesion)
+suddenly clarified why I had been having trouble. Even better, all of the
 other design principles suddenly made a much deeper and more cohesive
 sense - all of them were just different ways of addressing these two
 key principles.
@@ -75,7 +77,9 @@ in mind when designing software is worth the effort.
 
 The twin idea of Cohesion, for whatever reason, seems to be discussed
 less often, probably because it can be a bit more abstract at first.
-It's really just the inverse concept of coupling.
+It's really just the inverse concept of coupling.  Coupling tells us how
+strongly modules and classes are connected to one another, while cohesion tells
+us how strongly modules and classes are internally related to themselves.
 [Cohesion](https://en.wikipedia.org/wiki/Cohesion_(computer_science))
 is the degree to which all of the methods and data structures in a
 class or module are related to one another and belong together.  A
@@ -91,7 +95,7 @@ coupled to one another, *and* highly cohesive. Achieving that in the
 real world can be challenging, but it's an ideal worth keeping in
 mind. Like Coupling, there is a [hierarchy of different
 levels](https://it.toolbox.com/blogs/craigborysowich/design-principles-cohesion-050307)
-of cohesion. Like coupling, having an at least passing familiarity
+of cohesion. As with coupling, having an at least passing familiarity
 with the different levels of Cohesion will change the way that you
 approach writing new classes and modules, or refactoring existing
 ones.
@@ -100,31 +104,31 @@ ones.
 
 Like I said earlier, once you really start to understand coupling and
 cohesion, you'll start to see how most good design practices are
-really just ways of minimizing coupling and / or maximizing cohesion.
-For instance, most (if not all) of the design patterns listed as
+really just ways of minimizing coupling and/or maximizing cohesion.
+For instance:
+
+- Most (if not all) of the design patterns listed as
 "structural" patterns in the [definitive
 reference](https://en.wikipedia.org/wiki/Design_Patterns) are ways of
 reducing coupling between different parts of a system by allowing you
-to re-use a single interface. For that matter, some of the
-"behavioral" patterns are explicitly described as reducing coupling.
-As another example, Encapsulation can also be viewed as simply
+to re-use a single interface.
+- For that matter, some of the "behavioral" patterns are explicitly described
+as reducing coupling.
+- Encapsulation can also be viewed as simply
 preferring to create highly cohesive classes and modules. By creating
 data and code that live together, you are, by definition, creating
-more cohesive code. For those familiar with
-[SOLID](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design)
-principles, [Single
-Responsibility](https://stackify.com/solid-design-principles/) is
-basically a restatement of the idea of Cohesion. [Interface
-Segregation](https://devonblog.com/software-development/solid-violations-in-the-wild-the-interface-segregation-principle/)
-is also a way to increase cohesion by avoiding bloated, catch-all
-interfaces and the external coupling that they create. Liskov
-Substitution, meanwhile, is a pretty straightforward example of
+more cohesive code.
+- For those familiar with [SOLID](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles, [Single Responsibility](https://stackify.com/solid-design-principles/) is
+basically a restatement of the idea of Cohesion.
+- [Interface Segregation](https://devonblog.com/software-development/solid-violations-in-the-wild-the-interface-segregation-principle/) is also a way to increase cohesion by avoiding bloated, catch-all
+interfaces and the external coupling that they create.
+- [Liskov Substitution](https://www.tomdalling.com/blog/software-design/solid-class-design-the-liskov-substitution-principle/) is a pretty straightforward example of
 reducing coupling.
 
 ## Final thoughts
 
 As with any principle, you want to avoid over-simplifying things.
-Design patterns, SOLID, and many other best practices have a lot more
+Design patterns, [SOLID](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design), and many other best practices have a lot more
 going on than just coupling and cohesion.  There are a lot of
 considerations that go into designing software.  But ultimately, you
 have to start somewhere - and starting with a well grounded
@@ -134,5 +138,5 @@ things from the inside out, so to speak, and focusing first on how to
 make things as cohesive as possible tends to automatically reduce
 coupling, and to lead directly to better design decisions.  The next
 time you have an opportunity to design or refactor a codebase, try
-considering cohesion and it's effect on coupling as a first principle
+considering cohesion and its effect on coupling as a first principle
 to guide you.  I bet you'll be pleasantly surprised.
