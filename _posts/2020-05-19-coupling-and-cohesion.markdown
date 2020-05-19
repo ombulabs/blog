@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Better Software Design With Coupling and Cohesion"
-date: 2020-05-08 17:30:00
+title: "Better Software Design with Coupling and Cohesion"
+date: 2020-05-19 12:30:00
 categories: ["learning", "software-development"]
 author: rdormer
 ---
@@ -10,14 +10,14 @@ One of the most fundamental tasks when writing or refactoring software
 of any kind is breaking the problem down into smaller parts. When
 you're first starting out - and even as you continue to gain
 experience - figuring out what those parts should be, and where they
-should live within a codebase can be a daunting task.  Design patterns
+should live within a codebase can be a daunting task. Design patterns
 and principles can help, but trying to keep them in mind as you design
 and implement solutions can be overwhelming.
 
 Thankfully, there's a pair of principles that can cut many of these gordian
 knots, and render decision making much clearer, simpler, and easier to
-articulate to others. Understanding and using the concepts of *coupling* and
-*cohesion* to guide my design and refactoring decisions yielded
+articulate to others. Understanding and using the concepts of _coupling_ and
+_cohesion_ to guide my design and refactoring decisions yielded
 immediate results for me.
 
 <!--more-->
@@ -72,17 +72,16 @@ Conveniently, there is a hierarchy of types of coupling. Personally,
 I've found that learning about this hierarchy, and at least keeping it
 in mind when designing software is worth the effort.
 
-
 ## Cohesion
 
 The twin idea of Cohesion, for whatever reason, seems to be discussed
 less often, probably because it can be a bit more abstract at first.
-It's really just the inverse concept of coupling.  Coupling tells us how
+It's really just the inverse concept of coupling. Coupling tells us how
 strongly modules and classes are connected to one another, while cohesion tells
 us how strongly modules and classes are internally related to themselves.
-[Cohesion](https://en.wikipedia.org/wiki/Cohesion_(computer_science))
+[Cohesion](<https://en.wikipedia.org/wiki/Cohesion_(computer_science)>)
 is the degree to which all of the methods and data structures in a
-class or module are related to one another and belong together.  A
+class or module are related to one another and belong together. A
 module or class with a high level of cohesion will have elements that
 all share a common purpose, while one with lower cohesion will be more
 of a loosly organized collection of odds and ends. Perhaps one reason
@@ -90,8 +89,8 @@ Cohesion is not discussed as much is that it's easy to fall into the
 trap of thinking that a highly cohesive set of methods must be tightly
 coupled to one another, and therefore that the concept itself is just
 a restatement of Coupling. This is not necessarily the case, though.
-Ideally, a set of methods in a module or class would be *both* loosely
-coupled to one another, *and* highly cohesive. Achieving that in the
+Ideally, a set of methods in a module or class would be _both_ loosely
+coupled to one another, _and_ highly cohesive. Achieving that in the
 real world can be challenging, but it's an ideal worth keeping in
 mind. Like Coupling, there is a [hierarchy of different
 levels](https://it.toolbox.com/blogs/craigborysowich/design-principles-cohesion-050307)
@@ -108,35 +107,35 @@ really just ways of minimizing coupling and/or maximizing cohesion.
 For instance:
 
 - Most (if not all) of the design patterns listed as
-"structural" patterns in the [definitive
-reference](https://en.wikipedia.org/wiki/Design_Patterns) are ways of
-reducing coupling between different parts of a system by allowing you
-to re-use a single interface.
+  "structural" patterns in the [definitive
+  reference](https://en.wikipedia.org/wiki/Design_Patterns) are ways of
+  reducing coupling between different parts of a system by allowing you
+  to re-use a single interface.
 - For that matter, some of the "behavioral" patterns are explicitly described
-as reducing coupling.
+  as reducing coupling.
 - Encapsulation can also be viewed as simply
-preferring to create highly cohesive classes and modules. By creating
-data and code that live together, you are, by definition, creating
-more cohesive code.
+  preferring to create highly cohesive classes and modules. By creating
+  data and code that live together, you are, by definition, creating
+  more cohesive code.
 - For those familiar with [SOLID](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design) principles, [Single Responsibility](https://stackify.com/solid-design-principles/) is
-basically a restatement of the idea of Cohesion.
+  basically a restatement of the idea of Cohesion.
 - [Interface Segregation](https://devonblog.com/software-development/solid-violations-in-the-wild-the-interface-segregation-principle/) is also a way to increase cohesion by avoiding bloated, catch-all
-interfaces and the external coupling that they create.
+  interfaces and the external coupling that they create.
 - [Liskov Substitution](https://www.tomdalling.com/blog/software-design/solid-class-design-the-liskov-substitution-principle/) is a pretty straightforward example of
-reducing coupling.
+  reducing coupling.
 
 ## Final thoughts
 
 As with any principle, you want to avoid over-simplifying things.
 Design patterns, [SOLID](https://scotch.io/bar-talk/s-o-l-i-d-the-first-five-principles-of-object-oriented-design), and many other best practices have a lot more
-going on than just coupling and cohesion.  There are a lot of
-considerations that go into designing software.  But ultimately, you
+going on than just coupling and cohesion. There are a lot of
+considerations that go into designing software. But ultimately, you
 have to start somewhere - and starting with a well grounded
 understanding of these two basic principles is an excellent foundation
-to build on.  Personally, I've found that starting by considering
+to build on. Personally, I've found that starting by considering
 things from the inside out, so to speak, and focusing first on how to
 make things as cohesive as possible tends to automatically reduce
-coupling, and to lead directly to better design decisions.  The next
+coupling, and to lead directly to better design decisions. The next
 time you have an opportunity to design or refactor a codebase, try
 considering cohesion and its effect on coupling as a first principle
-to guide you.  I bet you'll be pleasantly surprised.
+to guide you. I bet you'll be pleasantly surprised.
