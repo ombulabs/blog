@@ -20,9 +20,9 @@ Our schedule isn’t the only time we pair though. If I or any other Developer n
 ##Know What You are Pairing About
 When I began at OmbuLabs I would enter each pairing session with an idea of what I wanted to ask about, or a few errors that I had been having and needed help with. After a month or so of this strategy we realized that it would be better to adjust.  
 
-Sometimes pairing sessions turned into code refactors or got derailed a bit from the story I was working on. We decided it would be better if the Senior Developer could have an overview of the project and the specific story before the session began. That way they could familiarize themselves with the big picture and also refresh themselves on the topic if necessary.
+Sometimes pairing sessions turned into code refactors or got derailed a bit from the story we were supposed to be working on. We decided it would be better if the Senior Developer could have an overview of the project and the specific story before the session began. That way they could familiarize themselves with the big picture and also refresh themselves on the topic if necessary.
 
-These days I try to let the Senior Developers know at least a few hours ahead of time what I am working on, and what has already been accomplished. The more information I am able to give them, the better session will go.
+These days I try to let the Senior Developers know at least a few hours ahead of time what we can work on, and what has already been accomplished. The more information I am able to give them, the better session will go.
 
 If there isn’t time for an overview several hours ahead, as is usually the case during spontaneous pairs, then it is a good idea to take some time in the beginning of the session to thoroughly explain what has been tried, what the issue is, and what the goal is. The more the outside Developer knows, the smoother the pair session will be. Taking the time to give all the information will save time in the end.
 
@@ -35,7 +35,7 @@ Knowing when To be Quiet and When to ask Questions:
 
 Watching and listening is probably the most important key to a successful pair session. It’s easy to get distracted when things slow down for a minute or something needs to load. It’s best to keep focused so that you don’t miss important steps or information. Use the downtime to take notes.
 
-I find it helpful to keep a pad of paper and take my notes by hand. This makes things smoother because I’m usually sharing my screen or trying to watch someone else on their screen and it’s nice to have something completely separate from the computer. It helps to keep track of what is being discussed and possible ideas or concepts that should be checked out later.
+I find it helpful to keep a pad of paper and take notes by hand. This makes things smoother because I’m usually sharing my screen or trying to watch someone else on their screen and it’s nice to have something completely separate from the computer. It helps to keep track of what is being discussed and possible ideas or concepts that should be checked out later.
 
 While watching and listening is important, knowing when to interject with an idea, or just to ask a question is also essential. Sometimes it’s hard to interrupt, but it will make the session more useful if you can ask questions when you don’t understand something, or add ideas when you think you know what should be done next. This creates a rapport between the Developers and you get much more out of a session if silence is not the overwhelming sound.
 
