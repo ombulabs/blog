@@ -6,12 +6,12 @@ categories: ["learning", "pairing"]
 author: fiondl
 ---
 
-Since starting at OmbuLabs as the Junior Developer I have had the incredible opportunity to pair with the Senior Developers. A lot. Over the months we have begun to develop better practices and routines to make the most of our pairing sessions, and now I would like to share some of our practices and tips for making a pairing session successful. At OmbuLabs we are an almost fully remote company so all of our pairing sessions are done through Tuple or Zoom, but this advice could translate easily to in person sessions as well.
+Since starting at OmbuLabs as the Junior Developer I have had the incredible opportunity to pair with my teammates. A lot. Over the months we have begun to develop better practices and routines to make the most of our pairing sessions, and now I would like to share some of our practices and tips for making a pairing session successful. At OmbuLabs we are a fully remote company so all of our pairing sessions are done through Tuple or Zoom, but this advice could translate easily to in person sessions as well.
 
 <!--more-->
 
 ##When and How Long to Pair For
-As a Junior Developer the time that I get to spend with Senior Developers is invaluable and having a schedule helps us to keep everything on track. We have a ratio of six Senior Developers to one Junior. To spread out the pool of knowledge each Senior Developer devotes two hours of time every other week to a pair session. This is a fixed schedule and we try to keep to it as much as possible. The team has made pairing a priority.
+As a Junior Developer the time that I get to spend with other Developers is invaluable and having a schedule helps us to keep everything on track. We have a ratio of six Senior Developers to one Junior. To spread out the pool of knowledge each Senior Developer devotes two hours of time every other week to a pair session. This is a fixed schedule and we try to keep to it as much as possible. The team has made pairing a priority.
 
 Two hours is a good amount of time for a session because it is long enough to get real work done, but short enough to stay concentrated and not need to take breaks.
 
@@ -22,16 +22,16 @@ When I began at OmbuLabs I would enter each pairing session with an idea of what
 
 Sometimes pairing sessions turned into code refactors or got derailed a bit from the story we were supposed to be working on. We decided it would be better if the Senior Developer could have an overview of the project and the specific story before the session began. That way they could familiarize themselves with the big picture and also refresh themselves on the topic if necessary.
 
-These days I try to let the Senior Developers know at least a few hours ahead of time what we can work on, and what has already been accomplished. The more information I am able to give them, the better session will go.
+These days I try to let my peers know at least a few hours ahead of time what we can work on, and what has already been accomplished. The more information I am able to give them, the better session will go.
 
 If there isn’t time for an overview several hours ahead, as is usually the case during spontaneous pairs, then it is a good idea to take some time in the beginning of the session to thoroughly explain what has been tried, what the issue is, and what the goal is. The more the outside Developer knows, the smoother the pair session will be. Taking the time to give all the information will save time in the end.
 
 ##Navigating or Driving
 Spending time in both pairing seats is important for any team to have successful pairs. It’s possible to learn just as much watching someone work through their process as it is having someone help you work through yours.
 
-I have recently begun to spend more time watching the Senior Developers work on their projects during pair sessions. It is extremely helpful to see what tools they use and how they solve problems that arise. This applies to pairing between the Senior Developer’s as well. The more you watch other’s work, or learn about what they are working on, the more tips and ideas you can pick up for yourself and apply to your own skills.
+I have recently begun to spend more time watching the my teammates work on their projects during pair sessions. It is extremely helpful to see what tools they use and how they solve problems that arise. The more you watch other’s work, or learn about what they are working on, the more tips and ideas you can pick up for yourself and apply to your own skills.
 
-Knowing when To be Quiet and When to ask Questions:
+##Knowing When to be Quiet and When to ask Questions
 
 Watching and listening is probably the most important key to a successful pair session. It’s easy to get distracted when things slow down for a minute or something needs to load. It’s best to keep focused so that you don’t miss important steps or information. Use the downtime to take notes.
 
