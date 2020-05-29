@@ -3,7 +3,7 @@ layout: post
 title: "How to Make Pair Programming Successful"
 date: 2020-05-29 12:30:00
 categories: ["learning", "pair-programming"]
-author: fiondl
+author: fionadl
 ---
 
 Since starting at OmbuLabs as the Junior Developer I have had the incredible opportunity to pair with my teammates. A lot. Over the months we have begun to develop better practices and routines to make the most of our pairing sessions, and now I would like to share some of our practices and tips for making a pairing session successful. At OmbuLabs we are a fully remote company so all of our pairing sessions are done through Tuple or Zoom, but this advice could translate easily to in person sessions as well.
