@@ -2,6 +2,7 @@
 layout: post
 title: "The Landing Page MVP"
 date: 2016-04-05 11:03:00
+reviewed: 2020-03-05 10:00:00
 categories: ["lean-startup", "mvp"]
 author: "etagwerker"
 ---

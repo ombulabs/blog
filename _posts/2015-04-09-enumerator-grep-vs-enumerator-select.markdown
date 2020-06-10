@@ -2,6 +2,7 @@
 layout: post
 title:  "Enumerable#grep vs Enumerable#select"
 date: 2015-04-09 11:37:00
+reviewed: 2020-03-05 10:00:00
 categories: ["ruby", "benchmark"]
 author: "mauro-oto"
 ---

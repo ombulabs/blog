@@ -1,6 +1,10 @@
-# Ombulabs Blog
+# The Ombu Labs Blog
 
-Blog for the Ombulabs team using Jekyll as the blog-engine.
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
+
+Blog for the [Ombu Labs team](https://www.ombulabs.com/#team), powered by [Jekyll](https://jekyllrb.com).
+
+This is included as an engine in the [https://github.com/ombulabs/ombulabs.com](https://github.com/ombulabs/ombulabs.com) application.
 
 ## Installation
 
@@ -11,7 +15,7 @@ To get the blog up and running in a local environment, follow the steps below:
 3. Run `bundle install` to install Jekyll and other dependencies.
 4. Start the blog by running `jekyll serve`.
 
-You can then access the blog at localhost:4000 (default port).
+You can then access the blog at [localhost:4000](http://localhost:4000) (default port).
 
 By default, the auto-regeneration is enabled, so any changes on HTML, CSS or posts will be auto-regenerated/compiled and viewable by refreshing the browser.  
 

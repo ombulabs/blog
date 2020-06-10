@@ -2,6 +2,7 @@
 layout: post
 title: "Often neglected API best practices"
 date: 2019-01-30 09:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["best-practices", "APIs"]
 author: "rdormer"
 ---

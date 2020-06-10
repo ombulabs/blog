@@ -2,6 +2,7 @@
 layout: post
 title:  "How to dynamically update your sitemap in Ruby"
 date: 2019-12-09 12:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["seo", "sitemap", "ruby"]
 author: "cleiviane"
 ---

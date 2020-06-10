@@ -5,10 +5,6 @@ archive: false
 post_class: post-template
 ---
 
-{% if page.canonical_url %}
-  <link rel="canonical" href="{{ site.fastruby_blog }}{{ page.url }}"/>
-{% endif %}
-
 <main class="content post-layout" role="main">
   <article class="post">
     <header class="post-header">
@@ -22,7 +18,7 @@ post_class: post-template
     <section class="post-content">
       {{ content }}
     </section>
-    
+
     {%- if page.archive -%}
     <section class="archive">
         <h5>Archive</h5>
@@ -33,19 +29,19 @@ post_class: post-template
         </ul>
     </section>
     {%- endif -%}
-    <div>
+    <div aria-label="Blog's tags">
       {%- include tag_list.html -%}
     </div>
-    <footer class="post-footer">
+    <footer class="post-footer" aria-label="Author's information">
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
         <figure class="author-image">
           {%- if author.gravatar -%}
-            <a class="img" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
-            <span class="hidden">{{author.display_name}}'s Picture</span></a>
+            <a class="img" aria-label="Author's picture" href="{{ page.baseurl }}" style="background-image: url(//2.gravatar.com/avatar/{{ author.gravatar }}?s=50)">
+            <span class="hidden" aria-hidden="true">{{author.display_name}}'s Picture</span></a>
           {%- else -%}
-            <a class="img" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
-            <span class="hidden"></span></a>
+            <a class="img" aria-label="Author's picture" href="{{ page.baseurl }}" style="background-image: url({{ page.baseurl }}/assets/images/profile.png)">
+            <span class="hidden" aria-hidden="true"></span></a>
           {%- endif -%}
         </figure>
         <section class="author">
@@ -54,7 +50,7 @@ post_class: post-template
             We are the Lean Software Boutique. Check us out at <a href="https://www.ombulabs.com">www.ombulabs.com</a>
           </p>
         </section>
-          
+
       {%- endif -%}
 
       <!-- Share links section -->

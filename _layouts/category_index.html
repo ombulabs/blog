@@ -5,13 +5,17 @@ layout: default
 <main id="content" class="content category">
   <div class="category-tag">
     <div class="category-name">
-      <h2>Articles about 
-        <span class="tag">{{ page.category | titleize | replace: '-',' ' }}</span>
+      <h2 aria-label="Articles about {{ page.category }}">Articles about 
+        {{ page.category | titleize | replace: '-',' ' }}
       </h2>
     </div>
   </div>
+  <div role="list">
   {%- for post in site.categories[page.category] -%}
-    {%- include post_excerpt.html -%}
+    <div role="listitem">
+      {%- include post_excerpt.html -%}
+    </div>
   {%- endfor -%}
   {%- include site_footer.html -%}
+  </div>
 </main>

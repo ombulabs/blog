@@ -2,6 +2,7 @@
 layout: post
 title: "Another successful Rails Girls event"
 date: 2018-06-18 14:00:00
+reviewed: 2020-03-05 10:00:00
 categories: ["learning", "rails"]
 author: "luciano"
 ---

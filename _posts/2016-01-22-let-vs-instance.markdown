@@ -2,6 +2,7 @@
 layout: post
 title: "Let vs Instance Variables"
 date: 2016-01-22 10:36:00
+reviewed: 2020-03-05 10:00:00
 categories: ["rails", "rspec", "ruby"]
 author: "schmierkov"
 ---

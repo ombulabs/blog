@@ -13,7 +13,6 @@ category_dir: 'tags'
 excerpt_separator: "<!--more-->"
 author_title_prefix: "Articles by "
 timezone: America/New_York
-fastruby_blog: 'https://www.fastruby.io/blog'
 
 # Details for the RSS feed generator
 url:            'https://www.ombulabs.com'
@@ -30,8 +29,7 @@ sass:
   style: compressed
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: posts
     values:
@@ -98,3 +96,15 @@ authors:
     email: amanda@ombulabs.com
     twitter: AmandaBizzinot2
     github: ABizzinotto
+  arieljuod:
+    display_name: "Ariel Juodziukynas"
+    gravatar: 6a4707bee2fd826ffe4b40a069677bf1
+    email: ariel@ombulabs.com
+    twitter: arieljuod
+    github: arielj
+  fionadl:
+    display_name: "Fiona Lapham"
+    gravatar: 4b185cedfce784104e9eb899acc21edb
+    email: fiona@ombulabs.com
+    twitter: fiona4661
+    github: fionadl

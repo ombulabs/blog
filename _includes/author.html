@@ -1,9 +1,9 @@
 {%- if author -%}
   {%- if author.gravatar -%}
   <span class="author-info">
-    <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
+    <img aria-hidden="true" class="author-thumb" src="//2.gravatar.com/avatar/{{ author.gravatar }}?s=50" alt="{{ author.display_name }}" nopin="nopin" />
   {%- else -%}
-    <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+    <img aria-hidden="true" class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
   {%- endif -%}
   <a href="{{ site.baseurl }}/authors/{{ post.author }}"
      title="Articles by {{ author.display_name}}">
@@ -17,9 +17,9 @@
     {%- assign author_info = site.authors[author] -%}
     {%- if author_info.gravatar -%}
       <span class="author-info">
-        <img class="author-thumb" src="//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50" alt="{{ author_info.display_name }}" nopin="nopin" />
+        <img aria-hidden="true" class="author-thumb" src="//2.gravatar.com/avatar/{{ author_info.gravatar }}?s=50" alt="{{ author_info.display_name }}" nopin="nopin" />
     {%- else -%}
-        <img class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+        <img aria-hidden="true" class="author-thumb" src="{{ site.baseurl }}/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
     {%- endif -%}
         <a href="{{ site.baseurl }}/authors/{{ author }}"
         title="Articles by {{ author_info.display_name}}">
