@@ -60,22 +60,24 @@
 
 <body class="{%- if page.post_class -%}{{page.post_class}}{%- else -%}home-template{%- endif -%}">
   <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{%- endif -%}">
-      <nav class="main-nav overlay clearfix">
-        {%- if page.logo -%}
-            <a class="blog-logo" href="{{ site.baseurl }}">
-              <img src="{{ page.logo }}" alt="Blog Logo" />
-            </a>
-        {%- endif -%}
-        <a class="back-button" aria-label="Go To Ombulabs"
-          href="/"><span>Home</span></a>
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"
-          aria-label="Subscribe to this blog"><span>Subscribe</span></a>
-      </nav>
-      <div class="vertical">
-          <div class="main-header-content inner">
-            <h1 class="page-title logo"><a aria-label="Go to Ombulabs' blog home page"
-              href="{{ site.baseurl }}">{{ site.name }}</a></h1>
-          </div>
+    <nav class="main-nav overlay clearfix">
+      {%- if page.logo -%}
+        <a class="blog-logo" href="{{ site.baseurl }}">
+          <img src="{{ page.logo }}" alt="Blog Logo" />
+        </a>
+      {%- endif -%}
+      <a class="back-button" aria-label="Go To Ombulabs"
+        href="/"><span>Home</span>
+      </a>
+      <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"
+        aria-label="Subscribe to this blog"><span>Subscribe</span>
+      </a>
+    </nav>
+    <div class="vertical">
+      <div class="main-header-content inner">
+        <h1 class="page-title logo"><a aria-label="Go to Ombulabs' blog home page"
+          href="{{ site.baseurl }}">{{ site.name }}</a>
+        </h1>
       </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
