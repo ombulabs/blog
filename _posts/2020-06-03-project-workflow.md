@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "The OmbuLabs Workflow: working with GitHub and Pivotal Tracker"
-date: 2020-06-11 11:00:00
-reviewed: 2020-06-11 11:00:00
+date: 2020-06-15 11:00:00
+reviewed: 2020-06-15 11:00:00
 categories: ["agile", "pivotal-tracker", "github"]
 author: "abizzinotto"
 ---
