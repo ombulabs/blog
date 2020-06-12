@@ -78,7 +78,7 @@ At that point, a **new** user story should be created with the type set to **bug
 
 ## Pair Programming
 
-We like to use Pair Programming whenever it makes sense as a technique. If two developers work on an issue and open a Pull Request while pair programming, it is considered code reviewed and Ready for QA. Therefore, it should be labeled as such and a comment should be added to the Pull Request explaining it was opened during a pair programming session.
+We like to use [Pair Programming](https://www.ombulabs.com/blog/learning/pair-programming/how-to-pair-sucessfully.html) whenever it makes sense as a technique. If two developers work on an issue and open a Pull Request while pair programming, it is considered code reviewed and Ready for QA. Therefore, it should be labeled as such and a comment should be added to the Pull Request explaining it was opened during a pair programming session.
 
 ## Conclusion
 
