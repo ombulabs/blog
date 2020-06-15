@@ -5,11 +5,11 @@ date: 2020-06-15 12:30:00
 categories: ["open-source"]
 author: fionadl
 ---
-At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. Dash is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [Github](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
+At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. [Dash](https://github.com/fastruby/dash) is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [Github](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
 
 <!--more-->
 
-<img src="/blog/assets/images/dash" alt="dash ombulabs" class="medium-img">
+<img src="/blog/assets/images/dash.png" alt="dash ombulabs" class="medium-img">
 
 ## Why
 We created this dashboard so that we can see a full list of our todos all in one spot. Dash allows the user to sync up to the latest information available on Github and Pivotal Tracker and see it all in one organized list. Sometimes it's difficult to keep track of the todos when they come from different programs, but now we have an app that shows us a simple layout of everything on our lists.
