@@ -11,7 +11,7 @@ As a remote team, we work and communicate asynchronously a lot of the time. Addi
 
 We have shared [more information on how we use Pivotal Tracker here](https://www.ombulabs.com/blog/tags/pivotal-tracker). We also like to use [GitHub](https://github.com/) to its full potential. Therefore, we needed a standardized workflow that would take into account how we use both these tools and ensure everybody on the team knows what is going on by looking at a [Pivotal Tracker](https://www.pivotaltracker.com/) board or a list of open Pull Requests.
 
-In this article, I will walk you through the workflow we created for our team.
+In this article, I will walk you through the workflow we created for our team. You can [find a flowchart representation of the workflow here](https://www.ombulabs.com/blog/assets/images/project-workflow/github-pivotal-flow.png).
 
 <!--more-->
 
