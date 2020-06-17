@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "The OmbuLabs Workflow: working with GitHub and Pivotal Tracker"
+title: "The OmbuLabs Workflow: working with GitHub and Pivotal Tracker"
 date: 2020-06-15 11:00:00
-reviewed: 2020-06-15 11:00:00
+reviewed: 2020-06-17 11:00:00
 categories: ["agile", "pivotal-tracker", "github"]
 author: "abizzinotto"
 ---
@@ -42,7 +42,7 @@ The Pull Request is not approved but the author can address or disregard the com
 However, in order for the Pull Request to be considered code reviewed and ready to Manual Testing, there must be an approval, either by the original reviewer or a second one.
 
 **Request Changes:**
-The Pull Request is not approved and the author *must* address the comments.
+The Pull Request is not approved and the author **must** address the comments.
 
 Once the requested changes have been addressed, the reviewer who requested them must review the pull request again and either approve it or request further changes.
 
