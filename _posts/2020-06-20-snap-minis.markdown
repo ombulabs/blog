@@ -23,7 +23,7 @@ Additionally, Minis work on both Android and iOS devices. You do not need two di
 ## Easy to Use
 The Minis are lightweight applications easily accessible through the Chat interface of the Snapchat app. Users do not need to install a separate app and switch applications to use your service. They also don't need to wait for a download to finish.
 
-From inside the Snapchat application right in the conversation your users are having with their friends, they can pull up the Games menu and your Mini is readily available for them to use.
+Snapchat users can launch a Snap Mini from within a conversation they're having with their friends. You can quickly collaborate or play with your friends, without having to open a new app or website.
 
 ## Easy to Share with Friends
 A Mini can interact with both the chat and camera interfaces of the Snapchat application. This makes it easy for your users to share that they've used your mini with their friends.
