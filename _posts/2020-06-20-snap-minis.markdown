@@ -38,9 +38,13 @@ Having in mind the concept of a Mini, a bite-sized application inside the Chat i
 
 Another advantage is adding a social aspect to the experience. These mini applications live inside the Chat interface and allow friends to browse and use them together. You can take advantage of the communication that's already happening on Snapchat and bring that into your service.
 
+A pretty awesome feature of minis is you can see in real time which of your friends are online and on that same mini at the same time as you.
+
 If you have an actionable use case that includes a strong social aspect, Minis are perfect for you.
 
-To know more about Minis and hear the experience of some of the early partners working with Snap on this, you can [check out this video shared by the company](https://www.youtube.com/watch?v=ZoKlrgyKH0Y).
+To know more about Minis and hear the experience of some of the early partners working with Snap on this, you can check out this video shared by the company.
+
+[![Snap Partner Summit 2020](http://img.youtube.com/vi/ZoKlrgyKH0Y/0.jpg)](https://www.youtube.com/watch?v=ZoKlrgyKH0Y "Snap Partner Summit 2020")
 
 # How We Can Help
 
