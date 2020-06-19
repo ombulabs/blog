@@ -4,6 +4,7 @@ title: "Some Resources and Advice For Junior Developers"
 date: 2020-03-18 17:30:00
 categories: ["learning", "software-development"]
 author: rdormer
+published: false
 ---
 
 ## Tough Love
