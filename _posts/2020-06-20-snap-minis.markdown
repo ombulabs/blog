@@ -9,7 +9,7 @@ author: ABizzinotto
 
 Last week, [Snap](https://www.snap.com) announced a new product during the [Snap Partner Summit 2020](https://www.youtube.com/watch?v=BfvubHha69k), [Snap Minis](https://minis.snapchat.com/). Minis are bite-sized third-party applications that live inside [Snapchat](https://www.snapchat.com/) and can be accessed through Snapchat's Chat interface. They are built on the same principle and technology as the Snap Games and are easy to develop, allowing you to have an app that takes advantage of the existing [Snapchat](https://www.snapchat.com/) application and is available to Snapchat users worldwide.
 
-OmbuLabs has developed a Snap Mini and in this article I'll share with you the main advantages of having a Mini and how we can help you get in on this.
+OmbuLabs recently developed a Snap Mini application for one of our clients. In this article I'll share with you the main advantages of launching a Snap Mini and how we can help you get in on this.
 
 <!--more-->
 
