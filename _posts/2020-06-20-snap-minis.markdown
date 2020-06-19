@@ -44,7 +44,7 @@ To know more about Minis and hear the experience of some of the early partners w
 
 # How We Can Help
 
-We have developed a Snap Mini using Vue.js and [shared our experience doing so here](link-to-ariels-article).
+We have developed a Snap Mini using [Vue.js](https://vuejs.org) and [shared our experience doing so here](link-to-ariels-article).
 
 Whether you have an idea you'd like to turn into a Mini, a design ready to go that just needs to be built or are curious to see how a Mini could benefit your company and fit into your current product, we can help.
 
