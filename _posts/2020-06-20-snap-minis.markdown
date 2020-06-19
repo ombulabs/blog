@@ -42,7 +42,7 @@ If you have an actionable use case that includes a strong social aspect, Minis a
 
 To know more about Minis and hear the experience of some of the early partners working with Snap on this, you can [check out this video shared by the company](https://www.youtube.com/watch?v=ZoKlrgyKH0Y).
 
-# How Can OmbuLabs Help
+# How We Can Help
 
 We have developed a Snap Mini using Vue.js and [shared our experience doing so here](link-to-ariels-article).
 
