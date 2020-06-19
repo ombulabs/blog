@@ -5,7 +5,7 @@ date: 2020-06-15 12:30:00
 categories: ["open-source"]
 author: fionadl
 ---
-At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. [Dash](https://github.com/fastruby/dash) is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [Github](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
+At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. [Dash](https://github.com/fastruby/dash) is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [GitHub](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
 
 <!--more-->
 
