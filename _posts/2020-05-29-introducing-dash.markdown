@@ -21,6 +21,6 @@ When Dash syncs with open pull requests in an organization it checks the pull re
 Dash also has rake tasks available for updating each issue or pull request that is already in the database to see what the status is and if assignees, or reviewers have changed. We use these rake tasks to set up schedulers in Heroku so that our todo lists stay up to date without having to constantly sync them.
 
 ## Open Source
-Contributing to open source and building open source projects are a very important part of OmbuLabs [values]https://www.ombulabs.com/blog/values/our-values.html. We have decided to make Dash an open source project in case any other companies are using these same resources and might find this application a helpful addition to their toolset.
+Contributing to open source and building open source projects are a very important part of OmbuLabs [values](https://www.ombulabs.com/blog/values/our-values.html). We have decided to make Dash an open source project in case any other companies are using these same resources and might find this application a helpful addition to their toolset.
 
 We are continuing work on Dash, but also we are now inviting the Ruby on Rails community to join in. You can also read more about what we have been working on in open source this year [here](https://www.ombulabs.com/blog/open-source/open-source-report-q1.html).
