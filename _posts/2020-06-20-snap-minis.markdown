@@ -16,7 +16,7 @@ OmbuLabs recently developed a Snap Mini application for one of our clients. In t
 First of all, why create a Snap Mini? Here are the main advantages of having your own app inside [Snapchat](https://www.snapchat.com/):
 
 ## Easy to Develop
-Snap Minis exist inside the main Snapchat application. They are built on HTML5 and take advantage of the [Snap Kit](https://kit.snapchat.com/), reducing the scope of the project.
+Snap Minis exist inside the main Snapchat application. They are built on HTML5 and take advantage of the existing Snapchat app, which means they work cross-platform and are readily available to all Snapchat users, reducing the scope of the project.
 
 Additionally, Minis work on both Android and iOS devices. You do not need two different applications to cater to different users.
 
