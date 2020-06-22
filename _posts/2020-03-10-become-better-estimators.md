@@ -2,6 +2,7 @@
 layout: post
 title: Using Actual Story Points to Become Better Estimators
 date: 2020-03-10 09:30:00
+reviewed: 2020-06-10
 categories: [agile, scrum]
 author: abizzinotto
 ---
