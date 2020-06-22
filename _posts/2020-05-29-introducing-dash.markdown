@@ -5,7 +5,7 @@ date: 2020-06-15 12:30:00
 categories: ["open-source"]
 author: fionadl
 ---
-At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. [Dash](https://github.com/fastruby/dash) is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [Github](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
+At OmbuLabs we are always trying to find or create tools to help our processes and workdays run as smoothly and efficiently as possible. For the past few months we have been developing just such a tool, and recently we made it open source. [Dash](https://github.com/fastruby/dash) is a dashboard application written in Ruby on Rails that integrates open pull requests and issues from [GitHub](https://github.com/) with [Pivotal Tracker](https://www.pivotaltracker.com/) stories.
 
 <!--more-->
 
@@ -21,6 +21,6 @@ When Dash syncs with open pull requests in an organization it checks the pull re
 Dash also has rake tasks available for updating each issue or pull request that is already in the database to see what the status is and if assignees, or reviewers have changed. We use these rake tasks to set up schedulers in Heroku so that our todo lists stay up to date without having to constantly sync them.
 
 ## Open Source
-Contributing to open source and building open source projects are a very important part of OmbuLabs [values]https://www.ombulabs.com/blog/values/our-values.html. We have decided to make Dash an open source project in case any other companies are using these same resources and might find this application a helpful addition to their toolset.
+Contributing to open source and building open source projects are a very important part of OmbuLabs [values](https://www.ombulabs.com/blog/values/our-values.html). We have decided to make Dash an open source project in case any other companies are using these same resources and might find this application a helpful addition to their toolset.
 
-We are continuing work on Dash, but also we are now inviting the Ruby on Rails community to join in. You can also read more about what we have been working on in open source this year [here](https://www.ombulabs.com/blog/open-source/open-source-report-q1.html).
+We are continuing to work on Dash, but also we are now inviting the Ruby on Rails community to join in. You can also read more about what we have been working on in open source this year [here](https://www.ombulabs.com/blog/open-source/open-source-report-q1.html).
