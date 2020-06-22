@@ -2,9 +2,9 @@
 layout: post
 title: Our Core Values
 date: 2020-03-19 12:00:00
+reviewed: 2020-06-22 12:00:00
 categories: ["values"]
 author: etagwerker
-published: false
 ---
 
 At [Ombu Labs](https://www.ombulabs.com) we have many values that have been key
