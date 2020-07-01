@@ -31,10 +31,9 @@ A Mini can interact with both the chat and camera interfaces of the Snapchat app
 Their friends can then tap the chat card or camera sticker and be taken to your mini. All without leaving Snapchat.
 
 # What Can I do with Minis?
-
 There are several possibilities here. Minis can integrate with the Snapchat features and perform a variety of actions.
 
-Having in mind the concept of a Mini, a bite-sized application inside the Chat interface, you can define an actionable use case within your product and turn it into a mini. Some examples shared by Snap during the Snap Partner Summit 2020 include deciding what to watch, buying tickets, voter registration and health and fitness. If you have a specific action that can be performed by your audience, you can turn it into a Mini.
+Keeping in mind that a mini is a bite-sized application inside the Chat interface, you can define an actionable use case within your product and turn it into a mini. Some examples shared by Snap during the Snap Partner Summit 2020 include deciding what to watch, buying tickets, voter registration and health and fitness. If you have a specific action that can be performed by your audience, you can turn it into a Mini.
 
 Another advantage is adding a social aspect to the experience. These mini applications live inside the Chat interface and allow friends to browse and use them together. You can take advantage of the communication that's already happening on Snapchat and bring that into your service.
 
