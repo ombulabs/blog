@@ -36,7 +36,7 @@ There are several possibilities here. Minis can integrate with the Snapchat feat
 
 Having in mind the concept of a Mini, a bite-sized application inside the Chat interface, you can define an actionable use case within your product and turn it into a mini. Some examples shared by Snap during the Snap Partner Summit 2020 include deciding what to watch, buying tickets, voter registration and health and fitness. If you have a specific action that can be performed by your audience, you can turn it into a Mini.
 
-Another advantage is adding a social aspect to the experience. These mini applications live inside the Chat interface and allow friends to browse and use them together. You can take advantage of the communication that's already happening on Snapchat and bring that into your service.
+Another advantage is adding a social aspect to the experience. These Mini applications live inside the Chat interface and allow friends to browse and use them together. You can take advantage of the communication that's already happening on Snapchat and bring that into your service.
 
 A pretty awesome feature of minis is you can see in real time which of your friends are online and on that same mini at the same time as you.
 
