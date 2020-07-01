@@ -1,13 +1,13 @@
 ---
 layout: post
 title: "Snap Minis: How we can help you bring your app into SnapChat"
-date: 2020-06-20 11:00:00
-reviewed: 2020-06-20 11:00:00
+date: 2020-07-10 11:00:00
+reviewed: 2020-07-10 11:00:00
 categories: []
 author: ABizzinotto
 ---
 
-Last week, [Snap](https://www.snap.com) announced a new product during the [Snap Partner Summit 2020](https://www.youtube.com/watch?v=BfvubHha69k), [Snap Minis](https://minis.snapchat.com/). Minis are bite-sized third-party applications that live inside [Snapchat](https://www.snapchat.com/) and can be accessed through Snapchat's Chat interface. They are built on the same principle and technology as the Snap Games and are easy to develop, allowing you to have an app that takes advantage of the existing [Snapchat](https://www.snapchat.com/) application and is available to Snapchat users worldwide.
+Last month, [Snap](https://www.snap.com) announced a new product during the [Snap Partner Summit 2020](https://www.youtube.com/watch?v=BfvubHha69k), [Snap Minis](https://minis.snapchat.com/). Minis are bite-sized third-party applications that live inside [Snapchat](https://www.snapchat.com/) and can be accessed through Snapchat's Chat interface. They are built on the same principle and technology as the Snap Games and are easy to develop, allowing you to have an app that takes advantage of the existing [Snapchat](https://www.snapchat.com/) application and is available to Snapchat users worldwide.
 
 OmbuLabs recently developed a Snap Mini application for one of our clients. In this article I'll share with you the main advantages of launching a Snap Mini and how we can help you get in on this.
 
@@ -48,7 +48,7 @@ To know more about Minis and hear the experience of some of the early partners w
 
 # How We Can Help
 
-We have developed a Snap Mini using [Vue.js](https://vuejs.org) and [shared our experience doing so here](link-to-ariels-article).
+We have developed a Snap Mini using [Vue.js](https://vuejs.org) and will share our experience on another article soon.
 
 Whether you have an idea you'd like to turn into a Mini, a design ready to go that just needs to be built or are curious to see how a Mini could benefit your company and fit into your current product, we can help.
 
