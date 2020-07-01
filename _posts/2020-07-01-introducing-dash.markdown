@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing Dash - An open source dashboard from OmbuLabs"
-date: 2020-06-26 12:30:00
+date: 2020-07-01 12:00:00
 categories: ["open-source"]
 author: fionadl
 ---
