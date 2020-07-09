@@ -3,8 +3,8 @@ layout: post
 title: "Some Resources and Advice For Junior Developers"
 date: 2020-03-18 17:30:00
 categories: ["learning", "software-development"]
+reviewed: 2020-07-09 10:00:00
 author: rdormer
-published: false
 ---
 
 ## Tough Love
