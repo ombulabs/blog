@@ -3,7 +3,7 @@ layout: post
 title: "Snap Minis: How we can help you bring your app into SnapChat"
 date: 2020-07-10 11:00:00
 reviewed: 2020-07-10 11:00:00
-categories: []
+categories: ["software-development"]
 author: ABizzinotto
 ---
 
