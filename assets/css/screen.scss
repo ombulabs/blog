@@ -619,6 +619,15 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 6px;
 }
 
+form#search-input input{
+  display: flex;
+  float: right;
+  width: 15%;
+  margin-top: 25px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
     position: absolute;
