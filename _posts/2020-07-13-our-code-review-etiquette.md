@@ -6,9 +6,9 @@ categories: [best-practices]
 author: cleiviane
 ---
 
-Code Reviewing is one of the greatest tools we have as software developers to help us improve the quality of our code. It can be incredibly beneficial, but it can also be a source of pain, frustration, and overall, a waste of time instead of a time-saver.
+Code Review is one of the greatest tools we have as software developers to help us improve the quality of our code. It can be incredibly beneficial, but it can also be a source of pain, frustration, and overall, a waste of time instead of a time-saver.
 
-Because of that a while ago we wrote this code review tips to be acknowledged and incorporated by everyone in our team and now we want to share they with you.
+Because of that a while ago we wrote these code review tips that should be acknowledged and incorporated by everyone in our team and now we want to share them with you.
 
 <!--more-->
 
@@ -60,15 +60,12 @@ But besides knowing what code review is for, we need to know what code review is
 - A common axiom is <i>"Don't take it personally. The review is of the code, not you."</i> We used to include this, but now prefer to say what we mean: Be aware of how hard it is to convey emotion online and how easy it is to misinterpret a feedback. If a review seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent in private.
 - Write good commit messages. Not just "Added x file", but "Added x class" or "Fixing x bug" if writing a summary, and if it's a complicated/weird bug that took you a while, write a long commit message with references or an explanation.
 - Keeping the previous point in mind: assume the best intention from the reviewer's comments.
-- Communication is the key. Give your reviewers context on your change.
+- Communication is the key. Give your reviewers context about your changes.
 - Explain why the code exists: "It's like that because of these reasons. Would it be more clear if I rename this class/file/method/variable?"
 - Extract some changes and refactorings into future tickets/stories.
-- Link to the code review from the ticket/story.
 - Push commits based on earlier rounds of feedback as isolated commits to the branch. Reviewers should be able to read individual updates based on their earlier feedback.
 - Seek to understand the reviewer's perspective.
 - Try to respond to every single comment. Don’t ignore a comment you did not like.
-- Wait to merge the branch until Continuous Integration tells you the test suite is green in the branch.
-- Merge once you feel confident in the code and its impact on the project.
 
 #### Enjoy!
 
