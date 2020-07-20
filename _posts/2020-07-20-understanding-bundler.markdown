@@ -31,7 +31,6 @@ How it does that depends on what we are trying to require.
 > `require` is a method defined in the [Kernel module](https://ruby-doc.org/core-2.6.6/Kernel.html#method-i-require)
 > there are more methods to require code, we are only going to focus on this one
 
-
 ### The $LOAD_PATH
 
 Ruby keeps track of an array with all the paths it knows where code should be. We all saw this variable somewhere while coding, but it's one of those things we just don't want to touch because it can break something else.
@@ -39,6 +38,7 @@ Ruby keeps track of an array with all the paths it knows where code should be. W
 If we print the content of this array using IRB we can see a list of paths in our system:
 
 ```ruby
+#irb
 2.6.6 :001 > pp $LOAD_PATH
 ["/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib",
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/site_ruby/2.6.0",
@@ -49,17 +49,19 @@ If we print the content of this array using IRB we can see a list of paths in ou
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/vendor_ruby",
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0",
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/x86_64-darwin19"]
- ```
+```
 
 You can see, for example, that I'm running Ruby 2.6.6 and I'm using RVM.
 
 ### Requiring a Module from the Standard Library
 
-When we require something like the `csv` module, it is part of the standard library (i.e.: it's part of Ruby itself). In this case, we can go over all the paths in that array until we find a file named `csv.rb`. If we go to `/home/ariel/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0` we indeed find it. Ruby does the same, and the loads the module so we can use it.
+When we require something like the `csv` module, it is part of the standard library (i.e.: it's part of Ruby itself). In this case, we can go over all the paths in that array until we find a file named `csv.rb`. If we go to `/home/ariel/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0` we indeed find it. Ruby does the same, and then loads the module so we can use it.
 
 When it can't find a file with the name we asked for, it will raise an error we probably all saw more than we want to:
 
-`LoadError (cannot load such file -- some_unknown_module)`
+```ruby
+LoadError (cannot load such file -- some_unknown_module)
+```
 
 ### Requiring a Gem
 
@@ -73,6 +75,7 @@ For what we need to know, the new method will first check if there's a gem with 
 
 This is our `$LOAD_PATH` after requiring a gem:
 ```ruby
+#irb
 2.6.6 :002 > require 'bundler'
  => true 
 2.6.6 :003 > pp $LOAD_PATH
@@ -86,7 +89,7 @@ This is our `$LOAD_PATH` after requiring a gem:
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/vendor_ruby",
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0",
  "/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/x86_64-darwin19"]
- ```
+```
 
 We can see that the second element of the array is now the path of bundler. But why is it loading version `2.1.4` and not a different one?
 
@@ -169,12 +172,14 @@ Since we are already talking about the `PATH` env variable, let's see what RVM d
 
 This is my `PATH` when using Ruby 2.6.6 in bash:
 ```bash
+# bash
 % echo $PATH
 /Users/arielj/.rvm/gems/ruby-2.6.6/bin:/Users/arielj/.rvm/gems/ruby-2.6.6@global/bin:/Users/arielj/.rvm/rubies/ruby-2.6.6/bin:/Users/arielj/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 ```
 
 And after running `rvm use 2.6.2`:
 ```bash
+# bash
 % rvm use 2.6.2
 Using /Users/arielj/.rvm/gems/ruby-2.6.2
 
