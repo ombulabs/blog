@@ -24,13 +24,14 @@ I'm only going to talk about how Bundler makes sure our code uses specific versi
 
 ## The Problem
 
-When we are writing a Ruby script, if we want to use code from another script, we would use something like `require 'csv'` (*), and Ruby will try to find that in our system.
+When we are writing a Ruby script, if we want to use code from another script, we would use something like `require 'csv'`, and Ruby will try to find that in our system.
+
+> `require` is a method defined in the [Kernel](https://ruby-doc.org/core-2.6.6/Kernel.html#method-i-require) module.
+>
+> There are more methods to require code (like `require_relative` or Rails' autoloading and lazy loading mechanisms), but I am only going to focus on this one for simplicity
 
 How it does that depends on what we are trying to require.
 
-> (*) `require` is a method defined in the [Kernel module](https://ruby-doc.org/core-2.6.6/Kernel.html#method-i-require)
->
-> There are more methods to require code (`require_relative` or the Rails' autoloading and lazy loading mechanisms), but I only going to focus on this one for simplicity
 
 ### The $LOAD_PATH Global Variable
 
