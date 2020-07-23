@@ -51,6 +51,7 @@
   <meta property="fb:admins" content="10153304864537860" />
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/screen.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/icomoon.css" />
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic|Maven+Pro"
     rel="stylesheet" type="text/css">
   <!-- Customisation  -->
@@ -70,10 +71,11 @@
         href="/"><span>Home</span>
       </a>
       <form action='/search' method='GET' id="search-input">
-        <input class= "icon-search" type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts.." required />
+        <div class="icon-search"></div>
+        <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts.." required />
         <button type='submit' hidden></button>
       </form>
-      <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/rss.xml"
+      <a class="subscribe-button icon-rss" href="{{ site.baseurl }}/rss.xml"
         aria-label="Subscribe to this blog"><span>Subscribe</span>
       </a>
     </nav>
