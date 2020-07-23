@@ -623,9 +623,12 @@ form#search-input input{
   display: flex;
   float: right;
   width: 15%;
-  margin-top: 25px;
+  padding: 10px;
+  margin-top: 20px;
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  border: 1px solid #ffffff;
 }
 
 /* Special styles when overlaid on an image*/
