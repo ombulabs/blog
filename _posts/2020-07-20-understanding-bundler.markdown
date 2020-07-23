@@ -6,7 +6,7 @@ categories: ['ruby', 'learning']
 author: arieljuod
 ---
 
-We, Ruby developers, are used to run scripts or commands with the prefix `bundle exec`, but sometimes it's not needed, but sometimes it is, and when it's not needed it still works just fine if we add it. So it may not be clear why we need to use it in some cases.
+We, Ruby developers, are used to running scripts or commands with the prefix `bundle exec`, but sometimes it's not needed, but sometimes it is, and when it's not needed it still works just fine if we add it. So it may not be clear why we need to use it in some cases.
 
 In this blogpost I'll try to answer these questions with a little insight on what Bundler (and Ruby and Rubygems) do.
 
@@ -16,9 +16,9 @@ In this blogpost I'll try to answer these questions with a little insight on wha
 
 We use Bundler for a few different things:
 - Resolve dependencies and versions for all the gems required in a project
-- Store the calculated versions in a file so all the developers has the same gem versions
+- Store the calculated versions in a file so all the developers have the same gem versions
 - Make sure our Ruby code has access to those specific versions of the gems
-- We can use it to know which gems has new versions that will still fullfill all the other gems' version restrictions
+- We can use it to know which gems have new versions that will still fulfill all the other gems' version restrictions
 
 I'm only going to talk about how Bundler makes sure our code uses specific versions of the gems.
 
@@ -35,7 +35,7 @@ How it does that depends on what we are trying to require.
 
 ### The $LOAD_PATH Global Variable
 
-Ruby keeps track of an array with all the paths it knows where code should be. We all saw this variable somewhere while coding, but it's one of those things we just don't want to touch because it can break something else.
+Ruby keeps track of an array with all the paths it knows where code should be. We have all seen this variable somewhere while coding, but it's one of those things we just don't want to touch because it can break something else.
 
 If we print the content of this array, we can see a list of paths in our system:
 
@@ -59,7 +59,7 @@ You can see, for example, that I'm running Ruby 2.6.6 and using RVM.
 
 When we require something like the `csv` module, it is part of the standard library (i.e.: it comes with Ruby). In this case, we can go over all the paths listed in that array until we find a file named `csv.rb`. If we go to `/home/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0` we indeed find it. Ruby does the same to find the script and then loads the module so we can use it.
 
-When it can't find a file matching the name we required, it will raise an error we probably all saw more than we want to:
+When it can't find a file matching the name we required, it will raise an error. We have probably all seen more of that than we want to:
 
 ```ruby
 LoadError (cannot load such file -- some_unknown_module)
@@ -120,7 +120,7 @@ When we do this, Bundler will load before our script. It will read the `Gemfile.
 
 #### Running Bundler Programatically
 
-Bundler is a gem like any other, so we can require it inside our script and execute its `require` method to make it loads all the paths into the `$LOAD_PATH` array when we want to:
+Bundler is a gem like any other, so we can require it inside our script and execute its `require` method to make it load all the paths into the `$LOAD_PATH` array when we want to:
 
 ```ruby
 # irb
@@ -159,14 +159,14 @@ This second method gives us the freedom to use Bundler if present and not use it
 
 I just said that a Rails app calls `Bundler.require` so adding the `bundle exec` prefix is not needed, but probably we all had this issue where we want to run `rails s` or `rails c` and it won't find the `rails` command, and then we have to run it using `bundle exec rails ...` anyway.
 
-This is happens because the system can't find the `rails` command. Similar to Ruby's `$LOAD_PATH` array, our system has a `PATH` environment variable to look for the commands we want to run. `bundle` executable is installed in the same directory as the `ruby` executable, but `rails` executable may be in a different one that's not in the paths the `PATH` env variable lists.
+This happens because the system can't find the `rails` command. Similar to Ruby's `$LOAD_PATH` array, our system has a `PATH` environment variable to look for the commands we want to run. `bundle` executable is installed in the same directory as the `ruby` executable, but `rails` executable may be in a different one that's not in the paths the `PATH` env variable lists.
 
 In those cases we have three options:
 - add the missing path to the `PATH` env variable
 - prefix our commands with `bundle exec`
 - use the executables we may have in the bin folder of our project
 
-Running `bundle exec` and `Bundler.require` at the same time is not a problem, so it's safe to use `bundle exec` even when not needed as long as there's a `Gemfile` on that directory, it won't activate gems twice.
+Running `bundle exec` and `Bundler.require` at the same time is not a problem, so it's safe to use `bundle exec` even when not needed as long as there's a `Gemfile` in that directory, it won't activate gems twice.
 
 ## Bonus: How RVM works?
 
@@ -193,8 +193,8 @@ We can see it simply changes the `PATH` env variable to point to the Ruby versio
 
 ### Conclusion
 
-We learned how Bundler and Rubygems interacts with each other and "tricks" Ruby to help us have a consistent environment and all the problems this technique solves (there are similar solutions for other programming languages, like [pip](https://pypi.org/project/pip/) for Python, [Composer](https://getcomposer.org) for PHP, [Yarn](https://yarnpkg.com) for NodeJs, etc).
+We learned how Bundler and Rubygems interact with each other and "trick" Ruby to help us have a consistent environment and all the problems this technique solves (there are similar solutions for other programming languages, like [pip](https://pypi.org/project/pip/) for Python, [Composer](https://getcomposer.org) for PHP, [Yarn](https://yarnpkg.com) for NodeJs, etc).
 
-We now have a better understanding to know where would we need to add the `bundle exec` prefix when running commands and when not to save some time.
+We now have a better understanding to know when we would need to add the `bundle exec` prefix when running commands and when not to save some time.
 
-And as a bonus, we also learned how RVM uses a somewhat similar solution to help how run any all Ruby version in one system.
+And as a bonus, we also learned how RVM uses a somewhat similar solution to help run any Ruby version in one system.
