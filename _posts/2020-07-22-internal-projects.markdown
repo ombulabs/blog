@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Internal Projects"
-date: 2020-07-22 12:00:00
-categories: [""]
+date: 2020-07-28 12:00:00
+categories: ["ombulabs learning"]
 author: rdormer
 ---
 
@@ -13,8 +13,8 @@ as a distraction from the important client facing work, carefully
 chosen interal projects can be very valuable. Aside from the obvious
 benefit of solving internal problems that might not have a readily
 available solution, they also provide training opportunities for
-developers. They give you a relatively safe way to try new ways of
-doing things in a relatively low risk way, or perhaps preview new
+developers. They give you a chance to try new ways of
+doing things with relatively low risk, or perhaps preview new
 languages and frameworks you've been considering.
 
 <!--more-->
@@ -53,14 +53,14 @@ pre-canned template site simply wasn't an option here. We knew the
 design and concept for the site would most likely change quite a bit
 over time, so a custom written site was the way to go.
 
-[Ombushop](http://www.ombushop.com) - This started life as a side
+[Ombushop](http://www.ombushop.com) - This started life as a flagship
 project by our founders, intended to address a lack of e-commerce
 options in Latin American countries. It's also a useful case study for
 our Rails development services.
 
 As developers, there's always a temptation for us to start writing our
 own tools the minute we find a problem with no obvious off the shelf
-solution. While rolling your own is all well and good, it's still a
+solution. While creating your own is all well and good, it's still a
 good idea to stop and ask yourself if you *really* need to. Sometimes
 you really can solve a problem you have with an existing service or
 tool, if you just look a little harder. Like most organizations, we
@@ -70,7 +70,7 @@ repository for our internal documentation. Like many who've gone this
 route before us, we found it somehow didn't quite fit the bill - we
 wanted internal documentation, not an internal encyclopedia - and it
 wound up languishing. We cast around for alternatives for a long time,
-until we found Tetra, which seems to fit the bill for now.
+until we found Tetra, which seems to do the job for now.
 
 We've found that carefully, mindfully considering internal problems
 and implementing our own solutions to them where necessary is a useful
