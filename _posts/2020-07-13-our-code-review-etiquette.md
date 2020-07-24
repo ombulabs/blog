@@ -20,7 +20,7 @@ But besides knowing what code review is for, we need to know what code review is
 - It is not a place for you to try to force your opinion.
 - It is not where discussions should occur.
 
-#### What you need to know about reviewing?
+#### What you need to know about reviewing
 
 - Accept that many programming decisions are opinions.
 - You can trust your teammates. They can have their own personal decisions on the code and remember that each problem can have more than one solution that may not be your solution.
