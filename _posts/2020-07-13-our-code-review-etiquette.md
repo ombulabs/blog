@@ -12,11 +12,11 @@ Because of that a while ago we wrote these code review tips that should be ackno
 
 <!--more-->
 
-Code Review it’s a way of sharing responsibilities and learn from each other. It’s where we can catch bugs and mistakes and it's also a way to enforce broadly agreed code standards between team members.
+Code Review is a way of sharing responsibilities and learning from each other. It’s where we can catch bugs and mistakes and it's also a way to enforce broadly agreed upon code standards between team members.
 
 But besides knowing what code review is for, we need to know what code review isn't for:
 
-- It is not the place for shooting at your teammates and pointing fingers at their mistakes.
+- It is not a place for shooting at your teammates and pointing fingers at their mistakes.
 - It is not a place for you to try to force your opinion.
 - It is not where discussions should occur.
 
@@ -24,7 +24,7 @@ But besides knowing what code review is for, we need to know what code review is
 
 - Accept that many programming decisions are opinions.
 - You can trust your teammates. They can have their own personal decisions on the code and remember that each problem can have more than one solution that may not be your solution.
-- Ask good questions and don't make demands. <i>"What do you think about naming this user_id?"</i> it’s nicely than <i>"You should rename this variable to user_id"</i>
+- Ask good questions and don't make demands. <i>"What do you think about naming this user_id?"</i> is nicer than <i>"You should rename this variable to user_id"</i>
 - Good questions avoid judgment and avoid assumptions about the author's perspective.
 - Ask for clarification: <i>"I didn't understand. Can you clarify?"</i>
 - Avoid selective ownership of code: "mine", "not mine", "yours"
@@ -35,7 +35,7 @@ But besides knowing what code review is for, we need to know what code review is
 - Don't use sarcasm. Even if it is your buddy.
 - Keep it real. If emoji, animated gifs, or humor aren't you, don't force them. If they are, use them with aplomb.
 - Talk synchronously (e.g. chat, screen sharing, in person) if there are too many comments like "I didn't understand" or "Alternative solution". Then post a follow-up comment summarizing the discussion.
-- Before submit your review make sure you have considered <a href="https://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html" target="_blank">Our Definition of "Done"</a>.
+- Before submitting your review make sure you have considered <a href="https://www.ombulabs.com/blog/software-development/software-quality/our-definition-of-done.html" target="_blank">Our Definition of "Done"</a>.
 
 #### When you are reviewing
 
