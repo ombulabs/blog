@@ -57,7 +57,7 @@ But besides knowing what code review is for, we need to know what code review is
 #### When you have your code under review
 
 - Be grateful for the reviewer's suggestions: "Good call. I'll make that change."
-- A common axiom is <i>"Don't take it personally. The review is of the code, not you."</i> We used to include this, but now prefer to say what we mean: Be aware of how hard it is to convey emotion online and how easy it is to misinterpret a feedback. If a review seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent in private.
+- A common axiom is <i>"Don't take it personally. The review is of the code, not you."</i> We used to include this, but now prefer to say what we mean: Be aware of how hard it is to convey emotion online and how easy it is to misinterpret feedback. If a review seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent in private.
 - Write good commit messages. Not just "Added x file", but "Added x class" or "Fixing x bug" if writing a summary, and if it's a complicated/weird bug that took you a while, write a long commit message with references or an explanation.
 - Keeping the previous point in mind: assume the best intention from the reviewer's comments.
 - Communication is the key. Give your reviewers context about your changes.
