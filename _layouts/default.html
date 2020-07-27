@@ -70,9 +70,9 @@
       <a class="back-button" aria-label="Go To OmbuLabs"
         href="/"><span>Home</span>
       </a>
-      <form action='/search' method='GET' id="search-input">
-        <div class="icon-search"></div>
-        <input type="search" name="query" aria-label="Search blog posts" placeholder="Search blog posts.." required />
+      <form action='/search' method='GET'>
+        <input type="search" name="query" size="30" aria-label="Search blog posts" placeholder="Search blog posts.." required id="search-input"/>
+        <button class= "search-button" onClick=expandSearch()><i class="icon-search"></i></button>
         <button type='submit' hidden></button>
       </form>
       <a class="subscribe-button icon-rss" href="{{ site.baseurl }}/rss.xml"

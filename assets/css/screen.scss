@@ -556,18 +556,25 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 form {
-  display: flex;
   flex: 100% 1 1;
-  #search-input input{
+  #search-input {
     display: flex;
+    margin: 15px;
     float: right;
-    margin-top: 20px;
-    margin-right: 10px;
+    padding: 10px;
     font-size: 14px;
     border-radius: 2px;
     border: 1px solid #ffffff;
   }
+  button {
+    display: none;
+  }
 }
+
+#search-input-popup {
+  display: none;
+}
+
 
 
 
@@ -609,7 +616,8 @@ form {
 
 /* Add a border to the buttons on hover */
 .back-button:hover,
-.subscribe-button:hover {
+.subscribe-button:hover
+.search-button:hover {
     border-color: #bfc8cd;
     color: #9EABB3;
 }
@@ -1340,6 +1348,23 @@ body:not(.post-template) .post-title {
     .blog-logo img {
         padding: 4px 0;
     }
+
+    input#search-input {
+      display: none;
+    }
+
+    form {
+      button{
+        display: flex;
+        float: right;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        border: none;
+      }
+    }
+
 
     .page-title {
         font-size: 4rem;
