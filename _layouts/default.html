@@ -71,9 +71,12 @@
         href="/"><span>Home</span>
       </a>
       <form action='/search' method='GET'>
-        <input type="search" name="query" size="30" aria-label="Search blog posts" placeholder="Search blog posts.." required id="search-input"/>
-        <button class= "search-button" onClick=expandSearch()><i class="icon-search"></i></button>
-        <button type='submit' hidden></button>
+        <div id='search-input-wrapper'>
+          <input type="search" name="query" size="30" aria-label="Search blog posts" placeholder="Search blog posts.." required id="search-input"/>
+          <button type='submit' hidden></button>
+          <button class='close'>X</button>
+        </div>
+        <button id="search-button" class='search-button'><i class="icon-search"></i></button>
       </form>
       <a class="subscribe-button icon-rss" href="{{ site.baseurl }}/rss.xml"
         aria-label="Subscribe to this blog"><span>Subscribe</span>

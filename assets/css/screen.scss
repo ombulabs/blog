@@ -420,7 +420,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-header .inner {
-    width: 80%;
+    width: 40%;
 }
 
 .main-nav {
@@ -1349,8 +1349,34 @@ body:not(.post-template) .post-title {
         padding: 4px 0;
     }
 
-    input#search-input {
-      display: none;
+    #search-input-wrapper {
+      position: fixed;
+      z-index: 100;
+      top: -5em;
+      transition: top .3s ease-out;
+      left: 0;
+      right: 0;
+      background: black;
+      padding: 16px 20%;
+
+      &.show {
+        top: 0px;
+      }
+      #search-input {
+        width: 100%;
+        margin: 0;
+        float: none;
+        display: block;
+        box-sizing: border-box;
+      }
+      button {
+        position: absolute;
+        top: 16px;
+        right: 20%;
+        background: white;
+        color: black;
+        bottom: 16px;
+      }
     }
 
     form {
@@ -1512,6 +1538,9 @@ body:not(.post-template) .post-title {
         padding: 0 12px;
     }
 
+    #search-input-wrapper {
+      padding: 16px;
+    }
 
 
     .main-nav.overlay a:hover {

@@ -19,16 +19,26 @@
             $("#advertisement").hide();
             event.preventDefault();
 
-        }); 
+        });
 
     });
+
+    document.getElementById('search-button').addEventListener('click', (e) => {
+      e.preventDefault()
+      document.getElementById('search-input-wrapper').classList.toggle('show')
+    })
+
+    document.querySelector('#search-input-wrapper .close').addEventListener('click', (e) => {
+      e.preventDefault()
+      document.getElementById('search-input-wrapper').classList.toggle('show')
+    })
 
     $document.scroll(function(){
 
         var headerHeight = $(".main-header").outerHeight();
         var scrollTop = $(document).scrollTop();
         var viewportWidth = $(document).width();
-      
+
         if(scrollTop >= headerHeight && viewportWidth >= 768){
             $("#sidebar").addClass("fixed");
             $(".main-header").addClass("fixed");
@@ -39,7 +49,7 @@
             $(".main-header").removeClass("fixed");
             $("#sidebar").removeClass("fixed");
         }
-      
+
     })
 
     // Arctic Scroll by Paul Adam Davis
