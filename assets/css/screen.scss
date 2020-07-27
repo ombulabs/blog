@@ -566,17 +566,13 @@ form {
     border-radius: 2px;
     border: 1px solid #ffffff;
   }
-  button {
-    display: none;
+  button{
+    visibility: hidden;
+  }
+  #search-button {
+    visibility: hidden;
   }
 }
-
-#search-input-popup {
-  display: none;
-}
-
-
-
 
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
@@ -1370,17 +1366,20 @@ body:not(.post-template) .post-title {
         box-sizing: border-box;
       }
       button {
+        visibility: visible;
         position: absolute;
         top: 16px;
         right: 20%;
         background: white;
         color: black;
         bottom: 16px;
+        border: none;
       }
     }
 
     form {
-      button{
+      #search-button{
+        visibility: visible;
         display: flex;
         float: right;
         padding: 10px;
