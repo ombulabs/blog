@@ -555,6 +555,8 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 6px;
 }
 
+/* search bar */
+
 form {
   flex: 100% 1 1;
   #search-input {
@@ -1370,6 +1372,9 @@ body:not(.post-template) .post-title {
         position: absolute;
         top: 16px;
         right: 20%;
+        padding-right: 12px;
+        padding-left: 12px;
+        font-size: 10px;
         background: white;
         color: black;
         bottom: 16px;
@@ -1539,6 +1544,9 @@ body:not(.post-template) .post-title {
 
     #search-input-wrapper {
       padding: 16px;
+      .close {
+        right: 16px;
+      }
     }
 
 
