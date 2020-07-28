@@ -8,18 +8,17 @@
 /*
 
     0.  Normalize
-    1.  Icons
-    2.  General
-    3.  Utilities
-    4.  General
-    5.  Single Post
-    6.  Tag Archive
-    7.  Third Party Elements
-    8.  Pagination
-    9.  Footer
-    10. Media Queries (Tablet)
-    11. Media Queries (Mobile)
-    12. Animations
+    1.  General
+    2.  Utilities
+    3.  General
+    4.  Single Post
+    5.  Tag Archive
+    6.  Third Party Elements
+    7.  Pagination
+    8.  Footer
+    9. Media Queries (Tablet)
+    10. Media Queries (Mobile)
+    11. Animations
 
 */
 
@@ -102,7 +101,7 @@ textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* ==========================================================================
-   2. General - Setting up some base styles
+   1. General - Setting up some base styles
    ========================================================================== */
 
 html {
@@ -368,7 +367,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   3. Utilities - These things get used a lot
+   2. Utilities - These things get used a lot
    ========================================================================== */
 
 /* Clears shit */
@@ -403,7 +402,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   4. General - The main styles for the the theme
+   3. General - The main styles for the the theme
    ========================================================================== */
 
 /* Big cover image on the home page */
@@ -812,7 +811,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   5. Single Post - When you click on an individual post
+   4. Single Post - When you click on an individual post
    ========================================================================== */
 
 .post-template .post-header {
@@ -1032,7 +1031,7 @@ body:not(.post-template) .post-title {
 }
 
 /* ==========================================================================
-   6. Author profile
+   5. Author profile
    ========================================================================== */
 
 .post-head.main-header {
@@ -1166,7 +1165,7 @@ body:not(.post-template) .post-title {
 }
 
 /* ==========================================================================
-   7. Third Party Elements - Embeds from other services
+   6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -1181,7 +1180,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
+   7. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -1269,7 +1268,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   9. Footer - The bottom of every page
+   8. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -1312,7 +1311,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 900px
+   9. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1485,7 +1484,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   10. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
@@ -1756,7 +1755,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   12. Animations
+   11. Animations
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */
