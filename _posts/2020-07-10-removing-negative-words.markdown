@@ -53,6 +53,10 @@ There is an intrinsic relationship between language and power. And there is an u
 
 The "master / slave" metaphore is clearly connected to slavery. The metaphore adopted in technology isn't master / copy, or master / student. The term master has several different meanings and it isn't, in itself, problematic. However, when used together with slave, in a metaphore referring to the "master / slave" relationship, it becomes a problem.
 
+The term "master" as used in git is also not used in the context of mastery of knowledge or even the original copy. As Bastien Nocera points out in his [email in reponse to the proposal to remove the "master" name from GNOME repositories](Bastien Nocera), the term "master" first appeared in git in a [CVS helper script](https://github.com/git/git/commit/3e91311ae750af9bf2e3517b1e701288ac3066b9) and was likely chosen because [BitKeeper uses "master" for its main branch](http://www.bitkeeper.org/tips.html#_how_do_i_rebase_my_work_on_top_of_a_different_changeset). According to BitKeeper's documentation, the term is a reference to the master / slave relationship, [as they refer to master / slave repositories](https://github.com/bitkeeper-scm/bitkeeper/blob/master/doc/HOWTO.ask#L223) and, in BitKeeper, [repositories and branches are the same thing](https://users.bitkeeper.org/t/branching-with-bk/158/2).
+
+Therefore, the software industry have been casually using the master / slave relationship on a daily basis.
+
 As outlined by IETF in its memo, in order to effectively communicate, it is important to make the information accessible to all readers, and this implies evaluating whether the words and terms used will hinder the reader and get in the way of effective communication. Using terminology that is negative and can trigger an emotional response gets in the way of clear communication and should, therefore, be avoided.
 
 Additionally, if we're to not think of anything but clarity, the "master / slave" usage in the context of human slavery far predates its use in software and engineering. And there's no descriptive relationship between human slavery and software.
