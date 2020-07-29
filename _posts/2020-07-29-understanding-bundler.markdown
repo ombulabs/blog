@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Understanding Bundler - To `bundle exec` or not? that is the question"
-date: 2020-07-01 12:00:00
-categories: ['ruby', 'learning']
+date: 2020-07-29 12:00:00
+categories: ["ruby", "learning"]
 author: arieljuod
 ---
 
@@ -15,6 +15,7 @@ In this blogpost I'll try to answer these questions with a little insight on wha
 ## What does Bundler do?
 
 We use Bundler for a few different things:
+
 - Resolve dependencies and versions for all the gems required in a project
 - Store the calculated versions in a file so all the developers have the same gem versions
 - Make sure our Ruby code has access to those specific versions of the gems
@@ -32,8 +33,7 @@ When we are writing a Ruby script, if we want to use code from another script, w
 
 How it does that depends on what we are trying to require.
 
-
-### The $LOAD_PATH Global Variable
+### The \$LOAD_PATH Global Variable
 
 Ruby keeps track of an array with all the paths it knows where code should be. We have all seen this variable somewhere while coding, but it's one of those things we just don't want to touch because it can break something else.
 
@@ -76,10 +76,11 @@ Rubygems [overrides](https://github.com/rubygems/rubygems/blob/d1ba6eeb431c06af2
 For what we need to know, the new method will first check if there's a gem with that name in the directory Rubygems controls. If there's a gem, Rubygems adds a new path to the `$LOAD_PATH` array and then [call the original](https://github.com/rubygems/rubygems/blob/d1ba6eeb431c06af2bd381c3e6fff352f46be025/lib/rubygems/core_ext/kernel_require.rb#L168) `require` method. The original method will find the file we were looking for since it's now in the `$LOAD_PATH` thanks to Rubygems (this action of adding a path to the array is the `activation` of the gem).
 
 This is our `$LOAD_PATH` after requiring a gem:
+
 ```ruby
 #irb
 2.6.6 :002 > require 'bundler'
- => true 
+ => true
 2.6.6 :003 > pp $LOAD_PATH
 ["/Users/arielj/.rvm/rubies/ruby-2.6.6/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib",
  "/Users/arielj/.rvm/gems/ruby-2.6.6/gems/bundler-2.1.4/lib",
@@ -98,19 +99,21 @@ We can see that the second element of the array is now the path of bundler. But 
 ### Requiring a Specific Version of a Gem
 
 Rubygems will activate the newest version we have installed on our system. This can quickly became a problem:
+
 - if I update a gem when working on a project, it will also change for other projects on my machine
 - if another developer joins the project, that developer will have to download the gems with the same versions I used
 - new gems version may not be compatible with other gems that my project depends on
 
-This is, finally, where Bundler comes into play. All projects that uses Bundler will have a `Gemfile` file (*) specifying the gems and version restrictions we need for each project, and also, after running Bundler, it will have a `Gemfile.lock` file with the specific gem versions (or git commit hashes) Bundler calculated to make all the gems compatible.
+This is, finally, where Bundler comes into play. All projects that uses Bundler will have a `Gemfile` file (\*) specifying the gems and version restrictions we need for each project, and also, after running Bundler, it will have a `Gemfile.lock` file with the specific gem versions (or git commit hashes) Bundler calculated to make all the gems compatible.
 
-> (*) `Gemfile` is the default name, but can be changed, you could have a project with a different file name but with a file serving the same purpose
+> (\*) `Gemfile` is the default name, but can be changed, you could have a project with a different file name but with a file serving the same purpose
 
 When executing Bundler, it will take care of reading this `Gemfile.lock` file and will activate the specified versions of each gem! (i.e.: it will add the paths to the `$LOAD_PATH` array). Now, when we require a gem, Ruby will find the gem and it will be the specified version. If it's not found, it will fallback to the Rubygems `require` method so we can still require gems that are not listed in our `Gemfile.lock` file.
 
 ### How to Use Bundler
 
 Bundler can be used in two different ways:
+
 - We can prefix our commands with `bundle exec`
 - We can run Bundler programatically
 
@@ -125,7 +128,7 @@ Bundler is a gem like any other, so we can require it inside our script and exec
 ```ruby
 # irb
 2.6.6 :001 > require 'bundler'
- => true 
+ => true
 2.6.6 :002 > Bundler.require
 ```
 
@@ -162,6 +165,7 @@ I just said that a Rails app calls `Bundler.require` so adding the `bundle exec`
 This happens because the system can't find the `rails` command. Similar to Ruby's `$LOAD_PATH` array, our system has a `PATH` environment variable to look for the commands we want to run. `bundle` executable is installed in the same directory as the `ruby` executable, but `rails` executable may be in a different one that's not in the paths the `PATH` env variable lists.
 
 In those cases we have three options:
+
 - add the missing path to the `PATH` env variable
 - prefix our commands with `bundle exec`
 - use the executables we may have in the bin folder of our project
@@ -173,6 +177,7 @@ Running `bundle exec` and `Bundler.require` at the same time is not a problem, s
 Since we are already talking about the `PATH` env variable, let's see what RVM does to change which Ruby version we want to use.
 
 This is my `PATH` when using Ruby 2.6.6 in bash:
+
 ```bash
 # bash
 % echo $PATH
@@ -180,12 +185,13 @@ This is my `PATH` when using Ruby 2.6.6 in bash:
 ```
 
 And after running `rvm use 2.6.2`:
+
 ```bash
 # bash
 % rvm use 2.6.2
 Using /Users/arielj/.rvm/gems/ruby-2.6.2
 
-% echo $PATH   
+% echo $PATH
 /Users/arielj/.rvm/gems/ruby-2.6.2/bin:/Users/arielj/.rvm/gems/ruby-2.6.2@global/bin:/Users/arielj/.rvm/rubies/ruby-2.6.2/bin:/Users/arielj/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 ```
 
