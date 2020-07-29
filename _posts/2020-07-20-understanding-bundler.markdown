@@ -67,7 +67,7 @@ LoadError (cannot load such file -- some_unknown_module)
 
 ### Requiring a Gem
 
-If we look back at the `$LOAD_PATH` array we'll notice the only reference to a gem is the `did-you-mean` gem but there's no reference to a base `gems` directoty. So, how do we tell Ruby where all the other gems are? If we don't, it would raise `LoadError`.
+If we look back at the `$LOAD_PATH` array we'll notice the only reference to a gem is the `did_you_mean` gem but there's no reference to a base `gems` directoty. So, how do we tell Ruby where all the other gems are? If we don't, it would raise `LoadError`.
 
 Here is where Rubygems comes into play. If you check the list of what Bundler does, you'll notice it does not download the gems, when we run `bundle install` it will use Rubygems to do that. Rubygems handles installation, uninstallation and activation of gems. When a gem is activated, Ruby will be able to find it.
 
