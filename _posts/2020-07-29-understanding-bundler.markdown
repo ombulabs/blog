@@ -33,7 +33,7 @@ When we are writing a Ruby script, if we want to use code from another script, w
 
 How it does that depends on what we are trying to require.
 
-### The \$LOAD_PATH Global Variable
+### The $LOAD_PATH Global Variable
 
 Ruby keeps track of an array with all the paths it knows where code should be. We have all seen this variable somewhere while coding, but it's one of those things we just don't want to touch because it can break something else.
 
@@ -67,11 +67,11 @@ LoadError (cannot load such file -- some_unknown_module)
 
 ### Requiring a Gem
 
-If we look back at the `$LOAD_PATH` array we'll notice the only reference to a gem is the `did_you_mean` gem but there's no reference to a base `gems` directoty. So, how do we tell Ruby where all the other gems are? If we don't, it would raise `LoadError`.
+If we look back at the `$LOAD_PATH` array we'll notice the only reference to a gem is the `did_you_mean` gem but there's no reference to a base `gems` directory. So, how do we tell Ruby where all the other gems are? If we don't, it would raise `LoadError`.
 
 Here is where Rubygems comes into play. If you check the list of what Bundler does, you'll notice it does not download the gems, when we run `bundle install` it will use Rubygems to do that. Rubygems handles installation, uninstallation and activation of gems. When a gem is activated, Ruby will be able to find it.
 
-Rubygems [overrides](https://github.com/rubygems/rubygems/blob/d1ba6eeb431c06af2bd381c3e6fff352f46be025/lib/rubygems/core_ext/kernel_require.rb#L34) the `require` method of the Kernel module to active gems when needed. We are not going into too much details here, the kernel override is really complex and out of scope of this article.
+Rubygems [overrides](https://github.com/rubygems/rubygems/blob/d1ba6eeb431c06af2bd381c3e6fff352f46be025/lib/rubygems/core_ext/kernel_require.rb#L34) the `require` method of the Kernel module to activate gems when needed. We are not going into too much details here, the kernel override is really complex and out of scope of this article.
 
 For what we need to know, the new method will first check if there's a gem with that name in the directory Rubygems controls. If there's a gem, Rubygems adds a new path to the `$LOAD_PATH` array and then [call the original](https://github.com/rubygems/rubygems/blob/d1ba6eeb431c06af2bd381c3e6fff352f46be025/lib/rubygems/core_ext/kernel_require.rb#L168) `require` method. The original method will find the file we were looking for since it's now in the `$LOAD_PATH` thanks to Rubygems (this action of adding a path to the array is the `activation` of the gem).
 
@@ -115,13 +115,13 @@ When executing Bundler, it will take care of reading this `Gemfile.lock` file an
 Bundler can be used in two different ways:
 
 - We can prefix our commands with `bundle exec`
-- We can run Bundler programatically
+- We can run Bundler programmatically
 
 #### Using `bundle exec my_command`
 
 When we do this, Bundler will load before our script. It will read the `Gemfile.lock` file, add all the paths for each gem into the `$LOAD_PATH` array, and then it will execute `my_command`. That way, our script will have the gems activated.
 
-#### Running Bundler Programatically
+#### Running Bundler Programmatically
 
 Bundler is a gem like any other, so we can require it inside our script and execute its `require` method to make it load all the paths into the `$LOAD_PATH` array when we want to:
 
