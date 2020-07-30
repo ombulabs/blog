@@ -58,8 +58,8 @@ But besides knowing what code review is for, we need to know what code review is
 
 - Be grateful for the reviewer's suggestions: "Good call. I'll make that change."
 - A common axiom is <i>"Don't take it personally. The review is of the code, not you."</i> We used to include this, but now prefer to say what we mean: Be aware of how hard it is to convey emotion online and how easy it is to misinterpret feedback. If a review seems aggressive or angry or otherwise personal, consider if it is intended to be read that way and ask the person for clarification of intent in private.
-- Write good commit messages. Not just "Added x file", but "Added x class" or "Fixing x bug" if writing a summary, and if it's a complicated/weird bug that took you a while, write a long commit message with references or an explanation.
 - Keeping the previous point in mind: assume the best intention from the reviewer's comments.
+- Write good commit messages. Not just "Added x file", but "Added x class" or "Fixing x bug" if writing a summary, and if it's a complicated/weird bug that took you a while, write a long commit message with references or an explanation.
 - Communication is the key. Give your reviewers context about your changes.
 - Explain why the code exists: "It's like that because of these reasons. Would it be more clear if I rename this class/file/method/variable?"
 - Extract some changes and refactorings into future tickets/stories.
@@ -69,10 +69,11 @@ But besides knowing what code review is for, we need to know what code review is
 
 #### Enjoy!
 
-Make sure you’re enjoying what you do, and appreciate what your code reviews are achieving. There’s little point in playing the role of an intelligent computer over extended periods of time if you are unhappy about it. Get yourself your preferred slow-drinking beverage (coffee?), perhaps some snacks, a comfortable chair, and relax.
+Make sure you’re enjoying what you do, and appreciate what your code reviews are achieving. There's no point of expend your energy in something that you're unhappy about it. This is above all an opportunity for you to learn and help your team. So get yourself your preferred slow-drinking beverage (coffee?), perhaps some snacks, a comfortable chair, and relax.
 
 #### References
 
 1. [How to do Code Review - André Arko](https://andre.arko.net/2020/01/24/how-to-do-code-review/)
 2. [The Ethics of Code Reviews](https://marcotroisi.com/the-ethics-of-code-reviews/)
 3. [The Standard of Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html)
+4. [Ethics for code reviewers](https://blog.labix.org/2013/02/06/ethics-for-code-reviewers)
