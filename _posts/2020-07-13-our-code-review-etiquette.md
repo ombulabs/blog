@@ -44,7 +44,7 @@ But besides knowing what code review is for, we need to know what code review is
 - Communicate which ideas you feel strongly about and those you don't.
 - Explain why. Unless the change is about an extremely obvious mistake, explain why you’re suggesting it.
 - Identify ways to simplify the code while still solving the problem.
-- If discussions turn too philosophical or academic, move the discussion to another channel (chat or in email maybe?). In the meantime, let the author make the final decision about the implementation.
+- If discussions turn too philosophical or academic, move the discussion to another channel (Slack or email may be better?). In the meantime, let the author make the final decision about the implementation.
 - Avoid trivialities. Think to yourself: all things considered, does it actually matter? Is the cost of the author’s time, and the potential debate, really worth it?
 - Praise the good work. You can praise the logic, design, code organization, or whatever else that you honestly felt was well done.
 - Offer alternative implementations, but assume the author already considered them: <i>"What do you think about using a custom validator here?"</i>
