@@ -1,9 +1,8 @@
 {%- assign author = site.authors[post.author] -%}
 {%- assign authors = post.authors -%}
 
+{%- assign published_at = post.date -%}
+{%- assign reviewed_at = post.reviewed -%}
+{%- include timestamp.html -%}
 {%- include author.html -%}
 {%- assign categories = post.categories -%} {%- include category_links.html -%}
-
-<time aria-label="Posted on {{ post.date | date:'%Y-%m-%d' }}" class="post-date" datetime="{{ post.date | date:'%Y-%m-%d' }}" contenteditable="false">
-  {{ post.date | date_to_string }}
-</time>
