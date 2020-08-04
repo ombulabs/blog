@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Value of Internal Projects"
-date: 2020-08-05 12:00:00
+date: 2020-08-04 12:00:00
 categories: ["software-development", "open-source"]
 author: rdormer
 ---
@@ -27,7 +27,7 @@ on:
 [Dash](https://www.ombulabs.com/blog/open-source/introducing-dash.html) - While
 Github and Pivotal integrate reasonably well, we found that what they provided
 didn't quite match our desired workflow. We needed more than just a way to link
-Github activity to Pivotal stories.  We wanted to have an overview of both in
+Github activity to Pivotal stories. We wanted to have an overview of both in
 dashboard form. Dash lets us see our open stories and PRs together in one place.
 
 Points - As a development agency, estimating projects is a critically
@@ -53,7 +53,7 @@ pre-canned template site simply wasn't an option here. We knew the
 design and concept for the site would most likely change quite a bit
 over time, so a custom written site was the way to go.
 
-[Ombushop](http://www.ombushop.com) - This started life as a flagship
+[Ombushop](https://www.ombushop.com) - This started life as a flagship
 project by our founder, intended to address a lack of e-commerce
 options in Latin American countries. It's also a useful case study for
 our Rails development services.
@@ -61,7 +61,7 @@ our Rails development services.
 As developers, there's always a temptation for us to start writing our
 own tools the minute we find a problem with no obvious off the shelf
 solution. While creating your own is all well and good, it's still a
-good idea to stop and ask yourself if you *really* need to. Sometimes
+good idea to stop and ask yourself if you _really_ need to. Sometimes
 you really can solve a problem you have with an existing service or
 tool, if you just look a little harder. Like most organizations, we
 struggled with documenting organizational knowledge for a long time.
