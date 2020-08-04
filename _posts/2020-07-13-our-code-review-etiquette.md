@@ -8,7 +8,7 @@ author: cleiviane
 
 Code Review is one of the greatest tools we have as software developers to help us improve the quality of our code. It can be incredibly beneficial, but it can also be a source of pain, frustration, and overall, a waste of time instead of a time-saver.
 
-Because of that a while ago we wrote these code review tips that should be acknowledged and incorporated by everyone in our team and now we want to share them with you.
+Because of that, a while ago we wrote these code review tips that should be acknowledged and incorporated by everyone in our team and now we want to share them with you.
 
 <!--more-->
 
