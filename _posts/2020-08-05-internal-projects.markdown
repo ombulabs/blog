@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Value of Internal Projects"
-date: 2020-07-28 12:00:00
+date: 2020-08-05 12:00:00
 categories: ["software-development", "open-source"]
 author: rdormer
 ---
