@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Internal Projects"
+title: "The Value of Internal Projects"
 date: 2020-07-28 12:00:00
-categories: ["ombulabs learning"]
+categories: ["software-development", "open-source"]
 author: rdormer
 ---
 
@@ -24,11 +24,11 @@ and we've found them to be a valuable part of our company culture.
 Here's a brief sampling of the most prominent ones we've been working
 on:
 
-Dash - While Github and Pivotal integrate reasonably well, we found
-that what they provided didn't quite match our desired workflow. We
-needed more than just a way to link Github activity to Pivotal
-stories.  We wanted to have an overview of both in dashboard form.
-Dash lets us see our open stories and PRs together in one place.
+[Dash](https://www.ombulabs.com/blog/open-source/introducing-dash.html) - While
+Github and Pivotal integrate reasonably well, we found that what they provided
+didn't quite match our desired workflow. We needed more than just a way to link
+Github activity to Pivotal stories.  We wanted to have an overview of both in
+dashboard form. Dash lets us see our open stories and PRs together in one place.
 
 Points - As a development agency, estimating projects is a critically
 important task, and one that's worth spending significant effort to
@@ -48,13 +48,13 @@ options for adding a blog to our website, but none of them really fit
 the bill. They either lacked features we wanted, or didn't integrate
 as seamlessly with our main site as we wanted.
 
-[Fast Ruby](https://fastruby.io) - As a flagship service offering, a
+[Fast Ruby](https://fastruby.io) - As a productized service offering, a
 pre-canned template site simply wasn't an option here. We knew the
 design and concept for the site would most likely change quite a bit
 over time, so a custom written site was the way to go.
 
 [Ombushop](http://www.ombushop.com) - This started life as a flagship
-project by our founders, intended to address a lack of e-commerce
+project by our founder, intended to address a lack of e-commerce
 options in Latin American countries. It's also a useful case study for
 our Rails development services.
 
@@ -70,7 +70,7 @@ repository for our internal documentation. Like many who've gone this
 route before us, we found it somehow didn't quite fit the bill - we
 wanted internal documentation, not an internal encyclopedia - and it
 wound up languishing. We cast around for alternatives for a long time,
-until we found Tetra, which seems to do the job for now.
+until we found [Tettra](https://tettra.com/), which seems to do the job for now.
 
 We've found that carefully, mindfully considering internal problems
 and implementing our own solutions to them where necessary is a useful
