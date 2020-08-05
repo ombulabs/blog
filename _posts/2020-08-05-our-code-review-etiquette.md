@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Our Code Review Etiquette
-date: 2020-07-13 09:30:00
+date: 2020-08-05 09:30:00
 categories: ["best-practices", "pull-requests"]
 author: cleiviane
 ---
@@ -51,8 +51,7 @@ But besides knowing what code review is for, we need to know what code review is
 - When trying to offer alternative solutions, always link to resources if possible to help ensure that the claims being raised are validated.
 - Seek to understand the author's perspective.
 - Read the commit messages if you don't understand something. It's useful to try to understand why the author decided to do something.
-- It’s OK to say it’s all good. That doesn't hurt your reputation or mean that you are a less thoughtful reviewer. If the code is okay, just sign off on the [pull request](https://www.ombulabs.com/blog/agile/learning/pull-requests/submitting-prs.html) with a 👍  or "Ready to merge" comment.
-
+- It’s OK to say it’s all good. That doesn't hurt your reputation or mean that you are a less thoughtful reviewer. If the code is okay, just sign off on the [pull request](https://www.ombulabs.com/blog/agile/learning/pull-requests/submitting-prs.html) with a 👍 or "Ready to merge" comment.
 
 #### When you have your code under review
 
