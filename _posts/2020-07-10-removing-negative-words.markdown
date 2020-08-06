@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Removing Negative Words From Our Codebase"
-date: 2020-07-10 11:00:00
-reviewed: 2020-07-10 11:00:00
+date: 2020-08-10 11:00:00
+reviewed: 2020-08-10 11:00:00
 categories: ["inclusion", "culture"]
 author: "abizzinotto"
 ---
