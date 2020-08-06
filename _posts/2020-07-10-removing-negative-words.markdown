@@ -69,7 +69,7 @@ Therefore, these terms should not be casually used in any context. They represen
 
 There has been extensive discussion in academia around even continuing to use the term "slave" to describe a person who has been subjected to slavery, with some claiming it is unnecessarily dehumanizing. In the [opening essay of New York Times' 1619 Project](https://www.nytimes.com/interactive/2019/08/14/magazine/black-history-american-democracy.html), Nikole Hannah-Jones avoids using the term "slave" to refer to a person altogether, choosing instead to use alternatives such as "enslaved person". On the debate, Katy Waldman wrote:
 
-> The heightened delicacy of enslaved person—the men and women it describes are humans first, commodities second—was seen to do important work: restoring identity, reversing a cascade of institutional denials and obliterations.
+> The heightened delicacy of enslaved person — the men and women it describes are humans first, commodities second — was seen to do important work: restoring identity, reversing a cascade of institutional denials and obliterations.
 
 When even historians of American slavery recognize the need for a change in language, there really is no justification for the software industry to continue to use it as a metaphor that can be easily subistituted by several other pairs that are just as descriptive without being offensive.
 
