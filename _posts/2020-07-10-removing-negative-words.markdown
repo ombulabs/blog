@@ -69,7 +69,7 @@ Therefore, these terms should not be casually used in any context. They represen
 
 ### Why is this important?
 
-In a community where open-source projects are a reality, that advocates and pioneers change and challenges established premises, the use of controversial terminology (specially when done unnecessarily) is counter-intuitive.
+In a community where open-source projects are a reality, that advocates and pioneers change and challenges established premises, the use of controversial terminology (especially when done unnecessarily) is counter-intuitive.
 
 It is important to set the path to completely wipe out these terms, to foster a more inclusive environment, to encourage professionals of diverse backgrounds to feel safe and drive more people to the industry. We can only benefit from diversity and inclusion. So why not foster it?
 
