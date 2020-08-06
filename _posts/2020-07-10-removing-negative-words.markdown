@@ -77,7 +77,7 @@ The casual use of "master / slave" is not only problematic due to the obvious ra
 
 ### Why is this so important to us?
 
-Although we understand a change in terminology is far from being enough, it is important as part of a bigger context. We foster and encourage diversity. Our team includes members from 4 different countries and different background and experiences and we make an actual effort to be open and create equal opportunities.
+Although we understand a change in terminology is far from being enough, it is important as part of a bigger context. We foster and encourage diversity. Our team includes members from 4 different countries with different background and experiences. We are making an actual effort to be open and create equal opportunities.
 
 As such, at OmbuLabs this change is closely tied to our [core values](https://www.ombulabs.com/blog/values/our-values.html) and company culture.
 
