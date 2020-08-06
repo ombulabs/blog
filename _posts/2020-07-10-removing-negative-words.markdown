@@ -55,7 +55,7 @@ The "master / slave" metaphore is clearly connected to slavery. The metaphore ad
 
 The term "master" as used in git is also not used in the context of mastery of knowledge or even the original copy. As Bastien Nocera points out in his [email in reponse to the proposal to remove the "master" name from GNOME repositories](Bastien Nocera), the term "master" first appeared in git in a [CVS helper script](https://github.com/git/git/commit/3e91311ae750af9bf2e3517b1e701288ac3066b9) and was likely chosen because [BitKeeper uses "master" for its main branch](http://www.bitkeeper.org/tips.html#_how_do_i_rebase_my_work_on_top_of_a_different_changeset). According to BitKeeper's documentation, the term is a reference to the master / slave relationship, [as they refer to master / slave repositories](https://github.com/bitkeeper-scm/bitkeeper/blob/master/doc/HOWTO.ask#L223) and, in BitKeeper, [repositories and branches are the same thing](https://users.bitkeeper.org/t/branching-with-bk/158/2).
 
-Therefore, the software industry have been casually using the master / slave relationship on a daily basis.
+Therefore, the software industry has been casually using the master / slave relationship on a daily basis.
 
 As outlined by IETF in its memo, in order to effectively communicate, it is important to make the information accessible to all readers, and this implies evaluating whether the words and terms used will hinder the reader and get in the way of effective communication. Using terminology that is negative and can trigger an emotional response gets in the way of clear communication and should, therefore, be avoided.
 
@@ -65,7 +65,15 @@ Finally, the effects of slavery are still impacting society today in the America
 
 As of last year, [the United Nations reported over 40 million people were victims of modern slavery](https://news.un.org/en/story/2019/09/1045972). Human trafficking, for labour or sexual, exploitation is still a problem, with victims held captive in slave-like conditions. Far from being an issue exclusive to under-developed countries, reports of human trafficking rings active in Europe and North America can be found with a simple Google search.
 
-Therefore, these terms should not be casually used in any context. They represent a horrible problem humanity still experiences, be it in the form of modern slavery or the issues still faced by people of colour stemming from the condition their ancestors were subjected to. There is no real necessity to use them in technology, as there are several other pairs that are just as descriptive without being offensive.
+Therefore, these terms should not be casually used in any context. They represent a horrible problem humanity still experiences, be it in the form of modern slavery or the issues still faced by people of colour stemming from the condition their ancestors were subjected to.
+
+There has been extensive discussion in academia around even continuing to use the term "slave" to describe a person who has been subjected to slavery, with some claiming it is unnecessarily dehumanizing. In the [opening essay of New York Times' 1619 Project](https://www.nytimes.com/interactive/2019/08/14/magazine/black-history-american-democracy.html), Nikole Hannah-Jones avoids using the term "slave" to refer to a person altogether, choosing instead to use alternatives such as "enslaved person". On the debate, Katy Waldman wrote:
+
+> The heightened delicacy of enslaved person—the men and women it describes are humans first, commodities second—was seen to do important work: restoring identity, reversing a cascade of institutional denials and obliterations.
+
+When even historians of American slavery recognize the need for a change in language, there really is no justification for the software industry to continue to use it as a metaphor that can be easily subistituted by several other pairs that are just as descriptive without being offensive.
+
+Besides, as Eric Zorn pointed out in his column [Language matters: The shift from ‘slave’ to ‘enslaved person’ may be difficult, but it’s important](https://www.chicagotribune.com/columns/eric-zorn/ct-column-slave-enslaved-language-people-first-debate-zorn-20190906-audknctayrarfijimpz6uk7hvy-story.html) in the Chicago Tribune, we already changed the language once, when Rev. Jesse Jackson announced at a news conference in 1988 that "his people would now like to be called 'African American' instead of 'black'.
 
 ### Why is this important?
 
@@ -96,3 +104,20 @@ We have listened to the community. We have seen the trends. And we're committed 
 This is not an isolated initiative. OmbuLabs is committed to sustaining an open, diverse and inclusive work environment as a whole. This is one facet of that environment, and an important one.
 
 There are several arguments, human and technical, to move away from negative terminology. I hope this article helps you not only understand why we're doing this, but to advocate change in your projects and help us change as a community.
+
+## Sources and References
+
+1. [Developers Debate Deleting ‘Master’ and ‘Slave’ Code Terminology](https://insights.dice.com/2020/06/16/developers-debate-deleting-master-slave-code-terminology/) by Nick Kolakowski o[Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’n [Dice](https://insights.dice.com/).
+2. [There’s an industry that talks daily about ‘masters’ and ‘slaves.’ It needs to stop.](https://www.washingtonpost.com/opinions/2020/06/12/tech-industry-has-an-ugly-master-slave-problem/) by Sinclair Im on [The Washington Post](https://www.washingtonpost.com/)
+3. [‘Master/Slave’ Terminology Was Removed from Python Programming Language](https://www.vice.com/en_us/article/8x7akv/masterslave-terminology-was-removed-from-python-programming-language) by Daniel Oberhaus on [Vice](https://www.vice.com/)
+4. [OpenZFS removed offensive terminology from its code](https://arstechnica.com/tech-policy/2020/06/openzfs-removed-master-slave-terminology-from-its-codebase/) by Jim Salter on [ars Technica](https://arstechnica.com/)
+5. [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#McClelland) by Mallory Knodel and Niels ten Oever from the [IETF](https://ietf.org/)
+6. [Scourge of slavery still claims 40 million victims worldwide, ‘must serve as a wakeup call’](https://news.un.org/en/story/2019/09/1045972) by the United Nations
+7. [On Redis master-slave terminology](http://antirez.com/news/122) by antirez
+8. [BitKeeper Documentation](https://github.com/bitkeeper-scm/bitkeeper/blob/master/doc/HOWTO.ask#L223)
+9. [Let’s dump master-slave terms: they’re vague, horrible, and we’re better off without them](https://cdm.link/2020/06/lets-dump-master-slave-terms/) by Peter Kirn on [CDM](https://cdm.link/)
+10. [Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’](https://www.wired.com/story/tech-confronts-use-labels-master-slave/) by Elizabeth Landau on [Wired](https://www.wired.com/)
+11. [Column: Language matters: The shift from ‘slave’ to ‘enslaved person’ may be difficult, but it’s important](https://www.chicagotribune.com/columns/eric-zorn/ct-column-slave-enslaved-language-people-first-debate-zorn-20190906-audknctayrarfijimpz6uk7hvy-story.html) by Eric Zorn on the [Chicago Tribune](https://www.chicagotribune.com/)
+12. [Our democracy’s founding ideals were false when they were written. Black Americans have fought to make them true.](https://www.nytimes.com/interactive/2019/08/14/magazine/black-history-american-democracy.html) by Nikole Hannah-Jones on [The New York Times Magazine](https://www.nytimes.com/)
+13. [The History Of American Slavery. Slave or Enslaved Person?](https://slate.com/human-interest/2015/05/historians-debate-whether-to-use-the-term-slave-or-enslaved-person.html) by Katy Waldman on [Slate](https://slate.com/)
+14. [Modern Slavery: Its Root Causes and the Human Toll](https://www.cfr.org/interactives/modern-slavery/#!/section1/item-1) by the [Council on Foreign Relations](https://wwww.cfr.org)
