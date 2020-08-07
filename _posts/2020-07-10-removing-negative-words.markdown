@@ -107,17 +107,17 @@ There are several arguments, human and technical, to move away from negative ter
 
 ## Sources and References
 
-1. [Developers Debate Deleting ‘Master’ and ‘Slave’ Code Terminology](https://insights.dice.com/2020/06/16/developers-debate-deleting-master-slave-code-terminology/) by Nick Kolakowski on [Dice](https://insights.dice.com/)
-2. [There’s an industry that talks daily about ‘masters’ and ‘slaves.’ It needs to stop.](https://www.washingtonpost.com/opinions/2020/06/12/tech-industry-has-an-ugly-master-slave-problem/) by Sinclair Im on [The Washington Post](https://www.washingtonpost.com/)
-3. [‘Master/Slave’ Terminology Was Removed from Python Programming Language](https://www.vice.com/en_us/article/8x7akv/masterslave-terminology-was-removed-from-python-programming-language) by Daniel Oberhaus on [Vice](https://www.vice.com/)
-4. [OpenZFS removed offensive terminology from its code](https://arstechnica.com/tech-policy/2020/06/openzfs-removed-master-slave-terminology-from-its-codebase/) by Jim Salter on [ars Technica](https://arstechnica.com/)
-5. [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#McClelland) by Mallory Knodel and Niels ten Oever from the [IETF](https://ietf.org/)
+1. [Developers Debate Deleting ‘Master’ and ‘Slave’ Code Terminology](https://insights.dice.com/2020/06/16/developers-debate-deleting-master-slave-code-terminology/) by Nick Kolakowski. Retrieved from [Dice](https://insights.dice.com/)
+2. [There’s an industry that talks daily about ‘masters’ and ‘slaves.’ It needs to stop.](https://www.washingtonpost.com/opinions/2020/06/12/tech-industry-has-an-ugly-master-slave-problem/) by Sinclair Im. Retrieved from [The Washington Post](https://www.washingtonpost.com/)
+3. [‘Master/Slave’ Terminology Was Removed from Python Programming Language](https://www.vice.com/en_us/article/8x7akv/masterslave-terminology-was-removed-from-python-programming-language) by Daniel Oberhaus. Retrieved from [Vice](https://www.vice.com/)
+4. [OpenZFS removed offensive terminology from its code](https://arstechnica.com/tech-policy/2020/06/openzfs-removed-master-slave-terminology-from-its-codebase/) by Jim Salter. Retrieved from [ars Technica](https://arstechnica.com/)
+5. [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#McClelland) by Mallory Knodel and Niels ten Oever. Retrieved from the [IETF](https://ietf.org/)
 6. [Scourge of slavery still claims 40 million victims worldwide, ‘must serve as a wakeup call’](https://news.un.org/en/story/2019/09/1045972) by the United Nations
 7. [On Redis master-slave terminology](http://antirez.com/news/122) by antirez
 8. [BitKeeper Documentation](https://github.com/bitkeeper-scm/bitkeeper/blob/master/doc/HOWTO.ask#L223)
-9. [Let’s dump master-slave terms: they’re vague, horrible, and we’re better off without them](https://cdm.link/2020/06/lets-dump-master-slave-terms/) by Peter Kirn on [CDM](https://cdm.link/)
-10. [Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’](https://www.wired.com/story/tech-confronts-use-labels-master-slave/) by Elizabeth Landau on [Wired](https://www.wired.com/)
-11. [Column: Language matters: The shift from ‘slave’ to ‘enslaved person’ may be difficult, but it’s important](https://www.chicagotribune.com/columns/eric-zorn/ct-column-slave-enslaved-language-people-first-debate-zorn-20190906-audknctayrarfijimpz6uk7hvy-story.html) by Eric Zorn on the [Chicago Tribune](https://www.chicagotribune.com/)
-12. [Our democracy’s founding ideals were false when they were written. Black Americans have fought to make them true.](https://www.nytimes.com/interactive/2019/08/14/magazine/black-history-american-democracy.html) by Nikole Hannah-Jones on [The New York Times Magazine](https://www.nytimes.com/)
-13. [The History Of American Slavery. Slave or Enslaved Person?](https://slate.com/human-interest/2015/05/historians-debate-whether-to-use-the-term-slave-or-enslaved-person.html) by Katy Waldman on [Slate](https://slate.com/)
+9. [Let’s dump master-slave terms: they’re vague, horrible, and we’re better off without them](https://cdm.link/2020/06/lets-dump-master-slave-terms/) by Peter Kirn. Retrieved from [CDM](https://cdm.link/)
+10. [Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’](https://www.wired.com/story/tech-confronts-use-labels-master-slave/) by Elizabeth Landau. Retrieved from [Wired](https://www.wired.com/)
+11. [Column: Language matters: The shift from ‘slave’ to ‘enslaved person’ may be difficult, but it’s important](https://www.chicagotribune.com/columns/eric-zorn/ct-column-slave-enslaved-language-people-first-debate-zorn-20190906-audknctayrarfijimpz6uk7hvy-story.html) by Eric Zorn. Retrieved from [The Chicago Tribune](https://www.chicagotribune.com/)
+12. [Our democracy’s founding ideals were false when they were written. Black Americans have fought to make them true.](https://www.nytimes.com/interactive/2019/08/14/magazine/black-history-american-democracy.html) by Nikole Hannah-Jones. Retrieved from [The New York Times Magazine](https://www.nytimes.com/)
+13. [The History Of American Slavery. Slave or Enslaved Person?](https://slate.com/human-interest/2015/05/historians-debate-whether-to-use-the-term-slave-or-enslaved-person.html) by Katy Waldman. Retrieved from [Slate](https://slate.com/)
 14. [Modern Slavery: Its Root Causes and the Human Toll](https://www.cfr.org/interactives/modern-slavery/#!/section1/item-1) by the [Council on Foreign Relations](https://wwww.cfr.org)
