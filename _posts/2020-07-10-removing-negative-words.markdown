@@ -107,7 +107,7 @@ There are several arguments, human and technical, to move away from negative ter
 
 ## Sources and References
 
-1. [Developers Debate Deleting ‘Master’ and ‘Slave’ Code Terminology](https://insights.dice.com/2020/06/16/developers-debate-deleting-master-slave-code-terminology/) by Nick Kolakowski o[Tech Confronts Its Use of the Labels ‘Master’ and ‘Slave’n [Dice](https://insights.dice.com/).
+1. [Developers Debate Deleting ‘Master’ and ‘Slave’ Code Terminology](https://insights.dice.com/2020/06/16/developers-debate-deleting-master-slave-code-terminology/) by Nick Kolakowski on [Dice](https://insights.dice.com/)
 2. [There’s an industry that talks daily about ‘masters’ and ‘slaves.’ It needs to stop.](https://www.washingtonpost.com/opinions/2020/06/12/tech-industry-has-an-ugly-master-slave-problem/) by Sinclair Im on [The Washington Post](https://www.washingtonpost.com/)
 3. [‘Master/Slave’ Terminology Was Removed from Python Programming Language](https://www.vice.com/en_us/article/8x7akv/masterslave-terminology-was-removed-from-python-programming-language) by Daniel Oberhaus on [Vice](https://www.vice.com/)
 4. [OpenZFS removed offensive terminology from its code](https://arstechnica.com/tech-policy/2020/06/openzfs-removed-master-slave-terminology-from-its-codebase/) by Jim Salter on [ars Technica](https://arstechnica.com/)
