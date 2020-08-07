@@ -11,6 +11,8 @@ post_class: post-template
       <h1 class="post-title">{{ page.title }}</h1>
       <section class="post-meta">
         {%- assign post = page -%}
+        {%- assign published_at = post.date -%}
+        {%- assign reviewed_at = post.reviewed -%}
         {%- include post_meta.html -%}
       </section>
     </header>
@@ -19,19 +21,6 @@ post_class: post-template
       {{ content }}
     </section>
 
-    {%- if page.archive -%}
-    <section class="archive">
-        <h5>Archive</h5>
-        <ul>
-            {%- for post in site.posts -%}
-                <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-            {%- endfor -%}
-        </ul>
-    </section>
-    {%- endif -%}
-    <div aria-label="Blog's tags">
-      {%- include tag_list.html -%}
-    </div>
     <footer class="post-footer" aria-label="Author's information">
       {%- if page.author -%}
         {%- assign author = site.authors[page.author] -%}
@@ -60,6 +49,19 @@ post_class: post-template
       {%- include disqus.html -%}
 
     </footer>
+    {%- if page.archive -%}
+    <section class="archive">
+        <h5>Archive</h5>
+        <ul>
+            {%- for post in site.posts -%}
+                <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+            {%- endfor -%}
+        </ul>
+    </section>
+    {%- endif -%}
+    <div aria-label="Blog's tags">
+      {%- include tag_list.html -%}
+    </div>
   </article>
   {%- include site_footer.html -%}
 </main>
