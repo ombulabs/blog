@@ -2,7 +2,6 @@
 layout: post
 title: "Snap Minis: How we can help you bring your app into SnapChat"
 date: 2020-08-07 11:00:00
-reviewed: 2020-08-07 11:00:00
 categories: ["software-development"]
 author: abizzinotto
 ---
@@ -51,4 +50,4 @@ Whether you have an idea you'd like to turn into a Mini, a design ready to go th
 
 Do you think a Mini is the next step for you? [Let us know!](https://www.ombulabs.com/contact)
 
-Visit https://minis.snapchat.com/ today.
+Visit [https://minis.snapchat.com](https://minis.snapchat.com/) today.
