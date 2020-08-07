@@ -11,6 +11,8 @@ post_class: post-template
       <h1 class="post-title">{{ page.title }}</h1>
       <section class="post-meta">
         {%- assign post = page -%}
+        {%- assign published_at = post.date -%}
+        {%- assign reviewed_at = post.reviewed -%}
         {%- include post_meta.html -%}
       </section>
     </header>
