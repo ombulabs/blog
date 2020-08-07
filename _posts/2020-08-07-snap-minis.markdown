@@ -40,7 +40,7 @@ If you have an actionable use case that includes a strong social aspect, Minis a
 
 Check out this video to learn more about Minis and the experiences of some of Snap's early partners:
 
-<a href="https://www.youtube.com/watch?v=ZoKlrgyKH0Y" title="Snap Partner Summit 2020" target="_blank"><img src="http://img.youtube.com/vi/ZoKlrgyKH0Y/0.jpg" alt="Snap Partner Summit 2020"></a>
+<a href="https://www.youtube.com/watch?v=ZoKlrgyKH0Y" title="Snap Partner Summit 2020" target="_blank"><img src="https://img.youtube.com/vi/ZoKlrgyKH0Y/0.jpg" alt="Snap Partner Summit 2020"></a>
 
 ## How We Can Help
 
