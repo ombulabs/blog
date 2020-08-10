@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Snap Minis: How we can help you bring your app into SnapChat"
+title: "Snap Minis: How we can help you bring your app into Snapchat"
 date: 2020-08-07 11:00:00
+reviewed: 2020-08-08 20:00:00
 categories: ["software-development"]
 author: abizzinotto
 ---
@@ -14,7 +15,7 @@ OmbuLabs recently developed a Snap Mini for one of our clients. In this article,
 
 ## Easy to Develop
 
-Snap Minis are built on HTML5 and take advantage of the existing Snapchat app, which means they work cross-platform and are readily available to all Snapchat users on Android and iOS, reducing the scope of the project.You do not need to develop two separate applications to cater to different users.
+Snap Minis are built on HTML5 and take advantage of the existing Snapchat app, which means they work cross-platform and are readily available to all Snapchat users on Android and iOS, reducing the scope of the project. You do not need to develop two separate applications to cater to different users.
 
 ## Easy to Use
 
@@ -24,7 +25,7 @@ Snapchat users can launch a Snap Mini from within a conversation they're having 
 
 A Mini can interact with both the Chat and Camera interfaces of the Snapchat application. This makes it easy for your users to share that they've used your mini with their friends.
 
-Their friends can then tap the Chat card or Camera sticker and be taken to your Mini. All without leaving Snapchat.
+Their friends can then tap the Chat card or Camera sticker and be taken to your Mini. All this without leaving Snapchat.
 
 ## What Can I do with Minis?
 
@@ -40,11 +41,11 @@ If you have an actionable use case that includes a strong social aspect, Minis a
 
 Check out this video to learn more about Minis and the experiences of some of Snap's early partners:
 
-<a href="https://www.youtube.com/watch?v=ZoKlrgyKH0Y" title="Snap Partner Summit 2020" target="_blank"><img src="https://img.youtube.com/vi/ZoKlrgyKH0Y/0.jpg" alt="Snap Partner Summit 2020"></a>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZoKlrgyKH0Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## How We Can Help
 
-We’ve developed a Snap Mini called “Let’s Do It” using [Vue.js](https://vuejs.org) and will share our experience in another article soon.
+We recently developed a Snap Mini called “Let’s Do It” using [Vue.js](https://vuejs.org) and we will share our experience in another article soon.
 
 Whether you have an idea you'd like to turn into a Mini, a design ready to go that just needs to be built or are curious to see how a Mini could benefit your company and fit into your current product, we can help.
 
