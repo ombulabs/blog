@@ -9,7 +9,7 @@ author: "abizzinotto"
 
 The discussion around the use of problematic words / terms in technology isn't a new one. This issue [can be traced back to, at least, 2003](https://edition.cnn.com/2003/TECH/ptech/11/26/master.term.reut/) when a Los Angeles county worker filed a complaint with the city's Office of Affirmative Action Compliance after seeing "master" and "slave" in computer equipment labels.
 
-This issue has resurfaced with recent events and, at OmbuLabs, we believe it is important to take it seriously. It is past time to remove this metaphore from our codebase and review some of the terminology we use. We have started taking the necessary steps to rename "master" branches to "main", as well as (and perhaps more importantly) remove any reference to the term "slave" and replace "whitelist / blacklist" with "allowlist / blocklist". Our team is actively working on that.
+This issue has resurfaced with recent events and, at OmbuLabs, we believe it is important to take it seriously. It is past time to remove this metaphor from our codebase and review some of the terminology we use. We have started taking the necessary steps to rename "master" branches to "main", as well as (and perhaps more importantly) remove any reference to the term "slave" and replace "whitelist / blacklist" with "allowlist / blocklist". Our team is actively working on that.
 
 But we understand that is not enough. This is not an action that will solve racism by itself. It's part of a larger commitment. In this article, I'll explain the context and motivation for this change and how it fits with our core values and long term vision as a company.
 
