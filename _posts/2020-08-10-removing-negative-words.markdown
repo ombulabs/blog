@@ -3,7 +3,7 @@ layout: post
 title: "Removing Negative Words From Our Codebase"
 date: 2020-08-10 11:00:00
 reviewed: 2020-08-10 11:00:00
-categories: ["inclusion", "culture"]
+categories: ["inclusion", "team", "culture"]
 author: "abizzinotto"
 ---
 
@@ -17,7 +17,7 @@ But we understand that is not enough. This is not an action that will solve raci
 
 ## Context
 
-As far as the software community is concerned, efforts to move away from such terms have been underway for quite some time now. In 2014, [Drupal](https://www.drupal.org/) opted for the use of "primary / replica" instead of "master / slave" and, in the same year, [Django] (https://www.djangoproject.com/) opted to use "leader / follower". Then in 2018 the decision was made to remove the terminology from Python, in the same year the IETF (Internet Engineering Task Force) published their [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1) memo arguing for the terminology change and offering alternatives to be use instead of the offensive terms.
+As far as the software community is concerned, efforts to move away from such terms have been underway for quite some time now. In 2014, [Drupal](https://www.drupal.org/) opted for the use of "primary / replica" instead of "master / slave" and, in the same year, [Django](https://www.djangoproject.com/) opted to use "leader / follower". Then in 2018 the decision was made to remove the terminology from Python, in the same year the IETF (Internet Engineering Task Force) published their [Terminology, Power and Oppressive Language](https://tools.ietf.org/id/draft-knodel-terminology-00.html#rfc.section.1.1) memo arguing for the terminology change and offering alternatives to be use instead of the offensive terms.
 
 Because of the current societal reckoning with racial injustices, the discussion has resurfaced, and recently several communities and companies of all sizes have been making the change (examples include OpenZFS and Go) or making a commitment to change, with GitHub's CEO claiming [in a Tweet](https://twitter.com/natfriedman/status/1271253144442253312) that his team has already been working on transitioning from "master" to "main" for default branch structure. The Android and Chrome teams have also been determined to replace "whitelist / blacklist" with "allowlist / blocklist".
 
