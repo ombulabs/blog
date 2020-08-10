@@ -91,7 +91,7 @@ As such, at OmbuLabs this change is closely tied to our [core values](https://ww
 
 **We put our team first.** This means valuing and respecting each team member as well as fostering a welcoming and open work environment. Using words that contribute to a hostile work environment goes directly against that core value. We are changing this terminology to ensure nobody in our team, now or in the future, is made to feel bad by the casual use of these terms.
 
-**Talent is everywhere.** Geographical boundaries won't stop us. Language ones shouldn't either. We must be inclusive of every person, of every culture, of every background. Using racially charged metaphores and terminology with heavy, negative historical connotation fails to meet that core value.
+**Talent is everywhere.** Geographical boundaries won't stop us. Language ones shouldn't either. We must be inclusive of every person, of every culture, of every background. Using racially charged metaphors and terminology with heavy, negative historical connotation fails to meet that core value.
 
 **Open by Default.** We want to be open, to communicate openly and to give back to our community. It is important to use language that is in line with that. Facilitating communication is the goal and moving away from words that get in the way of effective communication is key to achieving that.
 
