@@ -29,7 +29,7 @@ We also use Folders to keep our Draft pages before they are officially published
 
 Tettra allows you to create pages inside the tool as well as add a link to external documents (Google Doc or Google Sheet). This lets us create new pages as needed as well as link to our documents available through Google Docs and Google Sheets, keeping all the information in a single place.
 
-To make sure we keep things organized and standardized, we created a style guide for our Tettra pages that can be found under the Using Tettra category. Additionally. we also have a standard procedure for adding content.
+To make sure we keep things organized and standardized, we created a style guide for our Tettra pages that can be found under the Using Tettra category. Additionally, we also have a standard procedure for adding content.
 
 Tettra allows users to either add new content in the form of a Tettra page, link to an external document (Google Doc or Google Sheet) or make a suggestion.
 
