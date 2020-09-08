@@ -17,7 +17,7 @@ Here I'll talk about how we leverage Tettra to keep our content, blog posts, doc
 
 To make sure every team member knows how to navigate and use Tettra, we have a Using Tettra category. Under this category, we have created content to help team members get started with the tool, the integrations available and to get familiar with the structure of the knowledge base and how to navigate it.
 
-Here we have a style guide to direct how we write new pages, the documented structure of the knowledge base so every team member knows what category comprises and where to find documents or add new content, and our standard procedures to add new content or suggest new categories.
+Here we have a style guide to explain how we write new pages, the documented structure of the knowledge base so every team member knows what each category is comprised of and where to find documents or add new content. This also includes our standard procedures to add new content or suggest new categories.
 
 ## Knowledge Base Structure
 
