@@ -43,7 +43,7 @@ This way we make sure all content added to the knowledge base is accurate and we
 
 In order to make sure our knowledge base doesn't get out of order with too many categories and folders, we have a procedure in place to add new categories.
 
-Whenenver a team member wants to add a new category to the knowledge base or remove a category from it, they can create a suggestion and assign it to the knowledge base admin, who'll make sure the suggestion is addressed.
+Whenever a team member wants to add a new category to the knowledge base or remove a category from it, they can create a suggestion and assign it to the knowledge base admin, who'll make sure the suggestion is addressed.
 
 If a new category is created or an existing one is removed, the Knowledge Base Structure page also needs to be updated to reflect it.
 
