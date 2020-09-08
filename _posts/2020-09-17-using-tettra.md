@@ -75,7 +75,7 @@ Documentation becomes obsolete, policies change and so on. Adding content is a g
 
 In order to ensure our content is always up to date, we use Tettra's inbuilt feature of notifying the admin every time a page has gone three months without an update. The admin gets a notification and can check the page in question and update it if needed or tag the best team member to review and update.
 
-Having a notification in Slack is a great way to ensure the admin knows when to review pages and which pages to review. And having the clock running for each page individually ensures we don't have to dedicate a lot of time to review the entire knowledge base ever so often.
+Having a notification in Slack is a great way to ensure the admin knows when to review pages and which pages to review. And having the clock running for each page individually ensures we don't have to dedicate a lot of time to reviewing the entire knowledge base every so often.
 
 ## Conclusion
 
