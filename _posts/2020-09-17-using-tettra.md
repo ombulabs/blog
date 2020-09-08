@@ -9,8 +9,6 @@ author: "abizzinotto"
 
 At OmbuLabs we use [Tettra](https://tettra.com/) to power our knowledge base. As a remote, distributed team it is very important to us to have our content structured and organized. We follow some good practices to keep it organized and up to date, which we describe [here](link to kb article), and we use Tettra to keep our knowledge organized and integrated with the tools we use on a daily basis.
 
-Here I'll talk about how we leverage Tettra to keep our content, blog posts, documents and other resources organized and easily accessible to our whole team.
-
 <!--more-->
 
 ## Getting Started
@@ -79,4 +77,4 @@ Having a notification in Slack is a great way to ensure the admin knows when to 
 
 ## Conclusion
 
-In order to keep every team member on the same page and make information accessible to everyone in the easiest way possible, Tettra was our tool of choice. It integrates nicely with the tools we use, has an easy to use interface and allows us to easily keep the content updated and easy to use.
+In order to keep every team member on the same page and make information accessible to everyone in the easiest way possible, Tettra was our tool of choice. It integrates nicely with the tools we use, has an easy to use interface and allows us to keep the content updated and accessible.
