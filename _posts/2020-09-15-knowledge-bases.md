@@ -31,7 +31,7 @@ One of the main points of having a knowledge base for us is to foster knowledge 
 
 But in order to make sure the structure of the knowledge base is respected and the content added is accurate and up to date, we developed a process that guides publishing new content pages. It contains steps to add new content, get it reviewed, approved, and published in the right place. It also has steps for team members to suggest content they believe is useful but are not able to write about so the best person for the job can take over and add the content.
 
-In order to make sure the process runs smoothly, everyone receives feedback and every suggestion is addressed, we have a center person to oversee the process.
+In order to make sure the process runs smoothly, everyone receives feedback and every suggestion is addressed, we have a central person to oversee the process.
 
 ## Make sure content is up to date
 
