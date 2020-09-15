@@ -17,7 +17,7 @@ That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://app.
 
 Be it company policy pages, internal documents or external resources in any format, make sure you have a way of organizing them in a single place. Even if not possible to directly store video or audio files with your documents, you can always store them in a shared drive and link to them in a page inside your knowledge base. This way, every team member can easily find and access your resources as needed.
 
-## Create a structure for your content. And stickt to it
+## Create a structure for your content. And stick to it
 
 Having all your content in a central knowledge base is great. But if you start adding content without any order or structure, pretty soon you'll lose control and the knowledge base will be very hard to use.
 
