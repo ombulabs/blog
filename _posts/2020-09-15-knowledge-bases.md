@@ -17,7 +17,7 @@ That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://app.
 
 Be it company policy pages, internal documents or external resources in any format, make sure you have a way of organizing them in a single place. Even if not possible to directly store video or audio files with your documents, you can always store them in a shared drive and link to them in a page inside your knowledge base. This way, every team member can easily find and access your resources as needed.
 
-## Create a structure for your content. And stickt to it
+## Create a structure for your content. And stick to it
 
 Having all your content in a central knowledge base is great. But if you start adding content without any order or structure, pretty soon you'll lose control and the knowledge base will be very hard to use.
 
@@ -29,9 +29,9 @@ Regardless of how you organize your knowledge base, make sure there is a guide t
 
 One of the main points of having a knowledge base for us is to foster knowledge sharing and collaboration. We encourage all team members to suggest and add content to the knowledge base.
 
-But in order to make sure the structure of the knowledge base is respected and the content added is accurate and up to date, we developed a process that guides publishing new content pages. It contains steps to add new content, get it reviewed and approved, and published in the right place. It also has steps for team members to suggest content they believe is useful but are not able to write about so the best person for the job can take over and add the content.
+But in order to make sure the structure of the knowledge base is respected and the content added is accurate and up to date, we developed a process that guides publishing new content pages. It contains steps to add new content, get it reviewed, approved, and published in the right place. It also has steps for team members to suggest content they believe is useful but are not able to write about so the best person for the job can take over and add the content.
 
-In order to make sure the process runs smoothly, everyone receives feedback and every suggestion is addressed, we have a center person to oversee the process.
+In order to make sure the process runs smoothly, everyone receives feedback and every suggestion is addressed, we have a central person to oversee the process.
 
 ## Make sure content is up to date
 
@@ -45,7 +45,7 @@ Reviewing documents individually as they reach a certain "age" is better than cr
 
 When creating a knowledge base, it is important to design a structure for it and stick to it. But as your team grows, things change and time passes, it's possible the structure of the knowledge base will need to change, with new categories being needed and old categories becoming obselete.
 
-It is important to take this into account. In order to address that, we created a process to suggest new categories as well. Any team member can make a suggestion, documenting why they think the new category is needed and how it'd be helpful. The suggestion is reviewed by the center person responsible for keeping the knowledge base organized and can be accepted or rejected.
+It is important to take this into account. In order to address that, we created a process to suggest new categories as well. Any team member can make a suggestion, documenting why they think the new category is needed and how it'd be helpful. The suggestion is reviewed by the central person responsible for keeping the knowledge base organized and can be accepted or rejected.
 
 ## Consider what integrations are important for you
 
