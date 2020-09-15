@@ -1,15 +1,15 @@
 ---
 layout: post
 title: "Organizing and Maintaing a Team Knowledge Base"
-date: 2020-09-15 11:00:00
-reviewed: 2020-09-15 11:00:00
+date: 2020-09-18 11:00:00
+reviewed: 2020-09-18 11:00:00
 categories: ["team", "agile", "remote"]
 author: "abizzinotto"
 ---
 
 As a distributed, remote team we use different tools to communicate at OmbuLabs, like [Slack](https://slack.com/) and [Zoom](https://zoom.us/). Those are great for live communication. But every company has information that needs to be kept and stored somewhere. In our case, we started off using the [GitHub Wiki](https://docs.github.com/en/github/building-a-strong-community/about-wikis) and [Google Docs](https://docs.google.com). However, documentation and policies need to be maintained, updated and checked regularly. And having information scattered in different tools, formats and accounts became a hassle.
 
-That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://app.tettra.co/) and we share our experience with it [here](link to Tettra article). But regardless of what tool you choose, here are some practices that will help you keep your knowledge base organized and updated.
+That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://app.tettra.co/) and we will share our experience in a different article. But regardless of what tool you choose, here are some practices that will help you keep your knowledge base organized and updated.
 
 <!--more-->
 
@@ -59,4 +59,4 @@ For us, we knew from the start our knowledge base needed to be integrated with S
 
 Regardless of the tool you choose to power your knowledge base, make sure it is easily accessible to your team, you have good procedures in place to add and remove content, as well as reviewing the structure, the content is kept up to date and the knowledge base integrates nicely with your other systems.
 
-Knowledge bases are particularly important for remote teams and are a great way to store your teams knowledge.
+Knowledge bases are particularly important for remote teams and are a great way to store your team's knowledge.
