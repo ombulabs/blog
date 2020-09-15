@@ -23,6 +23,8 @@ To keep our content organized, we use Tettra's categories and folders structure.
 
 We also use Folders to keep our Draft pages before they are officially published to the whole team.
 
+<img src="/blog/assets/images/tettra/tettra_categories.jpg" alt="tettra categories" class="medium-img">
+
 ## Adding Content
 
 Tettra allows you to create pages inside the tool as well as add a link to external documents (Google Doc or Google Sheet). This lets us create new pages as needed as well as link to our documents available through Google Docs and Google Sheets, keeping all the information in a single place.
@@ -34,6 +36,8 @@ Tettra allows users to either add new content in the form of a Tettra page, link
 When a team member wants to add content to the knowledge base, they can simply create a new page and save it to the Drafts folder of the category they want to add the page to. Once the page is published under the Drafts folder, they can use the Comments feature to request a review from other team members. Once the page has been reviewed and approved, it is moved to the proper Folder under the Category and made available to the team.
 
 However, sometimes a team member wants to see something in the knowledge base but is not sure what's the best way to add it. In that case, they can create a suggestion and either assign it to the best team member to write a page or to the knowledge base admin, who'll make sure the suggestion is addressed.
+
+<img src="/blog/assets/images/tettra/tettra-suggestion.jpg" alt="tettra suggestion" class="medium-img">
 
 This way we make sure all content added to the knowledge base is accurate and we also make sure we address all concerns from the team and add all the content they need there.
 
@@ -57,9 +61,13 @@ Tettra integrates nicely with [Slack](https://slack.com), our tool of choice for
 
 The Slack integration allows us to notify a Slack channel every time a new page is published or an existing page is updated. We have specific categories linked to specific channels and when a page or changes to a page are published, we just need to click a button to notify the team on Slack.
 
+<img src="/blog/assets/images/tettra/slack-notify.jpg" alt="tettra notify slack" class="medium-img">
+
 Through the integration we can also easily search for content. Tettra offers a variety of Slack commands that allow us to search for content, add a new page or create a new suggestion.
 
 Finally, the integration also adds the Tettra Wiki bot, which notifies a user in Slack when they are tagged in a Tettra page or suggestion.
+
+<img src="/blog/assets/images/tettra/slack-notification.jpg" alt="tettra Slack notification" class="medium-img">
 
 ## Custom Integration
 
@@ -71,9 +79,7 @@ In order to keep those synced, we created a custom integration via Tettra's API.
 
 Documentation becomes obsolete, policies change and so on. Adding content is a good way to make sure all the information is safely stored, but removing obsolete content and updating existing pages is also important to keep the knowledge base clean and relevant.
 
-In order to ensure our content is always up to date, we use Tettra's inbuilt feature of notifying the admin every time a page has gone three months without an update. The admin gets a notification and can check the page in question and update it if needed or tag the best team member to review and update.
-
-Having a notification in Slack is a great way to ensure the admin knows when to review pages and which pages to review. And having the clock running for each page individually ensures we don't have to dedicate a lot of time to reviewing the entire knowledge base every so often.
+In order to ensure our content is always up to date, we have a set process to review articles in the Knowledge Base every three months. We also get notifications from Tettra when a suggestion hasn't had any activity in a while, which is very helpful.
 
 ## Conclusion
 
