@@ -9,7 +9,7 @@ author: "abizzinotto"
 
 As a distributed, remote team we use different tools to communicate at OmbuLabs, like [Slack](https://slack.com/) and [Zoom](https://zoom.us/). Those are great for live communication. But every company has information that needs to be kept and stored somewhere. In our case, we started off using the [GitHub Wiki](https://docs.github.com/en/github/building-a-strong-community/about-wikis) and [Google Docs](https://docs.google.com). However, documentation and policies need to be maintained, updated and checked regularly. And having information scattered in different tools, formats and accounts became a hassle.
 
-That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://app.tettra.co/) and we will share our experience in a different article. But regardless of what tool you choose, here are some practices that will help you keep your knowledge base organized and updated.
+That's where a knowledge base comes in. At OmbuLabs we use [Tettra](https://tettra.com/) and we will share our experience in a different article. But regardless of what tool you choose, here are some practices that will help you keep your knowledge base organized and updated.
 
 <!--more-->
 
