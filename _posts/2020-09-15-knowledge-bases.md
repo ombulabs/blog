@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Organizing and Maintaing a Team Knowledge Base"
+title: "Organizing and Maintaining a Team Knowledge Base"
 date: 2020-09-18 11:00:00
 reviewed: 2020-09-18 11:00:00
 categories: ["team", "agile", "remote"]
