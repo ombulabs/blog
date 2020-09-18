@@ -7,14 +7,14 @@ categories: ["open-source"]
 author: "etagwerker"
 ---
 
-At [Ombu Labs](https://www.ombulabs.com) we are big fans and happy customers
+At [OmbuLabs](https://www.ombulabs.com) we are big fans and happy customers
 of [Noko](https://nokotime.com/). We use their widget to track all the
 hours that we spend on client projects,
 [open source](https://www.ombulabs.com/#open-source) development, and
 [our own products](https://www.ombulabs.com/#products).
 
-Today I'm happy to introduce [Pecas, time tracking leaderboards for Noko](http://ombulabs.github.io/pecas/)! **Pecas** is an
-[open source](http://github.com/ombulabs/pecas) tool that integrates with your
+Today I'm happy to introduce [Pecas, time tracking leaderboards for Noko](http://fastruby.github.io/pecas/)! **Pecas** is an
+[open source](http://github.com/fastruby/pecas) tool that integrates with your
 account and generates beautiful leaderboards per project and per teammate.
 
 Here is a sample dashboard for all your projects:
@@ -33,7 +33,7 @@ good way to detect deviations.
 To build this small application we decided to use
 [Rails 4.2](http://rubyonrails.org/) and the
 [Noko API v2](https://developer.nokotime.com/). You can easily
-set it up using [Heroku](http://heroku.com) and your Noko API key: [https://github.com/ombulabs/pecas#first-time-only](https://github.com/ombulabs/pecas#first-time-only)
+set it up using [Heroku](http://heroku.com) and your Noko API key: [https://github.com/ombulabs/pecas#first-time-only](https://github.com/fastruby/pecas#first-time-only)
 
 If you like [Noko](https://nokotime.com/) as much as we do, feel free to
-**fork Pecas** in [Github](https://github.com/ombulabs): [https://github.com/ombulabs/pecas](https://github.com/ombulabs/pecas)
+**fork Pecas** in [Github](https://github.com/fastruby): [https://github.com/fastruby/pecas](https://github.com/fastruby/pecas)
