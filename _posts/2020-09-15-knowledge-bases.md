@@ -43,7 +43,7 @@ Reviewing documents individually as they reach a certain "age" is better than cr
 
 ## Take into account changes to the structure
 
-When creating a knowledge base, it is important to design a structure for it and stick to it. But as your team grows, things change and time passes, it's possible the structure of the knowledge base will need to change, with new categories being needed and old categories becoming obselete.
+When creating a knowledge base, it is important to design a structure for it and stick to it. But as your team grows, things change and time passes, it's possible the structure of the knowledge base will need to change, with new categories being needed and old categories becoming obsolete.
 
 It is important to take this into account. In order to address that, we created a process to suggest new categories as well. Any team member can make a suggestion, documenting why they think the new category is needed and how it'd be helpful. The suggestion is reviewed by the central person responsible for keeping the knowledge base organized and can be accepted or rejected.
 
