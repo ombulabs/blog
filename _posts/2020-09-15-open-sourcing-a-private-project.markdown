@@ -49,13 +49,15 @@ Follow steps on [GitHub](https://docs.github.com/en/enterprise/2.17/user/github/
 
 Follow steps on [GitHub](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) to create a new repository and make sure to choose the public option when choosing the visibility, and don’t include the README.
 ```
-# Choose which commit you would like to include in the new tree(we chose the first commit. Use git log and copy the commit hash.
+# Choose which commit you would like to include in the new tree(we chose the first commit). Use git log and copy the commit hash.
 $ git reset --soft <commit hash>
 $ git commit --amend
-$ adjust commit title as needed
+# adjust commit title as needed
+$ git remote rename origin <oldrepo>
 $ git remote add origin <clone new GitHub repository>
 $ git push origin <main branch>
 ```
+If you are looking to squash the last number of commits into a single one in the commit history, we can use the git reset --soft [commit] option. In our case we squashed all commits against the first one, but deleting the repo and recreating it would have given the same effect. There's an interesting side effect in this approach though, GitHub seems to detect contributions from other developers while if it was a repo from scratch it wouldn't.
 
 ### Creating a GitHub Page
 A GitHub page is not essential when open sourcing a project, but it is a good idea. We have GitHub Pages for several of our projects including; [Dash](https://fastruby.github.io/dash/), [Points](https://fastruby.github.io/points/), and [Pecas](https://fastruby.github.io/pecas/).
