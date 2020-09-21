@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to open source a private project"
+title: "How to Open Source a Closed Source Project"
 date: 2020-09-17 11:00:00
 categories: ["open source"]
 author: "fionaDL"
