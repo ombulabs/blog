@@ -25,7 +25,7 @@ Look at places where you may have hardcoded company specific or personal informa
 
 Having a good README is fundamental when creating an open source project. It is important for it to be robust and filled with easy to understand information on setting up and using the project. Some things that are important to include:
 
-- Description of the Project
+- Description of the project
 - Steps on how to setup the project
 - A contribution guide
 - Code of Conduct
