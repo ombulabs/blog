@@ -32,7 +32,7 @@ Having a good README is fundamental when creating an open source project. It is 
 - Sponsorship (if applicable)
 - License
 
-You can read more about this over [here](https://www.fastruby.io/blog/open-source/ombulabs-open-source-guidelines.html) in our article about open source practices.
+You can read more about this in [our article about open source practices](https://www.fastruby.io/blog/open-source/ombulabs-open-source-guidelines.html).
 
 ### Moving the project to Open Source:
 
