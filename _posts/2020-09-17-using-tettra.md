@@ -7,7 +7,7 @@ categories: ["team", "remote"]
 author: "abizzinotto"
 ---
 
-At OmbuLabs we use [Tettra](https://tettra.com/) to power our knowledge base. As a remote, distributed team it is very important to us to have our content structured and organized. We follow some good practices to keep it organized and up to date, which we describe [here](link to kb article), and we use Tettra to keep our knowledge organized and integrated with the tools we use on a daily basis.
+At OmbuLabs we use [Tettra](https://tettra.com/) to power our knowledge base. As a remote, distributed team it is very important to us to have our content structured and organized. We follow some good practices to keep it organized and up to date, which we describe [here](https://www.ombulabs.com/blog/team/agile/remote/organizing-team-knowledge-bases.html), and we use Tettra to keep our knowledge organized and integrated with the tools we use on a daily basis.
 
 <!--more-->
 
