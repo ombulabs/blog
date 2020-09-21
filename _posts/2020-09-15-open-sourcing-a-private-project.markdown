@@ -6,7 +6,7 @@ categories: ["open source"]
 author: "fionaDL"
 ---
 
-Open Source is one of the things that we value as a company. Our philosophy is that “everything we do should be open by default”. This is why in the past few months we decided to open source two of our internal projects. We built [Dash](https://github.com/fastruby/dash) and [Points](https://github.com/fastruby/points) to make our daily processes smoother, and then we thought “hey, why not share them with everyone?”.
+Open Source is one of the things that we [value]( https://www.ombulabs.com/blog/values/our-values.html) as a company. Our philosophy is that “everything we do should be open by default”. This is why in the past few months we decided to open source two of our internal projects. We built [Dash](https://github.com/fastruby/dash) and [Points](https://github.com/fastruby/points) to make our daily processes smoother, and then we thought “hey, why not share them with everyone?”.
 Now we also want to share the process of how we turned them from private to open source.
 
 <!--more-->
@@ -17,9 +17,9 @@ Before we began the process of open sourcing we decided to make a list. We thoug
 
 ### Hiding sensitive information
 
-It is important to go through commit history and the code to make sure there are no “secrets” you would be sharing with the public when you open source. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
+It is important to go through the commit history and the code to make sure there are no “secrets” you would be sharing with the public when you open source. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
 
-Look at places where you may have hardcoded company specific or personal information. We often move these hardcoded pieces of code into environment variables. Just make sure you include the environment variables and an explanation in the README.
+Look at places where you may have hardcoded company specific or personal information. We often move these hardcoded pieces of code into environment variables. Just make sure you include a sample file with the environment variables (and sample values) and an explanation in the README. Something like `.env.sample` so that future users and contributors have an idea of what those look like.
 
 ### Creating a comprehensive README
 
@@ -60,7 +60,7 @@ $ git push origin <main branch>
 If you are looking to squash the last number of commits into a single one in the commit history, we can use the git reset --soft [commit] option. In our case we squashed all commits against the first one, but deleting the repo and recreating it would have given the same effect. There's an interesting side effect in this approach though, GitHub seems to detect contributions from other developers while if it was a repo from scratch it wouldn't.
 
 ### Creating a GitHub Page
-A GitHub page is not essential when open sourcing a project, but it is a good idea. We have GitHub Pages for several of our projects including; [Dash](https://fastruby.github.io/dash/), [Points](https://fastruby.github.io/points/), and [Pecas](https://fastruby.github.io/pecas/).
+A GitHub page is not essential when open sourcing a project, but it is a good idea. This is a place where we can give more information to potential users, and even share screenshots of the project. Users will have an easier time setting up the application and understanding how it is used when they have a good resource to pull from. We have GitHub Pages for several of our projects including; [Dash](https://fastruby.github.io/dash/), [Points](https://fastruby.github.io/points/), and [Pecas](https://fastruby.github.io/pecas/).
 
 Steps we used to create a GitHub Page
 ```
