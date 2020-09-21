@@ -41,6 +41,14 @@ However, sometimes a team member wants to see something in the knowledge base bu
 
 This way we make sure all content added to the knowledge base is accurate and we also make sure we address all concerns from the team and add all the content they need there.
 
+## Searching for Content
+
+Tettra offers two different ways to search for content in the knowledge base, inside Tettra itself or via Slack.
+
+As a remote team that's in Slack all the time, being able to search for content without leaving the tool is very handy. With a simple custom Slack command we can search the knowledge base for keywords and, if nothing is found, a link is included in the message that takes us directly to the Create a New Page state in Tettra.
+
+If content is found but turns out not to be exactly what the team member was looking for, they can always use the integration to create a suggestion without leaving Slack. Pretty handy.
+
 ## Adding a Category
 
 In order to make sure our knowledge base doesn't get out of order with too many categories and folders, we have a procedure in place to add new categories.
@@ -73,7 +81,9 @@ Finally, the integration also adds the Tettra Wiki bot, which notifies a user in
 
 When we thought of the knowledge base, it was important to us to connect it to our blog posts, as it contains a great deal of information on our procedures and how we use the tools we choose to use.
 
-In order to keep those synced, we created a custom integration via Tettra's API. This way, all the information available in our blog is also accessible from the knowledge base.
+One of our core values is "Open by Default" and both our [OmbuLabs blog](https://www.ombulabs.com/blog) and our [FastRuby.io blog](https://www.fastruby.io/blog) are open source projects in GitHub. You can check the [OmbuLabs Blog GitHub project here](https://github.com/ombulabs/blog/) and the [FastRuby.io Blog GitHub project here](https://github.com/fastruby/blog).
+
+Therefore, we wanted a way to sync the information in our blog with our knowledge base without having to remove anything from the blog. In order to do that, we built a custom integration via Tettra's API. This way, all the information available in our blog is also accessible from the knowledge base.
 
 ## Keeping the Knowledge Base Up to Date
 
@@ -83,4 +93,4 @@ In order to ensure our content is always up to date, we have a set process to re
 
 ## Conclusion
 
-In order to keep every team member on the same page and make information accessible to everyone in the easiest way possible, Tettra was our tool of choice. It integrates nicely with the tools we use, has an easy to use interface and allows us to keep the content updated and accessible.
+In order to keep every team member on the same page and make information accessible to everyone in the easiest way possible, Tettra was our tool of choice. Out of all of the tools we evaluated, it was the one that integrated nicely with the core tools we use (Slack, Google Docs and GitHub, as well as having an easy to use interface and easy to reach, quick to respond support, allowing us to keep the content updated and accessible.
