@@ -17,7 +17,7 @@ Before we began the process of open sourcing we decided to make a list. We thoug
 
 ### Hiding sensitive information
 
-It is important to go through commit history and the code to make sure there are no “secrets” you would be sharing with the public when you open source. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
+It is important to go through commit history and the code to make sure there are no “secrets” you would be sharing with the public when you publish your source code and Git history. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
 
 Look at places where you may have hardcoded company specific or personal information. We often move these hardcoded pieces of code into environment variables. Just make sure you include the environment variables and an explanation in the README.
 
