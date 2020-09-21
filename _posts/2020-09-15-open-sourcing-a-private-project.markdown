@@ -17,7 +17,7 @@ Before we began the process of open sourcing we decided to make a list. We thoug
 
 ### Hiding sensitive information
 
-It is important to go through the commit history and the code to make sure there are no “secrets” you would be sharing with the public when you open source. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
+It is important to go through commit history and the code to make sure there are no “secrets” you would be sharing with the public when you publish your source code and Git history. We ended up needing to squash the commit history because we had some areas that had sensitive information. Maybe your code is already free of sensitive information, but it is a good idea to check.
 
 Look at places where you may have hardcoded company specific or personal information. We often move these hardcoded pieces of code into environment variables. Just make sure you include a sample file with the environment variables (and sample values) and an explanation in the README. Something like `.env.sample` so that future users and contributors have an idea of what those look like.
 
@@ -25,14 +25,14 @@ Look at places where you may have hardcoded company specific or personal informa
 
 Having a good README is fundamental when creating an open source project. It is important for it to be robust and filled with easy to understand information on setting up and using the project. Some things that are important to include:
 
-- Description of the Project
+- Description of the project
 - Steps on how to setup the project
 - A contribution guide
 - Code of Conduct
 - Sponsorship (if applicable)
 - License
 
-You can read more about this over [here](https://www.fastruby.io/blog/open-source/ombulabs-open-source-guidelines.html) in our article about open source practices.
+You can read more about this in [our article about open source practices](https://www.fastruby.io/blog/open-source/ombulabs-open-source-guidelines.html).
 
 ### Moving the project to Open Source:
 
