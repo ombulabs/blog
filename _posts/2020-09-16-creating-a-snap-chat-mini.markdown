@@ -6,7 +6,7 @@ categories: ["learning"]
 author: arieljuod
 ---
 
-Over the last few months, we did a couple of (Snapchat Minis)[https://www.ombulabs.com/blog/software-development/snap-minis.html]. Minis are small static web apps that are run inside a webview within the Snapchat native app.
+Over the last few months, we developed a couple of (Snapchat Minis)[https://www.ombulabs.com/blog/software-development/snap-minis.html]. Minis are small static web apps that are run inside a webview within the Snapchat native app.
 
 One important part of the development was to make sure our mini works well across different devices, especially making sure things work the same in both Android's webview (Chrome by default) and iOS's webview (Safari).
 
@@ -18,21 +18,21 @@ In this post I'll talk about a few things to keep in mind when working with the 
 
 Snapchat provides a JavaScript SDK that you'll have to include in your project. This SDK works as a bridge between the native app and your web app and lets you trigger native functionalities (like sharing on chat and camera), it gives you information about the current user and session, and also sends different events so you can react to them (you can detect if a user takes a screenshot or changes the volume for example).
 
-With the SDK you'll also have some guides, the documentation, a manual and a support website with FAQs and useful information.
+Along with the SDK, Snapchat will provide guides, documentation, a manual and a support website with FAQs and useful information.
 
 ### Initializing the SDK
 
-Along with the sdk files, you'll have the documentation and the manual to help you set up the sdk initialization. The process is simple and it's explained in the manual so I won't go over that here. But, since you'll be probably developing the app mainly in a desktop/laptop computer, one thing you should keep in mind is that the initialization callback won't be triggered outside the native app. If your app depends on the SDK being initialized to work properly, you'll have to implement a fallback mechanism to trigger the same callback locally.
+Along with the SDK files, you'll have the documentation and the manual to help you set up the SDK initialization. The process is simple and it's explained in the manual so we won't go over that here. However, one thing to keep in mind is is that the initialization callback won't be triggered outside the native app when you are developing the app on a desktop/laptop computer. If your app depends on the SDK being initialized to work properly, you'll have to implement a fallback mechanism to trigger the same callback locally.
 
-There are many ways, you can use node or webpack to have different code executed on different environments, use a boolean flag that you flip manually before publishing the mini, etc. You can do what works best for your process.
+There are many ways to do so: you can use node or webpack to have different code executed in different environments, you can have a boolean flag that you flip manually before compiling the mini, etc. You can do what works best for your process.
 
-> We recommend to always wait for the SDK initialization before rendering the app to prevent issues.
+> We recommend always waiting for the SDK initialization before rendering the app to prevent issues.
 
 ### Fallback Method Calls when Working Locally
 
-When developing locally, since the SDK won't be connected to a native app, you'll have to handle some fallbacks in the places where you need to call SDK methods (when sharing to camera, chat, etc for example) if you want to test the app flow easier instead of publishing every change to access the mini using your phone.
+When developing locally, since the SDK won't be connected to a native app, you'll have to handle some fallbacks in the places where you need to call SDK methods (when sharing to camera, chat, etc for example). If you want to test the app flow more easily instead of publishing every change to access the mini using your phone.
 
-For example, if your app uses the share-to-chat functionality, if you call the SDK method responsible for that locally, it will throw an exception. If you need to respond to that action to, for example, change to a different state, you may need to implement a fallback mechanism. You can `try/catch` the exception for example, or check if `sc.app` is defined or not (in this case, `sc` is the variable containing the sdk instance and the `app` property is an object with information of the native app, that won't be populated when running locally).
+For example, if your app uses the share-to-chat functionality, and you call the SDK method responsible for that locally, it will throw an exception. If you need to respond to that action because, for example, you need to change to a different state, you may need to implement a fallback mechanism. You can `try/catch` the exception for example, or check if `sc.app` is defined or not (in this case, `sc` is the variable containing the sdk instance and the `app` property is an object with information of the native app, that won't be populated when running locally).
 
 ### Displaying a Sticker when Sharing Content Using the Camera
 
@@ -45,7 +45,7 @@ For us, a more efficient solution was to use the HTML Canvas Element to draw an 
 If you need to implement the share-to-camera functionality, it's not easy to test the sticker generation while you are developing it. To help us create the sticker more easily, we used this simple snippet:
 
 ```javascript
-// `sc` is the snap canvas sdk reference
+// `sc` is the snap canvas SDK reference
 let base64data = generateStickerData()
 if (sc.app) {
   // this method will prepare the sticker object and call the SDK methods
@@ -56,7 +56,7 @@ if (sc.app) {
 }
 ```
 
-This speeds up the sticker design process a lot! since we don't need to publish the mini to test it inside Snapchat. After we were happy with the generated image, we started testing the real sdk method calls by publishing the mini to be used inside Snapchat.
+This speeds up the sticker design process a lot, since we don't need to publish the mini to test it inside Snapchat. After we were happy with the generated image, we started testing the real SDK method calls by publishing the mini to be used inside Snapchat.
 
 > Consider using hi resolution assets for this or it will look pixelated for hi pixel density devices.
 
@@ -64,7 +64,7 @@ This speeds up the sticker design process a lot! since we don't need to publish 
 
 Depending on the nature of your mini, you may need to store some data related to the user's state/actions (you may want to store an ID you get from a service, a timestamp when a user did some action, etc). We needed to store if a user had already done one specific action. For simple data like this, you can use the SDK's provided methods to write and read the local storage. Don't confuse this with the browser's local storage API: the local storage provided by the SDK is similar in some aspects but it has an async nature while the browser's locale storage is synchronous.
 
-You can use it to store simple string key/value pairs. You can store small and simple object by "stringifying" them first, but you shouldn't abuse this.
+You can use it to store simple string key/value pairs. You can store small and simple objects by "stringifying" them first, but you shouldn't abuse this.
 
 If you need to store more data, more complex data, or if you need a database to share data between users, you'll need to handle that within your own infrastructure.
 
@@ -74,7 +74,7 @@ We wanted these minis to look and feel like native apps. Some key considerations
 
 For the design, we had an iterative process, the design was changing during development to make it feel more native while we were adding features.
 
-For the scrolling, we implemented a custom scroll on one of the apps because it relies too much on swiping and scrolling gestures and the default scroll was not enough for our needs. This was developed with this mini's requirements in mind so it's something that probably won't work for other minis to share what we did, but the main idea is to listen to the touch events (start, move, stop, cancel) and use the positions to detect the gestures and scroll the elements accordingly. We also added some inertia similar to the default scroll when releasing the touch. For other minis we used [this JS plugin](https://github.com/idiotWu/smooth-scrollbar) in specific sections to improve the scrolling experience.
+For the scrolling, we wanted to add an inertia an overflow effect like how it works for iOS. We used [this JS plugin](https://github.com/idiotWu/smooth-scrollbar) in specific sections to improve the scrolling experience, you can also implement your custom scrolling behavior using mouse and touch events.
 
 > Make sure you develop a responsive design, your app will run in a broad range of mobile resolutions.
 
@@ -90,6 +90,6 @@ If you need to use third party plugins, make sure to test how it impacts the per
 
 ## Conclusion
 
-Making a Snapchat Mini is a really interesting project and you are presented to really big audience.
+Making a Snapchat Mini is a really interesting project and you are presented to a really big audience. The key things we had to keep in mind were: making sure that it has good performance, that it looks and feels native (and not like a simple web), and that it integrates well with Snapchat's sharing feature to incentivize users to share the mini with their friends.
 
-The hardest part is to make sure your implementation works well cross-browser, Chrome and Safari behave really different in some aspects and each of them has their own known bugs and features that you have to take into account. I'll show some of the most interesting issues we've found during these developments on my next blog post.
+The hardest part is to make sure your implementation works well cross-browser. Chrome and Safari behave really different in some aspects and each of them has their own known bugs and features that you have to take into account. We'll talk about some of those issues on the next part of this series.
