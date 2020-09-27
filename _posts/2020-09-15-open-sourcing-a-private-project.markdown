@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "How to open source a private project"
+title: "How to Open Source a Closed Source Project"
 date: 2020-09-29 11:00:00
-categories: ["open source"]
+categories: ["open-source"]
 author: "fionaDL"
 ---
 
@@ -11,7 +11,7 @@ Now we also want to share the process of how we turned them from private to open
 
 <!--more-->
 
-## Making a list
+### Making a list
 
 Before we began the process of open sourcing we decided to make a list. We thought about what it would take to move the projects into the eyes of the public. We thought about what we wanted the app to look like, if there were any “secrets” in the code, and how we would present the projects. These are some of the things we came up with for our checklist.
 
