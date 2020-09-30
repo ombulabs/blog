@@ -2,8 +2,8 @@
 layout: post
 title: "How's the Performance of Ruby 3.0.0-preview1?"
 date: 2020-09-30 7:00:00
-categories: ["rails", "performance"]
-author: ["noah-gibbs"]
+categories: ["rails", "performance", "ruby"]
+author: ["noahgibbs"]
 ---
 
 The [new Ruby 3.0 preview](https://www.ruby-lang.org/en/news/2020/09/25/ruby-3-0-0-preview1-released/) is out! Woo-hoo!
@@ -12,9 +12,11 @@ If you've heard of me, you know [performance is kinda my thing](https://engineer
 
 How does the new preview's performance stack up on Rails? And how reliable are these numbers?
 
+<!--more-->
+
 ## Pitfalls
 
-First off, not every gem is ready for Rails 3. For instance, the latest version of ruby_dep (1.5.0) has a "\~>2.2" dependency on Ruby. I'm not trying to pick on it! [Tilde-dependencies are usually a really good idea](https://guides.rubygems.org/patterns/#pessimistic-version-constraint)! And now a bunch of them are going to need to change.
+First off, not every gem is ready for Ruby 3. For instance, the latest version of ruby_dep (1.5.0) has a "\~>2.2" dependency on Ruby. I'm not trying to pick on it! [Tilde-dependencies are usually a really good idea](https://guides.rubygems.org/patterns/#pessimistic-version-constraint)! And now a bunch of them are going to need to change.
 
 I'm also using ancient code for this benchmark, frankly. I consider myself a pragmatist on this point, and I tried what a pragmatist would do. &lt;whispering&gt;I commented out the check for Ruby version in the local copy of Bundler 1.1.17&lt;/whispering&gt;. Um, I mean we're all respectable Rubyists here who never cut corners to get speed ratings of prerelease software.
 
@@ -32,7 +34,7 @@ Nearly. In fact, it looks like my (badly-patched) version has an incompatibility
 
 My existing test stack seemed like the way to go: I've built this very specifically to time Ruby 3.0 against Ruby 2.0, for many years. Now that Ruby 3 exists, I can finally use it for that! It's about time!
 
-[Rails Ruby Bench](https://github.com/noahgibbs/rails_ruby_bench) runs a copy of Discourse, a common and popular Rails app to host internet forums. It's one of the biggest available "real" open-source Rails apps, making it a fine choice for "real world" benchmarking. RRB runs a set of simulated pseudorandom user requests against the running Rails app, and times how long they all take to finish. So it's a throughput test. [You can run it yourself if you like](https://engineering.appfolio.com/appfolio-engineering/2019/11/28/how-do-i-use-rails-ruby-bench), though it's a bit complex and finicky. You may be gathering that from the "Pitfalls" section above. The dark side of using real-world software is hitting real-world complexity and bugs.
+[Rails Ruby Bench](https://github.com/noahgibbs/rails_ruby_bench) runs a copy of [Discourse](https://github.com/discourse/discourse), a common and popular Rails app to host internet forums. It's one of the biggest available "real" open-source Rails apps, making it a fine choice for "real world" benchmarking. RRB runs a set of simulated pseudorandom user requests against the running Rails app, and times how long they all take to finish. So it's a throughput test. [You can run it yourself if you like](https://engineering.appfolio.com/appfolio-engineering/2019/11/28/how-do-i-use-rails-ruby-bench), though it's a bit complex and finicky. You may be gathering that from the "Pitfalls" section above. The dark side of using real-world software is hitting real-world complexity and bugs.
 
 RRB has run against AWS m4.2xlarge instances for nearly its whole existence. That's what I'm doing again. For now: m4.2xlarge instances, 10 processes, 6 threads/process, the same as I've been [using for over 3 years](https://rubykaigi.org/2017/presentations/codefolio.html) for this purpose. Once Ruby 3 comes out, it'll be time to look at upgrading RRB. After that, it will have fulfilled its purpose: to measure the total speedup from 2.0 to 3.0 of a typical real-world Ruby on Rails application.
 
