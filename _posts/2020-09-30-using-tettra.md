@@ -1,8 +1,7 @@
 ---
 layout: post
 title: "Using Tettra to Keep our Content Organized"
-date: 2020-09-17 11:00:00
-reviewed: 2020-09-17 11:00:00
+date: 2020-09-30 15:00:00
 categories: ["team", "remote"]
 author: "abizzinotto"
 ---
