@@ -75,6 +75,6 @@ This is also a very limited test. I could check Ruby versions (again) much farth
 
 Is that shocking? It shouldn't be. I was, frankly, very surprised to see the 72%-ish speed boost from 2.0 to 2.6. Rails spends a lot of its time I/O-bound, waiting on databases, files and the network. The current Ruby JIT champions, JRuby and TruffleRuby can't easily squeeze more performance out of Rails than CRuby in most cases. The garbage collector, a source of slowdown back in Ruby 2.0 and 2.1, runs extremely solidly for these use cases.
 
-I think we're seeing about the speed that Rails is going to be, for Ruby 3.0 and for some time afterward.
+I think this is about the speed that Rails is going to be, for Ruby 3.0 and for some time afterward.
 
 With that said, I think a combination of polishing Ruby 3.0 for release and me making sure my test is in order will return the few percentage points of speed that (my tests claim) Ruby 3.0 has lost versus 2.6 and 2.7.
