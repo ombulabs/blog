@@ -22,7 +22,7 @@ I'm also using ancient code for this benchmark, frankly. I consider myself a pra
 
 It didn't work, though. It turns out there are ***several*** changes in Ruby 3.0 that are going to require gems to upgrade a bit. But if the main problem is just the version number&hellip;
 
-I put together [a Ruby branch which started out exactly identical to the Git SHA for Ruby 3.0.0-preview1, plus a commit that rolled the reported version back to 2.8](https://github.com/noahgibbs/ruby/tree/fake_2_8). That's not as good an idea as updating all the gems to support 3.0, but it requires a lot fewer updates to ancient software and/or that I can't do for myself. Though I still have to revert a few deprecations so that old code warns instead of crashing...
+I put together [a Ruby branch which started out exactly identical to the Git SHA for Ruby 3.0.0-preview1, plus a commit that rolled the reported version back to 2.8](https://github.com/noahgibbs/ruby/tree/fake_2_8). That's not as good an idea as updating all the gems to support 3.0, but it requires a lot fewer updates to ancient software  that I can't do for myself. Though I still have to revert a few deprecations so that old code warns instead of crashing...
 
 ![A Variety of Ruby 3.0.0 Deprecations-Turned-Errors I Reverted](/blog/assets/images/ruby_30_deprec.png")
 
