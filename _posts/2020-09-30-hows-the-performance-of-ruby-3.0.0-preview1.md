@@ -3,7 +3,7 @@ layout: post
 title: "How's the Performance of Ruby 3.0.0-preview1?"
 date: 2020-09-30 7:00:00
 categories: ["rails", "performance", "ruby"]
-author: ["noahgibbs"]
+author: "noahgibbs"
 ---
 
 The [new Ruby 3.0 preview](https://www.ruby-lang.org/en/news/2020/09/25/ruby-3-0-0-preview1-released/) is out! Woo-hoo!
