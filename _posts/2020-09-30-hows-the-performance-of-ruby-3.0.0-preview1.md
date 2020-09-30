@@ -61,6 +61,8 @@ How are results? Not dramatic, I'm afraid.
     </tbody>
 </table>
 
+(I also have [the raw data](http://codefol.io/links/ruby_3.0.0-preview1_rrb_results.json.gz), if that's of use to you. And technically there's an even more raw, larger set of results. [Hit me up on Twitter](https://twitter.com/codefolio) if you want them.)
+
 To summarize simply: they're nearly the same speed, and a bit a pre-release Ruby polish and/or fixes to my testing will probably get them back to exactly equal.
 
 ## Other Issues...
