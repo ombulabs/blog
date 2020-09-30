@@ -22,7 +22,7 @@ To keep our content organized, we use Tettra's categories and folders structure.
 
 We also use Folders to keep our Draft pages before they are officially published to the whole team.
 
-<img src="/blog/assets/images/tettra/tettra_categories.jpg" alt="tettra categories" class="medium-img">
+<img src="/blog/assets/images/tettra/tettra-categories.png" alt="tettra categories" class="medium-img">
 
 ## Adding Content
 
@@ -36,7 +36,7 @@ When a team member wants to add content to the knowledge base, they can simply c
 
 However, sometimes a team member wants to see something in the knowledge base but is not sure what's the best way to add it. In that case, they can create a suggestion and either assign it to the best team member to write a page or to the knowledge base admin, who'll make sure the suggestion is addressed.
 
-<img src="/blog/assets/images/tettra/tettra-suggestion.jpg" alt="tettra suggestion" class="medium-img">
+<img src="/blog/assets/images/tettra/tettra-suggestion.png" alt="tettra suggestion" class="medium-img">
 
 This way we make sure all content added to the knowledge base is accurate and we also make sure we address all concerns from the team and add all the content they need there.
 
@@ -68,13 +68,13 @@ Tettra integrates nicely with [Slack](https://slack.com), our tool of choice for
 
 The Slack integration allows us to notify a Slack channel every time a new page is published or an existing page is updated. We have specific categories linked to specific channels and when a page or changes to a page are published, we just need to click a button to notify the team on Slack.
 
-<img src="/blog/assets/images/tettra/slack-notify.jpg" alt="tettra notify slack" class="medium-img">
+<img src="/blog/assets/images/tettra/slack-notify.png" alt="tettra notify slack" class="medium-img">
 
 Through the integration we can also easily search for content. Tettra offers a variety of Slack commands that allow us to search for content, add a new page or create a new suggestion.
 
 Finally, the integration also adds the Tettra Wiki bot, which notifies a user in Slack when they are tagged in a Tettra page or suggestion.
 
-<img src="/blog/assets/images/tettra/slack-notification.jpg" alt="tettra Slack notification" class="medium-img">
+<img src="/blog/assets/images/tettra/slack-notification.png" alt="tettra Slack notification" class="medium-img">
 
 ## Custom Integration
 
