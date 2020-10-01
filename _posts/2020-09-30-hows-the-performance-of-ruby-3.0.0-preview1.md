@@ -48,14 +48,18 @@ These results are running minimum 30 batches per Ruby version of 10,000 requests
 
 How are results? Not dramatic, I'm afraid.
 
-<table>
+<table style="text-align: right">
     <thead>
         <tr><td></td><th>Ruby 2.7</th><th>Ruby 3.0.0-preview1</th><th>Speedup/Slowdown</th></tr>
     </thead>
     <tbody>
         <tr>
             <th>Median Throughput</th><td>165.7</td><td>160.7</td><td style="color:red">-3.0%</td>
+        </tr>
+        <tr>
             <th>Fastest Run of 30</th><td>168.7</td><td>164.0</td><td style="color:red">-2.8%</td>
+        </tr>
+        <tr>
             <th>Slowest Run of 30</th><td>163.0</td><td>158.2</td><td style="color:red">-2.9%</td>
         </tr>
     </tbody>
