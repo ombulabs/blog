@@ -6,7 +6,7 @@ categories: ["team", "remote"]
 author: "ignaciobertotti"
 ---
 
-As a softwa·re consulting company, we bill for the time we work on client projects. So it is vital for us to keep track of the time we put into every task.
+As a software consulting company, we bill for the time we work on client projects. So it is vital for us to keep track of the time we put into every task.
 We've had some trouble over the years with our time tracking that led us to work more time than what we finally billed for. We would like to share some of the experience we have collected over the years and the tools that we currently use.
 
 <!--more-->
