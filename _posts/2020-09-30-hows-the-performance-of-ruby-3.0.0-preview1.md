@@ -82,3 +82,6 @@ Is that shocking? It shouldn't be. I was, frankly, very surprised to see the 72%
 I think this is about the speed that Rails is going to be, for Ruby 3.0 and for some time afterward.
 
 With that said, I think a combination of polishing Ruby 3.0 for release and me making sure my test is in order will return the few percentage points of speed that (my tests claim) Ruby 3.0 has lost versus 2.6 and 2.7.
+
+Hey, you read all the way to the bottom! I'm impressed. If you're still on a Rails performance kick and you want to stick with it a bit, you could check out [more performance articles on this site!](https://www.fastruby.io/blog/tags/performance)
+
