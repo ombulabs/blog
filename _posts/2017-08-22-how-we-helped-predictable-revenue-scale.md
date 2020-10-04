@@ -19,7 +19,7 @@ But the part that we didn't realize that we needed was that there was no real st
 
 **Ernesto:** That's great to hear. **And how did that impact the business for Predictable Revenue?**
 
-**Preston:** [Ombu Labs](https://www.ombulabs.com) was a significant part of our development team for over two years. You guys were a core part of our team, and therefore you helped shape our product. I couldn't put a specific number value on the impact or anything, but I definitely would say that your expertise brought a lot to the table and that it positively influenced our system architecture.
+**Preston:** [OmbuLabs](https://www.ombulabs.com) was a significant part of our development team for over two years. You guys were a core part of our team, and therefore you helped shape our product. I couldn't put a specific number value on the impact or anything, but I definitely would say that your expertise brought a lot to the table and that it positively influenced our system architecture.
 
 For example, using [Amazon's SQS](https://aws.amazon.com/sqs/) to communicate with our sender nodes via message queues; we might have went that way otherwise, but I think that was your idea. I didn't have that in mind. So it's possible we could be using that now only because of you.
 

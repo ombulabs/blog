@@ -7,7 +7,7 @@ categories: ["rails", "stripe"]
 author: "luciano"
 ---
 
-In a recent project for [Ombu Labs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same time allowing us to collect a fee from each transaction they receive.
+In a recent project for [OmbuLabs](https://www.ombulabs.com), we were looking for a payment solution that allows users of our platform to easily start accepting online payments while at the same time allowing us to collect a fee from each transaction they receive.
 That's where [Stripe Connect](https://stripe.com/connect) came into place.
 
 <!--more-->

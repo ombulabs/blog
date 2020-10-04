@@ -7,7 +7,7 @@ categories: ["agile", "project-management"]
 author: "emily"
 ---
 
-Sprint Retrospectives are a crucial part of our project management strategy at [Ombu Labs](https://www.ombulabs.com). Because we are a remote and international team of software developers, we miss out on the “water-cooler” conversations and small talk that would normally occur between employees in a typical office environment.
+Sprint Retrospectives are a crucial part of our project management strategy at [OmbuLabs](https://www.ombulabs.com). Because we are a remote and international team of software developers, we miss out on the “water-cooler” conversations and small talk that would normally occur between employees in a typical office environment.
 
 <!--more-->
 

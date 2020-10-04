@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "How we use Pivotal Tracker at Ombu Labs"
+title:  "How we use Pivotal Tracker at OmbuLabs"
 date: 2018-09-06 11:10:00
 reviewed: 2020-04-15 10:00:00
 categories: ["agile", "pivotal-tracker"]
 author: "etagwerker"
 ---
 
-We like to use [GitHub](https://github.com) to its full potential at [Ombu Labs](https://www.ombulabs.com), so any tool we add to the toolset needs to integrate nicely with it. As a growing agency working in larger and increasingly more complex projects, we need a project management tool that allows us to keep track of our work and plan accordingly. For this, we use [Pivotal Tracker](https://www.pivotaltracker.com).
+We like to use [GitHub](https://github.com) to its full potential at [OmbuLabs](https://www.ombulabs.com), so any tool we add to the toolset needs to integrate nicely with it. As a growing agency working in larger and increasingly more complex projects, we need a project management tool that allows us to keep track of our work and plan accordingly. For this, we use [Pivotal Tracker](https://www.pivotaltracker.com).
 
 There are many things that are easier with Pivotal Tracker, as long as you are using it the right way. Some of its features are very useful for agile teams like ours. This is how we like to use it to ship value with every sprint and keep track of our [team velocity](http://wiki.c2.com/?ProjectVelocity).
 
@@ -126,6 +126,6 @@ At that point, a **new** user story should be created with the type set to **bug
 
 Additionally, Pivotal Tracker also integrates nicely with [Slack](https://slackhq.com/), which we use to communicate with each other. [This integration](https://www.pivotaltracker.com/help/articles/slack/) makes it easy to keep track of comments and notifications we need to address.
 
-At [Ombu Labs](https://www.ombulabs.com) we like to work closely with our clients' teams and communicate openly. We like how Pivotal Tracker makes it easy to communicate that some stories will be delivered in this sprint and some will have to wait until the next sprint. It is a great way to manage expectations. We like to invite our clients into our Pivotal Tracker project so we can work together in there; however, if our client already has a project management tool they use, we are happy to adapt.
+At [OmbuLabs](https://www.ombulabs.com) we like to work closely with our clients' teams and communicate openly. We like how Pivotal Tracker makes it easy to communicate that some stories will be delivered in this sprint and some will have to wait until the next sprint. It is a great way to manage expectations. We like to invite our clients into our Pivotal Tracker project so we can work together in there; however, if our client already has a project management tool they use, we are happy to adapt.
 
 We have also started using Pivotal Tracker for our internal projects more and more and we are seeing very positive results!

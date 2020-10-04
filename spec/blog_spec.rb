@@ -2,7 +2,7 @@ require 'rspec'
 require 'nokogiri'
 
 # Adapted from https://gist.github.com/thbar/10be2ea924b81f78d24ab800461bfee3
-RSpec.describe 'Ombu Labs Blog' do
+RSpec.describe 'OmbuLabs Blog' do
   describe 'tests' do
     let(:post) { 'git/github/4-useful-github-tricks.html' }
     let(:file_path) { "_site/#{post}" }

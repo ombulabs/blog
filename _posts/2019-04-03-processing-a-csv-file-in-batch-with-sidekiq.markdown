@@ -9,7 +9,7 @@ author: "cleiviane"
 
 [Sidekiq Pro](https://sidekiq.org/products/pro.html) comes with a great feature to process a collection of jobs as a batch, allowing them to be monitored as a group and executing a callback function when all the jobs are finished. This is useful when you need to load a lot of spreadsheet files into your database.  
 
-Recently, that was the case of one of [Ombu Labs](http://ombulabs.com)' clients. They needed to upload a CSV file with over 10 thousand rows of loans data, which makes processing the file synchronously impossible because the browser will time out after a few seconds. Breaking the file into smaller ones wasn't a good idea either, because it would take an unacceptable amount of time to finish. So we decided to use the Sidekiq's batch logic.
+Recently, that was the case of one of [OmbuLabs](http://ombulabs.com)' clients. They needed to upload a CSV file with over 10 thousand rows of loans data, which makes processing the file synchronously impossible because the browser will time out after a few seconds. Breaking the file into smaller ones wasn't a good idea either, because it would take an unacceptable amount of time to finish. So we decided to use the Sidekiq's batch logic.
 
 Since Sidekiq Pro wasn't an option at the time, we had the challenge of implementing the same pattern that Sidekiq Pro uses in their Batches processing. This article will show how we did it.
 
@@ -40,7 +40,7 @@ end
 
 This job is retrieving the batch created during the upload and keeping track of the batch status by setting it as "Processing".
 
-At [Ombu Labs](https://www.ombulabs.com/) we like to use the [Service Objects Pattern](https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial), so let's extract the logic to schedule all the other jobs to the `BatchProcessor` class:
+At [OmbuLabs](https://www.ombulabs.com/) we like to use the [Service Objects Pattern](https://www.toptal.com/ruby-on-rails/rails-service-objects-tutorial), so let's extract the logic to schedule all the other jobs to the `BatchProcessor` class:
 
 ```ruby
 class BatchProcessor

@@ -7,7 +7,7 @@ categories: ["values"]
 author: etagwerker
 ---
 
-At [Ombu Labs](https://www.ombulabs.com) we have many values that have been key
+At [OmbuLabs](https://www.ombulabs.com) we have many values that have been key
 to our success. This is an article about values that differentiate
 our company from the rest.
 

@@ -7,7 +7,7 @@ categories: ["rails", "upgrades"]
 author: "etagwerker"
 ---
 
-Today we are happy to announce the launch of our first productized service: [fastruby.io](https://fastruby.io) - Speedy Ruby on Rails Upgrades by Ombu Labs.
+Today we are happy to announce the launch of our first productized service: [fastruby.io](https://fastruby.io) - Speedy Ruby on Rails Upgrades by OmbuLabs.
 
 We are quite familiar with this sort of projects and decided to package it under its own domain. We have been doing [Ruby on Rails](http://rubyonrails.org) upgrades since 2009, for our [own products](https://www.ombulabs.com/#products) and [client projects](https://www.ombulabs.com/#clients), and we are looking forward to shipping more of them.
 
