@@ -3,7 +3,7 @@ layout: post
 title: "How to Open Source a Closed Source Project"
 date: 2020-09-29 11:00:00
 categories: ["open-source"]
-author: "fionaDL"
+author: "fionadl"
 ---
 
 Open Source is one of the things that we [value]( https://www.ombulabs.com/blog/values/our-values.html) as a company. Our philosophy is that “everything we do should be open by default”. This is why in the past few months we decided to open source two of our internal projects. We built [Dash](https://github.com/fastruby/dash) and [Points](https://github.com/fastruby/points) to make our daily processes smoother, and then we thought “hey, why not share them with everyone?”.
