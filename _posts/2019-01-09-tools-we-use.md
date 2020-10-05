@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  "Tools We Use at Ombu Labs"
+title:  "Tools We Use at OmbuLabs"
 date: 2019-01-09 10:00:00
 reviewed: 2020-03-05 10:00:00
 categories: ["agile"]
 author: "emily"
 ---
 
-At Ombu Labs, we have a number of tools that help us to keep organized, write better code and communicate more effectively with our clients.
+At OmbuLabs, we have a number of tools that help us to keep organized, write better code and communicate more effectively with our clients.
 
 <!--more-->
 
 ### Daily Work
-- We use [Slack](https://slack.com) to chat with Ombu Labs team members while working. We also like to use it to chat with clients and their teams, we prefer this over email.
+- We use [Slack](https://slack.com) to chat with OmbuLabs team members while working. We also like to use it to chat with clients and their teams, we prefer this over email.
 - We use [Trello](http://trello.com) to manage the status of our sales pipeline and client projects.
 - We use [Freckle](https://letsfreckle.com/) to track our time.
 -We use [Pecas](http://ombulabs.github.io/pecas/) as an add-on to Freckle.

@@ -87,7 +87,7 @@ No vulnerabilities found
 
 ### 7. Setup Code Climate
 
-This is a quick (and **paid**) step to check code quality. At [Ombu Labs](https://www.ombulabs.com) we have a business account that we use for our products and our client's projects.
+This is a quick (and **paid**) step to check code quality. At [OmbuLabs](https://www.ombulabs.com) we have a business account that we use for our products and our client's projects.
 
 [Code Climate](https://codeclimate.com) is a paid service that does automated code review for test coverage, complexity, duplication, security, and style.
 
@@ -134,6 +134,6 @@ These are the steps that we currently follow before we take over a Rails project
 
 Project maintainers, product owners and founders won't know the state of the code. You can't trust their opinion.
 
-At [Ombu Labs](https://www.ombulabs.com), if all these steps **pass** we will be happy to take over the project. If most of them **fail** we will usually send the company a **free** code quality report and respectfully decline.
+At [OmbuLabs](https://www.ombulabs.com), if all these steps **pass** we will be happy to take over the project. If most of them **fail** we will usually send the company a **free** code quality report and respectfully decline.
 
 I would love to know your opinion about these steps. Do you have other steps that you would recommend? Let me know!

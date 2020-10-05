@@ -12,7 +12,7 @@ a small class/object. Every time I see an opportunity to
 [DRY](http://c2.com/cgi/wiki?DontRepeatYourself) my specs, I take it.
 
 Today I wrote a spec to make sure that we gracefully ignore SPAMmy
-contact requests in the Ombu Labs
+contact requests in the OmbuLabs
 [contact page](https://www.ombulabs.com/contact). It initially looked like this:
 
 ```ruby

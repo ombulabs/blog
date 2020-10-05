@@ -7,7 +7,7 @@ categories: ["rails", "bitrix"]
 author: "luciano"
 ---
 
-In a recent project for [Ombu Labs](https://www.ombulabs.com), we had to integrate [Bitrix24](https://www.bitrix24.com/) (the tool that the client was using to administrate their business) with the [Rails](https://rubyonrails.org/) application that we were building for a client.
+In a recent project for [OmbuLabs](https://www.ombulabs.com), we had to integrate [Bitrix24](https://www.bitrix24.com/) (the tool that the client was using to administrate their business) with the [Rails](https://rubyonrails.org/) application that we were building for a client.
 
 The goal of this integration was to sync data between the Rails app and the [Bitrix CRM](https://www.bitrix24.com/features/crm.php). Basically we wanted to pull data from Bitrix every time there was a change (i.e. [Lead](https://www.bitrix24.com/features/lead-management.php) was created/updated). We also wanted to sync the other way around, push changes to Bitrix every time something changed on the Rails side.
 

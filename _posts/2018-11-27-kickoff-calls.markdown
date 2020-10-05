@@ -10,7 +10,7 @@ author: "emily"
 When starting a new software development project with a client, it is important to get started on the right foot. The way you communicate with a client at the beginning of a project can set the tone for how communication will be throughout the project.
 
 
-Therefore, at [Ombu Labs](https://www.ombulabs.com), we believe it is crucial to start off every new project with a *Kickoff Call*, where we can take time to get to know the client's team and speak in depth about their goals and priorities for the project. We like to discuss the following list of topics with clients during our calls:
+Therefore, at [OmbuLabs](https://www.ombulabs.com), we believe it is crucial to start off every new project with a *Kickoff Call*, where we can take time to get to know the client's team and speak in depth about their goals and priorities for the project. We like to discuss the following list of topics with clients during our calls:
 
 <!--more-->
 
@@ -22,7 +22,7 @@ During the Kickoff Call, we like to start off by introducing ourselves and getti
 
 We want to understand what the client wants to do in terms of project management. **_Do they use an existing service to manage stories? If so, what do they use? Do they want us to join an existing project board?_**
 
-At [Ombu Labs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (pull requests) and [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) for project management (user stories).
+At [OmbuLabs](https://www.ombulabs.com) we like to use [GitHub](https://github.com) for code management (pull requests) and [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) for project management (user stories).
 
 #### Access
 

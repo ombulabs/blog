@@ -7,7 +7,7 @@ categories: ["rails", "data-migrations"]
 author: "etagwerker"
 ---
 
-At [Ombu Labs](https://www.ombulabs.com), we are big fans of [Ruby on Rails](https://rubyonrails.org) and [design patterns](https://www.ombulabs.com/blog/tags/design-patterns), especially [convention over configuration](https://rubyonrails.org/doctrine/#convention-over-configuration)! The beauty of Rails is that
+At [OmbuLabs](https://www.ombulabs.com), we are big fans of [Ruby on Rails](https://rubyonrails.org) and [design patterns](https://www.ombulabs.com/blog/tags/design-patterns), especially [convention over configuration](https://rubyonrails.org/doctrine/#convention-over-configuration)! The beauty of Rails is that
 you can inherit a legacy project and easily find the different layers of code
 in different directories.
 
@@ -95,7 +95,7 @@ To sum things up, here are the pros and cons of this pattern:
 - Migrations fall out of date very quickly and you don't have a quick way to find out
 - You're not following Rails conventions: Files in `db/migrate` should migrate database structure, not database records
 
-At Ombu Labs we consider this practice an [anti-pattern](http://wiki.c2.com/?AntiPattern).
+At OmbuLabs we consider this practice an [anti-pattern](http://wiki.c2.com/?AntiPattern).
 We strongly advise you **not to include data migration code in your `db/migrate`
 files**.
 

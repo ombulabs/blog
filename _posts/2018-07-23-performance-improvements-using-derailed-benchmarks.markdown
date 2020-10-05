@@ -11,7 +11,7 @@ author: "mauro-oto"
 
 **Transcript:**
 
-Hello and welcome to the first OmbuCast by Ombu Labs. In this screencast we'll
+Hello and welcome to the first OmbuCast by OmbuLabs. In this screencast we'll
 be taking a look at the
 [`derailed_benchmarks`](https://github.com/schneems/derailed_benchmarks) gem,
 and how you can use it to benchmark your Rails application and find, and

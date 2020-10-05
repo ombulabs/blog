@@ -21,7 +21,7 @@ The goal of this challenge is to **make contributing to open source projects a h
 
 You can see the slides over here:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ombulabs/the-7-days-open-source-challenge" title="The 7 Days Open Source Challenge" target="_blank">The 7 Days Open Source Challenge</a> </strong> from <strong><a href="//www.slideshare.net/ombulabs" target="_blank">Ombu Labs, The Lean Software Boutique</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/dNhZJXClUW05B" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/ombulabs/the-7-days-open-source-challenge" title="The 7 Days Open Source Challenge" target="_blank">The 7 Days Open Source Challenge</a> </strong> from <strong><a href="//www.slideshare.net/ombulabs" target="_blank">OmbuLabs, The Lean Software Boutique</a></strong> </div>
 
 I did this challenge because I wanted to get back to contributing to a couple of projects that I currently maintain. It was great and I finally made some progress in [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner/)
 

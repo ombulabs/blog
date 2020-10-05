@@ -7,7 +7,7 @@ categories: ["continuous-learning"]
 author: "etagwerker"
 ---
 
-At [Ombu Labs](https://www.ombulabs.com) we believe that if we are not learning from our mistakes we are
+At [OmbuLabs](https://www.ombulabs.com) we believe that if we are not learning from our mistakes we are
 doing it wrong. It is simple: *The only unforgivable mistake is to not learn
 from our mistakes.*
 
