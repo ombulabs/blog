@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to Open Source a Closed Source Project"
-date: 2020-09-29 11:00:00
+title: "How to Open Source a Private Project"
+date: 2020-10-06 11:00:00
 categories: ["open-source"]
 author: "fionadl"
 ---
@@ -42,12 +42,16 @@ To completely delete the history including Pull Requests it is necessary to crea
 If you do need to hide the history of the project there are several ways to do this, but this is the way we used:
 
 Note: before beginning this we made a copy on GitHub and locally in case anything went wrong.
+
 ```
+
 $ git pull origin <main branch for repository >
+
 ```
 Follow steps on [GitHub](https://docs.github.com/en/enterprise/2.17/user/github/administering-a-repository/deleting-a-repository) to delete the repository.
 
-Follow steps on [GitHub](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) to create a new repository and make sure to choose the public option when choosing the visibility, and don’t include the README.
+Follow steps on [GitHub](https://docs.github.com/en/github/getting-started-with-github/create-a-repo) to create a new repository. Make sure to choose the public option when choosing the visibility, and don’t include the README.
+
 ```
 # Choose which commit you would like to include in the new tree(we chose the first commit). Use git log and copy the commit hash.
 $ git reset --soft <commit hash>
@@ -56,6 +60,7 @@ $ git commit --amend
 $ git remote rename origin <oldrepo>
 $ git remote add origin <clone new GitHub repository>
 $ git push origin <main branch>
+
 ```
 If you are looking to squash the last number of commits into a single one in the commit history, we can use the git reset --soft [commit] option. In our case we squashed all commits against the first one, but deleting the repo and recreating it would have given the same effect. There's an interesting side effect in this approach though, GitHub seems to detect contributions from other developers while if it was a repo from scratch it wouldn't.
 
@@ -63,6 +68,7 @@ If you are looking to squash the last number of commits into a single one in the
 A GitHub page is not essential when open sourcing a project, but it is a good idea. This is a place where we can give more information to potential users, and even share screenshots of the project. Users will have an easier time setting up the application and understanding how it is used when they have a good resource to pull from. We have GitHub Pages for several of our projects including; [Dash](https://fastruby.github.io/dash/), [Points](https://fastruby.github.io/points/), and [Pecas](https://fastruby.github.io/pecas/).
 
 Steps we used to create a GitHub Page
+
 ```
 $ git checkout --orphan gh-pages
 # preview files to be deleted
@@ -72,6 +78,7 @@ $ git rm -rf .
 # create an index.html file
 # add any styling you want to associate for the file
 # Push gh-pages branch to GitHub
+
 ```
 Go into settings for the repository and activate a Gh-Page. It will automatically use your gh-pages branch.
 
@@ -82,7 +89,7 @@ Adding Badges to the README is a great way to show pieces of information to pote
 
 ## Adding known issues to GitHub
 
-We tend to use [Pivotal Tracker](https://www.pivotaltracker.com/) for our internal projects to keep track of stories and known issues. Once we open source we like to close the Pivotal Tracker project and move all known issues or desired features to GitHub Issues. This way it will be a public history of everything being worked on in the project.
+We tend to use [Pivotal Tracker](https://www.ombulabs.com/blog/agile/pivotal-tracker/how-we-use-pivotal-tracker-at-ombu-labs.html) for our internal projects to keep track of stories and known issues. Once we open source we like to close the Pivotal Tracker project and move all known issues or desired features to GitHub Issues. This way it will be a public history of everything being worked on in the project.
 
 ## Announcing your new open source project
 At OmbuLabs we like to announce our projects with a blog post, like the one we did for [dash](https://www.ombulabs.com/blog/open-source/introducing-dash.html). We will also use Tweets, posts on LinkedIn or share anywhere else we feel is appropriate.
