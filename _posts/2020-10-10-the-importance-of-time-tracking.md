@@ -32,7 +32,7 @@ Some people struggle to keep up with their time tracking. From our experience we
 ### Our Process
 For logging our time into the projects we work on, creating invoices for our clients and tracking their payment, we like to use [Noko](https://nokotime.com/).
 
-You can use the main website to submit your entries, but we found this impractical since you need to recall the amount of time you spent on which task, and then submit your entry.
+You can use the main website to submit your entries, but we found this impractical since you need to recall the amount of time you spent on each task, and then submit your entry.
 To avoid this, you can take advantage of their timer. It's a downloadable app for iOS/Mac and a Google Chrome extension. This timer lets you track the time you spend daily on your projects and add descriptions to your entries. When you finish with a task you can submit your time entry and start a new one on the go.
 
 Getting used to using a timer like this prevents you from having a hard time remembering all the tasks you worked on before you submit your entry.
