@@ -20,7 +20,7 @@ Poor time tracking can cause direct and indirect damage to this kind of companie
 - Miscalculation of internal project costs: This cost is proportional to the time invested on these projects, so time tracking is vital on this subject.
 
 ### Indirect
-- Time estimations for billable projects may turn unreliable and hourly rates can become affected as a result.
+- Time estimations for billable projects may become unreliable and hourly rates can be affected as a result.
 
 - People tending to track less time than what they actually worked reflects directly on the company's efficiency, making it look higher than what it actually is.
 
