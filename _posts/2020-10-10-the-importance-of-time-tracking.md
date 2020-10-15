@@ -11,7 +11,7 @@ We've had some trouble over the years with our time tracking, and sometimes that
 
 <!--more-->
 
-## Implications of poor time tracking
+## Implications Of Poor Time Tracking
 Poor time tracking can cause direct and indirect damage to companies like ours.
 
 ### Direct
@@ -24,7 +24,7 @@ Poor time tracking can cause direct and indirect damage to companies like ours.
 
 - People tending to track less time than what they actually worked reflects directly on the company's efficiency, making it look higher than what it actually is.
 
-- Internal processes, like calls, may be taking more time than necessary. Properly tracking the time spent on these calls is the best way of troubleshooting internal efficiency issues.
+- Internal processes, like calls or meetings, may be taking more time than necessary. Properly tracking the time spent on these calls is the best way of troubleshooting internal efficiency issues.
 
 ## Improving Time Tracking Skills
 Some people struggle to keep up with their time tracking. From our experience we've learnt that sometimes it's a matter of coming across a system that is suitable for you.
