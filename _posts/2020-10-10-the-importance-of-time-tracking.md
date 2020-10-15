@@ -17,7 +17,7 @@ Poor time tracking can cause direct and indirect damage to this kind of companie
 ### Direct
 - Impact in revenue: Less hours tracked for client projects means less hours billed at the end of the billing period for the same amount of work. Over delivering is a great practice, but only if it is done on purpose. If not, it may go unnoticed.
 
-- Miscalculation of internal project costs: This cost is proportional to the time invested on this projects, so time tracking is vital on this subject.
+- Miscalculation of internal project costs: This cost is proportional to the time invested on these projects, so time tracking is vital on this subject.
 
 ### Indirect
 - Time estimations for billable projects may turn unreliable and hourly rates can become affected as a result.
