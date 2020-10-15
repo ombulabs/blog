@@ -12,7 +12,7 @@ We've had some trouble over the years with our time tracking, and sometimes that
 <!--more-->
 
 ## Implications of poor time tracking
-Poor time tracking can cause direct and indirect damage to this kind of companies.
+Poor time tracking can cause direct and indirect damage to companies like ours.
 
 ### Direct
 - Impact in revenue: Less hours tracked for client projects means less hours billed at the end of the billing period for the same amount of work. Over delivering is a great practice, but only if it is done on purpose. If not, it may go unnoticed.
