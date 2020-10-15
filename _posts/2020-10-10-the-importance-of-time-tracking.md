@@ -39,7 +39,7 @@ Getting used to using a timer like this prevents you from having a hard time rem
 
 It is also a great idea to follow the [Pomodoro Technique](https://todoist.com/productivity-methods/pomodoro-technique) to increase productivity, and it's totally adaptable to any timer you may be using for your time tracking.
 
-Another app some of us like to use is [WakaTime](https://wakatime.com/). Waka is thought mainly for developers, since it integrates with several [different editors](https://wakatime.com/plugins) through their plug-ins. It automatically tracks the project you're working on and the time you spend working on it.
+Another app some of us like to use is [WakaTime](https://wakatime.com/). Waka is used mainly for developers, since it integrates with several [different editors](https://wakatime.com/plugins) through their plug-ins. It automatically tracks the project you're working on and the time you spend working on it.
 
 We like to use Waka to keep track of the projects and tasks we work on during the day and then the Noko app to submit our entries.
 
