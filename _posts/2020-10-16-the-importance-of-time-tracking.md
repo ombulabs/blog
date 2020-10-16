@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The importance of proper time tracking"
-date: 2020-10-10 15:00:00
+date: 2020-10-16 14:00:00
 categories: ["team", "remote"]
 author: "ignaciobertotti"
 ---
@@ -12,14 +12,17 @@ We've had some trouble over the years with our time tracking, and sometimes that
 <!--more-->
 
 ## Implications Of Poor Time Tracking
+
 Poor time tracking can cause direct and indirect damage to companies like ours.
 
 ### Direct
+
 - Impact in revenue: Less hours tracked for client projects means less hours billed at the end of the billing period for the same amount of work. Over delivering is a great practice, but only if it is done on purpose. If not, it may go unnoticed.
 
 - Miscalculation of internal project costs: This cost is proportional to the time invested on these projects, so time tracking is vital on this subject.
 
 ### Indirect
+
 - Time estimations for billable projects may become unreliable and hourly rates can be affected as a result.
 
 - People tending to track less time than what they actually worked reflects directly on the company's efficiency, making it look higher than what it actually is.
@@ -27,9 +30,11 @@ Poor time tracking can cause direct and indirect damage to companies like ours.
 - Internal processes, like calls or meetings, may be taking more time than necessary. Properly tracking the time spent on these calls is the best way of troubleshooting internal efficiency issues.
 
 ## Improving Time Tracking Skills
+
 Some people struggle to keep up with their time tracking. From our experience we've learnt that sometimes it's a matter of coming across a system that is suitable for you.
 
 ### Our Process
+
 For logging our time into the projects we work on, creating invoices for our clients and tracking their payment, we like to use [Noko](https://nokotime.com/).
 
 You can use the main website to submit your entries, but we found this impractical since you need to recall the amount of time you spent on each task, and then submit your entry.
@@ -44,4 +49,5 @@ Another app some of us like to use is [WakaTime](https://wakatime.com/). Waka is
 We like to use Waka to keep track of the projects and tasks we work on during the day and then the Noko app to submit our entries.
 
 ## In Conclusion
-Getting better at time tracking really is a matter of building the habit. It can be tedious at first, but when you get used to it, you'll notice some additional benefits that come out of it.  If you track the time for every task you work on during the day, you'll become more time-conscious. This helps build a habit for taking breaks and becoming more productive during your working periods. It also helps you organize your day, prioritizing your tasks and optimizing your work time.
+
+Getting better at time tracking really is a matter of building the habit. It can be tedious at first, but when you get used to it, you'll notice some additional benefits that come out of it. If you track the time for every task you work on during the day, you'll become more time-conscious. This helps build a habit for taking breaks and becoming more productive during your working periods. It also helps you organize your day, prioritizing your tasks and optimizing your work time.
