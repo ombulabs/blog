@@ -3,7 +3,7 @@ layout: post
 title: "Introducing Points - An blind estimation tool from OmbuLabs"
 date: 2020-10-16 12:00:00
 categories: ["open-source", "agile"]
-author: "fionadl"
+authors: ["fionadl", "abizzinotto"]
 ---
 
 At OmbuLabs our goal is always to smooth processes, and make work easier. Isn’t that what software engineering is really all about in the first place?
