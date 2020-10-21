@@ -10,7 +10,7 @@ At OmbuLabs our goal is always to smooth processes, and make work easier. Isn’
 
 When we are getting ready to do a project or to make a proposal one of the questions that we are always asked by clients is “how long will it take”? To come up with an estimate on timing we like to use a system of [points](https://www.ombulabs.com/blog/agile/scrum/become-better-estimators.html) and blind estimates by multiple team members to find an average of how complex the project will be. We can then use this information, together with our database of delivered projects, to estimate how long the project will take.
 
-To accomplish this, and make the process smoother we built a tool called Points and now we have [moved it to open source](https://www.ombulabs.com/blog/open-source/open-sourcing-a-private-project.html) in case it can be of use to any other teams out there!
+To accomplish this, and make the process smoother we built a tool called [Points](https://github.com/fastruby/points) and now we have [moved it to open source](https://www.ombulabs.com/blog/open-source/open-sourcing-a-private-project.html) in case it can be of use to any other teams out there!
 
 <!--more-->
 
