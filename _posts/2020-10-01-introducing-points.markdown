@@ -45,4 +45,4 @@ Let’s say all goes well, and the client approves the proposal and the project 
 Later we can use the actual point data to become better estimators on future projects. You can [find more information on that process here](https://www.ombulabs.com/blog/agile/scrum/become-better-estimators.html).
 
 ## Conclusion
-Points in a blind estimation app allowing our team to create project proposals that are more spot on. Points is open source and an ongoing project. We welcome contributions, and hope that our project can be useful to you!
+Points in a blind estimation app that allows our team to create project proposals that are more spot on. Points is open source and an ongoing project. We welcome contributions, and hope that our project can be useful to you!
