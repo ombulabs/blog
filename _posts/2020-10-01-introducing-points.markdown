@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introducing Points - An blind estimation tool from OmbuLabs"
+title: "Introducing Points - A blind estimation tool from OmbuLabs"
 date: 2020-10-16 12:00:00
 categories: ["open-source", "agile"]
 authors: ["fionadl", "abizzinotto"]
