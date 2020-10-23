@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "What we Learned Developing Snap Minis (Part 1)"
+title: "What We Learned Developing Snap Minis (Part 1)"
 date: 2020-10-23 15:00:00
 categories: ["learning"]
 author: arieljuod
