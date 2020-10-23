@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "What we Learned Developing Snap Minis (Part 1)"
-date: 2020-09-16 12:00:00
+date: 2020-10-23 15:00:00
 categories: ["learning"]
 author: arieljuod
 ---
@@ -46,13 +46,13 @@ If you need to implement the share-to-camera functionality, it's not easy to tes
 
 ```javascript
 // `sc` is the snap canvas SDK reference
-let base64data = generateStickerData()
+let base64data = generateStickerData();
 if (sc.app) {
   // this method will prepare the sticker object and call the SDK methods
-  shareStickerUsingSDK(base64Data) 
+  shareStickerUsingSDK(base64Data);
 } else {
   // this will show an IMG element during development locally, so we can see what we created
-  previewImage.src = base64data
+  previewImage.src = base64data;
 }
 ```
 
