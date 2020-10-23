@@ -6,7 +6,7 @@ categories: ["learning"]
 author: arieljuod
 ---
 
-Over the last few months, we developed a couple of (Snap Minis)[https://www.ombulabs.com/blog/software-development/snap-minis.html]. Minis are small static web apps that are run inside a webview within the Snapchat native app.
+Over the last few months, we developed a couple of [Snap Minis](https://www.ombulabs.com/blog/software-development/snap-minis.html). Minis are small static web apps that are run inside a webview within the Snapchat native app.
 
 One important part of the development was to make sure our Mini works well across different devices, especially making sure things work the same in both Android's webview (Chrome by default) and iOS's webview (Safari).
 
@@ -58,7 +58,7 @@ if (sc.app) {
 
 This speeds up the sticker design process a lot, since we don't need to publish the Mini to test it inside Snapchat. After we were happy with the generated image, we started testing the real SDK method calls by publishing the Mini to be used inside Snapchat.
 
-> Consider using hi resolution assets for this or it will look pixelated for hi pixel density devices.
+> Consider using high resolution assets for this or it will look pixelated for high pixel density devices.
 
 ## Storing Data
 
@@ -84,7 +84,7 @@ One of the apps was animation-intensive: colors changing, text scrolling, differ
 
 It was really important to measure and test the performance. The most important tool we used for this was Google Chrome's `Performance` profiler in dev tools. You can profile the app while doing specific actions and then inspect it frame by frame to make sure of what you need to optimize to have smooth animations and transitions.
 
-If you need to use third party plugins, make sure to test how it impacts the performance, sometimes is better to implement something specific or use a lightweight alternative.
+If you need to use third party plugins, make sure to test how it impacts the performance, sometimes it's better to implement something specific or use a lightweight alternative.
 
 > Remember that your Mini will run in a variety of devices from high to low end, you will want to make sure everyone has a good experience.
 
