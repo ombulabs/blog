@@ -9,7 +9,7 @@ author: "cleiviane"
 
 Service Objects are a controversial idea for several different reasons: some developers like to use them, others like to use similar patterns, and some think that they are just unnecessary because they prefer fat models.  
 
-Here at Ombu Labs we like to use service objects whenever we can, we think it's a great way to keep our controllers skinny.
+Here at OmbuLabs we like to use service objects whenever we can, we think it's a great way to keep our controllers skinny.
 
 In this post I would like to discuss my idea about service objects and why it's adopted by our team.
 

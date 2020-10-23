@@ -26,7 +26,7 @@ We have been a fully remote company for a year and a half now. Making the transi
 - Where did you go on your first airplane ride?
 - Do you feel like we have too many meetings?
 
-**Feedback calls**: We like to have monthly One on One Feedback Meetings with [Ombu Labs](https://www.ombulabs.com) CEO [Ernesto Tagwerker](https://www.ombulabs.com/#staff). We discuss monthly goals, blockers, our happiness level, ways to improve the company and much more. Getting feedback is especially helpful for remote employees.
+**Feedback calls**: We like to have monthly One on One Feedback Meetings with [OmbuLabs](https://www.ombulabs.com) CEO [Ernesto Tagwerker](https://www.ombulabs.com/#staff). We discuss monthly goals, blockers, our happiness level, ways to improve the company and much more. Getting feedback is especially helpful for remote employees.
 
 **End of the week call**: One of our favorite remote office traditions is to have an “End of Week Team Call” on Friday afternoons.  We go over office announcements and news and have each team member share their accomplishments during the week (personal or professional). It is a good time for our team to connect and have an end of the week cheers.  
 

@@ -33,7 +33,7 @@ what you prefer.
 their `bin/setup` convention:
 [./bin/setup](https://robots.thoughtbot.com/bin-setup)
 
-At [Ombu Labs](https://www.ombulabs.com/), one of our latest `bin/setup` scripts
+At [OmbuLabs](https://www.ombulabs.com/), one of our latest `bin/setup` scripts
 looks like this:
 
 <script src="https://gist.github.com/etagwerker/956448c7a4b058b45e23f562deca8d79.js">
@@ -46,7 +46,7 @@ have a `.env` file with environment configuration. Why?
 
 We use [Ruby](https://www.ruby-lang.org/en/) for our setup script because all of
 our development environments have been setup with this script:
-[Ombu Labs Setup](https://github.com/ombulabs/setup)
+[OmbuLabs Setup](https://github.com/ombulabs/setup)
 
 ## Start
 
@@ -78,7 +78,7 @@ One of our latest `bin/start` scripts looks like this:
 <script src="https://gist.github.com/etagwerker/e38b8021c0028f20d1f19932716d2c67.js">
 </script>
 
-From now on, all the web applications that we build at [Ombu Labs](https://www.ombulabs.com)
+From now on, all the web applications that we build at [OmbuLabs](https://www.ombulabs.com)
 will be able to get started like this:
 
     ./bin/start

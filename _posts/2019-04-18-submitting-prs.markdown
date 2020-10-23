@@ -21,7 +21,7 @@ Fellow developers need to be able to understand what the pull request is trying 
 - Speed up the code review process and consequently, product development
 - Target the right branch, usually either master or develop, depending on the project
 
-In order to make a **great pull request**, follow these [Ombu Labs](https://www.ombulabs.com) approved tips:
+In order to make a **great pull request**, follow these [OmbuLabs](https://www.ombulabs.com) approved tips:
 
 ### 1. Make smaller pull requests
 

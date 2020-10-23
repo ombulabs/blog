@@ -7,7 +7,7 @@ categories: ["team", "jobs"]
 author: "etagwerker"
 ---
 
-This is our process to hire new team members at [Ombu Labs](https://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
+This is our process to hire new team members at [OmbuLabs](https://www.ombulabs.com). It's a process that we have been improving ever since we started our operations. It's **very important** for us to hire **A players**.
 
 In this article I will focus on how we evaluate new developers, but parts of the process can be customized for other positions.
 
@@ -61,7 +61,7 @@ If we like what you did pair programming with us, we will call you in for a **cu
 
 This interview will be an interview with everyone in the team, not just developers. Everyone in the company will be able to ask you one or more questions. They are usually pretty random.
 
-Also, you will be able to ask anyone in the team any questions. This is a good way for you to find out what it's really like to work at Ombu Labs.
+Also, you will be able to ask anyone in the team any questions. This is a good way for you to find out what it's really like to work at OmbuLabs.
 
 ## Job Offer
 

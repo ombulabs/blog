@@ -8,7 +8,7 @@ author: bronzdoc
 
 ---
 
-At Ombu Labs we are firm believers of open source. We use open source but also like to contribute back to the community and we have open sourced a few projects.
+At OmbuLabs we are firm believers of open source. We use open source but also like to contribute back to the community and we have open sourced a few projects.
 
 We know that contributing to open source can be a difficult task so we have been looking for easier ways help to onboard new and past contributors.
 Here is a list of tips and tools that we believe that can help you make your open source project a more friendly space.

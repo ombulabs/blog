@@ -8,18 +8,17 @@
 /*
 
     0.  Normalize
-    1.  Icons
-    2.  General
-    3.  Utilities
-    4.  General
-    5.  Single Post
-    6.  Tag Archive
-    7.  Third Party Elements
-    8.  Pagination
-    9.  Footer
-    10. Media Queries (Tablet)
-    11. Media Queries (Mobile)
-    12. Animations
+    1.  General
+    2.  Utilities
+    3.  General
+    4.  Single Post
+    5.  Tag Archive
+    6.  Third Party Elements
+    7.  Pagination
+    8.  Footer
+    9. Media Queries (Tablet)
+    10. Media Queries (Mobile)
+    11. Animations
 
 */
 
@@ -101,72 +100,8 @@ input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; }
 table { border-collapse: collapse; border-spacing: 0; }
 
-
 /* ==========================================================================
-   1. Icons - Sets up the icon font and respective classes
-   ========================================================================== */
-
-/* Import the font file with the icons in it */
-@font-face {
-    font-family: "casper-icons";
-    src:url("../fonts/casper-icons.eot");
-    src:url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/casper-icons.woff") format("woff"),
-        url("../fonts/casper-icons.ttf") format("truetype"),
-        url("../fonts/casper-icons.svg#icons") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Apply these base styles to all icons */
-[class^="icon-"]:before, [class*=" icon-"]:before {
-    font-family: "casper-icons", "Open Sans", sans-serif;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    text-decoration: none !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Each icon is created by inserting the correct character into the
-   content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-    content: "\f600";
-}
-.icon-feed:before {
-    content: "\f601";
-}
-.icon-twitter:before {
-    content: "\f602";
-    font-size: 1.1em;
-}
-.icon-google-plus:before {
-    content: "\f603";
-}
-.icon-facebook:before {
-    content: "\f604";
-}
-.icon-arrow-left:before {
-    content: "\f605";
-}
-.icon-stats:before {
-    content: "\f606";
-}
-.icon-location:before {
-    content: "\f607";
-    margin-left: -3px; /* Tracking fix */
-}
-.icon-link:before {
-    content: "\f608";
-}
-
-
-/* ==========================================================================
-   2. General - Setting up some base styles
+   1. General - Setting up some base styles
    ========================================================================== */
 
 html {
@@ -432,7 +367,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   3. Utilities - These things get used a lot
+   2. Utilities - These things get used a lot
    ========================================================================== */
 
 /* Clears shit */
@@ -467,7 +402,7 @@ margin on the iframe, cause it breaks stuff. */
 
 
 /* ==========================================================================
-   4. General - The main styles for the the theme
+   3. General - The main styles for the the theme
    ========================================================================== */
 
 /* Big cover image on the home page */
@@ -484,7 +419,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-header .inner {
-    width: 80%;
+    width: 40%;
 }
 
 .main-nav {
@@ -619,9 +554,31 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 6px;
 }
 
+/* search bar */
+
+form {
+  flex: 100% 1 1;
+  #search-input {
+    display: flex;
+    margin: 15px;
+    float: right;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #ffffff;
+  }
+  button{
+    visibility: hidden;
+  }
+  #search-button {
+    visibility: hidden;
+  }
+}
+
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     right: 0;
@@ -656,7 +613,8 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Add a border to the buttons on hover */
 .back-button:hover,
-.subscribe-button:hover {
+.subscribe-button:hover
+.search-button:hover {
     border-color: #bfc8cd;
     color: #9EABB3;
 }
@@ -853,7 +811,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   5. Single Post - When you click on an individual post
+   4. Single Post - When you click on an individual post
    ========================================================================== */
 
 .post-template .post-header {
@@ -1073,7 +1031,7 @@ body:not(.post-template) .post-title {
 }
 
 /* ==========================================================================
-   6. Author profile
+   5. Author profile
    ========================================================================== */
 
 .post-head.main-header {
@@ -1207,7 +1165,7 @@ body:not(.post-template) .post-title {
 }
 
 /* ==========================================================================
-   7. Third Party Elements - Embeds from other services
+   6. Third Party Elements - Embeds from other services
    ========================================================================== */
 
 /* Github */
@@ -1222,7 +1180,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   8. Pagination - Tools to let you flick between pages
+   7. Pagination - Tools to let you flick between pages
    ========================================================================== */
 
 /* The main wrapper for our pagination links */
@@ -1310,7 +1268,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   9. Footer - The bottom of every page
+   8. Footer - The bottom of every page
    ========================================================================== */
 
 .site-footer {
@@ -1353,7 +1311,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   10. Media Queries - Smaller than 900px
+   9. Media Queries - Smaller than 900px
    ========================================================================== */
 
 @media only screen and (max-width: 900px) {
@@ -1387,6 +1345,55 @@ body:not(.post-template) .post-title {
     .blog-logo img {
         padding: 4px 0;
     }
+
+    #search-input-wrapper {
+      position: fixed;
+      z-index: 100;
+      top: -5em;
+      transition: top .3s ease-out;
+      left: 0;
+      right: 0;
+      background: black;
+      padding: 16px 20%;
+
+      &.show {
+        top: 0px;
+      }
+      #search-input {
+        width: 100%;
+        margin: 0;
+        float: none;
+        display: block;
+        box-sizing: border-box;
+      }
+      button {
+        visibility: visible;
+        position: absolute;
+        top: 16px;
+        right: 20%;
+        padding-right: 12px;
+        padding-left: 12px;
+        font-size: 10px;
+        background: white;
+        color: black;
+        bottom: 16px;
+        border: none;
+      }
+    }
+
+    form {
+      #search-button{
+        visibility: visible;
+        display: flex;
+        float: right;
+        padding: 10px;
+        font-size: 20px;
+        color: white;
+        background-color: black;
+        border: none;
+      }
+    }
+
 
     .page-title {
         font-size: 4rem;
@@ -1477,7 +1484,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   10. Media Queries - Smaller than 500px
    ========================================================================== */
 
 @media only screen and (max-width: 500px) {
@@ -1533,6 +1540,14 @@ body:not(.post-template) .post-title {
     .subscribe-button {
         padding: 0 12px;
     }
+
+    #search-input-wrapper {
+      padding: 16px;
+      .close {
+        right: 16px;
+      }
+    }
+
 
     .main-nav.overlay a:hover {
         color: #fff;
@@ -1740,7 +1755,7 @@ body:not(.post-template) .post-title {
 
 
 /* ==========================================================================
-   12. Animations
+   11. Animations
    ========================================================================== */
 
 /* Used to fade in title/desc on the home page */

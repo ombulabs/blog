@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Announcing The Ombu Labs Shop!"
+title: "Announcing The OmbuLabs Shop!"
 date: 2016-04-01 12:35:00
 reviewed: 2020-03-05 10:00:00
 categories: ["design"]
@@ -28,20 +28,20 @@ For our t-shirt we chose a very well known quote that inspires us day by day at 
 ### Our Products
 After all this creative process, these are the results:
 
-<img src="/blog/assets/images/ombu-labs-shop/notebook.png" alt="Ombu Labs Notebook" class="full-img">
+<img src="/blog/assets/images/ombu-labs-shop/notebook.png" alt="OmbuLabs Notebook" class="full-img">
 
-<img src="/blog/assets/images/ombu-labs-shop/t-shirt.png" alt="Ombu Labs t-shirt" class="full-img">
+<img src="/blog/assets/images/ombu-labs-shop/t-shirt.png" alt="OmbuLabs t-shirt" class="full-img">
 
 And last, but not least, our tote bag, its design was inspired by our day-to-day work and methodology. We made some illustrations and then created a final composition.
 
 <img src="/blog/assets/images/ombu-labs-shop/working-at-ombulabs.gif" alt="Working at OmbuLabs" class="full-img">
 
-<img src="/blog/assets/images/ombu-labs-shop/totebag.png" alt="Ombu Labs Tote Bag" class="full-img">
+<img src="/blog/assets/images/ombu-labs-shop/totebag.png" alt="OmbuLabs Tote Bag" class="full-img">
 
-### Ombu Labs Shop
+### OmbuLabs Shop
 
 We are very proud and happy to share this with you. We believe this process can be applied to any kind of project. Now, these products are available for sale in our [online store](http://shop.ombulabs.com/)!
 
-<img src="/blog/assets/images/ombu-labs-shop/shop.jpg" alt="Ombu Labs Shop" class="full-img">
+<img src="/blog/assets/images/ombu-labs-shop/shop.jpg" alt="OmbuLabs Shop" class="full-img">
 
 We also invite you to visit and follow our [Dribbble](https://dribbble.com/OmbuLabs) account where we’ll be sharing new shots!
