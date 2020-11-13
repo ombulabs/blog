@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Cross-Browser Mobile Web Apps (Snap Minis Part 2)"
-date: 2020-11-05 12:00:00
+date: 2020-11-13 14:00:00
 categories: ["learning", "crossbrowser"]
 author: arieljuod
 ---
