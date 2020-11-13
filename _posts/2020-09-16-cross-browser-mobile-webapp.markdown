@@ -22,7 +22,7 @@ When you type using Android's default keyboard app, it won't trigger the usual k
 
 If you have an input where you want to limit the value's length, the simplest way to do that is to use the input's `maxlength` HTML attribute. That will limit the length disallowing the user to type more characters than expected. But, when typing on an Android device, it won't respect that limit.
 
-The first idea would be to use the `keypress` event and prevent its default behavior depending on the pressed key and the element's value length, but, since we can't relay on the `keypress` event, we had to implement another workaround using the `input` event:
+The first idea would be to use the `keypress` event and prevent its default behavior depending on the pressed key and the element's value length, but, since we can't rely on the `keypress` event, we had to implement another workaround using the `input` event:
 
 ```javascript
 onInputChange(e) {
@@ -62,7 +62,7 @@ We also tried a different solution for that requirement listening to the `input`
 
 iOS keyboard shows a `DONE` "key" as a part of the keyboard, but this does not work like a regular key: you can't detect it being pressed (iOS keyboard does trigger keypress events) and it won't work like the `return` or `enter` key to submit the form. When pressing this special key, it will blur/unfocus the current element and hide the keyboard.
 
-Our advice here is that, if you have a form, you should have an specific `submit` element. If you rely on the user pressing `enter` or `return` keys, that might be counterintuitive for iOS users used to pressing `DONE` when they finish typing.
+Our advice here is that, if you have a form, you should have a specific `submit` element. If you rely on the user pressing `enter` or `return` keys, that might be counterintuitive for iOS users used to pressing `DONE` when they finish typing.
 
 ## Repaint Issues
 
@@ -98,7 +98,7 @@ You can use CSS' safe area inset values to add extra padding when needed.
 
 If you need to know these values in your JavaScript code, the SDK provides that information (using `sc.app.safeAreaInsets`) with the top and bottom safe area inset values.
 
-> This is another great article from css-tricks you can use for more in-depth code an examples: [link](https://css-tricks.com/the-notch-and-css/).
+> This is another great article from css-tricks you can use for more in-depth code and examples: [“The Notch” and CSS](https://css-tricks.com/the-notch-and-css/).
 
 ## iOS Overscroll
 
@@ -122,6 +122,6 @@ If you need smooth scrolling you may use [a polyfill](https://www.npmjs.com/pack
 
 ## Conclusion
 
-Making sure your app behaves similarly on both platforms is important to provide a good user experience. Sometimes it might be hard to reproduce the issues and to test the app in enough devices to debug them, so we hope some of these tips can help you fix them more easily.
+Making sure your app behaves similarly on both platforms is important to provide a good user experience. Sometimes it might be hard to reproduce the issues and to test the app on enough devices to debug them, so we hope some of these tips can help you fix them more easily.
 
 > A good resources you can check for cross browser compatibility is https://caniuse.com/
