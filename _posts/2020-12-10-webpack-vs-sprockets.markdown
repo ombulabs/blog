@@ -29,7 +29,7 @@ When using Sprockets, you typically have all the assets at `app/assets`, and, in
 
 When using Webpack, in a standard Rails app you have all the JavaScript at `app/javascript`. This is the default, but if you plan to manage all your assets using Webpack (CSS, images, etc) or you simply want a different folder, you can change that to something like `app/webpack` in `config/webpacker.yml`:
 
-```yml
+```
   source_path: app/webpack
 ```
 
@@ -45,7 +45,7 @@ When you start using Webpacker, one of the first things you need to do is to rep
 
 Similar to `javascript_include_tag` that links to a file compiled at `public/assets/`, `javascript_pack_tag` will link to a file compiled at `public/packs`. You can also configure that in `config/webpacker.yml`:
 
-```yml
+```
   public_root_path: public
   public_output_path: packs
 ```
@@ -62,7 +62,7 @@ Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 To do the same with Webpack, you don't need to change a configuration. All the files at `app/javascript/packs` (AKA "the entry points") will be created (AKA "emitted"). You can change where your packs are located too in `config/webpacker.yml`:
 
-```yml
+```
   source_entry_path: packs
 ```
 
