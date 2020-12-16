@@ -19,6 +19,7 @@ In this post, I'll try to explain some basic concepts and ideas from the point o
 - [Webpacker](https://github.com/rails/webpacker) is a gem that helps connecting Rails with Webpack.
 - [Sprockets](https://github.com/rails/sprockets), like Webpack, is an assets bundler and runs on Ruby.
 - [Sprockets-Rails](https://github.com/rails/sprockets-rails) is the gem that connects Rails with Sprockets.
+- [Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) is the term used by Rails to refer to the use of Sprockets-Rails to handle assets.
 
 > There are more solutions for this like *Rollup*, *Parcel* or *Browserify*. I won't cover those here.
 
