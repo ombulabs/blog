@@ -6,13 +6,13 @@ categories: ["learning", "webpack"]
 author: arieljuod
 ---
 
-Since the release of Rails 6, **Webpack** is the default JavaScript bundler for new Rails app. We all struggle at first coming from a **Sprockets** background, and more often than not, we, as developers, tried to avoid making JavaScript changes so we don't have to deal with it, or just copy/pasted until it worked.
+Since the release of Rails 6, **Webpack** is the default JavaScript bundler for new Rails apps. We all struggled at first coming from a **Sprockets** background, and more often than not, we, as developers, tried to avoid making JavaScript changes so we wouldn't have to deal with it, or just copy/pasted until it worked.
 
-In this post, I'll try to explain some basic concepts and ideas from the point of view of a Rails developer used to work with the Assets Pipeline, comparing how to do the same thing on both.
+In this post, I'll try to explain some basic concepts and ideas from the point of view of a Rails developer used to working with the Assets Pipeline, comparing how to do the same thing on both.
 
 <!--more-->
 
-## Some Glossary
+## Glossary
 
 - A **Bundler** is an application that can process, compile and pack assets like JavaScript, CSS, Images, Videos, etc.
 - [Webpack](https://webpack.js.org/) is an bundler that runs on NodeJS.
@@ -27,7 +27,7 @@ In this post, I'll try to explain some basic concepts and ideas from the point o
 
 When using Sprockets, you typically have all the assets at `app/assets`, and, inside that folder, you have `stylesheet`, `images`, `javascript`, etc. You usually have all your assets in the root of each of those folders or inside nested folders too.
 
-When using Webpack, in a standard Rails app you have all the JavaScript at `app/javascript`. This is the default, but if you plan to manage all your assets using Webpack (CSS, images, etc) or you simply want a different folder, you can change that to something like `app/webpack` in `config/webpacker.yml`:
+When using Webpack, in a standard Rails app you have all the JavaScript inside `app/javascript`. This is the default, but if you plan to manage all your assets using Webpack (CSS, images, etc) or you simply want a different folder, you can change it to something like `app/webpack` in `config/webpacker.yml`:
 
 ```
   source_path: app/webpack
@@ -52,7 +52,7 @@ Similar to `javascript_include_tag` that links to a file compiled at `public/ass
 
 ## Multiple Packs
 
-When using Sprockets, you have to tell Rails which JavaScript and CSS assets will be created from all the sources we have (defaults are `application.css`, `application.js` and all other asset file type). You do that with an initializer (for example, at `config/initializers/assets.rb`):
+When using Sprockets, you have to tell Rails which JavaScript and CSS assets will be created from all the sources that are available (defaults are `application.css`, `application.js` and all other asset file type). You do that with an initializer (for example, at `config/initializers/assets.rb`):
 
 ```ruby
 # config/initializers/assets.rb
@@ -66,7 +66,7 @@ To do the same with Webpack, you don't need to change a configuration. All the f
   source_entry_path: packs
 ```
 
-By default, you have an `application.js` file there, but you can add an `admin.js` one too for example:
+By default, you have an `application.js` file there, but you can add an `admin.js` as well. For example:
 
 ```js
 // app/javascript/packs/admin.js
@@ -76,7 +76,7 @@ By default, you have an `application.js` file there, but you can add an `admin.j
 
 Now, when Webpack compiles your assets, it will emit `application.js` and `admin.js`.
 
-You can also create a `.css` (or `.scss` if you prefer) file to be emitted:
+You can also create `.css` (or `.scss` if you prefer) files to be emitted:
 
 ```sass
 // app/javascript/packs/admin.scss
@@ -85,15 +85,15 @@ You can also create a `.css` (or `.scss` if you prefer) file to be emitted:
 ```
 
 And now Webpack will also process, compile and emit an `admin.css` file.
-> There's a caveat when using a CSS pack, I'll comment that later when I talk about images
+> There's a caveat when using a CSS pack, I'll comment on that later when I talk about images.
 
-> Note that **ALL** the files under `/packs` will be emitted. You don't want to put all your source files there, but only the ones you are going to access directly! All your source files should be at the parent folder or at a sibling folder.
+> Note that **ALL** the files under `/packs` will be emitted. You don't want to put all your source files there, only the ones you are going to access directly! All your source files should be in the parent folder or in a sibling folder.
 
 ## Node Modules
 
 Rails uses [YARN](https://yarnpkg.com/) by default to handle Node packages. All packages are downloaded in a `node_modules` folder in the root of your project.
 
-> Remember to add that folder to the `.gitignore` file, you don't want to push all these files into your repo
+> Remember to add that folder to the `.gitignore` file, you don't want to push all these files into your repo.
 
 These packages can be used by both Sprockets and Webpack, so you can use the same package to provide some CSS for your stylesheets using Sprockets and some JavaScript for your scripts using Webpack.
 
@@ -107,13 +107,13 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Webpack will look for files there by default, so no change needed, but if you want to tell Webpack to check other folders too you can add paths to the `additional_paths` configuration at `config/webpacker.yml`.
 
-Now, when you `require` or `import` in a JavaScript file, `@import` on an SCSS file or `// require` on a CSS file, the compilers will look for a folder with the name we used there on any asset path. When we see a line like this:
+Now, when you `require` or `import` in a JavaScript file, `@import` in a SCSS file or `// require` in a CSS file, the compilers will look for a folder with the name we used there on any asset path. When we see a line like this:
 
 ```js
 require('@rails/ujs').start()
 ```
 
-It is looking for a module at `node_modules/@rails/ujs`, and it checks the `package.json` file inside that folder to know what to load. You can also reference specific files instead of a module, for example, the `@rails/ujs` package's `package.json` file has this line:
+It is looking for a module in `node_modules/@rails/ujs`, and it checks the `package.json` file inside that folder to know what to load. You can also reference specific files instead of a module, for example, the `@rails/ujs` package's `package.json` file has this line:
 
 ```js
   "main": "lib/assets/compiled/rails-ujs.js",
@@ -163,7 +163,7 @@ global.initMap = initMap
 
 ## jQuery
 
-Many projects depend on **jQuery** and needs the `$` function available everywhere. The easiest way to handle this is to tell Webpack to expose the `$` and the `jQuery` functions globally. To do that, you need to add a plugin setting:
+Many projects depend on **jQuery** and need the `$` function available everywhere. The easiest way to handle this is to tell Webpack to expose the `$` and the `jQuery` functions globally. To do that, you need to add a plugin setting:
 
 ```js
 // config/webpack/environment.js
@@ -181,7 +181,7 @@ environment.plugins.prepend(
 module.exports = environment
 ```
 
-## Livereload
+## LiveReload
 
 Webpacker comes with a handy bin file you can run to make your web auto-reload when you change any asset, so you don't have to refresh manually after each change you do. You can run `rails s` in one terminal and `bin/webpack-dev-server` in another terminal, enter `localhost:3000` and you can change any asset and your page will be updated with no need of `F5`. This is really handy when you need to do heavy assets work.
 
@@ -195,13 +195,13 @@ When using Webpacker, while you can have CSS entry points at `app/javascript/pac
 import 'my_file.css';
 ```
 
-or even more strange-looking:
+or even stranger-looking:
 
 ```js
 import 'my_image.png';
 ```
 
-What's happening here is that Webpacker can extract different type of assets referenced by your JavaScript packs and emit those as separated files! If you have an `application.js` file that imports some CSS, it will emit an `application.css` file with the content of that CSS. You have to be sure you have the right configuration:
+What's happening here is that Webpacker can extract different types of assets referenced by your JavaScript packs and emit those as separated files! If you have an `application.js` file that imports some CSS, it will emit an `application.css` file with the content of that CSS. You have to be sure you have the right configuration:
 
 ```js
 // config/webpacker.yml
@@ -210,7 +210,7 @@ production:
   extract_css: true
 ```
 
-You can have that as `false` during development or testing, but it's needed for production. I'd recommend you at least try with this as `true` during development to verify it will create the right files for production.
+You can set that as `false` during development or testing, but it's needed for production. I'd recommend you at least try it as `true` during development to verify that it will create the right files for production.
 
 ### Images
 
@@ -227,7 +227,7 @@ If you open your `application.js` file, you will find this comment:
 // const imagePath = (name) => images(name, true)
 ```
 
-You can tell Webpack to compile and emit all the files at `../images` un-commenting the first line:
+You can tell Webpack to compile and emit all the files at `../images` by un-commenting the first line:
 
 ```js
 // packs/application.js
@@ -278,7 +278,7 @@ You can rename the `source_path` to `assets` and use `javascript` instead of `sr
 
 ## Pros And Cons
 
-So, what should you use? Sprockets? Webpack? Both? As always, the answer is... it depends. By default, since Rails 6, it uses both: Webpack for JavaScript, Sprocket for any other asset. According to your needs, you may want to use one or the other or change which assets you handle with each of them. You can even handle assets of the same type using both solutions at the same time!
+So, what should you use? Sprockets? Webpack? Both? As always, the answer is... it depends. By default, since version 6, Rails uses both: Webpack for JavaScript, Sprocket for any other asset. According to your needs, you may want to use one or the other or change which assets you handle with each of them. You can even handle assets of the same type using both solutions at the same time!
 
 Let's do a quick comparison:
 
@@ -305,7 +305,7 @@ Let's do a quick comparison:
 
 ## Conclusion
 
-After this comparison, I think the general approach of using Webpack for JavaScript files and Sprockets for the rest is the way to go for now. It enables JavaScript modern features using Webpack but leaves the other assets to be handled by Sprockets so the learning curve is not as pronounced for developers used to the Assets Pipeline. And at the same time it's also capable of handling all the assets types using Webpack for developers experiences with Webpack that comes to Rails.
+After this comparison, I think the general approach of using Webpack for JavaScript files and Sprockets for the rest is the way to go for now. It enables JavaScript modern features using Webpack but leaves the other assets to be handled by Sprockets so the learning curve is not as pronounced for developers used to the Asset Pipeline. However, for developers used to using Webpack, it may be an easier alternative to use Webpack for the handling of all assets.
 
 Some resources to keep watching and reading:
 - Webpacker docs: https://github.com/rails/webpacker/#docs
