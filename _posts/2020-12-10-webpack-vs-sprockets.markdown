@@ -6,7 +6,7 @@ categories: ["learning", "webpack"]
 author: arieljuod
 ---
 
-Since the release of Rails 6, **Webpack** is the default JavaScript bundler for new Rails apps. We all struggled at first coming from a **Sprockets** background, and more often than not, we, as developers, tried to avoid making JavaScript changes so we wouldn't have to deal with it, or just copy/pasted until it worked.
+Since the release of Rails 6, **Webpack** is the default JavaScript bundler for new Rails apps. We all struggled at first coming from a **Sprockets** background, and more often than not, we, as Rails developers, tried to avoid making JavaScript changes so we wouldn't have to deal with it.
 
 In this post, I'll try to explain some basic concepts and ideas from the point of view of a Rails developer used to working with the Assets Pipeline, comparing how to do the same thing on both.
 
@@ -15,8 +15,8 @@ In this post, I'll try to explain some basic concepts and ideas from the point o
 ## Glossary
 
 - A **Bundler** is an application that can process, compile and pack assets like JavaScript, CSS, Images, Videos, etc.
-- [Webpack](https://webpack.js.org/) is an bundler that runs on NodeJS.
-- [Webpacker](https://github.com/rails/webpacker) is a gem that helps connecting Rails with Webpack.
+- [Webpack](https://webpack.js.org/) is a bundler that runs on NodeJS.
+- [Webpacker](https://github.com/rails/webpacker) is a gem that helps connect Rails with Webpack.
 - [Sprockets](https://github.com/rails/sprockets), like Webpack, is an assets bundler and runs on Ruby.
 - [Sprockets-Rails](https://github.com/rails/sprockets-rails) is the gem that connects Rails with Sprockets.
 - [Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) is the term used by Rails to refer to the use of Sprockets-Rails to handle assets.
@@ -52,7 +52,7 @@ Similar to `javascript_include_tag` that links to a file compiled at `public/ass
 
 ## Multiple Packs
 
-When using Sprockets, you have to tell Rails which JavaScript and CSS assets will be created from all the sources that are available (defaults are `application.css`, `application.js` and all other asset file type). You do that with an initializer (for example, at `config/initializers/assets.rb`):
+When using Sprockets, you have to tell Rails which JavaScript and CSS assets will be created from all the sources that are available (defaults are `application.css`, `application.js` and all other asset file types). You do that with an initializer (for example, at `config/initializers/assets.rb`):
 
 ```ruby
 # config/initializers/assets.rb
@@ -141,7 +141,7 @@ function initMap(mapId) {
 
 Let's say you want this function to be available from anywhere, because you call that during the page load but also from some AJAX response.
 
-When using Sprockets, all JavaScript is concatenated in one plain file and everything runs in the global scope. So you can call `initMap` from anywhere by default. This is really handy... BUT! there's is a problem: it bloats the global scope and you can have different modules using the same function causing name collision.
+When using Sprockets, all JavaScript is concatenated in one plain file and everything runs in the global scope. So you can call `initMap` from anywhere by default. This is really handy... BUT! there is a problem: it bloats the global scope and you can have different modules using the same function causing name collision.
 
 When using Webpack, each script is isolated so nothing changes the global scope by default and only exports the things you tell it to export (it could be a class, a function, an object, etc..., we can export multiple things too). This solves the problem of global scope contamination, but you won't be able to access the `initMap` function from anywhere since it's not exposed globally.
 
@@ -308,6 +308,6 @@ Let's do a quick comparison:
 After this comparison, I think the general approach of using Webpack for JavaScript files and Sprockets for the rest is the way to go for now. It enables JavaScript modern features using Webpack but leaves the other assets to be handled by Sprockets so the learning curve is not as pronounced for developers used to the Asset Pipeline. However, for developers used to using Webpack, it may be an easier alternative to use Webpack for the handling of all assets.
 
 Some resources to keep watching and reading:
-- Webpacker docs: https://github.com/rails/webpacker/#docs
-- Survival guide for Rails devs: https://www.youtube.com/watch?v=ivQ7HrnBJe8
-- Webpack vs Sprockets: https://www.youtube.com/watch?v=2v4ySqyua1s
+- [Webpacker docs](https://github.com/rails/webpacker/#docs)
+- [Survival guide for Rails devs](https://www.youtube.com/watch?v=ivQ7HrnBJe8)
+- [Webpack vs Sprockets](https://www.youtube.com/watch?v=2v4ySqyua1s)
