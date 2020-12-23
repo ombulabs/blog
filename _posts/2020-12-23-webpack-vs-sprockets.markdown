@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Webpack VS Sprockets"
-date: 2020-11-13 14:00:00
+date: 2020-12-23 14:00:00
 categories: ["learning", "webpack"]
 author: arieljuod
 ---
@@ -21,7 +21,7 @@ In this post, I'll try to explain some basic concepts and ideas from the point o
 - [Sprockets-Rails](https://github.com/rails/sprockets-rails) is the gem that connects Rails with Sprockets.
 - [Asset Pipeline](https://guides.rubyonrails.org/asset_pipeline.html) is the term used by Rails to refer to the use of Sprockets-Rails to handle assets.
 
-> There are more solutions for this like *Rollup*, *Parcel* or *Browserify*. I won't cover those here.
+> There are more solutions for this like _Rollup_, _Parcel_ or _Browserify_. I won't cover those here.
 
 ## Directories Structure
 
@@ -85,6 +85,7 @@ You can also create `.css` (or `.scss` if you prefer) files to be emitted:
 ```
 
 And now Webpack will also process, compile and emit an `admin.css` file.
+
 > There's a caveat when using a CSS pack, I'll comment on that later when I talk about images.
 
 > Note that **ALL** the files under `/packs` will be emitted. You don't want to put all your source files there, only the ones you are going to access directly! All your source files should be in the parent folder or in a sibling folder.
@@ -110,7 +111,7 @@ Webpack will look for files there by default, so no change needed, but if you wa
 Now, when you `require` or `import` in a JavaScript file, `@import` in a SCSS file or `// require` in a CSS file, the compilers will look for a folder with the name we used there on any asset path. When we see a line like this:
 
 ```js
-require('@rails/ujs').start()
+require("@rails/ujs").start();
 ```
 
 It is looking for a module in `node_modules/@rails/ujs`, and it checks the `package.json` file inside that folder to know what to load. You can also reference specific files instead of a module, for example, the `@rails/ujs` package's `package.json` file has this line:
@@ -122,7 +123,7 @@ It is looking for a module in `node_modules/@rails/ujs`, and it checks the `pack
 That is the file that will be used if referencing `@rails/ujs`, but you could also be specific and do:
 
 ```js
-require('@rails/ujs/lib/assets/compiled/rails-ujs.js').start()
+require("@rails/ujs/lib/assets/compiled/rails-ujs.js").start();
 ```
 
 With the same result.
@@ -150,15 +151,14 @@ To do that, you have to be explicit when defining the function in your module:
 ```js
 global.initMap = function(mapId) {
   // initializes a map plugin
-}
+};
 
 // or
 
-const initMap = (mapId) => {
+const initMap = mapId => {
   // initializes a map plugin
-}
-global.initMap = initMap
-
+};
+global.initMap = initMap;
 ```
 
 ## jQuery
@@ -167,18 +167,18 @@ Many projects depend on **jQuery** and need the `$` function available everywher
 
 ```js
 // config/webpack/environment.js
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
 
-const webpack = require('webpack')
+const webpack = require("webpack");
 environment.plugins.prepend(
-  'Provide',
+  "Provide",
   new webpack.ProvidePlugin({
-    $: 'jquery/src/jquery',
-    jQuery: 'jquery/src/jquery'
+    $: "jquery/src/jquery",
+    jQuery: "jquery/src/jquery"
   })
-)
+);
 
-module.exports = environment
+module.exports = environment;
 ```
 
 ## LiveReload
@@ -192,13 +192,13 @@ Webpacker comes with a handy bin file you can run to make your web auto-reload w
 When using Webpacker, while you can have CSS entry points at `app/javascript/packs`, it can create some problems and sometimes you will see something like this inside a JavaScript file instead:
 
 ```js
-import 'my_file.css';
+import "my_file.css";
 ```
 
 or even stranger-looking:
 
 ```js
-import 'my_image.png';
+import "my_image.png";
 ```
 
 What's happening here is that Webpacker can extract different types of assets referenced by your JavaScript packs and emit those as separated files! If you have an `application.js` file that imports some CSS, it will emit an `application.css` file with the content of that CSS. You have to be sure you have the right configuration:
@@ -206,8 +206,7 @@ What's happening here is that Webpacker can extract different types of assets re
 ```js
 // config/webpacker.yml
 
-production:
-  extract_css: true
+production: extract_css: true;
 ```
 
 You can set that as `false` during development or testing, but it's needed for production. I'd recommend you at least try it as `true` during development to verify that it will create the right files for production.
@@ -232,7 +231,7 @@ You can tell Webpack to compile and emit all the files at `../images` by un-comm
 ```js
 // packs/application.js
 
-require.context('../images', true)
+require.context("../images", true);
 ```
 
 Now you can put all your images in `app/javascript/images` and Webpack will move them to `public/packs/media/images` during compilation. You can check at `config/webpacker.yml` which `static_assets_extensions` it supports (many image and font types by default). You can add more extensions there to support more file types.
@@ -266,12 +265,12 @@ And your `application.js` would look like this:
 ```js
 // packs/application.js
 
-import '../stylesheets/application.css'
-require.context('../images', true) 
-require.context('../fonts', true)
+import "../stylesheets/application.css";
+require.context("../images", true);
+require.context("../fonts", true);
 
 // and now your JavaScript ...
-import SomeModule from '../src/some_javascript'
+import SomeModule from "../src/some_javascript";
 ```
 
 You can rename the `source_path` to `assets` and use `javascript` instead of `src` and it will look pretty similar to the Assets Pipeline!
@@ -283,15 +282,18 @@ So, what should you use? Sprockets? Webpack? Both? As always, the answer is... i
 Let's do a quick comparison:
 
 ### Sprockets Pros
+
 - As Rails developers, we are really used to how the asset pipeline works and many Rails specific guides may reference this instead of Webpacker (mainly older guides before the Rails 6 release)
 - You can use assets from gems AND from node_modules
 
 ### Sprockets Cons
+
 - There are no plans for make it work with modern JavaScript features ([According to DHH](https://discuss.rubyonrails.org/t/webpacker-presents-a-more-difficult-oob-experience-for-js-sprinkles-than-sprockets-did/75345/9))
 - Bloats the JavaScript global scope
 - It's not the default for JavaScript, so new guides will be focused on Webpack
 
 ### Webpack Pros
+
 - Gives you access to all modern JavaScript features
 - Gives you access to a lot of plugins to handle the compilation process
 - Easy setup for JavaScript frameworks (like React, Vue or Stimulus) when creating Rails apps
@@ -300,6 +302,7 @@ Let's do a quick comparison:
 - There are many resources for Webpack in general (not specific to Rails) that also apply
 
 ### Webpack Cons
+
 - You can (and should) import CSS files (and other asset types) inside JavaScript files, which may be confusing at first
 - From my experience, you can't read assets from gems (documentation states that you can use assets from Rails Engines, but I was not able to set that up)
 
@@ -308,6 +311,7 @@ Let's do a quick comparison:
 After this comparison, I think the general approach of using Webpack for JavaScript files and Sprockets for the rest is the way to go for now. It enables JavaScript modern features using Webpack but leaves the other assets to be handled by Sprockets so the learning curve is not as pronounced for developers used to the Asset Pipeline. However, for developers used to using Webpack, it may be an easier alternative to use Webpack for the handling of all assets.
 
 Some resources to keep watching and reading:
+
 - [Webpacker docs](https://github.com/rails/webpacker/#docs)
 - [Survival guide for Rails devs](https://www.youtube.com/watch?v=ivQ7HrnBJe8)
 - [Webpack vs Sprockets](https://www.youtube.com/watch?v=2v4ySqyua1s)
