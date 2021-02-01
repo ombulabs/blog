@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Behind The Scenes: Devise"
-date: 2020-12-23 14:00:00
+date: 2021-02-04 14:00:00
 categories: ["learning", "devise"]
 author: arieljuod
 ---
