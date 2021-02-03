@@ -6,7 +6,7 @@ categories: ["learning", "devise"]
 author: arieljuod
 ---
 
-[**Devise**](https://github.com/heartcombo/devise) is a well known solution for authentication in **Rails** applications. It's full featured (not only adds authentication but also password recovery, email changing, session timeout, locking, ip tracking, and more) and can be expanded to add even more (like JWT authentication).
+[**Devise**](https://github.com/heartcombo/devise) is a well known solution for authentication in **Rails** applications. It's full featured (it not only adds authentication but also password recovery, email changing, session timeout, locking, ip tracking, etc.) and can be expanded to add even more (like JWT authentication).
 
 In this post, I'll go over the code related to the basic database authentication process, how it relates to [**Warden**](https://github.com/wardencommunity/warden) and some of the magic behind it.
 
@@ -23,7 +23,7 @@ Like most gems, when loaded, the entry point is `lib/devise.rb` ([link](https://
   - and more
 - at the end it requires `warden` and Devise's extensions for `models`, `rails`, etc
 
-If we take a look into the files in that last part of the `lib/devise.rb` file, we can better understand how it works.
+If we take a look the the files in the last part of the `lib/devise.rb` file, we can better understand how it works.
 
 At `lib/devise/rails.rb`, we can see Devise runs as a Rails Engine and it adds Warden as a middleware:
 
@@ -34,7 +34,7 @@ config.app_middleware.use Warden::Manager do |config|
 end
 ```
 
-At `lib/devise/models.rb`, we can see it defines the Device::Models module that is later included in ActiveRecord::Base and adds the `devise` helper method used to configure our authenticable ActiveRecord models:
+At `lib/devise/models.rb`, we can see it defines the Device::Models module which is later included in ActiveRecord::Base and adds the `devise` helper method used to configure our authenticable ActiveRecord models:
 
 ```ruby
 module Devise
@@ -153,7 +153,7 @@ def create
 end
 ```
 
-Here, it tells Warden to validate the new authentication options. If valid, warden will store the new user.
+Here, it tells Warden to validate the new authentication options. If valid, Warden will store the new user.
 
 ## Conclusion
 
