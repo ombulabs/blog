@@ -8,7 +8,7 @@ author: arieljuod
 
 [**Devise**](https://github.com/heartcombo/devise) is a well known solution for authentication in **Rails** applications. It's full featured (it not only adds authentication but also password recovery, email changing, session timeout, locking, ip tracking, etc.) and can be expanded to add even more (like JWT authentication).
 
-In this post, I'll go over the code related to the basic database authentication process, how it relates to [**Warden**](https://github.com/wardencommunity/warden) and some of the magic behind it.
+In this post, I'll go over the code related to the basic database authentication process, how it relates to [**Warden**](https://github.com/wardencommunity/warden) and some of the magic behind it. If you don't know what Warden is, I will be explaining the roll it plays for Devise in this article.
 
 <!--more-->
 
