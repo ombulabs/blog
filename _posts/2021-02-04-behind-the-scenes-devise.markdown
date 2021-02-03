@@ -23,7 +23,7 @@ Like most gems, when loaded, the entry point is `lib/devise.rb` ([link](https://
   - and more
 - at the end it requires `warden` and Devise's extensions for `models`, `rails`, etc
 
-If we take a look the the files in the last part of the `lib/devise.rb` file, we can better understand how it works.
+If we take a look at the files in the last part of the `lib/devise.rb` file, we can better understand how it works.
 
 At `lib/devise/rails.rb`, we can see Devise runs as a Rails Engine and it adds Warden as a middleware:
 
